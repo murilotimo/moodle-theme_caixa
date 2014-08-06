@@ -326,7 +326,7 @@ class theme_bcu_core_renderer extends core_renderer {
  					}
  				}
  			} else {
-                $noenrolments = get_string('noenrolments', 'theme_essential');
+                $noenrolments = get_string('noenrolments', 'theme_bcu');
  				$branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
  			}
             

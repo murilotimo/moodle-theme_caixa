@@ -135,3 +135,5 @@ $string['infoboxdesc'] = 'Frontpage info block HTML (see the readme file for add
 
 $string['infobox2'] = 'Frontpage Secondary Info Box';
 $string['infobox2desc'] = 'Frontpage Secondary Info Box (see the readme file for additional info and hints).';
+
+$string['noenrolments'] = 'You are not enrolled on any Moodle courses';
