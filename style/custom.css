@@ -821,6 +821,40 @@ a.carousel-control {
 	line-height: 38px;
 }
 
+/*alert message */
+.customalert {
+	background: #fbf3bb;
+	font-weight: 600;
+	padding: 8px 0px;
+	font-size: 13px;
+	color: #be1e2d;
+	border-bottom: 1px solid #f2b535;
+	text-align: center;
+}
+
+.customalert p {
+	margin: 0 0;
+ 	padding: 0 0;
+}
+
+.navbar .singlebutton, .navbar input, .navbar .singlebutton div, .path-mod-data .navbar form {
+	margin: 0 0;
+	
+}
+
+.navbar .singlebutton input {
+    background: none repeat scroll 0 0 transparent !important;
+    border: 0 none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+    font-size: 12px;
+    line-height: 40px;
+    padding: 0 30px 0 0;
+}
+
+.navbar .forumsearch, .navbar #coursesearchnavbar, .navbar .wikisearch {
+	display: none;
+}
 
 /* Custom CSS Settings
 -------------------------*/

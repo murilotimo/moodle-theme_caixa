@@ -45,7 +45,13 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <div id="page" class="container-fluid <?php echo "$setfull"; ?>">
-
+<?php if (!empty($PAGE->theme->settings->alertbox)) { ?>
+<div class="customalert">
+<div class="container">
+<?php echo $PAGE->theme->settings->alertbox; ?>
+</div>
+</div>
+<?php } ?>
 <div id="page-header-wrapper">
 
 <div id="above-header">
@@ -134,12 +140,14 @@ echo $OUTPUT->doctype() ?>
             <div class="nav-collapse collapse ">
                 <?php echo $OUTPUT->custom_menu(); ?>
                 <ul class="nav pull-right">
+               
                 <li class="hbl"><a href="#" class="moodlezoom"><i class="fa fa-toggle-down"></i> hide blocks</a></li>
                  <li class="sbl"><a href="#" class="moodlezoom"><i class="fa fa-toggle-up"></i> show blocks</a></li>
                  
                   <li class="hbll"><a href="#" class="moodlewidth"><i class="fa fa-square-o"></i> full screen</a></li>
                  <li class="sbll"><a href="#" class="moodlewidth"><i class="fa fa-minus-square-o"></i> standard view</a></li>
                 </ul>
+                <div class="pull-right"><?php echo $OUTPUT->page_heading_button(); ?></div>
             </div>
         </div>
     </nav>
@@ -152,7 +160,6 @@ echo $OUTPUT->doctype() ?>
 <div class="container outercont">
     <div id="page-content" class="row-fluid">
      <div id="page-navbar" class="span12">
-            
             <?php echo $OUTPUT->navbar(); ?>
     </div>
         <section id="region-main" class="span9<?php if ($left) { echo ' '; } ?> desktop-first-column">

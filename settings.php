@@ -124,6 +124,15 @@ $name = 'theme_bcu/logo';
 	$setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
 	$settings->add($setting);
 
+
+//info box spots
+$name = 'theme_bcu/alertbox';
+$title = get_string('alertbox','theme_bcu');
+$description = get_string('alertboxdesc', 'theme_bcu');
+$default = '';
+$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+$settings->add($setting);
+
 //info box spots
 $name = 'theme_bcu/infobox';
 $title = get_string('infobox','theme_bcu');

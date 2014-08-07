@@ -41,7 +41,13 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <div id="page" class="container-fluid <?php echo "$setfull"; ?>">
-
+<?php if (!empty($PAGE->theme->settings->alertbox)) { ?>
+<div class="customalert">
+<div class="container">
+<?php echo $PAGE->theme->settings->alertbox; ?>
+</div>
+</div>
+<?php } ?>
 <div id="page-header-wrapper">
 
 <div id="above-header">
