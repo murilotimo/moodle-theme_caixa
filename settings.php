@@ -82,6 +82,40 @@ $description = get_string('p5desc', 'theme_bcu');
 $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
 $settings->add($setting);
 
+//slide links
+$name = 'theme_bcu/p1url';
+$title = get_string('p1url','theme_bcu');
+$description = get_string('p1urldesc', 'theme_bcu');
+$setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+$settings->add($setting);
+
+
+$name = 'theme_bcu/p2url';
+$title = get_string('p2url','theme_bcu');
+$description = get_string('p2urldesc', 'theme_bcu');
+$setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+$settings->add($setting);
+
+$name = 'theme_bcu/p3url';
+$title = get_string('p3url','theme_bcu');
+$description = get_string('p3urldesc', 'theme_bcu');
+$setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+$settings->add($setting);
+
+$name = 'theme_bcu/p4url';
+$title = get_string('p4url','theme_bcu');
+$description = get_string('p4urldesc', 'theme_bcu');
+$setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+$settings->add($setting);
+
+$name = 'theme_bcu/p5url';
+$title = get_string('p5url','theme_bcu');
+$description = get_string('p5urldesc', 'theme_bcu');
+$setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+$settings->add($setting);
+
+
+//captions
 $name = 'theme_bcu/p1cap';
 $title = get_string('p1cap','theme_bcu');
 $description = get_string('p1capdesc', 'theme_bcu');

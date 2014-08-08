@@ -81,6 +81,21 @@ $string['p4capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the 
 $string['p5cap'] = 'Picture5 caption';
 $string['p5capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
 
+$string['p1url'] = 'Slide 1 URL';
+$string['p1urldesc'] = 'Add a URL to slide 1.';
+
+$string['p2url'] = 'Slide 2 URL';
+$string['p2urldesc'] = 'Add a URL to slide 2.';
+
+$string['p3url'] = 'Slide 3 URL';
+$string['p3urldesc'] = 'Add a URL to slide 3.';
+
+$string['p4url'] = 'Slide 4 URL';
+$string['p4urldesc'] = 'Add a URL to slide 4.';
+
+$string['p5url'] = 'Slide 5 URL';
+$string['p5urldesc'] = 'Add a URL to slide 5.';
+
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'Change the logo of this theme by entering the URL to a new one (i.e., http://www.somesite/animage.png). A transparent .png will work best.';
 

@@ -183,7 +183,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php if ($hasp1) { ?>
 <li>
-<a href="#"><?php echo "<img src='".$PAGE->theme->settings->p1."' alt='p2' />";?></a>
+<a href="<?php if (!empty($PAGE->theme->settings->p1url)) {echo $PAGE->theme->settings->p1url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->settings->p1."' alt='p2' />";?></a>
 <?php if ($haspcap1) { ?>
 <div class="flex-caption">
 <?php echo $PAGE->theme->settings->p1cap;?>
@@ -193,7 +193,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php if ($hasp2) { ?>
 <li>
-<a href="#"><?php echo "<img src='".$PAGE->theme->settings->p2."' alt='p2' />";?></a>
+<a href="<?php if (!empty($PAGE->theme->settings->p2url)) {echo $PAGE->theme->settings->p2url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->settings->p2."' alt='p2' />";?></a>
 <?php if ($haspcap2) { ?>
 <div class="flex-caption">
 <?php echo $PAGE->theme->settings->p2cap;?>
@@ -205,7 +205,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php if ($hasp3) { ?>
 <li>
-<a href="#"><?php echo "<img src='".$PAGE->theme->settings->p3."' alt='p2' />";?></a>
+<a href="<?php if (!empty($PAGE->theme->settings->p3url)) {echo $PAGE->theme->settings->p3url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->settings->p3."' alt='p2' />";?></a>
 <?php if ($haspcap3) { ?>
 <div class="flex-caption">
 <?php echo $PAGE->theme->settings->p3cap;?>
@@ -216,7 +216,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php if ($hasp4) { ?>
 <li>
-<a href="#"><?php echo "<img src='".$PAGE->theme->settings->p4."' alt='p2' />";?></a>
+<a href="<?php if (!empty($PAGE->theme->settings->p4url)) {echo $PAGE->theme->settings->p4url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->settings->p4."' alt='p2' />";?></a>
 <?php if ($haspcap4) { ?>
 <div class="flex-caption">
 <?php echo $PAGE->theme->settings->p4cap;?>
@@ -227,7 +227,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php if ($hasp5) { ?>
 <li>
-<a href="#"><?php echo "<img src='".$PAGE->theme->settings->p5."' alt='p2' />";?></a>
+<a href="<?php if (!empty($PAGE->theme->settings->p5url)) {echo $PAGE->theme->settings->p5url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->settings->p5."' alt='p2' />";?></a>
 <?php if ($haspcap5) { ?>
 <div class="flex-caption">
 <?php echo $PAGE->theme->settings->p5cap;?>
