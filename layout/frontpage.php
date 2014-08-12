@@ -66,6 +66,12 @@ echo $OUTPUT->doctype() ?>
 
 <div id="page" class="container-fluid <?php echo "$setfull"; ?>">
 
+<?php if (session_is_loggedinas()) { ?>
+<div class="customalert">
+<?php echo $OUTPUT->login_info(); ?>
+</div>
+<?php } ?>
+
 <?php if (!empty($PAGE->theme->settings->alertbox)) { ?>
 <div class="customalert">
 <div class="container">
@@ -73,7 +79,6 @@ echo $OUTPUT->doctype() ?>
 </div>
 </div>
 <?php } ?>
-
 
 <div id="page-header-wrapper">
 
