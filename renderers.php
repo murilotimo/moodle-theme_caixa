@@ -297,6 +297,13 @@ class theme_bcu_core_renderer extends core_renderer {
 		//$branch = $menu->add("<i class='fa fa-home'></i>", $branchurlB, "title", -10000);
 		
 		if (isloggedin() && !isguestuser()) {
+			
+		$mycoursetitle = "Home";
+           $branchtitle ="Home";
+			$branchlabel = '<i class="fa fa-home"></i> '.$branchtitle;
+            $branchurl   = new moodle_url('/');
+            $branchsort  = 9998;
+            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 		
 		$mycoursetitle = "My Home";
            $branchtitle ="My Home";
