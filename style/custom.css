@@ -123,7 +123,7 @@ a:focus {
 }
 
 #coursetitle {
-	 color: #fff;
+	color: #fff;
     font-size: 22px;
     line-height: normal;
     font-weight: normal;
@@ -131,8 +131,8 @@ a:focus {
     padding-top: 32px;
     max-width: 35%;
     white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #coursesearchbox2 {
@@ -236,7 +236,7 @@ a.usermendrop {
 .marketimage {
 	display: block;
 	width: 100%;
-	border: 1px solid #e8eaeb;
+	border: 0px;
 }
 
 #marketblocks h3 {
