@@ -68,11 +68,12 @@ echo $OUTPUT->doctype() ?>
 
 <?php if (session_is_loggedinas()) { ?>
 <div class="customalert">
+<div class="container">
 <?php echo $OUTPUT->login_info(); ?>
 </div>
-<?php } ?>
+</div>
 
-<?php if (!empty($PAGE->theme->settings->alertbox)) { ?>
+<?php } else if (!empty($PAGE->theme->settings->alertbox)) { ?>
 <div class="customalert">
 <div class="container">
 <?php echo $PAGE->theme->settings->alertbox; ?>
