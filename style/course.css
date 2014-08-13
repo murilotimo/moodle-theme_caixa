@@ -100,3 +100,10 @@ h3.sectionname {
 .section .activity .mod-indent-outer {
     padding-left: 10px;
 }
+
+.path-course-view .completionprogress {
+    color: #666;
+    float: none;
+    font-size: 90%;
+    padding: 0 0 10px;
+}

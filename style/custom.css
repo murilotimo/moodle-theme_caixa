@@ -222,7 +222,7 @@ a.usermendrop {
 }
 
 #marketblocks .span4 {
-
+	overflow: hidden;
 }
 
 #marketblocks .internalmarket {
