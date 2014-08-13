@@ -125,7 +125,7 @@ function theme_bcu_set_linkcolor($css, $linkcolor) {
     $tag = '[[setting:linkcolor]]';
     $replacement = $linkcolor;
     if (is_null($replacement)) {
-        $replacement = '#326B8B';
+        $replacement = '#001E3C';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -135,7 +135,7 @@ function theme_bcu_set_linkhover($css, $linkhover) {
     $tag = '[[setting:linkhover]]';
     $replacement = $linkhover;
     if (is_null($replacement)) {
-        $replacement = '#326B8B';
+        $replacement = '#001E3C';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
