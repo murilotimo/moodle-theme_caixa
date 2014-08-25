@@ -82,11 +82,25 @@ ul.teachers {
     right: 28%;
     width: 30%;
 }
+
+#page-course-index-category .coursebox .content ul:nth-child(3) {
+    display: none;
+}
+
 @media (max-width: 768px) {
 .coursebox .coursebtn {
-	right: 3%;
-    width: 90%;
+	 right: 22%;
+    width: auto;
 }
+
+#page-site-index a.submit {
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+    white-space: normal;
+    width: auto;
+}
+
 }
 
 /* forum */
@@ -226,7 +240,8 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 }
 
 .forumpost .subject {
-    font-size: 2em;
+    font-size: 1.8em;
+    line-height: normal;
     font-weight: 400;
     padding: 15px 0 10px;
 }
