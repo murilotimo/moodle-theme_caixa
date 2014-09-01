@@ -44,7 +44,7 @@ $THEME->yuicssmodules = array();
 
 $THEME->editor_sheets = array();
 
-$THEME->enable_dock = false;
+$THEME->enable_dock = true;
 
 $THEME->plugins_exclude_sheets = array(
     'block' => array(
