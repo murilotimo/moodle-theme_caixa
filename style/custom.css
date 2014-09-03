@@ -499,7 +499,7 @@ span.fa-chevron-right.fa {
     right: -17px;
     top: 0;
     width: 0;
-    z-index: 2;
+    z-index: 1;
 }
 
 .arrow-bottom {
@@ -877,6 +877,13 @@ a.carousel-control {
   border: 1px solid #B4BBBF;
   border-bottom-color: transparent;
   cursor: default;
+}
+
+/* Use the width of the content in modal to set size, instead of predefined sizes */ 
+
+.modal {
+	width: auto;
+	border: solid 2px #a71e38;
 }
 
 /* Custom CSS Settings

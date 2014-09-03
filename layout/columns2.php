@@ -124,9 +124,9 @@ echo $OUTPUT->doctype() ?>
      
 <form role="form" class="pull-right headersearch" method="get" action="<?php p($CFG->wwwroot) ?>/course/search.php" id="coursesearch2">
 
-<input type="text" placeholder="Search courses" value="" class="form-control" name="search"  id="coursesearchbox2" placeholder="Search Courses">
-
-<button style="position: absolute; top: -3000px; left: 0px;" class="btn btn-default" type="submit">Go</button>
+	<input type="text" value="" class="form-control" name="search"  id="coursesearchbox2" placeholder="Search courses">
+	
+	<button style="position: absolute; top: -3000px; left: 0px;" class="btn btn-default" type="submit"></button>
 
 </form>
                   
