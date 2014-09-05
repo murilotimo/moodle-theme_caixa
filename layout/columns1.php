@@ -42,7 +42,7 @@ echo $OUTPUT->doctype() ?>
 
 <div id="page" class="container-fluid <?php echo "$setfull"; ?>">
 	
-<?php if (session_is_loggedinas()) { ?>
+<?php if (core\session\manager::is_loggedinas()) { ?>
 <div class="customalert">
 <div class="container">
 <?php echo $OUTPUT->login_info(); ?>
