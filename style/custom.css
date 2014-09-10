@@ -124,7 +124,7 @@ a:focus {
 
 #coursetitle {
 	color: #fff;
-    font-size: 22px;
+    font-size: 18px;
     line-height: normal;
     font-weight: normal;
     padding-left: 15px;
@@ -848,8 +848,8 @@ a.carousel-control {
     box-shadow: none !important;
     color: inherit !important;
     font-size: 12px;
-    line-height: 40px;
-    padding: 0 30px 0 0;
+    line-height: 36px;
+    padding: 0 20px 0;
 }
 
 .navbar .forumsearch, .navbar #coursesearchnavbar, .navbar .wikisearch {
@@ -884,6 +884,14 @@ a.carousel-control {
 .modal {
 	width: auto;
 	border: solid 2px #a71e38;
+}
+
+#page-navbar .breadcrumb-button {
+	display: inline;
+}
+
+#gridshadebox_content ul.gtopics {
+	margin: 12px 1px 0px 1px;
 }
 
 /* Custom CSS Settings

@@ -32,6 +32,7 @@ a.back-to-top {
 .singleselect {
 	display: inline-block;
 	max-width: 100%;
+	width: 100%;
 }
 
 .panel-heading {
@@ -636,4 +637,17 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 
 .coursebox.panel ul.teachers li:first-child {
 	display: block;
+}
+
+.smallicon {
+	width: 18px; 
+}
+
+img.iconsmall {
+	display: inline;
+}
+
+#id_category {
+	width: 100%;
+	max-width: 100%;
 }

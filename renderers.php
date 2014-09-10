@@ -31,6 +31,32 @@ class theme_bcu_core_renderer extends core_renderer {
         return $this->render_user_menu($usermenu);
     }
     
+    /**
+     * Returns HTML to display a "Turn editing on/off" button in a form.
+     *
+     * @param moodle_url $url The URL + params to send through when clicking the button
+     * @return string HTML the button
+     * Written by G J Barnard
+     */
+
+    public function edit_button(moodle_url $url)
+    {
+        $url->param('sesskey', sesskey());
+        if ($this->page->user_is_editing()) {
+            $url->param('edit', 'off');
+            $btn = 'btn-danger';
+            $title = get_string('turneditingoff');
+            $icon = 'fa-power-off';
+        } else {
+            $url->param('edit', 'on');
+            $btn = 'btn-success';
+            $title = get_string('turneditingon');
+            $icon = 'fa-edit';
+        }
+        return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon . ' fa fa-fw')) .
+            html_writer::end_tag('i') . $title, array('href' => $url, 'class' => 'btn ' . $btn, 'title' => $title));
+    }
+    
      protected function render_user_menu(custom_menu $menu) {
         global $CFG, $USER, $DB, $PAGE;
 
@@ -260,14 +286,28 @@ class theme_bcu_core_renderer extends core_renderer {
     public function navbar() {
         $items = $this->page->navbar->get_items();
         $breadcrumbs = array();
+		$i = 0;
         foreach ($items as $item) {
             $item->hideicon = true;
+			/*
+			 * This section controls the truncation of strings to fit in the navbar nicely
+			 */
+            $title = ($item->title ? $item->title : $item->text);
+            $item->title = $title;
+			if (in_array($item->type, array())) {
+				continue;
+		    } else if (in_array($item->type, array(global_navigation::TYPE_CATEGORY)) and strlen($item->text) > 5) {
+				// If the text is longer than 5 characters then truncate.
+				$item->text = substr($item->text,0,5)."...";
+            }
             $breadcrumbs[] = $this->render($item);
+			$i++;
         }
         $divider = '<span class="divider">/</span>';
         $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
         $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
         return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
+        
     }
 
     /*
@@ -517,7 +557,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
         // Course name.
         $coursename = $chelper->get_course_formatted_name($course);
         $content .=  html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
-            $coursename, array('class' => $course->visible ? '' : 'dimmed'));
+            $coursename, array('class' => $course->visible ? '' : 'dimmed', 'title' => $coursename));
 
 
         // If we display course in collapsed form but the course has summary or course contacts, display the link to the info page.
