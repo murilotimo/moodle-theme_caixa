@@ -66,7 +66,7 @@ echo $OUTPUT->doctype() ?>
 
 <div id="page" class="container-fluid <?php echo "$setfull"; ?>">
 
-<?php if (session_is_loggedinas()) { ?>
+<?php if (core\session\manager::is_loggedinas()) { ?>
 <div class="customalert">
 <div class="container">
 <?php echo $OUTPUT->login_info(); ?>
@@ -100,7 +100,7 @@ echo $OUTPUT->doctype() ?>
     <a class="dropdown-toggle usermendrop" data-toggle="dropdown" href="#"><span class="fa fa-user"></span><?php echo fullname($USER) ?> <span class="fa fa-angle-down"></span></a>
     <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dropdownMenu2">
 <?php if (!empty($PAGE->theme->settings->enablemy)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/my" title="My Dashboard"><i class="fa fa-briefcase"></i><?php echo get_string('mymoodledashboard') ?></a></li>
+<li><a href="<?php p($CFG->wwwroot) ?>/my" title="My Dashboard"><i class="fa fa-dashboard"></i><?php echo get_string('myhome') ?></a></li>
 <?php } ?>
 <?php if (!empty($PAGE->theme->settings->enableprofile)) { ?>
 <li><a href="<?php p($CFG->wwwroot) ?>/user/profile.php" title="View profile"><i class="fa fa-user"></i><?php echo get_string('viewprofile') ?></a></li>
@@ -139,12 +139,12 @@ echo $OUTPUT->doctype() ?>
    
      
      <div id="coursetitle" class="pull-left">
-     <?php echo $PAGE->heading ?>
+     <span title='<?php echo $PAGE->heading ?>'><?php echo $PAGE->heading ?></span>
      </div>
      
 <form role="form" class="pull-right headersearch" method="get" action="<?php p($CFG->wwwroot) ?>/course/search.php" id="coursesearch2">
 
-<input type="text" placeholder="Search courses" value="" class="form-control" name="search"  id="coursesearchbox2" placeholder="Search Courses">
+<input type="text" value="" class="form-control" name="search"  id="coursesearchbox2" placeholder="Search courses">
 
 <button style="position: absolute; top: -3000px; left: 0px;" class="btn btn-default" type="submit">Go</button>
 
@@ -394,13 +394,14 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
 				<address>
 					<ul class="block-list mbm">
 
-						<li class="fn org">Birmingham City University</li>
-						<li class="street-address">City North Campus</li>
-						<li class="locality">Birmingham</li>
-						<li class="postal-code">B42 2SU</li>
-						<li class="country-name">United Kingdom</li>
-						<li class="pts tel">+44 (0)121 331 5000</li>
-					</ul>
+                        <li class="fn org">Birmingham City University</li>
+                        <li class="street-address">University House</li>
+                        <li class="locality">15 Bartholomew Row</li>
+                        <li class="locality">Birmingham</li>
+                        <li class="postal-code">B42 2SU</li>
+                        <li class="country-name">United Kingdom</li>
+                        <li class="pts tel">+44 (0)121 331 5000</li>
+                    </ul>
 				</address>
 
 			</div>
@@ -410,13 +411,10 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
 				<h3 title="Our Faculties">Our Faculties</h3>
 
 				<ul class="block-list white">
-
-					<li><a href="http://bcu.ac.uk/biad"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Birmingham Institute of Art &amp; Design</span></a></li>
-					<li><a href="http://bcu.ac.uk/bcbs"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Birmingham City Business School</span></a></li>
-					<li><a href="http://bcu.ac.uk/elss"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Education, Law &amp; Social Sciences</span></a></li>
-					<li><a href="http://bcu.ac.uk/health"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Faculty of Health</span></a></li>
-					<li><a href="http://bcu.ac.uk/pme"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Performance, Media &amp; English</span></a></li>
-					<li><a href="http://bcu.ac.uk/tee"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Technology, Engineering &amp; the Environment</span></a></li>
+                    <li><a href="http://bcu.ac.uk/arts-design-and-media"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Arts, Design and Media</span></a></li>
+                    <li><a href="http://bcu.ac.uk/business-law-and-social-sciences"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Business, Law and Social Sciences</span></a></li>
+                    <li><a href="http://bcu.ac.uk/health-education-and-life-sciences"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Health, Education and Life Sciences</span></a></li>
+                    <li><a href="http://bcu.ac.uk/computing-engineering-and-the-built-environment"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Computing, Engineering and the Built Enviroment</span></a></li>
 				</ul>
 
 			</div>
