@@ -284,9 +284,9 @@ class theme_bcu_core_renderer extends core_renderer {
      * Uses bootstrap compatible html.
      */
     public function navbar() {
+        global $USER;
         $items = $this->page->navbar->get_items();
         $breadcrumbs = array();
-		$i = 0;
         foreach ($items as $item) {
             $item->hideicon = true;
 			/*
@@ -294,14 +294,17 @@ class theme_bcu_core_renderer extends core_renderer {
 			 */
             $title = ($item->title ? $item->title : $item->text);
             $item->title = $title;
-			if (in_array($item->type, array())) {
-				continue;
-		    } else if (in_array($item->type, array(global_navigation::TYPE_CATEGORY)) and strlen($item->text) > 5) {
+			if ($item->type == global_navigation::TYPE_CATEGORY and strlen($item->text) > 5) {
 				// If the text is longer than 5 characters then truncate.
 				$item->text = substr($item->text,0,5)."...";
             }
-            $breadcrumbs[] = $this->render($item);
-			$i++;
+            if($item->type == global_navigation::TYPE_CATEGORY) {
+                if ($USER->ssodata['PersonType'] == 'staff') {
+                    $breadcrumbs[] = $this->render($item);        
+                }
+            } else {
+                $breadcrumbs[] = $this->render($item);
+            }   
         }
         $divider = '<span class="divider">/</span>';
         $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
