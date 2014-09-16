@@ -956,13 +956,18 @@ button.close {
 	opacity: .2;
 }
 
-.no-overflow, .pagelayout-redirect .no-overflow {
+.pagelayout-redirect .no-overflow {
 	overflow-x: scroll;
 }
 
 .gradetreebox {
 	overflow-x: scroll;
 }
+
+.path-course-view .completionprogress {
+	z-index: 2;
+}
+
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]
