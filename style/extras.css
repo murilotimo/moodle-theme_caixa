@@ -647,7 +647,7 @@ img.iconsmall {
 	display: inline;
 }
 
-#id_category {
+#id_category, #id_parent {
 	width: 100%;
 	max-width: 100%;
 }
