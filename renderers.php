@@ -362,8 +362,8 @@ class theme_bcu_core_renderer extends core_renderer {
             $branchsort  = 9999;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 		
-        	$mycoursetitle = "My Module";
-           $branchtitle ="My Modules";
+        	$mycoursetitle = "My Sites";
+            $branchtitle ="My Sites";
 			$branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
             $branchurl   = new moodle_url('/my/index.php');
             $branchsort  = 10000;
