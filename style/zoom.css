@@ -15,7 +15,7 @@
 			display: none;
 		}
         
-        .zoomin .block-region {
+        .zoomin #block-region-side-post {
             display: none;
         }
         .zoomin #region-main,
