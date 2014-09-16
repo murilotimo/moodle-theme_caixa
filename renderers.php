@@ -334,29 +334,29 @@ class theme_bcu_core_renderer extends core_renderer {
      * This renderer is needed to enable the Bootstrap style navigation.
      */
     protected function render_custom_menu(custom_menu $menu) {
-        global $CFG;
+        global $CFG, $PAGE;
 		
 		$branchurlB   = new moodle_url('/');
 		//$branch = $menu->add("<i class='fa fa-home'></i>", $branchurlB, "title", -10000);
 		
 		if (isloggedin() && !isguestuser()) {
 			
-		$mycoursetitle = "Home";
-           $branchtitle ="Home";
+            $mycoursetitle = "Home";
+            $branchtitle ="Home";
 			$branchlabel = '<i class="fa fa-home"></i> '.$branchtitle;
             $branchurl   = new moodle_url('/');
             $branchsort  = 9998;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 		
-		$mycoursetitle = "My Home";
-           $branchtitle ="My Home";
+            $mycoursetitle = "My Home";
+            $branchtitle ="My Home";
 			$branchlabel = '<i class="fa fa-dashboard"></i> '.$branchtitle;
             $branchurl   = new moodle_url('/my/index.php');
             $branchsort  = 9998;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             
             $mycoursetitle = "Events";
-           $branchtitle ="Events";
+            $branchtitle ="Events";
 			$branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
             $branchurl   = new moodle_url('/calendar/view.php?view=month&course=1');
             $branchsort  = 9999;
@@ -370,15 +370,24 @@ class theme_bcu_core_renderer extends core_renderer {
  
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
  			if ($courses = enrol_get_my_courses(NULL, 'fullname ASC')) {
- 				foreach ($courses as $course) {
- 					if ($course->visible){
- 						$branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
- 					}
- 				}
+    			foreach ($courses as $course) {
+    				if ($course->visible){
+    					$branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+    				}
+    			}
  			} else {
                 $noenrolments = get_string('noenrolments', 'theme_bcu');
  				$branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
  			}
+            
+            if (!empty($PAGE->theme->settings->enablehelp)) {
+                $mycoursetitle = "Help";
+                $branchtitle = "Help";
+                $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
+                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
+                $branchsort  = 10001;
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+            } 
             
         }
 

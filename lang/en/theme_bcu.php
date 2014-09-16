@@ -65,6 +65,8 @@ $string['p4desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an
 $string['p5'] = 'Picture5';
 $string['p5desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an image.';
 
+$string['enablehelp'] = 'Help Link';
+$string['enablehelpdesc'] = 'Add a help link in the navbar.';
 
 $string['p1cap'] = 'Picture1 caption';
 $string['p1capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';

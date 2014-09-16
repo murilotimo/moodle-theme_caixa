@@ -317,4 +317,12 @@ if ($ADMIN->fulltree) {
 	$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 	$setting->set_updatedcallback('theme_reset_all_caches');
 	$settings->add($setting);
+    
+    // Enable help link
+    $name = 'theme_bcu/enablehelp';
+    $title = get_string('enablehelp', 'theme_bcu');
+    $description = get_string('enablehelpdesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $settings->add($setting);
+    
 }
