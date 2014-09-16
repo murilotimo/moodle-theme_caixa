@@ -491,7 +491,8 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 </div>
-
-
+<script type="text/javascript">
+    <?php echo $PAGE->theme->settings->jssection;?>
+</script>
 </body>
 </html>

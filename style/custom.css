@@ -923,6 +923,46 @@ a.carousel-control {
 	background-clip: padding-box;	
 	min-height: 200px;
 }
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+/* Add midding bootstrap modal box classes */
+
+button.close {
+	-webkit-appearance: none;
+	padding: 0;
+	cursor: pointer;
+	background: 0 0;
+	border: 0;
+}
+
+.close {
+	float: right;
+	font-size: 21px;
+	font-weight: 700;
+	line-height: 1;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	filter: alpha(opacity=20);
+	opacity: .2;
+}
+
+.no-overflow, .pagelayout-redirect .no-overflow {
+	overflow-x: scroll;
+}
+
+.gradetreebox {
+	overflow-x: scroll;
+}
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]

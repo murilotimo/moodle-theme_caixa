@@ -155,3 +155,6 @@ $string['noenrolments'] = 'No enrolments found.';
 
 $string['alertbox'] = 'Top Alert Box';
 $string['alertboxdesc'] = 'Alert box to display at the top of all pages';
+
+$string['jssection'] = 'Javascript Section';
+$string['jssectiondesc'] = 'Add javascript code to the site, e.g. Google Analytics';

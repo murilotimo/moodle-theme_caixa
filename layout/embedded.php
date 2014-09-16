@@ -31,5 +31,8 @@ echo $OUTPUT->doctype() ?>
     </div>
 </div>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
+<script type="text/javascript">
+    <?php echo $PAGE->theme->settings->jssection;?>
+</script>
 </body>
 </html>

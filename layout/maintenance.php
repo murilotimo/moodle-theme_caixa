@@ -279,6 +279,8 @@ echo $OUTPUT->doctype() ?>
 
 </div>
 
-
+<script type="text/javascript">
+    <?php echo $PAGE->theme->settings->jssection;?>
+</script>
 </body>
 </html>
