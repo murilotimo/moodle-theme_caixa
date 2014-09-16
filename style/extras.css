@@ -84,10 +84,6 @@ ul.teachers {
     width: 30%;
 }
 
-#page-course-index-category .coursebox .content ul:nth-child(3) {
-    display: none;
-}
-
 @media (max-width: 768px) {
 .coursebox .coursebtn {
 	 right: 22%;

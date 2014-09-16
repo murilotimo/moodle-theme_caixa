@@ -537,7 +537,6 @@ class theme_bcu_core_renderer extends core_renderer {
 require_once($CFG->dirroot . "/course/renderer.php");
 
 class theme_bcu_core_course_renderer extends core_course_renderer {
-
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG, $OUTPUT;
 
@@ -622,12 +621,12 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
 
         return $content;
     }
-
+    
     protected function coursecat_coursebox_content(coursecat_helper $chelper, $course) {
         global $CFG;
-        // if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
-        //     return '';
-        // }
+        if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
+            return '';
+        }
         if ($course instanceof stdClass) {
             require_once($CFG->libdir. '/coursecatlib.php');
             $course = new course_in_list($course);
@@ -700,7 +699,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
 
         return $content;
     }
-
+    
     public function course_search_form($value = '', $format = 'plain') {
         static $count = 0;
         $formid = 'coursesearch';
