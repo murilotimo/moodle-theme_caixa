@@ -398,7 +398,7 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
                         <li class="street-address">University House</li>
                         <li class="locality">15 Bartholomew Row</li>
                         <li class="locality">Birmingham</li>
-                        <li class="postal-code">B42 2SU</li>
+                        <li class="postal-code">B5 5JU</li>
                         <li class="country-name">United Kingdom</li>
                         <li class="pts tel">+44 (0)121 331 5000</li>
                     </ul>
