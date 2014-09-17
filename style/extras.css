@@ -635,12 +635,8 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 	display: block;
 }
 
-.smallicon {
-	width: 18px; 
-}
-
-img.iconsmall {
-	display: inline;
+#changenumsections .smallicon {
+	width: 24px; 
 }
 
 #id_category, #id_parent {
