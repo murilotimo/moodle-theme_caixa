@@ -117,13 +117,15 @@ echo $OUTPUT->doctype() ?>
      <span title='<?php echo $PAGE->heading ?>'><?php echo $PAGE->heading ?></span>
      </div>
      
-<form role="form" class="pull-right headersearch" method="get" action="<?php p($CFG->wwwroot) ?>/course/search.php" id="coursesearch2">
-
-<input type="text" value="" class="form-control" name="search"  id="coursesearchbox2" placeholder="Search courses">
-
-<button style="position: absolute; top: -3000px; left: 0px;" class="btn btn-default" type="submit">Go</button>
-
-</form>
+        <div class="searchbox">
+            <form action="<?php p($CFG->wwwroot) ?>/course/search.php">
+                <label class="hidden" for="search-1" style="display: none;">Search iCity</label>
+                <div class="search-box grey-box bg-white clear-fix">
+                    <input placeholder="Search courses" accesskey="6" class="search_tour bg-white no-border left search-box__input ui-autocomplete-input" type="text" name="search" id="search-1" autocomplete="off">
+                    <button type="submit" class="no-border bg-white pas search-box__button"><abbr class="fa fa-search"></abbr></button>
+                </div>
+            </form>
+        </div>
                   
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>

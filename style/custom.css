@@ -968,6 +968,87 @@ button.close {
 	z-index: 2;
 }
 
+/* Classes for new search box */
+
+.searchbox {
+	float: right;
+	padding-top: 32px;
+}
+
+.greybox {
+	border: 1px solid #ccc;
+}
+
+.search-box__input {
+	width: 280px;
+}
+
+.search-box__button {
+	width: 27px;
+	height: 27px;
+	margin: 1px !important;
+	-webkit-transition: background-color .2s ease-in-out;
+	-moz-transition: background-color .2s ease-in-out;
+	-o-transition: background-color .2s ease-in-out;
+	transition: background-color .2s ease-in-out;
+}
+
+.search-box__button:hover {
+	background-color: #00adef;
+	color: #fff !important;
+}
+
+.search-box {
+	float: right;
+}
+
+
+
+.bg-white {
+	background: #fff;
+}
+
+.pas {
+	padding: 5px;
+}
+
+.no-border {
+	border: 0 !important;
+	border-radius: 0px !important;
+	-webkit-box-shadow: 0px !important;
+}
+
+#search-1 {
+	padding: 5px 3px !important;
+	margin: 0 !important;
+	font-size: 14px;
+	color: #444;
+}
+
+#search-1:focus {
+	border: none !important;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.icon-search {
+	font-size: 1.4em;
+}
+
+@media (max-width: 767px) {
+	.searchbox {
+		padding-bottom: 5px;
+	}
+	.search-box, .searchbox {
+		width: 100%;
+	}
+	#search-1 {
+		width: calc(100% - 39px);
+	}
+}
+
+/* End classes for search box */
+
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]
