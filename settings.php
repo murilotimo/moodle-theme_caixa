@@ -217,7 +217,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('jssection', 'theme_bcu');
     $description = get_string('jssectiondesc', 'theme_bcu');
     $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $settings->add($setting);
     
     // link color setting
