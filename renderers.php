@@ -664,8 +664,8 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
             
             $summs = $chelper->get_course_formatted_summary($course,array('overflowdiv' => false, 'noclean' => true, 'para' => false));
             $summs = strip_tags($summs);
-            $summs = strlen($summs) > 70 ? substr($summs,0,70)."..." : $summs;
-            $content .= "$summs";
+            $truncsum = strlen($summs) > 70 ? substr($summs,0,70)."..." : $summs;
+            $content .= html_writer::tag('span', $truncsum, array('title' => $summs));
             //$content .= $chelper->get_course_formatted_summary($course,array('overflowdiv' => true, 'noclean' => true, 'para' => false));
             $content .= html_writer::end_tag('div'); // .summary
         }
