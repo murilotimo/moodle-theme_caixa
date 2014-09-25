@@ -184,6 +184,7 @@ echo $OUTPUT->doctype() ?>
 </div>
 </div>
 
+<?php if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 <div class="container slidewrap">
 <div id="main-slider" class="flexslider">
 <ul class="slides">
@@ -197,6 +198,7 @@ echo $OUTPUT->doctype() ?>
 </div>
 <?php } ?>
 </li>
+<?php } ?>
 
 <?php if ($hasp2) { ?>
 <li>
@@ -242,42 +244,11 @@ echo $OUTPUT->doctype() ?>
 <?php } ?>
 </li>
 <?php } ?>
-
-<?php } else { ?>
-	
-<li>
-<a href="#"><img src="<?php echo $OUTPUT->pix_url('01banner-Feedback', 'theme')?>"></a>	
-<div class="flex-caption" style="display: none;">
-<h3>Set a Slide Title</h3>
-<p>You can set a slide title, text, and the slide image. You can use HTML in your slide text.</p>
-<a class="submit" href="#">Link Button</a>
-</div>
-</li>
-
-
-<li>
-<a href="#"><img src="<?php echo $OUTPUT->pix_url('02banner-LandT', 'theme')?>"></a>	
-<div class="flex-caption" style="display: none;">
-<h3>Another Slide Title</h3>
-<p>You can set up to five slides with text and titles.</p>
-<a class="submit" href="#">More Info</a>
-</div>
-</li>
-
-<li>
-<a href="#"><img src="<?php echo $OUTPUT->pix_url('03banner-MyCAT', 'theme')?>"></a>	
-<div class="flex-caption" style="display: none;">
-<h3>Another Slide Title</h3>
-<p>You can set up to five slides with text and titles.</p>
-<a class="submit" href="#">More Info</a>
-</div>
-</li>
-<?php } ?>
-
 	</ul>
 </div>
 </div>
 
+<?php } ?>
 
 <?php if (!empty($PAGE->theme->settings->infobox)) { ?>
 <div id="theinfo" class="container">
