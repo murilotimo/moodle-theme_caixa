@@ -212,6 +212,66 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $settings->add($setting);
     
+    
+    // Footer sections editor
+    $name = 'theme_bcu/footer1header';
+    $title = get_string('footer1header', 'theme_bcu');
+    $description = get_string('footer1desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $settings->add($setting);
+    
+    $name = 'theme_bcu/footer1content';
+    $title = get_string('footer1content', 'theme_bcu');
+    $description = get_string('footer1contentdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $settings->add($setting);
+    
+    $name = 'theme_bcu/footer2header';
+    $title = get_string('footer2header', 'theme_bcu');
+    $description = get_string('footer2desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $settings->add($setting);
+    
+    $name = 'theme_bcu/footer2content';
+    $title = get_string('footer2content', 'theme_bcu');
+    $description = get_string('footer2contentdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $settings->add($setting);
+    
+    $name = 'theme_bcu/footer3header';
+    $title = get_string('footer3header', 'theme_bcu');
+    $description = get_string('footer3desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $settings->add($setting);
+    
+    $name = 'theme_bcu/footer3content';
+    $title = get_string('footer3content', 'theme_bcu');
+    $description = get_string('footer3contentdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $settings->add($setting);
+    
+    $name = 'theme_bcu/footer4header';
+    $title = get_string('footer4header', 'theme_bcu');
+    $description = get_string('footer4desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $settings->add($setting);
+    
+    $name = 'theme_bcu/footer4content';
+    $title = get_string('footer4content', 'theme_bcu');
+    $description = get_string('footer4contentdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $settings->add($setting);
+    
+    // End of footer sections
+    
     // Section for javascript to be added e.g. Google Analytics.
     $name = 'theme_bcu/jssection';
     $title = get_string('jssection', 'theme_bcu');

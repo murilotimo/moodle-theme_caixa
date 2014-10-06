@@ -643,3 +643,11 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 	width: 100%;
 	max-width: 100%;
 }
+
+.coursebox .panel-heading {
+	padding: 12px 10px 10px;
+}
+
+.coursebox .panel-heading a {
+	font-size: 105%;
+}

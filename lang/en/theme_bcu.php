@@ -160,3 +160,23 @@ $string['alertboxdesc'] = 'Alert box to display at the top of all pages';
 
 $string['jssection'] = 'Javascript Section';
 $string['jssectiondesc'] = 'Add javascript code to the site, e.g. Google Analytics';
+
+$string['footer1header'] = 'Footer Section 1 Title';
+$string['footer2header'] = 'Footer Section 2 Title';
+$string['footer3header'] = 'Footer Section 3 Title';
+$string['footer4header'] = 'Footer Section 4 Title';
+
+$string['footer1desc'] = 'Add a title for footer section 1';
+$string['footer2desc'] = 'Add a title for footer section 2';
+$string['footer3desc'] = 'Add a title for footer section 3';
+$string['footer4desc'] = 'Add a title for footer section 4';
+
+$string['footer1content'] = 'Footer Section 1 Content';
+$string['footer2content'] = 'Footer Section 2 Content';
+$string['footer3content'] = 'Footer Section 3 Content';
+$string['footer4content'] = 'Footer Section 4 Content';
+
+$string['footer1contentdesc'] = 'Add content to footer section 1';
+$string['footer2contentdesc'] = 'Add content to footer section 2';
+$string['footer3contentdesc'] = 'Add content to footer section 3';
+$string['footer4contentdesc'] = 'Add content to footer section 4';

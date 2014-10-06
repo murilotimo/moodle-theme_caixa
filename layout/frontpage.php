@@ -358,78 +358,43 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
        
       	
       	<div class="container"><div class="row">
-
+            <?php if (!empty($PAGE->theme->settings->footer1content)) { ?>
 			<div class="left-col size4of16 span3" id="contactdetails">
 
-				<h3 title="Contact Us">Contact Us</h3>
+				<h3 title="Contact Us"><?php echo $PAGE->theme->settings->footer1header; ?></h3>
 
-				<address>
-					<ul class="block-list mbm">
-
-                        <li class="fn org">Birmingham City University</li>
-                        <li class="street-address">University House</li>
-                        <li class="locality">15 Bartholomew Row</li>
-                        <li class="locality">Birmingham</li>
-                        <li class="postal-code">B5 5JU</li>
-                        <li class="country-name">United Kingdom</li>
-                        <li class="pts tel">+44 (0)121 331 5000</li>
-                    </ul>
-				</address>
+				<?php echo $PAGE->theme->settings->footer1content; ?>
 
 			</div>
-
+            <?php } ?>
+            <?php if (!empty($PAGE->theme->settings->footer2content)) { ?>
 			<div class="left-col size6of16 span4" id="footer-faculties">
 
-				<h3 title="Our Faculties">Our Faculties</h3>
+				<h3 title="Our Faculties"><?php echo $PAGE->theme->settings->footer2header; ?></h3>
 
-				<ul class="block-list white">
-                    <li><a href="http://bcu.ac.uk/arts-design-and-media"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Arts, Design and Media</span></a></li>
-                    <li><a href="http://bcu.ac.uk/business-law-and-social-sciences"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Business, Law and Social Sciences</span></a></li>
-                    <li><a href="http://bcu.ac.uk/health-education-and-life-sciences"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Health, Education and Life Sciences</span></a></li>
-                    <li><a href="http://bcu.ac.uk/computing-engineering-and-the-built-environment"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Computing, Engineering and the Built Enviroment</span></a></li>
-				</ul>
+				<?php echo $PAGE->theme->settings->footer2content; ?>
 
 			</div>
-
+            <?php } ?>
+            <?php if (!empty($PAGE->theme->settings->footer3content)) { ?>
 			<div class="left-col size4of16 span3" id="social-connect">
+				
+				<h3 title="Connect"><?php echo $PAGE->theme->settings->footer3header; ?></h3>
 
-				<div class="mll">
-
-					<h3 title="Connect">Connect</h3>
-
-					<ul class="block-list white">
-						<li><a title="Facebook" href="http://www.facebook.com/birminghamcityuniversity"><span class="icon-facebook-squared fa fa-facebook-square"></span><span class="screen-reader-text">Facebook</span></a></li>
-						<li><a title="Twitter" href="http://twitter.com/MyBCU"><span class="icon-twitter fa fa-twitter"></span><span class="screen-reader-text">Twitter</span></a></li>
-						<li><a title="YouTube" href="http://www.youtube.com/birminghamcityuni"><span class="icon-youtube fa fa-youtube"></span><span class="screen-reader-text">You Tube</span></a></li>
-						<li class="clear"><a title="LinkedIn" href="http://www.linkedin.com/company/birmingham-city-university"><span class="icon-linkedin fa fa-linkedin"></span><span class="screen-reader-text">LinkedIn</span></a></li>
-						<li><a title="Blogs" href="http://blogs.bcu.ac.uk/views/"><span class="icon-bloggs fa fa-rss"></span><span class="screen-reader-text">Blogs</span></a></li>
-						<li><a title="Google Plus" href="http://plus.google.com/110110307949560307646/about"><span class="icon-gplus fa fa-google-plus"></span><span class="screen-reader-text">Goggle Plus</span></a></li>
-						<li class="clear"><a title="Weibo" href="http://www.weibo.com/bcuchina"><span class="icon-weibo fa fa-weibo"></span><span class="screen-reader-text">Weibo</span></a></li>
-						<li><a title="WeChat - our WeChat ID is 'BCUOfficial'" href="http://www.wechat.com/"><span class="icon-wechat fa fa-wechat"></span><span class="screen-reader-text">WeChat</span></a></li>
-						<li><a title="Apple" href="http://itunes.apple.com/app/ibcu/id375319801?mt=8"><span class="icon-apple fa fa-apple"></span><span class="screen-reader-text">Apple</span></a></li>
-						<li class="clear"><a title="Android" href="https://market.android.com/details?id=com.bcu.ibcu.activities&amp;feature=search_result"><span class="icon-android fa fa-android"></span><span class="screen-reader-text">Android</span></a></li>
-						<li><a title="Windows" href="http://www.windowsphone.com/en-US/apps/d17c3d1f-2b56-4ad7-ae9a-339520b9f0e7"><span class="icon-windows fa fa-windows"></span><span class="screen-reader-text">Windows</span></a></li>
-					</ul>
-
-				</div>
+                <?php echo $PAGE->theme->settings->footer3content; ?>
+				
 
 			</div>
-
+            <?php } ?>
+            <?php if (!empty($PAGE->theme->settings->footer4content)) { ?>
 			<div class="left-col size2of16 span2">
 
-				<h3>Quick Links</h3>
+				<h3><?php echo $PAGE->theme->settings->footer4header; ?></h3>
 
-				<ul class="block-list white">
-					<li><a href="https://icity.bcu.ac.uk/"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>iCity</span></a></li>
-					<li><a href="http://moodle.bcu.ac.uk/"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Moodle</span></a></li>
-					<li><a href="https://owa.bcu.ac.uk/"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Staff Email</span></a></li>
-					<li><a href="https://icity.bcu.ac.uk/Account/LiveEduLogin"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Student Email</span></a></li>
-					<li><a href="http://www.birminghamcitysu.com/"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Student Union</span></a></li>
-					<li><a href="https://store.bcu.ac.uk/"><span class="fa fa-chevron-right icon-right-open-mini"></span><span>Online Store</span></a></li>
-				</ul>
+				<?php echo $PAGE->theme->settings->footer4content; ?>
 
 			</div>
-
+            <?php } ?>
 		</div></div>
       	
         
