@@ -284,33 +284,16 @@ class theme_bcu_core_renderer extends core_renderer {
      * Uses bootstrap compatible html.
      */
     public function navbar() {
-        global $USER;
         $items = $this->page->navbar->get_items();
         $breadcrumbs = array();
         foreach ($items as $item) {
             $item->hideicon = true;
-			/*
-			 * This section controls the truncation of strings to fit in the navbar nicely
-			 */
-            $title = ($item->title ? $item->title : $item->text);
-            $item->title = $title;
-			if ($item->type == global_navigation::TYPE_CATEGORY and strlen($item->text) > 5) {
-				// If the text is longer than 5 characters then truncate.
-				$item->text = substr($item->text,0,5)."...";
-            }
-            if($item->type == global_navigation::TYPE_CATEGORY) {
-                if ($USER->ssodata['PersonType'] == 'staff') {
-                    $breadcrumbs[] = $this->render($item);        
-                }
-            } else {
-                $breadcrumbs[] = $this->render($item);
-            }   
+            $breadcrumbs[] = $this->render($item);
         }
         $divider = '<span class="divider">/</span>';
         $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
         $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
         return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
-        
     }
 
     /*
