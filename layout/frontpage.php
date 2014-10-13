@@ -13,12 +13,8 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+require_once(dirname(__FILE__) . '/includes/header.php');
 
-// Get the HTML for the settings bits.
-//$html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
-
-$left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
-//$hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $haslogo = (!empty($PAGE->theme->settings->logo));
 $hasp1 = (!empty($PAGE->theme->settings->p1));
@@ -37,33 +33,7 @@ $hasmarket1 = (!empty($PAGE->theme->settings->market1));
 $hasmarket2 = (!empty($PAGE->theme->settings->market2));
 $hasmarket3 = (!empty($PAGE->theme->settings->market3));
 $hasmarket4 = (!empty($PAGE->theme->settings->market4));
-
-
-theme_bcu_initialise_zoom($PAGE);
-$setzoom = theme_bcu_get_zoom();
-
-theme_bcu_initialise_full($PAGE);
-$setfull = theme_bcu_get_full();
-
-echo $OUTPUT->doctype() ?>
-<html <?php echo $OUTPUT->htmlattributes(); ?>>
-<head>
-    <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php echo $OUTPUT->standard_head_html() ?>
-     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    
-    <style>
-   
-    </style>
-    
-</head>
-
-<body <?php echo $OUTPUT->body_attributes($setzoom); ?>>
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
-
+?>
 <div id="page" class="container-fluid <?php echo "$setfull"; ?>">
 
 <?php if (core\session\manager::is_loggedinas()) { ?>
@@ -84,47 +54,10 @@ echo $OUTPUT->doctype() ?>
 <div id="page-header-wrapper">
 
 <div id="above-header">
+	   
 	<div class="clearfix container userhead">
-	
-	<div class="pull-left">
-	<?php echo $OUTPUT->user_menu(); ?> 
-	</div>
-	
-	<div class="headermenu row">
-   <?php if(!isloggedin() || isguestuser()) { ?>
-   <?php echo $OUTPUT->page_heading_menu(); ?>
-   <?php echo $OUTPUT->login_info() ?>
-   <?php //echo $OUTPUT->lang_menu(); ?>
-   <?php } else { ?>
-    <div class="dropdown secondone">
-    <a class="dropdown-toggle usermendrop" data-toggle="dropdown" href="#"><span class="fa fa-user"></span><?php echo fullname($USER) ?> <span class="fa fa-angle-down"></span></a>
-    <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dropdownMenu2">
-<?php if (!empty($PAGE->theme->settings->enablemy)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/my" title="My Dashboard"><i class="fa fa-dashboard"></i><?php echo get_string('myhome') ?></a></li>
-<?php } ?>
-<?php if (!empty($PAGE->theme->settings->enableprofile)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/user/profile.php" title="View profile"><i class="fa fa-user"></i><?php echo get_string('viewprofile') ?></a></li>
-<?php } ?>
-<?php if (!empty($PAGE->theme->settings->enableeditprofile)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/user/edit.php" title="Edit profile"><i class="fa fa-cog"></i><?php echo get_string('editmyprofile') ?></a></li>
-<?php } ?>
-
-<?php if (!empty($PAGE->theme->settings->enableprivatefiles)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/user/files.php" title="private files"><i class="fa fa-file"></i><?php echo get_string('privatefiles', 'block_private_files') ?></a></li>
-<?php } ?>
-
-<?php  if (!empty($PAGE->theme->settings->enablebadges)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/badges/mybadges.php" title="badges"><i class="fa fa-certificate"></i><?php echo get_string('badges') ?></a></li>
-<?php } ?>
-
-<?php if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/calendar/view.php" title="Calendar"><i class="fa fa-calendar"></i><?php echo get_string('pluginname', 'block_calendar_month') ?></a></li>
-<?php } ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/login/logout.php" title="Log out"><i class="fa fa-lock"></i><?php echo get_string('logout') ?></a></li>
-    </ul>
-    </div>
-   <?php } ?>
-    </div>      
+	   <div class="global-toolbar" id="bcutoolbar"></div>
+    
 	
 	</div>
 </div>
@@ -352,84 +285,4 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
         ?>
     </div>
     </div>
-
-    <footer id="page-footer">
-        <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
-       
-      	
-      	<div class="container"><div class="row">
-            <?php if (!empty($PAGE->theme->settings->footer1content)) { ?>
-			<div class="left-col size4of16 span3" id="contactdetails">
-
-				<h3 title="Contact Us"><?php echo $PAGE->theme->settings->footer1header; ?></h3>
-
-				<?php echo $PAGE->theme->settings->footer1content; ?>
-
-			</div>
-            <?php } ?>
-            <?php if (!empty($PAGE->theme->settings->footer2content)) { ?>
-			<div class="left-col size6of16 span4" id="footer-faculties">
-
-				<h3 title="Our Faculties"><?php echo $PAGE->theme->settings->footer2header; ?></h3>
-
-				<?php echo $PAGE->theme->settings->footer2content; ?>
-
-			</div>
-            <?php } ?>
-            <?php if (!empty($PAGE->theme->settings->footer3content)) { ?>
-			<div class="left-col size4of16 span3" id="social-connect">
-				
-				<h3 title="Connect"><?php echo $PAGE->theme->settings->footer3header; ?></h3>
-
-                <?php echo $PAGE->theme->settings->footer3content; ?>
-				
-
-			</div>
-            <?php } ?>
-            <?php if (!empty($PAGE->theme->settings->footer4content)) { ?>
-			<div class="left-col size2of16 span2">
-
-				<h3><?php echo $PAGE->theme->settings->footer4header; ?></h3>
-
-				<?php echo $PAGE->theme->settings->footer4content; ?>
-
-			</div>
-            <?php } ?>
-		</div></div>
-      	
-        
-        
-        <div class="info container2 clearfix">
-      <div class="footer-inner page ptm pbl container">
-			<nav>
-				<ul class="base-tabs li-borders white sml">
-					<li><span class="mtm mrl">&copy; 2013 Birmingham City University</span></li>
-					<li><a href="http://bcu.ac.uk/about-us/policies-and-procedures/terms-of-use" class="phm">Terms of Use</a></li>
-					<li><a href="http://bcu.ac.uk/about-us/corporate-information/governance-of-the-university" class="phm">Legal Information</a> </li>
-					<li><a href="http://bcu.ac.uk/about-us/policies-and-procedures/cookies" class="phm">How we use cookies</a></li>
-					<li><a href="http://bcu.ac.uk/account/login" class="phm no-border">Sign in</a></li>
-				</ul>
-			</nav>
-		</div>
- 		<div class="pull-right">
-        <?php
-        //echo $html->footnote;
-        //echo $OUTPUT->login_info();
-       // echo $OUTPUT->home_link();
-        echo $OUTPUT->standard_footer_html();
-        ?>
-        </div>
-
-        </div>
-        
-        
-    </footer>
-<a class="back-to-top" href="#top" ><i class="fa fa-angle-up "></i></a>
-    <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-</div>
-<script type="text/javascript">
-    <?php echo $PAGE->theme->settings->jssection;?>
-</script>
-</body>
-</html>
+    <?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>

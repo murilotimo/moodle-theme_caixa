@@ -16,30 +16,8 @@
 
 // Get the HTML for the settings bits.
 //$html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
-
-$left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
-$hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
-$hasfootnote = (!empty($PAGE->theme->settings->footnote));
-$haslogo = (!empty($PAGE->theme->settings->logo));
-
-theme_bcu_initialise_full($PAGE);
-$setfull = theme_bcu_get_full();
-echo $OUTPUT->doctype() ?>
-<html <?php echo $OUTPUT->htmlattributes(); ?>>
-<head>
-    <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php echo $OUTPUT->standard_head_html() ?>
-     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    
-</head>
-
-<body <?php echo $OUTPUT->body_attributes('two-column'); ?>>
-
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
-
+require_once(dirname(__FILE__) . '/includes/header.php');
+?>
 <div id="page" class="container-fluid <?php echo "$setfull"; ?>">
 
 <?php if (core\session\manager::is_loggedinas()) { ?>
@@ -171,84 +149,4 @@ echo $OUTPUT->doctype() ?>
     </div>
     </div>
 
-    <footer id="page-footer">
-        <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
-       
-      	
-      	<div class="container"><div class="row">
-            <?php if (!empty($PAGE->theme->settings->footer1content)) { ?>
-            <div class="left-col size4of16 span3" id="contactdetails">
-
-                <h3 title="Contact Us"><?php echo $PAGE->theme->settings->footer1header; ?></h3>
-
-                <?php echo $PAGE->theme->settings->footer1content; ?>
-
-            </div>
-            <?php } ?>
-            <?php if (!empty($PAGE->theme->settings->footer2content)) { ?>
-            <div class="left-col size6of16 span4" id="footer-faculties">
-
-                <h3 title="Our Faculties"><?php echo $PAGE->theme->settings->footer2header; ?></h3>
-
-                <?php echo $PAGE->theme->settings->footer2content; ?>
-
-            </div>
-            <?php } ?>
-            <?php if (!empty($PAGE->theme->settings->footer3content)) { ?>
-            <div class="left-col size4of16 span3" id="social-connect">
-                
-                <h3 title="Connect"><?php echo $PAGE->theme->settings->footer3header; ?></h3>
-
-                <?php echo $PAGE->theme->settings->footer3content; ?>
-                
-
-            </div>
-            <?php } ?>
-            <?php if (!empty($PAGE->theme->settings->footer4content)) { ?>
-            <div class="left-col size2of16 span2">
-
-                <h3><?php echo $PAGE->theme->settings->footer4header; ?></h3>
-
-                <?php echo $PAGE->theme->settings->footer4content; ?>
-
-            </div>
-            <?php } ?>
-        </div></div>
-      	
-        
-        
-        <div class="info container2 clearfix">
-      <div class="footer-inner page ptm pbl container">
-			<nav>
-				<ul class="base-tabs li-borders white sml">
-					<li><span class="mtm mrl">&copy; 2013 Birmingham City University</span></li>
-					<li><a href="/about-us/policies-and-procedures/terms-of-use" class="phm">Terms of Use</a></li>
-					<li><a href="/about-us/corporate-information/governance-of-the-university" class="phm">Legal Information</a> </li>
-					<li><a href="/about-us/policies-and-procedures/cookies" class="phm">How we use cookies</a></li>
-					<li><a href="/account/login" class="phm no-border">Sign in</a></li>
-				</ul>
-			</nav>
-		</div>
- 		<div class="pull-right">
-        <?php
-        //echo $html->footnote;
-        //echo $OUTPUT->login_info();
-       // echo $OUTPUT->home_link();
-        echo $OUTPUT->standard_footer_html();
-        ?>
-        </div>
-
-        </div>
-        
-        
-    </footer>
-<a class="back-to-top" href="#top" ><i class="fa fa-angle-up "></i></a>
-    <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-</div>
-
-<script type="text/javascript">
-    <?php echo $PAGE->theme->settings->jssection;?>
-</script>
-</body>
-</html>
+    <?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>
