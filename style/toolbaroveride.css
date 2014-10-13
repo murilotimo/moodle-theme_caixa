@@ -1,0 +1,9 @@
+.global-toolbar {
+	border-bottom: 0px;
+}
+
+.global-toolbar__inner {
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 100%;
+}

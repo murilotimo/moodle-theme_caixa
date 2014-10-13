@@ -27,16 +27,17 @@ echo $OUTPUT->doctype();
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php echo $OUTPUT->standard_head_html() ?>
-     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Global Nav Styles -->
     <link href="https://cdn1.bcu.ac.uk/toolbar/v1.1/global-nav.css" rel="stylesheet">
     <!--[if lte IE 8]><link href="https://cdn1.bcu.ac.uk/toolbar/v1.1/global-nav-ie8.css" rel="stylesheet"><![endif]-->
     <!--[if lte IE 7]><link href="https://cdn1.bcu.ac.uk/toolbar/v1.1/global-nav-ie7.css" rel="stylesheet"><![endif]-->
     <!-- Global Nav Scripts -->
     <!--[if lte IE 7]><script src="https://cdn1.bcu.ac.uk/toolbar/v1.1/json2.js"></script><![endif]-->
+    <?php echo $OUTPUT->standard_head_html() ?>
+     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    
 </head>
 
 <body <?php echo $OUTPUT->body_attributes('two-column'); ?>>
@@ -63,47 +64,7 @@ echo $OUTPUT->doctype();
 
 <div id="above-header">
     <div class="clearfix container userhead">
-    
-    <div class="pull-left">
-    <?php echo $OUTPUT->user_menu(); ?> 
-    </div>
-    
-    <div class="headermenu row">
-   <?php if(!isloggedin() || isguestuser()) { ?>
-   <?php echo $OUTPUT->page_heading_menu(); ?>
-   <?php echo $OUTPUT->login_info() ?>
-   <?php //echo $OUTPUT->lang_menu(); ?>
-   <?php } else { ?>
-    <div class="dropdown secondone">
-    <a class="dropdown-toggle usermendrop" data-toggle="dropdown1" href="#"><span class="fa fa-user"></span><?php echo fullname($USER) ?> <span class="fa fa-angle-down"></span></a>
-    <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dropdownMenu">
-<?php if (!empty($PAGE->theme->settings->enablemy)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/my" title="My Dashboard"><i class="fa fa-dashboard"></i><?php echo get_string('myhome') ?></a></li>
-<?php } ?>
-<?php if (!empty($PAGE->theme->settings->enableprofile)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/user/profile.php" title="View profile"><i class="fa fa-user"></i><?php echo get_string('viewprofile') ?></a></li>
-<?php } ?>
-<?php if (!empty($PAGE->theme->settings->enableeditprofile)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/user/edit.php" title="Edit profile"><i class="fa fa-cog"></i><?php echo get_string('editmyprofile') ?></a></li>
-<?php } ?>
-
-<?php if (!empty($PAGE->theme->settings->enableprivatefiles)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/user/files.php" title="private files"><i class="fa fa-file"></i><?php echo get_string('privatefiles', 'block_private_files') ?></a></li>
-<?php } ?>
-
-<?php  if (!empty($PAGE->theme->settings->enablebadges)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/badges/mybadges.php" title="badges"><i class="fa fa-certificate"></i><?php echo get_string('badges') ?></a></li>
-<?php } ?>
-
-<?php if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/calendar/view.php" title="Calendar"><i class="fa fa-calendar"></i><?php echo get_string('pluginname', 'block_calendar_month') ?></a></li>
-<?php } ?>
-<li><a href="<?php p($CFG->wwwroot) ?>/login/logout.php" title="Log out"><i class="fa fa-lock"></i><?php echo get_string('logout') ?></a></li>
-    </ul>
-    </div>
-   <?php } ?>
-    </div>      
-    
+        <div class="global-toolbar" id="bcutoolbar"></div>    
     </div>
 </div>
 
