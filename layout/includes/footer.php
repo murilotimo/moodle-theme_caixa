@@ -76,5 +76,16 @@
 <script type="text/javascript">
     <?php echo $PAGE->theme->settings->jssection;?>
 </script>
+  <!-- Global scripts -->
+<script src="https://cdn2.bcu.ac.uk/toolbar/v1.1/jquery.signalR-1.1.3.min.js"></script>
+<script src="https://ssobeta.bcu.ac.uk/signalr/hubs"></script>
+<script src="https://cdn2.bcu.ac.uk/toolbar/v1.1//jquery.hoverIntent.minified.js"></script>
+<script src="https://cdn2.bcu.ac.uk/toolbar/v1.1/bcu.toolbar.js"></script>
+<script type="text/javascript">
+    CallBACUToolbar({
+        signouturl: "http://moodle.bcu.ac.uk/login/logout.php?sesskey=<?php echo sesskey(); ?>",
+        ToolbarLinks: [{ "Name": "Moodle Profile", "URL": "http://moodle.bcu.ac.uk/user/profile.php?id=73166" }, { "Name": "My Moodle", "URL": "http://moodle.bcu.ac.uk/my" }, { "Name": "Mahara E-Portfolio", "URL": "http://moodle.bcu.ac.uk/auth/mnet/jump.php/?hostid=3" }, { "Name": "Feedback", "URL": "http://moodle.bcu.ac.uk/cent/bcuscripts/feedback/feedback.php" }, { "Name": "MyCAT", "URL": "http://mycat.bcu.ac.uk" }, { "Name": "Explor", "URL": "http://explor.bcu.ac.uk/" }, { "Name": "Share a File", "URL": "http://moodle.bcu.ac.uk/cent/blocks/intralibrary/file_for_sharing.php" }, { "Name": "Screen Recording", "URL": "http://moodle.bcu.ac.uk/cent/bcuscripts/pages/som.php" }, ]
+    });
+</script>
 </body>
 </html>
