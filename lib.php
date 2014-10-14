@@ -243,27 +243,27 @@ function theme_bcu_return_menu_items() {
         
     // site, person, anchor, url - mdl for internal sso sites xdl for external xoodle site  
     $bculinks=array(
-        array('all', 'Moodle Profile', $myProfile),
-        array('all', 'My Moodle', $myMoodle),
-        array('all', 'Mahara E-Portfolio', $myMahara),
-        array('all', 'Feedback', $myFeedback),
-        array('staff', 'MyCAT', 'http://mycat.bcu.ac.uk'),
-        array('staff', 'Explor', 'http://explor.bcu.ac.uk/'),
-        array('staff', 'Share a File', $shareFile),
-        array('staff', 'Screen Recording', $screenrecording),
+        array('all', 'Moodle Profile', $myProfile, ''),
+        array('all', 'My Moodle', $myMoodle, '.icon-moodle'),
+        array('all', 'Mahara E-Portfolio', $myMahara, '.icon-mahara'),
+        array('all', 'Feedback', $myFeedback, ''),
+        array('staff', 'MyCAT', 'http://mycat.bcu.ac.uk', '.icon-my-cat'),
+        array('staff', 'Explor', 'http://explor.bcu.ac.uk/', ''),
+        array('staff', 'Share a File', $shareFile, '.icon-share'),
+        array('staff', 'Screen Recording', $screenrecording, ''),
     );
 
     $theselinks = array();   
     foreach ($bculinks as $bculink){
         if (($bculink[0] == $USER->ssodata['PersonType'] || $bculink[0] == 'all')){
-            $theselinks[] = array($bculink[1],$bculink[2]);
+            $theselinks[] = array($bculink[1],$bculink[2], $bculink[3]);
         }
     }
     
     $jstoolbar = '';    
     
     foreach ($theselinks as $link){
-        $jstoolbar .= '{ "Name": "' . $link[0] . '", "URL": "' . $link[1] . '" }, ';
+        $jstoolbar .= '{ "Name": "' . $link[0] . '", "URL": "' . $link[1] . '", "CssClass": "'. $link[2] .'" }, ';
     }
     $jstoolbar = rtrim($jstoolbar, ', ');
     return $jstoolbar;
