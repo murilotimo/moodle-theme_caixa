@@ -229,3 +229,42 @@ function theme_bcu_get_html_for_settings(renderer_base $output, moodle_page $pag
 
     return $return;
 }
+
+function theme_bcu_return_menu_items() {
+    global $CFG, $USER, $COURSE;
+    
+    $bcuLogout = new moodle_url('/login/logout.php', array('sesskey'=>sesskey()));
+    $myProfile = new moodle_url('/user/profile.php', array('id'=>$USER->id));  
+    $myMoodle = new moodle_url('/my');
+    $myMahara = new moodle_url('http://moodle.bcu.ac.uk/bcuscripts/redir/jump.php?ap=mahara');
+    $myFeedback = new moodle_url('/bcuscripts/feedback/feedback.php');
+    $shareFile = new moodle_url('/blocks/intralibrary/file_for_sharing.php');
+    $screenrecording = new moodle_url('/bcuscripts/pages/som.php');
+        
+    // site, person, anchor, url - mdl for internal sso sites xdl for external xoodle site  
+    $bculinks=array(
+        array('all', 'Moodle Profile', $myProfile),
+        array('all', 'My Moodle', $myMoodle),
+        array('all', 'Mahara E-Portfolio', $myMahara),
+        array('all', 'Feedback', $myFeedback),
+        array('staff', 'MyCAT', 'http://mycat.bcu.ac.uk'),
+        array('staff', 'Explor', 'http://explor.bcu.ac.uk/'),
+        array('staff', 'Share a File', $shareFile),
+        array('staff', 'Screen Recording', $screenrecording),
+    );
+
+    $theselinks = array();   
+    foreach ($bculinks as $bculink){
+        if (($bculink[0] == $USER->ssodata['PersonType'] || $bculink[0] == 'all')){
+            $theselinks[] = array($bculink[1],$bculink[2]);
+        }
+    }
+    
+    $jstoolbar = '';    
+    
+    foreach ($theselinks as $link){
+        $jstoolbar .= '{ "Name": "' . $link[0] . '", "URL": "' . $link[1] . '" }, ';
+    }
+    $jstoolbar = rtrim($jstoolbar, ', ');
+    return $jstoolbar;
+}
