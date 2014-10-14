@@ -82,6 +82,7 @@
 <script src="https://cdn2.bcu.ac.uk/toolbar/v1.1//jquery.hoverIntent.minified.js"></script>
 <script src="https://cdn2.bcu.ac.uk/toolbar/v1.1/bcu.toolbar.js"></script>
 <script type="text/javascript">
+    var $ = jQuery.noConflict();
     CallBACUToolbar({
         signouturl: "http://moodle.bcu.ac.uk/login/logout.php?sesskey=<?php echo sesskey(); ?>",
         ToolbarLinks: [{ "Name": "Moodle Profile", "URL": "http://moodle.bcu.ac.uk/user/profile.php?id=73166" }, { "Name": "My Moodle", "URL": "http://moodle.bcu.ac.uk/my" }, { "Name": "Mahara E-Portfolio", "URL": "http://moodle.bcu.ac.uk/auth/mnet/jump.php/?hostid=3" }, { "Name": "Feedback", "URL": "http://moodle.bcu.ac.uk/bcuscripts/feedback/feedback.php" }, { "Name": "MyCAT", "URL": "http://mycat.bcu.ac.uk" }, { "Name": "Explor", "URL": "http://explor.bcu.ac.uk/" }, { "Name": "Share a File", "URL": "http://moodle.bcu.ac.uk/blocks/intralibrary/file_for_sharing.php" }, { "Name": "Screen Recording", "URL": "http://moodle.bcu.ac.uk/bcuscripts/pages/som.php" }, ]
