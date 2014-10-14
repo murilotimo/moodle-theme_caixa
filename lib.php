@@ -244,12 +244,12 @@ function theme_bcu_return_menu_items() {
     // site, person, anchor, url - mdl for internal sso sites xdl for external xoodle site  
     $bculinks=array(
         array('all', 'Moodle Profile', $myProfile, ''),
-        array('all', 'My Moodle', $myMoodle, '.icon-moodle'),
-        array('all', 'Mahara E-Portfolio', $myMahara, '.icon-mahara'),
+        array('all', 'My Moodle', $myMoodle, 'icon-moodle'),
+        array('all', 'Mahara E-Portfolio', $myMahara, 'icon-mahara'),
         array('all', 'Feedback', $myFeedback, ''),
-        array('staff', 'MyCAT', 'http://mycat.bcu.ac.uk', '.icon-my-cat'),
+        array('staff', 'MyCAT', 'http://mycat.bcu.ac.uk', 'icon-my-cat'),
         array('staff', 'Explor', 'http://explor.bcu.ac.uk/', ''),
-        array('staff', 'Share a File', $shareFile, '.icon-share'),
+        array('staff', 'Share a File', $shareFile, 'icon-share'),
         array('staff', 'Screen Recording', $screenrecording, ''),
     );
 
