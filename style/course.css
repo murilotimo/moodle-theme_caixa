@@ -62,11 +62,11 @@
     max-width: 60px;
     margin-left: 5px;
 }
-
+/*
 .panel .summary {
 	position: relative;
 }
-
+*/
 .course-content ul li.section .side {
 	display: none;
 }
