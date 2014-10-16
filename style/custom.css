@@ -842,14 +842,11 @@ a.carousel-control {
 	
 }
 
+
 .navbar .singlebutton input {
-    background: none repeat scroll 0 0 transparent !important;
-    border: 0 none !important;
-    box-shadow: none !important;
-    color: inherit !important;
-    font-size: 12px;
-    line-height: 36px;
-    padding: 0 20px 0;
+   margin-top: 3px;
+   padding: 4px 15px;
+   margin-left: 5px; 
 }
 
 .navbar .forumsearch, .navbar #coursesearchnavbar, .navbar .wikisearch {
