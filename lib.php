@@ -247,12 +247,12 @@ function theme_bcu_return_menu_items() {
     $bculinks=array(
         array('all', 'Edit Profile', $myProfile, 'icon-edit'),
         array('all', 'Messages ('.$unread.')', $messages, 'icon-chat'),
-        array('all', 'Mahara Portfolio', $myMahara, 'icon-mahara'),
+        array('all', 'Mahara', $myMahara, 'icon-mahara'),
         array('all', 'Feedback', $myFeedback, 'icon-comment'),
         array('staff', 'MyCAT', 'http://mycat.bcu.ac.uk', 'icon-my-cat'),
         array('staff', 'Explor', 'http://explor.bcu.ac.uk/', 'icon-globe'),
         array('staff', 'Share a File', $shareFile, 'icon-share'),
-        array('staff', 'Screen Recording', $screenrecording, 'fa fa-video-camera'),
+        array('staff', 'Recording', $screenrecording, 'fa fa-video-camera'),
     );
     
     $theselinks = array();   
