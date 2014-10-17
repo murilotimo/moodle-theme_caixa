@@ -38,7 +38,7 @@ $THEME->name = 'bcu';
 //
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('custom','blocks','menu','course','slider','extras','font-awesome','zoom', 'toolbaroveride');
+$THEME->sheets = array('custom','blocks','menu','course','slider','extras','zoom', 'toolbaroveride');
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
 
