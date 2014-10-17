@@ -234,25 +234,27 @@ function theme_bcu_return_menu_items() {
     global $CFG, $USER, $COURSE;
     
     $bcuLogout = new moodle_url('/login/logout.php', array('sesskey'=>sesskey()));
-    $myProfile = new moodle_url('/user/profile.php', array('id'=>$USER->id));  
-    $myMoodle = new moodle_url('/my');
+    $myProfile = new moodle_url('/user/editadvanced.php', array('id'=>$USER->id));  
     $myMahara = new moodle_url('http://moodle.bcu.ac.uk/bcuscripts/redir/jump.php?ap=mahara');
     $myFeedback = new moodle_url('/bcuscripts/feedback/feedback.php');
     $shareFile = new moodle_url('/blocks/intralibrary/file_for_sharing.php');
     $screenrecording = new moodle_url('/bcuscripts/pages/som.php');
+    $messages = new moodle_url('/message/');
         
+        
+    $unread = message_count_unread_messages();
     // site, person, anchor, url - mdl for internal sso sites xdl for external xoodle site  
     $bculinks=array(
-        array('all', 'Moodle Profile', $myProfile, ''),
-        array('all', 'My Moodle', $myMoodle, 'icon-moodle'),
-        array('all', 'Mahara E-Portfolio', $myMahara, 'icon-mahara'),
-        array('all', 'Feedback', $myFeedback, ''),
+        array('all', 'Edit Profile', $myProfile, 'icon-edit'),
+        array('all', 'Messages ('.$unread.')', $messages, 'icon-chat'),
+        array('all', 'Mahara Portfolio', $myMahara, 'icon-mahara'),
+        array('all', 'Feedback', $myFeedback, 'icon-comment'),
         array('staff', 'MyCAT', 'http://mycat.bcu.ac.uk', 'icon-my-cat'),
-        array('staff', 'Explor', 'http://explor.bcu.ac.uk/', ''),
+        array('staff', 'Explor', 'http://explor.bcu.ac.uk/', 'icon-globe'),
         array('staff', 'Share a File', $shareFile, 'icon-share'),
-        array('staff', 'Screen Recording', $screenrecording, ''),
+        array('staff', 'Screen Recording', $screenrecording, 'fa fa-video-camera'),
     );
-
+    
     $theselinks = array();   
     foreach ($bculinks as $bculink){
         if (($bculink[0] == $USER->ssodata['PersonType'] || $bculink[0] == 'all')){
