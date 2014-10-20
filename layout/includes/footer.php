@@ -48,7 +48,7 @@
       <div class="footer-inner page ptm pbl container">
             <nav>
                 <ul class="base-tabs li-borders white sml">
-                    <li><span class="mtm mrl">&copy; 2013 Birmingham City University</span></li>
+                    <li><span class="mtm mrl">&copy; <?php echo date('Y'); ?> Birmingham City University</span></li>
                     <li><a href="http://bcu.ac.uk/about-us/policies-and-procedures/terms-of-use" class="phm">Terms of Use</a></li>
                     <li><a href="http://bcu.ac.uk/about-us/corporate-information/governance-of-the-university" class="phm">Legal Information</a> </li>
                     <li><a href="http://bcu.ac.uk/about-us/policies-and-procedures/cookies" class="phm">How we use cookies</a></li>
