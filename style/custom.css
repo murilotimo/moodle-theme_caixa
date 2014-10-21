@@ -1058,6 +1058,10 @@ button.close {
 	margin-bottom: 20px;
 }
 
+div.questionbankwindow.block {
+	overflow: auto;
+}
+
 /* End classes for search box */
 
 /* Custom CSS Settings
