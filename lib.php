@@ -234,7 +234,7 @@ function theme_bcu_return_menu_items() {
     global $CFG, $USER, $COURSE;
     
     $bcuLogout = new moodle_url('/login/logout.php', array('sesskey'=>sesskey()));
-    $myProfile = new moodle_url('/user/editadvanced.php', array('id'=>$USER->id));  
+    $myProfile = new moodle_url('/user/edit.php', array('id'=>$USER->id));  
     $myMahara = new moodle_url('http://moodle.bcu.ac.uk/bcuscripts/redir/jump.php?ap=mahara');
     $myFeedback = new moodle_url('/bcuscripts/feedback/feedback.php');
     $shareFile = new moodle_url('/blocks/intralibrary/file_for_sharing.php');
