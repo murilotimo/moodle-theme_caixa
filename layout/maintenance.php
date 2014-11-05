@@ -18,7 +18,6 @@
 //$html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
 require_once(dirname(__FILE__) . '/includes/header.php');
 ?>
-
 <div class="container outercont">
       <div id="page-content" class="row-fluid">
     <div id="page-navbar" class="span12">
