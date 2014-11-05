@@ -16,22 +16,29 @@
 
 // Get the HTML for the settings bits.
 //$html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
-require_once(dirname(__FILE__) . '/includes/header.php');
+
+echo $OUTPUT->doctype();
 ?>
-<div class="container outercont">
-      <div id="page-content" class="row-fluid">
-    <div id="page-navbar" class="span12">
-            <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-            <?php echo $OUTPUT->navbar(); ?>
-    </div>
-        <section id="region-main" class="span12">
-            <?php
-            echo $OUTPUT->course_content_header();
-            echo $OUTPUT->main_content();
-            echo $OUTPUT->course_content_footer();
-            ?>
-        </section>
-    </div>
+<html <?php echo $OUTPUT->htmlattributes(); ?>>
+    <head>
+        <title><?php echo $OUTPUT->page_title(); ?></title>
+        <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+        <?php echo $OUTPUT->standard_head_html() ?>
+         <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+    <div class="container outercont">
+        <div id="page-content" class="row-fluid">
+            <section id="region-main" class="span12">
+                <?php
+                echo $OUTPUT->course_content_header();
+                echo $OUTPUT->main_content();
+                echo $OUTPUT->course_content_footer();
+                ?>
+            </section>
+        </div>
     </div>
 
     <?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>
