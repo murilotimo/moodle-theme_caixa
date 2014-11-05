@@ -1,6 +1,6 @@
 <?php
 // This file is part of Moodle - http://moodle.org/
-// http://bcu.ac.uk/student-info/why-study-at-bcu/employability
+//
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -15,30 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Moodle's basensl theme, an example of how to make a Bootstrap theme
+ * Theme version info
  *
- * DO NOT MODIFY THIS THEME!
- * COPY IT FIRST, THEN RENAME THE COPY AND MODIFY IT INSTEAD.
- *
- * For full information about creating Moodle themes, see:
- * http://docs.moodle.org/dev/Themes_2.0
- *
- * @package   theme_basensl
- * @copyright 2013 Moodle, moodle.org
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    theme_bcu
+ * @copyright  2014 Birmingham City University
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $THEME->name = 'bcu';
-
-/////////////////////////////////
-// The only thing you need to change in this file when copying it to
-// create a new theme is the name above. You also need to change the name
-// in version.php and lang/en/theme_basensl.php as well.
-//////////////////////////////////
-//
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('custom','blocks','menu','course','slider','extras','zoom');
+$THEME->sheets = array('custom', 'blocks', 'menu', 'course', 'slider', 'extras', 'zoom');
+$THEME->javascripts = array('jquery-1.7.2.min', 'bootstrap.min', 'jquery.flexslider-min', 'jquery.easing-1.3.min', 'custom');
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
 
@@ -70,14 +58,14 @@ $THEME->layouts = array(
         'file' => 'columns2.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
-        'options' => array('langmenu'=>true),
+        'options' => array('langmenu' => true),
     ),
     'coursecategory' => array(
         'file' => 'columns2.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
     ),
-    // part of course, typical for modules - default page layout if $cm specified in require_login()
+    // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'columns2.php',
         'regions' => array('side-post'),
@@ -86,9 +74,9 @@ $THEME->layouts = array(
     // The site home page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array('side-post','middle'),
+        'regions' => array('side-post', 'middle'),
         'defaultregion' => 'side-post',
-        'options' => array('nonavbar'=>true),
+        'options' => array('nonavbar' => true),
     ),
     // Server administration scripts.
     'admin' => array(
@@ -101,7 +89,7 @@ $THEME->layouts = array(
         'file' => 'columns2.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
-        'options' => array('langmenu'=>true),
+        'options' => array('langmenu' => true),
     ),
     // My public page.
     'mypublic' => array(
@@ -112,22 +100,22 @@ $THEME->layouts = array(
     'login' => array(
         'file' => 'columns1.php',
         'regions' => array(),
-        'options' => array('langmenu'=>true),
+        'options' => array('langmenu' => true),
     ),
 
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
     'popup' => array(
         'file' => 'columns1.php',
         'regions' => array(),
-        'options' => array('nofooter'=>true, 'nonavbar'=>true),
+        'options' => array('nofooter' => true, 'nonavbar' => true),
     ),
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => array(
         'file' => 'columns1.php',
         'regions' => array(),
-        'options' => array('nofooter'=>true, 'nocoursefooter'=>true),
+        'options' => array('nofooter' => true, 'nocoursefooter' => true),
     ),
-    // Embeded pages, like iframe/object embeded in moodleform - it needs as much space as possible
+    // Embeded pages, like iframe/object embeded in moodleform - it needs as much space as possible.
     'embedded' => array(
         'file' => 'embedded.php',
         'regions' => array()
@@ -138,13 +126,13 @@ $THEME->layouts = array(
     'maintenance' => array(
         'file' => 'maintenance.php',
         'regions' => array(),
-        'options' => array('nofooter'=>true, 'nonavbar'=>true, 'nocoursefooter'=>true, 'nocourseheader'=>true),
+        'options' => array('nofooter' => true, 'nonavbar' => true, 'nocoursefooter' => true, 'nocourseheader' => true),
     ),
     // Should display the content and basic headers only.
     'print' => array(
         'file' => 'columns1.php',
         'regions' => array(),
-        'options' => array('nofooter'=>true, 'nonavbar'=>false),
+        'options' => array('nofooter' => true, 'nonavbar' => false),
     ),
     // The pagelayout used when a redirection is occuring.
     'redirect' => array(
@@ -167,7 +155,6 @@ $THEME->layouts = array(
 
 
 $THEME->csspostprocess = 'theme_bcu_process_css';
-$THEME->javascripts = array('jquery-1.7.2.min','bootstrap.min','jquery.flexslider-min','jquery.easing-1.3.min','custom');
 $THEME->blockrtlmanipulations = array(
     'side-pre' => 'side-post',
     'side-post' => 'side-pre'

@@ -15,17 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Moodle's bcu theme, an example of how to make a Bootstrap theme
+ * Theme version info
  *
- * DO NOT MODIFY THIS THEME!
- * COPY IT FIRST, THEN RENAME THE COPY AND MODIFY IT INSTEAD.
- *
- * For full information about creating Moodle themes, see:
- * http://docs.moodle.org/dev/Themes_2.0
- *
- * @package   theme_bcu
- * @copyright 2013 Moodle, moodle.org
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    theme_bcu
+ * @copyright  2014 Birmingham City University
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
@@ -39,15 +33,15 @@
  */
 function theme_bcu_process_css($css, $theme) {
 
-    // Set the font size
+    // Set the font size.
     if (!empty($theme->settings->fsize)) {
         $fsize = $theme->settings->fsize;
     } else {
         $fsize = null;
     }
     $css = theme_bcu_set_fsize($css, $fsize);
-	
-    // Set the link color
+
+    // Set the link color.
     if (!empty($theme->settings->linkcolor)) {
         $linkcolor = $theme->settings->linkcolor;
     } else {
@@ -55,15 +49,15 @@ function theme_bcu_process_css($css, $theme) {
     }
     $css = theme_bcu_set_linkcolor($css, $linkcolor);
 
-	// Set the link hover color
+    // Set the link hover color.
     if (!empty($theme->settings->linkhover)) {
         $linkhover = $theme->settings->linkhover;
     } else {
         $linkhover = null;
     }
     $css = theme_bcu_set_linkhover($css, $linkhover);
-    
-    // Set the main color
+
+    // Set the main color.
     if (!empty($theme->settings->maincolor)) {
         $maincolor = $theme->settings->maincolor;
     } else {
@@ -71,14 +65,13 @@ function theme_bcu_process_css($css, $theme) {
     }
     $css = theme_bcu_set_maincolor($css, $maincolor);
 
-   // Set the main headings color
+    // Set the main headings color.
     if (!empty($theme->settings->backcolor)) {
         $backcolor = $theme->settings->backcolor;
     } else {
         $backcolor = null;
     }
     $css = theme_bcu_set_backcolor($css, $backcolor);
-    
 
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -87,7 +80,7 @@ function theme_bcu_process_css($css, $theme) {
         $customcss = null;
     }
     $css = theme_bcu_set_customcss($css, $customcss);
-	
+
     return $css;
 }
 
@@ -120,7 +113,7 @@ function theme_bcu_set_fsize($css, $fsize) {
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
- 
+
 function theme_bcu_set_linkcolor($css, $linkcolor) {
     $tag = '[[setting:linkcolor]]';
     $replacement = $linkcolor;
@@ -193,7 +186,7 @@ function theme_bcu_get_zoom() {
     return get_user_preferences('theme_bcu_zoom', '');
 }
 
-//full width funcs
+// Full width funcs.
 
 function theme_bcu_initialise_full(moodle_page $page) {
     user_preference_allow_ajax_update('theme_bcu_full', PARAM_TEXT);
