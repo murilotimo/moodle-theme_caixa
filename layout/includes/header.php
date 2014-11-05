@@ -41,7 +41,7 @@ echo $OUTPUT->doctype();
     
 </head>
 
-<body <?php echo $OUTPUT->body_attributes('two-column'); ?>>
+<body <?php echo $OUTPUT->body_attributes(array('two-column', $setzoom)); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <div id="page" class="container-fluid <?php echo "$setfull"; ?>">
