@@ -28,16 +28,17 @@ echo $OUTPUT->doctype();
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <!-- Global Nav Styles -->
-    <link href="//cdn1.bcu.ac.uk/toolbar/v1.1/global-nav.css" rel="stylesheet">
-    <!--[if lte IE 8]><link href="//cdn1.bcu.ac.uk/toolbar/v1.1/global-nav-ie8.css" rel="stylesheet"><![endif]-->
-    <!--[if lte IE 7]><link href="//cdn1.bcu.ac.uk/toolbar/v1.1/global-nav-ie7.css" rel="stylesheet"><![endif]-->
+    <link href="//cdn1.bcu.ac.uk/toolbar/v2.0/global-nav.css" rel="stylesheet">
+    <!--[if lte IE 8]><link href="https://cdn1.bcu.ac.uk/toolbar/v2.0/global-nav-ie8.css" rel="stylesheet"><![endif]-->
+    <!--[if lte IE 7]><link href="https://cdn1.bcu.ac.uk/toolbar/v2.0/global-nav-ie7.css" rel="stylesheet"><![endif]-->
     <!-- Global Nav Scripts -->
-    <!--[if lte IE 7]><script src="//cdn1.bcu.ac.uk/toolbar/v1.1/json2.js"></script><![endif]-->
+    <!--[if lte IE 7]><script src="https://cdn1.bcu.ac.uk/toolbar/v2.0/json2.js"></script><![endif]-->
     <link href="//cdn1.bcu.ac.uk/style-guide/toolkit/v1.1/css/bcu-icon-font.css" rel="stylesheet">
-    <?php echo $OUTPUT->standard_head_html() ?>
-     <link href='//fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='//fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <?php echo $OUTPUT->standard_head_html() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     
 </head>
 

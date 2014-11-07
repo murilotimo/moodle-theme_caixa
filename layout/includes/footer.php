@@ -76,11 +76,11 @@
 <script type="text/javascript">
     <?php echo $PAGE->theme->settings->jssection;?>
 </script>
-  <!-- Global scripts -->
-<script src="https://cdn2.bcu.ac.uk/toolbar/v1.1/jquery.signalR-1.1.3.min.js"></script>
-<script src="https://ssobeta.bcu.ac.uk/signalr/hubs"></script>
-<script src="https://cdn2.bcu.ac.uk/toolbar/v1.1//jquery.hoverIntent.minified.js"></script>
-<script src="https://cdn2.bcu.ac.uk/toolbar/v1.1/bcu.toolbar.js"></script>
+<script src="//cdn2.bcu.ac.uk/toolbar/v2.0/jquery.signalR-1.1.3.min.js"></script>
+<script src="https://gt.bcu.ac.uk/v2.0/signalr/hubs"></script>
+<script src="//cdn2.bcu.ac.uk/toolbar/v2.0/jquery.hoverIntent.minified.js"></script>
+<script src="//cdn2.bcu.ac.uk/toolbar/v2.0/bcu.toolbar.js"></script>
+
 <script type="text/javascript">
     var $ = jQuery.noConflict();
     CallBACUToolbar({
