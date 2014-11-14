@@ -1,6 +1,6 @@
 <?php
 // This file is part of Moodle - http://moodle.org/
-// http://bcu.ac.uk/student-info/why-study-at-bcu/employability
+//
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -15,17 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Moodle's basensl theme, an example of how to make a Bootstrap theme
+ * Version details
  *
- * DO NOT MODIFY THIS THEME!
- * COPY IT FIRST, THEN RENAME THE COPY AND MODIFY IT INSTEAD.
+ * @package    theme
+ * @subpackage bcu
+ * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * For full information about creating Moodle themes, see:
- * http://docs.moodle.org/dev/Themes_2.0
- *
- * @package   theme_basensl
- * @copyright 2013 Moodle, moodle.org
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $THEME->name = 'bcu';

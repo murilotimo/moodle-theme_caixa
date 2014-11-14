@@ -15,17 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Moodle's bcu theme, an example of how to make a Bootstrap theme
+ * Version details
  *
- * DO NOT MODIFY THIS THEME!
- * COPY IT FIRST, THEN RENAME THE COPY AND MODIFY IT INSTEAD.
+ * @package    theme
+ * @subpackage bcu
+ * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * For full information about creating Moodle themes, see:
- * http://docs.moodle.org/dev/Themes_2.0
- *
- * @package   theme_bcu
- * @copyright 2013 Moodle, moodle.org
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
@@ -269,4 +265,69 @@ function theme_bcu_return_menu_items() {
     }
     $jstoolbar = rtrim($jstoolbar, ', ');
     return $jstoolbar;
+}
+
+function theme_bcu_get_setting($setting, $format = false) {
+    static $theme;
+    if (empty($theme)) {
+        $theme = theme_config::load('bcu');
+    }
+    if (empty($theme->settings->$setting)) {
+        return false;
+    } else if (!$format) {
+        return $theme->settings->$setting;
+    } else if ($format === 'format_text') {
+        return format_text($theme->settings->$setting, $format = FORMAT_HTML, $options = array('trusted' => true));
+    } else {
+        return format_string($theme->settings->$setting);
+    }
+}
+
+/**
+ * Serves any files associated with the theme settings.
+ *
+ * @param stdClass $course
+ * @param stdClass $cm
+ * @param context $context
+ * @param string $filearea
+ * @param array $args
+ * @param bool $forcedownload
+ * @param array $options
+ * @return bool
+ */
+function theme_bcu_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array())
+{
+    static $theme;
+    if (empty($theme)) {
+        $theme = theme_config::load('bcu');
+    }
+    if ($context->contextlevel == CONTEXT_SYSTEM) {
+        if ($filearea === 'logo') {
+            return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+        } else if ($filearea === 'style') {
+            theme_essential_serve_css($args[1]);
+        } else if ($filearea === 'pagebackground') {
+            return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
+        } else if (preg_match("/p[1-9][0-9]/", $filearea) !== false) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+        } else if ((substr($filearea, 0, 9) === 'marketing') && (substr($filearea, 10, 5) === 'image')) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+        } else if ($filearea === 'iphoneicon') {
+            return $theme->setting_file_serve('iphoneicon', $args, $forcedownload, $options);
+        } else if ($filearea === 'iphoneretinaicon') {
+            return $theme->setting_file_serve('iphoneretinaicon', $args, $forcedownload, $options);
+        } else if ($filearea === 'ipadicon') {
+            return $theme->setting_file_serve('ipadicon', $args, $forcedownload, $options);
+        } else if ($filearea === 'ipadretinaicon') {
+            return $theme->setting_file_serve('ipadretinaicon', $args, $forcedownload, $options);
+        } else if ($filearea === 'fontfilettfheading') {
+            return $theme->setting_file_serve('fontfilettfheading', $args, $forcedownload, $options);
+        } else if ($filearea === 'fontfilettfbody') {
+            return $theme->setting_file_serve('fontfilettfbody', $args, $forcedownload, $options);
+        } else {
+            send_file_not_found();
+        }
+    } else {
+        send_file_not_found();
+    }
 }

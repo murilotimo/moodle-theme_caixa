@@ -13,6 +13,17 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Version details
+ *
+ * @package    theme
+ * @subpackage bcu
+ * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ */
+
 require_once(dirname(__FILE__) . '/includes/header.php');
 ?>
 <div id="page" class="container-fluid">

@@ -15,12 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Renderers to align Moodle's HTML with that expected by Bootstrap
+ * Version details
  *
- * @package    theme_bootstrapbase
- * @copyright  2012
+ * @package    theme
+ * @subpackage bcu
+ * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
  */
+
 require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot . "/course/renderer.php");
 class theme_bcu_core_renderer extends core_renderer {
