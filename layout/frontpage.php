@@ -13,6 +13,17 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Version details
+ *
+ * @package    theme
+ * @subpackage bcu
+ * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ */
+
 require_once(dirname(__FILE__) . '/includes/header.php');
 
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
@@ -41,7 +52,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 
 <?php if ($hasp1) { ?>
 <li>
-<a href="<?php if (!empty($PAGE->theme->settings->p1url)) {echo $PAGE->theme->settings->p1url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->settings->p1."' alt='p2' />";?></a>
+<a href="<?php if (!empty($PAGE->theme->settings->p1url)) {echo $PAGE->theme->settings->p1url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p1', 'p1')."' alt='p1'/>";?></a>
 <?php if ($haspcap1) { ?>
 <div class="flex-caption">
 <?php echo $PAGE->theme->settings->p1cap;?>
@@ -52,7 +63,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 
 <?php if ($hasp2) { ?>
 <li>
-<a href="<?php if (!empty($PAGE->theme->settings->p2url)) {echo $PAGE->theme->settings->p2url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->settings->p2."' alt='p2' />";?></a>
+<a href="<?php if (!empty($PAGE->theme->settings->p2url)) {echo $PAGE->theme->settings->p2url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p2', 'p2')."' alt='p2' />";?></a>
 <?php if ($haspcap2) { ?>
 <div class="flex-caption">
 <?php echo $PAGE->theme->settings->p2cap;?>
@@ -64,7 +75,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 
 <?php if ($hasp3) { ?>
 <li>
-<a href="<?php if (!empty($PAGE->theme->settings->p3url)) {echo $PAGE->theme->settings->p3url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->settings->p3."' alt='p2' />";?></a>
+<a href="<?php if (!empty($PAGE->theme->settings->p3url)) {echo $PAGE->theme->settings->p3url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p3', 'p3')."' alt='p3' />";?></a>
 <?php if ($haspcap3) { ?>
 <div class="flex-caption">
 <?php echo $PAGE->theme->settings->p3cap;?>
@@ -75,7 +86,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 
 <?php if ($hasp4) { ?>
 <li>
-<a href="<?php if (!empty($PAGE->theme->settings->p4url)) {echo $PAGE->theme->settings->p4url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->settings->p4."' alt='p2' />";?></a>
+<a href="<?php if (!empty($PAGE->theme->settings->p4url)) {echo $PAGE->theme->settings->p4url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p4', 'p4')."' alt='p4' />";?></a>
 <?php if ($haspcap4) { ?>
 <div class="flex-caption">
 <?php echo $PAGE->theme->settings->p4cap;?>
@@ -86,7 +97,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 
 <?php if ($hasp5) { ?>
 <li>
-<a href="<?php if (!empty($PAGE->theme->settings->p5url)) {echo $PAGE->theme->settings->p5url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->settings->p5."' alt='p2' />";?></a>
+<a href="<?php if (!empty($PAGE->theme->settings->p5url)) {echo $PAGE->theme->settings->p5url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p5', 'p5')."' alt='p5' />";?></a>
 <?php if ($haspcap5) { ?>
 <div class="flex-caption">
 <?php echo $PAGE->theme->settings->p5cap;?>
