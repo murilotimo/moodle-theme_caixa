@@ -236,6 +236,7 @@ function theme_bcu_return_menu_items() {
     $shareFile = new moodle_url('/blocks/intralibrary/file_for_sharing.php');
     $screenrecording = new moodle_url('/bcuscripts/pages/som.php');
     $messages = new moodle_url('/message/');
+    $examclock = new moodle_url('/mod/page/view.php', array('id'=>379399));
         
         
     $unread = message_count_unread_messages();
@@ -249,6 +250,7 @@ function theme_bcu_return_menu_items() {
         array('staff', 'Explor', 'http://explor.bcu.ac.uk/', 'icon-globe'),
         array('staff', 'Share a File', $shareFile, 'icon-share'),
         array('staff', 'Recording', $screenrecording, 'fa fa-video-camera'),
+        array('staff', 'Exam Clock', $examclock, 'fa fa-clock-o')
     );
     
     $theselinks = array();   
