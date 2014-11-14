@@ -223,6 +223,7 @@ function theme_bcu_get_html_for_settings(renderer_base $output, moodle_page $pag
     }
 
     return $return;
+}
 
 function theme_bcu_get_setting($setting, $format = false) {
     static $theme;
