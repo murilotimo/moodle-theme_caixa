@@ -15,13 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme version info
+ * Version details
  *
- * @package    theme_bcu
- * @copyright  2014 Birmingham City University
+ * @package    theme
+ * @subpackage bcu
+ * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
  */
 
+require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
+require_once($CFG->dirroot . "/course/renderer.php");
 
 class theme_bcu_core_renderer extends core_renderer {
     /** @var custom_menu_item language The language menu if created */

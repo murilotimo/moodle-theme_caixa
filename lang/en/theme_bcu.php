@@ -15,11 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'theme_clean', language 'en'
+ * Version details
  *
- * @package   theme_clean
- * @copyright 2013 Moodle, moodle.org
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    theme
+ * @subpackage bcu
+ * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
  */
 
 $string['choosereadme'] = '
@@ -180,3 +182,12 @@ $string['footer1contentdesc'] = 'Add content to footer section 1';
 $string['footer2contentdesc'] = 'Add content to footer section 2';
 $string['footer3contentdesc'] = 'Add content to footer section 3';
 $string['footer4contentdesc'] = 'Add content to footer section 4';
+
+$string['customcssjssettings'] = 'Custom CSS & JS';
+$string['slideshowsettings'] = 'Slideshow';
+$string['markettingsettings'] = 'Marketting';
+$string['footersettings'] = 'Footer';
+$string['navbarsettings'] = 'Navbar';
+
+$string['genericsettingsheading'] = 'Apply your own modifications';
+$string['genericsettingsdescription'] = 'Here you can find various settings to add your own CSS and JavaScript code to the theme.';
