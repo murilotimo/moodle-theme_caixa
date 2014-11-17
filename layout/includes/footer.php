@@ -81,14 +81,11 @@
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 </div>
-<script type="text/javascript">
-    <?php echo $PAGE->theme->settings->jssection;?>
-</script>
 <script src="//cdn2.bcu.ac.uk/toolbar/v2.0/jquery.signalR-1.1.3.min.js"></script>
 <script src="https://gt.bcu.ac.uk/v2.0/signalr/hubs"></script>
 <script src="//cdn2.bcu.ac.uk/toolbar/v2.0/jquery.hoverIntent.minified.js"></script>
 <script src="//cdn2.bcu.ac.uk/toolbar/v2.0/bcu.toolbar.js"></script>
-
+<?php echo $PAGE->theme->settings->jssection; ?>
 <script type="text/javascript">
     var $ = jQuery.noConflict();
     CallBACUToolbar({
