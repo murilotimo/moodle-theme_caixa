@@ -325,15 +325,16 @@ class theme_bcu_core_renderer extends core_renderer {
             $branchurl   = new moodle_url('/my/index.php');
             $branchsort  = 10000;
 
-            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-            if ($courses = enrol_get_my_courses(null, 'fullname ASC')) {
-                foreach ($courses as $course) {
-                    if ($course->visible) {
-                        $branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id),
-                                format_string($course->shortname));
-                    }
-                }
-            } else {
+            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);           
+            list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
+            
+ 			if ($sortedcourses) {
+    			foreach ($sortedcourses as $course) {
+    				if ($course->visible){
+    					$branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+    				}
+    			}
+ 			} else {
                 $noenrolments = get_string('noenrolments', 'theme_bcu');
                 $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
             }
@@ -478,10 +479,6 @@ class theme_bcu_core_renderer extends core_renderer {
         return html_writer::tag($tag, $this->blocks_for_region($region), $attributes);
     }
 }
-
-
-// Course renderer.
-require_once($CFG->dirroot . "/course/renderer.php");
 
 class theme_bcu_core_course_renderer extends core_course_renderer {
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
@@ -677,7 +674,59 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
 
         return $output;
     }
+    
+    public function frontpage_my_courses() {
+        global $USER, $CFG, $DB;
+        $output = '';
+        if (!isloggedin() or isguestuser()) {
+            return '';
+        }
+    
+        $courses = block_course_overview_get_sorted_courses();
+        list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
+        if (!empty($sortedcourses) || !empty($rcourses) || !empty($rhosts)) {
 
+            $chelper = new coursecat_helper();
+            if (count($courses) > $CFG->frontpagecourselimit) {
+                // There are more enrolled courses than we can display, display link to 'My courses'.
+                $totalcount = count($sortedcourses);
+                $courses = array_slice($sortedcourses, 0, $CFG->frontpagecourselimit, true);
+                $chelper->set_courses_display_options(array(
+                        'viewmoreurl' => new moodle_url('/my/'),
+                        'viewmoretext' => new lang_string('mycourses')
+                    ));
+            } else {
+                // All enrolled courses are displayed, display link to 'All courses' if there are more courses in system.
+                $chelper->set_courses_display_options(array(
+                        'viewmoreurl' => new moodle_url('/course/index.php'),
+                        'viewmoretext' => new lang_string('fulllistofcourses')
+                    ));
+                $totalcount = $DB->count_records('course') - 1;
+            }
+            $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->
+                    set_attributes(array('class' => 'frontpage-course-list-enrolled'));
+            $output .= $this->coursecat_courses($chelper, $sortedcourses, $totalcount);
+
+            // MNET
+            if (!empty($rcourses)) {
+                // at the IDP, we know of all the remote courses
+                $output .= html_writer::start_tag('div', array('class' => 'courses'));
+                foreach ($rcourses as $course) {
+                    $output .= $this->frontpage_remote_course($course);
+                }
+                $output .= html_writer::end_tag('div'); // .courses
+            } elseif (!empty($rhosts)) {
+                // non-IDP, we know of all the remote servers, but not courses
+                $output .= html_writer::start_tag('div', array('class' => 'courses'));
+                foreach ($rhosts as $host) {
+                    $output .= $this->frontpage_remote_host($host);
+                }
+                $output .= html_writer::end_tag('div'); // .courses
+            }
+        }
+        return $output;
+    }
+    
       /**
        * Return the navbar content so that it can be echoed out by the layout
        *

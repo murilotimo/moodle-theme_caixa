@@ -82,11 +82,10 @@ if (is_siteadmin()) {
     $temp->add($setting);
     
     $name = 'theme_bcu/p1cap';
-    $title = get_string('p1cap', 'theme_bcu');
+    $title = get_string('p1cap','theme_bcu');
     $description = get_string('p1capdesc', 'theme_bcu');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-
     $temp->add($setting);
     
     $name = 'theme_bcu/p2';
@@ -163,7 +162,7 @@ if (is_siteadmin()) {
     $temp->add($setting);
     
     $name = 'theme_bcu/p5cap';
-    $title = get_string('p5cap', 'theme_bcu');
+    $title = get_string('p5cap','theme_bcu');
     $description = get_string('p5capdesc', 'theme_bcu');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);

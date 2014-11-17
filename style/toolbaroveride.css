@@ -1,0 +1,23 @@
+.global-toolbar {
+	border-bottom: 0px;
+}
+
+.global-toolbar__inner {
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 100%;
+}
+
+.icon-share {
+	background: none;
+}
+
+ .icon-edit {
+ 	background: none;
+ }
+
+.gt-nav__menu > li > a > span.fa {
+	margin-top: 1px;
+	width: 14px;
+	margin: 0 0.2em;
+}
