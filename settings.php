@@ -34,9 +34,7 @@ if (is_siteadmin()) {
     $temp = new admin_settingpage('theme_bcu_generic', get_string('customcssjssettings', 'theme_bcu'));
     $temp->add(new admin_setting_heading('theme_bcu_generic', get_string('genericsettingsheading', 'theme_bcu'),
         format_text(get_string('genericsettingsdescription', 'theme_bcu'), FORMAT_MARKDOWN)));
-    // Invert Navbar to dark background.
-        
-    
+       
     // Custom CSS file.
     $name = 'theme_bcu/customcss';
     $title = get_string('customcss', 'theme_bcu');
@@ -56,6 +54,57 @@ if (is_siteadmin()) {
     
     $ADMIN->add('theme_bcu', $temp);
     
+    $temp = new admin_settingpage('theme_bcu_colour', get_string('coloursettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_colour', get_string('coloursettingsheading', 'theme_bcu'),
+        format_text(get_string('colourdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+        
+    // link color setting
+    $name = 'theme_bcu/linkcolor';
+    $title = get_string('linkcolor','theme_bcu');
+    $description = get_string('linkcolordesc', 'theme_bcu');
+    $default = '#001E3C';
+    $previewconfig = NULL;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $temp->add($setting);
+
+    // link hover color setting
+    $name = 'theme_bcu/linkhover';
+    $title = get_string('linkhover','theme_bcu');
+    $description = get_string('linkhoverdesc', 'theme_bcu');
+    $default = '#001E3C';
+    $previewconfig = NULL;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $temp->add($setting);
+
+    // main color setting
+    $name = 'theme_bcu/maincolor';
+    $title = get_string('maincolor','theme_bcu');
+    $description = get_string('maincolordesc', 'theme_bcu');
+    $default = '#001e3c';
+    $previewconfig = NULL;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $temp->add($setting);
+    
+    // heading color setting
+    $name = 'theme_bcu/backcolor';
+    $title = get_string('backcolor','theme_bcu');
+    $description = get_string('backcolordesc', 'theme_bcu');
+    $default = '#F1EEE7';
+    $previewconfig = NULL;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $temp->add($setting);
+
+    // Foot note setting
+    // footerline setting
+    $name = 'theme_bcu/footnote';
+    $title = get_string('footnote', 'theme_bcu');
+    $description = get_string('footnotedesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '');
+    $temp->add($setting);
+    
+    
+    $ADMIN->add('theme_bcu', $temp);
+    
     // footerline setting
     $name = 'theme_bcu/fsize';
     $title = get_string('fsize', 'theme_bcu');
@@ -65,8 +114,8 @@ if (is_siteadmin()) {
     
     // Slideshow settings page.
     $temp = new admin_settingpage('theme_bcu_slideshow', get_string('slideshowsettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_slideshow', get_string('colorheadingsub', 'theme_essential'),
-        format_text(get_string('colordesc', 'theme_essential'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_bcu_slideshow', get_string('slideshowsettingsheading', 'theme_bcu'),
+        format_text(get_string('slideshowdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
     
     $name = 'theme_bcu/p1';
     $title = get_string('p1', 'theme_bcu');
@@ -170,9 +219,9 @@ if (is_siteadmin()) {
     
     $ADMIN->add('theme_bcu', $temp);
     
-    $temp = new admin_settingpage('theme_bcu_marketting', get_string('markettingsettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_marketting', get_string('colorheadingsub', 'theme_essential'),
-        format_text(get_string('colordesc', 'theme_essential'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_bcu_marketing', get_string('marketingsettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_marketing', get_string('marketingsettingsheading', 'theme_bcu'),
+        format_text(get_string('marketingdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
     
     //marketing spots
     $name = 'theme_bcu/market1';
@@ -206,8 +255,8 @@ if (is_siteadmin()) {
     $ADMIN->add('theme_bcu', $temp);
     
     $temp = new admin_settingpage('theme_bcu_footer', get_string('footersettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_footer', get_string('colorheadingsub', 'theme_essential'),
-        format_text(get_string('colordesc', 'theme_essential'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_bcu_footer', get_string('footersettingsheading', 'theme_bcu'),
+        format_text(get_string('footerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
         
         $name = 'theme_bcu/footer1header';
     $title = get_string('footer1header', 'theme_bcu');
@@ -268,8 +317,8 @@ if (is_siteadmin()) {
     $ADMIN->add('theme_bcu', $temp);
     
     $temp = new admin_settingpage('theme_bcu_navbar', get_string('navbarsettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_navbar', get_string('colorheadingsub', 'theme_essential'),
-        format_text(get_string('colordesc', 'theme_essential'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_bcu_navbar', get_string('navbarsettingsheading', 'theme_bcu'),
+        format_text(get_string('navbardesc', 'theme_bcu'), FORMAT_MARKDOWN)));
         
     // Enable My.
     $name = 'theme_bcu/enablemy';
@@ -332,9 +381,6 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
     
-    $ADMIN->add('theme_bcu', $temp);
-    
-    
     
     
     //logo
@@ -344,6 +390,11 @@ if (is_siteadmin()) {
 	$setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
 	$temp->add($setting);
     
+    $ADMIN->add('theme_bcu', $temp);
+    
+    $temp = new admin_settingpage('theme_bcu_alerts', get_string('alertsettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_alerts', get_string('alertsettingsheading', 'theme_bcu'),
+        format_text(get_string('alertdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
     
     //info box spots
     $name = 'theme_bcu/alertbox';
@@ -368,56 +419,5 @@ if (is_siteadmin()) {
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
     
-    
-    
-    
-    
-    // Footer sections editor
-    
-    
-    // End of footer sections
-        
-    // link color setting
-	$name = 'theme_bcu/linkcolor';
-	$title = get_string('linkcolor','theme_bcu');
-	$description = get_string('linkcolordesc', 'theme_bcu');
-	$default = '#001E3C';
-	$previewconfig = NULL;
-	$setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-	$temp->add($setting);
-
-	// link hover color setting
-	$name = 'theme_bcu/linkhover';
-	$title = get_string('linkhover','theme_bcu');
-	$description = get_string('linkhoverdesc', 'theme_bcu');
-	$default = '#001E3C';
-	$previewconfig = NULL;
-	$setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-	$temp->add($setting);
-
-	// main color setting
-	$name = 'theme_bcu/maincolor';
-	$title = get_string('maincolor','theme_bcu');
-	$description = get_string('maincolordesc', 'theme_bcu');
-	$default = '#001e3c';
-	$previewconfig = NULL;
-	$setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-	$temp->add($setting);
-	
-	// heading color setting
-	$name = 'theme_bcu/backcolor';
-	$title = get_string('backcolor','theme_bcu');
-	$description = get_string('backcolordesc', 'theme_bcu');
-	$default = '#F1EEE7';
-	$previewconfig = NULL;
-	$setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-	$temp->add($setting);
-
-	// Foot note setting
-	// footerline setting
-    $name = 'theme_bcu/footnote';
-    $title = get_string('footnote', 'theme_bcu');
-    $description = get_string('footnotedesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '');
-    $temp->add($setting);
+    $ADMIN->add('theme_bcu', $temp);
 }

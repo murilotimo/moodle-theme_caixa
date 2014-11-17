@@ -184,10 +184,30 @@ $string['footer3contentdesc'] = 'Add content to footer section 3';
 $string['footer4contentdesc'] = 'Add content to footer section 4';
 
 $string['customcssjssettings'] = 'Custom CSS & JS';
-$string['slideshowsettings'] = 'Slideshow';
-$string['markettingsettings'] = 'Marketting';
-$string['footersettings'] = 'Footer';
-$string['navbarsettings'] = 'Navbar';
-
 $string['genericsettingsheading'] = 'Apply your own modifications';
 $string['genericsettingsdescription'] = 'Here you can find various settings to add your own CSS and JavaScript code to the theme.';
+
+$string['slideshowsettings'] = 'Slideshow';
+$string['slideshowsettingsheading'] = 'Customise the carousel on the front page';
+$string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
+
+$string['marketingsettings'] = 'Marketing';
+$string['marketingsettingsheading'] = 'Customise the marketing blocks that appear on the front page';
+$string['marketingdesc'] = 'You can build marketting blocks, up to 4 on the front page. For examples, please see the README file that comes with this theme.';
+
+
+$string['footersettings'] = 'Footer';
+$string['footersettingsheading'] = 'Set the content that should appear in the footer.';
+$string['footerdesc'] = 'Control the content that appears in the 4 footer sections of the page.';
+
+$string['navbarsettings'] = 'Navbar';
+$string['navbarsettingsheading'] = 'Customise the navigation bar';
+$string['navbardesc'] = 'Allows you to control all of the elements that appear on the navigation bar.';
+
+$string['coloursettings'] = 'Colours';
+$string['coloursettingsheading'] = 'Modify the main colours used throughout the theme.';
+$string['colourdesc'] = 'You can select the colours that you would like to use throughout the theme.';
+
+$string['alertsettings'] = 'Alerts';
+$string['alertsettingsheading'] = 'Customise the alert boxes that appear at the top of the page';
+$string['alertdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users.';
