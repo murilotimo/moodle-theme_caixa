@@ -381,14 +381,12 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
     
-    
-    
-    //logo
     $name = 'theme_bcu/logo';
-	$title = get_string('logo','theme_bcu');
-	$description = get_string('logodesc', 'theme_bcu');
-	$setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-	$temp->add($setting);
+    $title = get_string('logo','theme_bcu');
+    $description = get_string('logodesc', 'theme_bcu');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
     
     $ADMIN->add('theme_bcu', $temp);
     
