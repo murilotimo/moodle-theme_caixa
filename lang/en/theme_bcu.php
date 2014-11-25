@@ -211,3 +211,5 @@ $string['colourdesc'] = 'You can select the colours that you would like to use t
 $string['alertsettings'] = 'Alerts';
 $string['alertsettingsheading'] = 'Customise the alert boxes that appear at the top of the page';
 $string['alertdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users.';
+
+$string['thiscourse'] = 'This course';
