@@ -26,9 +26,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2014110405; // The current module version (Date: YYYYMMDDXX)
-$plugin->requires  = 2013110500; // Requires this Moodle version
-$plugin->component = 'theme_bcu'; // Full name of the plugin (used for diagnostics)
+$plugin->version   = 2014110405;
+$plugin->requires  = 2013110500;
+$plugin->component = 'theme_bcu';
 $plugin->dependencies = array(
     'block_course_overview' => ANY_VERSION
 );

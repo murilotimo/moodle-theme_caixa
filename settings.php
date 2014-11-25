@@ -28,298 +28,84 @@ $settings = null;
 
 defined('MOODLE_INTERNAL') || die;
 if (is_siteadmin()) {
-    
+
     $ADMIN->add('themes', new admin_category('theme_bcu', 'BCU'));
 
-    $temp = new admin_settingpage('theme_bcu_generic', get_string('customcssjssettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_generic', get_string('genericsettingsheading', 'theme_bcu'),
-        format_text(get_string('genericsettingsdescription', 'theme_bcu'), FORMAT_MARKDOWN)));
-       
-    // Custom CSS file.
-    $name = 'theme_bcu/customcss';
-    $title = get_string('customcss', 'theme_bcu');
-    $description = get_string('customcssdesc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    // Section for javascript to be added e.g. Google Analytics.
-    $name = 'theme_bcu/jssection';
-    $title = get_string('jssection', 'theme_bcu');
-    $description = get_string('jssectiondesc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $ADMIN->add('theme_bcu', $temp);
-    
     $temp = new admin_settingpage('theme_bcu_colour', get_string('coloursettings', 'theme_bcu'));
     $temp->add(new admin_setting_heading('theme_bcu_colour', get_string('coloursettingsheading', 'theme_bcu'),
         format_text(get_string('colourdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-        
-    // link color setting
+
     $name = 'theme_bcu/linkcolor';
-    $title = get_string('linkcolor','theme_bcu');
+    $title = get_string('linkcolor', 'theme_bcu');
     $description = get_string('linkcolordesc', 'theme_bcu');
     $default = '#001E3C';
-    $previewconfig = NULL;
+    $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $temp->add($setting);
 
-    // link hover color setting
     $name = 'theme_bcu/linkhover';
-    $title = get_string('linkhover','theme_bcu');
+    $title = get_string('linkhover', 'theme_bcu');
     $description = get_string('linkhoverdesc', 'theme_bcu');
     $default = '#001E3C';
-    $previewconfig = NULL;
+    $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $temp->add($setting);
 
-    // main color setting
     $name = 'theme_bcu/maincolor';
-    $title = get_string('maincolor','theme_bcu');
+    $title = get_string('maincolor', 'theme_bcu');
     $description = get_string('maincolordesc', 'theme_bcu');
     $default = '#001e3c';
-    $previewconfig = NULL;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $temp->add($setting);
-    
-    // heading color setting
-    $name = 'theme_bcu/backcolor';
-    $title = get_string('backcolor','theme_bcu');
-    $description = get_string('backcolordesc', 'theme_bcu');
-    $default = '#F1EEE7';
-    $previewconfig = NULL;
+    $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $temp->add($setting);
 
-    // Foot note setting
-    // footerline setting
+    $name = 'theme_bcu/backcolor';
+    $title = get_string('backcolor', 'theme_bcu');
+    $description = get_string('backcolordesc', 'theme_bcu');
+    $default = '#F1EEE7';
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $temp->add($setting);
+
     $name = 'theme_bcu/footnote';
     $title = get_string('footnote', 'theme_bcu');
     $description = get_string('footnotedesc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '');
     $temp->add($setting);
-    
-    
+
     $ADMIN->add('theme_bcu', $temp);
-    
-    // footerline setting
-    $name = 'theme_bcu/fsize';
-    $title = get_string('fsize', 'theme_bcu');
-    $description = get_string('fsizedesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '');
-    $temp->add($setting);
-    
-    // Slideshow settings page.
-    $temp = new admin_settingpage('theme_bcu_slideshow', get_string('slideshowsettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_slideshow', get_string('slideshowsettingsheading', 'theme_bcu'),
-        format_text(get_string('slideshowdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-    
-    $name = 'theme_bcu/p1';
-    $title = get_string('p1', 'theme_bcu');
-    $description = get_string('p1desc', 'theme_bcu');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p1');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/p1url';
-    $title = get_string('p1url', 'theme_bcu');
-    $description = get_string('p1urldesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/p1cap';
-    $title = get_string('p1cap','theme_bcu');
-    $description = get_string('p1capdesc', 'theme_bcu');
+
+    $temp = new admin_settingpage('theme_bcu_alerts', get_string('alertsettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_alerts', get_string('alertsettingsheading', 'theme_bcu'),
+        format_text(get_string('alertdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_bcu/alertbox';
+    $title = get_string('alertbox', 'theme_bcu');
+    $description = get_string('alertboxdesc', 'theme_bcu');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
-    
-    $name = 'theme_bcu/p2';
-    $title = get_string('p2','theme_bcu');
-    $description = get_string('p2desc', 'theme_bcu');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p2');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/p2url';
-    $title = get_string('p2url','theme_bcu');
-    $description = get_string('p2urldesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/p2cap';
-    $title = get_string('p2cap', 'theme_bcu');
-    $description = get_string('p2capdesc', 'theme_bcu');
+
+    $name = 'theme_bcu/infobox';
+    $title = get_string('infobox', 'theme_bcu');
+    $description = get_string('infoboxdesc', 'theme_bcu');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
-    
-    $name = 'theme_bcu/p3';
-    $title = get_string('p3','theme_bcu');
-    $description = get_string('p3desc', 'theme_bcu');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p3');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/p3url';
-    $title = get_string('p3url','theme_bcu');
-    $description = get_string('p3urldesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/p3cap';
-    $title = get_string('p3cap', 'theme_bcu');
-    $description = get_string('p3capdesc', 'theme_bcu');
+
+    $name = 'theme_bcu/infobox2';
+    $title = get_string('infobox2', 'theme_bcu');
+    $description = get_string('infobox2desc', 'theme_bcu');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
-    
-    $name = 'theme_bcu/p4';
-    $title = get_string('p4','theme_bcu');
-    $description = get_string('p4desc', 'theme_bcu');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p4');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/p4url';
-    $title = get_string('p4url','theme_bcu');
-    $description = get_string('p4urldesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/p4cap';
-    $title = get_string('p4cap', 'theme_bcu');
-    $description = get_string('p4capdesc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/p5';
-    $title = get_string('p5','theme_bcu');
-    $description = get_string('p5desc', 'theme_bcu');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p5');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/p5url';
-    $title = get_string('p5url','theme_bcu');
-    $description = get_string('p5urldesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/p5cap';
-    $title = get_string('p5cap','theme_bcu');
-    $description = get_string('p5capdesc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-    
+
     $ADMIN->add('theme_bcu', $temp);
-    
-    $temp = new admin_settingpage('theme_bcu_marketing', get_string('marketingsettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_marketing', get_string('marketingsettingsheading', 'theme_bcu'),
-        format_text(get_string('marketingdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-    
-    //marketing spots
-    $name = 'theme_bcu/market1';
-    $title = get_string('market1', 'theme_bcu');
-    $description = get_string('market1desc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/market2';
-    $title = get_string('market2', 'theme_bcu');
-    $description = get_string('market2desc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/market3';
-    $title = get_string('market3', 'theme_bcu');
-    $description = get_string('market3desc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/market4';
-    $title = get_string('market4', 'theme_bcu');
-    $description = get_string('market4desc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $ADMIN->add('theme_bcu', $temp);
-    
-    $temp = new admin_settingpage('theme_bcu_footer', get_string('footersettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_footer', get_string('footersettingsheading', 'theme_bcu'),
-        format_text(get_string('footerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-        
-        $name = 'theme_bcu/footer1header';
-    $title = get_string('footer1header', 'theme_bcu');
-    $description = get_string('footer1desc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/footer1content';
-    $title = get_string('footer1content', 'theme_bcu');
-    $description = get_string('footer1contentdesc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/footer2header';
-    $title = get_string('footer2header', 'theme_bcu');
-    $description = get_string('footer2desc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/footer2content';
-    $title = get_string('footer2content', 'theme_bcu');
-    $description = get_string('footer2contentdesc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/footer3header';
-    $title = get_string('footer3header', 'theme_bcu');
-    $description = get_string('footer3desc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/footer3content';
-    $title = get_string('footer3content', 'theme_bcu');
-    $description = get_string('footer3contentdesc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/footer4header';
-    $title = get_string('footer4header', 'theme_bcu');
-    $description = get_string('footer4desc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $name = 'theme_bcu/footer4content';
-    $title = get_string('footer4content', 'theme_bcu');
-    $description = get_string('footer4contentdesc', 'theme_bcu');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-    
-    $ADMIN->add('theme_bcu', $temp);
-    
+
     $temp = new admin_settingpage('theme_bcu_navbar', get_string('navbarsettings', 'theme_bcu'));
     $temp->add(new admin_setting_heading('theme_bcu_navbar', get_string('navbarsettingsheading', 'theme_bcu'),
         format_text(get_string('navbardesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-        
+
     // Enable My.
     $name = 'theme_bcu/enablemy';
     $title = get_string('enablemy', 'theme_bcu');
@@ -373,49 +159,252 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
-    // Enable help link
+
+    // Enable help link.
     $name = 'theme_bcu/enablehelp';
     $title = get_string('enablehelp', 'theme_bcu');
     $description = get_string('enablehelpdesc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/logo';
-    $title = get_string('logo','theme_bcu');
+    $title = get_string('logo', 'theme_bcu');
     $description = get_string('logodesc', 'theme_bcu');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $ADMIN->add('theme_bcu', $temp);
-    
-    $temp = new admin_settingpage('theme_bcu_alerts', get_string('alertsettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_alerts', get_string('alertsettingsheading', 'theme_bcu'),
-        format_text(get_string('alertdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-    
-    //info box spots
-    $name = 'theme_bcu/alertbox';
-    $title = get_string('alertbox','theme_bcu');
-    $description = get_string('alertboxdesc', 'theme_bcu');
+
+    // Slideshow settings page.
+    $temp = new admin_settingpage('theme_bcu_slideshow', get_string('slideshowsettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_slideshow', get_string('slideshowsettingsheading', 'theme_bcu'),
+        format_text(get_string('slideshowdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_bcu/p1';
+    $title = get_string('p1', 'theme_bcu');
+    $description = get_string('p1desc', 'theme_bcu');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p1');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/p1url';
+    $title = get_string('p1url', 'theme_bcu');
+    $description = get_string('p1urldesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/p1cap';
+    $title = get_string('p1cap', 'theme_bcu');
+    $description = get_string('p1capdesc', 'theme_bcu');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
-    
-    //info box spots
-    $name = 'theme_bcu/infobox';
-    $title = get_string('infobox','theme_bcu');
-    $description = get_string('infoboxdesc', 'theme_bcu');
+
+    $name = 'theme_bcu/p2';
+    $title = get_string('p2', 'theme_bcu');
+    $description = get_string('p2desc', 'theme_bcu');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p2');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/p2url';
+    $title = get_string('p2url', 'theme_bcu');
+    $description = get_string('p2urldesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/p2cap';
+    $title = get_string('p2cap', 'theme_bcu');
+    $description = get_string('p2capdesc', 'theme_bcu');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
-    
-    $name = 'theme_bcu/infobox2';
-    $title = get_string('infobox2','theme_bcu');
-    $description = get_string('infobox2desc', 'theme_bcu');
+
+    $name = 'theme_bcu/p3';
+    $title = get_string('p3', 'theme_bcu');
+    $description = get_string('p3desc', 'theme_bcu');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p3');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/p3url';
+    $title = get_string('p3url', 'theme_bcu');
+    $description = get_string('p3urldesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/p3cap';
+    $title = get_string('p3cap', 'theme_bcu');
+    $description = get_string('p3capdesc', 'theme_bcu');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
-    
+
+    $name = 'theme_bcu/p4';
+    $title = get_string('p4', 'theme_bcu');
+    $description = get_string('p4desc', 'theme_bcu');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p4');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/p4url';
+    $title = get_string('p4url', 'theme_bcu');
+    $description = get_string('p4urldesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/p4cap';
+    $title = get_string('p4cap', 'theme_bcu');
+    $description = get_string('p4capdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/p5';
+    $title = get_string('p5', 'theme_bcu');
+    $description = get_string('p5desc', 'theme_bcu');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p5');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/p5url';
+    $title = get_string('p5url', 'theme_bcu');
+    $description = get_string('p5urldesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/p5cap';
+    $title = get_string('p5cap', 'theme_bcu');
+    $description = get_string('p5capdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $ADMIN->add('theme_bcu', $temp);
+
+    $temp = new admin_settingpage('theme_bcu_marketing', get_string('marketingsettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_marketing', get_string('marketingsettingsheading', 'theme_bcu'),
+        format_text(get_string('marketingdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_bcu/market1';
+    $title = get_string('market1', 'theme_bcu');
+    $description = get_string('market1desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/market2';
+    $title = get_string('market2', 'theme_bcu');
+    $description = get_string('market2desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/market3';
+    $title = get_string('market3', 'theme_bcu');
+    $description = get_string('market3desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/market4';
+    $title = get_string('market4', 'theme_bcu');
+    $description = get_string('market4desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $ADMIN->add('theme_bcu', $temp);
+
+    $temp = new admin_settingpage('theme_bcu_footer', get_string('footersettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_footer', get_string('footersettingsheading', 'theme_bcu'),
+        format_text(get_string('footerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_bcu/footer1header';
+    $title = get_string('footer1header', 'theme_bcu');
+    $description = get_string('footer1desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/footer1content';
+    $title = get_string('footer1content', 'theme_bcu');
+    $description = get_string('footer1contentdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/footer2header';
+    $title = get_string('footer2header', 'theme_bcu');
+    $description = get_string('footer2desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/footer2content';
+    $title = get_string('footer2content', 'theme_bcu');
+    $description = get_string('footer2contentdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/footer3header';
+    $title = get_string('footer3header', 'theme_bcu');
+    $description = get_string('footer3desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/footer3content';
+    $title = get_string('footer3content', 'theme_bcu');
+    $description = get_string('footer3contentdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/footer4header';
+    $title = get_string('footer4header', 'theme_bcu');
+    $description = get_string('footer4desc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/footer4content';
+    $title = get_string('footer4content', 'theme_bcu');
+    $description = get_string('footer4contentdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $ADMIN->add('theme_bcu', $temp);
+
+    $temp = new admin_settingpage('theme_bcu_generic', get_string('customcssjssettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_generic', get_string('genericsettingsheading', 'theme_bcu'),
+        format_text(get_string('genericsettingsdescription', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+    // Custom CSS file.
+    $name = 'theme_bcu/customcss';
+    $title = get_string('customcss', 'theme_bcu');
+    $description = get_string('customcssdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Section for javascript to be added e.g. Google Analytics.
+    $name = 'theme_bcu/jssection';
+    $title = get_string('jssection', 'theme_bcu');
+    $description = get_string('jssectiondesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/fsize';
+    $title = get_string('fsize', 'theme_bcu');
+    $description = get_string('fsizedesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '');
+    $temp->add($setting);
+
     $ADMIN->add('theme_bcu', $temp);
 }
