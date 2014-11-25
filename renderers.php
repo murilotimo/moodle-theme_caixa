@@ -341,14 +341,14 @@ class theme_bcu_core_renderer extends core_renderer {
             
             if($PAGE->context->contextlevel==50 && (strpos($PAGE->pagetype, 'course-view-') === 0)) {
                     
-                $branchtitle = "This Course";
-                $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
+                $branchtitle = get_string('thiscourse', 'theme_bcu');
+                $branchlabel = '<i class="fa fa-sitemap"></i>'.$branchtitle;
                 $branchurl = new moodle_url('#');
                 
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10001);
                 
                 $branchtitle = "People";
-                $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
+                $branchlabel = '<i class="fa fa-user"></i>'.$branchtitle;
                 $branchurl = new moodle_url('/user/index.php', array('id'=>$PAGE->course->id));
                 
                 $branch->add($branchlabel, $branchurl, $branchtitle, 100002);
