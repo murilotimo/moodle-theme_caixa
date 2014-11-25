@@ -295,7 +295,7 @@ class theme_bcu_core_renderer extends core_renderer {
      * This renderer is needed to enable the Bootstrap style navigation.
      */
     protected function render_custom_menu(custom_menu $menu) {
-        global $CFG, $PAGE;
+        global $CFG, $PAGE, $OUTPUT;
 
         if (isloggedin() && !isguestuser()) {
             $mycoursetitle = "Home";
@@ -338,7 +338,42 @@ class theme_bcu_core_renderer extends core_renderer {
                 $noenrolments = get_string('noenrolments', 'theme_bcu');
                 $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
             }
-
+            
+            if($PAGE->context->contextlevel==50 && (strpos($PAGE->pagetype, 'course-view-') === 0)) {
+                    
+                $branchtitle = "This Course";
+                $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
+                $branchurl = new moodle_url('#');
+                
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10001);
+                
+                $branchtitle = "People";
+                $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
+                $branchurl = new moodle_url('/user/index.php', array('id'=>$PAGE->course->id));
+                
+                $branch->add($branchlabel, $branchurl, $branchtitle, 100002);
+                
+                $branchtitle = "Grades";
+                $branchlabel = $OUTPUT->pix_icon('i/grades', '', '', array('class' => 'icon')).$branchtitle;
+                $branchurl = new moodle_url('/grade/report/index.php', array('id'=>$PAGE->course->id));
+                
+                $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
+                
+                $data = theme_bcu_get_course_activities();
+                
+                foreach ($data as $modname => $modfullname) {
+                    if ($modname === 'resources') {
+                        $icon = $OUTPUT->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
+                        $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id'=>$PAGE->course->id)));
+                    } else {
+                        $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
+                        $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php', array('id'=>$PAGE->course->id)));
+                    }
+                }
+            }
+            
+            
+            
             if (!empty($PAGE->theme->settings->enablehelp)) {
                 $mycoursetitle = "Help";
                 $branchtitle = "Help";
