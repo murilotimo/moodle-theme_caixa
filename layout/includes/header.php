@@ -125,11 +125,11 @@ echo $OUTPUT->doctype();
 </div>
 
     <header id="page-header" class="clearfix container">
-    <?php if ($haslogo) {
-                        echo "<img src='".$PAGE->theme->setting_file_url('logo', 'logo')."' alt='logo' id='logo' />";
-                    } else { ?>
+        <?php if ($haslogo) { ?>
+            <a href="<?php p($CFG->wwwroot) ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('logo', 'logo')."' alt='logo' id='logo' />"; echo "</a>";
+        } else { ?>
             <a href="<?php p($CFG->wwwroot) ?>"><img src="<?php echo $OUTPUT->pix_url('2xlogo', 'theme')?>" id="logo"></a>
-            <?php } ?>
+        <?php } ?>
      
    
      
