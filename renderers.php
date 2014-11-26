@@ -348,7 +348,7 @@ class theme_bcu_core_renderer extends core_renderer {
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
                 
                 $branchtitle = "People";
-                $branchlabel = '<i class="fa fa-user"></i>'.$branchtitle;
+                $branchlabel = '<i class="fa fa-users"></i>'.$branchtitle;
                 $branchurl = new moodle_url('/user/index.php', array('id'=>$PAGE->course->id));
                 
                 $branch->add($branchlabel, $branchurl, $branchtitle, 100003);

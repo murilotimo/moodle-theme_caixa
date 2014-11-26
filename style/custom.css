@@ -1070,7 +1070,7 @@ div.questionbankwindow.block {
   transition: all .5s ease-in-out;
 }
 
-.nav .dropdown-menu li a i {
+.nav .dropdown-menu li a i, .nav li a i {
 	padding-right: 5px;
 }
 
