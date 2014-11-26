@@ -295,7 +295,7 @@ class theme_bcu_core_renderer extends core_renderer {
      * This renderer is needed to enable the Bootstrap style navigation.
      */
     protected function render_custom_menu(custom_menu $menu) {
-        global $CFG, $PAGE, $OUTPUT;
+        global $CFG, $PAGE, $OUTPUT, $COURSE;
 
         if (isloggedin() && !isguestuser()) {
             $mycoursetitle = "Home";
@@ -339,7 +339,7 @@ class theme_bcu_core_renderer extends core_renderer {
                 $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
             }
 
-            if($PAGE->context->contextlevel>=50 && $PAGE->pagetype != 'site-index' && $PAGE->pagetype != 'my-index') {
+            if(ISSET($COURSE->id) && $COURSE->id > 1) {
                     
                 $branchtitle = get_string('thiscourse', 'theme_bcu');
                 $branchlabel = '<i class="fa fa-sitemap"></i>'.$branchtitle;
