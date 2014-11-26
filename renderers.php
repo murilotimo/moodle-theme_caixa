@@ -309,21 +309,21 @@ class theme_bcu_core_renderer extends core_renderer {
             $branchtitle = "My Home";
             $branchlabel = '<i class="fa fa-dashboard"></i> '.$branchtitle;
             $branchurl   = new moodle_url('/my/index.php');
-            $branchsort  = 9998;
+            $branchsort  = 9999;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
             $mycoursetitle = "Events";
             $branchtitle = "Events";
             $branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
             $branchurl   = new moodle_url('/calendar/view.php?view=month&course=1');
-            $branchsort  = 9999;
+            $branchsort  = 10000;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
             $mycoursetitle = "My Sites";
             $branchtitle = "My Sites";
             $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
             $branchurl   = new moodle_url('/my/index.php');
-            $branchsort  = 10000;
+            $branchsort  = 10001;
 
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);           
             list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
@@ -338,26 +338,26 @@ class theme_bcu_core_renderer extends core_renderer {
                 $noenrolments = get_string('noenrolments', 'theme_bcu');
                 $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
             }
-            
-            if($PAGE->context->contextlevel==50 && (strpos($PAGE->pagetype, 'course-view-') === 0)) {
+
+            if($PAGE->context->contextlevel>=50 && $PAGE->pagetype != 'site-index' && $PAGE->pagetype != 'my-index') {
                     
                 $branchtitle = get_string('thiscourse', 'theme_bcu');
                 $branchlabel = '<i class="fa fa-sitemap"></i>'.$branchtitle;
                 $branchurl = new moodle_url('#');
                 
-                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10001);
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
                 
                 $branchtitle = "People";
                 $branchlabel = '<i class="fa fa-user"></i>'.$branchtitle;
                 $branchurl = new moodle_url('/user/index.php', array('id'=>$PAGE->course->id));
                 
-                $branch->add($branchlabel, $branchurl, $branchtitle, 100002);
+                $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
                 
                 $branchtitle = "Grades";
                 $branchlabel = $OUTPUT->pix_icon('i/grades', '', '', array('class' => 'icon')).$branchtitle;
                 $branchurl = new moodle_url('/grade/report/index.php', array('id'=>$PAGE->course->id));
                 
-                $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
+                $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
                 
                 $data = theme_bcu_get_course_activities();
                 
