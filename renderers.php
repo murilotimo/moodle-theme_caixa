@@ -325,55 +325,49 @@ class theme_bcu_core_renderer extends core_renderer {
             $branchurl   = new moodle_url('/my/index.php');
             $branchsort  = 10001;
 
-            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);           
+            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
-            
- 			if ($sortedcourses) {
-    			foreach ($sortedcourses as $course) {
-    				if ($course->visible){
-    					$branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
-    				}
-    			}
- 			} else {
+
+            if ($sortedcourses) {
+                foreach ($sortedcourses as $course) {
+                    if ($course->visible) {
+                        $branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                    }
+                }
+            } else {
                 $noenrolments = get_string('noenrolments', 'theme_bcu');
                 $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
             }
 
-            if(ISSET($COURSE->id) && $COURSE->id > 1) {
-                    
+            if (ISSET($COURSE->id) && $COURSE->id > 1) {
                 $branchtitle = get_string('thiscourse', 'theme_bcu');
                 $branchlabel = '<i class="fa fa-sitemap"></i>'.$branchtitle;
                 $branchurl = new moodle_url('#');
-                
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
-                
+
                 $branchtitle = "People";
                 $branchlabel = '<i class="fa fa-user"></i>'.$branchtitle;
-                $branchurl = new moodle_url('/user/index.php', array('id'=>$PAGE->course->id));
-                
+                $branchurl = new moodle_url('/user/index.php', array('id' => $PAGE->course->id));
                 $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
-                
+
                 $branchtitle = "Grades";
                 $branchlabel = $OUTPUT->pix_icon('i/grades', '', '', array('class' => 'icon')).$branchtitle;
-                $branchurl = new moodle_url('/grade/report/index.php', array('id'=>$PAGE->course->id));
-                
+                $branchurl = new moodle_url('/grade/report/index.php', array('id' => $PAGE->course->id));
                 $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
-                
+
                 $data = theme_bcu_get_course_activities();
-                
+
                 foreach ($data as $modname => $modfullname) {
                     if ($modname === 'resources') {
                         $icon = $OUTPUT->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
-                        $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id'=>$PAGE->course->id)));
+                        $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id' => $PAGE->course->id)));
                     } else {
                         $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
-                        $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php', array('id'=>$PAGE->course->id)));
+                        $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php', array('id' => $PAGE->course->id)));
                     }
                 }
             }
-            
-            
-            
+
             if (!empty($PAGE->theme->settings->enablehelp)) {
                 $mycoursetitle = "Help";
                 $branchtitle = "Help";
@@ -709,14 +703,14 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
 
         return $output;
     }
-    
+
     public function frontpage_my_courses() {
         global $USER, $CFG, $DB;
         $output = '';
         if (!isloggedin() or isguestuser()) {
             return '';
         }
-    
+
         $courses = block_course_overview_get_sorted_courses();
         list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
         if (!empty($sortedcourses) || !empty($rcourses) || !empty($rhosts)) {
@@ -738,35 +732,31 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
                     ));
                 $totalcount = $DB->count_records('course') - 1;
             }
-            $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->
-                    set_attributes(array('class' => 'frontpage-course-list-enrolled'));
+            $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->set_attributes(array('class' => 'frontpage-course-list-enrolled'));
             $output .= $this->coursecat_courses($chelper, $sortedcourses, $totalcount);
 
-            // MNET
             if (!empty($rcourses)) {
-                // at the IDP, we know of all the remote courses
                 $output .= html_writer::start_tag('div', array('class' => 'courses'));
                 foreach ($rcourses as $course) {
                     $output .= $this->frontpage_remote_course($course);
                 }
-                $output .= html_writer::end_tag('div'); // .courses
-            } elseif (!empty($rhosts)) {
-                // non-IDP, we know of all the remote servers, but not courses
+                $output .= html_writer::end_tag('div');
+            } else if (!empty($rhosts)) {
                 $output .= html_writer::start_tag('div', array('class' => 'courses'));
                 foreach ($rhosts as $host) {
                     $output .= $this->frontpage_remote_host($host);
                 }
-                $output .= html_writer::end_tag('div'); // .courses
+                $output .= html_writer::end_tag('div');
             }
         }
         return $output;
     }
-    
-      /**
-       * Return the navbar content so that it can be echoed out by the layout
-       *
-       * @return string XHTML navbar
-       */
+
+    /**
+     * Return the navbar content so that it can be echoed out by the layout
+     *
+     * @return string XHTML navbar
+     */
     public function navbar() {
         $items = $this->page->navbar->get_items();
         $itemcount = count($items);
