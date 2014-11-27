@@ -49,10 +49,11 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 <div class="container slidewrap">
 <div id="main-slider" class="flexslider">
 <ul class="slides">
-
-<?php if ($hasp1) { ?>
+<?php 
+    if ($hasp1) {
+ ?>
 <li>
-<a href="<?php if (!empty($PAGE->theme->settings->p1url)) {echo $PAGE->theme->settings->p1url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p1', 'p1')."' alt='p1'/>";?></a>
+<a href="<?php if (!empty($PAGE->theme->settings->p1url)) { echo $PAGE->theme->settings->p1url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p1', 'p1')."' alt='p1'/>";?></a>
 <?php if ($haspcap1) { ?>
 <div class="flex-caption">
 <?php echo $PAGE->theme->settings->p1cap;?>
@@ -159,28 +160,34 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
      <?php } ?>
   
      
-    <?php if ($hasmarket3) { ?> 
+<?php
+if ($hasmarket3) {
+?> 
     <div class="<?php echo "$marketclass";?> first">
-
-	<?php echo $PAGE->theme->settings->market3;?>
- 
+        <?php echo $PAGE->theme->settings->market3;?>
     </div>
-    <?php } ?>
+<?php
+}
+?>
 
     
-    <?php if ($hasmarket4) { ?> 
+<?php
+if ($hasmarket4) {
+?> 
     <div class="<?php echo "$marketclass";?> first">
-
-	<?php echo $PAGE->theme->settings->market4;?>
-
+	   <?php echo $PAGE->theme->settings->market4;?>
     </div>
-     <?php } ?>
+<?php
+}
+?>
  
     
  </div>      
  </div>
  
- <?php if (!empty($PAGE->theme->settings->infobox2)) { ?>
+<?php
+if (!empty($PAGE->theme->settings->infobox2)) {
+?>
  <div id="themessage" class="container">
 	<div id="themessage-internal"><div class="row-fluid">
 	
@@ -188,7 +195,9 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
 		
 	</div></div>
 </div>
-<?php } ?>
+<?php
+}
+?>
 
 
 <div class="container outercont">
@@ -205,12 +214,9 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
             ?>
         </section>
         <?php
-        $classextra = '';
-        if ($left) {
-            //$classextra = ' desktop-first-column';
-        }
-        echo $OUTPUT->blocks('side-post', 'span3'.$classextra);
+        echo $OUTPUT->blocks('side-post', 'span3');
         ?>
     </div>
     </div>
-    <?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>
+<?php 
+require_once(dirname(__FILE__) . '/includes/footer.php');

@@ -69,13 +69,17 @@ echo $OUTPUT->doctype();
 </div>
 </div>
 
-<?php } else if (!empty($PAGE->theme->settings->alertbox)) { ?>
+<?php
+} else if (!empty($PAGE->theme->settings->alertbox)) {
+?>
 <div class="customalert">
 <div class="container">
 <?php echo $PAGE->theme->settings->alertbox; ?>
 </div>
 </div>
-<?php } ?>
+<?php
+}
+?>
 
 <div id="page-header-wrapper">
 
@@ -87,10 +91,10 @@ echo $OUTPUT->doctype();
     </div>
     
     <div class="headermenu row">
-   <?php if(!isloggedin() || isguestuser()) { ?>
+   <?php if (!isloggedin() || isguestuser()) { ?>
    <?php echo $OUTPUT->page_heading_menu(); ?>
    <?php echo $OUTPUT->login_info() ?>
-   <?php //echo $OUTPUT->lang_menu(); ?>
+   <?php echo $OUTPUT->lang_menu(); ?>
    <?php } else { ?>
     <div class="dropdown secondone">
     <a class="dropdown-toggle usermendrop" data-toggle="dropdown" href="#"><span class="fa fa-user"></span><?php echo fullname($USER) ?> <span class="fa fa-angle-down"></span></a>
@@ -168,7 +172,6 @@ echo $OUTPUT->doctype();
                         <ul class="nav pull-right">
                             <li class="hbl"><a href="#" class="moodlezoom"><i class="fa fa-toggle-down"></i> hide blocks</a></li>
                             <li class="sbl"><a href="#" class="moodlezoom"><i class="fa fa-toggle-up"></i> show blocks</a></li>
-                            
                             <li class="hbll"><a href="#" class="moodlewidth"><i class="fa fa-square-o"></i> full screen</a></li>
                             <li class="sbll"><a href="#" class="moodlewidth"><i class="fa fa-minus-square-o"></i> standard view</a></li>
                         </ul>

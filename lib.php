@@ -253,8 +253,7 @@ function theme_bcu_get_setting($setting, $format = false) {
  * @param array $options
  * @return bool
  */
-function theme_bcu_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array())
-{
+function theme_bcu_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     static $theme;
     if (empty($theme)) {
         $theme = theme_config::load('bcu');
@@ -292,7 +291,7 @@ function theme_bcu_pluginfile($course, $cm, $context, $filearea, $args, $forcedo
 
 function theme_bcu_get_course_activities() {
     GLOBAL $CFG, $PAGE, $OUTPUT;
-    // A copy of block_activity_modules
+    // A copy of block_activity_modules.
     $course = $PAGE->course;
     $content = new stdClass();
     $modinfo = get_fast_modinfo($course);
@@ -300,8 +299,8 @@ function theme_bcu_get_course_activities() {
 
     $archetypes = array();
 
-    foreach($modinfo->cms as $cm) {
-        // Exclude activities which are not visible or have no link (=label)
+    foreach ($modinfo->cms as $cm) {
+        // Exclude activities which are not visible or have no link (=label).
         if (!$cm->uservisible or !$cm->has_view()) {
             continue;
         }
