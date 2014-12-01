@@ -67,12 +67,6 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $temp->add($setting);
 
-    $name = 'theme_bcu/footnote';
-    $title = get_string('footnote', 'theme_bcu');
-    $description = get_string('footnotedesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '');
-    $temp->add($setting);
-
     $ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_alerts', get_string('alertsettings', 'theme_bcu'));
@@ -374,6 +368,12 @@ if (is_siteadmin()) {
     $title = get_string('footer4content', 'theme_bcu');
     $description = get_string('footer4contentdesc', 'theme_bcu');
     $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+    
+    $name = 'theme_bcu/footnote';
+    $title = get_string('footnote', 'theme_bcu');
+    $description = get_string('footnotedesc', 'theme_bcu');
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
