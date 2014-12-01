@@ -1074,6 +1074,10 @@ div.questionbankwindow.block {
 	padding-right: 5px;
 }
 
+.fselect select {
+	width: 100% !important;
+}
+
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]
