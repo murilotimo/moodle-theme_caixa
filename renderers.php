@@ -373,7 +373,7 @@ class theme_bcu_core_renderer extends core_renderer {
                 $branchtitle = "Help";
                 $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
                 $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
-                $branchsort  = 10001;
+                $branchsort  = 10003;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
         }
