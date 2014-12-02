@@ -40,7 +40,7 @@
 	padding: 10px 10px;
 	font-weight: normal;
 	font-size: 90%;
-	background: #fff;
+	background: #[[setting:maincolour]];
 	color: #333;
 }
 

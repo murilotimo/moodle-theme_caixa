@@ -54,17 +54,15 @@ if (is_siteadmin()) {
     $name = 'theme_bcu/maincolor';
     $title = get_string('maincolor', 'theme_bcu');
     $description = get_string('maincolordesc', 'theme_bcu');
-    $default = '#001e3c';
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
     $temp->add($setting);
 
     $name = 'theme_bcu/backcolor';
     $title = get_string('backcolor', 'theme_bcu');
     $description = get_string('backcolordesc', 'theme_bcu');
-    $default = '#F1EEE7';
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);

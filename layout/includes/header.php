@@ -170,12 +170,12 @@ echo $OUTPUT->doctype();
                     <div class="nav-collapse collapse ">
                         <?php echo $OUTPUT->custom_menu(); ?>
                         <ul class="nav pull-right">
-                            <li class="hbl"><a href="#" class="moodlezoom"><i class="fa fa-toggle-down"></i> hide blocks</a></li>
-                            <li class="sbl"><a href="#" class="moodlezoom"><i class="fa fa-toggle-up"></i> show blocks</a></li>
-                            <li class="hbll"><a href="#" class="moodlewidth"><i class="fa fa-square-o"></i> full screen</a></li>
-                            <li class="sbll"><a href="#" class="moodlewidth"><i class="fa fa-minus-square-o"></i> standard view</a></li>
+                            <li class="hbl"><a href="#" class="moodlezoom"><i class="fa fa-indent fa-lg"></i> <span class="zoomdesc">Hide blocks</span></a></li>
+                            <li class="sbl"><a href="#" class="moodlezoom"><i class="fa fa-outdent fa-lg"></i> <span class="zoomdesc">Show blocks</span></a></li>
+                            <li class="hbll"><a href="#" class="moodlewidth"><i class="fa fa-expand fa-lg"></i> <span class="zoomdesc">Full screen</span></a></li>
+                            <li class="sbll"><a href="#" class="moodlewidth"><i class="fa fa-compress fa-lg"></i> <span class="zoomdesc">Standard view</span></a></li>
                         </ul>
-                        <div class="pull-right breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
+                        <div id="edittingbutton" class="pull-right breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
                     </div>
                 </div>
             </nav>
