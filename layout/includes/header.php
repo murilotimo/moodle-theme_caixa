@@ -170,10 +170,10 @@ echo $OUTPUT->doctype();
                     <div class="nav-collapse collapse ">
                         <?php echo $OUTPUT->custom_menu(); ?>
                         <ul class="nav pull-right">
-                            <li class="hbl"><a href="#" class="moodlezoom"><i class="fa fa-indent"></i></a></li>
-                            <li class="sbl"><a href="#" class="moodlezoom"><i class="fa fa-outdent"></i></a></li>
-                            <li class="hbll"><a href="#" class="moodlewidth"><i class="fa fa-arrows-h"></i></a></li>
-                            <li class="sbll"><a href="#" class="moodlewidth"><i class="fa fa-arrows-h"></i></a></li>
+                            <li class="hbl"><a href="#" class="moodlezoom"><i class="fa fa-indent fa-lg"></i> <span class="zoomdesc">Hide blocks</span></a></li>
+                            <li class="sbl"><a href="#" class="moodlezoom"><i class="fa fa-outdent fa-lg"></i> <span class="zoomdesc">Show blocks</span></a></li>
+                            <li class="hbll"><a href="#" class="moodlewidth"><i class="fa fa-expand fa-lg"></i> <span class="zoomdesc">Full screen</span></a></li>
+                            <li class="sbll"><a href="#" class="moodlewidth"><i class="fa fa-compress fa-lg"></i> <span class="zoomdesc">Standard view</span></a></li>
                         </ul>
                         <div id="edittingbutton" class="pull-right breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
                     </div>
