@@ -1167,21 +1167,23 @@ div.questionbankwindow.block {
 	height: 100%;
 }
 
-.coursebox.hover > .coursebox-content h3 {
-text-align: left;
-margin: 0px 0px 0px;
+.coursebox.panel.hover .panel-body .coursebox-content h3 {
 font-weight: normal;
 font-size: 20px;
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
 max-width: 100%;
-margin: 10px 0px 5px;
 line-height: normal;
 }
 
-.coursebox.panel .panel-body:hover h3 a {
+.coursebox.panel.hover .panel-body:hover .coursebox-content h3 a {
 	color: #fff;
+}
+
+.coursebox.hover .boxfooter {
+	clear: none;
+	margin-bottom: 0;
 }
 
 /* Custom CSS Settings
