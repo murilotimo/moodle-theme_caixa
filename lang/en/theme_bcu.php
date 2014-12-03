@@ -213,3 +213,17 @@ $string['alertsettingsheading'] = 'Customise the alert boxes that appear at the 
 $string['alertdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users.';
 
 $string['thiscourse'] = 'This course';
+
+$string['frontpagesettings'] = 'Frontpage';
+$string['frontpagesettingsheading'] = 'Frontpage rendering';
+$string['frontpagedesc'] = 'Configure the way that the course boxes are rendered on the frontpage.';
+$string['frontpagerenderer'] = 'Frontpage Course Boxes';
+$string['frontpagerendererdesc'] = 'Control the way that the coure boxes on the front page are rendered.';
+$string['frontpagerendereroption1'] = 'Tiles';
+$string['frontpagerendereroption2'] = 'Tiles w/ overlay';
+
+$string['rendereroverlaycolour'] = 'Overlay colour';
+$string['rendereroverlaycolourdesc'] = 'The colour of the overlay, when the "Tiles w/ overlay" renderer is selected.';
+
+$string['rendereroverlayfontcolour'] = 'Overlay font colour';
+$string['rendereroverlayfontcolourdesc'] = 'The colour of the font, when hovering over a coursebox with "Tiles w/ overlay" renderer enabled.';

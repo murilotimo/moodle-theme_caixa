@@ -64,6 +64,20 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
     $temp->add($setting);
+    
+    $name = 'theme_bcu/rendereroverlaycolour';
+    $title = get_string('rendereroverlaycolour', 'theme_bcu');
+    $description = get_string('rendereroverlaycolourdesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
+    $temp->add($setting);
+    
+    $name = 'theme_bcu/rendereroverlayfontcolour';
+    $title = get_string('rendereroverlayfontcolour', 'theme_bcu');
+    $description = get_string('rendereroverlayfontcolourdesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
+    $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);
 
@@ -307,6 +321,23 @@ if (is_siteadmin()) {
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
+    $ADMIN->add('theme_bcu', $temp);
+    
+    $temp = new admin_settingpage('theme_bcu_frontpage', get_string('frontpagesettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_frontpage', get_string('frontpagesettingsheading', 'theme_bcu'),
+        format_text(get_string('frontpagedesc', 'theme_bcu'), FORMAT_MARKDOWN))); 
+    
+    $name = 'theme_bcu/frontpagerenderer';
+    $title = get_string('frontpagerenderer', 'theme_bcu');
+    $description = get_string('frontpagerendererdesc', 'theme_bcu');
+    $choices = array(
+        1 => get_string('frontpagerendereroption1', 'theme_bcu'),
+        2 => get_string('frontpagerendereroption2', 'theme_bcu'),
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, 1, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+            
     $ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_footer', get_string('footersettings', 'theme_bcu'));

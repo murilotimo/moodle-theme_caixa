@@ -82,7 +82,21 @@ function theme_bcu_process_css($css, $theme) {
         $customcss = null;
     }
     $css = theme_bcu_set_customcss($css, $customcss);
-
+    
+    if(!empty($theme->settings->rendereroverlaycolour)) {
+        $rendereroverlaycolour = $theme->settings->rendereroverlaycolour;
+    } else {
+        $rendereroverlaycolour = null;
+    }
+    $css = theme_bcu_set_rendereroverlaycolour($css, $customss);
+    
+    if (!empty($theme->settings->rendereroverlayfontcolour)) {
+        $rendereroverlayfontcolour = $theme->settings->rendereroverlayfontcolour;
+    } else {
+        $rendereroverlayfontcolour = null;
+    }
+    $css = theme_bcu_set_rendereroverlayfontcolour($css, $customcss);
+    
     return $css;
 }
 
@@ -156,6 +170,26 @@ function theme_bcu_set_backcolor($css, $backcolor) {
     return $css;
 }
 
+function theme_bcu_set_rendereroverlaycolour($css, $rendereroverlaycolour) {
+    $tag = '[[setting:rendereroverlaycolour]]';
+    $replacement = $rendereroverlaycolour;
+    if (is_null($replacement)) {
+        $replacement = '#001e3c';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_bcu_set_rendereroverlayfontcolour($css, $rendereroverlayfontcolour) {
+    $tag = '[[setting:rendereroverlayfontcolour]]';
+    $replacement = $rendereroverlayfontcolour;
+    if (is_null($replacement)) {
+        $replacement = '#FFF';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
 /**
  * Deprecated: Please call theme_bcu_process_css instead.
  * @deprecated since 2.5.1
@@ -173,8 +207,6 @@ function bcu_set_customcss($css, $customcss) {
     debugging('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__, DEBUG_DEVELOPER);
     return theme_bcu_set_customcss($css, $customcss);
 }
-
-
 
 function theme_bcu_initialise_zoom(moodle_page $page) {
     user_preference_allow_ajax_update('theme_bcu_zoom', PARAM_TEXT);

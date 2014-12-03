@@ -1097,8 +1097,94 @@ div.questionbankwindow.block {
 	text-decoration: underline;
 }
 
+/* Renderer temporary changes */
+.coursebox.panel.hover .panel-heading {
+	display: none;
+} 
 
+.cimbox {
+	height: 175px;
+	position: relative;
+	margin-right: -1px;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.coursebox-content {
+	padding: 5px 15px 10px;
+	text-align: center;
+}
+
+.coursebox.hover .summary {
+	min-height: 50px;
+	overflow: auto;
+	position: absolute;
+	text-align: center;
+	color: [[setting:rendereroverlayfontcolour]];
+	padding: 30px 15px;
+	top: 0px;
+	display: none;
+}
+
+.coursebox.hover:hover .summary {
+	height: auto;
+	min-height: 50px;
+	display: block;
+}
+
+.coursebox.panel.hover .panel-body:hover {
+	background: [[setting:rendereroverlaycolour]] !important;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.coursebox.panel .panel-body:hover .cimbox {
+	opacity: .3;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+.panel.hover .coursebtn.submit.btn {
+	float: none;
+	display: block;
+	width: 90%;
+	margin: 0px auto 15px;
+	padding-left: 0px;
+	padding-right: 0px;
+	border: 1px solid #eee !important;
+	box-shadow: none;
+	color: inherit;
+	font-weight: 300;
+	position: inherit;
+}
+
+.coursebox.panel.hover {
+	height: 100%;
+}
+
+.coursebox.hover > .coursebox-content h3 {
+text-align: left;
+margin: 0px 0px 0px;
+font-weight: normal;
+font-size: 20px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+max-width: 100%;
+margin: 10px 0px 5px;
+line-height: normal;
+}
+
+.coursebox.panel .panel-body:hover h3 a {
+	color: #fff;
+}
 
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]
+
