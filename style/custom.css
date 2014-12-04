@@ -1122,14 +1122,30 @@ div.questionbankwindow.block {
 	overflow: auto;
 	position: absolute;
 	text-align: center;
-	color: [[setting:rendereroverlayfontcolour]];
-	padding: 30px 15px;
+	color: [[setting:rendereroverlayfontcolour]] !important;
+	padding: 15px;
 	top: 0px;
+	left: 0px;
 	display: none;
+}
+
+.coursebox.panel.hover .panel-body:hover .coursebox-content h3 a {
+	color: [[setting:rendereroverlayfontcolour]] !important;
+}
+
+.coursebox.hover .teachers li a, .coursebox.hover .summary > a:link, .coursebox.hover .summary > a:visited {
+	color: [[setting:rendereroverlayfontcolour]] !important;
+}
+
+.coursebox.hover .teachers {
+	text-align: left;
+	padding-top: 2px;
 }
 
 .coursebox.hover:hover .summary {
 	height: auto;
+	width: auto;
+	min-width: 90%;
 	min-height: 50px;
 	display: block;
 }
@@ -1177,9 +1193,7 @@ max-width: 100%;
 line-height: normal;
 }
 
-.coursebox.panel.hover .panel-body:hover .coursebox-content h3 a {
-	color: #fff;
-}
+
 
 .coursebox.hover .boxfooter {
 	clear: none;

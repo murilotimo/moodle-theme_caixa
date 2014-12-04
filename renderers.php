@@ -313,7 +313,7 @@ class theme_bcu_core_renderer extends core_renderer {
             $mycoursetitle = "Events";
             $branchtitle = "Events";
             $branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
-            $branchurl   = new moodle_url('/calendar/view.php?view=month&course=1');
+            $branchurl   = new moodle_url('/calendar/view.php');
             $branchsort  = 10000;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
@@ -609,7 +609,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
     // Type - 1 = No Overlay
     // Type - 2 = Overlay
     protected function coursecat_coursebox_content(coursecat_helper $chelper, $course, $type=2) {
-        global $CFG;
+        global $CFG, $OUTPUT;
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             return '';
         }
@@ -634,7 +634,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
                     $contentimages .= html_writer::link($link, html_writer::empty_tag('img', array('src' => $url)));
                     $contentimages .= html_writer::end_tag('div');
                 } else {
-                    $contentimages .= "<div class='cimbox' style='background:url($url) no-repeat top left; background-size: cover;'></div>";    
+                    $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";    
                 }
             } else {
                 $image = $this->output->pix_icon(file_file_icon($file, 24), $file->get_filename(), 'moodle');
@@ -647,7 +647,8 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
         }
         if(strlen($contentimages)==0 && $type==2) {
             // Default image
-            $contentimages .= "<div class='cimbox' style='background:url(http://localhost/moodle/theme/bcu/pix/tile-background.png) no-repeat top left; background-size: cover;'></div>";
+            $url = $OUTPUT->pix_url('tile-background', 'theme');
+            $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";
         }
         $content .= $contentimages. $contentfiles;
         
@@ -659,17 +660,19 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
             $content .= html_writer::start_tag('div', array('class'=>'coursebox-content'));
             $coursename = $chelper->get_course_formatted_name($course);
             $content .= html_writer::tag('h3', html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
-                    $coursename, array('class' => $course->visible ? '' : 'dimmed')));
+                    $coursename, array('class' => $course->visible ? '' : 'dimmed', 'title' => $coursename)));
         }
+        $content .= html_writer::start_tag('div', array('class' => 'summary'));
+        $content .= html_writer::tag('p', html_writer::tag('b', $coursename));
         // Display course summary.
         if ($course->has_summary()) {
-            $content .= html_writer::start_tag('div', array('class' => 'summary'));
+            
             $summs = $chelper->get_course_formatted_summary($course, array('overflowdiv' => false, 'noclean' => true,
                     'para' => false));
             $summs = strip_tags($summs);
             $truncsum = strlen($summs) > 70 ? substr($summs, 0, 70)."..." : $summs;
             $content .= html_writer::tag('span', $truncsum, array('title' => $summs));
-            $content .= html_writer::end_tag('div'); // Summary.
+            
         }
 
         // Display course contacts. See course_in_list::get_course_contacts().
@@ -684,6 +687,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
             }
             $content .= html_writer::end_tag('ul'); // Teachers.
         }
+        $content .= html_writer::end_tag('div'); // Summary.
 
         // Display course category if necessary (for example in search results).
         if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_EXPANDED_WITH_CAT) {
