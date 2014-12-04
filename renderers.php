@@ -663,7 +663,9 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
                     $coursename, array('class' => $course->visible ? '' : 'dimmed', 'title' => $coursename)));
         }
         $content .= html_writer::start_tag('div', array('class' => 'summary'));
-        $content .= html_writer::tag('p', html_writer::tag('b', $coursename));
+        if(ISSET($coursename)) {
+            $content .= html_writer::tag('p', html_writer::tag('b', $coursename));
+        }
         // Display course summary.
         if ($course->has_summary()) {
             
