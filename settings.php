@@ -95,14 +95,31 @@ if (is_siteadmin()) {
     $name = 'theme_bcu/infobox';
     $title = get_string('infobox', 'theme_bcu');
     $description = get_string('infoboxdesc', 'theme_bcu');
-    $default = '';
+    $default = '<div class="span9">
+    <h4>Information</h4>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </div>
+    
+    <div class="span3">
+    <a href="#" class="submit">2013/14 Courses <i class="fa-chevron-right fa"></i></a>
+</div>';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
     $name = 'theme_bcu/infobox2';
     $title = get_string('infobox2', 'theme_bcu');
     $description = get_string('infobox2desc', 'theme_bcu');
-    $default = '';
+    $default = ' <div class="span2 personpic">
+        <div id="person" class="spn5">
+        <img src="/urltoanimage.jpg" alt="person">
+        </div>
+        </div>
+        
+        <div class="span10">
+        <h4>School of Jewelry</h4>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        <a href="#" class="submit">Learn more... <i class="fa-chevron-right fa"></i></a>
+        </div>';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
@@ -296,28 +313,29 @@ if (is_siteadmin()) {
     $name = 'theme_bcu/market1';
     $title = get_string('market1', 'theme_bcu');
     $description = get_string('market1desc', 'theme_bcu');
-    $default = '';
+    $default = '    <div><img src="/someimageURL.jpg" class="marketimage"></div>
+    <div class="internalmarket">
+    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h3>
+    <a href="#" class="submit">My Home</a>
+    </div>';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
     $name = 'theme_bcu/market2';
     $title = get_string('market2', 'theme_bcu');
     $description = get_string('market2desc', 'theme_bcu');
-    $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
     $name = 'theme_bcu/market3';
     $title = get_string('market3', 'theme_bcu');
     $description = get_string('market3desc', 'theme_bcu');
-    $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
     $name = 'theme_bcu/market4';
     $title = get_string('market4', 'theme_bcu');
     $description = get_string('market4desc', 'theme_bcu');
-    $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
