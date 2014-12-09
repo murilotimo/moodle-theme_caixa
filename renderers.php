@@ -31,7 +31,7 @@ class theme_bcu_core_renderer extends core_renderer {
     /** @var custom_menu_item language The language menu if created */
     protected $language = null;
 
-    public function user_menu() {
+    public function user_menu($user = null, $withlinks = null) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
         return $this->render_user_menu($usermenu);
@@ -608,7 +608,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
 
     // Type - 1 = No Overlay
     // Type - 2 = Overlay
-    protected function coursecat_coursebox_content(coursecat_helper $chelper, $course, $type=2) {
+    protected function coursecat_coursebox_content(coursecat_helper $chelper, $course, $type=1) {
         global $CFG, $OUTPUT;
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             return '';
