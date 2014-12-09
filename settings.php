@@ -65,6 +65,20 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
     $temp->add($setting);
     
+    $name = 'theme_bcu/buttoncolour';
+    $title = get_string('buttoncolour', 'theme_bcu');
+    $description = get_string('buttoncolourdesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#00aeef', $previewconfig);
+    $temp->add($setting);
+    
+    $name = 'theme_bcu/buttonhovercolour';
+    $title = get_string('buttonhovercolour', 'theme_bcu');
+    $description = get_string('buttonhovercolourdesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
+    $temp->add($setting);
+    
     $name = 'theme_bcu/rendereroverlaycolour';
     $title = get_string('rendereroverlaycolour', 'theme_bcu');
     $description = get_string('rendereroverlaycolourdesc', 'theme_bcu');
@@ -352,7 +366,7 @@ if (is_siteadmin()) {
         1 => get_string('frontpagerendereroption1', 'theme_bcu'),
         2 => get_string('frontpagerendereroption2', 'theme_bcu'),
     );
-    $setting = new admin_setting_configselect($name, $title, $description, 1, $choices);
+    $setting = new admin_setting_configselect($name, $title, $description, 2, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
             

@@ -227,3 +227,9 @@ $string['rendereroverlaycolourdesc'] = 'The colour of the overlay, when the "Til
 
 $string['rendereroverlayfontcolour'] = 'Overlay font colour';
 $string['rendereroverlayfontcolourdesc'] = 'The colour of the font, when hovering over a coursebox with "Tiles w/ overlay" renderer enabled.';
+
+$string['buttoncolour'] = 'Button colour';
+$string['buttoncolourdesc'] = 'The colour of the main buttons used throughout the site.';
+
+$string['buttonhovercolour'] = 'Button colour (When hovering)';
+$string['buttonhovercolourdesc'] = 'The colour that the button changes to when hovering over the button.';

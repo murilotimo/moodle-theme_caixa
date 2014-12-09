@@ -88,14 +88,28 @@ function theme_bcu_process_css($css, $theme) {
     } else {
         $rendereroverlaycolour = null;
     }
-    $css = theme_bcu_set_rendereroverlaycolour($css, $customss);
+    $css = theme_bcu_set_rendereroverlaycolour($css, $rendereroverlaycolour);
     
     if (!empty($theme->settings->rendereroverlayfontcolour)) {
         $rendereroverlayfontcolour = $theme->settings->rendereroverlayfontcolour;
     } else {
         $rendereroverlayfontcolour = null;
     }
-    $css = theme_bcu_set_rendereroverlayfontcolour($css, $customcss);
+    $css = theme_bcu_set_rendereroverlayfontcolour($css, $rendereroverlayfontcolour);
+    
+    if(!empty($theme->settings->buttoncolour)) {
+        $buttoncolour = $theme->settings->buttoncolour;
+    } else {
+        $buttoncolour = null;
+    }
+    $css = theme_bcu_set_buttoncolour($css, $buttoncolour);
+    
+    if(!empty($theme->settings->buttonhovercolour)) {
+        $buttonhovercolour = $theme->settings->buttonhovercolour;
+    } else {
+        $buttonhovercolour = null;
+    }
+    $css = theme_bcu_set_buttonhovercolour($css, $buttonhovercolour);
     
     return $css;
 }
@@ -185,6 +199,26 @@ function theme_bcu_set_rendereroverlayfontcolour($css, $rendereroverlayfontcolou
     $replacement = $rendereroverlayfontcolour;
     if (is_null($replacement)) {
         $replacement = '#FFF';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_bcu_set_buttoncolour($css, $buttoncolour) {
+    $tag = '[[setting:buttoncolour]]';
+    $replacement = $buttoncolour;
+    if (is_null($replacement)) {
+        $replacement = '#00aeef';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function theme_bcu_set_buttonhovercolour($css, $buttonhovercolour) {
+    $tag = '[[setting:buttonhovercolour]]';
+    $replacement = $buttonhovercolour;
+    if (is_null($replacement)) {
+        $replacement = '#0084c2';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
