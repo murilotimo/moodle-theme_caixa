@@ -1200,6 +1200,10 @@ line-height: normal;
 	margin-bottom: 0;
 }
 
+.coursebox .content .courseimage img {
+	max-width: 300px;
+}
+
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]
