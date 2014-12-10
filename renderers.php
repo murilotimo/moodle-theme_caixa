@@ -519,6 +519,11 @@ class theme_bcu_core_renderer extends core_renderer {
             return html_writer::tag('li', $link);
         }
     }
+    
+    protected function theme_switch_links() {
+        // We're just going to return nothing and fail nicely, whats the point in bootstrap if not for responsive?
+        return '';
+    }
 
     public function bcublocks($region, $classes = array(), $tag = 'aside') {
         $classes = (array)$classes;
