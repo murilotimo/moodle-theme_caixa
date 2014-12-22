@@ -208,13 +208,15 @@ $string['coloursettings'] = 'Colours';
 $string['coloursettingsheading'] = 'Modify the main colours used throughout the theme.';
 $string['colourdesc'] = 'You can select the colours that you would like to use throughout the theme.';
 
-$string['alertsettings'] = 'Alerts';
-$string['alertsettingsheading'] = 'Customise the alert boxes that appear at the top of the page';
-$string['alertdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users.';
+$string['headersettings'] = 'Header';
+$string['headersettingsheading'] = 'Customise the header of this theme.';
+$string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
 
 $string['thiscourse'] = 'This course';
 
-$string['frontpagesettings'] = 'Frontpage';
+$string['frontpageblocksettings'] = 'Frontpage Blocks';
+$string['frontpageslidersettings'] = 'Frontpage Slider';
+$string['frontpagecoursesettings'] = 'Frontpage Courses';
 $string['frontpagesettingsheading'] = 'Frontpage rendering';
 $string['frontpagedesc'] = 'Configure the way that the course boxes are rendered on the frontpage.';
 $string['frontpagerenderer'] = 'Frontpage Course Boxes';
@@ -233,3 +235,6 @@ $string['buttoncolourdesc'] = 'The colour of the main buttons used throughout th
 
 $string['buttonhovercolour'] = 'Button colour (When hovering)';
 $string['buttonhovercolourdesc'] = 'The colour that the button changes to when hovering over the button.';
+
+$string['frontpagerendererdefaultimage'];
+$string['frontpagerendererdefaultimagedesc'];
