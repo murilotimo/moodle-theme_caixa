@@ -2,13 +2,18 @@ jQuery(document).ready(function($) {
 
 
 //new for every three
-var $pArr = $('.coursebox.panel');
+var $pArr = $('.frontpage-course-list-all').children();
 	var pArrLen = $pArr.length;
 	var pPerDiv = 3;
 	for (var i = 0;i < pArrLen;i+=pPerDiv){
 		$pArr.filter(':eq('+i+'),:lt('+(i+pPerDiv)+'):gt('+i+')').wrapAll('<div class="row-fluid clearfix" />');
 }
-
+var $pArr = $('.frontpage-course-list-enrolled').children();
+	var pArrLen = $pArr.length;
+	var pPerDiv = 3;
+	for (var i = 0;i < pArrLen;i+=pPerDiv){
+		$pArr.filter(':eq('+i+'),:lt('+(i+pPerDiv)+'):gt('+i+')').wrapAll('<div class="row-fluid clearfix" />');
+}
 $( ".breadcrumb li:not(:last-child) span").not('.divider').addClass('spnlink').append( '<span class="arrow-top"></span><span class="arrow-bottom"></span>' );
 $( ".breadcrumb li a" ).append( '<span class="arrow-top"></span><span class="arrow-bottom"></span>' );
 $(".breadcrumb li:last-child").addClass("lastli");

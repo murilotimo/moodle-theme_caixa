@@ -26,6 +26,7 @@
 
 require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot . "/course/renderer.php");
+require_once($CFG->libdir. '/coursecatlib.php');
 
 class theme_bcu_core_renderer extends core_renderer {
     /** @var custom_menu_item language The language menu if created */
@@ -590,7 +591,6 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
         }
 
         $content .= html_writer::end_tag('div'); // End .panel.
-
         return $content;
     }
     
@@ -609,7 +609,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
     // Type - 1 = No Overlay
     // Type - 2 = Overlay
     protected function coursecat_coursebox_content(coursecat_helper $chelper, $course, $type=1) {
-        global $CFG, $OUTPUT;
+        global $CFG, $OUTPUT, $PAGE;
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             return '';
         }
@@ -647,7 +647,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
         }
         if(strlen($contentimages)==0 && $type==2) {
             // Default image
-            $url = $OUTPUT->pix_url('tile-background', 'theme');
+            $url = $PAGE->theme->setting_file_url('frontpagerendererdefaultimage', 'frontpagerendererdefaultimage');
             $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";
         }
         $content .= $contentimages. $contentfiles;
@@ -709,7 +709,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
 
         return $content;
     }
-
+    
     public function course_search_form($value = '', $format = 'plain') {
         static $count = 0;
         $formid = 'coursesearch';
