@@ -236,6 +236,6 @@ $string['buttoncolourdesc'] = 'The colour of the main buttons used throughout th
 $string['buttonhovercolour'] = 'Button colour (When hovering)';
 $string['buttonhovercolourdesc'] = 'The colour that the button changes to when hovering over the button.';
 
-$string['frontpagerendererdefaultimage'];
-$string['frontpagerendererdefaultimagedesc'];
+$string['frontpagerendererdefaultimage'] = 'Default course image';
+$string['frontpagerendererdefaultimagedesc'] = 'The default image to use when no course image is found, (only applies for Tiles w/ overlay)';
 $string['loadtime'] = 'Page loaded in';
