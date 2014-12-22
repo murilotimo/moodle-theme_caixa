@@ -98,7 +98,13 @@ if (is_siteadmin()) {
     $temp = new admin_settingpage('theme_bcu_header', get_string('headersettings', 'theme_bcu'));
     $temp->add(new admin_setting_heading('theme_bcu_header', get_string('headersettingsheading', 'theme_bcu'),
         format_text(get_string('headerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-        
+    
+    $name = 'theme_bcu/sitetitle';
+    $title = get_string('sitetitle', 'theme_bcu');
+    $description = get_string('sitetitledesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
         
     $name = 'theme_bcu/logo';
     $title = get_string('logo', 'theme_bcu');
@@ -106,7 +112,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
+    
     $name = 'theme_bcu/alertbox';
     $title = get_string('alertbox', 'theme_bcu');
     $description = get_string('alertboxdesc', 'theme_bcu');
