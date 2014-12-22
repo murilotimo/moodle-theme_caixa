@@ -238,3 +238,4 @@ $string['buttonhovercolourdesc'] = 'The colour that the button changes to when h
 
 $string['frontpagerendererdefaultimage'];
 $string['frontpagerendererdefaultimagedesc'];
+$string['loadtime'] = 'Page loaded in';
