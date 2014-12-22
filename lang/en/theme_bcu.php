@@ -233,3 +233,5 @@ $string['buttoncolourdesc'] = 'The colour of the main buttons used throughout th
 
 $string['buttonhovercolour'] = 'Button colour (When hovering)';
 $string['buttonhovercolourdesc'] = 'The colour that the button changes to when hovering over the button.';
+
+$string['loadtime'] = 'Page loaded in';

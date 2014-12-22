@@ -505,6 +505,34 @@ class theme_bcu_core_renderer extends core_renderer {
         );
         return html_writer::tag($tag, $this->blocks_for_region($region), $attributes);
     }
+    
+    public function footer() {
+        global $CFG;
+
+        $output = $this->container_end_all(true);
+
+        $footer = $this->opencontainers->pop('header/footer');
+
+        // Provide some performance info if required
+        $performanceinfo = '';
+        if (defined('MDL_PERF') || (!empty($CFG->perfdebug) and $CFG->perfdebug > 7)) {
+            $perf = get_performance_info();
+            if (defined('MDL_PERFTOLOG') && !function_exists('register_shutdown_function')) {
+                error_log("PERF: " . $perf['txt']);
+            }
+            if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
+                $performanceinfo = theme_bcu_performance_output($perf, theme_bcu_get_setting('perfinfo'));
+            }
+        }
+
+        $footer = str_replace($this->unique_performance_info_token, $performanceinfo, $footer);
+
+        $footer = str_replace($this->unique_end_html_token, $this->page->requires->get_end_code(), $footer);
+
+        $this->page->set_state(moodle_page::STATE_DONE);
+
+        return $output . $footer;
+    }
 }
 
 class theme_bcu_core_course_renderer extends core_course_renderer {
