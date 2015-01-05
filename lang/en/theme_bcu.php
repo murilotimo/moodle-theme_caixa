@@ -242,3 +242,8 @@ $string['loadtime'] = 'Page loaded in';
 
 $string['sitetitle'] = 'Site title';
 $string['sitetitledesc'] = 'Show / Hide site title';
+
+$string['hideblocks'] = 'Hide blocks';
+$string['showblocks'] = 'Show blocks';
+$string['fullscreen'] = 'Full screen';
+$string['standardview'] = 'Standard view';
