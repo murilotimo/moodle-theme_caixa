@@ -239,3 +239,6 @@ $string['buttonhovercolourdesc'] = 'The colour that the button changes to when h
 $string['frontpagerendererdefaultimage'] = 'Default course image';
 $string['frontpagerendererdefaultimagedesc'] = 'The default image to use when no course image is found, (only applies for Tiles w/ overlay)';
 $string['loadtime'] = 'Page loaded in';
+
+$string['sitetitle'] = 'Site title';
+$string['sitetitledesc'] = 'Show / Hide site title';

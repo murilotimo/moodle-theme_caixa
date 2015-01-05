@@ -136,7 +136,11 @@ echo $OUTPUT->doctype();
         <?php } ?>
      
    
-     
+    <?php
+    if (isset($PAGE) && $PAGE->pagetype == 'site-index' && !$PAGE->theme->settings->sitetitle) {
+        $PAGE->set_heading(null);
+    }
+    ?>
      <div id="coursetitle" class="pull-left">
      <span title='<?php echo $PAGE->heading ?>'><?php echo $PAGE->heading ?></span>
      </div>
