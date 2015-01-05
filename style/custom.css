@@ -77,6 +77,9 @@ a:focus {
 
 #above-header {
 	border-bottom: 1px solid #3c469c;
+        height: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
 }
 
 #above-header .container {
