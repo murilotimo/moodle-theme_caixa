@@ -174,10 +174,10 @@ echo $OUTPUT->doctype();
                     <div class="nav-collapse collapse ">
                         <?php echo $OUTPUT->custom_menu(); ?>
                         <ul class="nav pull-right">
-                            <li class="hbl"><a href="#" class="moodlezoom"><i class="fa fa-indent fa-lg"></i> <span class="zoomdesc"><?php get_string('hideblocks', 'theme_bcu') ?></span></a></li>
-                            <li class="sbl"><a href="#" class="moodlezoom"><i class="fa fa-outdent fa-lg"></i> <span class="zoomdesc"><?php get_string('showblocks', 'theme_bcu') ?></span></a></li>
-                            <li class="hbll"><a href="#" class="moodlewidth"><i class="fa fa-expand fa-lg"></i> <span class="zoomdesc"><?php get_string('fullscreen', 'theme_bcu') ?></span></a></li>
-                            <li class="sbll"><a href="#" class="moodlewidth"><i class="fa fa-compress fa-lg"></i> <span class="zoomdesc"><?php get_string('standardview', 'theme_bcu') ?></span></a></li>
+                            <li class="hbl"><a href="#" class="moodlezoom"><i class="fa fa-indent fa-lg"></i> <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_bcu') ?></span></a></li>
+                            <li class="sbl"><a href="#" class="moodlezoom"><i class="fa fa-outdent fa-lg"></i> <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_bcu') ?></span></a></li>
+                            <li class="hbll"><a href="#" class="moodlewidth"><i class="fa fa-expand fa-lg"></i> <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_bcu') ?></span></a></li>
+                            <li class="sbll"><a href="#" class="moodlewidth"><i class="fa fa-compress fa-lg"></i> <span class="zoomdesc"><?php echo get_string('standardview', 'theme_bcu') ?></span></a></li>
                         </ul>
                         <div id="edittingbutton" class="pull-right breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
                     </div>
