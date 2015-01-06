@@ -389,7 +389,7 @@ function theme_bcu_get_course_activities() {
     return $modfullnames;
 }
 
-function theme_bcu_performance_output($param, $perfinfo) {
+function theme_bcu_performance_output($param) {
     $html = html_writer::tag('span', get_string('loadtime', 'theme_bcu').' '. round($param['realtime'], 2) . ' ' . get_string('seconds'), array('id' => 'load'));
     return $html;
 }
