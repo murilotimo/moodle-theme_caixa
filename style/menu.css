@@ -111,27 +111,6 @@ background: #001e3c !Important;
 	background: rgba(255,255,255,.1);
 }
 
-.nav .caret {
-	border: 0px; 
-	 font-family: FontAwesome;
-}
-
-.nav .caret:before {
- 
-}
-
-.nav .caret:before {
-    display: inline-block;
-    text-decoration: inherit;
-}
-
-.navbar .nav .dropdown-toggle .caret {
-    font-size: 12px;
-    margin-top: 1px;
-    padding-left: 5px;
-}
-
-
 @media only screen 
 and (min-width : 1224px) {
 /*on hover only for large screens*/
@@ -171,22 +150,27 @@ and (min-width : 1224px) {
 
 @media (max-width: 979px) {
 	.hbl, .sbl, .hbll, .sbll {
-		display: none !important;
+            display: none !important;
 	}
 	
 	#navwrap {
-		border-bottom: 0;
+            border-bottom: 0;
 	}
 	
 	#page-header a img {
-		margin: 0 auto;
-		float: none;
-		display: block;
+            margin: 0 auto;
+            float: none;
+            display: block;
 	}
 }
 
 .container-fluid {
-	max-width: 100%;
-	padding-right: 0;
-	padding-left: 0;
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.menutitle {
+    height: 100%;
+    float: right;
 }

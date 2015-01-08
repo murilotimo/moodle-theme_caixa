@@ -348,7 +348,7 @@ class theme_bcu_core_renderer extends core_renderer {
 
             $mycoursetitle = "My Sites";
             $branchtitle = "My Sites";
-            $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
+            $branchlabel = '<i class="fa fa-briefcase"></i><span class="menutitle">'.$branchtitle.'</span>';
             $branchurl   = new moodle_url('/my/index.php');
             $branchsort  = 10001;
 
@@ -368,7 +368,7 @@ class theme_bcu_core_renderer extends core_renderer {
 
             if (ISSET($COURSE->id) && $COURSE->id > 1) {
                 $branchtitle = get_string('thiscourse', 'theme_bcu');
-                $branchlabel = '<i class="fa fa-sitemap"></i>'.$branchtitle;
+                $branchlabel = '<i class="fa fa-sitemap"></i><span class="menutitle">'.$branchtitle.'</span>';
                 $branchurl = new moodle_url('#');
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
 
@@ -456,9 +456,6 @@ class theme_bcu_core_renderer extends core_renderer {
             $content .= html_writer::start_tag('a', array('href' => $url, 'class' => 'dropdown-toggle',
                     'data-toggle' => 'dropdown', 'title' => $menunode->get_title()));
             $content .= $menunode->get_text();
-            if ($level == 1) {
-                $content .= '<b class="caret"></b>';
-            }
             $content .= '</a>';
             $content .= '<ul class="dropdown-menu">';
             foreach ($menunode->get_children() as $menunode) {
