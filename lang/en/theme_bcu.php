@@ -247,3 +247,9 @@ $string['hideblocks'] = 'Hide blocks';
 $string['showblocks'] = 'Show blocks';
 $string['fullscreen'] = 'Full screen';
 $string['standardview'] = 'Standard view';
+
+$string['tilesshowcontacts'] = 'Show course contacts';
+$string['tilesshowcontactsdesc'] = 'Show / hide course contacts';
+
+$string['tilescontactstitle'] = 'Show course contacts role';
+$string['tilescontactstitledesc'] = 'Show / hide the role of a course contact. If not displayed, an image will be displayed before each contact';
