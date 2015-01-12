@@ -366,6 +366,12 @@ if (is_siteadmin()) {
     $description = get_string('tilesshowcontactsdesc', 'theme_bcu');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $temp->add($setting);
+    
+    $name = 'theme_bcu/tilescontactstitle';
+    $title = get_string('tilescontactstitle', 'theme_bcu');
+    $description = get_string('tilescontactstitledesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
+    $temp->add($setting);
                 
     $ADMIN->add('theme_bcu', $temp);
 

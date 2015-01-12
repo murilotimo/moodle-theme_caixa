@@ -708,12 +708,12 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
         }
         $coursecontacts = theme_bcu_get_setting('tilesshowcontacts');
         if($coursecontacts) {
+            $coursecontacttitle = theme_bcu_get_setting('tilescontactstitle');
             // Display course contacts. See course_in_list::get_course_contacts().
             if ($course->has_course_contacts()) {
                 $content .= html_writer::start_tag('ul', array('class' => 'teachers'));
                 foreach ($course->get_course_contacts() as $userid => $coursecontact) {
-                    $name = html_writer::tag('i', '&nbsp;', array('class' => 'fa fa-graduation-cap')).
-                            $coursecontact['rolename'].': '.
+                    $name = ($coursecontacttitle ? $coursecontact['rolename'].': ' : html_writer::tag('i', '&nbsp;', array('class' => 'fa fa-graduation-cap')) ).
                             html_writer::link(new moodle_url('/user/view.php',
                                     array('id' => $userid, 'course' => SITEID)),
                                 $coursecontact['username']);
