@@ -360,6 +360,12 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'frontpagerendererdefaultimage');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    $name = 'theme_bcu/tilesshowcontacts';
+    $title = get_string('tilesshowcontacts', 'theme_bcu');
+    $description = get_string('tilesshowcontactsdesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
+    $temp->add($setting);
                 
     $ADMIN->add('theme_bcu', $temp);
 
