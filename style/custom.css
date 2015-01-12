@@ -1207,6 +1207,10 @@ line-height: normal;
 	max-width: 300px;
 }
 
+.paging .paging-morelink {
+    clear: both;
+}
+
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]
