@@ -116,6 +116,9 @@ ul.teachers {
 .forumsearch input[type=text] {
   margin-bottom: 0 !important;
 }
+#page-mod-lesson-edit .singleselect {
+    width: auto;
+}
 #page-mod-forum-discuss .discussioncontrol.displaymode {
   text-align: left;
 }
