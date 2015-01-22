@@ -64,7 +64,7 @@ class theme_bcu_core_renderer extends core_renderer {
     }
 
     protected function render_user_menu(custom_menu $menu) {
-        global $CFG, $USER, $DB, $PAGE;
+        global $CFG, $USER, $DB, $PAGE, $OUTPUT;
 
         $addusermenu = true;
         $addlangmenu = true;
@@ -96,11 +96,18 @@ class theme_bcu_core_renderer extends core_renderer {
                         get_string('messages', 'message'), 9999);
             }
             foreach ($messages as $message) {
-
-                $senderpicture = new user_picture($message->from);
-                $senderpicture->link = false;
-                $senderpicture = $this->render($senderpicture);
-
+                if(!is_object($message->from)) {
+                    $url = $OUTPUT->pix_url('u/f2');
+                    $attributes = array(
+                        'src' => $url
+                    );
+                    $senderpicture = html_writer::empty_tag('img', $attributes);
+                } else {
+                    $senderpicture = new user_picture($message->from);
+                    $senderpicture->link = false;
+                    $senderpicture = $this->render($senderpicture);
+                }
+                
                 $messagecontent = $senderpicture;
                 $messagecontent .= html_writer::start_tag('span', array('class' => 'msg-body'));
                 $messagecontent .= html_writer::start_tag('span', array('class' => 'msg-title'));
