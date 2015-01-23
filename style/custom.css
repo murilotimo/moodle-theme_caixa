@@ -1067,10 +1067,17 @@ div.questionbankwindow.block {
 /* End classes for search box */
 
 #region-main, .container {
-	-webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+#block-region-side-post {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 .nav .dropdown-menu li a i, .nav li a i {

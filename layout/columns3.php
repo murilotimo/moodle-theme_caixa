@@ -25,7 +25,7 @@
  */
 
 require_once(dirname(__FILE__) . '/includes/header.php'); 
-
+$left = true;
 ?>
 <div id="page" class="container-fluid">
 
@@ -61,10 +61,15 @@ require_once(dirname(__FILE__) . '/includes/header.php');
     <div id="page-content" class="row-fluid">    
         <div id="<?php echo $regionbsid ?>" class="span9">
             <div class="row-fluid">
-            <div id="page-navbar" class="span12">
-            <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-            <?php echo $OUTPUT->navbar(); ?>
-        	</div>
+                <div id="page-navbar" class="span12">
+                    <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+                    <?php echo $OUTPUT->navbar(); ?>
+                </div>
+                <?php
+                    if($left) {
+                        echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
+                    }
+                ?>
                 <section id="region-main" class="span8 pull-right">
                     <?php
                     echo $OUTPUT->course_content_header();
@@ -75,7 +80,11 @@ require_once(dirname(__FILE__) . '/includes/header.php');
                 <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
             </div>
         </div>
-        <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
+        <?php
+            if(!$left) {
+                echo $OUTPUT->blocks('side-post', 'span3');
+            }
+        ?>
     </div>
 
     <?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>

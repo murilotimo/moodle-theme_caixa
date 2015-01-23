@@ -26,6 +26,8 @@
 
 require_once(dirname(__FILE__) . '/includes/header.php');
 
+$left = true;
+
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $haslogo = (!empty($PAGE->theme->settings->logo));
 $hasp1 = (!empty($PAGE->theme->settings->p1));
@@ -206,7 +208,12 @@ if (!empty($PAGE->theme->settings->infobox2)) {
             <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
             <?php echo $OUTPUT->navbar(); ?>
     </div>
-        <section id="region-main" class="span9<?php if ($left) { echo ' '; } ?> desktop-first-column">
+        <?php
+        if($left) {
+            echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
+        }
+        ?>
+        <section id="region-main" class="span9 <?php if ($left) { echo ' '; } else { echo 'desktop-first-column'; } ?> ">
             <?php
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();
@@ -214,7 +221,9 @@ if (!empty($PAGE->theme->settings->infobox2)) {
             ?>
         </section>
         <?php
-        echo $OUTPUT->blocks('side-post', 'span3');
+            if(!$left) {
+                echo $OUTPUT->blocks('side-post', 'span3');
+            }
         ?>
     </div>
     </div>
