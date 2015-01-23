@@ -1028,7 +1028,7 @@ button.close {
 	font-size: 1.4em;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 778px) {
 	.searchbox {
 		padding-bottom: 5px;
 	}
