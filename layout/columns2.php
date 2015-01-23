@@ -25,7 +25,7 @@
  */
 
 require_once(dirname(__FILE__) . '/includes/header.php'); 
-
+$left = true;
 ?>
 
 <div class="container outercont">
@@ -33,7 +33,12 @@ require_once(dirname(__FILE__) . '/includes/header.php');
     <div id="page-navbar" class="span12">
         <?php echo $OUTPUT->navbar(); ?>
     </div>
-        <section id="region-main" class="span9<?php if ($left) { echo ' '; } ?> desktop-first-column">
+        <?php
+        if($left) {
+            echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
+        }
+        ?>
+        <section id="region-main" class="span9<?php if ($left) { echo ' '; } else { echo 'desktop-first-column'; } ?> ">
             <?php
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();
@@ -41,11 +46,9 @@ require_once(dirname(__FILE__) . '/includes/header.php');
             ?>
         </section>
         <?php
-        $classextra = '';
-        if ($left) {
-            //$classextra = ' desktop-first-column';
-        }
-        echo $OUTPUT->blocks('side-post', 'span3'.$classextra);
+            if(!$left) {
+                echo $OUTPUT->blocks('side-post', 'span3');
+            }
         ?>
     </div>
     </div>
