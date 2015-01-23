@@ -26,7 +26,7 @@
 
 require_once(dirname(__FILE__) . '/includes/header.php');
 
-$left = true;
+$left = theme_bcu_get_block_side();
 
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $haslogo = (!empty($PAGE->theme->settings->logo));
@@ -209,7 +209,7 @@ if (!empty($PAGE->theme->settings->infobox2)) {
             <?php echo $OUTPUT->navbar(); ?>
     </div>
         <?php
-        if($left) {
+        if($left == 1) {
             echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
         }
         ?>
@@ -221,7 +221,7 @@ if (!empty($PAGE->theme->settings->infobox2)) {
             ?>
         </section>
         <?php
-            if(!$left) {
+            if($left == 0) {
                 echo $OUTPUT->blocks('side-post', 'span3');
             }
         ?>

@@ -268,6 +268,14 @@ function theme_bcu_get_full() {
     return get_user_preferences('theme_bcu_full', '');
 }
 
+function theme_bcu_get_block_side() {
+    static $theme;
+    if (empty($theme)) {
+        $theme = theme_config::load('bcu');
+    }
+    return get_user_preferences('theme_bcu_block_side', $theme->settings->blockside);
+}
+
 function theme_bcu_get_html_for_settings(renderer_base $output, moodle_page $page) {
     global $CFG;
     $return = new stdClass;

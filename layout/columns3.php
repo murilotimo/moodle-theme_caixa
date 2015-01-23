@@ -25,7 +25,7 @@
  */
 
 require_once(dirname(__FILE__) . '/includes/header.php'); 
-$left = true;
+$left = theme_bcu_get_block_side();
 ?>
 <div id="page" class="container-fluid">
 
@@ -66,7 +66,7 @@ $left = true;
                     <?php echo $OUTPUT->navbar(); ?>
                 </div>
                 <?php
-                    if($left) {
+                    if($left == 1) {
                         echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
                     }
                 ?>
@@ -81,7 +81,7 @@ $left = true;
             </div>
         </div>
         <?php
-            if(!$left) {
+            if($left == 0) {
                 echo $OUTPUT->blocks('side-post', 'span3');
             }
         ?>
