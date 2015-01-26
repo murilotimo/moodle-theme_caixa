@@ -374,6 +374,22 @@ if (is_siteadmin()) {
     $temp->add($setting);
                 
     $ADMIN->add('theme_bcu', $temp);
+    
+    $temp = new admin_settingpage('theme_bcu_layout', get_string('layoutsettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_layout', get_string('layoutsettingsheading', 'theme_bcu'),
+        format_text(get_string('layoutdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    
+    $name = 'theme_bcu/blockside';
+    $title = get_string('blockside', 'theme_bcu');
+    $description = get_string('blocksidedesc', 'theme_bcu');
+    $setting = new admin_setting_configselect($name, $title, $description, 0,
+    array(
+            0 => get_string('rightblocks', 'theme_bcu'),
+            1 => get_string('leftblocks', 'theme_bcu'),
+        ));
+    $temp->add($setting);
+    
+    $ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_footer', get_string('footersettings', 'theme_bcu'));
     $temp->add(new admin_setting_heading('theme_bcu_footer', get_string('footersettingsheading', 'theme_bcu'),
