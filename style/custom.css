@@ -1218,6 +1218,10 @@ line-height: normal;
     clear: both;
 }
 
+#region-main {
+    overflow-x: auto; 
+}
+
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]
