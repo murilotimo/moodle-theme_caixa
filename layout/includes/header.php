@@ -172,7 +172,10 @@ echo $OUTPUT->doctype();
                         <span class="icon-bar"></span>
                     </a>
                     <div class="nav-collapse collapse ">
+                        <?php echo $OUTPUT->navigation_menu(); ?>
                         <?php echo $OUTPUT->custom_menu(); ?>
+                        <?php echo $OUTPUT->tools_menu(); ?>
+                        
                         <ul class="nav pull-right">
                             <li class="hbl"><a href="#" class="moodlezoom"><i class="fa fa-indent fa-lg"></i> <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_bcu') ?></span></a></li>
                             <li class="sbl"><a href="#" class="moodlezoom"><i class="fa fa-outdent fa-lg"></i> <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_bcu') ?></span></a></li>

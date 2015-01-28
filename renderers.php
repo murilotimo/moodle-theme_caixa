@@ -64,9 +64,8 @@ class theme_bcu_core_renderer extends core_renderer {
     }
 
     protected function render_user_menu(custom_menu $menu) {
-        global $CFG, $USER, $DB, $PAGE, $OUTPUT;
+        global $CFG, $USER, $DB;
 
-        $addusermenu = true;
         $addlangmenu = true;
         $addmessagemenu = true;
 
@@ -129,12 +128,12 @@ class theme_bcu_core_renderer extends core_renderer {
             $addlangmenu = false;
         }
 
-        $content = '<ul class="usermenu2 nav navbar-nav navbar-right">';
+        $content = html_writer::start_tag('ul', array('class' => 'usermenu2 nav navbar-nav navbar-right'));
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
 
-        return $content.'</ul>';
+        return $content.html_writer::end_tag('ul');
     }
 
     protected function process_user_messages() {
@@ -310,29 +309,9 @@ class theme_bcu_core_renderer extends core_renderer {
         return $output . $footer;
     }
 
-    /*
-     * Overriding the custom_menu function ensures the custom menu is
-     * always shown, even if no menu items are configured in the global
-     * theme settings page.
-     */
-    public function custom_menu($custommenuitems = '') {
-        global $CFG;
-
-        if (!empty($CFG->custommenuitems)) {
-            $custommenuitems .= $CFG->custommenuitems;
-        }
-        $custommenu = new custom_menu($custommenuitems, current_language());
-        return $this->render_custom_menu($custommenu);
-    }
-
-    /*
-     * This renders the bootstrap top menu.
-     *
-     * This renderer is needed to enable the Bootstrap style navigation.
-     */
-    protected function render_custom_menu(custom_menu $menu) {
-        global $CFG, $PAGE, $OUTPUT, $COURSE;
-
+    public function navigation_menu() {
+        global $PAGE, $COURSE, $OUTPUT, $CFG;
+        $menu = new custom_menu();
         if (isloggedin() && !isguestuser()) {
             $branchtitle = get_string('home');
             $branchlabel = '<i class="fa fa-home"></i> '.$branchtitle;
@@ -346,14 +325,12 @@ class theme_bcu_core_renderer extends core_renderer {
             $branchsort  = 9999;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
-            $mycoursetitle = "Events";
             $branchtitle = "Events";
             $branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
             $branchurl   = new moodle_url('/calendar/view.php');
             $branchsort  = 10000;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
-            $mycoursetitle = "My Sites";
             $branchtitle = "My Sites";
             $branchlabel = '<i class="fa fa-briefcase"></i><span class="menutitle">'.$branchtitle.'</span>';
             $branchurl   = new moodle_url('/my/index.php');
@@ -401,16 +378,52 @@ class theme_bcu_core_renderer extends core_renderer {
                     }
                 }
             }
-
-            if (!empty($PAGE->theme->settings->enablehelp)) {
-                $mycoursetitle = "Help";
-                $branchtitle = "Help";
-                $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
-                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp.'" target="'.$PAGE->theme->settings->helptarget.'"');
-                $branchsort  = 10003;
-                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-            }
         }
+        
+        if (!empty($PAGE->theme->settings->enablehelp)) {
+            $branchtitle = "Help";
+            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
+            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
+            $branchsort  = 10003;
+            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+        }
+        return $this->render_custom_menu($menu);
+    }
+    
+    public function tools_menu() {
+        global $PAGE;
+        $custommenuitems = '';
+        if(!empty($PAGE->theme->settings->toolsmenu)) {
+            $custommenuitems .= "<i class='fa fa-wrench'> </i>".get_string('toolsmenulabel', 'theme_bcu')."\n";
+            $arr = explode("\n", $PAGE->theme->settings->toolsmenu);
+            // We want to force everything inputted under this menu
+            foreach ($arr as $key => $value) {
+                $arr[$key] = '-' . $arr[$key];
+            }
+            $custommenuitems .= implode("\n", $arr);
+        }
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);
+    }
+    
+    public function custom_menu($custommenuitems = '')
+    {
+        global $CFG;
+
+        if (empty($custommenuitems) && !empty($CFG->custommenuitems)) {
+            $custommenuitems = $CFG->custommenuitems;
+        }
+        $custommenu = new custom_menu($custommenuitems, current_language());
+        return $this->render_custom_menu($custommenu);
+    }
+    
+    /*
+     * This renders the bootstrap top menu.
+     *
+     * This renderer is needed to enable the Bootstrap style navigation.
+     */
+    protected function render_custom_menu(custom_menu $menu) {
+        global $CFG;
 
         // TODO: eliminate this duplicated logic, it belongs in core, not
         // here. See MDL-39565.
@@ -478,6 +491,7 @@ class theme_bcu_core_renderer extends core_renderer {
                 $url = '#';
             }
             $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title()));
+            $content .= "</li>";
         }
         return $content;
     }
