@@ -399,7 +399,7 @@ class theme_bcu_core_renderer extends core_renderer {
                 $mycoursetitle = "Help";
                 $branchtitle = "Help";
                 $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
-                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
+                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp.'" target="'.$PAGE->theme->settings->helptarget.'"');
                 $branchsort  = 10003;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
