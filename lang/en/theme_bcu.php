@@ -223,6 +223,7 @@ $string['frontpagerenderer'] = 'Frontpage Course Boxes';
 $string['frontpagerendererdesc'] = 'Control the way that the coure boxes on the front page are rendered.';
 $string['frontpagerendereroption1'] = 'Tiles';
 $string['frontpagerendereroption2'] = 'Tiles w/ overlay';
+$string['frontpagerendereroption3'] = 'Moodle default';
 
 $string['rendereroverlaycolour'] = 'Overlay colour';
 $string['rendereroverlaycolourdesc'] = 'The colour of the overlay, when the "Tiles w/ overlay" renderer is selected.';

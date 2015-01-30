@@ -542,12 +542,12 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG, $OUTPUT;
         $type = theme_bcu_get_setting('frontpagerenderer');
+        if($type == 3 || $OUTPUT->body_id() != 'page-site-index') {
+            return parent::coursecat_coursebox($chelper, $course, $additionalclasses = '');
+        }
         $additionalcss = '';
         if($type==2) {
             $additionalcss = 'hover';
-        }
-        if ($OUTPUT->body_id() != 'page-site-index') {
-            return parent::coursecat_coursebox($chelper, $course, $additionalclasses = '');
         }
 
         if (!isset($this->strings->summary)) {
@@ -638,7 +638,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
 
     // Type - 1 = No Overlay
     // Type - 2 = Overlay
-    protected function coursecat_coursebox_content(coursecat_helper $chelper, $course, $type=1) {
+    protected function coursecat_coursebox_content(coursecat_helper $chelper, $course, $type=3) {
         global $CFG, $OUTPUT, $PAGE;
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             return '';
@@ -646,6 +646,9 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
         if ($course instanceof stdClass) {
             require_once($CFG->libdir. '/coursecatlib.php');
             $course = new course_in_list($course);
+        }
+        if($type == 3 || $OUTPUT->body_id() != 'page-site-index') {
+            return parent::coursecat_coursebox_content($chelper, $course);
         }
         $content = '';
 

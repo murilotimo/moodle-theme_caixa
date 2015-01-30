@@ -349,6 +349,7 @@ if (is_siteadmin()) {
     $choices = array(
         1 => get_string('frontpagerendereroption1', 'theme_bcu'),
         2 => get_string('frontpagerendereroption2', 'theme_bcu'),
+        3 => get_string('frontpagerendereroption3', 'theme_bcu'),
     );
     $setting = new admin_setting_configselect($name, $title, $description, 2, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
