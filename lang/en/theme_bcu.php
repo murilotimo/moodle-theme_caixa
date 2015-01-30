@@ -264,3 +264,9 @@ $string['blocksidedesc'] = 'Control whether blocks appear on the left or right o
 
 $string['leftblocks'] = 'Left';
 $string['rightblocks'] = 'Right';
+
+$string['helptarget'] = 'Help target';
+$string['helptargetdesc'] = 'Do you want the help link to open in a new window?';
+
+$string['targetnewwindow'] = 'New window';
+$string['targetsamewindow'] = 'Same window';

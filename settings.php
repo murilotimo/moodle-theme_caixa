@@ -183,7 +183,17 @@ if (is_siteadmin()) {
     $description = get_string('enablehelpdesc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-
+    
+    $name = 'theme_bcu/helptarget';
+    $title = get_string('helptarget', 'theme_bcu'); 
+    $description = get_string('helptargetdesc', 'theme_bcu');
+    $choices = array(
+        '_blank' => get_string('targetnewwindow', 'theme_bcu'),
+        '_self' => get_string('targetsamewindow', 'theme_bcu'),
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
+    $temp->add($setting);
+    
     $ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_frontpage_blocks', get_string('frontpageblocksettings', 'theme_bcu'));
