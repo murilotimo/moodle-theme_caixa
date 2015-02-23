@@ -1,3 +1,10 @@
+Changes in version 1.1.1 
+- FIX: Issue #50 - Include Moodle fix for older Moodle versions to correct threading in forums (LINK)
+- FIX: Issue #108 - Docking is now enabled by default for Moodle versions higher than 2.6.3
+- FIX: Issue #109 - Fixed overflowing select box on enrolling users
+- FIX: Issue #110 - Fix issue with whitespace when showing/hiding blocks in FireFox
+
+
 Changes in version 1.1 (2015012300)
 -------------------------------------
 - FIX: Issue #22 - Fixes issues with the menu when viewing on an iPad
