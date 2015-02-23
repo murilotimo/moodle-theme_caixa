@@ -1084,7 +1084,7 @@ div.questionbankwindow.block {
 	padding-right: 5px;
 }
 
-.fselect select {
+.fselect #id_courses {
 	width: 100% !important;
 }
 
@@ -1202,8 +1202,6 @@ white-space: nowrap;
 max-width: 100%;
 line-height: normal;
 }
-
-
 
 .coursebox.hover .boxfooter {
 	clear: none;
