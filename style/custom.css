@@ -12,7 +12,7 @@ html,body,p,ul,ol,dl,input,textarea {
 	font-family: sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, , h6 {
 	margin: 0px 0px 10px;
 	font-family: 'Droid Sans', sans-serif;
 }
@@ -1218,6 +1218,15 @@ line-height: normal;
 
 #region-main {
     overflow-x: auto; 
+}
+
+.dir-rtl.path-mod-forum .indent {
+    margin-right: 3%;
+    margin-left: 0;
+}
+
+.path-mod-forum .indent {
+    margin-left: 3%;
 }
 
 /* Custom CSS Settings
