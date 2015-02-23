@@ -9,7 +9,6 @@ for (var i = 0;i < pArrLen;i+=pPerDiv){
     $pArr.filter(':eq('+i+'),:lt('+(i+pPerDiv)+'):gt('+i+')').wrapAll('<div class="row-fluid clearfix" />');
 }
 var $pArr = $('.frontpage-course-list-enrolled').children(".coursebox");
-console.log($pArr);
 var pArrLen = $pArr.length;
 var pPerDiv = 3;
 for (var i = 0;i < pArrLen;i+=pPerDiv){
