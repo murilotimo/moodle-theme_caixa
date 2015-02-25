@@ -270,3 +270,6 @@ $string['helptargetdesc'] = 'Do you want the help link to open in a new window?'
 
 $string['targetnewwindow'] = 'New window';
 $string['targetsamewindow'] = 'Same window';
+
+$string['tilesshowallcontacts'] = 'Show all course contacts';
+$string['tilesshowallcontactsdesc'] = 'Show all course contacts or just one';
