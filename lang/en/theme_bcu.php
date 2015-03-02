@@ -286,3 +286,7 @@ Moodle.com|http://moodle.com/
 </pre>';
 
 $string['toolsmenulabel'] = 'Tools';
+$string['events'] = 'Events';
+$string['mysites'] = 'My Sites';
+$string['people'] = 'People';
+$string['help'] = 'Help';

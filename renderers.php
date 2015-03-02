@@ -325,13 +325,13 @@ class theme_bcu_core_renderer extends core_renderer {
             $branchsort  = 9999;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
-            $branchtitle = "Events";
+            $branchtitle = get_string('events', 'theme_bcu');
             $branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
             $branchurl   = new moodle_url('/calendar/view.php');
             $branchsort  = 10000;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 
-            $branchtitle = "My Sites";
+            $branchtitle = get_string('mysites', 'theme_bcu');
             $branchlabel = '<i class="fa fa-briefcase"></i><span class="menutitle">'.$branchtitle.'</span>';
             $branchurl   = new moodle_url('/my/index.php');
             $branchsort  = 10001;
@@ -361,7 +361,7 @@ class theme_bcu_core_renderer extends core_renderer {
                 $branchurl = new moodle_url('/user/index.php', array('id' => $PAGE->course->id));
                 $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
 
-                $branchtitle = "Grades";
+                $branchtitle = get_string('grades');
                 $branchlabel = $OUTPUT->pix_icon('i/grades', '', '', array('class' => 'icon')).$branchtitle;
                 $branchurl = new moodle_url('/grade/report/index.php', array('id' => $PAGE->course->id));
                 $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
