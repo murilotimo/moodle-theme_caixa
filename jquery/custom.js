@@ -62,6 +62,11 @@ jQuery(document).ready(function($) {
         asNavFor            : "",                //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
     });
     
+$(".container.slidewrap").on('transitionend', function() {
+    var slider1 = $('#main-slider').data('flexslider');
+    slider1.resize();
+})
+
     var offset = 220;
     var duration = 500;
     jQuery(window).scroll(function() {
@@ -112,10 +117,6 @@ var onFull = function() {
         //Y.one('#page').addClass('fullin');
         M.util.set_user_preference('theme_bcu_full', 'fullin');
     }
-    console.log('Resizing');
-    var slider1 = $('#main-slider').data('flexslider');
-    
-    slider1.resize();
 };
 
 //When the button with class .moodlezoom is clicked fire the onZoom function
