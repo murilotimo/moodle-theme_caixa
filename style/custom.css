@@ -737,39 +737,33 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 }
 
 @media (max-width: 520px) {
-	#main-slider {
-		
-	}
-	#page-header {
-		
-	}
-	#logo {
-		
-	}
-	.flex-caption {
-		width: auto !important;
-		padding: 5px 0px !important;
-		position: relative !important;
-		margin-top: -1px !important;
-		background: #000 !important;
-	}
-	#page-content {
-	    padding: 0 0px;
-	    width: auto;
-	}
-	#page-header .userimg {
-		display: none;
-	}
-	
-	#coursesearchbox2 {
-		display: none;
-	}
-	
-	#above-header .dropdown.secondone {
-		display: none;
-	}
+    #main-slider {
 
-	
+    }
+    #page-header {
+
+    }
+    #logo {
+
+    }
+    .flex-caption {
+        width: auto !important;
+        padding: 5px 0px !important;
+        position: relative !important;
+        margin-top: -1px !important;
+        background: #000 !important;
+    }
+    #page-content {
+        padding: 0 0px;
+        width: auto;
+    }
+    #page-header .userimg {
+        display: none;
+    }
+
+    #coursesearchbox2 {
+        display: none;
+    }
 }
 
 #id_message_tbl {
