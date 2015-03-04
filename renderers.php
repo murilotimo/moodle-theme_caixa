@@ -394,7 +394,7 @@ class theme_bcu_core_renderer extends core_renderer {
         global $PAGE;
         $custommenuitems = '';
         if(!empty($PAGE->theme->settings->toolsmenu)) {
-            $custommenuitems .= "<i class='fa fa-wrench'> </i>".get_string('toolsmenulabel', 'theme_bcu')."\n";
+            $custommenuitems .= "<i class='fa fa-wrench'> </i>".get_string('toolsmenulabel', 'theme_bcu')."|#|".get_string('toolsmenulabel', 'theme_bcu')."\n";
             $arr = explode("\n", $PAGE->theme->settings->toolsmenu);
             // We want to force everything inputted under this menu
             foreach ($arr as $key => $value) {
