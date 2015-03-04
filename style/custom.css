@@ -1217,10 +1217,6 @@ line-height: normal;
     clear: both;
 }
 
-#region-main {
-    overflow-x: auto; 
-}
-
 .dir-rtl.path-mod-forum .indent {
     margin-right: 3%;
     margin-left: 0;
