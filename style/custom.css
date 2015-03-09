@@ -940,12 +940,19 @@ button.close {
 	opacity: .2;
 }
 
-.pagelayout-redirect .no-overflow {
-	overflow-x: scroll;
+#region-main .generaltable {
+    display: block;
+    overflow-x: auto;
+    overflow-y: visible;
 }
 
-.gradetreebox {
-	overflow-x: scroll;
+div.no-overflow, .yui3-datatable {
+    overflow-y: visible;
+    overflow-x: auto;
+}
+
+.paging {
+    word-wrap: break-word;
 }
 
 .path-course-view .completionprogress {
