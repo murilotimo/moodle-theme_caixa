@@ -49,6 +49,7 @@ if (is_siteadmin()) {
     $default = '#001E3C';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_bcu/maincolor';
@@ -56,6 +57,7 @@ if (is_siteadmin()) {
     $description = get_string('maincolordesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_bcu/backcolor';
@@ -63,6 +65,7 @@ if (is_siteadmin()) {
     $description = get_string('backcolordesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_bcu/buttoncolour';
@@ -70,6 +73,7 @@ if (is_siteadmin()) {
     $description = get_string('buttoncolourdesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#00aeef', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_bcu/buttonhovercolour';
@@ -77,6 +81,7 @@ if (is_siteadmin()) {
     $description = get_string('buttonhovercolourdesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_bcu/rendereroverlaycolour';
@@ -84,6 +89,7 @@ if (is_siteadmin()) {
     $description = get_string('rendereroverlaycolourdesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     $name = 'theme_bcu/rendereroverlayfontcolour';
@@ -91,6 +97,31 @@ if (is_siteadmin()) {
     $description = get_string('rendereroverlayfontcolourdesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    $name = 'theme_bcu/dividingline';
+    $title = get_string('dividingline', 'theme_bcu');
+    $description = get_string('dividinglinedesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#B7B3EF', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    $name = 'theme_bcu/navbarborder';
+    $title = get_string('navbarborder', 'theme_bcu');
+    $description = get_string('navbarborderdesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#B7B3EF', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    $name = 'theme_bcu/navbarhover';
+    $title = get_string('navbarhover', 'theme_bcu');
+    $description = get_string('navbarhoverdesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#3C469C', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);

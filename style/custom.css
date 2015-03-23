@@ -82,7 +82,7 @@ a:focus {
 }
 
 #above-header {
-	border-bottom: 1px solid #3c469c;
+	border-bottom: 1px solid [[setting:dividingline]];
         height: 20px;
         padding-top: 5px;
         padding-bottom: 5px;
@@ -402,8 +402,8 @@ span.fa-chevron-right.fa {
     margin-top: 34px;
     padding-bottom: 14px;
     padding-top: 17px;
-	border-top: 1px solid #3c469c;
-	font-size: 90%;
+    border-top: 1px solid [[setting:dividingline]];
+    font-size: 90%;
 }
 
 .copyright {

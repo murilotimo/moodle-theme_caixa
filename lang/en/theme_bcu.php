@@ -290,3 +290,10 @@ $string['events'] = 'Events';
 $string['mysites'] = 'My Sites';
 $string['people'] = 'People';
 $string['help'] = 'Help';
+
+$string['dividingline'] = 'Dividing line in header and footer';
+$string['dividinglinedesc'] = 'The colour for the dividing line found in the header and footer';
+$string['navbarborder'] = 'Navbar bottom border colour';
+$string['navbarborderdesc'] = 'Colour for the bottom of the navbar';
+$string['navbarhover'] = 'Navbar hover colour';
+$string['navbarhoverdesc'] = 'When hovering on a navigation item, the colour of the border of the navbar.';
