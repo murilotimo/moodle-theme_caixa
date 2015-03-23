@@ -297,3 +297,5 @@ $string['navbarborder'] = 'Navbar bottom border colour';
 $string['navbarborderdesc'] = 'Colour for the bottom of the navbar';
 $string['navbarhover'] = 'Navbar hover colour';
 $string['navbarhoverdesc'] = 'When hovering on a navigation item, the colour of the border of the navbar.';
+$string['showfooterblocks'] = 'Show footer blocks';
+$string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';

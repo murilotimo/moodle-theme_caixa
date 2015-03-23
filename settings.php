@@ -448,7 +448,13 @@ if (is_siteadmin()) {
     $temp = new admin_settingpage('theme_bcu_footer', get_string('footersettings', 'theme_bcu'));
     $temp->add(new admin_setting_heading('theme_bcu_footer', get_string('footersettingsheading', 'theme_bcu'),
         format_text(get_string('footerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-
+    
+    $name = 'theme_bcu/showfooterblocks';
+    $title = get_string('showfooterblocks', 'theme_bcu');
+    $description = get_string('showfooterblocksdesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
+    $temp->add($setting);
+    
     $name = 'theme_bcu/footer1header';
     $title = get_string('footer1header', 'theme_bcu');
     $description = get_string('footer1desc', 'theme_bcu');
