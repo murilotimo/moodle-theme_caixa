@@ -1,14 +1,21 @@
-Changes in version x.x.x (x)
+Changes in version x.x.x (2015032500)
 -------------------------------------
+In the next version, there will be some changes to address issues with the gradebook in 2.8.
+
 - FIX: Issue #90 - Added a tools menu that can be populated through BCU theme setting (Header)
 - FIX: Issue #120 - Improve accessibility by outlining links when focussed
 - FIX: Issue #121 - Remove more hardcoded language strings
 - FIX: Issue #122 - Fix user menu on small screens
 - FIX: Issue #123 - Updated the method that jquery is included
+- FIX: Issue #124 - Added an option to hide the customisable footer blocks
 - FIX: Issue #126 - Updated flexslider, and fix issue with slider when changing screensize
 - FIX: Issue #127 - Fix issue with tools menu showing html in tooltip
 - FIX: Issue #128 - Footer blocks don't respond well to browser size changes
 - FIX: Issue #129 - Prevent unnecessary vertical scrollbar 
+- FIX: Issue #137 - Fix issues with advanced grading report
+- FIX: Issue #139 - Resolved outstanding content overflow issues
+- FIX: Issue #146 - Removed legacy files from pix
+- FIX: Issue #147 - Add more colour picker settings
 
 Changes in version 1.1.1 (2015022500)
 -------------------------------------
