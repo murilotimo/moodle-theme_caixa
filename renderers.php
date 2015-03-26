@@ -406,6 +406,35 @@ class theme_bcu_core_renderer extends core_renderer {
         return $this->render_custom_menu($custommenu);
     }
     
+    public function lang_menu() {
+        global $CFG;
+        $langmenu = new custom_menu();
+
+        $addlangmenu = true;
+        $langs = get_string_manager()->get_list_of_translations();
+        if (count($langs) < 2
+            or empty($CFG->langmenu)
+            or ($this->page->course != SITEID and !empty($this->page->course->lang))
+        ) {
+            $addlangmenu = false;
+        }
+
+        if ($addlangmenu) {
+            $strlang = get_string('language');
+            $currentlang = current_language();
+            if (isset($langs[$currentlang])) {
+                $currentlang = $langs[$currentlang];
+            } else {
+                $currentlang = $strlang;
+            }
+            $this->language = $langmenu->add('<i class="fa fa-flag"></i>'.$currentlang, new moodle_url('#'), $strlang, 100);
+            foreach ($langs as $langtype => $langname) {
+                $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
+            }
+        }
+        return $this->render_custom_menu($langmenu);
+    }
+    
     public function custom_menu($custommenuitems = '')
     {
         global $CFG;

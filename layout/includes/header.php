@@ -94,7 +94,7 @@ echo $OUTPUT->doctype();
    <?php if (!isloggedin() || isguestuser()) { ?>
    <?php echo $OUTPUT->page_heading_menu(); ?>
    <?php echo $OUTPUT->login_info() ?>
-   <?php echo $OUTPUT->lang_menu(); ?>
+   
    <?php } else { ?>
     <div class="dropdown secondone">
     <a class="dropdown-toggle usermendrop" data-toggle="dropdown" data-target=".secondone"><span class="fa fa-user"></span><?php echo fullname($USER) ?> <span class="fa fa-angle-down"></span></a>
@@ -177,6 +177,11 @@ echo $OUTPUT->doctype();
                         <?php echo $OUTPUT->tools_menu(); ?>
                         
                         <ul class="nav pull-right">
+                            <?php
+                            if (!empty($PAGE->layout_options['langmenu'])) {
+                                echo $OUTPUT->lang_menu();
+                            }
+                            ?>
                             <li class="hbl"><a href="#" class="moodlezoom"><i class="fa fa-indent fa-lg"></i> <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_bcu') ?></span></a></li>
                             <li class="sbl"><a href="#" class="moodlezoom"><i class="fa fa-outdent fa-lg"></i> <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_bcu') ?></span></a></li>
                             <li class="hbll"><a href="#" class="moodlewidth"><i class="fa fa-expand fa-lg"></i> <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_bcu') ?></span></a></li>
