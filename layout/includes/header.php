@@ -137,8 +137,9 @@ echo $OUTPUT->doctype();
      
    
     <?php
-    if (isset($PAGE) && $PAGE->pagetype == 'site-index' && !$PAGE->theme->settings->sitetitle) {
-        $PAGE->set_heading(null);
+    if (isset($PAGE) && !$PAGE->theme->settings->sitetitle) {
+        $header = theme_bcu_remove_site_fullname($PAGE->heading);
+        $PAGE->set_heading($header);
     }
     ?>
      <div id="coursetitle" class="pull-left">

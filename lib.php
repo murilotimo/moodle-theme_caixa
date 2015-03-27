@@ -276,3 +276,14 @@ function theme_bcu_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('bcu', 'theme_bcu');
     
 }
+
+function theme_bcu_remove_site_fullname($heading) {
+    global $SITE, $PAGE;
+    if(strpos($PAGE->pagetype, 'course-view-') === 0) {
+        return $heading;
+    }
+
+    $header = preg_replace("/^".$SITE->fullname."/", "", $heading);
+
+    return $header;
+}
