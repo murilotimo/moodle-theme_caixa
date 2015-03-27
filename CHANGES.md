@@ -16,6 +16,10 @@ In the next version, there will be some changes to address issues with the grade
 - FIX: Issue #139 - Resolved outstanding content overflow issues
 - FIX: Issue #146 - Removed legacy files from pix
 - FIX: Issue #147 - Add more colour picker settings
+- FIX: Issue #151 - Fix issues with the size of modal boxes
+- FIX: Issue #152 - Fix issue with removing the Full Site Name
+- FIX: Issue #153 - Fixed issues with language selector
+
 
 Changes in version 1.1.1 (2015022500)
 -------------------------------------
