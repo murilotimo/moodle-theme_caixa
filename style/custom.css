@@ -830,9 +830,8 @@ a.carousel-control {
 }
 
 .modal {
-	width: auto;
-	z-index: 999;
-	display: none;
+    z-index: 999;
+    display: none;
 }
 
 #page-navbar .breadcrumb-button {
