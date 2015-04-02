@@ -1017,8 +1017,8 @@ div.no-overflow, .yui3-datatable {
 	}
 }
 
-@media (max-width: 1200px) {
-	.zoomdesc {
+@media (max-width: 1345px) {
+	.zoomdesc, .langdesc {
 		display: none;
 	}	
 }

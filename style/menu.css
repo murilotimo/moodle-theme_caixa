@@ -151,19 +151,19 @@
 }
 
 @media (max-width: 979px) {
-	.hbl, .sbl, .hbll, .sbll {
-            display: none !important;
-	}
-	
-	#navwrap {
-            border-bottom: 0;
-	}
-	
-	#page-header a img {
-            margin: 0 auto;
-            float: none;
-            display: block;
-	}
+    .hbl, .sbl, .hbll, .sbll {
+        display: none !important;
+    }
+
+    #navwrap {
+        border-bottom: 0;
+    }
+
+    #page-header a img {
+        margin: 0 auto;
+        float: none;
+        display: block;
+    }
 }
 
 .container-fluid {

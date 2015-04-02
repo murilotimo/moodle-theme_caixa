@@ -92,7 +92,7 @@ echo $OUTPUT->doctype();
     
     <div class="headermenu row">
    <?php if (!isloggedin() || isguestuser()) { ?>
-   <?php echo $OUTPUT->page_heading_menu(); ?>
+   <?php //echo $OUTPUT->page_heading_menu(); ?>
    <?php echo $OUTPUT->login_info() ?>
    
    <?php } else { ?>
@@ -179,7 +179,7 @@ echo $OUTPUT->doctype();
                         
                         <ul class="nav pull-right">
                             <?php
-                            if (!empty($PAGE->layout_options['langmenu'])) {
+                            if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu']) {
                                 echo $OUTPUT->lang_menu();
                             }
                             ?>
