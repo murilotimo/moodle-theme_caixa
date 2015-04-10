@@ -42,8 +42,8 @@ function theme_bcu_process_css($css, $theme) {
         $customcss = null;
     }
     $css = theme_bcu_set_customcss($css, $customcss);
-    
-    // Define the default settings for the theme incase they've not been set
+
+    // Define the default settings for the theme incase they've not been set.
     $defaults = array(
         '[[setting:fsize]]' => '90',
         '[[setting:linkcolor]]' => '#001E3C',
@@ -58,16 +58,16 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:navbarborder]]' => '#B7B3EF',
         '[[setting:navbarhover]]' => '#3C469C'
     );
-    
-    // Get all the defined settings for the theme and replace defaults
-    foreach($theme->settings as $key=>$val) {
-        if(array_key_exists('[[setting:'.$key.']]', $defaults) && !empty($val)) {
+
+    // Get all the defined settings for the theme and replace defaults.
+    foreach ($theme->settings as $key => $val) {
+        if (array_key_exists('[[setting:'.$key.']]', $defaults) && !empty($val)) {
             $defaults['[[setting:'.$key.']]'] = $val;
         }
     }
-    // Replace the CSS with values from the $defaults array
+    // Replace the CSS with values from the $defaults array.
     $css = strtr($css, $defaults);
-    if(empty($theme->settings->tilesshowallcontacts) || $theme->settings->tilesshowallcontacts == false) {
+    if (empty($theme->settings->tilesshowallcontacts) || $theme->settings->tilesshowallcontacts == false) {
         $css = theme_bcu_set_tilesshowallcontacts($css, false);
     } else {
         $css = theme_bcu_set_tilesshowallcontacts($css, true);
@@ -97,7 +97,7 @@ function theme_bcu_set_customcss($css, $customcss) {
 
 function theme_bcu_set_tilesshowallcontacts($css, $display) {
     $tag = '[[setting:tilesshowallcontacts]]';
-    if($display) {
+    if ($display) {
         $replacement = 'block';
     } else {
         $replacement = 'none';
@@ -263,7 +263,8 @@ function theme_bcu_get_course_activities() {
 }
 
 function theme_bcu_performance_output($param) {
-    $html = html_writer::tag('span', get_string('loadtime', 'theme_bcu').' '. round($param['realtime'], 2) . ' ' . get_string('seconds'), array('id' => 'load'));
+    $html = html_writer::tag('span', get_string('loadtime', 'theme_bcu').' '. round($param['realtime'], 2) . ' ' .
+            get_string('seconds'), array('id' => 'load'));
     return $html;
 }
 
@@ -274,12 +275,11 @@ function theme_bcu_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('flexslider', 'theme_bcu');
     $page->requires->jquery_plugin('easing', 'theme_bcu');
     $page->requires->jquery_plugin('bcu', 'theme_bcu');
-    
 }
 
 function theme_bcu_remove_site_fullname($heading) {
     global $SITE, $PAGE;
-    if(strpos($PAGE->pagetype, 'course-view-') === 0) {
+    if (strpos($PAGE->pagetype, 'course-view-') === 0) {
         return $heading;
     }
 

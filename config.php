@@ -33,7 +33,7 @@ $THEME->yuicssmodules = array();
 
 $THEME->editor_sheets = array();
 
-if (floatval($CFG->version) >= 2013111803.02) { // 2.6.3+
+if (floatval($CFG->version) >= 2013111803.02) {
     $THEME->enable_dock = true;
 }
 

@@ -92,7 +92,6 @@ echo $OUTPUT->doctype();
     
     <div class="headermenu row">
    <?php if (!isloggedin() || isguestuser()) { ?>
-   <?php //echo $OUTPUT->page_heading_menu(); ?>
    <?php echo $OUTPUT->login_info() ?>
    
    <?php } else { ?>

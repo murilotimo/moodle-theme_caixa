@@ -1,4 +1,4 @@
-Changes in version x.x.x (2015032500)
+Changes in version 1.2 (2015041000)
 -------------------------------------
 In the next version, there will be some changes to address issues with the gradebook in 2.8.
 
@@ -19,6 +19,7 @@ In the next version, there will be some changes to address issues with the grade
 - FIX: Issue #151 - Fix issues with the size of modal boxes
 - FIX: Issue #152 - Fix issue with removing the Full Site Name
 - FIX: Issue #153 - Fixed issues with language selector
+- FIX: Issue #157 - Fixed issue with dropdown menus jumping when hovering
 
 
 Changes in version 1.1.1 (2015022500)
