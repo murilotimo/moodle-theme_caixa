@@ -26,7 +26,7 @@
 if($CFG->version >= 2014111000 && $PAGE->pagetype!=='grade-report-grader-index') {
     require_once(dirname(__FILE__) .'/columns2.php');
 } else {
-
+$fixedheader = true;
 require_once(dirname(__FILE__) . '/includes/header.php'); 
 ?>
 

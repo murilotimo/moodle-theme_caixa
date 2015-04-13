@@ -1,5 +1,8 @@
 jQuery(document).ready(function($) {
     //new for every three
+    if($('header').css("position") == "fixed") {
+        $('.outercont').css('padding-top', $('header').height());
+    }
     var $pArr = $('.frontpage-course-list-all').children(".coursebox");
     var pArrLen = $pArr.length;
     var pPerDiv = 3;
@@ -72,10 +75,16 @@ $(".container.slidewrap").on('transitionend', function() {
     jQuery(window).scroll(function() {
         if (jQuery(this).scrollTop() > offset) {
             jQuery('.back-to-top').fadeIn(duration);
-            jQuery('#page-header').hide();
+            if($('header').css("position") == "fixed") {
+                jQuery('#page-header').hide();
+                Y.Global.fire('moodle-gradereport_grader:resized');
+            }
         } else {
             jQuery('.back-to-top').fadeOut(duration);
-            jQuery('#page-header').show();
+            if($('header').css("position") == "fixed") {
+                jQuery('#page-header').show();
+                Y.Global.fire('moodle-gradereport_grader:resized');
+            }
         }
     });
     jQuery('.back-to-top').click(function(event) {
