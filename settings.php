@@ -60,6 +60,14 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    $name = 'theme_bcu/loadingcolour';
+    $title = get_string('loadingcolour', 'theme_bcu');
+    $description = get_string('loadingcolourdesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#29d', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     $name = 'theme_bcu/backcolor';
     $title = get_string('backcolor', 'theme_bcu');
     $description = get_string('backcolordesc', 'theme_bcu');

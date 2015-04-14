@@ -59,6 +59,7 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:navbarhover]]' => '#3C469C',
         '[[setting:breadcrumb]]' => '#b4bbbf',
         '[[setting:activebreadcrumb]]' => '#e8eaeb',
+        '[[setting:pacecolour]]' => '#29d'
     );
 
     // Get all the defined settings for the theme and replace defaults.
@@ -282,7 +283,7 @@ function theme_bcu_page_init(moodle_page $page) {
     if($CFG->version < 2015051100) {
       $page->requires->jquery_plugin('bootstrap', 'theme_bcu');
     }
-
+    $page->requires->jquery_plugin('pace', 'theme_bcu');
     $page->requires->jquery_plugin('flexslider', 'theme_bcu');
     $page->requires->jquery_plugin('easing', 'theme_bcu');
     $page->requires->jquery_plugin('bcu', 'theme_bcu');
