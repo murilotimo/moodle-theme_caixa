@@ -64,7 +64,7 @@ class theme_bcu_core_renderer extends core_renderer {
     }
 
     protected function render_user_menu(custom_menu $menu) {
-        global $CFG, $USER, $DB;
+        global $CFG, $USER, $DB, $OUTPUT;
 
         $addlangmenu = true;
         $addmessagemenu = true;
