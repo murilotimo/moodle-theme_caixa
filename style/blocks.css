@@ -8,7 +8,7 @@
 }
 
 .block .header {
-	border-top: 1px solid #002f67;
+	border-top: 1px solid [[setting:maincolor]];
 	padding: 10px 10px;
 	padding-right: 0px;
 	background: transparent;
@@ -17,10 +17,6 @@
 
 .block.hidden .header {
 	border-bottom: 0px;
-}
-
-.block .title {
-
 }
 
 /* block titles */
@@ -40,7 +36,7 @@
 	padding: 10px 10px;
 	font-weight: normal;
 	font-size: 90%;
-	background: #[[setting:maincolour]];
+	background: [[setting:maincolour]];
 	color: #333;
 }
 

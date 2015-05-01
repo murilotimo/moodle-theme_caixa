@@ -56,7 +56,9 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:buttonhovercolour]]' => '#0084C2',
         '[[setting:dividingline]]' => '#3C469C',
         '[[setting:navbarborder]]' => '#B7B3EF',
-        '[[setting:navbarhover]]' => '#3C469C'
+        '[[setting:navbarhover]]' => '#3C469C',
+        '[[setting:breadcrumb]]' => '#b4bbbf',
+        '[[setting:activebreadcrumb]]' => '#e8eaeb',
     );
 
     // Get all the defined settings for the theme and replace defaults.

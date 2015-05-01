@@ -299,3 +299,8 @@ $string['navbarhover'] = 'Navbar hover colour';
 $string['navbarhoverdesc'] = 'When hovering on a navigation item, the colour of the border of the navbar.';
 $string['showfooterblocks'] = 'Show footer blocks';
 $string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';
+
+$string['breadcrumb'] = 'Breadcrumb background colour';
+$string['breadcrumbdesc'] = 'Set the background colour of the breadcrumb.';
+$string['activebreadcrumb'] = 'Active breadcrumb background colour';
+$string['activebreadcrumbdesc'] = 'Set the background colour of the active breadcrumnb colour, and remaineder of the breadcrumb bar.';

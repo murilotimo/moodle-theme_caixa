@@ -436,7 +436,7 @@ span.fa-chevron-right.fa {
 }
 
 #page-navbar {
-	background: #e8eaeb;
+	background: [[setting:activebreadcrumb]];
 	margin: 10px 0px;
 }
 
@@ -447,11 +447,11 @@ span.fa-chevron-right.fa {
 
 .breadcrumb li {
 	height: 35px;
-	background: #b4bbbf;
+	background: [[setting:breadcrumb]];
 }
 
 .breadcrumb li.lastli {
-	background: #e8eaeb;
+    background: [[setting:activebreadcrumb]];
 }
 
 .breadcrumb li.lastli a span {
@@ -485,7 +485,7 @@ span.fa-chevron-right.fa {
 
 .arrow-top {
     border-bottom: 18px solid transparent;
-    border-left: 17px solid #b4bbbf;
+    border-left: 17px solid [[setting:breadcrumb]];
     border-top: 17px solid transparent;
     height: 0;
     position: absolute;
