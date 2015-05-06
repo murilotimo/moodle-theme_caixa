@@ -304,3 +304,11 @@ $string['breadcrumb'] = 'Breadcrumb background colour';
 $string['breadcrumbdesc'] = 'Set the background colour of the breadcrumb.';
 $string['activebreadcrumb'] = 'Active breadcrumb background colour';
 $string['activebreadcrumbdesc'] = 'Set the background colour of the active breadcrumnb colour, and remaineder of the breadcrumb bar.';
+
+$string['usernavheading'] = 'Customise the user navigation dropdown';
+$string['usernavdesc'] = 'Allows you to control all of the elements that appear in the user navigation dropdown.';
+$string['enablehomedesc'] = 'Display a link to the frontpage.';
+$string['enablemyhomedesc'] = 'Display a link to {$a}';
+$string['enableeventsdesc'] = 'Display a link to the calendar';
+$string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
+$string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
