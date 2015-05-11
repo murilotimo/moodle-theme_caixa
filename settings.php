@@ -25,7 +25,7 @@
  */
 
 $settings = null;
-
+require_once __DIR__.'/libs/admin_confightmleditor.php';
 defined('MOODLE_INTERNAL') || die;
 if (is_siteadmin()) {
 
@@ -315,25 +315,29 @@ if (is_siteadmin()) {
     $title = get_string('market1', 'theme_bcu');
     $description = get_string('market1desc', 'theme_bcu');
     $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_bcu/market2';
     $title = get_string('market2', 'theme_bcu');
     $description = get_string('market2desc', 'theme_bcu');
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_bcu/market3';
     $title = get_string('market3', 'theme_bcu');
     $description = get_string('market3desc', 'theme_bcu');
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_bcu/market4';
     $title = get_string('market4', 'theme_bcu');
     $description = get_string('market4desc', 'theme_bcu');
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);

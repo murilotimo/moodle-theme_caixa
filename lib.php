@@ -222,6 +222,8 @@ function theme_bcu_pluginfile($course, $cm, $context, $filearea, $args, $forcedo
             return $theme->setting_file_serve('fontfilettfheading', $args, $forcedownload, $options);
         } else if ($filearea === 'fontfilettfbody') {
             return $theme->setting_file_serve('fontfilettfbody', $args, $forcedownload, $options);
+        } else if ($filearea === 'bcumarkettingimages') {
+            return $theme->setting_file_serve('bcumarkettingimages', $args, $forcedownload, $options);
         } else {
             send_file_not_found();
         }
