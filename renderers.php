@@ -104,14 +104,10 @@ class theme_bcu_core_renderer extends core_renderer {
         if ($addmessagemenu) {
             $messages = $this->get_user_messages();
             $messagecount = count($messages);
-            if ($messagecount == 0) {
-                $messagemenu = $menu->add('<i class="fa fa-comments"> </i>' . get_string('messages', 'message') . '',
-                        new moodle_url('/message/'), get_string('messages', 'message'), 9999);
-            } else {
-                $messagemenu = $menu->add('<i class="fa fa-comments"> </i>' . get_string('messages', 'message') .
-                        '<span id="messagebubble">' . $messagecount . '</span>', new moodle_url('#'),
-                        get_string('messages', 'message'), 9999);
-            }
+            $messagemenu = $menu->add('<i class="fa fa-comments"> </i>' . get_string('messages', 'message') .
+                '<span id="messagebubble">' . $messagecount . '</span>', new moodle_url('#'),
+                get_string('messages', 'message'), 9999);
+            
             foreach ($messages as $message) {
                 if (!is_object($message->from)) {
                     $url = $OUTPUT->pix_url('u/f2');
