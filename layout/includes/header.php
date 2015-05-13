@@ -77,7 +77,7 @@ echo $OUTPUT->doctype();
 ?>
 <div class="customalert">
 <div class="container">
-<?php echo $PAGE->theme->settings->alertbox; ?>
+<?php echo $OUTPUT->get_setting('alertbox', 'format_html');; ?>
 </div>
 </div>
 <?php

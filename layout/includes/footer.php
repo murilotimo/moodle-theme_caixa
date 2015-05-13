@@ -33,26 +33,26 @@
         <div class="row-fluid">
             <?php if (!empty($PAGE->theme->settings->footer1content)) { ?>
             <div class="left-col span3" id="contactdetails">
-                <h3 title="Contact Us"><?php echo $PAGE->theme->settings->footer1header; ?></h3>
-                <?php echo $PAGE->theme->settings->footer1content; ?>
+                <h3 title="<?php $OUTPUT->get_setting('footer1header', 'format_text'); ?>"><?php $OUTPUT->get_setting('footer1header', 'format_text'); ?></h3>
+                <?php echo $OUTPUT->get_setting('footer1content', 'format_html'); ?>
             </div>
             <?php } ?>
             <?php if (!empty($PAGE->theme->settings->footer2content)) { ?>
             <div class="left-col span3" id="footer-faculties">
-                <h3 title="Our Faculties"><?php echo $PAGE->theme->settings->footer2header; ?></h3>
-                <?php echo $PAGE->theme->settings->footer2content; ?>
+                <h3 title="<?php $OUTPUT->get_setting('footer2header', 'format_text'); ?>"><?php echo $OUTPUT->get_setting('footer2header', 'format_text'); ?></h3>
+                <?php echo $OUTPUT->get_setting('footer2content', 'format_html'); ?>
             </div>
             <?php } ?>
             <?php if (!empty($PAGE->theme->settings->footer3content)) { ?>
             <div class="left-col span3" id="social-connect">
-                <h3 title="Connect"><?php echo $PAGE->theme->settings->footer3header; ?></h3>
-                <?php echo $PAGE->theme->settings->footer3content; ?>
+                <h3 title="<?php $OUTPUT->get_setting('footer3header', 'format_text'); ?>"><?php echo $OUTPUT->get_setting('footer3header', 'format_text'); ?></h3>
+                <?php echo $OUTPUT->get_setting('footer3content', 'format_html'); ?>
             </div>
             <?php } ?>
             <?php if (!empty($PAGE->theme->settings->footer4content)) { ?>
             <div class="left-col span3">
-                <h3><?php echo $PAGE->theme->settings->footer4header; ?></h3>
-                <?php echo $PAGE->theme->settings->footer4content; ?>
+                <h3 title="<?php $OUTPUT->get_setting('footer4header', 'format_text'); ?>"><?php echo $OUTPUT->get_setting('footer4header', 'format_text'); ?></h3>
+                <?php echo $OUTPUT->get_setting('footer4content', 'format_html'); ?>
             </div>
             <?php } ?>
         </div>

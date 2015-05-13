@@ -31,7 +31,25 @@ require_once($CFG->libdir. '/coursecatlib.php');
 class theme_bcu_core_renderer extends core_renderer {
     /** @var custom_menu_item language The language menu if created */
     protected $language = null;
-
+    
+    public function get_setting($setting, $format = false, $theme = null) {
+        if (empty($theme)) {
+            $theme = theme_config::load('bcu');
+        }
+        
+        if (empty($theme->settings->$setting)) {
+            return false;
+        } else if (!$format) {
+            return $theme->settings->$setting;
+        } else if ($format === 'format_text') {
+            return format_text($theme->settings->$setting, FORMAT_PLAIN);
+        } else if ($format === 'format_html') {
+            return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true));
+        } else {
+            return format_string($theme->settings->$setting);
+        }
+    }
+    
     public function user_menu($user = null, $withlinks = null) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());

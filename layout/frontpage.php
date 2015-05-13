@@ -58,7 +58,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 <a href="<?php if (!empty($PAGE->theme->settings->p1url)) { echo $PAGE->theme->settings->p1url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p1', 'p1')."' alt='p1'/>";?></a>
 <?php if ($haspcap1) { ?>
 <div class="flex-caption">
-<?php echo $PAGE->theme->settings->p1cap;?>
+<?php echo $OUTPUT->get_setting('1cap', 'format_html');?>
 </div>
 <?php } ?>
 </li>
@@ -69,7 +69,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 <a href="<?php if (!empty($PAGE->theme->settings->p2url)) {echo $PAGE->theme->settings->p2url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p2', 'p2')."' alt='p2' />";?></a>
 <?php if ($haspcap2) { ?>
 <div class="flex-caption">
-<?php echo $PAGE->theme->settings->p2cap;?>
+<?php echo $OUTPUT->get_setting('p2cap', 'format_html');?>
 </div>
 <?php } ?>
 </li>
@@ -81,7 +81,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 <a href="<?php if (!empty($PAGE->theme->settings->p3url)) {echo $PAGE->theme->settings->p3url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p3', 'p3')."' alt='p3' />";?></a>
 <?php if ($haspcap3) { ?>
 <div class="flex-caption">
-<?php echo $PAGE->theme->settings->p3cap;?>
+<?php echo $OUTPUT->get_setting('p3cap', 'format_html');?>
 </div>
 <?php } ?>
 </li>
@@ -92,7 +92,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 <a href="<?php if (!empty($PAGE->theme->settings->p4url)) {echo $PAGE->theme->settings->p4url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p4', 'p4')."' alt='p4' />";?></a>
 <?php if ($haspcap4) { ?>
 <div class="flex-caption">
-<?php echo $PAGE->theme->settings->p4cap;?>
+<?php echo $OUTPUT->get_setting('p4cap', 'format_html');?>
 </div>
 <?php } ?>
 </li>
@@ -103,7 +103,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 <a href="<?php if (!empty($PAGE->theme->settings->p5url)) {echo $PAGE->theme->settings->p5url; } else { echo "#";} ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('p5', 'p5')."' alt='p5' />";?></a>
 <?php if ($haspcap5) { ?>
 <div class="flex-caption">
-<?php echo $PAGE->theme->settings->p5cap;?>
+<?php echo $OUTPUT->get_setting('p5cap', 'format_html');?>
 </div>
 <?php } ?>
 </li>
@@ -115,13 +115,13 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 <?php } ?>
 
 <?php if (!empty($PAGE->theme->settings->infobox)) { ?>
-<div id="theinfo" class="container">
-	<div id="theinfo-internal"><div class="row-fluid">
-
-	<?php echo $PAGE->theme->settings->infobox; ?>
-	
-	</div></div>
-</div>
+    <div id="theinfo" class="container">
+        <div id="theinfo-internal">
+            <div class="row-fluid">
+                <?php echo $$OUTPUT->get_setting('infobox', 'format_html'); ?>
+            </div>
+        </div>
+    </div>
 <?php } ?>
 
 <div id="marketblocks" class="container">
@@ -147,7 +147,7 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
     <?php if ($hasmarket1) { ?> 
     <div class="<?php echo "$marketclass";?> first">
    
-	<?php echo $PAGE->theme->settings->market1;?>
+	<?php echo $OUTPUT->get_setting('market1', 'format_html');?>
     
     </div>
     <?php } ?>
@@ -156,7 +156,7 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
      <?php if ($hasmarket2) { ?> 
     <div class="<?php echo "$marketclass";?> first">
 
-	<?php echo $PAGE->theme->settings->market2;?>
+	<?php echo $OUTPUT->get_setting('market2', 'format_html');?>
 
     </div>
      <?php } ?>
@@ -166,7 +166,7 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
 if ($hasmarket3) {
 ?> 
     <div class="<?php echo "$marketclass";?> first">
-        <?php echo $PAGE->theme->settings->market3;?>
+        <?php echo $OUTPUT->get_setting('market3', 'format_html');?>
     </div>
 <?php
 }
@@ -177,7 +177,7 @@ if ($hasmarket3) {
 if ($hasmarket4) {
 ?> 
     <div class="<?php echo "$marketclass";?> first">
-	   <?php echo $PAGE->theme->settings->market4;?>
+	   <?php echo $OUTPUT->get_setting('market4', 'format_html');?>
     </div>
 <?php
 }
@@ -193,7 +193,7 @@ if (!empty($PAGE->theme->settings->infobox2)) {
  <div id="themessage" class="container">
 	<div id="themessage-internal"><div class="row-fluid">
 	
-		<?php echo $PAGE->theme->settings->infobox2; ?>
+		<?php echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
 		
 	</div></div>
 </div>
