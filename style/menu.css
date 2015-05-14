@@ -181,7 +181,8 @@
         float: none;
     }
 }
-
-.navbar .nav>li {
-    height: 40px;
+@media (min-width: 990px) {
+    .navbar .nav>li {
+        height: 40px;
+    }
 }
