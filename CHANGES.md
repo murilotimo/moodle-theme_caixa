@@ -1,10 +1,19 @@
+Changes in version 1.3 (2015051400)
+-------------------------------------
+- Fix: Issue #142 - Fixes styling issues with messages dropdown
+- Fix: Issue #146 - Added ability to use images in html editors
+- Fix: Issue #160 - Added options to control navigation bar
+- Fix: Issue #161 - Added more colour settings
+- Fix: Issue #162 - Fixed issues with using multilang filter
+- Fix: Issue #163 - Fixed issue with menus on small screens
+- Fix: Issue #164 - Fixed issue with language menu text on small screens
+
 Changes in version 1.2.1 (2015041600)
+-------------------------------------
  - FIX: Issues #159 - Fixed issue with catchable error in messages
 
 Changes in version 1.2 (2015041000)
 -------------------------------------
-In the next version, there will be some changes to address issues with the gradebook in 2.8.
-
 - FIX: Issue #90 - Added a tools menu that can be populated through BCU theme setting (Header)
 - FIX: Issue #120 - Improve accessibility by outlining links when focussed
 - FIX: Issue #121 - Remove more hardcoded language strings
