@@ -23,12 +23,28 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
-if($PAGE->pagetype=='grade-report-grader-index') {
-    if($CFG->version <= 2014111000) {
-        require_once(dirname(__FILE__) .'/columns2.php');
-    } else {
-        require_once(dirname(__FILE__) .'/grader.php');
-    }
-} else {
-    require_once(dirname(__FILE__) .'/columns2.php');
-}
+$fixedheader = true;
+require_once(dirname(__FILE__) . '/includes/header.php');
+$left = theme_bcu_get_block_side();
+?>
+
+<div class="container outercont">
+    <div id="page-content" class="row-fluid">
+        <div id="page-navbar" class="span12">
+            <?php echo $OUTPUT->navbar(); ?>
+        </div>
+        <?php
+            echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
+        ?>
+        <section id="region-main" class="span9 <?php if ($left) { echo ' '; } else { echo 'desktop-first-column'; } ?> ">
+            <?php
+            echo $OUTPUT->course_content_header();
+            echo $OUTPUT->main_content();
+            echo $OUTPUT->course_content_footer();
+            ?>
+        </section>
+    </div>
+</div>
+
+    <?php
+    require_once(dirname(__FILE__) . '/includes/footer.php');
