@@ -50,6 +50,3 @@ echo $OUTPUT->doctype();
             </section>
         </div>
     </div>
-
-    <?php
-    require_once(dirname(__FILE__) . '/includes/footer.php');
