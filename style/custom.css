@@ -1007,6 +1007,12 @@ div.no-overflow, .yui3-datatable {
     }
 }
 
+@media (max-width: 979px) {
+    .langdesc {
+        display: inline;
+    }
+}
+
 #navwrap {
     background: #FFF;
 }
