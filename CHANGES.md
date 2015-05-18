@@ -7,6 +7,7 @@ Changes in version 1.3 (2015051400)
 - Fix: Issue #162 - Fixed issues with using multilang filter
 - Fix: Issue #163 - Fixed issue with menus on small screens
 - Fix: Issue #164 - Fixed issue with language menu text on small screens
+- Fix: Issue #165 - Fixed issue with grader report blocks and fixed header
 
 Changes in version 1.2.1 (2015041600)
 -------------------------------------
