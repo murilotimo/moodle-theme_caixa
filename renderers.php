@@ -185,7 +185,7 @@ class theme_bcu_core_renderer extends core_renderer {
         $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
 
         foreach ($newmessages as $message) {
-            $messagelist[] = $this->bootstrap_process_message($message);
+            $messagelist[] = $this->process_message($message);
         }
 
         $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? 0 :
@@ -201,64 +201,40 @@ class theme_bcu_core_renderer extends core_renderer {
             $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
 
             foreach ($readmessages as $message) {
-                $messagelist[] = $this->bootstrap_process_message($message);
+                $messagelist[] = $this->process_message($message);
             }
         }
 
         return $messagelist;
     }
 
-    protected function bcu_process_message($message, $state) {
-        global $DB;
+    protected function process_message($message) {
+        global $DB, $USER;
         $messagecontent = new stdClass();
-
-        if ($message->notification) {
-            $messagecontent->text = get_string('unreadnewnotification', 'message');
-        } else {
-            if ($message->fullmessageformat == FORMAT_HTML) {
-                $message->smallmessage = html_to_text($message->smallmessage);
-            }
+        if ($message->notification || $message->useridfrom < 1) {
             $messagecontent->text = $message->smallmessage;
-        }
-
-        if ((time() - $message->timecreated ) <= (3600 * 3)) {
-            $messagecontent->date = format_time(time() - $message->timecreated);
+            $messagecontent->type = 'notification';
+            $messagecontent->url = new moodle_url($message->contexturl);
+            if (empty($message->contexturl)) {
+                $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'viewing' => 'recentnotifications'));
+            }
         } else {
-            $messagecontent->date = userdate($message->timecreated, get_string('strftimetime', 'langconfig'));
-        }
-
-        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
-        $messagecontent->state = $state;
-        return $messagecontent;
-    }
-
-    protected function bootstrap_process_message($message) {
-        global $DB;
-        $messagecontent = new stdClass();
-
-        if ($message->notification) {
-            $messagecontent->text = get_string('unreadnewnotification', 'message');
-        } else {
+            $messagecontent->type = 'message';
             if ($message->fullmessageformat == FORMAT_HTML) {
                 $message->smallmessage = html_to_text($message->smallmessage);
             }
-            if (core_text::strlen($message->smallmessage) > 15) {
-                $messagecontent->text = core_text::substr($message->smallmessage, 0, 15).'...';
+            if (strlen($message->smallmessage) > 18) {
+                $messagecontent->text = substr($message->smallmessage, 0, 15) . '...';
             } else {
                 $messagecontent->text = $message->smallmessage;
             }
+            $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
+            $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->useridfrom));
         }
-
-        if ((time() - $message->timecreated ) <= (3600 * 3)) {
-            $messagecontent->date = format_time(time() - $message->timecreated);
-        } else {
-            $messagecontent->date = userdate($message->timecreated, get_string('strftimetime', 'langconfig'));
-        }
-
-        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
+        $messagecontent->date = userdate($message->timecreated, get_string('strftimetime', 'langconfig'));
+        $messagecontent->unread = empty($message->timeread);
         return $messagecontent;
     }
-    // End usermenu.
 
     /*
      * This renders a notification message.
