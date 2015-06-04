@@ -33,7 +33,7 @@
         <div class="row-fluid">
             <?php if (!empty($PAGE->theme->settings->footer1content)) { ?>
             <div class="left-col span3" id="contactdetails">
-                <h3 title="<?php $OUTPUT->get_setting('footer1header', 'format_text'); ?>"><?php $OUTPUT->get_setting('footer1header', 'format_text'); ?></h3>
+                <h3 title="<?php $OUTPUT->get_setting('footer1header', 'format_text'); ?>"><?php echo $OUTPUT->get_setting('footer1header', 'format_text'); ?></h3>
                 <?php echo $OUTPUT->get_setting('footer1content', 'format_html'); ?>
             </div>
             <?php } ?>
