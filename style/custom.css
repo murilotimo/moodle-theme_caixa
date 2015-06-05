@@ -1106,6 +1106,7 @@ div.questionbankwindow.block {
 .coursebox.hover .teachers {
 	text-align: left;
 	padding-top: 2px;
+	padding-left: 2px;
 }
 
 .coursebox.hover:hover .summary {
