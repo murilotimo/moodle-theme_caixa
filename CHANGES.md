@@ -1,3 +1,6 @@
+- Fix: Issue #167 - Fixed issue with first footer title not appearing (Thanks to Matthew Anguige for the fix)
+- CHANGE: Issue #172 - Made messages in the user menu link clickable (Thanks to Matthew Anguige for the change)
+
 Changes in version 1.3 (2015051400)
 -------------------------------------
 - Fix: Issue #142 - Fixes styling issues with messages dropdown
