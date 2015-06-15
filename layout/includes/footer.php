@@ -58,20 +58,22 @@
         </div>
     </div>
     <?php } ?>
+    <?php if($PAGE->theme->settings->showfooterblocks) { ?>
     <div class="info container2 clearfix">
-        <?php if($PAGE->theme->settings->showfooterblocks) { ?>
         <div class="footer-inner page ptm pbl container">
-            <?php 
-            echo $html->footnote;
-            ?>
-        </div>
-        <?php } ?>
-        <div class="pull-right">
-            <?php
-            echo $OUTPUT->standard_footer_html();
-            ?>
+        	<div class="pull-left">
+	            <?php 
+	            echo $html->footnote;
+	            ?>
+            </div>
+	        <div class="pull-right">
+	            <?php
+	            echo $OUTPUT->standard_footer_html();
+	            ?>
+	        </div>
         </div>
     </div>
+    <?php } ?>
 </footer>
 <a class="back-to-top" href="#top" ><i class="fa fa-angle-up "></i></a>
     <?php echo $OUTPUT->standard_end_of_body_html() ?>

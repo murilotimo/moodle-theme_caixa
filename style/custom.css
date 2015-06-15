@@ -391,8 +391,8 @@ span.fa-chevron-right.fa {
     line-height: 21px;
     margin: 0 auto;
     margin-top: 34px;
-    padding-bottom: 14px;
-    padding-top: 17px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-top: 1px solid [[setting:dividingline]];
     font-size: 90%;
 }
@@ -1210,6 +1210,22 @@ line-height: normal;
 
 .gradingform_guide.editor .addcomment, .gradingform_guide.editor .addcriterion {
     margin-top: 10px;
+}
+
+.footer-inner .pull-right {
+    text-align: right;
+}
+
+#page-footer .validators, #page-footer .purgecaches, #page-footer .performanceinfo {
+    text-align: right;
+}
+
+#page-footer .performanceinfo {
+    margin: 10px 0;
+}
+
+.purgecaches a:link {
+    color: #FFF;
 }
 
 /* Custom CSS Settings
