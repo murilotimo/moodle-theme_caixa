@@ -1216,8 +1216,16 @@ line-height: normal;
     text-align: right;
 }
 
-#page-footer .validators, #page-footer .purgecaches, #page-footer .performanceinfo {
+#page-footer .validators, #page-footer .purgecaches, #page-footer .performanceinfo, #page-footer #load {
     text-align: right;
+}
+
+#load {
+    float: right;
+}
+
+.purgecaches {
+    clear: both;
 }
 
 #page-footer .performanceinfo {
@@ -1225,6 +1233,14 @@ line-height: normal;
 }
 
 .purgecaches a:link {
+    color: #FFF;
+}
+
+.helplink {
+    text-align: center;
+}
+
+.helplink>a {
     color: #FFF;
 }
 

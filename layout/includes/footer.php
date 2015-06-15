@@ -60,17 +60,18 @@
     <?php } ?>
     <?php if($PAGE->theme->settings->showfooterblocks) { ?>
     <div class="info container2 clearfix">
-        <div class="footer-inner page ptm pbl container">
-        	<div class="pull-left">
-	            <?php 
-	            echo $html->footnote;
-	            ?>
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span3">
+                    <?php echo $html->footnote; ?>
+                </div>
+                <div class="span6 helplink">
+                    <?php echo $OUTPUT->page_doc_link(); ?>
+                </div>
+                <div class="span3">
+                    <?php echo $OUTPUT->standard_footer_html(); ?>
+                </div>
             </div>
-	        <div class="pull-right">
-	            <?php
-	            echo $OUTPUT->standard_footer_html();
-	            ?>
-	        </div>
         </div>
     </div>
     <?php } ?>
