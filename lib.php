@@ -171,7 +171,7 @@ function theme_bcu_get_setting($setting, $format = false) {
     if (empty($theme)) {
         $theme = theme_config::load('bcu');
     }
-    
+
     if (empty($theme->settings->$setting)) {
         return false;
     } else if (!$format) {
@@ -278,7 +278,11 @@ function theme_bcu_performance_output($param) {
 function theme_bcu_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
-    $page->requires->jquery_plugin('bootstrap', 'theme_bcu');
+    error_log($CFG->version);
+    if($CFG->version < 2015051100) {
+      $page->requires->jquery_plugin('bootstrap', 'theme_bcu');
+    }
+
     $page->requires->jquery_plugin('flexslider', 'theme_bcu');
     $page->requires->jquery_plugin('easing', 'theme_bcu');
     $page->requires->jquery_plugin('bcu', 'theme_bcu');
