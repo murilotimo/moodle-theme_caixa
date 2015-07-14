@@ -281,7 +281,7 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 /*user menu */
 .dropdown-menu.usermen {
 	top: 15px;
-	margin-left: -100px;
+	margin-left: -40px;
 }
 
 .usermen li {
