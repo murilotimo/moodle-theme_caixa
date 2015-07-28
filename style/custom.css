@@ -1270,6 +1270,30 @@ line-height: normal;
 
 /* End pace settings */
 
+.hidden-blocks .block {
+  float: right;
+  width: 250px;
+  margin-left: 10px;
+}
+
+.hidden-blocks {
+  background: rgba(255, 154, 154,0.2);
+  padding: 7px 7px;
+}
+
+.hidden-blocks h4 {
+  border-bottom: 1px solid #e8eaeb;
+}
+
+.hidden-blocks .block-region .block {
+  width: 25%;
+}
+
+.hidden-blocks .block-region .block .header {
+  border-top: 0px;
+}
+
+
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]

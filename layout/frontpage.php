@@ -125,7 +125,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 <?php } ?>
 
 <div id="marketblocks" class="container">
-<div class="row-fluid"> 
+<div class="row-fluid">
 <?php
 $marketclass = " ";
 if ($hasmarket1 && !$hasmarket2 && !$hasmarket3 && !$hasmarket4) {
@@ -143,28 +143,28 @@ if ($hasmarket1 && $hasmarket2 && $hasmarket3 && !$hasmarket4) {
 if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
 	$marketclass = "span3";
 }
-?>  
-    <?php if ($hasmarket1) { ?> 
+?>
+    <?php if ($hasmarket1) { ?>
     <div class="<?php echo "$marketclass";?> first">
-   
+
 	<?php echo $OUTPUT->get_setting('market1', 'format_html');?>
-    
+
     </div>
     <?php } ?>
-    
-     
-     <?php if ($hasmarket2) { ?> 
+
+
+     <?php if ($hasmarket2) { ?>
     <div class="<?php echo "$marketclass";?> first">
 
 	<?php echo $OUTPUT->get_setting('market2', 'format_html');?>
 
     </div>
      <?php } ?>
-  
-     
+
+
 <?php
 if ($hasmarket3) {
-?> 
+?>
     <div class="<?php echo "$marketclass";?> first">
         <?php echo $OUTPUT->get_setting('market3', 'format_html');?>
     </div>
@@ -172,29 +172,29 @@ if ($hasmarket3) {
 }
 ?>
 
-    
+
 <?php
 if ($hasmarket4) {
-?> 
+?>
     <div class="<?php echo "$marketclass";?> first">
 	   <?php echo $OUTPUT->get_setting('market4', 'format_html');?>
     </div>
 <?php
 }
 ?>
- 
-    
- </div>      
+
+
  </div>
- 
+ </div>
+
 <?php
 if (!empty($PAGE->theme->settings->infobox2)) {
 ?>
  <div id="themessage" class="container">
 	<div id="themessage-internal"><div class="row-fluid">
-	
+
 		<?php echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
-		
+
 	</div></div>
 </div>
 <?php
@@ -226,6 +226,17 @@ if (!empty($PAGE->theme->settings->infobox2)) {
             }
         ?>
     </div>
+    <?php if (is_siteadmin()) { ?>
+      <div class="hidden-blocks">
+        <div class="row-fluid">
+          <h4><?php echo get_string('frnt-footer', 'theme_bcu') ?></h4>
+          <?php
+            echo $OUTPUT->blocks('frnt-footer');
+          ?>
+        </div>
+      </div>
+    <?php } ?>
     </div>
-<?php 
+
+<?php
 require_once(dirname(__FILE__) . '/includes/footer.php');

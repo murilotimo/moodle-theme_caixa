@@ -77,7 +77,7 @@ $THEME->layouts = array(
     // The site home page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array('side-post', 'middle'),
+        'regions' => array('side-post', 'middle', 'frnt-footer'),
         'defaultregion' => 'side-post',
         'options' => array('nonavbar' => true),
     ),

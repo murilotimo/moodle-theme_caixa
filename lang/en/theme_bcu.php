@@ -312,3 +312,5 @@ $string['enablemyhomedesc'] = 'Display a link to {$a}';
 $string['enableeventsdesc'] = 'Display a link to the calendar';
 $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
 $string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
+
+$string['frnt-footer'] = 'Blocks in this area will only be visble to admin users.';
