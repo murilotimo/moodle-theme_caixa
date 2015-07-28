@@ -109,3 +109,7 @@ h3.sectionname {
 }
 
 #gridshadebox_content .content .summary, #gridshadebox_content .content ul.section {padding: 0 20px;}
+
+.course-content .current  .content .sectionname {
+	background: #d9edf7
+}
