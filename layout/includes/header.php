@@ -54,7 +54,7 @@ echo $OUTPUT->doctype();
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,7 +64,7 @@ echo $OUTPUT->doctype();
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <div id="page" class="container-fluid <?php echo "$setfull"; ?>">
-    
+
 <?php if (core\session\manager::is_loggedinas()) { ?>
 <div class="customalert">
 <div class="container">
@@ -88,7 +88,7 @@ echo $OUTPUT->doctype();
     <div id="above-header">
         <div class="clearfix container userhead">
             <div class="pull-left">
-                <?php echo $OUTPUT->user_menu(); ?> 
+                <?php echo $OUTPUT->user_menu(); ?>
             </div>
             <div class="headermenu row">
                 <?php if (!isloggedin() || isguestuser()) { ?>
@@ -119,7 +119,7 @@ echo $OUTPUT->doctype();
                         </ul>
                     </div>
                 <?php } ?>
-            </div>      
+            </div>
         </div>
     </div>
     <div id="page-header" class="clearfix container">
@@ -128,8 +128,8 @@ echo $OUTPUT->doctype();
         } else { ?>
             <a href="<?php p($CFG->wwwroot) ?>"><img src="<?php echo $OUTPUT->pix_url('2xlogo', 'theme')?>" id="logo"></a>
         <?php } ?>
-     
-   
+
+
     <?php
     if (isset($PAGE) && !$PAGE->theme->settings->sitetitle) {
         $header = theme_bcu_remove_site_fullname($PAGE->heading);
@@ -139,7 +139,7 @@ echo $OUTPUT->doctype();
      <div id="coursetitle" class="pull-left">
      <span title='<?php echo $PAGE->heading ?>'><?php echo $PAGE->heading ?></span>
      </div>
-     
+
         <div class="searchbox">
             <form action="<?php p($CFG->wwwroot) ?>/course/search.php">
                 <label class="hidden" for="search-1" style="display: none;">Search iCity</label>
@@ -149,7 +149,7 @@ echo $OUTPUT->doctype();
                 </div>
             </form>
         </div>
-                  
+
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>
         </div>
