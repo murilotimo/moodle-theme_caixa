@@ -39,14 +39,12 @@
     font-size: 12px;
     text-transform: none;
     border-right: 0px solid rgba(0,0,0, .2);
-    border-bottom: 3px solid #b7b3ef;
-    margin-bottom: -3px;
+    background: #fff !important;
 }
 
 .navbar .nav > li > a:hover {
     color: #3c469c;
     text-decoration: none;
-    border-bottom: 3px solid #3c469c;
 }
 
 .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
@@ -90,12 +88,6 @@
     font-weight: 400;
     padding: 6px 15px;
     border-bottom-width: 1px !important;
-}
-
-.navbar .nav > li > a {
-    border-bottom: 1px solid #ccc !important;
-    background: #fff !important;
-    margin-bottom: 0px;
 }
 
 .nav .dropdown-menu li a:hover, .navbar .nav > li > a:hover {
