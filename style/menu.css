@@ -1,6 +1,6 @@
 #navwrap {
     clear: both;
-    border-bottom: 3px solid #b7b3ef;
+    border-bottom: 3px solid [[setting:navbarborder]];
 }
 
 .navbar {
@@ -40,6 +40,7 @@
     text-transform: none;
     border-right: 0px solid rgba(0,0,0, .2);
     background: #fff !important;
+    margin-bottom: -3px;
 }
 
 .navbar .nav > li > a:hover {
@@ -88,6 +89,11 @@
     font-weight: 400;
     padding: 6px 15px;
     border-bottom-width: 1px !important;
+}
+
+.navbar .nav > li > a {
+    background: #fff !important;
+    margin-bottom: 0px;
 }
 
 .nav .dropdown-menu li a:hover, .navbar .nav > li > a:hover {
@@ -175,5 +181,8 @@
 @media (max-width: 990px) {
     .menutitle {
         float: none;
+    }
+    .navbar .nav > li > a {
+      border-bottom: 1px solid #ccc;
     }
 }
