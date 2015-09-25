@@ -23,7 +23,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
-$fixedheader = true;
+$fixedheader = false;
 require_once(dirname(__FILE__) . '/includes/header.php');
 $left = theme_bcu_get_block_side();
 ?>

@@ -77,7 +77,7 @@ a:focus {
 }
 
 #page-header-wrapper {
-    background: [[setting:maincolor]];
+    background: [[setting:headerbkcolor2]];
     width: 100%;
     z-index: 2;
 }
@@ -87,6 +87,7 @@ a:focus {
         height: 20px;
         padding-top: 5px;
         padding-bottom: 5px;
+        background: [[setting:headerbkcolor]];
 }
 
 #above-header .container {
@@ -94,7 +95,7 @@ a:focus {
 }
 
 #above-header .headermenu, #above-header .headermenu a {
-	color: #fff;
+	color: [[setting:headertextcolor]];
 }
 
 #above-header .headermenu .dropdown-menu,#above-header .headermenu .dropdown-menu a {
@@ -108,6 +109,7 @@ a:focus {
 	background: transparent;
 	padding-top: 0px;
 	min-height: 82px;
+	color: [[setting:headertextcolor2]];
 }
 
 #logo {
@@ -161,6 +163,25 @@ a:focus {
 	}
 }
 
+.socialbox {
+	padding-top: 1.8%;
+}
+
+.socialbox a {
+	color: [[setting:headertextcolor2]];
+	font-size: [[setting:socialsize]]px;
+	padding-left: 10px;
+}
+
+@media (max-width: 980px) {
+	.socialbox {
+    float: none;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    text-align: center;
+	}
+}
+
 .headermenu {
 	float: right;
 	padding-top: 0px;
@@ -168,6 +189,7 @@ a:focus {
 	font-size: 12px;
 	color: #ccc;
 	text-align: right;
+	margin-left: 15px;
 }
 
 .headermenu span.fa.fa-angle-down {
@@ -188,13 +210,13 @@ a.usermendrop {
 
 .usermenu2.nav {
 	margin-bottom: 0px;
-	color: #fff;
+	color: [[setting:headertextcolor]];
 	font-size: 12px;
 	padding-left: 10px;
 }
 
 .usermenu2.nav a.dropdown-toggle {
-	color: #fff;
+	color: [[setting:headertextcolor]];
 }
 
 .usermenu2 .fa.fa-comments {
@@ -231,7 +253,7 @@ a.usermendrop {
 #marketblocks .internalmarket {
 	padding: 10px 15px 30px;
 	text-align: center;
-	border: 1px solid #e8eaeb;
+	border: 1px solid [[setting:marketblockbordercolor]];
 	border-top: 0px;
 	background-color: #fafafa;
 }
@@ -250,8 +272,12 @@ a.usermendrop {
 	margin-bottom: 30px;
 }
 
+.marketrow {
+	margin-top: 20px;
+}
+
 #themessage {
-	background: #f3f3f3;
+	background: [[setting:infoboxcolor2]];
 	position: relative;
 	margin-bottom: 20px;
 }
@@ -262,7 +288,7 @@ a.usermendrop {
 }
 
 #themessage .span10 {
-	color: #666;
+	color: [[setting:infoboxtextcolor2]];
     font-size: 16px;
     font-weight: normal;
     line-height: 23px;
@@ -297,13 +323,13 @@ span.fa-chevron-right.fa {
 }
 
 #theinfo {
-	background: #333;
+	background: [[setting:infoboxcolor]];
 	margin-bottom: 20px;
 }
 
 #theinfo-internal {
 	padding: 15px 25px;
-	color: #fff;
+	color: [[setting:infoboxtextcolor]];
 	font-size: 16px;
 }
 
@@ -318,12 +344,16 @@ span.fa-chevron-right.fa {
 }
 
 #page-footer {
-	background: [[setting:maincolor]];
+	background: [[setting:footerbkcolor]];
 	margin: 10px 0px 0;
    	text-align: left;
-   	color: #fff;
+   	color: [[setting:footertextcolor]];
    	border-top: 0px;
    	font-size: 110%;
+}
+
+#page-footer a {
+	color: [[setting:footerlinkcolor]];
 }
 
 #page-footer .block-list > li {
@@ -365,6 +395,19 @@ span.fa-chevron-right.fa {
     font-size: 2em;
 }
 
+#page-footer .blockplace3 {
+	display: none;
+}
+
+
+#page-footer .blockplace2 {
+	display: none;
+}
+
+#page-site-index #page-footer .blockplace2 {
+	display: block;
+}
+
 .screen-reader-text {
     left: -9999px;
     position: absolute;
@@ -393,8 +436,13 @@ span.fa-chevron-right.fa {
     margin-top: 34px;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-top: 1px solid [[setting:dividingline]];
+    border-top: 1px solid [[setting:dividingline2]];
     font-size: 90%;
+    color: [[setting:footertextcolor2]];
+}
+
+#page-footer .info a {
+	color: [[setting:footerlinkcolor]];
 }
 
 .copyright {
@@ -734,7 +782,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 }
 
 .pull-left .usermenu2.nav a {
-	color: #fff;
+	color: [[setting:headertextcolor]];
 }
 
 .pull-left .usermenu2.nav .dropdown-menu a {
@@ -1014,7 +1062,7 @@ div.no-overflow, .yui3-datatable {
 }
 
 #navwrap {
-    background: #FFF;
+    background: [[setting:menubkcolor]];
 }
 
 div.questionbankwindow.block {
@@ -1292,8 +1340,3 @@ line-height: normal;
 .hidden-blocks .block-region .block .header {
   border-top: 0px;
 }
-
-
-/* Custom CSS Settings
--------------------------*/
-[[setting:customcss]]

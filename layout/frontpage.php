@@ -47,8 +47,18 @@ $hasmarket2 = (!empty($PAGE->theme->settings->market2));
 $hasmarket3 = (!empty($PAGE->theme->settings->market3));
 $hasmarket4 = (!empty($PAGE->theme->settings->market4));
 
+$hasmarket5 = (!empty($PAGE->theme->settings->market5));
+$hasmarket6 = (!empty($PAGE->theme->settings->market6));
+$hasmarket7 = (!empty($PAGE->theme->settings->market7));
+$hasmarket8 = (!empty($PAGE->theme->settings->market8));
+
+$hasmarket9 = (!empty($PAGE->theme->settings->market9));
+$hasmarket10 = (!empty($PAGE->theme->settings->market10));
+$hasmarket11 = (!empty($PAGE->theme->settings->market11));
+$hasmarket12 = (!empty($PAGE->theme->settings->market12));
+
 if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
-<div class="container slidewrap">
+<div class="container slidewrap <?php if (!empty($PAGE->theme->settings->slideroption2)) {echo "slidestyle2"; } ?>">
 <div id="main-slider" class="flexslider">
 <ul class="slides">
 <?php
@@ -124,24 +134,32 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
     </div>
 <?php } ?>
 
-<div id="marketblocks" class="container">
+<?php
+if (!empty($PAGE->theme->settings->frontpagemarketoption)) {
+$extramarketclass = "covtiles";
+} else {
+$extramarketclass = " ";
+}
+?>
+
+<div id="marketblocks" class="container <?php echo "$extramarketclass"; ?>">
 <div class="row-fluid">
 <?php
 $marketclass = " ";
 if ($hasmarket1 && !$hasmarket2 && !$hasmarket3 && !$hasmarket4) {
-	$marketclass = "span12";
+	$marketclass = "span12 $extramarketclass";
 }
 
 if ($hasmarket1 && $hasmarket2 && !$hasmarket3 && !$hasmarket4) {
-	$marketclass = "span6";
+	$marketclass = "span6 $extramarketclass";
 }
 
 if ($hasmarket1 && $hasmarket2 && $hasmarket3 && !$hasmarket4) {
-	$marketclass = "span4";
+	$marketclass = "span4 $extramarketclass";
 }
 
 if ($hasmarket1 && $hasmarket2 && $hasmarket3 && $hasmarket4) {
-	$marketclass = "span3";
+	$marketclass = "span3 $extramarketclass";
 }
 ?>
     <?php if ($hasmarket1) { ?>
@@ -185,6 +203,122 @@ if ($hasmarket4) {
 
 
  </div>
+ 
+ <?php
+ if ($hasmarket5) { ?>
+ <div class="row-fluid marketrow">
+ <?php
+$marketclass = " ";
+if ($hasmarket5 && !$hasmarket6 && !$hasmarket7 && !$hasmarket8) {
+	$marketclass = "span12 $extramarketclass";
+}
+
+if ($hasmarket5 && $hasmarket6 && !$hasmarket7 && !$hasmarket8) {
+	$marketclass = "span6 $extramarketclass";
+}
+
+if ($hasmarket5 && $hasmarket6 && $hasmarket7 && !$hasmarket8) {
+	$marketclass = "span4 $extramarketclass";
+}
+
+if ($hasmarket5 && $hasmarket6 && $hasmarket7 && $hasmarket8) {
+	$marketclass = "span3 $extramarketclass";
+}
+?>
+
+	<?php if ($hasmarket5) { ?>
+    <div class="<?php echo "$marketclass";?> first">
+
+	<?php echo $OUTPUT->get_setting('market5', 'format_html');?>
+
+    </div>
+    <?php } ?> 
+    
+    <?php if ($hasmarket6) { ?>
+    <div class="<?php echo "$marketclass";?> first">
+
+	<?php echo $OUTPUT->get_setting('market6', 'format_html');?>
+
+    </div>
+    <?php } ?> 
+ 
+ 	<?php if ($hasmarket7) { ?>
+    <div class="<?php echo "$marketclass";?> first">
+
+	<?php echo $OUTPUT->get_setting('market7', 'format_html');?>
+
+    </div>
+    <?php } ?> 
+    
+    <?php if ($hasmarket8) { ?>
+    <div class="<?php echo "$marketclass";?> first">
+
+	<?php echo $OUTPUT->get_setting('market8', 'format_html');?>
+
+    </div>
+    <?php } ?> 
+ 
+ </div>
+ <?php } //end 2nd row of blocks ?>
+ 
+ 
+ <?php
+ if ($hasmarket9) { ?>
+ <div class="row-fluid marketrow">
+ <?php
+$marketclass = " ";
+if ($hasmarket9 && !$hasmarket10 && !$hasmarket11 && !$hasmarket12) {
+	$marketclass = "span12 $extramarketclass";
+}
+
+if ($hasmarket9 && $hasmarket10 && !$hasmarket11 && !$hasmarket12) {
+	$marketclass = "span6 $extramarketclass";
+}
+
+if ($hasmarket9 && $hasmarket10 && $hasmarket11 && !$hasmarket12) {
+	$marketclass = "span4 $extramarketclass";
+}
+
+if ($hasmarket9 && $hasmarket10 && $hasmarket11 && $hasmarket12) {
+	$marketclass = "span3 $extramarketclass";
+}
+?>
+
+	<?php if ($hasmarket9) { ?>
+    <div class="<?php echo "$marketclass";?> first">
+
+	<?php echo $OUTPUT->get_setting('market9', 'format_html');?>
+
+    </div>
+    <?php } ?> 
+    
+    <?php if ($hasmarket10) { ?>
+    <div class="<?php echo "$marketclass";?> first">
+
+	<?php echo $OUTPUT->get_setting('market10', 'format_html');?>
+
+    </div>
+    <?php } ?> 
+ 
+ 	<?php if ($hasmarket11) { ?>
+    <div class="<?php echo "$marketclass";?> first">
+
+	<?php echo $OUTPUT->get_setting('market11', 'format_html');?>
+
+    </div>
+    <?php } ?> 
+    
+    <?php if ($hasmarket12) { ?>
+    <div class="<?php echo "$marketclass";?> first">
+
+	<?php echo $OUTPUT->get_setting('market12', 'format_html');?>
+
+    </div>
+    <?php } ?> 
+ 
+ </div>
+ <?php } //end 3rd row of blocks ?>
+ 
  </div>
 
 <?php

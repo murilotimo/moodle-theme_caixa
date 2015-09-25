@@ -55,11 +55,43 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:buttoncolour]]' => '#00AEEF',
         '[[setting:buttonhovercolour]]' => '#0084C2',
         '[[setting:dividingline]]' => '#3C469C',
+        '[[setting:dividingline2]]' => '#3C469C',
         '[[setting:navbarborder]]' => '#B7B3EF',
         '[[setting:navbarhover]]' => '#3C469C',
         '[[setting:breadcrumb]]' => '#b4bbbf',
         '[[setting:activebreadcrumb]]' => '#e8eaeb',
-        '[[setting:pacecolour]]' => '#29d'
+        '[[setting:pacecolour]]' => '#29d',
+        '[[setting:footerbkcolor]]' => '#001e3c',
+        '[[setting:footertextcolor]]' => '#ffffff',
+        '[[setting:footertextcolor2]]' => '#ffffff',
+        '[[setting:footerlinkcolor]]' => '#ffffff',
+        '[[setting:headerbkcolor]]' => '#001e3c',
+        '[[setting:headerbkcolor2]]' => '#001e3c',
+        '[[setting:headertextcolor]]' => '#ffffff',
+        '[[setting:headertextcolor2]]' => '#ffffff',
+        '[[setting:blockheadercolor]]' => '#002f67',
+        '[[setting:blocklinecolor]]' => '#001e3c',
+        '[[setting:marketblockbordercolor]]' => '#e8eaeb',
+        '[[setting:blocklinkcolor]]' => '#333333',
+        '[[setting:tilesbordercolor]]' => '#e8eaeb',
+        '[[setting:infoboxcolor]]' => '#333333',
+        '[[setting:infoboxcolor2]]' => '#f3f3f3',
+        '[[setting:currentcolor]]' => '#d9edf7',
+        '[[setting:sectionheadingcolor]]' => '#5f588a',
+        '[[setting:infoboxtextcolor]]' => '#ffffff',
+        '[[setting:infoboxtextcolor2]]' => '#666666',
+        '[[setting:menubkcolor]]' => '#ffffff',
+        '[[setting:menufontcolor]]' => '#444444',
+        '[[setting:menufonthovercolor]]' => '#3c469c',
+        '[[setting:menubordercolor]]' => '#b7b3ef',
+        '[[setting:covbkcolor]]' => '#0066cc',
+        '[[setting:covfontcolor]]' => '#ffffff',
+        '[[setting:editonbk]]' => '#0c901f',
+        '[[setting:editoffbk]]' => '#f01f1f',
+        '[[setting:editfont]]' => '#ffffff',
+        '[[setting:slideroption2color]]' => '#0066cc',
+        '[[setting:slideroption2a]]' => '#0066cc',
+        '[[setting:socialsize]]' => '22'
     );
 
     // Get all the defined settings for the theme and replace defaults.
@@ -208,7 +240,11 @@ function theme_bcu_pluginfile($course, $cm, $context, $filearea, $args, $forcedo
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'style') {
             theme_essential_serve_css($args[1]);
-        } else if ($filearea === 'pagebackground') {
+        } 
+        else if ($filearea === 'homebk') {
+            return $theme->setting_file_serve('homebk', $args, $forcedownload, $options);
+        }
+        else if ($filearea === 'pagebackground') {
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
         } else if (preg_match("/p[1-9][0-9]/", $filearea) !== false) {
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
@@ -285,6 +321,7 @@ function theme_bcu_page_init(moodle_page $page) {
     }
     $page->requires->jquery_plugin('pace', 'theme_bcu');
     $page->requires->jquery_plugin('flexslider', 'theme_bcu');
+    $page->requires->jquery_plugin('ticker', 'theme_bcu');
     $page->requires->jquery_plugin('easing', 'theme_bcu');
     $page->requires->jquery_plugin('bcu', 'theme_bcu');
 }

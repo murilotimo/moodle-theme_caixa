@@ -78,3 +78,17 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
     background-color: [[setting:buttonhovercolour]];
     color: #fff;
 }
+
+#edittingbutton .btn, #edittingbutton input[type="submit"] {
+	background-color: [[setting:editonbk]];
+	color: [[setting:editfont]];
+}
+
+.editing #edittingbutton .btn, .editing #edittingbutton input[type="submit"] {
+	color: [[setting:editfont]];
+	background-color: [[setting:editoffbk]];
+}
+
+/* Custom CSS Settings
+-------------------------*/
+[[setting:customcss]]

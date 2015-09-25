@@ -48,6 +48,20 @@ if (right_to_left()) {
     $regionbsid = 'region-bs-main-and-pre';
 }
 
+$showicons = "";
+$showicons = $PAGE->theme->settings->blockicons;
+if ($showicons == 1) {
+	$showiconsclass = "showblockicons";
+} else {
+	$showiconsclass = " ";
+}
+//setting for default screen view. does not override user's preference
+$defaultview = "";
+$defaultview = $PAGE->theme->settings->viewselect;
+if ($defaultview == 1 && $setfull == "") {
+	$setfull = "fullin";
+} 
+
 echo $OUTPUT->doctype();
 ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -63,7 +77,7 @@ echo $OUTPUT->doctype();
 <body <?php echo $OUTPUT->body_attributes(array('two-column', $setzoom)); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
-<div id="page" class="container-fluid <?php echo "$setfull"; ?>">
+<div id="page" class="container-fluid <?php echo "$setfull $showiconsclass"; ?>">
 
 <?php if (core\session\manager::is_loggedinas()) { ?>
 <div class="customalert">
@@ -88,15 +102,18 @@ echo $OUTPUT->doctype();
     <div id="above-header">
         <div class="clearfix container userhead">
             <div class="pull-left">
-                <?php echo $OUTPUT->user_menu(); ?>
+                <?php echo $OUTPUT->user_menu(); ?> 
             </div>
+            
             <div class="headermenu row">
                 <?php if (!isloggedin() || isguestuser()) { ?>
                     <?php echo $OUTPUT->login_info() ?>
-                <?php } else { ?>
+                <?php } else { 
+                $userid = $USER->id;
+                ?>
                     <div class="dropdown secondone">
-                        <a class="dropdown-toggle usermendrop" data-toggle="dropdown" data-target=".secondone"><span class="fa fa-user"></span><?php echo fullname($USER) ?> <span class="fa fa-angle-down"></span></a>
-                        <ul class="dropdown-menu usermen" role="menu">
+                        <a class="dropdown-toggle usermendrop" data-toggle="dropdown" href="#"><span class="fa fa-user"></span><?php echo fullname($USER) ?> <span class="fa fa-angle-down"></span></a>
+                        <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
                             <?php if (!empty($PAGE->theme->settings->enablemy)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/my" title="My Dashboard"><i class="fa fa-dashboard"></i><?php echo get_string('myhome') ?></a></li>
                             <?php } ?>
@@ -112,6 +129,27 @@ echo $OUTPUT->doctype();
                             <?php  if (!empty($PAGE->theme->settings->enablebadges)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/badges/mybadges.php" title="badges"><i class="fa fa-certificate"></i><?php echo get_string('badges') ?></a></li>
                             <?php } ?>
+                            
+                            <?php  if (!empty($PAGE->theme->settings->enablepref)) { ?>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/user/preferences.php" title="preferences"><i class="fa fa-gear"></i><?php echo get_string('preferences') ?></a></li>
+                            <?php } ?>
+                            
+                             <?php  if (!empty($PAGE->theme->settings->enablenote)) { ?>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/message/edit.php?id=<?php echo "$userid"; ?>" title="notifications"><i class="fa fa-paper-plane"></i><?php echo get_string('notifications') ?></a></li>
+                            <?php } ?>
+                            
+                            <?php  if (!empty($PAGE->theme->settings->enableblog)) { ?>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/blog/index.php?userid=<?php echo "$userid"; ?>" title="blog"><i class="fa fa-rss"></i><?php echo get_string('myblogs','theme_bcu') ?></a></li>
+                            <?php } ?>
+                            
+                            <?php  if (!empty($PAGE->theme->settings->enableposts)) { ?>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>" title="posts"><i class="fa fa-commenting"></i><?php echo get_string('posts') ?></a></li>
+                            <?php } ?>
+                            
+                             <?php  if (!empty($PAGE->theme->settings->enablefeed)) { ?>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>" title="posts"><i class="fa fa-bullhorn"></i><?php echo get_string('feedback') ?></a></li>
+                            <?php } ?>
+                            
                             <?php if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/calendar/view.php" title="Calendar"><i class="fa fa-calendar"></i><?php echo get_string('pluginname', 'block_calendar_month') ?></a></li>
                             <?php } ?>
@@ -120,6 +158,31 @@ echo $OUTPUT->doctype();
                     </div>
                 <?php } ?>
             </div>
+
+
+
+<div class="dropdown pull-right newmenus newmenu1">
+      <?php echo $OUTPUT->tools_menu3(); ?>
+</div>
+
+
+<div class="dropdown pull-right newmenus newmenu2">
+     <?php echo $OUTPUT->tools_menu4(); ?>
+</div>     
+
+<div class="dropdown pull-right newmenus newmenu3">
+     <?php echo $OUTPUT->tools_menu5(); ?>
+</div>   
+
+<div class="dropdown pull-right newmenus newmenu4">
+     <?php echo $OUTPUT->tools_menu6(); ?>
+</div> 
+
+<div class="dropdown pull-right newmenus newmenu5">
+     <?php echo $OUTPUT->tools_menu7(); ?>
+</div> 
+
+           
         </div>
     </div>
     <div id="page-header" class="clearfix container">
@@ -139,7 +202,47 @@ echo $OUTPUT->doctype();
      <div id="coursetitle" class="pull-left">
      <span title='<?php echo $PAGE->heading ?>'><?php echo $PAGE->heading ?></span>
      </div>
-
+		
+		
+		<?php if (!empty($PAGE->theme->settings->socialset)) { ?>
+		<div class="socialbox pull-right">
+		<?php if (!empty($PAGE->theme->settings->social1)) { ?>
+		<a alt="facebook" title="facebook" href="<?php echo $PAGE->theme->settings->social1 ?>"><i class="fa fa-facebook-square"></i></a>
+		<?php } ?>
+		<?php if (!empty($PAGE->theme->settings->social2)) { ?>
+		<a alt="twitter" title="twitter" href="<?php echo $PAGE->theme->settings->social2 ?>"><i class="fa fa-twitter-square"></i></a>
+		<?php } ?>
+		<?php if (!empty($PAGE->theme->settings->social3)) { ?>
+		<a alt="google plus" title="google plus" href="<?php echo $PAGE->theme->settings->social3 ?>"><i class="fa fa-google-plus"></i></a>
+		<?php } ?>
+		<?php if (!empty($PAGE->theme->settings->social4)) { ?>
+		<a alt="instagram" title="instagram" href="<?php echo $PAGE->theme->settings->social4 ?>"><i class="fa fa-instagram"></i></a>
+		<?php } ?>
+		<?php if (!empty($PAGE->theme->settings->social5)) { ?>
+		<a alt="tumblr" title="tumblr" href="<?php echo $PAGE->theme->settings->social5 ?>"><i class="fa fa-tumblr-square"></i></a>
+		<?php } ?>
+		<?php if (!empty($PAGE->theme->settings->social6)) { ?>
+		<a alt="linkedin" title="linkedin" href="<?php echo $PAGE->theme->settings->social6 ?>"><i class="fa fa-linkedin"></i></a>
+		<?php } ?>
+		<?php if (!empty($PAGE->theme->settings->social7)) { ?>
+		<a alt="youtube" title="youtube" href="<?php echo $PAGE->theme->settings->social7 ?>"><i class="fa fa-youtube-square"></i></a>
+		<?php } ?>
+		<?php if (!empty($PAGE->theme->settings->social8)) { ?>
+		<a alt="flickr" title="flickr" href="<?php echo $PAGE->theme->settings->social8 ?>"><i class="fa fa-flickr"></i></a>
+		<?php } ?>
+		<?php if (!empty($PAGE->theme->settings->social9)) { ?>
+		<a alt="pinterest" title="pinterest" href="<?php echo $PAGE->theme->settings->social9 ?>"><i class="fa fa-pinterest-p"></i></a>
+		<?php } ?>
+		<?php if (!empty($PAGE->theme->settings->social10)) { ?>
+		<a alt="web" title="web" href="<?php echo $PAGE->theme->settings->social10 ?>"><i class="fa fa-globe"></i></a>
+		<?php } ?>
+		<?php if (!empty($PAGE->theme->settings->social11)) { ?>
+		<a alt="blog" title="blog" href="<?php echo $PAGE->theme->settings->social11 ?>"><i class="fa fa-rss"></i></a>
+		<?php } ?>
+		</div>
+		<?php } ?>
+		
+		<?php if (empty($PAGE->theme->settings->socialset)) { ?>
         <div class="searchbox">
             <form action="<?php p($CFG->wwwroot) ?>/course/search.php">
                 <label class="hidden" for="search-1" style="display: none;">Search iCity</label>
@@ -149,6 +252,7 @@ echo $OUTPUT->doctype();
                 </div>
             </form>
         </div>
+        <?php } ?>
 
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>
@@ -170,6 +274,7 @@ echo $OUTPUT->doctype();
                             <?php echo $OUTPUT->navigation_menu(); ?>
                             <?php echo $OUTPUT->custom_menu(); ?>
                             <?php echo $OUTPUT->tools_menu(); ?>
+                            <?php echo $OUTPUT->tools_menu2(); ?>
 
                             <ul class="nav pull-right">
                                 <?php
@@ -190,3 +295,21 @@ echo $OUTPUT->doctype();
         </div>
     </div>
 </header>
+
+
+<?php if (!empty($PAGE->theme->settings->enableticker)) { ?>
+<div id="ticker-wrap" class="clearfix container">
+<div class="pull-left" id="ticker-announce">
+<?php echo get_string('ticker', 'theme_bcu'); ?>
+</div>
+<ul id="ticker">
+<?php if (empty($PAGE->theme->settings->tickertext)) { ?>
+			<li>Set the ticker text from the settings page!</li>
+			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae.</li>
+			<li>A short Headline is here</li>
+			<li>A long headline is not here either. <a href="#">A link is here!</a></li>
+<?php } else { echo $PAGE->theme->settings->tickertext; } ?>
+			
+</ul>
+</div>
+<?php } ?>

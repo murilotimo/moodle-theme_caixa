@@ -26,10 +26,15 @@
  
 ?>
 
+ <?php if (!empty($PAGE->theme->settings->footerblocksplacement)) { 
+ $fblock = $PAGE->theme->settings->footerblocksplacement;
+ $fblock = "blockplace$fblock";
+ } else { $fblock = " "; } ?>
+
 <footer id="page-footer">
     <div id="course-footer"><?php echo $OUTPUT->course_footer(); ?></div>
     <?php if($PAGE->theme->settings->showfooterblocks) { ?>
-    <div class="container">
+    <div class="container <?php echo "$fblock"; ?>">
         <div class="row-fluid">
             <?php if (!empty($PAGE->theme->settings->footer1content)) { ?>
             <div class="left-col span3" id="contactdetails">
@@ -44,7 +49,7 @@
             </div>
             <?php } ?>
             <?php if (!empty($PAGE->theme->settings->footer3content)) { ?>
-            <div class="left-col span3" id="social-connect">
+            <div class="left-col span3" id="social-connectOLD">
                 <h3 title="<?php $OUTPUT->get_setting('footer3header', 'format_text'); ?>"><?php echo $OUTPUT->get_setting('footer3header', 'format_text'); ?></h3>
                 <?php echo $OUTPUT->get_setting('footer3content', 'format_html'); ?>
             </div>

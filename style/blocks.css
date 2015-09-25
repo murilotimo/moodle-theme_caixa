@@ -8,7 +8,7 @@
 }
 
 .block .header {
-	border-top: 1px solid [[setting:maincolor]];
+	border-top: 1px solid [[setting:blocklinecolor]];
 	padding: 10px 10px;
 	padding-right: 0px;
 	background: transparent;
@@ -26,7 +26,7 @@
 	padding: 0 0;
 	text-transform: none;
 	font-size: 16px;
-	color: #002f67;
+	color: [[setting:blockheadercolor]];
 	margin: 0px 0px;
 	font-weight:bold;
 	text-shadow: none;
@@ -40,8 +40,8 @@
 	color: #333;
 }
 
-.block .content a {
-    color: #333;
+.block .content a, .block .content li a, .block .content td a {
+    color: [[setting:blocklinkcolor]];
 }
 
 .block .header .block_action {
@@ -134,4 +134,143 @@ body.has_dock div#dock {
 
 a.dimmed, a.dimmed:link, a.dimmed:visited, a.dimmed_text, a.dimmed_text:link, a.dimmed_text:visited, .dimmed_text, .dimmed_text a, .dimmed_text a:link, .dimmed_text a:visited, .usersuspended, .usersuspended a, .usersuspended a:link, .usersuspended a:visited, .dimmed_category, .dimmed_category a {
 	color: #999;
+}
+
+
+/* add or hide block icons */
+.showblockicons .block .header .title h2:before{
+font-family:FontAwesome;
+font-size:1.25em;
+margin-right:.3em;
+content:"\f0c9";
+font-weight: normal;
+}
+
+.showblockicons .block_news_items .header .title h2:before {
+  content: "\f0a1";
+  font-family: FontAwesome;
+}
+.showblockicons .block_navigation .header .title h2:before {
+  content: "\f0e8";
+  font-family: FontAwesome;
+}
+.showblockicons .block_calendar_upcoming .header .title h2:before,
+.showblockicons .block_calendar_month .header .title h2:before {
+  content: "\f073";
+  font-family: FontAwesome;
+}
+.showblockicons .block_course_list .header .title h2:before {
+  content: "\f108";
+  font-family: FontAwesome;
+}
+.showblockicons .block_completionstatus .header .title h2:before,
+.showblockicons .block_selfcompletion .header .title h2:before {
+  content: "\f0e4";
+  font-family: FontAwesome;
+}
+.showblockicons .block_blog_menu .header .title h2:before {
+  content: "\f02d";
+  font-family: FontAwesome;
+}
+.showblockicons .block_quiz_results .header .title h2:before {
+  content: "\f080";
+  font-family: FontAwesome;
+}
+.showblockicons .block_quiz_navblock .header .title h2:before {
+  content: "\f126";
+  font-family: FontAwesome;
+}
+.showblockicons .block_glossary_random .header .title h2:before {
+  content: "\f0eb";
+  font-family: FontAwesome;
+}
+.showblockicons .block_book_toc .header .title h2:before {
+  content: "\f02d";
+  font-family: FontAwesome;
+}
+.showblockicons .block_participants .header .title h2:before,
+.showblockicons .block_online_users .header .title h2:before {
+  content: "\f0c0";
+  font-family: FontAwesome;
+}
+.showblockicons .block_html .header .title h2:before {
+  content: "\f022";
+  font-family: FontAwesome;
+}
+.showblockicons .block_section_links .header .title h2:before {
+  content: "\f02e";
+  font-family: FontAwesome;
+}
+.showblockicons .block_activity_modules .header .title h2:before {
+  content: "\f12e";
+  font-family: FontAwesome;
+}
+.showblockicons .block_comments .header .title h2:before {
+  content: "\f075";
+  font-family: FontAwesome;
+}
+.showblockicons .block_settings .header .title h2:before {
+  content: "\f085";
+  font-family: FontAwesome;
+}
+.showblockicons .block_admin_bookmarks .header .title h2:before {
+  content: "\f02e";
+  font-family: FontAwesome;
+}
+.showblockicons .block_blog_tags .header .title h2:before,
+.showblockicons .block_tags .header .title h2:before {
+  content: "\f02c";
+  font-family: FontAwesome;
+}
+.showblockicons .block_private_files .header .title h2:before {
+  content: "\f114";
+  font-family: FontAwesome;
+}
+.showblockicons .block_block_mentees .header .title h2:before {
+  content: "\f0c0";
+  font-family: FontAwesome;
+}
+.showblockicons .block_messages .header .title h2:before {
+  content: "\f0e0";
+  font-family: FontAwesome;
+}
+.showblockicons .block_community .header .title h2:before {
+  content: "\f0ac";
+  font-family: FontAwesome;
+}
+.showblockicons .block_recent_activity .header .title h2:before {
+  content: "\f017";
+  font-family: FontAwesome;
+}
+.showblockicons .block_search_forums .header .title h2:before {
+  content: "\f0e6";
+  font-family: FontAwesome;
+}
+.showblockicons .block_myprofile .header .title h2:before {
+  content: "\f007";
+  font-family: FontAwesome;
+}
+.showblockicons .block_adminblock .header .title h2:before {
+  content: "\f009";
+  font-family: FontAwesome;
+}
+.showblockicons .block_feedback .header .title h2:before {
+  content: "\f087";
+  font-family: FontAwesome;
+}
+.showblockicons .block_flickr .header .title h2:before {
+  content: "\f03e";
+  font-family: FontAwesome;
+}
+.showblockicons .block_youtube .header .title h2:before {
+  content: "\f145";
+  font-family: FontAwesome;
+}
+.showblockicons .block_course_badges .header .title h2:before {
+  content: "\f091";
+  font-family: FontAwesome;
+}
+.showblockicons .block_twitter_search .header .title h2:before {
+  content: "\f099";
+  font-family: FontAwesome;
 }

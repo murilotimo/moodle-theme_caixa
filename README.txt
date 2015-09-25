@@ -59,13 +59,3 @@ Sample List Block with Chevron for Footer:
      <li><a href="http://moodle.org/"><span class="icon-right-open-mini"></span><span>IT Help</span></a></li>
      <li><a href="http://moodle.org/"><span class="icon-right-open-mini"></span><span>IT Feedback</span></a></li>
  </ul>
- 
- 
-Sample code for Tools menu using FA Icons:
-
-<span class="fa fa-video-camera"></span>Record Screen|http://google.co.uk|Record Screen
-<span class="fa fa-picture-o"></span>ThinkStock|http://google.co.uk|ThinkStock
-<span class="fa fa-clock-o"></span>Exam Clock|http://google.co.uk|Exam Clock
-<span class="fa fa-share-alt"></span>Share a File|http://google.co.uk|Share a File
-<span class="fa fa-globe"></span>Explor|http://google.co.uk|Explor
-<span class="icon-my-cat"></span>MyCat|http://google.co.uk|MyCat

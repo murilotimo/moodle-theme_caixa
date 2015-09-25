@@ -115,6 +115,48 @@ $string['backcolordesc'] = 'Set the background color.';
 $string['maincolor'] = 'Main color';
 $string['maincolordesc'] = 'Main color for blocks and footer.';
 
+$string['footerbkcolor'] = 'Footer background color';
+$string['footerbkcolordesc'] = 'Set the footer background color.';
+
+$string['footertextcolor'] = 'Footer blocks text color';
+$string['footertextcolordesc'] = 'Footer blocks text color.';
+
+$string['footertextcolor2'] = 'Lower footer text color';
+$string['footertextcolor2desc'] = 'Lower footer text color.';
+
+$string['footerlinkcolor'] = 'Footer blocks link color';
+$string['footerlinkcolordesc'] = 'Footer blocks link color.';
+
+$string['headerbkcolor'] = 'Top header background color';
+$string['headerbkcolordesc'] = 'Set the top header background color.';
+
+$string['headerbkcolor2'] = 'Lower header background color';
+$string['headerbkcolor2desc'] = 'Set the lower header background color.';
+
+$string['headertextcolor'] = 'Top Header blocks text and link color';
+$string['headertextcolordesc'] = 'Set the top header blocks text and link color.';
+
+$string['headertextcolor2'] = 'Lower Header blocks text and link color';
+$string['headertextcolor2desc'] = 'Set the lower header blocks text and link color.';
+
+$string['blockheadercolor'] = 'Block header font color';
+$string['blockheadercolordesc'] = 'Set the block header font color.';
+
+$string['blocklinecolor'] = 'Block dividing line color';
+$string['blocklinecolordesc'] = 'Set the block divider line color.';
+
+$string['blocklinkcolor'] = 'Block link color';
+$string['blocklinkcolordesc'] = 'Set the blocks link color';
+
+$string['marketblockbordercolor'] = 'Marketing block border line color';
+$string['marketblockbordercolordesc'] = 'Set the marketing block border line color';
+
+$string['currentcolor'] = 'Current Section Highlight Color';
+$string['currentcolordesc'] = 'Set the color for the Current Section Highlight color';
+
+$string['sectionheadingcolor'] = 'Section Heading Text Color';
+$string['sectionheadingcolordesc'] = 'Set the color for section headings text color';
+
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Add text to the footer.';
 
@@ -136,6 +178,24 @@ $string['enablecalendardesc'] = 'Display a link to the users calendar';
 $string['enableprivatefiles'] = 'Private Files';
 $string['enableprivatefilesdesc'] = 'Display a link to the users private files';
 
+$string['enablepref'] = 'My Preferences';
+$string['enableprefdesc'] = 'Display a link to the user preferences page';
+
+$string['enablenote'] = 'My Notifications';
+$string['enablenotedesc'] = 'Display a link to the user notifications page';
+
+$string['enableblog'] = 'My blogs';
+$string['enableblogdesc'] = 'Display a link to the users blogs page';
+
+$string['enableposts'] = 'My posts';
+$string['enablepostsdesc'] = 'Display a link to the my posts page';
+
+$string['enablefeed'] = 'My Feedback';
+$string['enablefeeddesc'] = 'Display a link to the users feedback page';
+
+$string['frontpagemarketoption'] = 'Coventry Tiles style marketing blocks';
+$string['frontpagemarketoptiondesc'] = 'Set the marketing blocks to use the Coventry Tiles style. Set color for this in the color settings.';
+
 $string['market1'] = 'Marketing Block 1';
 $string['market1desc'] = 'Add html for marketing block 1 (see the readme file for additional info and hints).';
 
@@ -148,12 +208,48 @@ $string['market3desc'] = 'Add html for marketing block 3 (see the readme file fo
 $string['market4'] = 'Marketing Block 4';
 $string['market4desc'] = 'Add html for marketing block 4 (see the readme file for additional info and hints).';
 
+$string['market5'] = 'Marketing Block 5';
+$string['market5desc'] = 'Add html for marketing block 5 (see the readme file for additional info and hints).';
+
+$string['market6'] = 'Marketing Block 6';
+$string['market6desc'] = 'Add html for marketing block 6 (see the readme file for additional info and hints).';
+
+$string['market7'] = 'Marketing Block 7';
+$string['market7desc'] = 'Add html for marketing block 7 (see the readme file for additional info and hints).';
+
+$string['market8'] = 'Marketing Block 8';
+$string['market8desc'] = 'Add html for marketing block 8 (see the readme file for additional info and hints).';
+
+$string['market9'] = 'Marketing Block 9';
+$string['market9desc'] = 'Add html for marketing block 9 (see the readme file for additional info and hints).';
+
+$string['market10'] = 'Marketing Block 10';
+$string['market10desc'] = 'Add html for marketing block 10 (see the readme file for additional info and hints).';
+
+$string['market11'] = 'Marketing Block 11';
+$string['market11desc'] = 'Add html for marketing block 11 (see the readme file for additional info and hints).';
+
+$string['market12'] = 'Marketing Block 12';
+$string['market12desc'] = 'Add html for marketing block 12 (see the readme file for additional info and hints).';
+
 
 $string['infobox'] = 'Frontpage Info Box';
 $string['infoboxdesc'] = 'Frontpage info block HTML (see the readme file for additional info and hints).';
 
+$string['infoboxcolor'] = 'Frontpage Info Box background color';
+$string['infoboxcolordesc'] = 'Set the frontpage Info Box background color';
+
+$string['infoboxtextcolor'] = 'Frontpage Info Box text color';
+$string['infoboxtextcolordesc'] = 'Set the frontpage Info Box text color';
+
 $string['infobox2'] = 'Frontpage Secondary Info Box';
 $string['infobox2desc'] = 'Frontpage Secondary Info Box (see the readme file for additional info and hints).';
+
+$string['infoboxcolor2'] = 'Secondary frontpage Info Box background color';
+$string['infoboxcolor2desc'] = 'Set the secondary frontpage Info Box background color';
+
+$string['infoboxtextcolor2'] = 'Secondary frontpage Info Box text color';
+$string['infoboxtextcolor2desc'] = 'Set the secondary frontpage Info Box text color';
 
 $string['noenrolments'] = 'No enrolments found.';
 
@@ -224,6 +320,7 @@ $string['frontpagerendererdesc'] = 'Control the way that the coure boxes on the 
 $string['frontpagerendereroption1'] = 'Tiles';
 $string['frontpagerendereroption2'] = 'Tiles w/ overlay';
 $string['frontpagerendereroption3'] = 'Moodle default';
+$string['frontpagerendereroption4'] = 'Coventry Tiles';
 
 $string['rendereroverlaycolour'] = 'Overlay colour';
 $string['rendereroverlaycolourdesc'] = 'The colour of the overlay, when the "Tiles w/ overlay" renderer is selected.';
@@ -237,9 +334,21 @@ $string['buttoncolourdesc'] = 'The colour of the main buttons used throughout th
 $string['buttonhovercolour'] = 'Button colour (When hovering)';
 $string['buttonhovercolourdesc'] = 'The colour that the button changes to when hovering over the button.';
 
+$string['covbkcolor'] = 'Coventry tiles title background color';
+$string['covbkcolordesc'] = 'Set the title background color with the Coventry Tiles renderer is selected.';
+
+$string['covfontcolor'] = 'Coventry tiles title font color';
+$string['covfontcolordesc'] = 'Set the title font color with the Coventry Tiles renderer is selected.';
+
+$string['covhidebutton'] = 'Coventry tiles course button';
+$string['covhidebuttondesc'] = 'Set this to hide the course button when Coventry Tiles is selected.';
+
 $string['frontpagerendererdefaultimage'] = 'Default course image';
 $string['frontpagerendererdefaultimagedesc'] = 'The default image to use when no course image is found, (only applies for Tiles w/ overlay)';
 $string['loadtime'] = 'Page loaded in';
+
+$string['loadingcolour'] = 'Loading Colour';
+$string['loadingcolourdesc'] = 'Loading Colour';
 
 $string['sitetitle'] = 'Site title';
 $string['sitetitledesc'] = 'Show / Hide site title';
@@ -249,8 +358,14 @@ $string['showblocks'] = 'Show blocks';
 $string['fullscreen'] = 'Full screen';
 $string['standardview'] = 'Standard view';
 
+$string['viewselect'] = 'Default screen view.';
+$string['viewselectdesc'] = 'Set the default screen view. Check toggle to select full screen, uncheck for standard.';
+
 $string['tilesshowcontacts'] = 'Show course contacts';
 $string['tilesshowcontactsdesc'] = 'Show / hide course contacts';
+
+$string['tilesbordercolor'] = 'Coursebox tiles border color';
+$string['tilesbordercolordesc'] = 'Set a color for the coursebox tiles border color';
 
 $string['tilescontactstitle'] = 'Show course contacts role';
 $string['tilescontactstitledesc'] = 'Show / hide the role of a course contact. If not displayed, an image will be displayed before each contact';
@@ -261,6 +376,11 @@ $string['layoutsettingsheading'] = 'Control aspects of the site\'s layout';
 
 $string['blockside'] = 'Location of the blocks';
 $string['blocksidedesc'] = 'Control whether blocks appear on the left or right of the page';
+
+$string['myblogs'] = 'My Blogs';
+
+$string['blockicons'] = 'Block Icons';
+$string['blockiconsdesc'] = 'Set this to show block icons in the block header area.';
 
 $string['leftblocks'] = 'Left';
 $string['rightblocks'] = 'Right';
@@ -285,20 +405,43 @@ Moodle community|https://moodle.org
 Moodle.com|http://moodle.com/
 </pre>';
 
+$string['toolsmenu2'] = '2nd Tools menu';
+$string['toolsmenu2desc'] = 'You can configure links to be shown under a tools menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
+<pre>
+Moodle community|https://moodle.org
+-Moodle free support|https://moodle.org/support
+-Moodle development|https://moodle.org/development
+--Moodle Docs|http://docs.moodle.org|Moodle Docs
+--German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
+Moodle.com|http://moodle.com/
+</pre>';
+
 $string['toolsmenulabel'] = 'Tools';
+$string['toolsmenulabel2'] = 'Tools 2';
 $string['events'] = 'Events';
 $string['mysites'] = 'My Sites';
 $string['people'] = 'People';
 $string['help'] = 'Help';
 
-$string['dividingline'] = 'Dividing line in header and footer';
-$string['dividinglinedesc'] = 'The colour for the dividing line found in the header and footer';
+$string['dividingline'] = 'Dividing line in header';
+$string['dividinglinedesc'] = 'The colour for the dividing line found in the header';
+
+$string['dividingline2'] = 'Dividing line in footer';
+$string['dividingline2desc'] = 'The colour for the dividing line found in the footer';
+
 $string['navbarborder'] = 'Navbar bottom border colour';
 $string['navbarborderdesc'] = 'Colour for the bottom of the navbar';
 $string['navbarhover'] = 'Navbar hover colour';
 $string['navbarhoverdesc'] = 'When hovering on a navigation item, the colour of the border of the navbar.';
 $string['showfooterblocks'] = 'Show footer blocks';
 $string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';
+
+
+$string['footerblocksplacement'] = 'Footer blocks placement ';
+$string['footerblocksplacementdesc'] = 'Control the way that the footer blocks are displayed. Sitewide is default.';
+$string['footerblocksplacement1'] = 'Sitewide';
+$string['footerblocksplacement2'] = 'Homepage_only';
+$string['footerblocksplacement3'] = 'Never';
 
 $string['breadcrumb'] = 'Breadcrumb background colour';
 $string['breadcrumbdesc'] = 'Set the background colour of the breadcrumb.';
@@ -314,3 +457,174 @@ $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
 $string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
 
 $string['frnt-footer'] = 'Blocks in this area will only be visble to admin users.';
+
+$string['enableticker'] = 'Enable the news ticker on the homepage?';
+$string['enabletickerdesc'] = 'Check to enable the homepage ticker.';
+
+$string['enabletickerc'] = 'Enable the news ticker on internal pages?';
+$string['enabletickercdesc'] = 'Check to enable the ticker on internal pages.';
+
+$string['tickertext'] = 'News Ticker Text';
+$string['tickertextdesc'] = 'Add news ticker text in list format. See the read me for more info.';
+$string['ticker'] = 'Announcements';
+
+$string['newmenu1trigger'] = 'Top Menu Dropdown 1 trigger word';
+$string['newmenu1triggerdesc'] = 'Set a Top Menu Dropdown 1 trigger word. Font awesome icons can be used';
+
+$string['newmenu1'] = 'Top Menu Dropdown 1';
+$string['newmenu1label'] = 'Top Menu 1';
+$string['newmenu1desc'] = 'You can configure links to be shown under a top header menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
+<pre>
+Moodle community|https://moodle.org
+-Moodle free support|https://moodle.org/support
+-Moodle development|https://moodle.org/development
+--Moodle Docs|http://docs.moodle.org|Moodle Docs
+--German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
+Moodle.com|http://moodle.com/
+</pre>';
+
+$string['newmenu1field'] = 'Top Menu Dropdown 1 profile field restriction (note- optional field)';
+$string['newmenu1value'] = 'Top Menu Dropdown 1 profile field restriction. Set the value needed (note- optional field)';
+
+$string['newmenu2trigger'] = 'Top Menu Dropdown 2 trigger word';
+$string['newmenu2triggerdesc'] = 'Set a Top Menu Dropdown 2 trigger word. Font awesome icons can be used';
+
+$string['newmenu2'] = 'Top Menu Dropdown 2';
+$string['newmenu2label'] = 'Top Menu 2';
+$string['newmenu2desc'] = 'You can configure links to be shown under a top header menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
+<pre>
+Moodle community|https://moodle.org
+-Moodle free support|https://moodle.org/support
+-Moodle development|https://moodle.org/development
+--Moodle Docs|http://docs.moodle.org|Moodle Docs
+--German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
+Moodle.com|http://moodle.com/
+</pre>';
+
+$string['newmenu2field'] = 'Top Menu Dropdown 2 profile field restriction (note- optional field)';
+$string['newmenu2value'] = 'Top Menu Dropdown 2 profile field restriction. Set the value needed (note- optional field)';
+
+
+
+$string['newmenu3'] = 'Top Menu Dropdown 3';
+$string['newmenu3label'] = 'Top Menu 3';
+$string['newmenu3desc'] = 'You can configure links to be shown under a top header menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
+<pre>
+Moodle community|https://moodle.org
+-Moodle free support|https://moodle.org/support
+-Moodle development|https://moodle.org/development
+--Moodle Docs|http://docs.moodle.org|Moodle Docs
+--German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
+Moodle.com|http://moodle.com/
+</pre>';
+
+$string['newmenu3field'] = 'Top Menu Dropdown 3 profile field restriction (note- optional field)';
+$string['newmenu3value'] = 'Top Menu Dropdown 3 profile field restriction. Set the value needed (note- optional field)';
+
+$string['newmenu4'] = 'Top Menu Dropdown 4';
+$string['newmenu4label'] = 'Top Menu 4';
+$string['newmenu4desc'] = 'You can configure links to be shown under a top header menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
+<pre>
+Moodle community|https://moodle.org
+-Moodle free support|https://moodle.org/support
+-Moodle development|https://moodle.org/development
+--Moodle Docs|http://docs.moodle.org|Moodle Docs
+--German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
+Moodle.com|http://moodle.com/
+</pre>';
+
+$string['newmenu4field'] = 'Top Menu Dropdown 4 profile field restriction (note- optional field)';
+$string['newmenu4value'] = 'Top Menu Dropdown 4 profile field restriction. Set the value needed (note- optional field)';
+
+$string['newmenu5'] = 'Top Menu Dropdown 5';
+$string['newmenu5label'] = 'Top Menu 5';
+$string['newmenu5desc'] = 'You can configure links to be shown under a top header menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
+<pre>
+Moodle community|https://moodle.org
+-Moodle free support|https://moodle.org/support
+-Moodle development|https://moodle.org/development
+--Moodle Docs|http://docs.moodle.org|Moodle Docs
+--German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
+Moodle.com|http://moodle.com/
+</pre>';
+
+$string['newmenu5field'] = 'Top Menu Dropdown 5 profile field restriction (note- optional field)';
+$string['newmenu5value'] = 'Top Menu Dropdown 5 profile field restriction. Set the value needed (note- optional field)';
+
+$string['toolsmenu1field'] = 'Limit tools menu to profile field. Select field';
+$string['toolsmenu1value'] = 'Limit tools menu to profile field. Select value';
+
+$string['toolsmenu2field'] = 'Limit 2nd tools menu to profile field. Select field';
+$string['toolsmenu2value'] = 'Limit 2nd tools menu to profile field. Select value';
+
+$string['menubkcolor'] = 'Main Menu bacgkground color';
+$string['menubkcolordesc'] = 'Set a Main Menu bacgkground color';
+
+$string['menubordercolor'] = 'Main Menu bottom border color';
+$string['menubordercolordesc'] = 'Set a Main Menu border bottom color';
+
+$string['menufontcolor'] = 'Main Menu font color';
+$string['menufontcolordesc'] = 'Set a Main Menu font color';
+
+$string['menufonthovercolor'] = 'Main Menu font color on hover';
+$string['menufonthovercolordesc'] = 'Set a Main Menu font color on hover';
+
+
+$string['socialset'] = 'Add social icons and hide search bar';
+$string['socialsetdesc'] = 'Check this box to hide the search bar and add social icons in the same location instead.';
+
+$string['socialsize'] = 'Set the font size of the social icons';
+
+$string['social1'] = 'Facebook';
+$string['social1desc'] = 'Add URL to facebook for social icon';
+
+$string['social2'] = 'Twitter';
+$string['social2desc'] = 'Add URL for the social icon';
+
+$string['social3'] = 'Google Plus';
+$string['social3desc'] = 'Add URL for the social icon';
+
+$string['social4'] = 'Instagram';
+$string['social4desc'] = 'Add URL for the social icon';
+
+$string['social5'] = 'Tumbler';
+$string['social5desc'] = 'Add URL for the social icon';
+
+$string['social6'] = 'Linkedin';
+$string['social6desc'] = 'Add URL for the social icon';
+
+$string['social7'] = 'YouTube';
+$string['social7desc'] = 'Add URL for the social icon';
+
+$string['social8'] = 'Flickr';
+$string['social8desc'] = 'Add URL for the social icon';
+
+$string['social9'] = 'Pinterest';
+$string['social9desc'] = 'Add URL for the social icon';
+
+$string['social10'] = 'Website';
+$string['social10desc'] = 'Add URL for the website icon';
+
+$string['social11'] = 'Blog';
+$string['social11desc'] = 'Add URL for the blog icon';
+
+$string['homebk'] = 'Frontpage Background Image';
+$string['homebkdesc'] = 'Upload an image that will be a bacgkound image on the homepage.';
+
+$string['editonbk'] = 'Editing and Customize this page button background';
+$string['editonbkdesc'] = 'Set the background color for the editing and customize this page button';
+
+$string['editoffbk'] = 'Editing and Customize this page OFF button background';
+$string['editoffbkdesc'] = 'Set the background color for the editing and customize this page button in OFF state.';
+
+$string['editfont'] = 'Editing and Customize this page button font color';
+$string['editfontdesc'] = 'Set the Editing and Customize this page button font color';
+
+$string['slideroption2'] = 'Slider style option 2';
+$string['slideroption2desc'] = 'Check this box to turn on the 2nd Slider style';
+
+$string['slideroption2color'] = 'Slider style option 2 color';
+$string['slideroption2colordesc'] = 'Set a background color for the text in slider style option 2 color';
+
+$string['slideroption2a'] = 'Slider style option 2 arrow background color';
+$string['slideroption2adesc'] = 'Set the slider style option 2 arrow background color';

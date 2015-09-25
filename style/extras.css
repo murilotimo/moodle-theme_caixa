@@ -19,7 +19,7 @@ a.back-to-top {
     border-radius: 2px;
     position: relative;
     background: #fafafa !important;
-    border: 1px solid #e8eaeb;
+    border: 1px solid [[setting:tilesbordercolor]];
     height: 210px;
     margin-bottom: 20px;
 }
@@ -634,3 +634,76 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 .coursebox .panel-heading a {
     font-size: 105%;
 }
+
+/*new ticker */
+#ticker, #ticker_container {
+	font-size: 85%;
+}
+
+#ticker-wrap {
+	position: relative;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	background: #eee;
+	line-height: 40px;
+	display: none;
+}
+
+#page-site-index #ticker-wrap {
+	display: block;
+}
+
+#ticker-announce {
+	background: [[setting:maincolor]];
+	padding: 0px 15px;
+	color: #eee;
+	margin-right: 15px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+#ticker-wrap #controls {
+	padding-right: 15px;
+}
+
+#ticker-wrap #controls a {
+	color: [[setting:maincolor]];
+}
+
+#ticker-wrap #newscontent {
+	max-width: 75%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#ticker-wrap #newscontent #news {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@media (max-width: 895px) {
+	#ticker-announce {
+		float: none;
+		margin: 0 0;
+		text-align: center;
+	}
+	
+	#ticker-wrap #newscontent {
+		max-width: inherit;
+		overflow: inherit;
+		white-space: normal;
+		padding: 10px 10px 10px;
+		line-height: normal;
+	}
+	
+	#ticker-wrap #newscontent #news {
+		white-space: normal;
+	}
+	
+	#ticker-wrap #controls {
+		display: none;
+	}
+}
+

@@ -1,6 +1,6 @@
 #navwrap {
     clear: both;
-    border-bottom: 3px solid [[setting:navbarborder]];
+    border-bottom: 3px solid [[setting:menubordercolor]];
 }
 
 .navbar {
@@ -29,7 +29,7 @@
 }
 
 .navbar .nav > li > a {
-    color: #444 !important;
+    color: [[setting:menufontcolor]] !important;
     line-height: 40px;
     float: none;
     padding: 0px 20px 0px;
@@ -39,12 +39,11 @@
     font-size: 12px;
     text-transform: none;
     border-right: 0px solid rgba(0,0,0, .2);
-    background: #fff !important;
-    margin-bottom: -3px;
+    background: transparent !important;
 }
 
 .navbar .nav > li > a:hover {
-    color: #3c469c;
+    color: [[setting:menufonthovercolor]];
     text-decoration: none;
 }
 
@@ -66,7 +65,7 @@
 
 .navbar .pull-right a {
     padding: 4px 15px;
-    border-left: 1px solid rgba(255,255,255, .2);
+    border-left: 0px solid rgba(255,255,255, .2);
 }
 
 .navbar .nav > li > .dropdown-menu:before, .navbar .nav > li > .dropdown-menu:after {
@@ -91,11 +90,6 @@
     border-bottom-width: 1px !important;
 }
 
-.navbar .nav > li > a {
-    background: #fff !important;
-    margin-bottom: 0px;
-}
-
 .nav .dropdown-menu li a:hover, .navbar .nav > li > a:hover {
     background: rgba(255,255,255,.1);
     color: #333;
@@ -112,12 +106,19 @@
     margin-left: -1px;
 }
 
-@media only screen and (min-width : 768px) {
-    /*on hover only for large screens*/
+@media only screen and (min-width : 1068px) {
+    /*on hover only for large screens adjusted to exclude ipad portrait*/
     .dropdown-menu .sub-menu {
         left: 100%;
         position: absolute;
-        top: 0;
+        top: -10px;
+        visibility: hidden;
+        margin-top: -1px;
+    }
+    
+    .newmenus .dropdown-menu {
+        left: 0%;
+        position: absolute;
         visibility: hidden;
         margin-top: -1px;
     }
@@ -126,7 +127,7 @@
         display: none;
     }
 
-    .dropdown-menu li:hover .sub-menu {
+    .dropdown-menu li:hover .sub-menu, .newmenus:hover .dropdown-menu {
         visibility: visible;
     }
 
@@ -152,6 +153,48 @@
 	margin-top: 3px;
 }
 
+/*new menus */
+.newmenus {
+	position: relative;
+	margin-left: 20px;
+	font-size: 12px;
+}
+
+.newmenus .dropdown-menu .dropdown-menu {
+    left: 100%;
+}
+
+.newmenus .dropdown-toggle {
+	color: [[setting:headertextcolor]];
+}
+
+.newmenus .dropdown-menu li a {
+    color: [[setting:maincolor]];
+    font-size: 13px;
+    font-weight: 400;
+    padding: 3px 10px;
+}
+
+.newmenus .dropdown-menu li:hover a {
+	background: #eee;
+}
+
+.newmenus .dropdown-toggle:hover, .newmenus .dropdown-toggle:active, .pull-left .usermenu2.nav a:hover {
+	background-color: transparent !important;
+}
+
+.newmenus .dropdown-toggle::after {
+  font-family:FontAwesome;
+margin-left:5px;
+content:"\f107";
+font-weight: normal;
+color: [[setting:headertextcolor]];
+}
+
+.newmenus .dropdown-menu .dropdown-toggle::after {
+	color: transparent;
+}
+
 @media (max-width: 979px) {
 	.hbl, .sbl, .hbll, .sbll {
             display: none !important;
@@ -165,6 +208,9 @@
             margin: 0 auto;
             float: none;
             display: block;
+	}
+	.nav .dropdown-menu li a {
+		color: [[setting:menufontcolor]];
 	}
 }
 
@@ -182,7 +228,13 @@
     .menutitle {
         float: none;
     }
-    .navbar .nav > li > a {
-      border-bottom: 1px solid #ccc;
-    }
+}
+
+@media (max-width: 768px) {
+
+.newmenu1, .newmenu2, .newmenu3, .newmenu4, .newmenu5 {
+    display: none;
+}
+
+
 }

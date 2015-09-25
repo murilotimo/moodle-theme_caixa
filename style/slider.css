@@ -79,3 +79,175 @@ html[xmlns] .slides {display: block;}
 .flex-control-nav {
     margin-bottom: -40px;
 }
+
+.flex-direction-nav {
+	display: none;
+}
+
+
+/*new slider style */
+
+/* Direction Nav */
+.slidestyle2 .flex-direction-nav a {width: 30px; height: 100%; display: block; position: absolute; top: 0%; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
+.slidestyle2 .flex-direction-nav .flex-next {height:35px; width: 30px; top: 46%; background: [[setting:slideroption2a]] url([[pix:theme|next]]) no-repeat 50% 50%; right: 15px; opacity: 1; background-size: auto 24px;}
+.slidestyle2 .flex-direction-nav .flex-prev {height:35px; width: 30px; top: 46%; background: [[setting:slideroption2a]] url([[pix:theme|previous]]) no-repeat 50% 50%; left: 15px; opacity: 1; background-size: auto 24px;}
+
+/* Caption style */
+/* IE rgba() hack */
+.slidestyle2 .flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
+.slidestyle2 .flex-caption { top: 35%; color: inherit; margin: 0; padding: 0px 0px 0px;
+ position: absolute; right: 0; width: 100%; text-align: center;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+ }
+ 
+ .slidestyle2 .flex-caption .span6 {
+ 	margin-left: 6%;
+ }
+ 
+ /*for css transitions on larger screens */
+ @media screen and (min-width: 960px) {
+ .slidestyle2 .flex-caption {
+ 	right: -800px;
+ }
+ 
+ .slidestyle2 .flex-active-slide .flex-caption {
+ right: 0px;
+ -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  }
+  }
+
+.slidestyle2 .flex-caption h3 {
+	background: rgba(0,0,0,.6);
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 20px;
+    margin: 0px;
+    margin-left: 30px;
+    padding: 5px 15px;
+    float:left;	
+    text-transform: uppercase;
+    max-width: 1170px;
+    clear: both;
+}
+
+.slidestyle2 .flex-caption h4 {
+    color: inherit;
+    font-size: 22px;
+    line-height: 32px;
+    background: #fff;
+    clear: both;
+    padding: 15px;
+    text-align: left;
+    margin-bottom: 0px;
+    color: #333;
+    font-weight: normal;
+    text-decoration: none !important;
+}
+
+.slidestyle2 a:hover .flex-caption h4, .slidestyle2 a:hover .flex-caption h3, .slidestyle2 a:hover h4, .slidestyle2 *:hover {
+	text-decoration: none !important;
+}
+
+.slidestyle2 .flex-caption p {margin: 0 0 15px; color: #333;}
+
+.slidestyle2 .flex-caption a.submit {
+	display: block;
+    font-size: 16px;
+    margin: 0px;
+    margin-left: 30px;
+ 	float: right;
+    padding: 8px 15px;
+    text-transform: uppercase;
+    text-align: left;
+    border: 0px solid #ab3423;
+    background: [[setting:slideroption2color]] !important;
+    color: #fff;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.slidestyle2 .flex-direction-nav {
+	display: inherit;
+}
+
+.slidestyle2 .flex-control-nav.flex-control-paging {
+	display: none;
+}
+
+.slidestyle2 #main-slider {
+    margin: 0;
+}
+
+@media screen and (max-width: 1000px) {
+	.slidestyle2 .flex-caption h3 {
+	max-width: 970px;
+	}
+}
+
+@media screen and (max-width: 989px) {
+
+	.slidestyle2 .flex-caption br {
+		display: none;
+	}
+	
+	.slidestyle2 .flex-caption {
+		top:25%;
+	}
+	
+	.slidestyle2 .flex-direction-nav {
+		display: none;
+	}
+	
+	.slidestyle2 .flex-caption h4 {
+		font-size: 23px;
+		line-height: 30px;
+	}
+	
+	.slidestyle2 .flex-caption a.submit { 
+		font-size: 14px;
+		float: none;
+		white-space: normal;
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	
+	.slidestyle2 .flex-caption {
+ 		position: relative;
+ 		top:auto;
+ 		left: 0px;
+ 		background: transparent !important;
+	}
+	
+	 .slidestyle2 .flex-caption .span6 {
+ 	margin-left: 0%;
+ 	}
+	
+	.slidestyle2 .flex-caption a.submit {
+		margin: 0 0;
+		float: none;
+		width: auto;
+		text-align: center;
+	}
+	
+	.slidestyle2 .flex-caption h3 {
+		margin-left: 0px;
+		background: #000;
+		margin: 0px !Important;
+	}
+	
+	.slidestyle2 .flex-caption h4 {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 10px 0;
+	}
+}

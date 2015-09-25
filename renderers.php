@@ -325,6 +325,7 @@ class theme_bcu_core_renderer extends core_renderer {
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
             
+            
             if (!empty($PAGE->theme->settings->enableevents)) {
                 $branchtitle = get_string('events', 'theme_bcu');
                 $branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
@@ -399,8 +400,24 @@ class theme_bcu_core_renderer extends core_renderer {
     }
 
     public function tools_menu() {
-        global $PAGE;
-        $custommenuitems = '';
+        global $PAGE, $USER, $CFG;
+        if (!empty($PAGE->theme->settings->toolsmenu1field)) {
+		require_once($CFG->dirroot.'/user/profile/lib.php');
+		require_once($CFG->dirroot.'/user/lib.php');
+		profile_load_data($USER);
+		$ftype = $PAGE->theme->settings->toolsmenu1field;
+		$ftype ="profile_field_$ftype";
+		$setvalue = $PAGE->theme->settings->toolsmenu1value;
+		$usersvalue = $USER->$ftype;
+		} else {
+		$setvalue = 1;
+		$usersvalue = 1;
+		}
+		
+		$custommenuitems = '';
+		
+		if ($setvalue == $usersvalue) {
+        
         if (!empty($PAGE->theme->settings->toolsmenu)) {
             $custommenuitems .= "<i class='fa fa-wrench'> </i>".get_string('toolsmenulabel', 'theme_bcu')."|#|".
                     get_string('toolsmenulabel', 'theme_bcu')."\n";
@@ -411,8 +428,228 @@ class theme_bcu_core_renderer extends core_renderer {
             }
             $custommenuitems .= implode("\n", $arr);
         }
+
+         } //end if from setvalue
+
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
+    }
+
+
+	public function tools_menu2() {
+        global $PAGE, $USER, $CFG;
+        if (!empty($PAGE->theme->settings->toolsmenu2field)) {
+		require_once($CFG->dirroot.'/user/profile/lib.php');
+		require_once($CFG->dirroot.'/user/lib.php');
+		profile_load_data($USER);
+		$ftype = $PAGE->theme->settings->toolsmenu2field;
+		$ftype ="profile_field_$ftype";
+		$setvalue = $PAGE->theme->settings->toolsmenu2value;
+		$usersvalue = $USER->$ftype;
+		} else {
+		$setvalue = 1;
+		$usersvalue = 1;
+		}
+		
+		$custommenuitems = '';
+		
+		if ($setvalue == $usersvalue) {
+        if (!empty($PAGE->theme->settings->toolsmenu2)) {
+            $custommenuitems .= "<i class='fa fa-wrench'> </i>".get_string('toolsmenulabel2', 'theme_bcu')."|#|".
+                    get_string('toolsmenulabel2', 'theme_bcu')."\n";
+            $arr = explode("\n", $PAGE->theme->settings->toolsmenu2);
+            // We want to force everything inputted under this menu.
+            foreach ($arr as $key => $value) {
+                $arr[$key] = '-' . $arr[$key];
+            }
+            $custommenuitems .= implode("\n", $arr);
+        }
+        
+        } //end if from setvalue
+        
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);
+        
+    }
+    
+    public function tools_menu3() {
+        global $PAGE, $USER, $CFG;
+        if (!empty($PAGE->theme->settings->newmenu1field)) {
+		require_once($CFG->dirroot.'/user/profile/lib.php');
+		require_once($CFG->dirroot.'/user/lib.php');
+		profile_load_data($USER);
+		$ftype = $PAGE->theme->settings->newmenu1field;
+		$ftype ="profile_field_$ftype";
+		$setvalue = $PAGE->theme->settings->newmenu1value;
+		$usersvalue = $USER->$ftype;
+		} else {
+		$setvalue = 1;
+		$usersvalue = 1;
+		}
+		
+		$custommenuitems = '';
+		
+		if ($setvalue == $usersvalue) {
+        if (!empty($PAGE->theme->settings->newmenu1)) {
+            $custommenuitems .= "</i>".get_string('newmenu1label', 'theme_bcu')."|#|".
+                    get_string('newmenu1label', 'theme_bcu')."\n";
+            $arr = explode("\n", $PAGE->theme->settings->newmenu1);
+            // We want to force everything inputted under this menu.
+            foreach ($arr as $key => $value) {
+                $arr[$key] = '-' . $arr[$key];
+            }
+            $custommenuitems .= implode("\n", $arr);
+        }
+        
+        } //end if from setvalue
+        
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);
+        
+    }
+    
+    public function tools_menu4() {
+        global $PAGE, $USER, $CFG;
+        if (!empty($PAGE->theme->settings->newmenu2field)) {
+		require_once($CFG->dirroot.'/user/profile/lib.php');
+		require_once($CFG->dirroot.'/user/lib.php');
+		profile_load_data($USER);
+		$ftype = $PAGE->theme->settings->newmenu2field;
+		$ftype ="profile_field_$ftype";
+		$setvalue = $PAGE->theme->settings->newmenu2value;
+		$usersvalue = $USER->$ftype;
+		} else {
+		$setvalue = 1;
+		$usersvalue = 1;
+		}
+		
+		$custommenuitems = '';
+		
+		if ($setvalue == $usersvalue) {
+        if (!empty($PAGE->theme->settings->newmenu2)) {
+            $custommenuitems .= "</i>".get_string('newmenu2label', 'theme_bcu')."|#|".
+                    get_string('newmenu2label', 'theme_bcu')."\n";
+            $arr = explode("\n", $PAGE->theme->settings->newmenu2);
+            // We want to force everything inputted under this menu.
+            foreach ($arr as $key => $value) {
+                $arr[$key] = '-' . $arr[$key];
+            }
+            $custommenuitems .= implode("\n", $arr);
+        }
+        
+        } //end if from setvalue
+        
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);
+        
+    }
+    
+    
+    public function tools_menu5() {
+        global $PAGE, $USER, $CFG;
+        if (!empty($PAGE->theme->settings->newmenu3field)) {
+		require_once($CFG->dirroot.'/user/profile/lib.php');
+		require_once($CFG->dirroot.'/user/lib.php');
+		profile_load_data($USER);
+		$ftype = $PAGE->theme->settings->newmenu3field;
+		$ftype ="profile_field_$ftype";
+		$setvalue = $PAGE->theme->settings->newmenu3value;
+		$usersvalue = $USER->$ftype;
+		} else {
+		$setvalue = 1;
+		$usersvalue = 1;
+		}
+		
+		$custommenuitems = '';
+		
+		if ($setvalue == $usersvalue) {
+        if (!empty($PAGE->theme->settings->newmenu3)) {
+            $custommenuitems .= "</i>".get_string('newmenu3label', 'theme_bcu')."|#|".
+                    get_string('newmenu3label', 'theme_bcu')."\n";
+            $arr = explode("\n", $PAGE->theme->settings->newmenu3);
+            // We want to force everything inputted under this menu.
+            foreach ($arr as $key => $value) {
+                $arr[$key] = '-' . $arr[$key];
+            }
+            $custommenuitems .= implode("\n", $arr);
+        }
+        
+        } //end if from setvalue
+        
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);    
+    }
+    
+    public function tools_menu6() {
+        global $PAGE, $USER, $CFG;
+        if (!empty($PAGE->theme->settings->newmenu4field)) {
+		require_once($CFG->dirroot.'/user/profile/lib.php');
+		require_once($CFG->dirroot.'/user/lib.php');
+		profile_load_data($USER);
+		$ftype = $PAGE->theme->settings->newmenu4field;
+		$ftype ="profile_field_$ftype";
+		$setvalue = $PAGE->theme->settings->newmenu4value;
+		$usersvalue = $USER->$ftype;
+		} else {
+		$setvalue = 1;
+		$usersvalue = 1;
+		}
+		
+		$custommenuitems = '';
+		
+		if ($setvalue == $usersvalue) {
+        if (!empty($PAGE->theme->settings->newmenu4)) {
+            $custommenuitems .= "</i>".get_string('newmenu4label', 'theme_bcu')."|#|".
+                    get_string('newmenu4label', 'theme_bcu')."\n";
+            $arr = explode("\n", $PAGE->theme->settings->newmenu4);
+            // We want to force everything inputted under this menu.
+            foreach ($arr as $key => $value) {
+                $arr[$key] = '-' . $arr[$key];
+            }
+            $custommenuitems .= implode("\n", $arr);
+        }
+        
+        } //end if from setvalue
+        
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);
+        
+    }
+    
+    public function tools_menu7() {
+        global $PAGE, $USER, $CFG;
+        if (!empty($PAGE->theme->settings->newmenu5field)) {
+		require_once($CFG->dirroot.'/user/profile/lib.php');
+		require_once($CFG->dirroot.'/user/lib.php');
+		profile_load_data($USER);
+		$ftype = $PAGE->theme->settings->newmenu5field;
+		$ftype ="profile_field_$ftype";
+		$setvalue = $PAGE->theme->settings->newmenu5value;
+		$usersvalue = $USER->$ftype;
+		} else {
+		$setvalue = 1;
+		$usersvalue = 1;
+		}
+		
+		$custommenuitems = '';
+		
+		if ($setvalue == $usersvalue) {
+        if (!empty($PAGE->theme->settings->newmenu5)) {
+            $custommenuitems .= "</i>".get_string('newmenu5label', 'theme_bcu')."|#|".
+                    get_string('newmenu5label', 'theme_bcu')."\n";
+            $arr = explode("\n", $PAGE->theme->settings->newmenu5);
+            // We want to force everything inputted under this menu.
+            foreach ($arr as $key => $value) {
+                $arr[$key] = '-' . $arr[$key];
+            }
+            $custommenuitems .= implode("\n", $arr);
+        }
+        
+        } //end if from setvalue
+        
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);
+        
     }
 
     public function lang_menu() {
@@ -599,7 +836,7 @@ class theme_bcu_core_renderer extends core_renderer {
 
 class theme_bcu_core_course_renderer extends core_course_renderer {
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
-        global $CFG, $OUTPUT;
+        global $CFG, $OUTPUT, $PAGE;
         $type = theme_bcu_get_setting('frontpagerenderer');
         if ($type == 3 || $OUTPUT->body_id() != 'page-site-index') {
             return parent::coursecat_coursebox($chelper, $course, $additionalclasses = '');
@@ -608,6 +845,15 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
         if ($type == 2) {
             $additionalcss = 'hover';
         }
+        
+        if ($type == 4) {
+            $additionalcss = 'hover covtiles';
+            $type = 2;
+            $covhidebutton = "true";
+        } else {
+        	$covhidebutton = "false";
+        }
+        	
 
         if (!isset($this->strings->summary)) {
             $this->strings->summary = get_string('summary');
@@ -625,8 +871,9 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $classes .= ' collapsed';
         }
-
-        $content .= html_writer::start_tag('div', array('class' => 'span4 panel panel-default coursebox '.$additionalcss));
+		//new to show blocks John
+		$spanclass = "span4";
+        $content .= html_writer::start_tag('div', array('class' => ' '.$spanclass.' panel panel-default coursebox '.$additionalcss));
         $urlb = new moodle_url('/course/view.php', array('id' => $course->id));
         $content .= "<a href='$urlb'>";
         $coursename = $chelper->get_course_formatted_name($course);
@@ -668,8 +915,11 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
             }
             $arrow = html_writer::tag('span', '', array('class' => 'fa fa-chevron-'.$icondirection));
             $btn = html_writer::tag('span', get_string('course') . ' ' . $arrow, array('class' => 'coursequicklink'));
+            
+           if (empty($PAGE->theme->settings->covhidebutton)) { 
             $content .= html_writer::link(new moodle_url('/course/view.php',
-                array('id' => $course->id)), $btn, array('class' => 'coursebtn submit btn btn-info btn-sm pull-right'));
+                array('id' => $course->id)), $btn, array('class' => "$teste coursebtn submit btn btn-info btn-sm pull-right"));
+            }
         }
 
         $content .= html_writer::end_tag('div'); // End .panel-body.
@@ -796,7 +1046,8 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
             }
         }
         if ($type == 2) {
-            $content .= html_writer::end_tag('div');
+            $content .= html_writer::end_tag('div');    
+            //end course-content
         }
         $content .= html_writer::tag('div', '', array('class' => 'boxfooter')); // Coursecat.
 
