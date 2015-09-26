@@ -13,7 +13,7 @@ The html for this block should look like:
 </div>
 
 
-Frontpage Marketing Block HTML structure
+Frontpage Marketing Block HTML structure BCU
 
  	<div><img src="/someimageURL.jpg" class="marketimage"></div>
     <div class="internalmarket">
@@ -21,8 +21,15 @@ Frontpage Marketing Block HTML structure
     <a href="#" class="submit">My Home</a>
  	</div>
  	
+Frontpage Marketing Block HTML structure Coventry
+
+
+<div><img src="http://somewebsite.com/2.jpg" class="marketimage"></div>
+<h4><a href="#">International Courses</a></h4>
+<p>Some text below the link....</p>
+
  	
- Frontpage Secondary info Message HTML:
+Frontpage Secondary info Message HTML:
  
  <div class="span2 personpic">
 		<div id="person" class="spn5">
@@ -59,3 +66,12 @@ Sample List Block with Chevron for Footer:
      <li><a href="http://moodle.org/"><span class="icon-right-open-mini"></span><span>IT Help</span></a></li>
      <li><a href="http://moodle.org/"><span class="icon-right-open-mini"></span><span>IT Feedback</span></a></li>
  </ul>
+ 
+ +Sample code for Tools menu using FA Icons:
+
+<span class="fa fa-video-camera"></span>Record Screen|http://google.co.uk|Record Screen
+<span class="fa fa-picture-o"></span>ThinkStock|http://google.co.uk|ThinkStock
+<span class="fa fa-clock-o"></span>Exam Clock|http://google.co.uk|Exam Clock
+<span class="fa fa-share-alt"></span>Share a File|http://google.co.uk|Share a File
+<span class="fa fa-globe"></span>Explor|http://google.co.uk|Explor
+<span class="icon-my-cat"></span>MyCat|http://google.co.uk|MyCat
