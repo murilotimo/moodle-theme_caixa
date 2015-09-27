@@ -31,12 +31,12 @@ require_once($CFG->libdir. '/coursecatlib.php');
 class theme_bcu_core_renderer extends core_renderer {
     /** @var custom_menu_item language The language menu if created */
     protected $language = null;
-    
+
     public function get_setting($setting, $format = false, $theme = null) {
         if (empty($theme)) {
             $theme = theme_config::load('bcu');
         }
-        
+
         if (empty($theme->settings->$setting)) {
             return false;
         } else if (!$format) {
@@ -49,7 +49,7 @@ class theme_bcu_core_renderer extends core_renderer {
             return format_string($theme->settings->$setting);
         }
     }
-    
+
     public function user_menu($user = null, $withlinks = null) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
@@ -106,10 +106,10 @@ class theme_bcu_core_renderer extends core_renderer {
             $messagecount = count($messages);
                // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
                if ($messagecount > 0) {
-                   $messagemenu = $menu->add('<i class="fa fa-comments"> </i>' . get_string('messages', 'message') .
+                   $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message') .
                    '<span id="messagebubble">' . $messagecount . '</span>', new moodle_url('#'),
                    get_string('messages', 'message'), 9999);
-               } else { $messagemenu = $menu->add('<i class="fa fa-comments"> </i>' . get_string('messages', 'message'), new moodle_url('/message/index.php'),
+               } else { $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message'), new moodle_url('/message/index.php'),
                         get_string('messages', 'message'), 9999);
                }
 
@@ -307,7 +307,7 @@ class theme_bcu_core_renderer extends core_renderer {
     public function navigation_menu() {
         global $PAGE, $COURSE, $OUTPUT, $CFG;
         $menu = new custom_menu();
-        
+
         if (isloggedin() && !isguestuser()) {
             if (!empty($PAGE->theme->settings->enablehome)) {
                 $branchtitle = get_string('home');
@@ -316,7 +316,7 @@ class theme_bcu_core_renderer extends core_renderer {
                 $branchsort  = 9998;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
-            
+
             if (!empty($PAGE->theme->settings->enablemyhome)) {
                 $branchtitle = get_string('myhome');
                 $branchlabel = '<i class="fa fa-dashboard"></i> '.$branchtitle;
@@ -324,8 +324,8 @@ class theme_bcu_core_renderer extends core_renderer {
                 $branchsort  = 9999;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
-            
-            
+
+
             if (!empty($PAGE->theme->settings->enableevents)) {
                 $branchtitle = get_string('events', 'theme_bcu');
                 $branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
@@ -333,7 +333,7 @@ class theme_bcu_core_renderer extends core_renderer {
                 $branchsort  = 10000;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
-            
+
             if (!empty($PAGE->theme->settings->enablemysites)) {
                 $branchtitle = get_string('mysites', 'theme_bcu');
                 $branchlabel = '<i class="fa fa-briefcase"></i><span class="menutitle">'.$branchtitle.'</span>';
@@ -355,7 +355,7 @@ class theme_bcu_core_renderer extends core_renderer {
                     $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
                 }
             }
-            
+
             if (!empty($PAGE->theme->settings->enablethiscourse)) {
                 if (ISSET($COURSE->id) && $COURSE->id > 1) {
                     $branchtitle = get_string('thiscourse', 'theme_bcu');
@@ -413,11 +413,11 @@ class theme_bcu_core_renderer extends core_renderer {
 		$setvalue = 1;
 		$usersvalue = 1;
 		}
-		
+
 		$custommenuitems = '';
-		
+
 		if ($setvalue == $usersvalue) {
-        
+
         if (!empty($PAGE->theme->settings->toolsmenu)) {
             $custommenuitems .= "<i class='fa fa-wrench'> </i>".get_string('toolsmenulabel', 'theme_bcu')."|#|".
                     get_string('toolsmenulabel', 'theme_bcu')."\n";
@@ -450,9 +450,9 @@ class theme_bcu_core_renderer extends core_renderer {
 		$setvalue = 1;
 		$usersvalue = 1;
 		}
-		
+
 		$custommenuitems = '';
-		
+
 		if ($setvalue == $usersvalue) {
         if (!empty($PAGE->theme->settings->toolsmenu2)) {
             $custommenuitems .= "<i class='fa fa-wrench'> </i>".get_string('toolsmenulabel2', 'theme_bcu')."|#|".
@@ -464,14 +464,14 @@ class theme_bcu_core_renderer extends core_renderer {
             }
             $custommenuitems .= implode("\n", $arr);
         }
-        
+
         } //end if from setvalue
-        
+
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
-        
+
     }
-    
+
     public function tools_menu3() {
         global $PAGE, $USER, $CFG;
         if (!empty($PAGE->theme->settings->newmenu1field)) {
@@ -486,9 +486,9 @@ class theme_bcu_core_renderer extends core_renderer {
 		$setvalue = 1;
 		$usersvalue = 1;
 		}
-		
+
 		$custommenuitems = '';
-		
+
 		if ($setvalue == $usersvalue) {
         if (!empty($PAGE->theme->settings->newmenu1)) {
             $custommenuitems .= "</i>".get_string('newmenu1label', 'theme_bcu')."|#|".
@@ -500,14 +500,14 @@ class theme_bcu_core_renderer extends core_renderer {
             }
             $custommenuitems .= implode("\n", $arr);
         }
-        
+
         } //end if from setvalue
-        
+
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
-        
+
     }
-    
+
     public function tools_menu4() {
         global $PAGE, $USER, $CFG;
         if (!empty($PAGE->theme->settings->newmenu2field)) {
@@ -522,9 +522,9 @@ class theme_bcu_core_renderer extends core_renderer {
 		$setvalue = 1;
 		$usersvalue = 1;
 		}
-		
+
 		$custommenuitems = '';
-		
+
 		if ($setvalue == $usersvalue) {
         if (!empty($PAGE->theme->settings->newmenu2)) {
             $custommenuitems .= "</i>".get_string('newmenu2label', 'theme_bcu')."|#|".
@@ -536,15 +536,15 @@ class theme_bcu_core_renderer extends core_renderer {
             }
             $custommenuitems .= implode("\n", $arr);
         }
-        
+
         } //end if from setvalue
-        
+
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
-        
+
     }
-    
-    
+
+
     public function tools_menu5() {
         global $PAGE, $USER, $CFG;
         if (!empty($PAGE->theme->settings->newmenu3field)) {
@@ -559,9 +559,9 @@ class theme_bcu_core_renderer extends core_renderer {
 		$setvalue = 1;
 		$usersvalue = 1;
 		}
-		
+
 		$custommenuitems = '';
-		
+
 		if ($setvalue == $usersvalue) {
         if (!empty($PAGE->theme->settings->newmenu3)) {
             $custommenuitems .= "</i>".get_string('newmenu3label', 'theme_bcu')."|#|".
@@ -573,13 +573,13 @@ class theme_bcu_core_renderer extends core_renderer {
             }
             $custommenuitems .= implode("\n", $arr);
         }
-        
+
         } //end if from setvalue
-        
+
         $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);    
+        return $this->render_custom_menu($custommenu);
     }
-    
+
     public function tools_menu6() {
         global $PAGE, $USER, $CFG;
         if (!empty($PAGE->theme->settings->newmenu4field)) {
@@ -594,9 +594,9 @@ class theme_bcu_core_renderer extends core_renderer {
 		$setvalue = 1;
 		$usersvalue = 1;
 		}
-		
+
 		$custommenuitems = '';
-		
+
 		if ($setvalue == $usersvalue) {
         if (!empty($PAGE->theme->settings->newmenu4)) {
             $custommenuitems .= "</i>".get_string('newmenu4label', 'theme_bcu')."|#|".
@@ -608,14 +608,14 @@ class theme_bcu_core_renderer extends core_renderer {
             }
             $custommenuitems .= implode("\n", $arr);
         }
-        
+
         } //end if from setvalue
-        
+
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
-        
+
     }
-    
+
     public function tools_menu7() {
         global $PAGE, $USER, $CFG;
         if (!empty($PAGE->theme->settings->newmenu5field)) {
@@ -630,9 +630,9 @@ class theme_bcu_core_renderer extends core_renderer {
 		$setvalue = 1;
 		$usersvalue = 1;
 		}
-		
+
 		$custommenuitems = '';
-		
+
 		if ($setvalue == $usersvalue) {
         if (!empty($PAGE->theme->settings->newmenu5)) {
             $custommenuitems .= "</i>".get_string('newmenu5label', 'theme_bcu')."|#|".
@@ -644,12 +644,12 @@ class theme_bcu_core_renderer extends core_renderer {
             }
             $custommenuitems .= implode("\n", $arr);
         }
-        
+
         } //end if from setvalue
-        
+
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
-        
+
     }
 
     public function lang_menu() {
@@ -845,7 +845,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
         if ($type == 2) {
             $additionalcss = 'hover';
         }
-        
+
         if ($type == 4) {
             $additionalcss = 'hover covtiles';
             $type = 2;
@@ -853,7 +853,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
         } else {
         	$covhidebutton = "false";
         }
-        	
+
 
         if (!isset($this->strings->summary)) {
             $this->strings->summary = get_string('summary');
@@ -915,8 +915,8 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
             }
             $arrow = html_writer::tag('span', '', array('class' => 'fa fa-chevron-'.$icondirection));
             $btn = html_writer::tag('span', get_string('course') . ' ' . $arrow, array('class' => 'coursequicklink'));
-            
-           if (empty($PAGE->theme->settings->covhidebutton)) { 
+
+           if (empty($PAGE->theme->settings->covhidebutton)) {
             $content .= html_writer::link(new moodle_url('/course/view.php',
                 array('id' => $course->id)), $btn, array('class' => "$teste coursebtn submit btn btn-info btn-sm pull-right"));
             }
@@ -1046,7 +1046,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
             }
         }
         if ($type == 2) {
-            $content .= html_writer::end_tag('div');    
+            $content .= html_writer::end_tag('div');
             //end course-content
         }
         $content .= html_writer::tag('div', '', array('class' => 'boxfooter')); // Coursecat.
