@@ -160,8 +160,14 @@ $string['sectionheadingcolordesc'] = 'Set the color for section headings text co
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Add text to the footer.';
 
-$string['enablemy'] = 'My Dashboard';
-$string['enablemydesc'] = 'Display a link to the MyMoodle page';
+if ($CFG->version > 2015051100) {
+    $string['enablemy'] = 'Dashboard';
+    $string['enablemydesc'] = 'Display a link to the Dashboard page';
+} else {
+    $string['enablemy'] = 'My Home';
+    $string['enablemydesc'] = 'Display a link to My Home page';
+};
+
 
 $string['enableprofile'] = 'User Profile';
 $string['enableprofiledesc'] = 'Display a link to the users profile';
@@ -177,6 +183,9 @@ $string['enablecalendardesc'] = 'Display a link to the users calendar';
 
 $string['enableprivatefiles'] = 'Private Files';
 $string['enableprivatefilesdesc'] = 'Display a link to the users private files';
+
+$string['enablesearchbox'] = 'Enable Search Box';
+$string['enablesearchboxdesc'] = 'Display a search box in the header';
 
 $string['enablepref'] = 'My Preferences';
 $string['enableprefdesc'] = 'Display a link to the user preferences page';
@@ -300,9 +309,9 @@ $string['navbarsettings'] = 'Navbar';
 $string['navbarsettingsheading'] = 'Customise the navigation bar';
 $string['navbardesc'] = 'Allows you to control all of the elements that appear on the navigation bar.';
 
-$string['coloursettings'] = 'Colours';
-$string['coloursettingsheading'] = 'Modify the main colours used throughout the theme.';
-$string['colourdesc'] = 'You can select the colours that you would like to use throughout the theme.';
+$string['coloursettings'] = 'Colours & Fonts';
+$string['coloursettingsheading'] = 'Modify the main colours and fonts used throughout the theme.';
+$string['colourdesc'] = 'You can select the colours and fonts that you would like to use throughout the theme.';
 
 $string['headersettings'] = 'Header';
 $string['headersettingsheading'] = 'Customise the header of this theme.';
