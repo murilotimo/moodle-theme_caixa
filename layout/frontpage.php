@@ -125,7 +125,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
 <?php } ?>
 
 <?php if (!empty($PAGE->theme->settings->infobox)) { ?>
-    <div id="theinfo" class="container">
+    <div id="theinfo">
         <div id="theinfo-internal">
             <div class="row-fluid">
                 <?php echo $OUTPUT->get_setting('infobox', 'format_html'); ?>
