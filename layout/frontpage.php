@@ -58,7 +58,7 @@ $hasmarket11 = (!empty($PAGE->theme->settings->market11));
 $hasmarket12 = (!empty($PAGE->theme->settings->market12));
 
 if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { ?>
-<div class="container slidewrap <?php if (!empty($PAGE->theme->settings->slideroption2)) {echo "slidestyle2"; } ?>">
+<div class="slidewrap <?php if (!empty($PAGE->theme->settings->slideroption2)) {echo "slidestyle2"; } ?>">
 <div id="main-slider" class="flexslider">
 <ul class="slides">
 <?php
@@ -203,7 +203,7 @@ if ($hasmarket4) {
 
 
  </div>
- 
+
  <?php
  if ($hasmarket5) { ?>
  <div class="row-fluid marketrow">
@@ -232,36 +232,36 @@ if ($hasmarket5 && $hasmarket6 && $hasmarket7 && $hasmarket8) {
 	<?php echo $OUTPUT->get_setting('market5', 'format_html');?>
 
     </div>
-    <?php } ?> 
-    
+    <?php } ?>
+
     <?php if ($hasmarket6) { ?>
     <div class="<?php echo "$marketclass";?> first">
 
 	<?php echo $OUTPUT->get_setting('market6', 'format_html');?>
 
     </div>
-    <?php } ?> 
- 
+    <?php } ?>
+
  	<?php if ($hasmarket7) { ?>
     <div class="<?php echo "$marketclass";?> first">
 
 	<?php echo $OUTPUT->get_setting('market7', 'format_html');?>
 
     </div>
-    <?php } ?> 
-    
+    <?php } ?>
+
     <?php if ($hasmarket8) { ?>
     <div class="<?php echo "$marketclass";?> first">
 
 	<?php echo $OUTPUT->get_setting('market8', 'format_html');?>
 
     </div>
-    <?php } ?> 
- 
+    <?php } ?>
+
  </div>
  <?php } //end 2nd row of blocks ?>
- 
- 
+
+
  <?php
  if ($hasmarket9) { ?>
  <div class="row-fluid marketrow">
@@ -290,41 +290,41 @@ if ($hasmarket9 && $hasmarket10 && $hasmarket11 && $hasmarket12) {
 	<?php echo $OUTPUT->get_setting('market9', 'format_html');?>
 
     </div>
-    <?php } ?> 
-    
+    <?php } ?>
+
     <?php if ($hasmarket10) { ?>
     <div class="<?php echo "$marketclass";?> first">
 
 	<?php echo $OUTPUT->get_setting('market10', 'format_html');?>
 
     </div>
-    <?php } ?> 
- 
+    <?php } ?>
+
  	<?php if ($hasmarket11) { ?>
     <div class="<?php echo "$marketclass";?> first">
 
 	<?php echo $OUTPUT->get_setting('market11', 'format_html');?>
 
     </div>
-    <?php } ?> 
-    
+    <?php } ?>
+
     <?php if ($hasmarket12) { ?>
     <div class="<?php echo "$marketclass";?> first">
 
 	<?php echo $OUTPUT->get_setting('market12', 'format_html');?>
 
     </div>
-    <?php } ?> 
- 
+    <?php } ?>
+
  </div>
  <?php } //end 3rd row of blocks ?>
- 
+
  </div>
 
 <?php
 if (!empty($PAGE->theme->settings->infobox2)) {
 ?>
- <div id="themessage" class="container">
+ <div id="themessage">
 	<div id="themessage-internal"><div class="row-fluid">
 
 		<?php echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
