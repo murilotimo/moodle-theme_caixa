@@ -59,7 +59,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/headerbkcolor';
     $title = get_string('headerbkcolor', 'theme_bcu');
     $description = get_string('headerbkcolordesc', 'theme_bcu');
@@ -67,7 +67,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/headerbkcolor2';
     $title = get_string('headerbkcolor2', 'theme_bcu');
     $description = get_string('headerbkcolor2desc', 'theme_bcu');
@@ -75,7 +75,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/headertextcolor';
     $title = get_string('headertextcolor', 'theme_bcu');
     $description = get_string('headertextcolordesc', 'theme_bcu');
@@ -83,7 +83,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/headertextcolor2';
     $title = get_string('headertextcolor2', 'theme_bcu');
     $description = get_string('headertextcolor2desc', 'theme_bcu');
@@ -91,7 +91,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
 
     $name = 'theme_bcu/loadingcolour';
     $title = get_string('loadingcolour', 'theme_bcu');
@@ -108,7 +108,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/menubkcolor';
     $title = get_string('menubkcolor', 'theme_bcu');
     $description = get_string('menubkcolordesc', 'theme_bcu');
@@ -116,7 +116,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/menubordercolor';
     $title = get_string('menubordercolor', 'theme_bcu');
     $description = get_string('menubordercolordesc', 'theme_bcu');
@@ -124,7 +124,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#b7b3ef', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/menufontcolor';
     $title = get_string('menufontcolor', 'theme_bcu');
     $description = get_string('menufontcolordesc', 'theme_bcu');
@@ -132,7 +132,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#444444', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/menufonthovercolor';
     $title = get_string('menufonthovercolor', 'theme_bcu');
     $description = get_string('menufonthovercolordesc', 'theme_bcu');
@@ -140,7 +140,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#3c469c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/infoboxcolor';
     $title = get_string('infoboxcolor', 'theme_bcu');
     $description = get_string('infoboxcolordesc', 'theme_bcu');
@@ -148,7 +148,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/infoboxtextcolor';
     $title = get_string('infoboxtextcolor', 'theme_bcu');
     $description = get_string('infoboxtextcolordesc', 'theme_bcu');
@@ -156,7 +156,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
       $name = 'theme_bcu/infoboxcolor2';
     $title = get_string('infoboxcolor2', 'theme_bcu');
     $description = get_string('infoboxcolor2desc', 'theme_bcu');
@@ -164,7 +164,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f3f3f3', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/infoboxtextcolor2';
     $title = get_string('infoboxtextcolor2', 'theme_bcu');
     $description = get_string('infoboxtextcolor2desc', 'theme_bcu');
@@ -172,7 +172,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#666666', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/marketblockbordercolor';
     $title = get_string('marketblockbordercolor', 'theme_bcu');
     $description = get_string('marketblockbordercolordesc', 'theme_bcu');
@@ -196,7 +196,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/editonbk';
     $title = get_string('editonbk', 'theme_bcu');
     $description = get_string('editonbkdesc', 'theme_bcu');
@@ -204,7 +204,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0c901f', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/editoffbk';
     $title = get_string('editoffbk', 'theme_bcu');
     $description = get_string('editoffbkdesc', 'theme_bcu');
@@ -212,7 +212,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f01f1f', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/editfont';
     $title = get_string('editfont', 'theme_bcu');
     $description = get_string('editfontdesc', 'theme_bcu');
@@ -236,7 +236,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/tilesbordercolor';
     $title = get_string('tilesbordercolor', 'theme_bcu');
     $description = get_string('tilesbordercolordesc', 'theme_bcu');
@@ -244,7 +244,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#e8eaeb', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/covbkcolor';
     $title = get_string('covbkcolor', 'theme_bcu');
     $description = get_string('covbkcolordesc', 'theme_bcu');
@@ -252,7 +252,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/covfontcolor';
     $title = get_string('covfontcolor', 'theme_bcu');
     $description = get_string('covfontcolordesc', 'theme_bcu');
@@ -268,7 +268,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#B7B3EF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/dividingline2';
     $title = get_string('dividingline2', 'theme_bcu');
     $description = get_string('dividingline2desc', 'theme_bcu');
@@ -292,7 +292,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#3C469C', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/breadcrumb';
     $title = get_string('breadcrumb', 'theme_bcu');
     $description = get_string('breadcrumbdesc', 'theme_bcu');
@@ -300,7 +300,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#b4bbbf', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/activebreadcrumb';
     $title = get_string('activebreadcrumb', 'theme_bcu');
     $description = get_string('activebreadcrumbdesc', 'theme_bcu');
@@ -308,7 +308,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#e8eaeb', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/blockheadercolor';
     $title = get_string('blockheadercolor', 'theme_bcu');
     $description = get_string('blockheadercolordesc', 'theme_bcu');
@@ -316,7 +316,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#002f67', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/blocklinecolor';
     $title = get_string('blocklinecolor', 'theme_bcu');
     $description = get_string('blocklinecolordesc', 'theme_bcu');
@@ -324,7 +324,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/blocklinkcolor';
     $title = get_string('blocklinkcolor', 'theme_bcu');
     $description = get_string('blocklinkcolordesc', 'theme_bcu');
@@ -332,8 +332,8 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
-    
+
+
     $name = 'theme_bcu/sectionheadingcolor';
     $title = get_string('sectionheadingcolor', 'theme_bcu');
     $description = get_string('sectionheadingcolordesc', 'theme_bcu');
@@ -341,7 +341,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#5f588a', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/currentcolor';
     $title = get_string('currentcolor', 'theme_bcu');
     $description = get_string('currentcolordesc', 'theme_bcu');
@@ -349,8 +349,8 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#d9edf7', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
-    
+
+
     $name = 'theme_bcu/footerbkcolor';
     $title = get_string('footerbkcolor', 'theme_bcu');
     $description = get_string('footerbkcolordesc', 'theme_bcu');
@@ -358,8 +358,8 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
-    
+
+
     $name = 'theme_bcu/footertextcolor';
     $title = get_string('footertextcolor', 'theme_bcu');
     $description = get_string('footertextcolordesc', 'theme_bcu');
@@ -367,7 +367,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/footertextcolor2';
     $title = get_string('footertextcolor2', 'theme_bcu');
     $description = get_string('footertextcolor2desc', 'theme_bcu');
@@ -375,7 +375,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/footerlinkcolor';
     $title = get_string('footerlinkcolor', 'theme_bcu');
     $description = get_string('footerlinkcolordesc', 'theme_bcu');
@@ -383,8 +383,42 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
 
+    // Main Font Name.
+    $name = 'theme_bcu/fontname';
+    $title = get_string('fontname', 'theme_bcu');
+    $description = get_string('fontnamedesc', 'theme_bcu');
+    $default = 'Open Sans';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Header Font Name.
+    $name = 'theme_bcu/fontheadername';
+    $title = get_string('fontheadername', 'theme_bcu');
+    $description = get_string('fontheadernamedesc', 'theme_bcu');
+    $default = 'Roboto';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Font color.
+    $name = 'theme_bcu/fontcolor';
+    $title = get_string('fontcolor', 'theme_bcu');
+    $description = get_string('fontcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Font Headers color.
+    $name = 'theme_bcu/fontheadercolor';
+    $title = get_string('fontheadercolor', 'theme_bcu');
+    $description = get_string('fontheadercolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
     $ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_header', get_string('headersettings', 'theme_bcu'));
@@ -404,105 +438,105 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
+
     $name = 'theme_bcu/alertbox';
     $title = get_string('alertbox', 'theme_bcu');
     $description = get_string('alertboxdesc', 'theme_bcu');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu1field';
     $title = get_string('newmenu1field', 'theme_bcu');
     $description = get_string('newmenu1field', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu1value';
     $title = get_string('newmenu1value', 'theme_bcu');
     $description = get_string('newmenu1value', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     //$name = 'theme_bcu/newmenu1trigger';
     //$title = get_string('newmenu1trigger', 'theme_bcu');
     //$description = get_string('newmenu1triggerdesc', 'theme_bcu');
     //$setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '70', '1');
     //$temp->add($setting);
-    
+
       $name = 'theme_bcu/newmenu1';
     $title = get_string('newmenu1', 'theme_bcu');
     $description = get_string('newmenu1desc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
-    
+
         $name = 'theme_bcu/newmenu2field';
     $title = get_string('newmenu2field', 'theme_bcu');
     $description = get_string('newmenu2field', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu2value';
     $title = get_string('newmenu2value', 'theme_bcu');
     $description = get_string('newmenu2value', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu2';
     $title = get_string('newmenu2', 'theme_bcu');
     $description = get_string('newmenu2desc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
-    
-    
+
+
     $name = 'theme_bcu/newmenu3field';
     $title = get_string('newmenu3field', 'theme_bcu');
     $description = get_string('newmenu3field', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu3value';
     $title = get_string('newmenu3value', 'theme_bcu');
     $description = get_string('newmenu3value', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu3';
     $title = get_string('newmenu3', 'theme_bcu');
     $description = get_string('newmenu3desc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu4field';
     $title = get_string('newmenu4field', 'theme_bcu');
     $description = get_string('newmenu4field', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu4value';
     $title = get_string('newmenu4value', 'theme_bcu');
     $description = get_string('newmenu4value', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu4';
     $title = get_string('newmenu4', 'theme_bcu');
     $description = get_string('newmenu4desc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu5field';
     $title = get_string('newmenu5field', 'theme_bcu');
     $description = get_string('newmenu5field', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu5value';
     $title = get_string('newmenu5value', 'theme_bcu');
     $description = get_string('newmenu5value', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/newmenu5';
     $title = get_string('newmenu5', 'theme_bcu');
     $description = get_string('newmenu5desc', 'theme_bcu');
@@ -511,7 +545,7 @@ if (is_siteadmin()) {
 
     $temp->add(new admin_setting_heading('theme_bcu_usernav', get_string('usernavheading', 'theme_bcu'),
         format_text(get_string('usernavdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-    
+
     // Enable My.
     $name = 'theme_bcu/enablemy';
     $title = get_string('enablemy', 'theme_bcu');
@@ -520,7 +554,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     // Enable View Profile.
     $name = 'theme_bcu/enableprofile';
     $title = get_string('enableprofile', 'theme_bcu');
@@ -565,7 +599,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/enablepref';
     $title = get_string('enablepref', 'theme_bcu');
     $description = get_string('enableprefdesc', 'theme_bcu');
@@ -573,7 +607,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/enablenote';
     $title = get_string('enablenote', 'theme_bcu');
     $description = get_string('enablenotedesc', 'theme_bcu');
@@ -581,7 +615,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/enableblog';
     $title = get_string('enableblog', 'theme_bcu');
     $description = get_string('enableblogdesc', 'theme_bcu');
@@ -589,7 +623,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/enableposts';
     $title = get_string('enableposts', 'theme_bcu');
     $description = get_string('enablepostsdesc', 'theme_bcu');
@@ -597,7 +631,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
      $name = 'theme_bcu/enablefeed';
     $title = get_string('enablefeed', 'theme_bcu');
     $description = get_string('enablefeeddesc', 'theme_bcu');
@@ -605,11 +639,11 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
-    
+
+
     $temp->add(new admin_setting_heading('theme_bcu_navbar', get_string('navbarsettingsheading', 'theme_bcu'),
         format_text(get_string('navbardesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-    
+
     $name = 'theme_bcu/enablehome';
     $title = get_string('home');
     $description = get_string('enablehomedesc', 'theme_bcu');
@@ -617,7 +651,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/enablemyhome';
     $title = get_string('myhome');
     $description = get_string('enablemyhomedesc', 'theme_bcu', get_string('myhome'));
@@ -625,7 +659,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/enableevents';
     $title = get_string('events', 'theme_bcu');
     $description = get_string('enableeventsdesc', 'theme_bcu');
@@ -633,7 +667,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/enablemysites';
     $title = get_string('mysites', 'theme_bcu');
     $description = get_string('enablemysitesdesc', 'theme_bcu');
@@ -641,7 +675,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/enablethiscourse';
     $title = get_string('thiscourse', 'theme_bcu');
     $description = get_string('enablethiscoursedesc', 'theme_bcu');
@@ -666,46 +700,46 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
     $temp->add($setting);
-	
-	
+
+
 	    $name = 'theme_bcu/toolsmenu1field';
     $title = get_string('toolsmenu1field', 'theme_bcu');
     $description = get_string('toolsmenu1field', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/toolsmenu1value';
     $title = get_string('toolsmenu1value', 'theme_bcu');
     $description = get_string('toolsmenu1value', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-	
+
     $name = 'theme_bcu/toolsmenu';
     $title = get_string('toolsmenu', 'theme_bcu');
     $description = get_string('toolsmenudesc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
-    
-    
+
+
         $name = 'theme_bcu/toolsmenu2field';
     $title = get_string('toolsmenu2field', 'theme_bcu');
     $description = get_string('toolsmenu2field', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/toolsmenu2value';
     $title = get_string('toolsmenu2value', 'theme_bcu');
     $description = get_string('toolsmenu2value', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-	
+
     $name = 'theme_bcu/toolsmenu2';
     $title = get_string('toolsmenu2', 'theme_bcu');
     $description = get_string('toolsmenu2desc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
-    
-    
+
+
          $name = 'theme_bcu/enableticker';
     	$title = get_string('enableticker', 'theme_bcu');
     	$description = get_string('enabletickerdesc', 'theme_bcu');
@@ -713,14 +747,14 @@ if (is_siteadmin()) {
     	$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     	//$setting->set_updatedcallback('theme_reset_all_caches');
     	 $temp->add($setting);
-    	 
+
    	$name = 'theme_bcu/tickertext';
 	$title = get_string('tickertext','theme_bcu');
 	$description = get_string('tickertextdesc', 'theme_bcu');
 	$default = '';
 	$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
 	$temp->add($setting);
-	
+
 	$name = 'theme_bcu/socialset';
     	$title = get_string('socialset', 'theme_bcu');
     	$description = get_string('socialsetdesc', 'theme_bcu');
@@ -728,7 +762,7 @@ if (is_siteadmin()) {
     	$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     	//$setting->set_updatedcallback('theme_reset_all_caches');
     	 $temp->add($setting);
-    	 
+
      $name = 'theme_bcu/socialsize';
     $title = get_string('socialsize', 'theme_bcu');
     $description = get_string('socialsize', 'theme_bcu');
@@ -743,57 +777,57 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, 22, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);	 
-	
+    $temp->add($setting);
+
 	//social settings
 	$name = 'theme_bcu/social1';
     $title = get_string('social1', 'theme_bcu');
     $description = get_string('social1desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/social2';
     $title = get_string('social2', 'theme_bcu');
     $description = get_string('social2desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/social3';
     $title = get_string('social3', 'theme_bcu');
     $description = get_string('social3desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/social4';
     $title = get_string('social4', 'theme_bcu');
     $description = get_string('social4desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/social5';
     $title = get_string('social5', 'theme_bcu');
     $description = get_string('social5desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/social6';
     $title = get_string('social6', 'theme_bcu');
     $description = get_string('social6desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/social7';
     $title = get_string('social7', 'theme_bcu');
     $description = get_string('social7desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/social8';
     $title = get_string('social8', 'theme_bcu');
     $description = get_string('social8desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/social9';
     $title = get_string('social9', 'theme_bcu');
     $description = get_string('social9desc', 'theme_bcu');
@@ -805,7 +839,7 @@ if (is_siteadmin()) {
     $description = get_string('social10desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/social11';
     $title = get_string('social11', 'theme_bcu');
     $description = get_string('social11desc', 'theme_bcu');
@@ -815,7 +849,7 @@ if (is_siteadmin()) {
     $ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_frontpage_blocks', get_string('frontpageblocksettings', 'theme_bcu'));
-    
+
      $name = 'theme_bcu/homebk';
     $title = get_string('homebk', 'theme_bcu');
     $description = get_string('homebkdesc', 'theme_bcu');
@@ -876,56 +910,56 @@ if (is_siteadmin()) {
     $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/market5';
     $title = get_string('market5', 'theme_bcu');
     $description = get_string('market5desc', 'theme_bcu');
     $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/market6';
     $title = get_string('market6', 'theme_bcu');
     $description = get_string('market6desc', 'theme_bcu');
     $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/market7';
     $title = get_string('market7', 'theme_bcu');
     $description = get_string('market7desc', 'theme_bcu');
     $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/market8';
     $title = get_string('market8', 'theme_bcu');
     $description = get_string('market8desc', 'theme_bcu');
     $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/market9';
     $title = get_string('market9', 'theme_bcu');
     $description = get_string('market9desc', 'theme_bcu');
     $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/market10';
     $title = get_string('market10', 'theme_bcu');
     $description = get_string('market10desc', 'theme_bcu');
     $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/market11';
     $title = get_string('market11', 'theme_bcu');
     $description = get_string('market11desc', 'theme_bcu');
     $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/market12';
     $title = get_string('market12', 'theme_bcu');
     $description = get_string('market12desc', 'theme_bcu');
@@ -1046,7 +1080,7 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/slideroption2color';
     $title = get_string('slideroption2color', 'theme_bcu');
     $description = get_string('slideroption2colordesc', 'theme_bcu');
@@ -1054,7 +1088,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/slideroption2a';
     $title = get_string('slideroption2a', 'theme_bcu');
     $description = get_string('slideroption2adesc', 'theme_bcu');
@@ -1106,7 +1140,7 @@ if (is_siteadmin()) {
     $description = get_string('tilescontactstitledesc', 'theme_bcu');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/covhidebutton';
     $title = get_string('covhidebutton', 'theme_bcu');
     $description = get_string('covhidebuttondesc', 'theme_bcu');
@@ -1128,7 +1162,7 @@ if (is_siteadmin()) {
             1 => get_string('leftblocks', 'theme_bcu'),
         ));
     $temp->add($setting);
-    
+
     	// view default.
     $name = 'theme_bcu/viewselect';
     $title = get_string('viewselect', 'theme_bcu');
@@ -1137,7 +1171,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/blockicons';
     $title = get_string('blockicons', 'theme_bcu');
     $description = get_string('blockiconsdesc', 'theme_bcu');
@@ -1156,7 +1190,7 @@ if (is_siteadmin()) {
     $description = get_string('showfooterblocksdesc', 'theme_bcu');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $temp->add($setting);
-    
+
     $name = 'theme_bcu/footerblocksplacement';
     $title = get_string('footerblocksplacement', 'theme_bcu');
     $description = get_string('footerblocksplacementdesc', 'theme_bcu');
@@ -1168,7 +1202,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configselect($name, $title, $description, 2, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
 
     $name = 'theme_bcu/footer1header';
     $title = get_string('footer1header', 'theme_bcu');

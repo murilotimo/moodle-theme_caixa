@@ -352,6 +352,14 @@ $string['covfontcolordesc'] = 'Set the title font color with the Coventry Tiles 
 $string['covhidebutton'] = 'Coventry tiles course button';
 $string['covhidebuttondesc'] = 'Set this to hide the course button when Coventry Tiles is selected.';
 
+$string['footertextcolor'] = 'Footer text colour';
+$string['footertextcolordesc'] = 'The colour of the text in the footer, use html hex code.';
+
+$string['footerbackgroundcolor'] = 'Footer background colour';
+$string['footerbackgroundcolordesc'] = 'The background colour of the footer, use html hex code.';
+
+$string['buttontextcolor'] = 'Button text colour';
+$string['buttontextcolordesc'] = 'The colour of the text buttons used throughout the site, use html hex code.';
 $string['frontpagerendererdefaultimage'] = 'Default course image';
 $string['frontpagerendererdefaultimagedesc'] = 'The default image to use when no course image is found, (only applies for Tiles w/ overlay)';
 $string['loadtime'] = 'Page loaded in';

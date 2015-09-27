@@ -91,7 +91,11 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:editfont]]' => '#ffffff',
         '[[setting:slideroption2color]]' => '#0066cc',
         '[[setting:slideroption2a]]' => '#0066cc',
-        '[[setting:socialsize]]' => '22'
+        '[[setting:socialsize]]' => '22',
+        '[[setting:fontname]]' => 'Open Sans',
+        '[[setting:fontheadername]]' => 'Roboto',
+        '[[setting:fontcolor]]' => '#333333',
+        '[[setting:fontheadercolor]]' => '#333333'
     );
 
     // Get all the defined settings for the theme and replace defaults.
@@ -240,7 +244,7 @@ function theme_bcu_pluginfile($course, $cm, $context, $filearea, $args, $forcedo
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'style') {
             theme_essential_serve_css($args[1]);
-        } 
+        }
         else if ($filearea === 'homebk') {
             return $theme->setting_file_serve('homebk', $args, $forcedownload, $options);
         }
@@ -315,7 +319,7 @@ function theme_bcu_performance_output($param) {
 function theme_bcu_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
-    error_log($CFG->version);
+    //  REMOVED: Deprecated function    error_log($CFG->version);
     if($CFG->version < 2015051100) {
       $page->requires->jquery_plugin('bootstrap', 'theme_bcu');
     }
