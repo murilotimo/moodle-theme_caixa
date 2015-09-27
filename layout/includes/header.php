@@ -142,9 +142,10 @@ echo $OUTPUT->doctype();
 
                             <?php
                                 if ($CFG->version > 2015051100) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/user/preferences.php" title="<?php echo get_string('preferences') ?>">
+                                <li>
+                                  <a href="<?php p($CFG->wwwroot) ?>/user/preferences.php" title="<?php echo get_string('preferences') ?>">
                                     <i class="fa fa-cog"></i><?php echo get_string('preferences') ?>
-                                    </a>
+                                  </a>
                                 </li>
                             <?php
                                 }
