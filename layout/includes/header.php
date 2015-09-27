@@ -60,7 +60,7 @@ $defaultview = "";
 $defaultview = $PAGE->theme->settings->viewselect;
 if ($defaultview == 1 && $setfull == "") {
 	$setfull = "fullin";
-} 
+}
 
 echo $OUTPUT->doctype();
 ?>
@@ -69,7 +69,14 @@ echo $OUTPUT->doctype();
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    <?php if (!empty($fontname)) { ?>
+        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontname; ?>' rel='stylesheet' type='text/css'><?php
+} ?>
+
+    <?php if (!empty($fontheadername)) { ?>
+        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontheadername; ?>' rel='stylesheet' type='text/css'><?php
+} ?>
+
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -102,15 +109,18 @@ echo $OUTPUT->doctype();
     <div id="above-header">
         <div class="clearfix container userhead">
             <div class="pull-left">
-                <?php echo $OUTPUT->user_menu(); ?> 
+                <?php echo $OUTPUT->user_menu(); ?>
             </div>
-            
+
             <div class="headermenu row">
                 <?php if (!isloggedin() || isguestuser()) { ?>
-                    <?php echo $OUTPUT->login_info() ?>
-                <?php } else { 
-                $userid = $USER->id;
-                ?>
+                  <?php echo $OUTPUT->page_heading_menu(); ?>
+                      <div class="loginbutton">
+                          <a class="btn-login" href="<?php p($CFG->wwwroot) ?>/login/index.php">Log in</a>
+                      </div>
+<?php
+} else {
+?>
                     <div class="dropdown secondone">
                         <a class="dropdown-toggle usermendrop" data-toggle="dropdown" href="#"><span class="fa fa-user"></span><?php echo fullname($USER) ?> <span class="fa fa-angle-down"></span></a>
                         <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
@@ -129,27 +139,33 @@ echo $OUTPUT->doctype();
                             <?php  if (!empty($PAGE->theme->settings->enablebadges)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/badges/mybadges.php" title="badges"><i class="fa fa-certificate"></i><?php echo get_string('badges') ?></a></li>
                             <?php } ?>
-                            
-                            <?php  if (!empty($PAGE->theme->settings->enablepref)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/user/preferences.php" title="preferences"><i class="fa fa-gear"></i><?php echo get_string('preferences') ?></a></li>
-                            <?php } ?>
-                            
+
+                            <?php
+                                if ($CFG->version > 2015051100) { ?>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/user/preferences.php" title="<?php echo get_string('preferences') ?>">
+                                    <i class="fa fa-cog"></i><?php echo get_string('preferences') ?>
+                                    </a>
+                                </li>
+                            <?php
+                                }
+                            ?>
+
                              <?php  if (!empty($PAGE->theme->settings->enablenote)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/message/edit.php?id=<?php echo "$userid"; ?>" title="notifications"><i class="fa fa-paper-plane"></i><?php echo get_string('notifications') ?></a></li>
                             <?php } ?>
-                            
+
                             <?php  if (!empty($PAGE->theme->settings->enableblog)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/blog/index.php?userid=<?php echo "$userid"; ?>" title="blog"><i class="fa fa-rss"></i><?php echo get_string('myblogs','theme_bcu') ?></a></li>
                             <?php } ?>
-                            
+
                             <?php  if (!empty($PAGE->theme->settings->enableposts)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>" title="posts"><i class="fa fa-commenting"></i><?php echo get_string('posts') ?></a></li>
                             <?php } ?>
-                            
+
                              <?php  if (!empty($PAGE->theme->settings->enablefeed)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>" title="posts"><i class="fa fa-bullhorn"></i><?php echo get_string('feedback') ?></a></li>
                             <?php } ?>
-                            
+
                             <?php if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/calendar/view.php" title="Calendar"><i class="fa fa-calendar"></i><?php echo get_string('pluginname', 'block_calendar_month') ?></a></li>
                             <?php } ?>
@@ -168,21 +184,21 @@ echo $OUTPUT->doctype();
 
 <div class="dropdown pull-right newmenus newmenu2">
      <?php echo $OUTPUT->tools_menu4(); ?>
-</div>     
+</div>
 
 <div class="dropdown pull-right newmenus newmenu3">
      <?php echo $OUTPUT->tools_menu5(); ?>
-</div>   
+</div>
 
 <div class="dropdown pull-right newmenus newmenu4">
      <?php echo $OUTPUT->tools_menu6(); ?>
-</div> 
+</div>
 
 <div class="dropdown pull-right newmenus newmenu5">
      <?php echo $OUTPUT->tools_menu7(); ?>
-</div> 
+</div>
 
-           
+
         </div>
     </div>
     <div id="page-header" class="clearfix container">
@@ -202,8 +218,8 @@ echo $OUTPUT->doctype();
      <div id="coursetitle" class="pull-left">
      <span title='<?php echo $PAGE->heading ?>'><?php echo $PAGE->heading ?></span>
      </div>
-		
-		
+
+
 		<?php if (!empty($PAGE->theme->settings->socialset)) { ?>
 		<div class="socialbox pull-right">
 		<?php if (!empty($PAGE->theme->settings->social1)) { ?>
@@ -241,7 +257,7 @@ echo $OUTPUT->doctype();
 		<?php } ?>
 		</div>
 		<?php } ?>
-		
+
 		<?php if (empty($PAGE->theme->settings->socialset)) { ?>
         <div class="searchbox">
             <form action="<?php p($CFG->wwwroot) ?>/course/search.php">
@@ -309,7 +325,7 @@ echo $OUTPUT->doctype();
 			<li>A short Headline is here</li>
 			<li>A long headline is not here either. <a href="#">A link is here!</a></li>
 <?php } else { echo $PAGE->theme->settings->tickertext; } ?>
-			
+
 </ul>
 </div>
 <?php } ?>
