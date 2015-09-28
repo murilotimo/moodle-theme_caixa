@@ -368,11 +368,27 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Main Font weight.
+    $name = 'theme_bcu/fontweight';
+    $title = get_string('fontweight', 'theme_bcu');
+    $description = get_string('fontweightdesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Header Font Name.
     $name = 'theme_bcu/fontheadername';
     $title = get_string('fontheadername', 'theme_bcu');
     $description = get_string('fontheadernamedesc', 'theme_bcu');
     $default = 'Roboto';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Header Font weight.
+    $name = 'theme_bcu/fontheaderweight';
+    $title = get_string('fontheaderweight', 'theme_bcu');
+    $description = get_string('fontweighheadertdesc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -626,7 +642,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
+
 	$name = 'theme_bcu/enablehomeredirect';
     $title = get_string('home');
     $description = get_string('enablehomeredirectdesc', 'theme_bcu');
@@ -832,14 +848,14 @@ if (is_siteadmin()) {
     $ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_blocks', get_string('blocksettings', 'theme_bcu'));
-	
+
 	$name = 'theme_bcu/blockicons';
     $title = get_string('blockicons', 'theme_bcu');
     $description = get_string('blockiconsdesc', 'theme_bcu');
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
+
 	$name = 'theme_bcu/blockheadercolor';
     $title = get_string('blockheadercolor', 'theme_bcu');
     $description = get_string('blockheadercolordesc', 'theme_bcu');
@@ -847,7 +863,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#002f67', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
+
 	$name = 'theme_bcu/blocklinecolor';
     $title = get_string('blocklinecolor', 'theme_bcu');
     $description = get_string('blocklinecolordesc', 'theme_bcu');
@@ -855,7 +871,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
+
 	$name = 'theme_bcu/blocklinkcolor';
     $title = get_string('blocklinkcolor', 'theme_bcu');
     $description = get_string('blocklinkcolordesc', 'theme_bcu');
@@ -865,7 +881,7 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);
-	
+
     $temp = new admin_settingpage('theme_bcu_frontpage_blocks', get_string('frontpageblocksettings', 'theme_bcu'));
 
      $name = 'theme_bcu/homebk';
@@ -997,7 +1013,7 @@ if (is_siteadmin()) {
     $description = get_string('sliderfullscreendesc', 'theme_bcu');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $temp->add($setting);
- 
+
 	$name = 'theme_bcu/slideroption2';
     $title = get_string('slideroption2', 'theme_bcu');
     $description = get_string('slideroption2desc', 'theme_bcu');
