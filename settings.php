@@ -157,7 +157,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-      $name = 'theme_bcu/infoboxcolor2';
+    $name = 'theme_bcu/infoboxcolor2';
     $title = get_string('infoboxcolor2', 'theme_bcu');
     $description = get_string('infoboxcolor2desc', 'theme_bcu');
     $previewconfig = null;
@@ -165,7 +165,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/infoboxtextcolor2';
+    $name = 'theme_bcu/infoboxtextcolor2';
     $title = get_string('infoboxtextcolor2', 'theme_bcu');
     $description = get_string('infoboxtextcolor2desc', 'theme_bcu');
     $previewconfig = null;
@@ -205,7 +205,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/editoffbk';
+    $name = 'theme_bcu/editoffbk';
     $title = get_string('editoffbk', 'theme_bcu');
     $description = get_string('editoffbkdesc', 'theme_bcu');
     $previewconfig = null;
@@ -269,7 +269,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/dividingline2';
+    $name = 'theme_bcu/dividingline2';
     $title = get_string('dividingline2', 'theme_bcu');
     $description = get_string('dividingline2desc', 'theme_bcu');
     $previewconfig = null;
@@ -309,31 +309,6 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/blockheadercolor';
-    $title = get_string('blockheadercolor', 'theme_bcu');
-    $description = get_string('blockheadercolordesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#002f67', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/blocklinecolor';
-    $title = get_string('blocklinecolor', 'theme_bcu');
-    $description = get_string('blocklinecolordesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/blocklinkcolor';
-    $title = get_string('blocklinkcolor', 'theme_bcu');
-    $description = get_string('blocklinkcolordesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-
     $name = 'theme_bcu/sectionheadingcolor';
     $title = get_string('sectionheadingcolor', 'theme_bcu');
     $description = get_string('sectionheadingcolordesc', 'theme_bcu');
@@ -342,7 +317,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/currentcolor';
+    $name = 'theme_bcu/currentcolor';
     $title = get_string('currentcolor', 'theme_bcu');
     $description = get_string('currentcolordesc', 'theme_bcu');
     $previewconfig = null;
@@ -856,6 +831,41 @@ if (is_siteadmin()) {
 
     $ADMIN->add('theme_bcu', $temp);
 
+    $temp = new admin_settingpage('theme_bcu_blocks', get_string('blocksettings', 'theme_bcu'));
+	
+	$name = 'theme_bcu/blockicons';
+    $title = get_string('blockicons', 'theme_bcu');
+    $description = get_string('blockiconsdesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/blockheadercolor';
+    $title = get_string('blockheadercolor', 'theme_bcu');
+    $description = get_string('blockheadercolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#002f67', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/blocklinecolor';
+    $title = get_string('blocklinecolor', 'theme_bcu');
+    $description = get_string('blocklinecolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/blocklinkcolor';
+    $title = get_string('blocklinkcolor', 'theme_bcu');
+    $description = get_string('blocklinkcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $ADMIN->add('theme_bcu', $temp);
+	
     $temp = new admin_settingpage('theme_bcu_frontpage_blocks', get_string('frontpageblocksettings', 'theme_bcu'));
 
      $name = 'theme_bcu/homebk';
@@ -1176,13 +1186,6 @@ if (is_siteadmin()) {
     $title = get_string('viewselect', 'theme_bcu');
     $description = get_string('viewselectdesc', 'theme_bcu');
     $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/blockicons';
-    $title = get_string('blockicons', 'theme_bcu');
-    $description = get_string('blockiconsdesc', 'theme_bcu');
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
