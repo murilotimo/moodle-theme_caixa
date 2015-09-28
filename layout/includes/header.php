@@ -39,6 +39,10 @@ $hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $haslogo = (!empty($PAGE->theme->settings->logo));
 
+// Get the fonts.
+$fontname = str_replace(" ", "+", $PAGE->theme->settings->fontname);
+$fontheadername = str_replace(" ", "+", $PAGE->theme->settings->fontheadername);
+
 // Get the HTML for the settings bits.
 $html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
 
