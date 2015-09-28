@@ -100,7 +100,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
     box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
     color: [[setting:buttontextcolor]] !important;
     cursor: pointer;
-    padding: 8px 15px;
+    padding: 4px 15px;
     text-shadow: none;
     transition: background 0.2s ease-out 0s;
     margin-top: 3px;
