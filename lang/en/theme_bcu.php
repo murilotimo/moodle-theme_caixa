@@ -319,6 +319,7 @@ $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provid
 
 $string['thiscourse'] = 'This course';
 
+$string['blocksettings'] = 'Block Settings';
 $string['frontpageblocksettings'] = 'Frontpage Blocks';
 $string['frontpageslidersettings'] = 'Frontpage Slider';
 $string['frontpagecoursesettings'] = 'Frontpage Courses';
