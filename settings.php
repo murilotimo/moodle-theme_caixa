@@ -992,7 +992,12 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_bcu_slideshow', get_string('slideshowsettingsheading', 'theme_bcu'),
         format_text(get_string('slideshowdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
-
+ 	$name = 'theme_bcu/sliderfullscreen';
+    $title = get_string('sliderfullscreen', 'theme_bcu');
+    $description = get_string('sliderfullscreendesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $temp->add($setting);
+ 
 	$name = 'theme_bcu/slideroption2';
     $title = get_string('slideroption2', 'theme_bcu');
     $description = get_string('slideroption2desc', 'theme_bcu');

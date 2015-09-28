@@ -639,6 +639,9 @@ $string['editoffbkdesc'] = 'Set the background color for the editing and customi
 $string['editfont'] = 'Editing and Customize this page button font color';
 $string['editfontdesc'] = 'Set the Editing and Customize this page button font color';
 
+$string['sliderfullscreen'] = 'Slider full screen';
+$string['sliderfullscreendesc'] = 'Check this box to make the slider full screen (100% width)';
+
 $string['slideroption2'] = 'Slider style option 2';
 $string['slideroption2desc'] = 'Check this box to turn on the 2nd Slider style';
 
