@@ -646,3 +646,16 @@ $string['slideroption2colordesc'] = 'Set a background color for the text in slid
 
 $string['slideroption2a'] = 'Slider style option 2 arrow background color';
 $string['slideroption2adesc'] = 'Set the slider style option 2 arrow background color';
+
+$string['fontname'] = 'Main font';
+$string['fontnamedesc'] = 'Google Font used in site. Empty to use the default font.';
+
+$string['fontheadername'] = 'Headers font';
+$string['fontheadernamedesc'] = 'Google Font used in the text and blocks headers. Empty to use the default font.';
+
+$string['fontcolor'] = 'Font Colour';
+$string['fontcolordesc'] = 'Set the colour of the font in the theme, use html hex code.';
+
+$string['fontheadercolor'] = 'Font Headers Colour';
+$string['fontheadercolordesc'] = 'Set the colour of the headers font in the theme, use html hex code.';
+
