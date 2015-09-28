@@ -372,7 +372,7 @@ if (is_siteadmin()) {
     $name = 'theme_bcu/fontweight';
     $title = get_string('fontweight', 'theme_bcu');
     $description = get_string('fontweightdesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting = new admin_setting_configtext($name, $title, $description, '400');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -389,7 +389,7 @@ if (is_siteadmin()) {
     $name = 'theme_bcu/fontheaderweight';
     $title = get_string('fontheaderweight', 'theme_bcu');
     $description = get_string('fontheaderweightdesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting = new admin_setting_configtext($name, $title, $description, '400');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -631,7 +631,6 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-
     $temp->add(new admin_setting_heading('theme_bcu_navbar', get_string('navbarsettingsheading', 'theme_bcu'),
         format_text(get_string('navbardesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
@@ -643,7 +642,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-	$name = 'theme_bcu/enablehomeredirect';
+	  $name = 'theme_bcu/enablehomeredirect';
     $title = get_string('home');
     $description = get_string('enablehomeredirectdesc', 'theme_bcu');
     $default = false;
@@ -719,8 +718,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
 
-
-        $name = 'theme_bcu/toolsmenu2field';
+    $name = 'theme_bcu/toolsmenu2field';
     $title = get_string('toolsmenu2field', 'theme_bcu');
     $description = get_string('toolsmenu2field', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
@@ -739,13 +737,13 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 
-         $name = 'theme_bcu/enableticker';
-    	$title = get_string('enableticker', 'theme_bcu');
-    	$description = get_string('enabletickerdesc', 'theme_bcu');
-    	$default = true;
-    	$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    	//$setting->set_updatedcallback('theme_reset_all_caches');
-    	 $temp->add($setting);
+    $name = 'theme_bcu/enableticker';
+    $title = get_string('enableticker', 'theme_bcu');
+    $description = get_string('enabletickerdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    //$setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
    	$name = 'theme_bcu/tickertext';
 	$title = get_string('tickertext','theme_bcu');
@@ -1202,7 +1200,7 @@ if (is_siteadmin()) {
         ));
     $temp->add($setting);
 
-    	// view default.
+    // view default.
     $name = 'theme_bcu/viewselect';
     $title = get_string('viewselect', 'theme_bcu');
     $description = get_string('viewselectdesc', 'theme_bcu');
