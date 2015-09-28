@@ -1,5 +1,5 @@
 .block {
-	border: 0px solid #ccc;
+	border-top: 2px solid #ccc;
 	padding: 0 0;
 	box-shadow: none;
 	background: transparent;
