@@ -312,7 +312,12 @@ class theme_bcu_core_renderer extends core_renderer {
             if (!empty($PAGE->theme->settings->enablehome)) {
                 $branchtitle = get_string('home');
                 $branchlabel = '<i class="fa fa-home"></i> '.$branchtitle;
-                $branchurl   = new moodle_url('/');
+				if (!empty($PAGE->theme->settings->enablehomeredirect)) {
+				    $branchurl   = new moodle_url('/?redirect=0');	
+				}
+				else{
+				    $branchurl   = new moodle_url('/');	
+				}                
                 $branchsort  = 9998;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }

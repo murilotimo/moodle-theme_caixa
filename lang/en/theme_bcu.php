@@ -468,6 +468,7 @@ $string['activebreadcrumbdesc'] = 'Set the background colour of the active bread
 $string['usernavheading'] = 'Customise the user navigation dropdown';
 $string['usernavdesc'] = 'Allows you to control all of the elements that appear in the user navigation dropdown.';
 $string['enablehomedesc'] = 'Display a link to the frontpage.';
+$string['enablehomeredirectdesc'] = 'Enable redirect=0 on home (use on sites where where My Home is default homepage).';
 $string['enablemyhomedesc'] = 'Display a link to {$a}';
 $string['enableeventsdesc'] = 'Display a link to the calendar';
 $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
