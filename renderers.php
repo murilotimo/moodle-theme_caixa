@@ -622,41 +622,59 @@ class theme_bcu_core_renderer extends core_renderer {
     }
 
     public function tools_menu7() {
-        global $PAGE, $USER, $CFG;
-        if (!empty($PAGE->theme->settings->newmenu5field)) {
-		require_once($CFG->dirroot.'/user/profile/lib.php');
-		require_once($CFG->dirroot.'/user/lib.php');
-		profile_load_data($USER);
-		$ftype = $PAGE->theme->settings->newmenu5field;
-		$ftype ="profile_field_$ftype";
-		$setvalue = $PAGE->theme->settings->newmenu5value;
-		$usersvalue = $USER->$ftype;
-		} else {
-		$setvalue = 1;
-		$usersvalue = 1;
+    	global $PAGE;
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->newmenu5field) && !empty($PAGE->theme->settings->newmenu5value)){
+			$ftype = $PAGE->theme->settings->newmenu5field;
+			$setvalue = $PAGE->theme->settings->newmenu5value;
+			if (!$this->check_menu_access($ftype, $setvalue)){
+				$access = false;
+			}
 		}
-
-		$custommenuitems = '';
-
-		if ($setvalue == $usersvalue) {
-        if (!empty($PAGE->theme->settings->newmenu5)) {
-            $custommenuitems .= "</i>".get_string('newmenu5label', 'theme_bcu')."|#|".
-                    get_string('newmenu5label', 'theme_bcu')."\n";
-            $arr = explode("\n", $PAGE->theme->settings->newmenu5);
-            // We want to force everything inputted under this menu.
-            foreach ($arr as $key => $value) {
-                $arr[$key] = '-' . $arr[$key];
-            }
-            $custommenuitems .= implode("\n", $arr);
+			
+        if (!empty($PAGE->theme->settings->newmenu5) && $access == true) {
+        	$menu = ($PAGE->theme->settings->newmenu5);
+			$label = get_string('newmenu5label', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label);            
         }
-
-        } //end if from setvalue
-
+         
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
-
     }
 
+	public function check_menu_access($ftype, $setvalue){
+		global $PAGE, $USER, $CFG;
+		$uservalue = '';		
+        if (!empty($PAGE->theme->settings->newmenu5field)) {
+			require_once($CFG->dirroot.'/user/profile/lib.php');
+			require_once($CFG->dirroot.'/user/lib.php');
+			profile_load_data($USER);		
+			$ftype ="profile_field_$ftype";						
+			if (isset($USER->$ftype)){
+				$usersvalue = $USER->$ftype;									
+			}			
+			if ($usersvalue != $setvalue){				
+				return false;
+			}			
+		}
+		return true;				
+	}
+	
+	public function parse_custom_menu($menu, $label){
+		$custommenuitems = "</i>".$label."|#|".$label."\n";
+        $arr = explode("\n", $menu);
+        
+        // We want to force everything inputted under this menu.
+        foreach ($arr as $key => $value) {
+            $arr[$key] = '-' . $arr[$key];
+        }
+        
+        $custommenuitems .= implode("\n", $arr);
+		return $custommenuitems;
+	}
+	
     public function lang_menu() {
         global $CFG;
         $langmenu = new custom_menu();
