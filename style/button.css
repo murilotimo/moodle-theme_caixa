@@ -90,14 +90,12 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 }
 
 .btn-login {
-    background-color: #a0d468;
+    background: [[setting:buttoncolour]];
     border: 0 none;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
-    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
     color: [[setting:buttontextcolor]] !important;
     cursor: pointer;
     padding: 8px 15px;
@@ -107,8 +105,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 }
 
 .btn-login:hover {
-	background-color: #8cc152;
-	background-color: #8cc152;
+    background-color: [[setting:buttonhovercolour]];
 	color: [[setting:buttontextcolor]] !important;
 }
 
