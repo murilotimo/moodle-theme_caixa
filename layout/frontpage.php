@@ -57,12 +57,14 @@ $hasmarket10 = (!empty($PAGE->theme->settings->market10));
 $hasmarket11 = (!empty($PAGE->theme->settings->market11));
 $hasmarket12 = (!empty($PAGE->theme->settings->market12));
 
-if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) { 
+if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) {
+	 
     if (!empty($PAGE->theme->settings->sliderfullscreen)) {
         echo '<div class="slidewrap';
     } else {
         echo '<div class="container slidewrap';
-    } 
+    }
+	 
 if (!empty($PAGE->theme->settings->slideroption2)) {echo " slidestyle2"; } ?>">
 <div id="main-slider" class="flexslider">
 <ul class="slides">
