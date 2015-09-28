@@ -663,3 +663,8 @@ $string['fontcolordesc'] = 'Set the colour of the font in the theme, use html he
 $string['fontheadercolor'] = 'Font Headers Colour';
 $string['fontheadercolordesc'] = 'Set the colour of the headers font in the theme, use html hex code.';
 
+$string['fontweight'] = 'Main font weight';
+$string['fontweightdesc'] = 'Font weight used in site. Enter a value from 100 to 900 depending the font selected.';
+
+$string['fontheaderweight'] = 'Headers font weight';
+$string['fontheaderweightdesc'] = 'Headers font weight used in site. Enter a value from 100 to 900 depending the font selected.';
