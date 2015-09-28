@@ -388,7 +388,7 @@ if (is_siteadmin()) {
     // Header Font weight.
     $name = 'theme_bcu/fontheaderweight';
     $title = get_string('fontheaderweight', 'theme_bcu');
-    $description = get_string('fontweighheadertdesc', 'theme_bcu');
+    $description = get_string('fontheaderweightdesc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
