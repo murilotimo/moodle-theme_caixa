@@ -132,7 +132,7 @@ if (!empty($PAGE->theme->settings->slideroption2)) {echo " slidestyle2"; } ?>">
 <?php } ?>
 
 <?php if (!empty($PAGE->theme->settings->infobox)) { ?>
-    <div id="theinfo">
+    <div id="theinfo" class="container">
         <div id="theinfo-internal">
             <div class="row-fluid">
                 <?php echo $OUTPUT->get_setting('infobox', 'format_html'); ?>

@@ -92,7 +92,7 @@ $THEME->layouts = array(
         'file' => 'columns2.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
-        'options' => array('langmenu' => true, 'nonavbar' => true),
+        'options' => array('langmenu' => true, 'nonavbar' => false),
     ),
     // My public page.
     'mypublic' => array(
@@ -100,12 +100,12 @@ $THEME->layouts = array(
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
     ),
+    // Login page.
     'login' => array(
         'file' => 'columns1.php',
         'regions' => array(),
         'options' => array('langmenu' => true, 'nonavbar' => true),
     ),
-
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
     'popup' => array(
         'file' => 'columns1.php',
@@ -155,7 +155,6 @@ $THEME->layouts = array(
         'defaultregion' => 'side-post'
     ),
 );
-
 
 $THEME->csspostprocess = 'theme_bcu_process_css';
 $THEME->blockrtlmanipulations = array(
