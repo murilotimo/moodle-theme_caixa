@@ -134,19 +134,19 @@ echo $OUTPUT->doctype();
                         <a class="dropdown-toggle usermendrop" data-toggle="dropdown" href="#"><span class="fa fa-user"></span><?php echo fullname($USER) ?> <span class="fa fa-angle-down"></span></a>
                         <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
                             <?php if (!empty($PAGE->theme->settings->enablemy)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/my" title="My Dashboard"><i class="fa fa-dashboard"></i><?php echo get_string('myhome') ?></a></li>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/my" title="<?php echo get_string('myhome') ?>"><i class="fa fa-dashboard"></i><?php echo get_string('myhome') ?></a></li>
                             <?php } ?>
                             <?php if (!empty($PAGE->theme->settings->enableprofile)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/user/profile.php" title="View profile"><i class="fa fa-user"></i><?php echo get_string('viewprofile') ?></a></li>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/user/profile.php" title="<?php echo get_string('viewprofile') ?>"><i class="fa fa-user"></i><?php echo get_string('viewprofile') ?></a></li>
                             <?php } ?>
                             <?php if (!empty($PAGE->theme->settings->enableeditprofile)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/user/edit.php" title="Edit profile"><i class="fa fa-cog"></i><?php echo get_string('editmyprofile') ?></a></li>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/user/edit.php" title="<?php echo get_string('editmyprofile') ?>"><i class="fa fa-cog"></i><?php echo get_string('editmyprofile') ?></a></li>
                             <?php } ?>
                             <?php if (!empty($PAGE->theme->settings->enableprivatefiles)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/user/files.php" title="private files"><i class="fa fa-file"></i><?php echo get_string('privatefiles', 'block_private_files') ?></a></li>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/user/files.php" title="<?php echo get_string('privatefiles', 'block_private_files') ?>"><i class="fa fa-file"></i><?php echo get_string('privatefiles', 'block_private_files') ?></a></li>
                             <?php } ?>
                             <?php  if (!empty($PAGE->theme->settings->enablebadges)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/badges/mybadges.php" title="badges"><i class="fa fa-certificate"></i><?php echo get_string('badges') ?></a></li>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/badges/mybadges.php" title="<?php echo get_string('badges') ?>"><i class="fa fa-certificate"></i><?php echo get_string('badges') ?></a></li>
                             <?php } ?>
 
                             <?php
@@ -161,31 +161,29 @@ echo $OUTPUT->doctype();
                             ?>
 
                              <?php  if (!empty($PAGE->theme->settings->enablenote)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/message/edit.php?id=<?php echo "$userid"; ?>" title="notifications"><i class="fa fa-paper-plane"></i><?php echo get_string('notifications') ?></a></li>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/message/edit.php?id=<?php echo "$userid"; ?>" title="<?php echo get_string('notifications') ?>"><i class="fa fa-paper-plane"></i><?php echo get_string('notifications') ?></a></li>
                             <?php } ?>
 
                             <?php  if (!empty($PAGE->theme->settings->enableblog)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/blog/index.php?userid=<?php echo "$userid"; ?>" title="blog"><i class="fa fa-rss"></i><?php echo get_string('myblogs','theme_bcu') ?></a></li>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/blog/index.php?userid=<?php echo "$userid"; ?>" title="<?php echo get_string('myblogs','theme_bcu') ?>"><i class="fa fa-rss"></i><?php echo get_string('myblogs','theme_bcu') ?></a></li>
                             <?php } ?>
 
                             <?php  if (!empty($PAGE->theme->settings->enableposts)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>" title="posts"><i class="fa fa-commenting"></i><?php echo get_string('posts') ?></a></li>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>" title="<?php echo get_string('posts') ?>"><i class="fa fa-commenting"></i><?php echo get_string('posts') ?></a></li>
                             <?php } ?>
 
                              <?php  if (!empty($PAGE->theme->settings->enablefeed)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>" title="posts"><i class="fa fa-bullhorn"></i><?php echo get_string('feedback') ?></a></li>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>" title="<?php echo get_string('feedback') ?>"><i class="fa fa-bullhorn"></i><?php echo get_string('feedback') ?></a></li>
                             <?php } ?>
 
                             <?php if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/calendar/view.php" title="Calendar"><i class="fa fa-calendar"></i><?php echo get_string('pluginname', 'block_calendar_month') ?></a></li>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/calendar/view.php" title="<?php echo get_string('pluginname', 'block_calendar_month') ?>"><i class="fa fa-calendar"></i><?php echo get_string('pluginname', 'block_calendar_month') ?></a></li>
                             <?php } ?>
-                            <li><a href="<?php p($CFG->wwwroot) ?>/login/logout.php" title="Log out"><i class="fa fa-lock"></i><?php echo get_string('logout') ?></a></li>
+                            <li><a href="<?php p($CFG->wwwroot) ?>/login/logout.php" title="<?php echo get_string('logout') ?>"><i class="fa fa-lock"></i><?php echo get_string('logout') ?></a></li>
                         </ul>
                     </div>
                 <?php } ?>
             </div>
-
-
 
 <div class="dropdown pull-right newmenus newmenu1">
       <?php echo $OUTPUT->tools_menu3(); ?>
