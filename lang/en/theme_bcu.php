@@ -646,7 +646,7 @@ $string['fontweight'] = 'Main font weight';
 $string['fontweightdesc'] = 'Font weight used in site. Enter a value from 100 to 900 depending the font selected.';
 
 $string['fontheaderweight'] = 'Headers font weight';
-$string['fontheaderweightdesc'] = 'Headers font weight used in site. Enter a value from 100 to 900 depending the font selected.';
+$string['fontheaderweightdesc'] = 'Headers font weight used in the site. Enter a value from 100 to 900 depending the font selected.';
 
 $string['fonttitlename'] = 'Site title font';
 $string['fonttitlenamedesc'] = 'Google Font used in title site. Empty to use the default font.';
@@ -655,7 +655,7 @@ $string['fonttitlecolor'] = 'Site title font colour';
 $string['fonttitlecolordesc'] = 'Set the colour of the site title font in the theme, use html hex code.';
 
 $string['fonttitleweight'] = 'Site title font weight';
-$string['fonttitleweightdesc'] = 'Site title font weight used in site. Enter a value from 100 to 900 depending the font selected.';
+$string['fonttitleweightdesc'] = 'Set the font weight used in the title site. Enter a value from 100 to 900 depending the font selected.';
 
 $string['fonttitlesize'] = 'Site title font size';
-$string['fonttitlesizedesc'] = 'Site title font size used in site. Enter a decimal value in pixes: 24px';
+$string['fonttitlesizedesc'] = 'Site title font size used in site. Enter a decimal value in pixels: 24px';
