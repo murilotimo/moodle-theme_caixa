@@ -727,6 +727,12 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 	//social settings
+	$name = 'theme_bcu/socialsearchicon';
+    $title = get_string('socialsearchicon', 'theme_bcu');
+    $description = get_string('socialsearchicondesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, false, false);
+    $temp->add($setting);
+	
 	$name = 'theme_bcu/social1';
     $title = get_string('social1', 'theme_bcu');
     $description = get_string('social1desc', 'theme_bcu');

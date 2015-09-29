@@ -570,6 +570,9 @@ $string['socialsetdesc'] = 'Check this box to hide the search bar and add social
 
 $string['socialsize'] = 'Set the font size of the social icons';
 
+$string['socialsearchicon'] = 'Search Moodle';
+$string['socialsearchicondesc'] = 'Enable to put a search link alongside social icons (as using social disables sitewide search box)';
+
 $string['social1'] = 'Facebook';
 $string['social1desc'] = 'Add URL to facebook for social icon';
 
