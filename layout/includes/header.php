@@ -42,6 +42,7 @@ $haslogo = (!empty($PAGE->theme->settings->logo));
 // Get the fonts.
 $fontname = str_replace(" ", "+", $PAGE->theme->settings->fontname);
 $fontheadername = str_replace(" ", "+", $PAGE->theme->settings->fontheadername);
+$fonttitlename = str_replace(" ", "+", $PAGE->theme->settings->fonttitlename);
 
 // Get the HTML for the settings bits.
 $html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
@@ -79,6 +80,10 @@ echo $OUTPUT->doctype();
 
     <?php if (!empty($fontheadername)) { ?>
         <link href='http://fonts.googleapis.com/css?family=<?php echo $fontheadername; ?>' rel='stylesheet' type='text/css'><?php
+} ?>
+
+    <?php if (!empty($fonttitlename)) { ?>
+        <link href='http://fonts.googleapis.com/css?family=<?php echo $fonttitlename; ?>' rel='stylesheet' type='text/css'><?php
 } ?>
 
     <?php echo $OUTPUT->standard_head_html() ?>

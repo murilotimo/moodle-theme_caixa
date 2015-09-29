@@ -376,6 +376,15 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Main Font color.
+    $name = 'theme_bcu/fontcolor';
+    $title = get_string('fontcolor', 'theme_bcu');
+    $description = get_string('fontcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Header Font Name.
     $name = 'theme_bcu/fontheadername';
     $title = get_string('fontheadername', 'theme_bcu');
@@ -393,16 +402,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Font color.
-    $name = 'theme_bcu/fontcolor';
-    $title = get_string('fontcolor', 'theme_bcu');
-    $description = get_string('fontcolordesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Font Headers color.
+    // Header font color.
     $name = 'theme_bcu/fontheadercolor';
     $title = get_string('fontheadercolor', 'theme_bcu');
     $description = get_string('fontheadercolordesc', 'theme_bcu');
@@ -411,6 +411,40 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     $ADMIN->add('theme_bcu', $temp);
+
+    // Title Font Name.
+    $name = 'theme_bcu/fonttitlename';
+    $title = get_string('fonttitlename', 'theme_bcu');
+    $description = get_string('fonttitlenamedesc', 'theme_bcu');
+    $default = 'Roboto';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Title Font size.
+    $name = 'theme_bcu/fonttitlesize';
+    $title = get_string('fonttitlesize', 'theme_bcu');
+    $description = get_string('fonttitlesizedesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '24');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Title Font weight.
+    $name = 'theme_bcu/fonttitleweight';
+    $title = get_string('fonttitleweight', 'theme_bcu');
+    $description = get_string('fonttitleweightdesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '700');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Title font color.
+    $name = 'theme_bcu/fonttitlecolor';
+    $title = get_string('fonttitlecolor', 'theme_bcu');
+    $description = get_string('fonttitlecolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     $temp = new admin_settingpage('theme_bcu_header', get_string('headersettings', 'theme_bcu'));
     $temp->add(new admin_setting_heading('theme_bcu_header', get_string('headersettingsheading', 'theme_bcu'),

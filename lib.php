@@ -97,7 +97,11 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:fontcolor]]' => '#333333',
         '[[setting:fontheadercolor]]' => '#333333',
         '[[setting:fontweight]]' => '400',
-        '[[setting:fontheaderweight]]' => '400'  
+        '[[setting:fontheaderweight]]' => '400',  
+        '[[setting:fonttitlename]]' => 'Roboto',
+        '[[setting:fonttitleweight]]' => '700',
+        '[[setting:fonttitlesize]]' => '24px',
+        '[[setting:fonttitlecolor]]' => '#FFFFFF'
     );
 
     // Get all the defined settings for the theme and replace defaults.
