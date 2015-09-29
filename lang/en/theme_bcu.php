@@ -292,6 +292,19 @@ $string['customcssjssettings'] = 'Custom CSS & JS';
 $string['genericsettingsheading'] = 'Apply your own modifications';
 $string['genericsettingsdescription'] = 'Here you can find various settings to add your own CSS and JavaScript code to the theme.';
 
+$string['tickersettings'] = 'News Ticker';
+$string['tickersettingsheading'] = 'Setup News Ticker on Front Page';
+$string['tickerdesc'] = 'Here you can set a news ticker to run across the front page of your Moodle site.
+	it is intended as a less intrusive alternative to the slider taking up very little space. 
+	To setup your ticker simply entere a bulleted list and include any hyperlinks you need to in that text.	
+	Note: you must not put ul tags around our list, only li. Moodles text editor tends to add ul tags. 
+	If your ticker does not load properly switch to HTML view and ensure you have only li tags:
+	<pre>
+	&lt;li&gt;News item one.....&lt;/li&gt;
+	&lt;li&gt;News item two.....&lt;/li&gt;	
+	</pre>';
+	
+
 $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowsettingsheading'] = 'Customise the carousel on the front page';
 $string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
@@ -335,6 +348,7 @@ $string['thiscourse'] = 'This course';
 
 $string['blocksettings'] = 'Block Settings';
 $string['frontpageblocksettings'] = 'Frontpage Blocks';
+$string['frontpagetickersettings'] = 'Frontpage Ticker';
 $string['frontpageslidersettings'] = 'Frontpage Slider';
 $string['frontpagecoursesettings'] = 'Frontpage Courses';
 $string['frontpagesettingsheading'] = 'Frontpage rendering';

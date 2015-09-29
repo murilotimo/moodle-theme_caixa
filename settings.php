@@ -694,21 +694,6 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
     $temp->add($setting);	
 
-    $name = 'theme_bcu/enableticker';
-    $title = get_string('enableticker', 'theme_bcu');
-    $description = get_string('enabletickerdesc', 'theme_bcu');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    //$setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-   	$name = 'theme_bcu/tickertext';
-	$title = get_string('tickertext','theme_bcu');
-	$description = get_string('tickertextdesc', 'theme_bcu');
-	$default = '';
-	$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-	$temp->add($setting);
-
     $ADMIN->add('theme_bcu', $temp);
 	
 	$temp = new admin_settingpage('theme_bcu_social', get_string('socialsettings', 'theme_bcu'));
@@ -1140,7 +1125,28 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);
+	
+    $temp = new admin_settingpage('theme_bcu_frontpage_ticker', get_string('frontpagetickersettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_ticker', get_string('tickersettingsheading', 'theme_bcu'),
+        format_text(get_string('tickerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
+    $name = 'theme_bcu/enableticker';
+    $title = get_string('enableticker', 'theme_bcu');
+    $description = get_string('enabletickerdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    //$setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+   	$name = 'theme_bcu/tickertext';
+	$title = get_string('tickertext','theme_bcu');
+	$description = get_string('tickertextdesc', 'theme_bcu');
+	$default = '';
+	$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+	$temp->add($setting);
+
+	$ADMIN->add('theme_bcu', $temp);
+	
     $temp = new admin_settingpage('theme_bcu_frontpage_slider', get_string('frontpageslidersettings', 'theme_bcu'));
 
     $temp->add(new admin_setting_heading('theme_bcu_slideshow', get_string('slideshowsettingsheading', 'theme_bcu'),
