@@ -349,11 +349,12 @@ span.fa-chevron-right.fa {
 	padding-top: 35px;
 }
 
-#page-footer {
+#page-footer,
+#page-footer p {
 	background: [[setting:footerbkcolor]];
 	margin: 10px 0px 0;
    	text-align: left;
-   	color: [[setting:footertextcolor]];
+   	color: [[setting:footertextcolor]] !important;
    	border-top: 0px;
    	font-size: 110%;
 }

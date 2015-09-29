@@ -425,7 +425,7 @@ if (is_siteadmin()) {
     $name = 'theme_bcu/fonttitlesize';
     $title = get_string('fonttitlesize', 'theme_bcu');
     $description = get_string('fonttitlesizedesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '24');
+    $setting = new admin_setting_configtext($name, $title, $description, '24px');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
