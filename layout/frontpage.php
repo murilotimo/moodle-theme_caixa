@@ -145,7 +145,7 @@ if (!empty($PAGE->theme->settings->slideroption2)) {echo " slidestyle2"; } ?>">
 if (!empty($PAGE->theme->settings->frontpagemarketoption)) {
 $extramarketclass = "covtiles";
 } else {
-$extramarketclass = " ";
+$extramarketclass = "";
 }
 ?>
 
@@ -331,7 +331,7 @@ if ($hasmarket9 && $hasmarket10 && $hasmarket11 && $hasmarket12) {
 <?php
 if (!empty($PAGE->theme->settings->infobox2)) {
 ?>
- <div id="themessage">
+ <div id="themessage" class="container">
 	<div id="themessage-internal"><div class="row-fluid">
 
 		<?php echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
