@@ -586,39 +586,26 @@ class theme_bcu_core_renderer extends core_renderer {
     }
 
     public function tools_menu6() {
-        global $PAGE, $USER, $CFG;
-        if (!empty($PAGE->theme->settings->newmenu4field)) {
-		require_once($CFG->dirroot.'/user/profile/lib.php');
-		require_once($CFG->dirroot.'/user/lib.php');
-		profile_load_data($USER);
-		$ftype = $PAGE->theme->settings->newmenu4field;
-		$ftype ="profile_field_$ftype";
-		$setvalue = $PAGE->theme->settings->newmenu4value;
-		$usersvalue = $USER->$ftype;
-		} else {
-		$setvalue = 1;
-		$usersvalue = 1;
+    	global $PAGE;
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->newmenu4field) && !empty($PAGE->theme->settings->newmenu4value)){
+			$ftype = $PAGE->theme->settings->newmenu4field;
+			$setvalue = $PAGE->theme->settings->newmenu4value;
+			if (!$this->check_menu_access($ftype, $setvalue, 'menu4')){
+				$access = false;
+			}
 		}
-
-		$custommenuitems = '';
-
-		if ($setvalue == $usersvalue) {
-        if (!empty($PAGE->theme->settings->newmenu4)) {
-            $custommenuitems .= "</i>".get_string('newmenu4label', 'theme_bcu')."|#|".
-                    get_string('newmenu4label', 'theme_bcu')."\n";
-            $arr = explode("\n", $PAGE->theme->settings->newmenu4);
-            // We want to force everything inputted under this menu.
-            foreach ($arr as $key => $value) {
-                $arr[$key] = '-' . $arr[$key];
-            }
-            $custommenuitems .= implode("\n", $arr);
+			
+        if (!empty($PAGE->theme->settings->newmenu4) && $access == true) {
+        	$menu = ($PAGE->theme->settings->newmenu4);
+			$label = get_string('newmenu4label', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label);            
         }
-
-        } //end if from setvalue
-
+         
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
-
     }
 
     public function tools_menu7() {
@@ -629,7 +616,7 @@ class theme_bcu_core_renderer extends core_renderer {
 		if (!empty($PAGE->theme->settings->newmenu5field) && !empty($PAGE->theme->settings->newmenu5value)){
 			$ftype = $PAGE->theme->settings->newmenu5field;
 			$setvalue = $PAGE->theme->settings->newmenu5value;
-			if (!$this->check_menu_access($ftype, $setvalue)){
+			if (!$this->check_menu_access($ftype, $setvalue, 'menu5')){
 				$access = false;
 			}
 		}
@@ -644,22 +631,34 @@ class theme_bcu_core_renderer extends core_renderer {
         return $this->render_custom_menu($custommenu);
     }
 
-	public function check_menu_access($ftype, $setvalue){
+	public function check_menu_access($ftype, $setvalue, $menu){
 		global $PAGE, $USER, $CFG;
-		$uservalue = '';		
-        if (!empty($PAGE->theme->settings->newmenu5field)) {
+		$usersvalue = 'invalid';		
+		
+		if (isset($USER->theme_bcu_menus[$menu])){
+			if ($USER->theme_bcu_menus[$menu] = true){					
+				return true;
+			}
+			else if ($USER->theme_bcu_menus[$menu] = false){
+				return false;
+			}
+		}
+		
+        if (!empty($PAGE->theme->settings->newmenu5field)) {        	
 			require_once($CFG->dirroot.'/user/profile/lib.php');
 			require_once($CFG->dirroot.'/user/lib.php');
 			profile_load_data($USER);		
 			$ftype ="profile_field_$ftype";						
-			if (isset($USER->$ftype)){
+			if (isset($USER->$ftype)){						
 				$usersvalue = $USER->$ftype;									
 			}			
-			if ($usersvalue != $setvalue){				
-				return false;
+			if ($usersvalue == $setvalue){				
+				$USER->theme_bcu_menus[$menu] = true;				
+				return true;
 			}			
-		}
-		return true;				
+		}		
+		$USER->theme_bcu_menus[$menu] = false;
+		return false;				
 	}
 	
 	public function parse_custom_menu($menu, $label){
