@@ -145,7 +145,7 @@ if (!empty($PAGE->theme->settings->slideroption2)) {echo " slidestyle2"; } ?>">
 if (!empty($PAGE->theme->settings->frontpagemarketoption)) {
 $extramarketclass = "covtiles";
 } else {
-$extramarketclass = " ";
+$extramarketclass = "";
 }
 ?>
 
