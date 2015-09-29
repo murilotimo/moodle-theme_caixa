@@ -478,112 +478,74 @@ class theme_bcu_core_renderer extends core_renderer {
     }
 
     public function tools_menu3() {
-        global $PAGE, $USER, $CFG;
-        if (!empty($PAGE->theme->settings->newmenu1field)) {
-		require_once($CFG->dirroot.'/user/profile/lib.php');
-		require_once($CFG->dirroot.'/user/lib.php');
-		profile_load_data($USER);
-		$ftype = $PAGE->theme->settings->newmenu1field;
-		$ftype ="profile_field_$ftype";
-		$setvalue = $PAGE->theme->settings->newmenu1value;
-		$usersvalue = $USER->$ftype;
-		} else {
-		$setvalue = 1;
-		$usersvalue = 1;
+    	global $PAGE;
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->newmenu1field) && !empty($PAGE->theme->settings->newmenu1value)){
+			$ftype = $PAGE->theme->settings->newmenu1field;
+			$setvalue = $PAGE->theme->settings->newmenu1value;
+			if (!$this->check_menu_access($ftype, $setvalue, 'menu1')){
+				$access = false;
+			}
 		}
-
-		$custommenuitems = '';
-
-		if ($setvalue == $usersvalue) {
-        if (!empty($PAGE->theme->settings->newmenu1)) {
-            $custommenuitems .= "</i>".get_string('newmenu1label', 'theme_bcu')."|#|".
-                    get_string('newmenu1label', 'theme_bcu')."\n";
-            $arr = explode("\n", $PAGE->theme->settings->newmenu1);
-            // We want to force everything inputted under this menu.
-            foreach ($arr as $key => $value) {
-                $arr[$key] = '-' . $arr[$key];
-            }
-            $custommenuitems .= implode("\n", $arr);
+			
+        if (!empty($PAGE->theme->settings->newmenu1) && $access == true) {
+        	$menu = ($PAGE->theme->settings->newmenu1);
+			$label = get_string('newmenu1label', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label);            
         }
-
-        } //end if from setvalue
-
+         
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
-
     }
 
     public function tools_menu4() {
-        global $PAGE, $USER, $CFG;
-        if (!empty($PAGE->theme->settings->newmenu2field)) {
-		require_once($CFG->dirroot.'/user/profile/lib.php');
-		require_once($CFG->dirroot.'/user/lib.php');
-		profile_load_data($USER);
-		$ftype = $PAGE->theme->settings->newmenu2field;
-		$ftype ="profile_field_$ftype";
-		$setvalue = $PAGE->theme->settings->newmenu2value;
-		$usersvalue = $USER->$ftype;
-		} else {
-		$setvalue = 1;
-		$usersvalue = 1;
+    	global $PAGE;
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->newmenu2field) && !empty($PAGE->theme->settings->newmenu2value)){
+			$ftype = $PAGE->theme->settings->newmenu2field;
+			$setvalue = $PAGE->theme->settings->newmenu2value;
+			if (!$this->check_menu_access($ftype, $setvalue, 'menu2')){
+				$access = false;
+			}
 		}
-
-		$custommenuitems = '';
-
-		if ($setvalue == $usersvalue) {
-        if (!empty($PAGE->theme->settings->newmenu2)) {
-            $custommenuitems .= "</i>".get_string('newmenu2label', 'theme_bcu')."|#|".
-                    get_string('newmenu2label', 'theme_bcu')."\n";
-            $arr = explode("\n", $PAGE->theme->settings->newmenu2);
-            // We want to force everything inputted under this menu.
-            foreach ($arr as $key => $value) {
-                $arr[$key] = '-' . $arr[$key];
-            }
-            $custommenuitems .= implode("\n", $arr);
+			
+        if (!empty($PAGE->theme->settings->newmenu2) && $access == true) {
+        	$menu = ($PAGE->theme->settings->newmenu2);
+			$label = get_string('newmenu2label', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label);            
         }
-
-        } //end if from setvalue
-
+         
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
-
     }
-
 
     public function tools_menu5() {
-        global $PAGE, $USER, $CFG;
-        if (!empty($PAGE->theme->settings->newmenu3field)) {
-		require_once($CFG->dirroot.'/user/profile/lib.php');
-		require_once($CFG->dirroot.'/user/lib.php');
-		profile_load_data($USER);
-		$ftype = $PAGE->theme->settings->newmenu3field;
-		$ftype ="profile_field_$ftype";
-		$setvalue = $PAGE->theme->settings->newmenu3value;
-		$usersvalue = $USER->$ftype;
-		} else {
-		$setvalue = 1;
-		$usersvalue = 1;
+    	global $PAGE;
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->newmenu3field) && !empty($PAGE->theme->settings->newmenu3value)){
+			$ftype = $PAGE->theme->settings->newmenu3field;
+			$setvalue = $PAGE->theme->settings->newmenu3value;
+			if (!$this->check_menu_access($ftype, $setvalue, 'menu3')){
+				$access = false;
+			}
 		}
-
-		$custommenuitems = '';
-
-		if ($setvalue == $usersvalue) {
-        if (!empty($PAGE->theme->settings->newmenu3)) {
-            $custommenuitems .= "</i>".get_string('newmenu3label', 'theme_bcu')."|#|".
-                    get_string('newmenu3label', 'theme_bcu')."\n";
-            $arr = explode("\n", $PAGE->theme->settings->newmenu3);
-            // We want to force everything inputted under this menu.
-            foreach ($arr as $key => $value) {
-                $arr[$key] = '-' . $arr[$key];
-            }
-            $custommenuitems .= implode("\n", $arr);
+			
+        if (!empty($PAGE->theme->settings->newmenu3) && $access == true) {
+        	$menu = ($PAGE->theme->settings->newmenu3);
+			$label = get_string('newmenu3label', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label);            
         }
-
-        } //end if from setvalue
-
+         
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
     }
+
 
     public function tools_menu6() {
     	global $PAGE;
@@ -632,15 +594,21 @@ class theme_bcu_core_renderer extends core_renderer {
     }
 
 	public function check_menu_access($ftype, $setvalue, $menu){
-		global $PAGE, $USER, $CFG;
-		$usersvalue = 'invalid';		
+		global $PAGE, $USER, $CFG;			
+		$sessttl = (time() + ($PAGE->theme->settings->menusessionttl * 60));		
+		$menuttl = $menu . 'ttl';			
 		
-		if (isset($USER->theme_bcu_menus[$menu])){
-			if ($USER->theme_bcu_menus[$menu] = true){					
-				return true;
-			}
-			else if ($USER->theme_bcu_menus[$menu] = false){
-				return false;
+		if ($PAGE->theme->settings->menusession){			
+			if (isset($USER->theme_bcu_menus[$menu])){				
+				
+				if ($USER->theme_bcu_menus[$menuttl] >= time()){										
+					if ($USER->theme_bcu_menus[$menu] == true){					
+						return true;
+					}
+					else if ($USER->theme_bcu_menus[$menu] == false){
+						return false;
+					}
+				}
 			}
 		}
 		
@@ -652,12 +620,14 @@ class theme_bcu_core_renderer extends core_renderer {
 			if (isset($USER->$ftype)){						
 				$usersvalue = $USER->$ftype;									
 			}			
-			if ($usersvalue == $setvalue){				
-				$USER->theme_bcu_menus[$menu] = true;				
+			if ($usersvalue == $setvalue){						
+				$USER->theme_bcu_menus[$menu] = true;
+				$USER->theme_bcu_menus[$menuttl] = $sessttl;				
 				return true;
 			}			
 		}		
 		$USER->theme_bcu_menus[$menu] = false;
+		$USER->theme_bcu_menus[$menuttl] = $sessttl;
 		return false;				
 	}
 	

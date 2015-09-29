@@ -226,6 +226,9 @@ echo $OUTPUT->doctype();
 
 		<?php if (!empty($PAGE->theme->settings->socialset)) { ?>
 		<div class="socialbox pull-right">
+		<?php if (isset($PAGE->theme->settings->socialsearchicon)) { ?>
+		<a alt="Search Moodle" title="Search Moodle" href="<?php echo $CFG->wwwroot . '/course/search.php ' ?>"><i class="fa fa-search"></i></a>
+		<?php } ?>	
 		<?php if (!empty($PAGE->theme->settings->social1)) { ?>
 		<a alt="facebook" title="facebook" href="<?php echo $PAGE->theme->settings->social1 ?>"><i class="fa fa-facebook-square"></i></a>
 		<?php } ?>

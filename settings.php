@@ -141,7 +141,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/infoboxcolor';
+    $name = 'theme_bcu/infoboxcolor';
     $title = get_string('infoboxcolor', 'theme_bcu');
     $description = get_string('infoboxcolordesc', 'theme_bcu');
     $previewconfig = null;
@@ -470,106 +470,15 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu1field';
-    $title = get_string('newmenu1field', 'theme_bcu');
-    $description = get_string('newmenu1field', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu1value';
-    $title = get_string('newmenu1value', 'theme_bcu');
-    $description = get_string('newmenu1value', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
+    
     //$name = 'theme_bcu/newmenu1trigger';
     //$title = get_string('newmenu1trigger', 'theme_bcu');
     //$description = get_string('newmenu1triggerdesc', 'theme_bcu');
     //$setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '70', '1');
     //$temp->add($setting);
 
-      $name = 'theme_bcu/newmenu1';
-    $title = get_string('newmenu1', 'theme_bcu');
-    $description = get_string('newmenu1desc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-
-        $name = 'theme_bcu/newmenu2field';
-    $title = get_string('newmenu2field', 'theme_bcu');
-    $description = get_string('newmenu2field', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu2value';
-    $title = get_string('newmenu2value', 'theme_bcu');
-    $description = get_string('newmenu2value', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu2';
-    $title = get_string('newmenu2', 'theme_bcu');
-    $description = get_string('newmenu2desc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-
-
-    $name = 'theme_bcu/newmenu3field';
-    $title = get_string('newmenu3field', 'theme_bcu');
-    $description = get_string('newmenu3field', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu3value';
-    $title = get_string('newmenu3value', 'theme_bcu');
-    $description = get_string('newmenu3value', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu3';
-    $title = get_string('newmenu3', 'theme_bcu');
-    $description = get_string('newmenu3desc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu4field';
-    $title = get_string('newmenu4field', 'theme_bcu');
-    $description = get_string('newmenu4field', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu4value';
-    $title = get_string('newmenu4value', 'theme_bcu');
-    $description = get_string('newmenu4value', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu4';
-    $title = get_string('newmenu4', 'theme_bcu');
-    $description = get_string('newmenu4desc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu5field';
-    $title = get_string('newmenu5field', 'theme_bcu');
-    $description = get_string('newmenu5field', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu5value';
-    $title = get_string('newmenu5value', 'theme_bcu');
-    $description = get_string('newmenu5value', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu5';
-    $title = get_string('newmenu5', 'theme_bcu');
-    $description = get_string('newmenu5desc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-
     $temp->add(new admin_setting_heading('theme_bcu_usernav', get_string('usernavheading', 'theme_bcu'),
-        format_text(get_string('usernavdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    format_text(get_string('usernavdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
     // Enable My.
     $name = 'theme_bcu/enablemy';
@@ -786,15 +695,22 @@ if (is_siteadmin()) {
 	$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
 	$temp->add($setting);
 
+    $ADMIN->add('theme_bcu', $temp);
+	
+	$temp = new admin_settingpage('theme_bcu_social', get_string('socialsettings', 'theme_bcu'));
+	
+	$temp->add(new admin_setting_heading('theme_bcu_social', get_string('socialheading', 'theme_bcu'),
+    format_text(get_string('socialtitledesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+	
 	$name = 'theme_bcu/socialset';
-    	$title = get_string('socialset', 'theme_bcu');
-    	$description = get_string('socialsetdesc', 'theme_bcu');
-    	$default = true;
-    	$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    	//$setting->set_updatedcallback('theme_reset_all_caches');
-    	 $temp->add($setting);
+    $title = get_string('socialset', 'theme_bcu');
+    $description = get_string('socialsetdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    //$setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
-     $name = 'theme_bcu/socialsize';
+    $name = 'theme_bcu/socialsize';
     $title = get_string('socialsize', 'theme_bcu');
     $description = get_string('socialsize', 'theme_bcu');
     $choices = array(
@@ -811,6 +727,12 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 	//social settings
+	$name = 'theme_bcu/socialsearchicon';
+    $title = get_string('socialsearchicon', 'theme_bcu');
+    $description = get_string('socialsearchicondesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, false, false);
+    $temp->add($setting);
+	
 	$name = 'theme_bcu/social1';
     $title = get_string('social1', 'theme_bcu');
     $description = get_string('social1desc', 'theme_bcu');
@@ -876,8 +798,133 @@ if (is_siteadmin()) {
     $description = get_string('social11desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$ADMIN->add('theme_bcu', $temp);
+	
+	$temp = new admin_settingpage('theme_bcu_menus', get_string('menusettings', 'theme_bcu'));
+	
+	$temp->add(new admin_setting_heading('theme_bcu_menus', get_string('menusheading', 'theme_bcu'),
+    format_text(get_string('menustitledesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+	
+	$name = 'theme_bcu/menusession';
+    $title = get_string('menusession', 'theme_bcu');
+    $description = get_string('menusessiondesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, true, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/menusessionttl';
+    $title = get_string('menusessionttl', 'theme_bcu');
+    $description = get_string('menusessionttldesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '30', PARAM_INT);
+    $temp->add($setting);	
+	
+	$temp->add(new admin_setting_heading('theme_bcu_menus1', get_string('menusheading1', 'theme_bcu'),
+    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+	
+	$name = 'theme_bcu/newmenu1';
+    $title = get_string('newmenu1', 'theme_bcu');
+    $description = get_string('newmenudesc', 'theme_bcu');
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/newmenu1field';
+    $title = get_string('newmenufield', 'theme_bcu');
+    $description = ''; //get_string('newmenu1field', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $name = 'theme_bcu/newmenu1value';
+    $title = get_string('newmenuvalue', 'theme_bcu');
+    $description = ''; // get_string('newmenu1value', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+	
+	$temp->add(new admin_setting_heading('theme_bcu_menus2', get_string('menusheading2', 'theme_bcu'),
+    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+	
+	$name = 'theme_bcu/newmenu2';
+    $title = get_string('newmenu2', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/newmenu2field';
+    $title = get_string('newmenufield', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/newmenu2value';
+    $title = get_string('newmenuvalue', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+	
+	$temp->add(new admin_setting_heading('theme_bcu_menus3', get_string('menusheading3', 'theme_bcu'),
+    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    
+    $name = 'theme_bcu/newmenu3';
+    $title = get_string('newmenu3', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	    
+    $name = 'theme_bcu/newmenu3field';
+    $title = get_string('newmenufield', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/newmenu3value';
+    $title = get_string('newmenuvalue', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+	$temp->add(new admin_setting_heading('theme_bcu_menus4', get_string('menusheading4', 'theme_bcu'),
+    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+	
+    $name = 'theme_bcu/newmenu4';
+    $title = get_string('newmenu4', 'theme_bcu');
+    $description = get_string('newmenudesc', 'theme_bcu');
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/newmenu4field';
+    $title = get_string('newmenufield', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/newmenu4value';
+    $title = get_string('newmenuvalue', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+	
+	$temp->add(new admin_setting_heading('theme_bcu_menus5', get_string('menusheading5', 'theme_bcu'),
+    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_bcu/newmenu5';
+    $title = get_string('newmenu5', 'theme_bcu');
+    $description = get_string('newmenudesc', 'theme_bcu');
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/newmenu5field';
+    $title = get_string('newmenufield', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/newmenu5value';
+    $title = get_string('newmenuvalue', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+   
+	$ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_blocks', get_string('blocksettings', 'theme_bcu'));
 
