@@ -137,12 +137,12 @@ a:focus {
 
 #coursetitle {
     font-family: [[setting:fonttitlename]], sans-serif !important;
-	color: [[setting:fonttitlecolor]];
-    font-size: [[setting:fonttitlesize]];
+	color: [[setting:fonttitlecolor]] !important;
+    font-size: [[setting:fonttitlesize]] !important;
     line-height: normal;
     font-weight: [[setting:fonttitleweight]];
     padding-left: 15px;
-    padding-top: 32px;
+    padding-top: 20px;
     max-width: 35%;
     white-space: nowrap;
     overflow: hidden;
@@ -349,11 +349,12 @@ span.fa-chevron-right.fa {
 	padding-top: 35px;
 }
 
-#page-footer {
+#page-footer,
+#page-footer p {
 	background: [[setting:footerbkcolor]];
 	margin: 10px 0px 0;
    	text-align: left;
-   	color: [[setting:footertextcolor]];
+   	color: [[setting:footertextcolor]] !important;
    	border-top: 0px;
    	font-size: 110%;
 }
