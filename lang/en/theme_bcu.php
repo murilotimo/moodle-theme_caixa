@@ -317,6 +317,10 @@ $string['headersettings'] = 'Header';
 $string['headersettingsheading'] = 'Customise the header of this theme.';
 $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
 
+$string['menusettings'] = 'Header Menus';
+$string['menusettingsheading'] = 'Customise menus in the upper header the header of this theme.';
+$string['menudesc'] = 'Display link menus to useres. Can be targeted based on custom profile fields (optional)';
+
 $string['thiscourse'] = 'This course';
 
 $string['blocksettings'] = 'Block Settings';
@@ -487,12 +491,13 @@ $string['tickertext'] = 'News Ticker Text';
 $string['tickertextdesc'] = 'Add news ticker text in list format. See the read me for more info.';
 $string['ticker'] = 'Announcements';
 
+
+
 $string['newmenu1trigger'] = 'Top Menu Dropdown 1 trigger word';
 $string['newmenu1triggerdesc'] = 'Set a Top Menu Dropdown 1 trigger word. Font awesome icons can be used';
 
-$string['newmenu1'] = 'Top Menu Dropdown 1';
-$string['newmenu1label'] = 'Top Menu 1';
-$string['newmenu1desc'] = 'You can configure links to be shown under a top header menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
+$string['menusheading'] = 'Configure Top Menus (Navigation)';
+$string['menustitledesc'] = 'Menus can be restricted based on custom profile fields (optional). To add a restriction enter the name of the profile field and expected value. Menu Structure follows the common Moodle format:
 <pre>
 Moodle community|https://moodle.org
 -Moodle free support|https://moodle.org/support
@@ -500,75 +505,43 @@ Moodle community|https://moodle.org
 --Moodle Docs|http://docs.moodle.org|Moodle Docs
 --German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
 Moodle.com|http://moodle.com/
-</pre>';
+</pre>
+To reduce the overhead of loading custom profile data on every page load access rules are stored in the users session. For testing new menus you may want to switch off "store access rules in session". You can also set the time to live for sessoins in minutes.';
 
-$string['newmenu1field'] = 'Top Menu Dropdown 1 profile field restriction (note- optional field)';
-$string['newmenu1value'] = 'Top Menu Dropdown 1 profile field restriction. Set the value needed (note- optional field)';
+$string['menusession'] = 'Store access details in session';
+$string['menusessiondesc'] = 'For performance reasons it is suggested this is enabled. You may want to disable when testing';
+
+$string['menusessionttl'] = 'Minutes to store access rules in session';
+$string['menusessionttldesc'] = 'Number of minutes after which menu access rules are refreshed in the users session.';
+
+// generic strings for all five menus
+$string['newmenudesc'] = 'Configure links to be shown under a top header menu.';
+$string['newmenufield'] = 'Custom Profile Field Name (optional)';
+$string['newmenuvalue'] = 'Custom Profile Field Value (optional)';
+$string['menusdesc'] = '';
 
 $string['newmenu2trigger'] = 'Top Menu Dropdown 2 trigger word';
 $string['newmenu2triggerdesc'] = 'Set a Top Menu Dropdown 2 trigger word. Font awesome icons can be used';
 
+$string['menusheading1'] = 'Top Menu 1';
+$string['newmenu1'] = 'Top Menu Dropdown 1';
+$string['newmenu1label'] = 'Top Menu 1';
+
+$string['menusheading2'] = 'Top Menu 2';
 $string['newmenu2'] = 'Top Menu Dropdown 2';
 $string['newmenu2label'] = 'Top Menu 2';
-$string['newmenu2desc'] = 'You can configure links to be shown under a top header menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
-<pre>
-Moodle community|https://moodle.org
--Moodle free support|https://moodle.org/support
--Moodle development|https://moodle.org/development
---Moodle Docs|http://docs.moodle.org|Moodle Docs
---German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
-Moodle.com|http://moodle.com/
-</pre>';
 
-$string['newmenu2field'] = 'Top Menu Dropdown 2 profile field restriction (note- optional field)';
-$string['newmenu2value'] = 'Top Menu Dropdown 2 profile field restriction. Set the value needed (note- optional field)';
-
-
-
+$string['menusheading3'] = 'Top Menu 3';
 $string['newmenu3'] = 'Top Menu Dropdown 3';
 $string['newmenu3label'] = 'Top Menu 3';
-$string['newmenu3desc'] = 'You can configure links to be shown under a top header menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
-<pre>
-Moodle community|https://moodle.org
--Moodle free support|https://moodle.org/support
--Moodle development|https://moodle.org/development
---Moodle Docs|http://docs.moodle.org|Moodle Docs
---German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
-Moodle.com|http://moodle.com/
-</pre>';
 
-$string['newmenu3field'] = 'Top Menu Dropdown 3 profile field restriction (note- optional field)';
-$string['newmenu3value'] = 'Top Menu Dropdown 3 profile field restriction. Set the value needed (note- optional field)';
-
+$string['menusheading4'] = 'Top Menu 4';
 $string['newmenu4'] = 'Top Menu Dropdown 4';
 $string['newmenu4label'] = 'Top Menu 4';
-$string['newmenu4desc'] = 'You can configure links to be shown under a top header menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
-<pre>
-Moodle community|https://moodle.org
--Moodle free support|https://moodle.org/support
--Moodle development|https://moodle.org/development
---Moodle Docs|http://docs.moodle.org|Moodle Docs
---German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
-Moodle.com|http://moodle.com/
-</pre>';
 
-$string['newmenu4field'] = 'Top Menu Dropdown 4 profile field restriction (note- optional field)';
-$string['newmenu4value'] = 'Top Menu Dropdown 4 profile field restriction. Set the value needed (note- optional field)';
-
+$string['menusheading5'] = 'Top Menu 5';
 $string['newmenu5'] = 'Top Menu Dropdown 5';
 $string['newmenu5label'] = 'Top Menu 5';
-$string['newmenu5desc'] = 'You can configure links to be shown under a top header menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
-<pre>
-Moodle community|https://moodle.org
--Moodle free support|https://moodle.org/support
--Moodle development|https://moodle.org/development
---Moodle Docs|http://docs.moodle.org|Moodle Docs
---German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
-Moodle.com|http://moodle.com/
-</pre>';
-
-$string['newmenu5field'] = 'Top Menu Dropdown 5 profile field restriction (note- optional field)';
-$string['newmenu5value'] = 'Top Menu Dropdown 5 profile field restriction. Set the value needed (note- optional field)';
 
 $string['toolsmenu1field'] = 'Limit tools menu to profile field. Select field';
 $string['toolsmenu1value'] = 'Limit tools menu to profile field. Select value';
@@ -588,6 +561,9 @@ $string['menufontcolordesc'] = 'Set a Main Menu font color';
 $string['menufonthovercolor'] = 'Main Menu font color on hover';
 $string['menufonthovercolordesc'] = 'Set a Main Menu font color on hover';
 
+$string['socialsettings'] = 'Header Social';
+$string['socialheading'] = 'Social Icon Settings';
+$string['socialtitledesc'] = '<pre>You can disable the sitewide search box and enable social icons / links in its place.</pre>';
 
 $string['socialset'] = 'Add social icons and hide search bar';
 $string['socialsetdesc'] = 'Check this box to hide the search bar and add social icons in the same location instead.';
