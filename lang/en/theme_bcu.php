@@ -313,6 +313,16 @@ $string['coloursettings'] = 'Colours & Fonts';
 $string['coloursettingsheading'] = 'Modify the main colours and fonts used throughout the theme.';
 $string['colourdesc'] = 'You can select the colours and fonts that you would like to use throughout the theme.';
 
+$string['buttonsettings'] = 'Buttons';
+$string['buttonsettingsheading'] = 'Customise the buttons of this theme.';
+$string['buttondesc'] = 'Alter the appearance of buttons used in this theme.';
+
+$string['buttonradius'] = 'Set Button Radius';
+$string['buttonradiusdesc'] = 'Higher radius = curved buttons, lower radius = square buttons';
+
+$string['buttonloginpadding'] = 'Set Padding for Login Button';
+$string['buttonloginpaddingdesc'] = 'Higher number = bigger login button';
+
 $string['headersettings'] = 'Header';
 $string['headersettingsheading'] = 'Customise the header of this theme.';
 $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
@@ -344,6 +354,9 @@ $string['rendereroverlayfontcolourdesc'] = 'The colour of the font, when hoverin
 
 $string['buttoncolour'] = 'Button colour';
 $string['buttoncolourdesc'] = 'The colour of the main buttons used throughout the site.';
+
+$string['buttonlogincolor'] = 'Login button colour';
+$string['buttonlogincolordesc'] = 'The colour of the login button.';
 
 $string['buttonhovercolour'] = 'Button colour (When hovering)';
 $string['buttonhovercolourdesc'] = 'The colour that the button changes to when hovering over the button.';
