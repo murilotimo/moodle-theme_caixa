@@ -105,6 +105,7 @@ a:focus {
 
 #above-header .headermenu .dropdown-menu,#above-header .headermenu .dropdown-menu a {
 	color: [[setting:linkcolor]];
+	font-size: 16px;
 }
 
 #page-header {
@@ -204,7 +205,7 @@ a:focus {
 }
 
 a.usermendrop {
-	font-size: 12px;
+	font-size: 16px;
 }
 
 #page-header .userimg {

@@ -102,12 +102,12 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
     text-shadow: none;
     transition: background 0.2s ease-out 0s;
     margin-top: 3px;
-    text-decoration: none;
 }
 
 .btn-login:hover {
     background-color: [[setting:buttonhovercolour]];
 	color: [[setting:buttontextcolor]] !important;
+    text-decoration: none;
 }
 
 /* Custom CSS Settings
