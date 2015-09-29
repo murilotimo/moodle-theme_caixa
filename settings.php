@@ -640,45 +640,7 @@ if (is_siteadmin()) {
         '_self' => get_string('targetsamewindow', 'theme_bcu'),
     );
     $setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
-    $temp->add($setting);
-
-
-	    $name = 'theme_bcu/toolsmenu1field';
-    $title = get_string('toolsmenu1field', 'theme_bcu');
-    $description = get_string('toolsmenu1field', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/toolsmenu1value';
-    $title = get_string('toolsmenu1value', 'theme_bcu');
-    $description = get_string('toolsmenu1value', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/toolsmenu';
-    $title = get_string('toolsmenu', 'theme_bcu');
-    $description = get_string('toolsmenudesc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/toolsmenu2field';
-    $title = get_string('toolsmenu2field', 'theme_bcu');
-    $description = get_string('toolsmenu2field', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/toolsmenu2value';
-    $title = get_string('toolsmenu2value', 'theme_bcu');
-    $description = get_string('toolsmenu2value', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/toolsmenu2';
-    $title = get_string('toolsmenu2', 'theme_bcu');
-    $description = get_string('toolsmenu2desc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-
+    $temp->add($setting);	
 
     $name = 'theme_bcu/enableticker';
     $title = get_string('enableticker', 'theme_bcu');
@@ -923,8 +885,53 @@ if (is_siteadmin()) {
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-   
-	$ADMIN->add('theme_bcu', $temp);
+	
+	$temp->add(new admin_setting_heading('theme_bcu_toolsmenu', get_string('toolsmenu', 'theme_bcu'),
+    format_text(get_string('toolsmenustitledesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+	
+	$temp->add(new admin_setting_heading('theme_bcu_toolsmenu1', get_string('toolsmenuheading1', 'theme_bcu'),
+    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_bcu/toolsmenu';
+    $title = get_string('toolsmenu1', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/toolsmenu1field';
+    $title = get_string('newmenufield', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/toolsmenu1value';
+    $title = get_string('newmenuvalue', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+	
+	$temp->add(new admin_setting_heading('theme_bcu_toolsmenu2', get_string('toolsmenuheading2', 'theme_bcu'),
+    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+	$name = 'theme_bcu/toolsmenu2';
+    $title = get_string('toolsmenu2', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+    $name = 'theme_bcu/toolsmenu2field';
+    $title = get_string('newmenufield', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/toolsmenu2value';
+    $title = get_string('newmenuvalue', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);    
+	
+   	$ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_blocks', get_string('blocksettings', 'theme_bcu'));
 

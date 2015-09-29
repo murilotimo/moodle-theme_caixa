@@ -319,7 +319,7 @@ $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provid
 
 $string['menusettings'] = 'Header Menus';
 $string['menusettingsheading'] = 'Customise menus in the upper header the header of this theme.';
-$string['menudesc'] = 'Display link menus to useres. Can be targeted based on custom profile fields (optional)';
+// $string['menudesc'] = 'Display link menus to users. Can be targeted based on custom profile fields (optional)';
 
 $string['thiscourse'] = 'This course';
 
@@ -416,8 +416,8 @@ $string['targetsamewindow'] = 'Same window';
 $string['tilesshowallcontacts'] = 'Show all course contacts';
 $string['tilesshowallcontactsdesc'] = 'Show all course contacts or just one';
 
-$string['toolsmenu'] = 'Tools menu';
-$string['toolsmenudesc'] = 'You can configure links to be shown under a tools menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
+$string['toolsmenu'] = 'Tools Menus (in main nagivation)';
+$string['toolsmenustitledesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar). Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
 <pre>
 Moodle community|https://moodle.org
 -Moodle free support|https://moodle.org/support
@@ -425,6 +425,12 @@ Moodle community|https://moodle.org
 --Moodle Docs|http://docs.moodle.org|Moodle Docs
 --German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
 Moodle.com|http://moodle.com/
+</pre>
+You also have the ability to add fa icons into the list (see README file):
+<pre>
+<span class="fa fa-video-camera"></span> Record Screen|http://google.co.uk|Record Screen
+<span class="fa fa-picture-o"></span> ThinkStock|http://google.co.uk|ThinkStock
+<span class="fa fa-clock-o"></span> Exam Clock|http://google.co.uk|Exam Clock
 </pre>';
 
 $string['toolsmenu2'] = '2nd Tools menu';
@@ -517,7 +523,7 @@ $string['menusessionttldesc'] = 'Number of minutes after which menu access rules
 // generic strings for all five menus
 $string['newmenudesc'] = 'Configure links to be shown under a top header menu.';
 $string['newmenufield'] = 'Custom Profile Field Name (optional)';
-$string['newmenuvalue'] = 'Custom Profile Field Value (optional)';
+$string['newmenuvalue'] = '= Custom Profile Field Value (optional)';
 $string['menusdesc'] = '';
 
 $string['newmenu2trigger'] = 'Top Menu Dropdown 2 trigger word';
@@ -543,11 +549,20 @@ $string['menusheading5'] = 'Top Menu 5';
 $string['newmenu5'] = 'Top Menu Dropdown 5';
 $string['newmenu5label'] = 'Top Menu 5';
 
-$string['toolsmenu1field'] = 'Limit tools menu to profile field. Select field';
-$string['toolsmenu1value'] = 'Limit tools menu to profile field. Select value';
+$string['toolsmenuheading1'] = 'Tools Menu 1';
+$string['toolsmenu1'] = 'Tools Menu Dropdown 1';
+$string['toolsmenulabel1'] = 'Tools Menu';
 
-$string['toolsmenu2field'] = 'Limit 2nd tools menu to profile field. Select field';
-$string['toolsmenu2value'] = 'Limit 2nd tools menu to profile field. Select value';
+$string['toolsmenuheading2'] = 'Tools Menu 2';
+$string['toolsmenu2'] = 'Tools Menu Dropdown 2';
+$string['toolsmenulabel2'] = 'Tools Menu';
+
+// delete following strings when sure no longer required as we now use common string applied to all custom field limits
+// $string['toolsmenu1field'] = 'Limit tools menu to profile field. Select field';
+// $string['toolsmenu1value'] = 'Limit tools menu to profile field. Select value';
+
+// $string['toolsmenu2field'] = 'Limit 2nd tools menu to profile field. Select field';
+// $string['toolsmenu2value'] = 'Limit 2nd tools menu to profile field. Select value';
 
 $string['menubkcolor'] = 'Main Menu bacgkground color';
 $string['menubkcolordesc'] = 'Set a Main Menu bacgkground color';

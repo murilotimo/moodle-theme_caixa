@@ -404,77 +404,52 @@ class theme_bcu_core_renderer extends core_renderer {
         return $this->render_custom_menu($menu);
     }
 
-    public function tools_menu() {
-        global $PAGE, $USER, $CFG;
-        if (!empty($PAGE->theme->settings->toolsmenu1field)) {
-		require_once($CFG->dirroot.'/user/profile/lib.php');
-		require_once($CFG->dirroot.'/user/lib.php');
-		profile_load_data($USER);
-		$ftype = $PAGE->theme->settings->toolsmenu1field;
-		$ftype ="profile_field_$ftype";
-		$setvalue = $PAGE->theme->settings->toolsmenu1value;
-		$usersvalue = $USER->$ftype;
-		} else {
-		$setvalue = 1;
-		$usersvalue = 1;
+    public function tools_menu() {    	
+    	global $PAGE;
+		$class = "<i class='fa fa-wrench'>";
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->toolsmenu1field) && !empty($PAGE->theme->settings->toolsmenu1value)){			
+			$ftype = $PAGE->theme->settings->toolsmenu1field;
+			$setvalue = $PAGE->theme->settings->toolsmenu1value;
+			if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu1')){
+				$access = false;
+			}
 		}
-
-		$custommenuitems = '';
-
-		if ($setvalue == $usersvalue) {
-
-        if (!empty($PAGE->theme->settings->toolsmenu)) {
-            $custommenuitems .= "<i class='fa fa-wrench'> </i>".get_string('toolsmenulabel', 'theme_bcu')."|#|".
-                    get_string('toolsmenulabel', 'theme_bcu')."\n";
-            $arr = explode("\n", $PAGE->theme->settings->toolsmenu);
-            // We want to force everything inputted under this menu.
-            foreach ($arr as $key => $value) {
-                $arr[$key] = '-' . $arr[$key];
-            }
-            $custommenuitems .= implode("\n", $arr);
+			
+        if (!empty($PAGE->theme->settings->toolsmenu) && $access == true) {        	
+        	$menu = ($PAGE->theme->settings->toolsmenu);
+			$label = get_string('toolsmenulabel', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label, $class);            
         }
-
-         } //end if from setvalue
-
+         
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
     }
 
-
-	public function tools_menu2() {
-        global $PAGE, $USER, $CFG;
-        if (!empty($PAGE->theme->settings->toolsmenu2field)) {
-		require_once($CFG->dirroot.'/user/profile/lib.php');
-		require_once($CFG->dirroot.'/user/lib.php');
-		profile_load_data($USER);
-		$ftype = $PAGE->theme->settings->toolsmenu2field;
-		$ftype ="profile_field_$ftype";
-		$setvalue = $PAGE->theme->settings->toolsmenu2value;
-		$usersvalue = $USER->$ftype;
-		} else {
-		$setvalue = 1;
-		$usersvalue = 1;
+    public function tools_menu2() {    	
+    	global $PAGE;
+		$class = "<i class='fa fa-wrench'>";
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->toolsmenu2field) && !empty($PAGE->theme->settings->toolsmenu2value)){			
+			$ftype = $PAGE->theme->settings->toolsmenu2field;
+			$setvalue = $PAGE->theme->settings->toolsmenu2value;
+			if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu2')){
+				$access = false;
+			}
 		}
-
-		$custommenuitems = '';
-
-		if ($setvalue == $usersvalue) {
-        if (!empty($PAGE->theme->settings->toolsmenu2)) {
-            $custommenuitems .= "<i class='fa fa-wrench'> </i>".get_string('toolsmenulabel2', 'theme_bcu')."|#|".
-                    get_string('toolsmenulabel2', 'theme_bcu')."\n";
-            $arr = explode("\n", $PAGE->theme->settings->toolsmenu2);
-            // We want to force everything inputted under this menu.
-            foreach ($arr as $key => $value) {
-                $arr[$key] = '-' . $arr[$key];
-            }
-            $custommenuitems .= implode("\n", $arr);
+			
+        if (!empty($PAGE->theme->settings->toolsmenu2) && $access == true) {        	
+        	$menu = ($PAGE->theme->settings->toolsmenu2);
+			$label = get_string('toolsmenulabel2', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label, $class);            
         }
-
-        } //end if from setvalue
-
+         
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
-
     }
 
     public function tools_menu3() {
@@ -631,8 +606,8 @@ class theme_bcu_core_renderer extends core_renderer {
 		return false;				
 	}
 	
-	public function parse_custom_menu($menu, $label){
-		$custommenuitems = "</i>".$label."|#|".$label."\n";
+	public function parse_custom_menu($menu, $label, $class = ''){
+		$custommenuitems = "$class </i>".$label."|#|".$label."\n";
         $arr = explode("\n", $menu);
         
         // We want to force everything inputted under this menu.
