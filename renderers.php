@@ -640,7 +640,7 @@ class theme_bcu_core_renderer extends core_renderer {
             } else {
                 $currentlang = $strlang;
             }
-            $this->language = $langmenu->add('<i class="fa fa-flag"></i><span class="langdesc">'.$currentlang.'</span>',
+            $this->language = $langmenu->add('<i class="fa fa-globe fa-lg"></i><span class="langdesc">'.$currentlang.'</span>',
                     new moodle_url('#'), $strlang, 100);
             foreach ($langs as $langtype => $langname) {
                 $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
