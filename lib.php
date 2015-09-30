@@ -104,7 +104,8 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:fonttitlename]]' => 'Roboto',
         '[[setting:fonttitleweight]]' => '700',
         '[[setting:fonttitlesize]]' => '24px',
-        '[[setting:fonttitlecolor]]' => '#FFFFFF'
+        '[[setting:fonttitlecolor]]' => '#FFFFFF',
+        '[[setting:fullscreenwidth]]' => '95%'
     );
 
     // Get all the defined settings for the theme and replace defaults.

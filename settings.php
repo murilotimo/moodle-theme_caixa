@@ -1354,7 +1354,23 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
+	
+	// fullscreen width
+	$name = 'theme_bcu/fullscreenwidth';
+    $title = get_string('fullscreenwidth', 'theme_bcu');
+    $description = get_string('fullscreenwidthdesc', 'theme_bcu');
+    $radchoices = array(
+    	'95%' => '95%',
+        '96%' => '96%',
+        '97%' => '97%',
+        '98%' => '98%',
+        '99%' => '99%',
+        '100%' => '100%',
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '95%', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
     $ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_footer', get_string('footersettings', 'theme_bcu'));

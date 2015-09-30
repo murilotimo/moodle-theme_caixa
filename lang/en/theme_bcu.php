@@ -410,6 +410,9 @@ $string['standardview'] = 'Standard view';
 $string['viewselect'] = 'Default screen view.';
 $string['viewselectdesc'] = 'Set the default screen view. Check toggle to select full screen, uncheck for standard.';
 
+$string['fullscreenwidth'] = 'Full screen width.';
+$string['fullscreenwidthdesc'] = 'Set the max width of the theme when it is in full screen mode / zoom.';
+
 $string['tilesshowcontacts'] = 'Show course contacts';
 $string['tilesshowcontactsdesc'] = 'Show / hide course contacts';
 
