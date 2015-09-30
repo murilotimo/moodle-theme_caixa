@@ -63,7 +63,7 @@ a:focus {
 }
 
 .headingblock, h2.main, #site-news-forum h2, #frontpage-course-list h2, #frontpage-category-names h2, #frontpage-category-combo h2, .course_category_tree .category > .info > .categoryname {
-  color: #333;
+  color: [[setting:fontcolor]];
   font-size: 24px;
   border-bottom: 0px solid #eee;
   font-weight: bold;
@@ -719,7 +719,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     }
     .nav .dropdown-menu li a:hover, .navbar .nav > li > a:hover {
         background: rgba(255,255,255,.1);
-        color: #333 !important;
+        color: [[setting:fontcolor]]; !important;
     }
 
     div.navbar {

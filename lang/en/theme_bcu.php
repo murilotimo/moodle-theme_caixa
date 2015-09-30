@@ -674,3 +674,6 @@ $string['fonttitleweightdesc'] = 'Set the font weight used in the title site. En
 
 $string['fonttitlesize'] = 'Site title font size';
 $string['fonttitlesizedesc'] = 'Site title font size used in site. Enter a decimal value in pixels: 24px';
+
+$string['moodledocs'] = 'Moodle Docs link';
+$string['moodledocsdesc'] = 'Display the Moodle docs link in the footer.';
