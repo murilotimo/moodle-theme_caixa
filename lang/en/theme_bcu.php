@@ -566,6 +566,9 @@ $string['menusdesc'] = '';
 $string['newmenu2trigger'] = 'Top Menu Dropdown 2 trigger word';
 $string['newmenu2triggerdesc'] = 'Set a Top Menu Dropdown 2 trigger word. Font awesome icons can be used';
 
+$string['enablemenus'] = 'Enable Menus';
+$string['enablemenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
+
 $string['menusheading1'] = 'Top Menu 1';
 $string['newmenu1'] = 'Top Menu Dropdown 1';
 $string['newmenu1label'] = 'Top Menu 1';
@@ -585,6 +588,9 @@ $string['newmenu4label'] = 'Top Menu 4';
 $string['menusheading5'] = 'Top Menu 5';
 $string['newmenu5'] = 'Top Menu Dropdown 5';
 $string['newmenu5label'] = 'Top Menu 5';
+
+$string['enabletoolsmenus'] = 'Enable Tools Menus';
+$string['enabletoolsmenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
 
 $string['toolsmenuheading1'] = 'Tools Menu 1';
 $string['toolsmenu1'] = 'Tools Menu Dropdown 1';
