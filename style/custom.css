@@ -808,6 +808,19 @@ a.carousel-control {
 	line-height: 38px;
 }
 
+
+/* lang menu */
+.langmenu a {
+	color: [[setting:headertextcolor]];
+	
+}	
+	
+.langmenu a {
+	    color: [[setting:menufonthovercolor]];
+}	
+	
+	
+	
 /*alert message */
 .customalert {
 	background: #fbf3bb;
@@ -1056,7 +1069,7 @@ div.no-overflow, .yui3-datatable {
 }
 
 @media (max-width: 1345px) {
-    .zoomdesc, .langdesc {
+    .zoomdesc {
             display: none;
     }
 }

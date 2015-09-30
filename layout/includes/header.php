@@ -307,12 +307,6 @@ echo $OUTPUT->doctype();
                             <?php echo $OUTPUT->tools_menu2(); ?>
 
                             <ul class="nav pull-right">
-                                <?php
-                                if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu']) {
-                                    echo $OUTPUT->lang_menu();
-                                }
-                                ?>
-
                                 <?php if (isloggedin()) { ?>
 	                                <?php if ($PAGE->theme->settings->enableshowhideblocks) { ?>
 	                                	
