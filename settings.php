@@ -1414,11 +1414,20 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_bcu_footer', get_string('footersettingsheading', 'theme_bcu'),
         format_text(get_string('footerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
+    // Show moodle docs link.
+    $name = 'theme_bcu/moodledocs';
+    $title = get_string('moodledocs', 'theme_bcu');
+    $description = get_string('moodledocsdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     $name = 'theme_bcu/showfooterblocks';
     $title = get_string('showfooterblocks', 'theme_bcu');
     $description = get_string('showfooterblocksdesc', 'theme_bcu');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
-    $temp->add($setting);
+    $temp->add($setting);	
 
     $name = 'theme_bcu/footerblocksplacement';
     $title = get_string('footerblocksplacement', 'theme_bcu');
@@ -1493,15 +1502,6 @@ if (is_siteadmin()) {
     $title = get_string('footnote', 'theme_bcu');
     $description = get_string('footnotedesc', 'theme_bcu');
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-
-    // Show moodle docs link.
-    $name = 'theme_bcu/moodledocs';
-    $title = get_string('moodledocs', 'theme_bcu');
-    $description = get_string('moodledocsdesc', 'theme_bcu');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);

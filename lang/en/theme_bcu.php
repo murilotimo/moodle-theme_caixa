@@ -101,7 +101,7 @@ $string['p5url'] = 'Slide 5 URL';
 $string['p5urldesc'] = 'Add a URL to slide 5.';
 
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Change the logo of this theme by entering the URL to a new one (i.e., http://www.somesite/animage.png). A transparent .png will work best.';
+$string['logodesc'] = 'Upload a logo for use on your site,';
 
 $string['linkcolor'] = 'Link Colour';
 $string['linkcolordesc'] = 'Set the colour of links in the theme, use html hex code.';
@@ -459,21 +459,7 @@ $string['tilesshowallcontacts'] = 'Show all course contacts';
 $string['tilesshowallcontactsdesc'] = 'Show all course contacts or just one';
 
 $string['toolsmenu'] = 'Tools Menus (in main nagivation)';
-$string['toolsmenustitledesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar). Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
-<pre>
-Moodle community|https://moodle.org
--Moodle free support|https://moodle.org/support
--Moodle development|https://moodle.org/development
---Moodle Docs|http://docs.moodle.org|Moodle Docs
---German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
-Moodle.com|http://moodle.com/
-</pre>
-You also have the ability to add fa icons into the list (see README file):
-<pre>
-<span class="fa fa-video-camera"></span> Record Screen|http://google.co.uk|Record Screen
-<span class="fa fa-picture-o"></span> ThinkStock|http://google.co.uk|ThinkStock
-<span class="fa fa-clock-o"></span> Exam Clock|http://google.co.uk|Exam Clock
-</pre>';
+$string['toolsmenustitledesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar). The format is the same as it is for menus above including the ability to add fa icons.';
 
 $string['toolsmenu2'] = '2nd Tools menu';
 $string['toolsmenu2desc'] = 'You can configure links to be shown under a tools menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
@@ -556,6 +542,12 @@ Moodle community|https://moodle.org
 --Moodle Docs|http://docs.moodle.org|Moodle Docs
 --German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
 Moodle.com|http://moodle.com/
+</pre>
+You also have the ability to add fa icons into your dropdown navigation lists using the following format:
+<pre>
+&lt;span class=&quot;fa fa-video-camera&quot;&gt;&lt;/span&gt; Record Screen|http://google.co.uk|Record Screen
+&lt;span class=&quot;fa fa-picture-o&quot;&gt;&lt;/span&gt; ThinkStock|http://google.co.uk|ThinkStock
+&lt;span class=&quot;fa fa-clock-o&quot;&gt;&lt;/span&gt; Exam Clock|http://google.co.uk|Exam Clock
 </pre>
 To reduce the overhead of loading custom profile data on every page load access rules are stored in the users session. For testing new menus you may want to switch off "store access rules in session". You can also set the time to live for sessoins in minutes.';
 
