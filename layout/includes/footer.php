@@ -71,7 +71,9 @@
                     <?php echo $html->footnote; ?>
                 </div>
                 <div class="span6 helplink">
-                    <?php echo $OUTPUT->page_doc_link(); ?>
+                <?php if ($PAGE->theme->settings->moodledocs) { 
+                          echo $OUTPUT->page_doc_link(); 
+                      } ?>
                 </div>
                 <div class="span3">
                     <?php echo $OUTPUT->standard_footer_html(); ?>

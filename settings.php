@@ -743,7 +743,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-	//social settings
+	// Social settings.
 	$name = 'theme_bcu/socialsearchicon';
     $title = get_string('socialsearchicon', 'theme_bcu');
     $description = get_string('socialsearchicondesc', 'theme_bcu');
@@ -1490,6 +1490,15 @@ if (is_siteadmin()) {
     $title = get_string('footnote', 'theme_bcu');
     $description = get_string('footnotedesc', 'theme_bcu');
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    // Show moodle docs link.
+    $name = 'theme_bcu/moodledocs';
+    $title = get_string('moodledocs', 'theme_bcu');
+    $description = get_string('moodledocsdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);
