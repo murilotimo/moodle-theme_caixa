@@ -101,7 +101,7 @@ $string['p5url'] = 'Slide 5 URL';
 $string['p5urldesc'] = 'Add a URL to slide 5.';
 
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Change the logo of this theme by entering the URL to a new one (i.e., http://www.somesite/animage.png). A transparent .png will work best.';
+$string['logodesc'] = 'Upload a logo for use on your site,';
 
 $string['linkcolor'] = 'Link Color';
 $string['linkcolordesc'] = 'Set the color of links in the theme, use html hex code.';
