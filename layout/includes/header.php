@@ -185,6 +185,13 @@ echo $OUTPUT->doctype();
                 <?php } ?>
             </div>
 
+            <div style="float: right; position: relative; display: inline; margin-right: 40px;">
+                <?php
+                 if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu']) {
+                    echo $OUTPUT->lang_menu();
+                 } ?>
+            </div>
+
 <div class="dropdown pull-right newmenus newmenu1">
       <?php echo $OUTPUT->tools_menu3(); ?>
 </div>
