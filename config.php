@@ -92,7 +92,7 @@ $THEME->layouts = array(
         'file' => 'columns2.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
-        'options' => array('langmenu' => true, 'nonavbar' => false),
+        'options' => array('langmenu' => true, 'nonavbar' => true),
     ),
     // My public page.
     'mypublic' => array(
