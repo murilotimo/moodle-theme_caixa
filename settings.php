@@ -529,8 +529,94 @@ if (is_siteadmin()) {
     //$setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '70', '1');
     //$temp->add($setting);
 
-    $temp->add(new admin_setting_heading('theme_bcu_usernav', get_string('usernavheading', 'theme_bcu'),
+    $temp->add(new admin_setting_heading('theme_bcu_navbar', get_string('navbarsettingsheading', 'theme_bcu'),
+        format_text(get_string('navbardesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_bcu/enablehome';
+    $title = get_string('home');
+    $description = get_string('enablehomedesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+	  $name = 'theme_bcu/enablehomeredirect';
+    $title = get_string('home');
+    $description = get_string('enablehomeredirectdesc', 'theme_bcu');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/enablemyhome';
+    $title = get_string('myhome');
+    $description = get_string('enablemyhomedesc', 'theme_bcu', get_string('myhome'));
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/enableevents';
+    $title = get_string('events', 'theme_bcu');
+    $description = get_string('enableeventsdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/enablemysites';
+    $title = get_string('mysites', 'theme_bcu');
+    $description = get_string('enablemysitesdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/enablethiscourse';
+    $title = get_string('thiscourse', 'theme_bcu');
+    $description = get_string('enablethiscoursedesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Enable help link.
+    $name = 'theme_bcu/enablehelp';
+    $title = get_string('enablehelp', 'theme_bcu');
+    $description = get_string('enablehelpdesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/helptarget';
+    $title = get_string('helptarget', 'theme_bcu');
+    $description = get_string('helptargetdesc', 'theme_bcu');
+    $choices = array(
+        '_blank' => get_string('targetnewwindow', 'theme_bcu'),
+        '_self' => get_string('targetsamewindow', 'theme_bcu'),
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
+    $temp->add($setting);	
+
+    $ADMIN->add('theme_bcu', $temp);
+	
+	$temp = new admin_settingpage('theme_bcu_usernav', get_string('usernav', 'theme_bcu'));
+	
+	$temp->add(new admin_setting_heading('theme_bcu_usernav', get_string('usernavheading', 'theme_bcu'),
     format_text(get_string('usernavdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+	
+	$name = 'theme_bcu/headerprofilefontsize';
+    $title = get_string('headerprofilefontsize', 'theme_bcu');
+    $description = get_string('headerprofilefontsizedesc', 'theme_bcu');
+    $radchoices = array(    	
+        '12px' => "12px",
+        '13px' => "13px",
+        '14px' => "14px",        
+        '15px' => "15px",
+        '16px' => "16px",
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '12px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     // Enable My.
     $name = 'theme_bcu/enablemy';
@@ -625,76 +711,8 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
-    $temp->add(new admin_setting_heading('theme_bcu_navbar', get_string('navbarsettingsheading', 'theme_bcu'),
-        format_text(get_string('navbardesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-
-    $name = 'theme_bcu/enablehome';
-    $title = get_string('home');
-    $description = get_string('enablehomedesc', 'theme_bcu');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-	  $name = 'theme_bcu/enablehomeredirect';
-    $title = get_string('home');
-    $description = get_string('enablehomeredirectdesc', 'theme_bcu');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/enablemyhome';
-    $title = get_string('myhome');
-    $description = get_string('enablemyhomedesc', 'theme_bcu', get_string('myhome'));
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/enableevents';
-    $title = get_string('events', 'theme_bcu');
-    $description = get_string('enableeventsdesc', 'theme_bcu');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/enablemysites';
-    $title = get_string('mysites', 'theme_bcu');
-    $description = get_string('enablemysitesdesc', 'theme_bcu');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/enablethiscourse';
-    $title = get_string('thiscourse', 'theme_bcu');
-    $description = get_string('enablethiscoursedesc', 'theme_bcu');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Enable help link.
-    $name = 'theme_bcu/enablehelp';
-    $title = get_string('enablehelp', 'theme_bcu');
-    $description = get_string('enablehelpdesc', 'theme_bcu');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/helptarget';
-    $title = get_string('helptarget', 'theme_bcu');
-    $description = get_string('helptargetdesc', 'theme_bcu');
-    $choices = array(
-        '_blank' => get_string('targetnewwindow', 'theme_bcu'),
-        '_self' => get_string('targetsamewindow', 'theme_bcu'),
-    );
-    $setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
-    $temp->add($setting);	
-
-    $ADMIN->add('theme_bcu', $temp);
+	
+	$ADMIN->add('theme_bcu', $temp);
 	
 	$temp = new admin_settingpage('theme_bcu_social', get_string('socialsettings', 'theme_bcu'));
 	

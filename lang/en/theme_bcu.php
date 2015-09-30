@@ -160,6 +160,9 @@ $string['sectionheadingcolordesc'] = 'Set the color for section headings text co
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Add text to the footer.';
 
+$string['headerprofilefontsize'] = 'Header Profile Font';
+$string['headerprofilefontsizedesc'] = 'You can enlarge the font of the user profile drop down link in the header.';
+
 if ($CFG->version > 2015051100) {
     $string['enablemy'] = 'Dashboard';
     $string['enablemydesc'] = 'Display a link to the Dashboard page';
@@ -339,6 +342,9 @@ $string['buttonloginpaddingdesc'] = 'Higher number = bigger login button';
 $string['headersettings'] = 'Header';
 $string['headersettingsheading'] = 'Customise the header of this theme.';
 $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
+
+$string['usernav'] = 'Header User';
+$string['usernavheading'] = 'Customise dropdown menu for users profile.';
 
 $string['menusettings'] = 'Header Menus';
 $string['menusettingsheading'] = 'Customise menus in the upper header the header of this theme.';

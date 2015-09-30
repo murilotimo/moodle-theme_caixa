@@ -70,6 +70,7 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:footerlinkcolor]]' => '#ffffff',
         '[[setting:headerbkcolor]]' => '#001e3c',
         '[[setting:headerbkcolor2]]' => '#001e3c',
+        '[[setting:headerprofilefontsize]]' => '12px',
         '[[setting:headertextcolor]]' => '#ffffff',
         '[[setting:headertextcolor2]]' => '#ffffff',
         '[[setting:blockheadercolor]]' => '#002f67',
