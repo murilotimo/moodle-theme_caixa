@@ -192,6 +192,7 @@ echo $OUTPUT->doctype();
                  } ?>
             </div>
 
+<?php  if ($PAGE->theme->settings->enablemenus) { ?>
 <div class="dropdown pull-right newmenus newmenu1">
       <?php echo $OUTPUT->tools_menu3(); ?>
 </div>
@@ -212,7 +213,7 @@ echo $OUTPUT->doctype();
 <div class="dropdown pull-right newmenus newmenu5">
      <?php echo $OUTPUT->tools_menu7(); ?>
 </div>
-
+<?php } ?>
 
         </div>
     </div>
@@ -303,8 +304,10 @@ echo $OUTPUT->doctype();
                         <div class="nav-collapse collapse ">
                             <?php echo $OUTPUT->navigation_menu(); ?>
                             <?php echo $OUTPUT->custom_menu(); ?>
-                            <?php echo $OUTPUT->tools_menu(); ?>
-                            <?php echo $OUTPUT->tools_menu2(); ?>
+                            <?php  if ($PAGE->theme->settings->enabletoolsmenus) { ?>
+		                        <?php echo $OUTPUT->tools_menu(); ?>
+		                        <?php echo $OUTPUT->tools_menu2(); ?>
+                            <?php } ?>
 
                             <ul class="nav pull-right">
                                 <?php if (isloggedin()) { ?>

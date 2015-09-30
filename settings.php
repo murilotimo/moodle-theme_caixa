@@ -741,7 +741,7 @@ if (is_siteadmin()) {
 	$name = 'theme_bcu/socialset';
     $title = get_string('socialset', 'theme_bcu');
     $description = get_string('socialsetdesc', 'theme_bcu');
-    $default = true;
+    $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     //$setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -858,6 +858,13 @@ if (is_siteadmin()) {
 	$temp->add(new admin_setting_heading('theme_bcu_menus1', get_string('menusheading1', 'theme_bcu'),
     format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 	
+	$name = 'theme_bcu/enablemenus';
+    $title = get_string('enablemenus', 'theme_bcu');
+    $description = get_string('enablemenusdesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
 	$name = 'theme_bcu/newmenu1';
     $title = get_string('newmenu1', 'theme_bcu');
     $description = get_string('newmenudesc', 'theme_bcu');
@@ -965,6 +972,13 @@ if (is_siteadmin()) {
 	
 	$temp->add(new admin_setting_heading('theme_bcu_toolsmenu1', get_string('toolsmenuheading1', 'theme_bcu'),
     format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+	$name = 'theme_bcu/enabletoolsmenus';
+    $title = get_string('enabletoolsmenus', 'theme_bcu');
+    $description = get_string('enabletoolsmenusdesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     $name = 'theme_bcu/toolsmenu';
     $title = get_string('toolsmenu1', 'theme_bcu');
