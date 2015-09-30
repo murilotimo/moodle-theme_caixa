@@ -181,38 +181,6 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/buttoncolour';
-    $title = get_string('buttoncolour', 'theme_bcu');
-    $description = get_string('buttoncolourdesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#00aeef', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/buttonhovercolour';
-    $title = get_string('buttonhovercolour', 'theme_bcu');
-    $description = get_string('buttonhovercolourdesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/editonbk';
-    $title = get_string('editonbk', 'theme_bcu');
-    $description = get_string('editonbkdesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0c901f', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/editoffbk';
-    $title = get_string('editoffbk', 'theme_bcu');
-    $description = get_string('editoffbkdesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f01f1f', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     $name = 'theme_bcu/editfont';
     $title = get_string('editfont', 'theme_bcu');
     $description = get_string('editfontdesc', 'theme_bcu');
@@ -445,10 +413,94 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+   	$temp = new admin_settingpage('theme_bcu_buttons', get_string('buttonsettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_header', get_string('buttonsettingsheading', 'theme_bcu'),
+    format_text(get_string('buttondesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+	
+	$name = 'theme_bcu/buttonradius';
+    $title = get_string('buttonradius', 'theme_bcu');
+    $description = get_string('buttonradiusdesc', 'theme_bcu');
+    $radchoices = array(
+    	'0px' => "0px",
+        '1px' => "1px",
+        '2px' => "2px",
+        '3px' => "3px",
+        '4px' => "4px",
+        '5px' => "5px",
+        '6px' => "6px",
+        '7px' => "7px",
+        '8px' => "8px",
+        '9px' => "9px",
+        '10px' => "10px",
+        '11px' => "11px",
+        '12px' => "12px",        
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '2px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+	$name = 'theme_bcu/buttoncolour';
+    $title = get_string('buttoncolour', 'theme_bcu');
+    $description = get_string('buttoncolourdesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#00aeef', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/buttonhovercolour';
+    $title = get_string('buttonhovercolour', 'theme_bcu');
+    $description = get_string('buttonhovercolourdesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/editonbk';
+    $title = get_string('editonbk', 'theme_bcu');
+    $description = get_string('editonbkdesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0c901f', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/editoffbk';
+    $title = get_string('editoffbk', 'theme_bcu');
+    $description = get_string('editoffbkdesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f01f1f', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+	$name = 'theme_bcu/buttonloginpadding';
+    $title = get_string('buttonloginpadding', 'theme_bcu');
+    $description = get_string('buttonloginpaddingdesc', 'theme_bcu');
+    $radchoices = array(
+        '2px' => "2px",
+        '3px' => "3px",
+        '4px' => "4px",
+        '5px' => "5px",
+        '6px' => "6px",
+        '7px' => "7px",
+        '8px' => "8px",        
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '4px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);	
+
+	$name = 'theme_bcu/buttonlogincolor';
+    $title = get_string('buttonlogincolor', 'theme_bcu');
+    $description = get_string('buttonlogincolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0C901F', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+			
+	$ADMIN->add('theme_bcu', $temp);	
 
     $temp = new admin_settingpage('theme_bcu_header', get_string('headersettings', 'theme_bcu'));
     $temp->add(new admin_setting_heading('theme_bcu_header', get_string('headersettingsheading', 'theme_bcu'),
-        format_text(get_string('headerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    format_text(get_string('headerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
     $name = 'theme_bcu/sitetitle';
     $title = get_string('sitetitle', 'theme_bcu');
@@ -641,21 +693,6 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
     $temp->add($setting);	
-
-    $name = 'theme_bcu/enableticker';
-    $title = get_string('enableticker', 'theme_bcu');
-    $description = get_string('enabletickerdesc', 'theme_bcu');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    //$setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-   	$name = 'theme_bcu/tickertext';
-	$title = get_string('tickertext','theme_bcu');
-	$description = get_string('tickertextdesc', 'theme_bcu');
-	$default = '';
-	$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-	$temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);
 	
@@ -1088,7 +1125,28 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);
+	
+    $temp = new admin_settingpage('theme_bcu_frontpage_ticker', get_string('frontpagetickersettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_ticker', get_string('tickersettingsheading', 'theme_bcu'),
+        format_text(get_string('tickerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
+    $name = 'theme_bcu/enableticker';
+    $title = get_string('enableticker', 'theme_bcu');
+    $description = get_string('enabletickerdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    //$setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+   	$name = 'theme_bcu/tickertext';
+	$title = get_string('tickertext','theme_bcu');
+	$description = get_string('tickertextdesc', 'theme_bcu');
+	$default = '';
+	$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+	$temp->add($setting);
+
+	$ADMIN->add('theme_bcu', $temp);
+	
     $temp = new admin_settingpage('theme_bcu_frontpage_slider', get_string('frontpageslidersettings', 'theme_bcu'));
 
     $temp->add(new admin_setting_heading('theme_bcu_slideshow', get_string('slideshowsettingsheading', 'theme_bcu'),
@@ -1296,7 +1354,39 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
+	
+	$name = 'theme_bcu/enablezoom';
+    $title = get_string('enablezoom', 'theme_bcu');
+    $description = get_string('enablezoomdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/enableshowhideblocks';
+    $title = get_string('enableshowhideblocks', 'theme_bcu');
+    $description = get_string('enableshowhideblocksdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+		
+	// fullscreen width
+	$name = 'theme_bcu/fullscreenwidth';
+    $title = get_string('fullscreenwidth', 'theme_bcu');
+    $description = get_string('fullscreenwidthdesc', 'theme_bcu');
+    $radchoices = array(
+    	'95%' => '95%',
+        '96%' => '96%',
+        '97%' => '97%',
+        '98%' => '98%',
+        '99%' => '99%',
+        '100%' => '100%',
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '95%', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
     $ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_footer', get_string('footersettings', 'theme_bcu'));

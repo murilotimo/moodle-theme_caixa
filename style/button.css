@@ -4,9 +4,9 @@ input[type="submit"], input[type="button"], #searchform_button, a.submit, #notic
     text-shadow: none;
     box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
     border: 0px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+    -webkit-border-radius: [[setting:buttonradius]];
+    -moz-border-radius: [[setting:buttonradius]];
+    border-radius: [[setting:buttonradius]];
     background-size: 100% 200%;
     color: #fff;
     cursor: pointer;
@@ -34,9 +34,9 @@ input[type="submit"], input[type="button"], #searchform_button, a.submit, #notic
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
     border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
     border-bottom-color: #b3b3b3;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+    -webkit-border-radius: [[setting:buttonradius]];
+    -moz-border-radius: [[setting:buttonradius]];
+    border-radius: [[setting:buttonradius]];
     -webkit-box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
     -moz-box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
     box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
@@ -90,15 +90,15 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 }
 
 .btn-login {
-    background: [[setting:buttoncolour]];
+    background: [[setting:buttonlogincolour]];
     border: 0 none;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+    -webkit-border-radius: [[setting:buttonradius]];
+    -moz-border-radius: [[setting:buttonradius]];
+    border-radius: [[setting:buttonradius]];
     box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
     color: [[setting:buttontextcolor]] !important;
     cursor: pointer;
-    padding: 4px 15px;
+    padding: [[setting:buttonloginpadding]] 15px;
     text-shadow: none;
     transition: background 0.2s ease-out 0s;
     margin-top: 3px;

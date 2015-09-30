@@ -54,6 +54,9 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:rendereroverlayfontcolour]]' => '#FFFFFF',
         '[[setting:buttoncolour]]' => '#00AEEF',
         '[[setting:buttonhovercolour]]' => '#0084C2',
+        '[[setting:buttonloginpadding]]' => '4px',
+        '[[setting:buttonradius]]' => '2px',
+        '[[setting:buttonlogincolour]]' => '#0C901F',
         '[[setting:dividingline]]' => '#3C469C',
         '[[setting:dividingline2]]' => '#3C469C',
         '[[setting:navbarborder]]' => '#B7B3EF',
@@ -101,7 +104,8 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:fonttitlename]]' => 'Roboto',
         '[[setting:fonttitleweight]]' => '700',
         '[[setting:fonttitlesize]]' => '24px',
-        '[[setting:fonttitlecolor]]' => '#FFFFFF'
+        '[[setting:fonttitlecolor]]' => '#FFFFFF',
+        '[[setting:fullscreenwidth]]' => '95%'
     );
 
     // Get all the defined settings for the theme and replace defaults.

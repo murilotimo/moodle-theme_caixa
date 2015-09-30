@@ -292,6 +292,19 @@ $string['customcssjssettings'] = 'Custom CSS & JS';
 $string['genericsettingsheading'] = 'Apply your own modifications';
 $string['genericsettingsdescription'] = 'Here you can find various settings to add your own CSS and JavaScript code to the theme.';
 
+$string['tickersettings'] = 'News Ticker';
+$string['tickersettingsheading'] = 'Setup News Ticker on Front Page';
+$string['tickerdesc'] = 'Here you can set a news ticker to run across the front page of your Moodle site.
+	it is intended as a less intrusive alternative to the slider taking up very little space. 
+	To setup your ticker simply entere a bulleted list and include any hyperlinks you need to in that text.	
+	Note: you must not put ul tags around our list, only li. Moodles text editor tends to add ul tags. 
+	If your ticker does not load properly switch to HTML view and ensure you have only li tags:
+	<pre>
+	&lt;li&gt;News item one.....&lt;/li&gt;
+	&lt;li&gt;News item two.....&lt;/li&gt;	
+	</pre>';
+	
+
 $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowsettingsheading'] = 'Customise the carousel on the front page';
 $string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
@@ -313,6 +326,16 @@ $string['coloursettings'] = 'Colours & Fonts';
 $string['coloursettingsheading'] = 'Modify the main colours and fonts used throughout the theme.';
 $string['colourdesc'] = 'You can select the colours and fonts that you would like to use throughout the theme.';
 
+$string['buttonsettings'] = 'Buttons';
+$string['buttonsettingsheading'] = 'Customise the buttons of this theme.';
+$string['buttondesc'] = 'Alter the appearance of buttons used in this theme.';
+
+$string['buttonradius'] = 'Set Button Radius';
+$string['buttonradiusdesc'] = 'Higher radius = curved buttons, lower radius = square buttons';
+
+$string['buttonloginpadding'] = 'Set Padding for Login Button';
+$string['buttonloginpaddingdesc'] = 'Higher number = bigger login button';
+
 $string['headersettings'] = 'Header';
 $string['headersettingsheading'] = 'Customise the header of this theme.';
 $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
@@ -325,6 +348,7 @@ $string['thiscourse'] = 'This course';
 
 $string['blocksettings'] = 'Block Settings';
 $string['frontpageblocksettings'] = 'Frontpage Blocks';
+$string['frontpagetickersettings'] = 'Frontpage Ticker';
 $string['frontpageslidersettings'] = 'Frontpage Slider';
 $string['frontpagecoursesettings'] = 'Frontpage Courses';
 $string['frontpagesettingsheading'] = 'Frontpage rendering';
@@ -344,6 +368,9 @@ $string['rendereroverlayfontcolourdesc'] = 'The colour of the font, when hoverin
 
 $string['buttoncolour'] = 'Button colour';
 $string['buttoncolourdesc'] = 'The colour of the main buttons used throughout the site.';
+
+$string['buttonlogincolor'] = 'Login button colour';
+$string['buttonlogincolordesc'] = 'The colour of the login button.';
 
 $string['buttonhovercolour'] = 'Button colour (When hovering)';
 $string['buttonhovercolourdesc'] = 'The colour that the button changes to when hovering over the button.';
@@ -380,8 +407,17 @@ $string['showblocks'] = 'Show blocks';
 $string['fullscreen'] = 'Full screen';
 $string['standardview'] = 'Standard view';
 
-$string['viewselect'] = 'Default screen view.';
-$string['viewselectdesc'] = 'Set the default screen view. Check toggle to select full screen, uncheck for standard.';
+$string['viewselect'] = 'Default to full screen view.';
+$string['viewselectdesc'] = 'Make the default view of the site fullscreen (when zoom option is in use).';
+
+$string['enablezoom'] = 'Enable Zoom';
+$string['enablezoomdesc'] = 'Allow users to toggle between fullscreen and fixed width).';
+
+$string['enableshowhideblocks'] = 'Enable Show Hide Blocks';
+$string['enableshowhideblocksdesc'] = 'Allows users to show / hide all blocks.';
+
+$string['fullscreenwidth'] = 'Full screen width.';
+$string['fullscreenwidthdesc'] = 'Set the max width of the theme when it is in full screen mode / zoom.';
 
 $string['tilesshowcontacts'] = 'Show course contacts';
 $string['tilesshowcontactsdesc'] = 'Show / hide course contacts';

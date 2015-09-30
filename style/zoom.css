@@ -1,6 +1,6 @@
 /*set fullscreen */
 .fullin .container {
-	width: 95%;
+	width: [[setting:fullscreenwidth]];
 }
 
 .sbll {
