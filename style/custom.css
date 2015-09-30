@@ -815,7 +815,7 @@ a.carousel-control {
 	
 }	
 	
-.langmenu a {
+.langmenu a:hover {
 	    color: [[setting:menufonthovercolor]];
 }	
 	
