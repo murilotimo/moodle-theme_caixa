@@ -407,8 +407,14 @@ $string['showblocks'] = 'Show blocks';
 $string['fullscreen'] = 'Full screen';
 $string['standardview'] = 'Standard view';
 
-$string['viewselect'] = 'Default screen view.';
-$string['viewselectdesc'] = 'Set the default screen view. Check toggle to select full screen, uncheck for standard.';
+$string['viewselect'] = 'Default to full screen view.';
+$string['viewselectdesc'] = 'Make the default view of the site fullscreen (when zoom option is in use).';
+
+$string['enablezoom'] = 'Enable Zoom';
+$string['enablezoomdesc'] = 'Allow users to toggle between fullscreen and fixed width).';
+
+$string['enableshowhideblocks'] = 'Enable Show Hide Blocks';
+$string['enableshowhideblocksdesc'] = 'Allows users to show / hide all blocks.';
 
 $string['fullscreenwidth'] = 'Full screen width.';
 $string['fullscreenwidthdesc'] = 'Set the max width of the theme when it is in full screen mode / zoom.';

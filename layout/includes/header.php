@@ -307,32 +307,36 @@ echo $OUTPUT->doctype();
                                 ?>
 
                                 <?php if (isloggedin()) { ?>
-                                <li class="hbl">
-                                    <a href="#" class="moodlezoom" title="<?php echo get_string('hideblocks', 'theme_bcu') ?>">
-                                        <i class="fa fa-indent fa-lg"></i>
-                                        <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_bcu') ?></span>
-                                    </a>
-                                </li>
-                                <li class="sbl">
-                                    <a href="#" class="moodlezoom" title="<?php echo get_string('showblocks', 'theme_bcu') ?>">
-                                        <i class="fa fa-outdent fa-lg"></i>
-                                        <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_bcu') ?></span>
-                                    </a>
-                                </li>
-                                <li class="hbll">
-                                    <a href="#" class="moodlewidth" title="<?php echo get_string('fullscreen', 'theme_bcu') ?>">
-                                        <i class="fa fa-expand fa-lg"></i>
-                                        <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_bcu') ?></span>
-                                    </a>
-                                </li>
-                                <li class="sbll">
-                                    <a href="#" class="moodlewidth" title="<?php echo get_string('standardview', 'theme_bcu') ?>">
-                                        <i class="fa fa-compress fa-lg"></i>
-                                        <span class="zoomdesc"><?php echo get_string('standardview', 'theme_bcu') ?></span>
-                                    </a>
-                                </li>
-      			                <?php 
-                                } ?>
+	                                <?php if ($PAGE->theme->settings->enableshowhideblocks) { ?>
+	                                	
+	                                <li class="hbl">
+	                                    <a href="#" class="moodlezoom" title="<?php echo get_string('hideblocks', 'theme_bcu') ?>">
+	                                        <i class="fa fa-indent fa-lg"></i>
+	                                        <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_bcu') ?></span>
+	                                    </a>
+	                                </li>
+	                                <li class="sbl">
+	                                    <a href="#" class="moodlezoom" title="<?php echo get_string('showblocks', 'theme_bcu') ?>">
+	                                        <i class="fa fa-outdent fa-lg"></i>
+	                                        <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_bcu') ?></span>
+	                                    </a>
+	                                </li>
+	                                <?php } ?>
+	                                <?php if ($PAGE->theme->settings->enablezoom) { ?>
+	                                <li class="hbll">
+	                                    <a href="#" class="moodlewidth" title="<?php echo get_string('fullscreen', 'theme_bcu') ?>">
+	                                        <i class="fa fa-expand fa-lg"></i>
+	                                        <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_bcu') ?></span>
+	                                    </a>
+	                                </li>
+	                                <li class="sbll">
+	                                    <a href="#" class="moodlewidth" title="<?php echo get_string('standardview', 'theme_bcu') ?>">
+	                                        <i class="fa fa-compress fa-lg"></i>
+	                                        <span class="zoomdesc"><?php echo get_string('standardview', 'theme_bcu') ?></span>
+	                                    </a>
+	                                </li>
+	      			                <?php } ?>
+      			                <?php } ?>
                             </ul>
                             <div id="edittingbutton" class="pull-right breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
                         </div>

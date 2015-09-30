@@ -1355,6 +1355,22 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
+	$name = 'theme_bcu/enablezoom';
+    $title = get_string('enablezoom', 'theme_bcu');
+    $description = get_string('enablezoomdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/enableshowhideblocks';
+    $title = get_string('enableshowhideblocks', 'theme_bcu');
+    $description = get_string('enableshowhideblocksdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+		
 	// fullscreen width
 	$name = 'theme_bcu/fullscreenwidth';
     $title = get_string('fullscreenwidth', 'theme_bcu');
