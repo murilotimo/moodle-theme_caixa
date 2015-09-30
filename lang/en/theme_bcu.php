@@ -244,9 +244,17 @@ $string['market11desc'] = 'Add html for marketing block 11 (see the readme file 
 $string['market12'] = 'Marketing Block 12';
 $string['market12desc'] = 'Add html for marketing block 12 (see the readme file for additional info and hints).';
 
-
 $string['infobox'] = 'Frontpage Info Box';
 $string['infoboxdesc'] = 'Frontpage info block HTML (see the readme file for additional info and hints).';
+
+$string['infoboxfullscreen'] = 'Make infobox full screen';
+$string['infoboxfullscreendesc'] = 'Turning this option on will make the infobox full screen.';
+
+$string['slidermargintop'] = 'Margin above slider';
+$string['slidermargintopdesc'] = 'Set the size of the margin above the slider.';
+
+$string['slidermarginbottom'] = 'Margin below slider';
+$string['slidermarginbottomdesc'] = 'Set the size of the margin below the slider.';
 
 $string['infoboxcolor'] = 'Frontpage Info Box background colour';
 $string['infoboxcolordesc'] = 'Set the frontpage Info Box background colour';

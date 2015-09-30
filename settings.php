@@ -1071,6 +1071,14 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/infoboxfullscreen';
+    $title = get_string('infoboxfullscreen', 'theme_bcu');
+    $description = get_string('infoboxfullscreendesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     $name = 'theme_bcu/infobox2';
     $title = get_string('infobox2', 'theme_bcu');
@@ -1207,6 +1215,34 @@ if (is_siteadmin()) {
     $title = get_string('sliderfullscreen', 'theme_bcu');
     $description = get_string('sliderfullscreendesc', 'theme_bcu');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/slidermargintop';
+    $title = get_string('slidermargintop', 'theme_bcu');
+    $description = get_string('slidermargintopdesc', 'theme_bcu');
+    $radchoices = array(
+    	'0px' => "0px",
+        '5px' => "5px",
+        '10px' => "10px",
+        '15px' => "15px",
+        '20px' => "20px",        
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '20px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+	$name = 'theme_bcu/slidermarginbottom';
+    $title = get_string('slidermarginbottom', 'theme_bcu');
+    $description = get_string('slidermarginbottomdesc', 'theme_bcu');
+    $radchoices = array(
+    	'0px' => "0px",
+        '5px' => "5px",
+        '10px' => "10px",
+        '15px' => "15px",
+        '20px' => "20px",        
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '20px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
 	$name = 'theme_bcu/slideroption2';

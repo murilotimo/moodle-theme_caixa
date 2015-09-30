@@ -80,6 +80,8 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:tilesbordercolor]]' => '#e8eaeb',
         '[[setting:infoboxcolor]]' => '#333333',
         '[[setting:infoboxcolor2]]' => '#f3f3f3',
+        '[[setting:slidermargintop]]' => '20px',		
+        '[[setting:slidermarginbottom]]' => '20px',
         '[[setting:currentcolor]]' => '#d9edf7',
         '[[setting:sectionheadingcolor]]' => '#5f588a',
         '[[setting:infoboxtextcolor]]' => '#ffffff',

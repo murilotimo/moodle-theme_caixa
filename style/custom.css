@@ -244,8 +244,8 @@ a.usermendrop {
 }
 
 .slidewrap {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: [[setting:slidermargintop]];
+	margin-bottom: [[setting:slidermarginbottom]];
 }
 
 #marketblocks {
