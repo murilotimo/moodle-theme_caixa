@@ -321,7 +321,7 @@ $string['footersettings'] = 'Footer';
 $string['footersettingsheading'] = 'Set the content that should appear in the footer.';
 $string['footerdesc'] = 'Control the content that appears in the 4 footer sections of the page.';
 
-$string['navbarsettings'] = 'Navbar';
+$string['navbarsettings'] = 'Header Navbar';
 $string['navbarsettingsheading'] = 'Customise the navigation bar';
 $string['navbardesc'] = 'Allows you to control all of the elements that appear on the navigation bar.';
 
@@ -521,7 +521,10 @@ $string['activebreadcrumbdesc'] = 'Set the background colour of the active bread
 $string['usernavheading'] = 'Customise the user navigation dropdown';
 $string['usernavdesc'] = 'Allows you to control all of the elements that appear in the user navigation dropdown.';
 $string['enablehomedesc'] = 'Display a link to the frontpage.';
-$string['enablehomeredirectdesc'] = 'Enable redirect=0 on home (use on sites where where My Home is default homepage).';
+
+$string['enablehomeredirect'] = 'Enable Home redirect=0';
+$string['enablehomeredirectdesc'] = 'Enable redirect=0 on home. This is for use on sites where where My Home is default homepage. It prevents users clicking the Home link from being redirected back to My Home / Dashboard';
+
 $string['enablemyhomedesc'] = 'Display a link to {$a}';
 $string['enableeventsdesc'] = 'Display a link to the calendar';
 $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';

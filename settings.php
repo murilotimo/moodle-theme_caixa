@@ -529,10 +529,13 @@ if (is_siteadmin()) {
     //$setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '70', '1');
     //$temp->add($setting);
 
-    $temp->add(new admin_setting_heading('theme_bcu_navbar', get_string('navbarsettingsheading', 'theme_bcu'),
+    $ADMIN->add('theme_bcu', $temp);
+	
+	$temp = new admin_settingpage('theme_bcu_navbar', get_string('navbarsettings', 'theme_bcu'));	
+	$temp->add(new admin_setting_heading('theme_bcu_navbar', get_string('navbarsettingsheading', 'theme_bcu'),
         format_text(get_string('navbardesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-
-    $name = 'theme_bcu/enablehome';
+	
+	$name = 'theme_bcu/enablehome';
     $title = get_string('home');
     $description = get_string('enablehomedesc', 'theme_bcu');
     $default = true;
@@ -540,8 +543,8 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-	  $name = 'theme_bcu/enablehomeredirect';
-    $title = get_string('home');
+	$name = 'theme_bcu/enablehomeredirect';
+    $title = get_string('enablehomeredirect', 'theme_bcu');
     $description = get_string('enablehomeredirectdesc', 'theme_bcu');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
@@ -596,8 +599,8 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
     $temp->add($setting);	
-
-    $ADMIN->add('theme_bcu', $temp);
+		
+	$ADMIN->add('theme_bcu', $temp);
 	
 	$temp = new admin_settingpage('theme_bcu_usernav', get_string('usernav', 'theme_bcu'));
 	
