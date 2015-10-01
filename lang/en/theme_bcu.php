@@ -500,7 +500,6 @@ $string['navbarhoverdesc'] = 'When hovering on a navigation item, the colour of 
 $string['showfooterblocks'] = 'Show footer blocks';
 $string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';
 
-
 $string['footerblocksplacement'] = 'Footer blocks placement ';
 $string['footerblocksplacementdesc'] = 'Control the way that the footer blocks are displayed. Sitewide is default.';
 $string['footerblocksplacement1'] = 'Sitewide';
@@ -535,8 +534,6 @@ $string['enabletickercdesc'] = 'Check to enable the ticker on internal pages.';
 $string['tickertext'] = 'News Ticker Text';
 $string['tickertextdesc'] = 'Add news ticker text in list format. See the read me for more info.';
 $string['ticker'] = 'Announcements';
-
-
 
 $string['newmenu1trigger'] = 'Top Menu Dropdown 1 trigger word';
 $string['newmenu1triggerdesc'] = 'Set a Top Menu Dropdown 1 trigger word. Font awesome icons can be used';
@@ -731,6 +728,7 @@ $string['slideroption2colordesc'] = 'Set a background colour for the text in sli
 $string['slideroption2a'] = 'Slider style option 2 arrow background colour';
 $string['slideroption2adesc'] = 'Set the slider style option 2 arrow background colour';
 
+// Fonts.
 $string['fontname'] = 'Main font';
 $string['fontnamedesc'] = 'Google Font used in site. Empty to use the default font.';
 
@@ -761,5 +759,22 @@ $string['fonttitleweightdesc'] = 'Set the font weight used in the title site. En
 $string['fonttitlesize'] = 'Site title font size';
 $string['fonttitlesizedesc'] = 'Site title font size used in site. Enter a decimal value in pixels: 24px';
 
+// Moodle Docs link.
 $string['moodledocs'] = 'Moodle Docs link';
 $string['moodledocsdesc'] = 'Display the Moodle Docs link in the footer.';
+
+// Settings page headings.
+$string['settingsmaincolors'] = 'Main Colours';
+$string['settingsheadercolors'] = 'Header Colours';
+$string['settingsmenucolors'] = 'Menu Colours';
+$string['settingsinfoboxcolors'] = 'Info Box Colours';
+$string['settingssecondinfoboxcolors'] = 'Second Info Box Colours';
+$string['settingsmarketingcolors'] = 'Marketing Block Colours';
+$string['settingsoverlaycolors'] = 'Overlay Tiles Colours';
+$string['settingsnavbarcolors'] = 'Marketing Block Colours';
+$string['settingsfootercolors'] = 'Footer Colours';
+$string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
+$string['settingsfonts'] = 'Marketing Block Colours';
+
+
+

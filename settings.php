@@ -35,6 +35,12 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_bcu_colour', get_string('coloursettingsheading', 'theme_bcu'),
         format_text(get_string('colourdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
+    // Main colours heading.
+    $name = 'theme_bcu/settingsmaincolors';
+    $heading = get_string('settingsmaincolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
+
     $name = 'theme_bcu/linkcolor';
     $title = get_string('linkcolor', 'theme_bcu');
     $description = get_string('linkcolordesc', 'theme_bcu');
@@ -58,6 +64,12 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Header colours heading.
+    $name = 'theme_bcu/settingsheadercolors';
+    $heading = get_string('settingsheadercolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     $name = 'theme_bcu/headerbkcolor';
