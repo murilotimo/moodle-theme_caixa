@@ -634,6 +634,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 .form-item .form-label, .mform .fitem div.fitemtitle, .userprofile dl.list dt, .form-horizontal .control-label {
     width: auto;
 }
+
 .form-item .form-label, .mform .fitem div.fitemtitle {
     float: none;
 }
@@ -644,6 +645,18 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 
 .form-item .form-label, .mform .fitem div.fitemtitle {
 	text-align: left;
+}
+
+.form-label label {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+/*    border-bottom: 1px solid #c0c0c0;*/
+}
+
+.settingsform .form-item {
+    border-bottom: 2px solid #c0c0c0;
+    padding-bottom: 10px;
 }
 
 #region-main #coursesearch .btn {
