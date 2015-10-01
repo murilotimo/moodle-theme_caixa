@@ -192,47 +192,20 @@ echo $OUTPUT->doctype();
                  } ?>
             </div>
 
-<?php  if ($PAGE->theme->settings->enablemenus) { ?>
-<div class="dropdown pull-right newmenus newmenu1">
-      <?php echo $OUTPUT->tools_menu3(); ?>
-</div>
+<?php  if ($PAGE->theme->settings->enablemenus) { 
 
-<div class="dropdown pull-right newmenus newmenu2">
-     <?php echo $OUTPUT->tools_menu4(); ?>
-</div>
+	 echo $OUTPUT->tools_menu3();
+	 echo $OUTPUT->tools_menu4();
+	 echo $OUTPUT->tools_menu5();
+	 echo $OUTPUT->tools_menu6();
+	 echo $OUTPUT->tools_menu7();
+	 echo $OUTPUT->tools_menu8();
+	 echo $OUTPUT->tools_menu9();
+	 echo $OUTPUT->tools_menu10();
+	 echo $OUTPUT->tools_menu11();
+	 echo $OUTPUT->tools_menu12();
 
-<div class="dropdown pull-right newmenus newmenu3">
-     <?php echo $OUTPUT->tools_menu5(); ?>
-</div>
-
-<div class="dropdown pull-right newmenus newmenu4">
-     <?php echo $OUTPUT->tools_menu6(); ?>
-</div>
-
-<div class="dropdown pull-right newmenus newmenu5">
-     <?php echo $OUTPUT->tools_menu7(); ?>
-</div>
-
-<div class="dropdown pull-right newmenus newmenu6">
-     <?php echo $OUTPUT->tools_menu8(); ?>
-</div>
-
-<div class="dropdown pull-right newmenus newmenu7">
-     <?php echo $OUTPUT->tools_menu9(); ?>
-</div>
-
-<div class="dropdown pull-right newmenus newmenu8">
-     <?php echo $OUTPUT->tools_menu10(); ?>
-</div>
-
-<div class="dropdown pull-right newmenus newmenu9">
-     <?php echo $OUTPUT->tools_menu11(); ?>
-</div>
-
-<div class="dropdown pull-right newmenus newmenu10">
-     <?php echo $OUTPUT->tools_menu12(); ?>
-</div>
-<?php } ?>
+} ?>
 
         </div>
     </div>

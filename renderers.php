@@ -456,6 +456,8 @@ class theme_bcu_core_renderer extends core_renderer {
     	global $PAGE;
     	$custommenuitems = '';
 		$access = true;	
+		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
+		$post = '</div>';
 		
 		if (!empty($PAGE->theme->settings->newmenu1field) && !empty($PAGE->theme->settings->newmenu1value)){
 			$ftype = $PAGE->theme->settings->newmenu1field;
@@ -472,13 +474,15 @@ class theme_bcu_core_renderer extends core_renderer {
         }
          
         $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
+        return $this->render_custom_menu($custommenu, $pre, $post);
     }
 
     public function tools_menu4() {
     	global $PAGE;
     	$custommenuitems = '';
 		$access = true;	
+		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
+		$post = '</div>';
 		
 		if (!empty($PAGE->theme->settings->newmenu2field) && !empty($PAGE->theme->settings->newmenu2value)){
 			$ftype = $PAGE->theme->settings->newmenu2field;
@@ -495,13 +499,15 @@ class theme_bcu_core_renderer extends core_renderer {
         }
          
         $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
+        return $this->render_custom_menu($custommenu, $pre, $post);
     }
 
     public function tools_menu5() {
     	global $PAGE;
     	$custommenuitems = '';
 		$access = true;	
+		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
+		$post = '</div>';
 		
 		if (!empty($PAGE->theme->settings->newmenu3field) && !empty($PAGE->theme->settings->newmenu3value)){
 			$ftype = $PAGE->theme->settings->newmenu3field;
@@ -518,7 +524,7 @@ class theme_bcu_core_renderer extends core_renderer {
         }
          
         $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
+        return $this->render_custom_menu($custommenu, $pre, $post);
     }
 
 
@@ -526,6 +532,8 @@ class theme_bcu_core_renderer extends core_renderer {
     	global $PAGE;
     	$custommenuitems = '';
 		$access = true;	
+		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
+		$post = '</div>';
 		
 		if (!empty($PAGE->theme->settings->newmenu4field) && !empty($PAGE->theme->settings->newmenu4value)){
 			$ftype = $PAGE->theme->settings->newmenu4field;
@@ -542,13 +550,15 @@ class theme_bcu_core_renderer extends core_renderer {
         }
          
         $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
+        return $this->render_custom_menu($custommenu, $pre, $post);
     }
 
     public function tools_menu7() {
     	global $PAGE;
     	$custommenuitems = '';
-		$access = true;	
+		$access = true;
+		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
+		$post = '</div>';	
 		
 		if (!empty($PAGE->theme->settings->newmenu5field) && !empty($PAGE->theme->settings->newmenu5value)){
 			$ftype = $PAGE->theme->settings->newmenu5field;
@@ -558,20 +568,21 @@ class theme_bcu_core_renderer extends core_renderer {
 			}
 		}
 			
-        if (!empty($PAGE->theme->settings->newmenu5) && $access == true) {
+        if (!empty($PAGE->theme->settings->newmenu5) && $access == true) {        	
         	$menu = ($PAGE->theme->settings->newmenu5);
 			$label = get_string('newmenu5label', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label);            
-        }
-         
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
+			$custommenuitems = $this->parse_custom_menu($menu, $label);		     
+        }        
+		$custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu, $pre, $post);        
     }
 	
     public function tools_menu8(){
     	global $PAGE;
     	$custommenuitems = '';
 		$access = true;	
+		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
+		$post = '</div>';
 		
 		if (!empty($PAGE->theme->settings->newmenu6field) && !empty($PAGE->theme->settings->newmenu6value)){
 			$ftype = $PAGE->theme->settings->newmenu6field;
@@ -588,13 +599,15 @@ class theme_bcu_core_renderer extends core_renderer {
         }
          
         $custommenu = new custom_menu($custommenuitems);		
-        return $this->render_custom_menu($custommenu);
+        return $this->render_custom_menu($custommenu, $pre, $post);
     }
 
     public function tools_menu9() {
     	global $PAGE;
     	$custommenuitems = '';
 		$access = true;	
+		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
+		$post = '</div>';
 		
 		if (!empty($PAGE->theme->settings->newmenu7field) && !empty($PAGE->theme->settings->newmenu7value)){
 			$ftype = $PAGE->theme->settings->newmenu7field;
@@ -611,13 +624,15 @@ class theme_bcu_core_renderer extends core_renderer {
         }
          
         $custommenu = new custom_menu($custommenuitems);		
-        return $this->render_custom_menu($custommenu);
+        return $this->render_custom_menu($custommenu, $pre, $post);
     }
 
     public function tools_menu10(){
     	global $PAGE;
     	$custommenuitems = '';
 		$access = true;	
+		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
+		$post = '</div>';
 		
 		if (!empty($PAGE->theme->settings->newmenu8field) && !empty($PAGE->theme->settings->newmenu8value)){
 			$ftype = $PAGE->theme->settings->newmenu8field;
@@ -634,13 +649,15 @@ class theme_bcu_core_renderer extends core_renderer {
         }
          
         $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
+        return $this->render_custom_menu($custommenu, $pre, $post);
     }
 
     public function tools_menu11(){
     	global $PAGE;
     	$custommenuitems = '';
 		$access = true;	
+		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
+		$post = '</div>';
 		
 		if (!empty($PAGE->theme->settings->newmenu9field) && !empty($PAGE->theme->settings->newmenu9value)){
 			$ftype = $PAGE->theme->settings->newmenu9field;
@@ -657,13 +674,15 @@ class theme_bcu_core_renderer extends core_renderer {
         }
          
         $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
+        return $this->render_custom_menu($custommenu, $pre, $post);
     }
 
     public function tools_menu12(){
     	global $PAGE;
     	$custommenuitems = '';
 		$access = true;	
+		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
+		$post = '</div>';
 		
 		if (!empty($PAGE->theme->settings->newmenu10field) && !empty($PAGE->theme->settings->newmenu10value)){
 			$ftype = $PAGE->theme->settings->newmenu10field;
@@ -680,7 +699,7 @@ class theme_bcu_core_renderer extends core_renderer {
         }
          
         $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
+        return $this->render_custom_menu($custommenu, $pre, $post);
     }
 	
 
@@ -735,6 +754,12 @@ class theme_bcu_core_renderer extends core_renderer {
 		return $custommenuitems;
 	}
 	
+	public function wrap_custom_menu_top($custommenu, $classno){
+		$retval = '<div class="dropdown pull-right newmenus newmenu$classno">';
+		$retval .= $custommenu;
+		$retval .= '</div>';
+	}
+	
     public function lang_menu() {
         global $CFG;
         $langmenu = new custom_menu();
@@ -780,7 +805,7 @@ class theme_bcu_core_renderer extends core_renderer {
      *
      * This renderer is needed to enable the Bootstrap style navigation.
      */
-    protected function render_custom_menu(custom_menu $menu) {
+    protected function render_custom_menu(custom_menu $menu, $wrappre = '', $wrappost = '') {
         global $CFG;
 
         // TODO: eliminate this duplicated logic, it belongs in core, not
@@ -801,8 +826,8 @@ class theme_bcu_core_renderer extends core_renderer {
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
-
-        return $content.'</ul>';
+		$content = $wrappre . $content . $wrappost . '</ul>';
+        return $content;
     }
 
     /*
