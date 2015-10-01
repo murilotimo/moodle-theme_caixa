@@ -775,8 +775,8 @@ $string['settingssecondinfoboxcolors'] = 'Second Info Box Colours';
 $string['settingsmarketingcolors'] = 'Marketing Block Colours';
 $string['settingsoverlaycolors'] = 'Overlay Tiles Colours';
 $string['settingsnavbarcolors'] = 'Marketing Block Colours';
-$string['settingsfootercolors'] = 'Footer Colours';
 $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
+$string['settingsfootercolors'] = 'Footer Colours';
 $string['settingsfonts'] = 'Marketing Block Colours';
 
 

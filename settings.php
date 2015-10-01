@@ -32,8 +32,10 @@ if (is_siteadmin()) {
     $ADMIN->add('themes', new admin_category('theme_bcu', 'BCU'));
 
     $temp = new admin_settingpage('theme_bcu_colour', get_string('coloursettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_colour', get_string('coloursettingsheading', 'theme_bcu'),
-        format_text(get_string('colourdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+//    $temp->add(new admin_setting_heading('theme_bcu_colour', get_string('coloursettingsheading', 'theme_bcu'), format_text(get_string('colourdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+$temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_string('colourdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
 
     // Main colours heading.
     $name = 'theme_bcu/settingsmaincolors';
@@ -65,6 +67,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+
 
     // Header colours heading.
     $name = 'theme_bcu/settingsheadercolors';
@@ -104,7 +107,6 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-
     $name = 'theme_bcu/loadingcolour';
     $title = get_string('loadingcolour', 'theme_bcu');
     $description = get_string('loadingcolourdesc', 'theme_bcu');
@@ -121,7 +123,13 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/menubkcolor';
+    // Header colours heading.
+    $name = 'theme_bcu/settingsmenucolors';
+    $heading = get_string('settingsmenucolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/menubkcolor';
     $title = get_string('menubkcolor', 'theme_bcu');
     $description = get_string('menubkcolordesc', 'theme_bcu');
     $previewconfig = null;
@@ -153,6 +161,13 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+
+    // Info Box colours heading.
+    $name = 'theme_bcu/settingsinfoboxcolors';
+    $heading = get_string('settingsinfoboxcolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
+
     $name = 'theme_bcu/infoboxcolor';
     $title = get_string('infoboxcolor', 'theme_bcu');
     $description = get_string('infoboxcolordesc', 'theme_bcu');
@@ -167,6 +182,13 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+
+    // Info Box 2 colours heading.
+    $name = 'theme_bcu/settingssecondinfoboxcolors';
+    $heading = get_string('settingssecondinfoboxcolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     $name = 'theme_bcu/infoboxcolor2';
@@ -185,6 +207,13 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+
+    // Market blocks colours heading.
+    $name = 'theme_bcu/settingsmarketingcolors';
+    $heading = get_string('settingsmarketingcolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
+
     $name = 'theme_bcu/marketblockbordercolor';
     $title = get_string('marketblockbordercolor', 'theme_bcu');
     $description = get_string('marketblockbordercolordesc', 'theme_bcu');
@@ -199,6 +228,12 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Overlay tiles colours heading.
+    $name = 'theme_bcu/settingsoverlaycolors';
+    $heading = get_string('settingsoverlaycolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     $name = 'theme_bcu/rendereroverlaycolour';
@@ -257,6 +292,12 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Navbar colours heading.
+    $name = 'theme_bcu/settingsnavbarcolors';
+    $heading = get_string('settingsnavbarcolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
+
     $name = 'theme_bcu/navbarborder';
     $title = get_string('navbarborder', 'theme_bcu');
     $description = get_string('navbarborderdesc', 'theme_bcu');
@@ -271,6 +312,12 @@ if (is_siteadmin()) {
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#3C469C', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Breadcrumb colours heading.
+    $name = 'theme_bcu/settingsbreadcrumbcolors';
+    $heading = get_string('settingsbreadcrumbcolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     $name = 'theme_bcu/breadcrumb';
@@ -306,6 +353,12 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 
+    // Footer colours heading.
+    $name = 'theme_bcu/settingsfootercolors';
+    $heading = get_string('settingsfootercolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
+
     $name = 'theme_bcu/footerbkcolor';
     $title = get_string('footerbkcolor', 'theme_bcu');
     $description = get_string('footerbkcolordesc', 'theme_bcu');
@@ -313,7 +366,6 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
 
     $name = 'theme_bcu/footertextcolor';
     $title = get_string('footertextcolor', 'theme_bcu');
@@ -331,12 +383,19 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/footerlinkcolor';
+    $name = 'theme_bcu/footerlinkcolor';
     $title = get_string('footerlinkcolor', 'theme_bcu');
     $description = get_string('footerlinkcolordesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+
+    // Footer colours heading.
+    $name = 'theme_bcu/settingsfonts';
+    $heading = get_string('settingsfonts', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Main Font Name.

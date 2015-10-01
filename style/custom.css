@@ -665,7 +665,8 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 }
 
 #adminsettings h3 {
-	border-bottom: 1px solid [[setting:blocklinecolor]];
+/*	border-bottom: 1px solid [[setting:blocklinecolor]];*/
+    background-color: #e8eaeb;
     font-family: [[setting:fontheadername]], sans-serif !important;
     font-weight: [[setting:fontheaderweight]] !important;
     color: [[setting:fontheadercolor]];
@@ -673,8 +674,8 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     display: block;
     line-height: 40px;
     margin-bottom: 20px;
-    margin-top: 20px;
-    padding: 0;
+    margin-top: 40px;
+    padding: 0 0 0 10px;
     width: 100%;
 }
 
