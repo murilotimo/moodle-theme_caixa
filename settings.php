@@ -862,6 +862,41 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting = new admin_setting_configselect($name, $title, $description, 22, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	$name = 'theme_bcu/socialpaddingtop';
+    $title = get_string('socialpaddingtop', 'theme_bcu');
+    $description = get_string('socialpaddingtop', 'theme_bcu');
+    $choices = array(
+    	'0%' => "0%",
+        '0.1%' => "0.1%",
+        '0.2%' => "0.2%",
+        '0.3%' => "0.3%",
+        '0.4%' => "0.4%",
+        '0.5%' => "0.5%",
+        '0.6%' => "0.6%",
+        '0.7%' => "0.7%",        
+        '0.8%' => "0.8%",
+        '0.9%' => "0.9%",
+        '1%' => "1%",
+        '1.1%' => "1.1%",
+        '1.2%' => "1.2%",
+        '1.3%' => "1.3%",
+        '1.4%' => "1.4%",
+        '1.5%' => "1.5%",
+        '1.6%' => "1.6%",
+        '1.7%' => "1.7%",
+        '1.8%' => "1.8%",
+        '1.9%' => "1.9%",        
+        '2%' => "2%",
+        '2.1%' => "2.1%",
+        '2.2%' => "2.2%",
+        '2.3%' => "2.3%",
+        '2.4%' => "2.4%",
+        '2.5%' => "2.5%",
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, '1.8%', $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
 	// Social settings.
 	$name = 'theme_bcu/socialsearchicon';
