@@ -587,7 +587,7 @@ class theme_bcu_core_renderer extends core_renderer {
 			$custommenuitems = $this->parse_custom_menu($menu, $label);            
         }
          
-        $custommenu = new custom_menu($custommenuitems);
+        $custommenu = new custom_menu($custommenuitems);		
         return $this->render_custom_menu($custommenu);
     }
 
@@ -610,7 +610,7 @@ class theme_bcu_core_renderer extends core_renderer {
 			$custommenuitems = $this->parse_custom_menu($menu, $label);            
         }
          
-        $custommenu = new custom_menu($custommenuitems);
+        $custommenu = new custom_menu($custommenuitems);		
         return $this->render_custom_menu($custommenu);
     }
 
@@ -703,20 +703,20 @@ class theme_bcu_core_renderer extends core_renderer {
 			}
 		}
 		
-        if (!empty($PAGE->theme->settings->newmenu5field)) {        	
-			require_once($CFG->dirroot.'/user/profile/lib.php');
-			require_once($CFG->dirroot.'/user/lib.php');
-			profile_load_data($USER);		
-			$ftype ="profile_field_$ftype";						
-			if (isset($USER->$ftype)){						
-				$usersvalue = $USER->$ftype;									
-			}			
-			if ($usersvalue == $setvalue){						
-				$USER->theme_bcu_menus[$menu] = true;
-				$USER->theme_bcu_menus[$menuttl] = $sessttl;				
-				return true;
-			}			
-		}		
+                	
+		require_once($CFG->dirroot.'/user/profile/lib.php');
+		require_once($CFG->dirroot.'/user/lib.php');
+		profile_load_data($USER);		
+		$ftype ="profile_field_$ftype";						
+		if (isset($USER->$ftype)){						
+			$usersvalue = $USER->$ftype;									
+		}			
+		if ($usersvalue == $setvalue){						
+			$USER->theme_bcu_menus[$menu] = true;
+			$USER->theme_bcu_menus[$menuttl] = $sessttl;				
+			return true;
+		}			
+			
 		$USER->theme_bcu_menus[$menu] = false;
 		$USER->theme_bcu_menus[$menuttl] = $sessttl;
 		return false;				
