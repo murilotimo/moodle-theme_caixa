@@ -197,7 +197,6 @@ echo $OUTPUT->doctype();
       <?php echo $OUTPUT->tools_menu3(); ?>
 </div>
 
-
 <div class="dropdown pull-right newmenus newmenu2">
      <?php echo $OUTPUT->tools_menu4(); ?>
 </div>
@@ -212,6 +211,26 @@ echo $OUTPUT->doctype();
 
 <div class="dropdown pull-right newmenus newmenu5">
      <?php echo $OUTPUT->tools_menu7(); ?>
+</div>
+
+<div class="dropdown pull-right newmenus newmenu6>
+     <?php echo $OUTPUT->tools_menu8(); ?>
+</div>
+
+<div class="dropdown pull-right newmenus newmenu7
+     <?php echo $OUTPUT->tools_menu9(); ?>
+</div>
+
+<div class="dropdown pull-right newmenus newmenu8
+     <?php echo $OUTPUT->tools_menu10(); ?>
+</div>
+
+<div class="dropdown pull-right newmenus newmenu9
+     <?php echo $OUTPUT->tools_menu11(); ?>
+</div>
+
+<div class="dropdown pull-right newmenus newmenu10
+     <?php echo $OUTPUT->tools_menu12(); ?>
 </div>
 <?php } ?>
 

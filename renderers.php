@@ -567,6 +567,122 @@ class theme_bcu_core_renderer extends core_renderer {
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
     }
+	
+    public function tools_menu8(){
+    	global $PAGE;
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->newmenu6field) && !empty($PAGE->theme->settings->newmenu6value)){
+			$ftype = $PAGE->theme->settings->newmenu6field;
+			$setvalue = $PAGE->theme->settings->newmenu6value;
+			if (!$this->check_menu_access($ftype, $setvalue, 'menu6')){
+				$access = false;
+			}
+		}
+			
+        if (!empty($PAGE->theme->settings->newmenu6) && $access == true) {
+        	$menu = ($PAGE->theme->settings->newmenu6);
+			$label = get_string('newmenu6label', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label);            
+        }
+         
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);
+    }
+
+    public function tools_menu9() {
+    	global $PAGE;
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->newmenu7field) && !empty($PAGE->theme->settings->newmenu7value)){
+			$ftype = $PAGE->theme->settings->newmenu7field;
+			$setvalue = $PAGE->theme->settings->newmenu7value;
+			if (!$this->check_menu_access($ftype, $setvalue, 'menu7')){
+				$access = false;
+			}
+		}
+			
+        if (!empty($PAGE->theme->settings->newmenu7) && $access == true) {
+        	$menu = ($PAGE->theme->settings->newmenu7);
+			$label = get_string('newmenu7label', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label);            
+        }
+         
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);
+    }
+
+    public function tools_menu10(){
+    	global $PAGE;
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->newmenu8field) && !empty($PAGE->theme->settings->newmenu8value)){
+			$ftype = $PAGE->theme->settings->newmenu8field;
+			$setvalue = $PAGE->theme->settings->newmenu8value;
+			if (!$this->check_menu_access($ftype, $setvalue, 'menu8')){
+				$access = false;
+			}
+		}
+			
+        if (!empty($PAGE->theme->settings->newmenu8) && $access == true) {
+        	$menu = ($PAGE->theme->settings->newmenu8);
+			$label = get_string('newmenu8label', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label);            
+        }
+         
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);
+    }
+
+    public function tools_menu11(){
+    	global $PAGE;
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->newmenu9field) && !empty($PAGE->theme->settings->newmenu9value)){
+			$ftype = $PAGE->theme->settings->newmenu9field;
+			$setvalue = $PAGE->theme->settings->newmenu9value;
+			if (!$this->check_menu_access($ftype, $setvalue, 'menu9')){
+				$access = false;
+			}
+		}
+			
+        if (!empty($PAGE->theme->settings->newmenu9) && $access == true) {
+        	$menu = ($PAGE->theme->settings->newmenu9);
+			$label = get_string('newmenu9label', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label);            
+        }
+         
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);
+    }
+
+    public function tools_menu12(){
+    	global $PAGE;
+    	$custommenuitems = '';
+		$access = true;	
+		
+		if (!empty($PAGE->theme->settings->newmenu10field) && !empty($PAGE->theme->settings->newmenu10value)){
+			$ftype = $PAGE->theme->settings->newmenu10field;
+			$setvalue = $PAGE->theme->settings->newmenu10value;
+			if (!$this->check_menu_access($ftype, $setvalue, 'menu10')){
+				$access = false;
+			}
+		}
+			
+        if (!empty($PAGE->theme->settings->newmenu10) && $access == true) {
+        	$menu = ($PAGE->theme->settings->newmenu10);
+			$label = get_string('newmenu10label', 'theme_bcu');
+			$custommenuitems = $this->parse_custom_menu($menu, $label);            
+        }
+         
+        $custommenu = new custom_menu($custommenuitems);
+        return $this->render_custom_menu($custommenu);
+    }
+	
 
 	public function check_menu_access($ftype, $setvalue, $menu){
 		global $PAGE, $USER, $CFG;			

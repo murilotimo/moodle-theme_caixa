@@ -541,8 +541,8 @@ $string['ticker'] = 'Announcements';
 $string['newmenu1trigger'] = 'Top Menu Dropdown 1 trigger word';
 $string['newmenu1triggerdesc'] = 'Set a Top Menu Dropdown 1 trigger word. Font awesome icons can be used';
 
-$string['menusheading'] = 'Configure Top Menus (Navigation)';
-$string['menustitledesc'] = 'Menus can be restricted based on custom profile fields (optional). To add a restriction enter the name of the profile field and expected value. Menu Structure follows the common Moodle format:
+$string['menusheading'] = 'Configure Navigation for Tools Menus (navbar) and Menus (upper header)';
+$string['menustitledesc'] = 'Tools Menus (in navbar) and Top Menus (upper header) can be restricted based on custom profile fields (optional). To add a restriction enter the name of the profile field and expected value. Menu Structure follows the common Moodle format:
 <pre>
 Moodle community|https://moodle.org
 -Moodle free support|https://moodle.org/support
@@ -557,6 +557,17 @@ You also have the ability to add fa icons into your dropdown navigation lists us
 &lt;span class=&quot;fa fa-picture-o&quot;&gt;&lt;/span&gt; ThinkStock|http://google.co.uk|ThinkStock
 &lt;span class=&quot;fa fa-clock-o&quot;&gt;&lt;/span&gt; Exam Clock|http://google.co.uk|Exam Clock
 </pre>
+The reason there are so many menus is that they can be targeted to different audiences. 
+The following example uses six menus but only two are ever visible to a given user, one based on whether they are staff or student the other for their faculty:
+<pre>
+Menu 1 - Staff Links - custom field usertype = staff
+Menu 2 - Student Links - custom field usertype = student
+Menu 3 - Faculty One Links - custom field faculty = facultyone
+Menu 4 - Faculty Two Links - custom field faculty = facultytwo
+Menu 5 - Faculty Three Links - custom field faculty = facultythree
+Menu 6 - Faculty Four Links - custom field faculty = facultyfour
+</pre>
+
 To reduce the overhead of loading custom profile data on every page load access rules are stored in the users session. For testing new menus you may want to switch off "store access rules in session". You can also set the time to live for sessoins in minutes.';
 
 $string['menusession'] = 'Store access details in session';
@@ -564,6 +575,10 @@ $string['menusessiondesc'] = 'For performance reasons it is suggested this is en
 
 $string['menusessionttl'] = 'Minutes to store access rules in session';
 $string['menusessionttldesc'] = 'Number of minutes after which menu access rules are refreshed in the users session.';
+
+$string['topmenusheading'] = 'Menus (navigation in upper header)';
+$string['topmenusheadingdesc'] = 'You can configure links to be shown in drop down menus (in the upper header). The format is the same as it is for menus above including the ability to add fa icons.';
+
 
 // generic strings for all five menus
 $string['newmenudesc'] = 'Configure links to be shown under a top header menu.';
@@ -596,6 +611,26 @@ $string['newmenu4label'] = 'Top Menu 4';
 $string['menusheading5'] = 'Top Menu 5';
 $string['newmenu5'] = 'Top Menu Dropdown 5';
 $string['newmenu5label'] = 'Top Menu 5';
+
+$string['menusheading6'] = 'Top Menu 6';
+$string['newmenu6'] = 'Top Menu Dropdown 6';
+$string['newmenu6label'] = 'Top Menu 6';
+
+$string['menusheading7'] = 'Top Menu 7';
+$string['newmenu7'] = 'Top Menu Dropdown 7';
+$string['newmenu7label'] = 'Top Menu 7';
+
+$string['menusheading8'] = 'Top Menu 8';
+$string['newmenu8'] = 'Top Menu Dropdown 8';
+$string['newmenu8label'] = 'Top Menu 8';
+
+$string['menusheading9'] = 'Top Menu 9';
+$string['newmenu9'] = 'Top Menu Dropdown 9';
+$string['newmenu9label'] = 'Top Menu 9';
+
+$string['menusheading10'] = 'Top Menu 10';
+$string['newmenu10'] = 'Top Menu Dropdown 10';
+$string['newmenu10label'] = 'Top Menu 10';
 
 $string['enabletoolsmenus'] = 'Enable Tools Menus';
 $string['enabletoolsmenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
