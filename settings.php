@@ -942,6 +942,13 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
 	
 	$temp->add(new admin_setting_heading('theme_bcu_menus', get_string('menusheading', 'theme_bcu'),
     format_text(get_string('menustitledesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+	$name = 'theme_bcu/disablecustommenu';
+    $title = get_string('disablecustommenu', 'theme_bcu');
+    $description = get_string('disablecustommenudesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, false, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 	
 	$name = 'theme_bcu/menusession';
     $title = get_string('menusession', 'theme_bcu');

@@ -573,6 +573,9 @@ To reduce the overhead of loading custom profile data on every page load access 
 $string['menusession'] = 'Store access details in session';
 $string['menusessiondesc'] = 'For performance reasons it is suggested this is enabled. You may want to disable when testing';
 
+$string['disablecustommenu'] = 'Disable Moodle Custom Menu';
+$string['disablecustommenudesc'] = 'Disable Moodle Custom Menus in this theme (will still render in other themes you may have installed)';
+
 $string['menusessionttl'] = 'Minutes to store access rules in session';
 $string['menusessionttldesc'] = 'Number of minutes after which menu access rules are refreshed in the users session.';
 
