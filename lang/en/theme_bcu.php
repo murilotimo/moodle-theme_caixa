@@ -70,6 +70,9 @@ $string['p5desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an
 $string['enablehelp'] = 'Help Link';
 $string['enablehelpdesc'] = 'Add a help link in the navbar.';
 
+$string['helpprofilefield'] = 'Help custom profile field (optional)';
+$string['helpprofilevalue'] = 'Expected custom profile field value (optional)';
+
 $string['p1cap'] = 'Picture1 caption';
 $string['p1capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
 
