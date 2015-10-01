@@ -605,6 +605,36 @@ if (is_siteadmin()) {
     $description = get_string('enablehelpdesc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/helpprofilefield';
+    $title = get_string('helpprofilefield', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/helpprofilevalue';
+    $title = get_string('helpprofilevalue', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/enablehelp2';
+    $title = get_string('enablehelp', 'theme_bcu');
+    $description = get_string('enablehelpdesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/helpprofilefield2';
+    $title = get_string('helpprofilefield', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_bcu/helpprofilevalue2';
+    $title = get_string('helpprofilevalue', 'theme_bcu');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
 
     $name = 'theme_bcu/helptarget';
     $title = get_string('helptarget', 'theme_bcu');

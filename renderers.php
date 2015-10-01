@@ -394,12 +394,27 @@ class theme_bcu_core_renderer extends core_renderer {
             }
         }
 
-        if (!empty($PAGE->theme->settings->enablehelp)) {
-            $branchtitle = "Help";
-            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
-            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
-            $branchsort  = 10003;
-            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+        if (!empty($PAGE->theme->settings->enablehelp)) {        	
+			$ftype = $PAGE->theme->settings->helpprofilefield;			
+			$setvalue = $PAGE->theme->settings->helpprofilevalue;			
+			if ($this->check_menu_access($ftype, $setvalue, 'help1')){			
+	            $branchtitle = "Help";
+	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
+	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
+	            $branchsort  = 10003;
+	            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+            }
+        }
+		if (!empty($PAGE->theme->settings->enablehelp2)) {        	
+			$ftype = $PAGE->theme->settings->helpprofilefield2;			
+			$setvalue = $PAGE->theme->settings->helpprofilevalue2;			
+			if ($this->check_menu_access($ftype, $setvalue, 'help2')){			
+	            $branchtitle = "Help";
+	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
+	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2);
+	            $branchsort  = 10003;
+	            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+            }
         }
         return $this->render_custom_menu($menu);
     }
