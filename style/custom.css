@@ -652,7 +652,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     font-weight: [[setting:fontheaderweight]] !important;
     color: [[setting:fontheadercolor]];
     font-size: 18px;
-    padding: 10px;
+    padding-bottom: 10px;
 }
 
 .settingsform .form-item {
