@@ -673,6 +673,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     display: block;
     line-height: 40px;
     margin-bottom: 20px;
+    margin-top: 20px;
     padding: 0;
     width: 100%;
 }
