@@ -109,7 +109,11 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:fonttitleweight]]' => '700',
         '[[setting:fonttitlesize]]' => '24px',
         '[[setting:fonttitlecolor]]' => '#FFFFFF',
-        '[[setting:fullscreenwidth]]' => '95%'
+        '[[setting:fullscreenwidth]]' => '95%',
+        '[[setting:hidebreadcrumbmobile]]' => '',
+        '[[setting:hidepagefootermobile]]' => '',
+        '[[setting:hidesocialmobile]]' => '',
+        '[[setting:hideheadermobile]]' => ''
     );
 
     // Get all the defined settings for the theme and replace defaults.

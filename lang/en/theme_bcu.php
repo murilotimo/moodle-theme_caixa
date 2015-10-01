@@ -436,6 +436,21 @@ $string['enableshowhideblocksdesc'] = 'Allows users to show / hide all blocks.';
 $string['fullscreenwidth'] = 'Full screen width.';
 $string['fullscreenwidthdesc'] = 'Set the max width of the theme when it is in full screen mode / zoom.';
 
+$string['layoutmobilesettings'] = 'Mobile Settings';
+$string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
+
+$string['hidesocialmobile'] = 'Hide Social Icons (if in use) on mobile';
+$string['hidesocialmobiledesc'] = 'Checking this option will remove social icons on mobile devices';
+
+$string['hideheadermobile'] = 'Hide header on mobile';
+$string['hideheadermobiledesc'] = 'Checking this option will remove the header with logo / social icons / search box on mobile devices';
+
+$string['hidebreadcrumbmobile'] = 'Hide breadcrumb on mobile';
+$string['hidebreadcrumbmobiledesc'] = 'Checking this option will remove the breadcrumb on mobile devices';
+
+$string['hidepagefootermobile'] = 'Hide footer on mobile';
+$string['hidepagefootermobiledesc'] = 'Checking this option will remove the footer on mobile devices';
+
 $string['tilesshowcontacts'] = 'Show course contacts';
 $string['tilesshowcontactsdesc'] = 'Show / hide course contacts';
 
