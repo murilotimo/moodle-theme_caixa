@@ -865,6 +865,41 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting = new admin_setting_configselect($name, $title, $description, 22, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	$name = 'theme_bcu/socialpaddingtop';
+    $title = get_string('socialpaddingtop', 'theme_bcu');
+    $description = get_string('socialpaddingtop', 'theme_bcu');
+    $choices = array(
+    	'0%' => "0%",
+        '0.1%' => "0.1%",
+        '0.2%' => "0.2%",
+        '0.3%' => "0.3%",
+        '0.4%' => "0.4%",
+        '0.5%' => "0.5%",
+        '0.6%' => "0.6%",
+        '0.7%' => "0.7%",        
+        '0.8%' => "0.8%",
+        '0.9%' => "0.9%",
+        '1%' => "1%",
+        '1.1%' => "1.1%",
+        '1.2%' => "1.2%",
+        '1.3%' => "1.3%",
+        '1.4%' => "1.4%",
+        '1.5%' => "1.5%",
+        '1.6%' => "1.6%",
+        '1.7%' => "1.7%",
+        '1.8%' => "1.8%",
+        '1.9%' => "1.9%",        
+        '2%' => "2%",
+        '2.1%' => "2.1%",
+        '2.2%' => "2.2%",
+        '2.3%' => "2.3%",
+        '2.4%' => "2.4%",
+        '2.5%' => "2.5%",
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, '1.8%', $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
 	// Social settings.
 	$name = 'theme_bcu/socialsearchicon';
@@ -945,6 +980,13 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
 	
 	$temp->add(new admin_setting_heading('theme_bcu_menus', get_string('menusheading', 'theme_bcu'),
     format_text(get_string('menustitledesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+
+	$name = 'theme_bcu/disablecustommenu';
+    $title = get_string('disablecustommenu', 'theme_bcu');
+    $description = get_string('disablecustommenudesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, false, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 	
 	$name = 'theme_bcu/menusession';
     $title = get_string('menusession', 'theme_bcu');
@@ -1676,6 +1718,53 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
+	$temp->add(new admin_setting_heading('theme_bcu_mobile', get_string('layoutmobilesettings', 'theme_bcu'),
+        format_text(get_string('layoutmobilesettingsdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+		
+	$name = 'theme_bcu/hidesocialmobile';
+    $title = get_string('hidesocialmobile', 'theme_bcu');
+    $description = get_string('hidesocialmobiledesc', 'theme_bcu');
+    $radchoices = array(    	
+        ', .socialbox' => 'Hide',
+        '' => 'Show',
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, ', .socialbox', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);	
+	
+	$name = 'theme_bcu/hideheadermobile';
+    $title = get_string('hideheadermobile', 'theme_bcu');
+    $description = get_string('hideheadermobiledesc', 'theme_bcu');
+    $radchoices = array(        
+        ', #page-header' => 'Hide',
+        '' => 'Show',
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, ', #page-header', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+		
+	$name = 'theme_bcu/hidebreadcrumbmobile';
+    $title = get_string('hidebreadcrumbmobile', 'theme_bcu');
+    $description = get_string('hidebreadcrumbmobiledesc', 'theme_bcu');
+    $radchoices = array(        
+        ', .breadcrumb' => 'Hide',
+        '' => 'Show',
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, ', .breadcrumb', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/hidepagefootermobile';
+    $title = get_string('hidepagefootermobile', 'theme_bcu');
+    $description = get_string('hidepagefootermobiledesc', 'theme_bcu');
+    $radchoices = array(        
+        ', #page-footer' => 'Hide',
+        '' => 'Show',
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, ', #page-footer', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+			
     $ADMIN->add('theme_bcu', $temp);
 
     $temp = new admin_settingpage('theme_bcu_footer', get_string('footersettings', 'theme_bcu'));

@@ -436,6 +436,21 @@ $string['enableshowhideblocksdesc'] = 'Allows users to show / hide all blocks.';
 $string['fullscreenwidth'] = 'Full screen width.';
 $string['fullscreenwidthdesc'] = 'Set the max width of the theme when it is in full screen mode / zoom.';
 
+$string['layoutmobilesettings'] = 'Mobile Settings';
+$string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
+
+$string['hidesocialmobile'] = 'Hide Social Icons (if in use) on mobile';
+$string['hidesocialmobiledesc'] = 'Checking this option will remove social icons on mobile devices';
+
+$string['hideheadermobile'] = 'Hide header on mobile';
+$string['hideheadermobiledesc'] = 'Checking this option will remove the header with logo / social icons / search box on mobile devices';
+
+$string['hidebreadcrumbmobile'] = 'Hide breadcrumb on mobile';
+$string['hidebreadcrumbmobiledesc'] = 'Checking this option will remove the breadcrumb on mobile devices';
+
+$string['hidepagefootermobile'] = 'Hide footer on mobile';
+$string['hidepagefootermobiledesc'] = 'Checking this option will remove the footer on mobile devices';
+
 $string['tilesshowcontacts'] = 'Show course contacts';
 $string['tilesshowcontactsdesc'] = 'Show / hide course contacts';
 
@@ -573,6 +588,9 @@ To reduce the overhead of loading custom profile data on every page load access 
 $string['menusession'] = 'Store access details in session';
 $string['menusessiondesc'] = 'For performance reasons it is suggested this is enabled. You may want to disable when testing';
 
+$string['disablecustommenu'] = 'Disable Moodle Custom Menu';
+$string['disablecustommenudesc'] = 'Disable Moodle Custom Menus in this theme (will still render in other themes you may have installed)';
+
 $string['menusessionttl'] = 'Minutes to store access rules in session';
 $string['menusessionttldesc'] = 'Number of minutes after which menu access rules are refreshed in the users session.';
 
@@ -670,6 +688,7 @@ $string['socialset'] = 'Add social icons and hide search bar';
 $string['socialsetdesc'] = 'Check this box to hide the search bar and add social icons in the same location instead.';
 
 $string['socialsize'] = 'Set the font size of the social icons';
+$string['socialpaddingtop'] = 'Adjust padding above social icons (alters vertical position)';
 
 $string['socialsearchicon'] = 'Search Moodle';
 $string['socialsearchicondesc'] = 'Enable to put a search link alongside social icons (as using social disables sitewide search box)';
