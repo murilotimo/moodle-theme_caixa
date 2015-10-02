@@ -777,7 +777,7 @@ $string['settingsoverlaycolors'] = 'Overlay Tiles Colours';
 $string['settingsnavbarcolors'] = 'Marketing Block Colours';
 $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
 $string['settingsfootercolors'] = 'Footer Colours';
-$string['settingsfonts'] = 'Marketing Block Colours';
+$string['settingsfonts'] = 'Fonts';
 
 
 

@@ -123,7 +123,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Header colours heading.
+    // Menu colours heading.
     $name = 'theme_bcu/settingsmenucolors';
     $heading = get_string('settingsmenucolors', 'theme_bcu');
     $setting = new admin_setting_heading($name, $heading, '');
@@ -230,6 +230,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+
     // Overlay tiles colours heading.
     $name = 'theme_bcu/settingsoverlaycolors';
     $heading = get_string('settingsoverlaycolors', 'theme_bcu');
@@ -292,6 +293,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+
     // Navbar colours heading.
     $name = 'theme_bcu/settingsnavbarcolors';
     $heading = get_string('settingsnavbarcolors', 'theme_bcu');
@@ -313,6 +315,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#3C469C', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+
 
     // Breadcrumb colours heading.
     $name = 'theme_bcu/settingsbreadcrumbcolors';
@@ -392,7 +395,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $temp->add($setting);
 
 
-    // Footer colours heading.
+    // Fonts heading.
     $name = 'theme_bcu/settingsfonts';
     $heading = get_string('settingsfonts', 'theme_bcu');
     $setting = new admin_setting_heading($name, $heading, '');
