@@ -107,9 +107,9 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/loadingcolour';
-    $title = get_string('loadingcolour', 'theme_bcu');
-    $description = get_string('loadingcolourdesc', 'theme_bcu');
+    $name = 'theme_bcu/loadingcolor';
+    $title = get_string('loadingcolor', 'theme_bcu');
+    $description = get_string('loadingcolordesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#29d', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');

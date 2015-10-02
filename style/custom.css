@@ -1359,7 +1359,7 @@ line-height: normal;
 }
 
 .pace .pace-progress {
-  background: [[setting:pacecolour]];
+  background: [[setting:loadingcolor]];
   position: fixed;
   z-index: 2000;
   top: 0;
