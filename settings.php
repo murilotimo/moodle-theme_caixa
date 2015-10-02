@@ -157,15 +157,6 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Main menu bottom border colour.
-    $name = 'theme_bcu/menubordercolor';
-    $title = get_string('menubordercolor', 'theme_bcu');
-    $description = get_string('menubordercolordesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#b7b3ef', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     // Main menu text colour.
     $name = 'theme_bcu/menufontcolor';
     $title = get_string('menufontcolor', 'theme_bcu');
@@ -184,6 +175,15 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Main menu bottom border colour.
+    $name = 'theme_bcu/menubordercolor';
+    $title = get_string('menubordercolor', 'theme_bcu');
+    $description = get_string('menubordercolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#b7b3ef', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
 
     // Info Box colours heading.
     $name = 'theme_bcu/settingsinfoboxcolors';
@@ -191,6 +191,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
+    // Info Box background colour.
     $name = 'theme_bcu/infoboxcolor';
     $title = get_string('infoboxcolor', 'theme_bcu');
     $description = get_string('infoboxcolordesc', 'theme_bcu');
@@ -199,6 +200,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Info Box text colour.
     $name = 'theme_bcu/infoboxtextcolor';
     $title = get_string('infoboxtextcolor', 'theme_bcu');
     $description = get_string('infoboxtextcolordesc', 'theme_bcu');
@@ -214,6 +216,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
+    // Info Box 2 background colour.
     $name = 'theme_bcu/infoboxcolor2';
     $title = get_string('infoboxcolor2', 'theme_bcu');
     $description = get_string('infoboxcolor2desc', 'theme_bcu');
@@ -222,6 +225,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Info Box 2 text colour.
     $name = 'theme_bcu/infoboxtextcolor2';
     $title = get_string('infoboxtextcolor2', 'theme_bcu');
     $description = get_string('infoboxtextcolor2desc', 'theme_bcu');
@@ -242,6 +246,14 @@ if (is_siteadmin()) {
     $description = get_string('marketblockbordercolordesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#e8eaeb', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/marketblocksbackgroundcolor';
+    $title = get_string('marketblocksbackgroundcolor', 'theme_bcu');
+    $description = get_string('marketblocksbackgroundcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFFFFF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

@@ -251,6 +251,8 @@ a.usermendrop {
 #marketblocks {
 	margin-bottom: 20px;
 	overflow: hidden;
+	
+	background-color: [[setting:marketblocksbackgroundcolor]];
 }
 
 #marketblocks .span4 {

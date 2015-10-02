@@ -77,6 +77,7 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:blockheadercolor]]' => '#002f67',
         '[[setting:blocklinecolor]]' => '#001e3c',
         '[[setting:marketblockbordercolor]]' => '#e8eaeb',
+        '[[setting:marketblocksbackgroundcolor]]' => '#FFFFFF',
         '[[setting:blocklinkcolor]]' => '#333333',
         '[[setting:tilesbordercolor]]' => '#e8eaeb',
         '[[setting:infoboxcolor]]' => '#333333',

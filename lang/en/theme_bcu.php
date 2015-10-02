@@ -154,6 +154,9 @@ $string['blocklinkcolordesc'] = 'Set the blocks link colour';
 $string['marketblockbordercolor'] = 'Marketing block border line colour';
 $string['marketblockbordercolordesc'] = 'Set the marketing block border line colour';
 
+$string['marketblocksbackgroundcolor'] = 'Marketing blocks region background colour';
+$string['marketblocksbackgroundcolordesc'] = 'Set the Marketing blocks region background colour, use html hex code.';
+
 $string['currentcolor'] = 'Current Section Highlight Colour';
 $string['currentcolordesc'] = 'Set the colour for the Current Section Highlight colour';
 
