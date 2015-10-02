@@ -62,6 +62,7 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:navbarborder]]' => '#B7B3EF',
         '[[setting:navbarhover]]' => '#3C469C',
         '[[setting:breadcrumb]]' => '#b4bbbf',
+        '[[setting:breadcrumbtextcolor]]' => '#444444',
         '[[setting:activebreadcrumb]]' => '#e8eaeb',
         '[[setting:loadingcolor]]' => '#29d',
         '[[setting:footerbkcolor]]' => '#001e3c',

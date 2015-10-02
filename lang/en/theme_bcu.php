@@ -501,7 +501,7 @@ Moodle.com|http://moodle.com/
 $string['toolsmenulabel'] = 'Tools';
 $string['toolsmenulabel2'] = 'Tools 2';
 $string['events'] = 'Events';
-$string['mysites'] = 'My Sites';
+$string['mysites'] = 'My Courses';
 $string['people'] = 'People';
 $string['help'] = 'Help';
 
@@ -526,8 +526,13 @@ $string['footerblocksplacement3'] = 'Never';
 
 $string['breadcrumb'] = 'Breadcrumb background colour';
 $string['breadcrumbdesc'] = 'Set the background colour of the breadcrumb.';
+
+$string['breadcrumbtextcolor'] = 'Breadcrumb text colour';
+$string['breadcrumbtextcolordesc'] = 'Set the text colour of the breadcrumb.';
+
 $string['activebreadcrumb'] = 'Active breadcrumb background colour';
-$string['activebreadcrumbdesc'] = 'Set the background colour of the active breadcrumnb colour, and remaineder of the breadcrumb bar.';
+$string['activebreadcrumbdesc'] = 'Set the background colour of the active breadcrumb colour, and remainder of the breadcrumb bar.';
+
 
 $string['usernavheading'] = 'Customise the user navigation dropdown';
 $string['usernavdesc'] = 'Allows you to control all of the elements that appear in the user navigation dropdown.';
@@ -541,7 +546,7 @@ $string['enableeventsdesc'] = 'Display a link to the calendar';
 $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
 $string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
 
-$string['frnt-footer'] = 'Blocks in this area will only be visble to admin users.';
+$string['frnt-footer'] = 'Blocks in this area will only be visible to admin users.';
 
 $string['enableticker'] = 'Enable the news ticker on the homepage?';
 $string['enabletickerdesc'] = 'Check to enable the homepage ticker.';
@@ -757,10 +762,10 @@ $string['fontnamedesc'] = 'Google Font used in site. Empty to use the default fo
 $string['fontheadername'] = 'Headers font';
 $string['fontheadernamedesc'] = 'Google Font used in the text and blocks headers. Empty to use the default font.';
 
-$string['fontcolor'] = 'Font Colour';
+$string['fontcolor'] = 'Main font colour';
 $string['fontcolordesc'] = 'Set the colour of the font in the theme, use html hex code.';
 
-$string['fontheadercolor'] = 'Font Headers Colour';
+$string['fontheadercolor'] = 'Headers font colour';
 $string['fontheadercolordesc'] = 'Set the colour of the headers font in the theme, use html hex code.';
 
 $string['fontweight'] = 'Main font weight';

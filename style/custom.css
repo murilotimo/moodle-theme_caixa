@@ -517,14 +517,14 @@ span.fa-chevron-right.fa {
     height: 26px;
     padding: 9px 8px 0 25px;
     position: relative;
-    color: #000;
+    color: [[setting:breadcrumbtextcolor]];
     text-shadow: none;
     font-size: 13px;
     text-decoration: none !important;
 }
 
 .breadcrumb li.lastli a, .breadcrumb li.lastli span {
-	color: #555;
+    color: [[setting:breadcrumbtextcolor]];
 }
 
 .breadcrumb li a.firstli {

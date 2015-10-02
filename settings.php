@@ -25,17 +25,17 @@
  */
 
 $settings = null;
-require_once __DIR__.'/libs/admin_confightmleditor.php';
+require_once(__DIR__.'/libs/admin_confightmleditor.php');
 defined('MOODLE_INTERNAL') || die;
 if (is_siteadmin()) {
-
     $ADMIN->add('themes', new admin_category('theme_bcu', 'BCU'));
 
     $temp = new admin_settingpage('theme_bcu_colour', get_string('coloursettings', 'theme_bcu'));
-//    $temp->add(new admin_setting_heading('theme_bcu_colour', get_string('coloursettingsheading', 'theme_bcu'), format_text(get_string('colourdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
-$temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_string('colourdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-
+    $temp->add(new admin_setting_heading('theme_bcu_colour',
+                                         '',
+                                         format_text(get_string('colourdesc', 'theme_bcu'),
+                                         FORMAT_MARKDOWN)));
 
     // Main colours heading.
     $name = 'theme_bcu/settingsmaincolors';
@@ -43,6 +43,25 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
+    // Site main colour.
+    $name = 'theme_bcu/maincolor';
+    $title = get_string('maincolor', 'theme_bcu');
+    $description = get_string('maincolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Site background colour.
+    $name = 'theme_bcu/backcolor';
+    $title = get_string('backcolor', 'theme_bcu');
+    $description = get_string('backcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Link colour.
     $name = 'theme_bcu/linkcolor';
     $title = get_string('linkcolor', 'theme_bcu');
     $description = get_string('linkcolordesc', 'theme_bcu');
@@ -51,20 +70,13 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $temp->add($setting);
 
+    // Link hover colour.
     $name = 'theme_bcu/linkhover';
     $title = get_string('linkhover', 'theme_bcu');
     $description = get_string('linkhoverdesc', 'theme_bcu');
     $default = '#001E3C';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/maincolor';
-    $title = get_string('maincolor', 'theme_bcu');
-    $description = get_string('maincolordesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -75,38 +87,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    $name = 'theme_bcu/headerbkcolor';
-    $title = get_string('headerbkcolor', 'theme_bcu');
-    $description = get_string('headerbkcolordesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-     $name = 'theme_bcu/headerbkcolor2';
-    $title = get_string('headerbkcolor2', 'theme_bcu');
-    $description = get_string('headerbkcolor2desc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/headertextcolor';
-    $title = get_string('headertextcolor', 'theme_bcu');
-    $description = get_string('headertextcolordesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/headertextcolor2';
-    $title = get_string('headertextcolor2', 'theme_bcu');
-    $description = get_string('headertextcolor2desc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
+    // Loading bar colour.
     $name = 'theme_bcu/loadingcolor';
     $title = get_string('loadingcolor', 'theme_bcu');
     $description = get_string('loadingcolordesc', 'theme_bcu');
@@ -115,13 +96,51 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/backcolor';
-    $title = get_string('backcolor', 'theme_bcu');
-    $description = get_string('backcolordesc', 'theme_bcu');
+    // Top header background colour.
+    $name = 'theme_bcu/headerbkcolor';
+    $title = get_string('headerbkcolor', 'theme_bcu');
+    $description = get_string('headerbkcolordesc', 'theme_bcu');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+
+    // Top header text colour.
+    $name = 'theme_bcu/headertextcolor';
+    $title = get_string('headertextcolor', 'theme_bcu');
+    $description = get_string('headertextcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Bottom header background colour.
+    $name = 'theme_bcu/headerbkcolor2';
+    $title = get_string('headerbkcolor2', 'theme_bcu');
+    $description = get_string('headerbkcolor2desc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Bottom header text colour.
+    $name = 'theme_bcu/headertextcolor2';
+    $title = get_string('headertextcolor2', 'theme_bcu');
+    $description = get_string('headertextcolor2desc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Loading bar colour.
+    $name = 'theme_bcu/loadingcolor';
+    $title = get_string('loadingcolor', 'theme_bcu');
+    $description = get_string('loadingcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#29d', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
 
     // Menu colours heading.
     $name = 'theme_bcu/settingsmenucolors';
@@ -129,6 +148,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
+    // Main menu background colour.
     $name = 'theme_bcu/menubkcolor';
     $title = get_string('menubkcolor', 'theme_bcu');
     $description = get_string('menubkcolordesc', 'theme_bcu');
@@ -137,6 +157,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Main menu bottom border colour.
     $name = 'theme_bcu/menubordercolor';
     $title = get_string('menubordercolor', 'theme_bcu');
     $description = get_string('menubordercolordesc', 'theme_bcu');
@@ -145,6 +166,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Main menu text colour.
     $name = 'theme_bcu/menufontcolor';
     $title = get_string('menufontcolor', 'theme_bcu');
     $description = get_string('menufontcolordesc', 'theme_bcu');
@@ -153,6 +175,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Main menu text hover colour. 
     $name = 'theme_bcu/menufonthovercolor';
     $title = get_string('menufonthovercolor', 'theme_bcu');
     $description = get_string('menufonthovercolordesc', 'theme_bcu');
@@ -331,6 +354,15 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Breadcrumb text colour
+    $name = 'theme_bcu/breadcrumbtextcolor';
+    $title = get_string('breadcrumbtextcolor', 'theme_bcu');
+    $description = get_string('breadcrumbtextcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#444444', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     $name = 'theme_bcu/activebreadcrumb';
     $title = get_string('activebreadcrumb', 'theme_bcu');
     $description = get_string('activebreadcrumbdesc', 'theme_bcu');
@@ -487,8 +519,8 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
-   	$temp = new admin_settingpage('theme_bcu_buttons', get_string('buttonsettings', 'theme_bcu'));
+
+    $temp = new admin_settingpage('theme_bcu_buttons', get_string('buttonsettings', 'theme_bcu'));
     $temp->add(new admin_setting_heading('theme_bcu_header', get_string('buttonsettingsheading', 'theme_bcu'),
     format_text(get_string('buttondesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 	
@@ -597,12 +629,6 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
     
-    //$name = 'theme_bcu/newmenu1trigger';
-    //$title = get_string('newmenu1trigger', 'theme_bcu');
-    //$description = get_string('newmenu1triggerdesc', 'theme_bcu');
-    //$setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '70', '1');
-    //$temp->add($setting);
-
     $ADMIN->add('theme_bcu', $temp);
 	
 	$temp = new admin_settingpage('theme_bcu_navbar', get_string('navbarsettings', 'theme_bcu'));	
