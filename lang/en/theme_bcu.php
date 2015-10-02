@@ -673,8 +673,8 @@ $string['toolsmenulabel2'] = 'Tools Menu';
 // $string['toolsmenu2field'] = 'Limit 2nd tools menu to profile field. Select field';
 // $string['toolsmenu2value'] = 'Limit 2nd tools menu to profile field. Select value';
 
-$string['menubkcolor'] = 'Main Menu bacgkground colour';
-$string['menubkcolordesc'] = 'Set a Main Menu bacgkground colour';
+$string['menubkcolor'] = 'Main Menu background colour';
+$string['menubkcolordesc'] = 'Set a Main Menu background colour';
 
 $string['menubordercolor'] = 'Main Menu bottom border colour';
 $string['menubordercolordesc'] = 'Set a Main Menu border bottom colour';
