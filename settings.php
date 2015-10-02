@@ -1674,7 +1674,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $name = 'theme_bcu/covhidebutton';
     $title = get_string('covhidebutton', 'theme_bcu');
     $description = get_string('covhidebuttondesc', 'theme_bcu');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);
