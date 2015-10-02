@@ -1041,7 +1041,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
 
            if (empty($PAGE->theme->settings->covhidebutton)) {
             $content .= html_writer::link(new moodle_url('/course/view.php',
-                array('id' => $course->id)), $btn, array('class' => "$teste coursebtn submit btn btn-info btn-sm pull-right"));
+                array('id' => $course->id)), $btn, array('class' => " coursebtn submit btn btn-info btn-sm pull-right"));
             }
         }
 

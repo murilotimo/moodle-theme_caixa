@@ -295,7 +295,7 @@ echo $OUTPUT->doctype();
                         </a>
                         <div class="nav-collapse collapse ">
                             <?php echo $OUTPUT->navigation_menu(); ?>
-                            <?php if (!$PAGE->theme->settings->disablecustommenu) {echo $OUTPUT->custom_menu(); } ?>
+                            <?php if (!EMPTY($PAGE->theme->settings->disablecustommenu)) {echo $OUTPUT->custom_menu(); } ?>
                             <?php  if ($PAGE->theme->settings->enabletoolsmenus) { ?>
 		                        <?php echo $OUTPUT->tools_menu(); ?>
 		                        <?php echo $OUTPUT->tools_menu2(); ?>
