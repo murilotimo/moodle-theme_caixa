@@ -185,7 +185,7 @@ echo $OUTPUT->doctype();
                 <?php } ?>
             </div>
 
-            <div style="float: right; position: relative; display: inline; margin-right: 40px;">
+            <div style="float: right; position: relative; display: inline;">
                 <?php
                  if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu']) {
                     echo $OUTPUT->lang_menu();

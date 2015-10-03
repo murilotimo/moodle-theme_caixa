@@ -251,7 +251,6 @@ a.usermendrop {
 #marketblocks {
 	margin-bottom: 20px;
 	overflow: hidden;
-	
 	background-color: [[setting:marketblocksbackgroundcolor]];
 }
 
@@ -264,7 +263,7 @@ a.usermendrop {
 	text-align: center;
 	border: 1px solid [[setting:marketblockbordercolor]];
 	border-top: 0px;
-	background-color: #fafafa;
+/*	background-color: #fafafa;*/
 }
 
 .marketimage {
@@ -530,7 +529,7 @@ span.fa-chevron-right.fa {
 }
 
 .breadcrumb li a.firstli {
-	color: #fff;
+/*	color: #fff;*/
     padding-left: 15px;
     padding-right: 20px;
 }
@@ -668,7 +667,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 
 #adminsettings h3 {
 /*	border-bottom: 1px solid [[setting:blocklinecolor]];*/
-    background-color: #e8eaeb;
+/*    background-color: #e8eaeb;*/
     font-family: [[setting:fontheadername]], sans-serif !important;
     font-weight: [[setting:fontheaderweight]] !important;
     color: [[setting:fontheadercolor]];
@@ -751,6 +750,14 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     #page-footer {
         margin: 50px 0px 0px;
     }
+
+    .nav > li > a:hover, 
+    .nav > li > a:focus {
+        background-color: transparent !important;
+        text-decoration: none !important;
+    }
+
+
     .nav .dropdown-menu li a:hover, .navbar .nav > li > a:hover {
         background: rgba(255,255,255,.1);
         color: [[setting:fontcolor]]; !important;
@@ -852,6 +859,7 @@ a.carousel-control {
 	
 .langmenu a:hover {
 	    color: [[setting:menufonthovercolor]];
+	    background-color: none;
 }	
 	
 	
@@ -1030,8 +1038,8 @@ div.no-overflow, .yui3-datatable {
 }
 
 .search-box__button:hover {
-	background-color: #00adef;
-	color: #fff !important;
+    background-color: [[setting:buttonhovercolour]];
+	color: [[setting:buttontextcolor]] !important;
 }
 
 .search-box {
