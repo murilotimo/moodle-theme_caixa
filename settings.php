@@ -1452,7 +1452,7 @@ $temp->add(new admin_setting_heading('theme_bcu_colour', '', format_text(get_str
     $name = 'theme_bcu/enableticker';
     $title = get_string('enableticker', 'theme_bcu');
     $description = get_string('enabletickerdesc', 'theme_bcu');
-    $default = true;
+    $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     //$setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
