@@ -183,7 +183,30 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#b7b3ef', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	// Mobile Menu colours heading.
+    $name = 'theme_bcu/settingsmobilemenucolors';
+    $heading = get_string('settingsmobilemenucolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
 
+    // Mobile menu background colour.
+    $name = 'theme_bcu/mobilemenubkcolor';
+    $title = get_string('mobilemenubkcolor', 'theme_bcu');
+    $description = get_string('mobilemenubkcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Mobile menu text colour.
+    $name = 'theme_bcu/mobilemenufontcolor';
+    $title = get_string('mobilemenufontcolor', 'theme_bcu');
+    $description = get_string('mobilemenufontcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#000000', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     // Info Box colours heading.
     $name = 'theme_bcu/settingsinfoboxcolors';

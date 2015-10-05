@@ -92,6 +92,8 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:menufontcolor]]' => '#444444',
         '[[setting:menufonthovercolor]]' => '#3c469c',
         '[[setting:menubordercolor]]' => '#b7b3ef',
+        '[[setting:mobilemenubkcolor]]' => '#ffffff',
+        '[[setting:mobilemenufontcolor]]' => '#000000',
         '[[setting:covbkcolor]]' => '#0066cc',
         '[[setting:covfontcolor]]' => '#ffffff',
         '[[setting:editonbk]]' => '#0c901f',

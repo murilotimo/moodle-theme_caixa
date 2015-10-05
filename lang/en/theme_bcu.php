@@ -688,6 +688,12 @@ $string['menufontcolordesc'] = 'Set a Main Menu font colour';
 $string['menufonthovercolor'] = 'Main Menu font colour on hover';
 $string['menufonthovercolordesc'] = 'Set a Main Menu font colour on hover';
 
+$string['mobilemenubkcolor'] = 'Mobile Menu background colour';
+$string['mobilemenubkcolordesc'] = 'Set the Main Menu background colour on mobile devices (collapsed)';
+
+$string['mobilemenufontcolor'] = 'Mobile Menu font colour';
+$string['mobilemenufontcolordesc'] = 'Set a Main Menu font colour on mobile devices (collapsed)';
+
 $string['socialsettings'] = 'Header Social';
 $string['socialheading'] = 'Social Icon Settings';
 $string['socialtitledesc'] = '<pre>You can disable the sitewide search box and enable social icons / links in its place.</pre>';
@@ -797,6 +803,7 @@ $string['moodledocsdesc'] = 'Display the Moodle Docs link in the footer.';
 $string['settingsmaincolors'] = 'Main Colours';
 $string['settingsheadercolors'] = 'Header Colours';
 $string['settingsmenucolors'] = 'Menu Colours';
+$string['settingsmobilemenucolors'] = 'Mobile Menu Colours';
 $string['settingsinfoboxcolors'] = 'Info Box Colours';
 $string['settingssecondinfoboxcolors'] = 'Second Info Box Colours';
 $string['settingsmarketingcolors'] = 'Marketing Block Colours';
