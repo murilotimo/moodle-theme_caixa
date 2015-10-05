@@ -154,6 +154,9 @@ $string['blocklinkcolordesc'] = 'Set the blocks link colour';
 $string['marketblockbordercolor'] = 'Marketing block border line colour';
 $string['marketblockbordercolordesc'] = 'Set the marketing block border line colour';
 
+$string['marketblocksbackgroundcolor'] = 'Marketing blocks region background colour';
+$string['marketblocksbackgroundcolordesc'] = 'Set the Marketing blocks region background colour, use html hex code.';
+
 $string['currentcolor'] = 'Current Section Highlight Colour';
 $string['currentcolordesc'] = 'Set the colour for the Current Section Highlight colour';
 
@@ -413,8 +416,8 @@ $string['frontpagerendererdefaultimage'] = 'Default course image';
 $string['frontpagerendererdefaultimagedesc'] = 'The default image to use when no course image is found, (only applies for Tiles w/ overlay)';
 $string['loadtime'] = 'Page loaded in';
 
-$string['loadingcolour'] = 'Loading Colour';
-$string['loadingcolourdesc'] = 'Loading Colour';
+$string['loadingcolor'] = 'Loading Colour';
+$string['loadingcolordesc'] = 'Loading Colour';
 
 $string['sitetitle'] = 'Site title';
 $string['sitetitledesc'] = 'Show / Hide site title';
@@ -501,7 +504,7 @@ Moodle.com|http://moodle.com/
 $string['toolsmenulabel'] = 'Tools';
 $string['toolsmenulabel2'] = 'Tools 2';
 $string['events'] = 'Events';
-$string['mysites'] = 'My Sites';
+$string['mysites'] = 'My Courses';
 $string['people'] = 'People';
 $string['help'] = 'Help';
 
@@ -526,8 +529,13 @@ $string['footerblocksplacement3'] = 'Never';
 
 $string['breadcrumb'] = 'Breadcrumb background colour';
 $string['breadcrumbdesc'] = 'Set the background colour of the breadcrumb.';
+
+$string['breadcrumbtextcolor'] = 'Breadcrumb text colour';
+$string['breadcrumbtextcolordesc'] = 'Set the text colour of the breadcrumb.';
+
 $string['activebreadcrumb'] = 'Active breadcrumb background colour';
-$string['activebreadcrumbdesc'] = 'Set the background colour of the active breadcrumnb colour, and remaineder of the breadcrumb bar.';
+$string['activebreadcrumbdesc'] = 'Set the background colour of the active breadcrumb colour, and remainder of the breadcrumb bar.';
+
 
 $string['usernavheading'] = 'Customise the user navigation dropdown';
 $string['usernavdesc'] = 'Allows you to control all of the elements that appear in the user navigation dropdown.';
@@ -541,7 +549,7 @@ $string['enableeventsdesc'] = 'Display a link to the calendar';
 $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
 $string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
 
-$string['frnt-footer'] = 'Blocks in this area will only be visble to admin users.';
+$string['frnt-footer'] = 'Blocks in this area will only be visible to admin users.';
 
 $string['enableticker'] = 'Enable the news ticker on the homepage?';
 $string['enabletickerdesc'] = 'Check to enable the homepage ticker.';
@@ -668,8 +676,8 @@ $string['toolsmenulabel2'] = 'Tools Menu';
 // $string['toolsmenu2field'] = 'Limit 2nd tools menu to profile field. Select field';
 // $string['toolsmenu2value'] = 'Limit 2nd tools menu to profile field. Select value';
 
-$string['menubkcolor'] = 'Main Menu bacgkground colour';
-$string['menubkcolordesc'] = 'Set a Main Menu bacgkground colour';
+$string['menubkcolor'] = 'Main Menu background colour';
+$string['menubkcolordesc'] = 'Set a Main Menu background colour';
 
 $string['menubordercolor'] = 'Main Menu bottom border colour';
 $string['menubordercolordesc'] = 'Set a Main Menu border bottom colour';
@@ -757,10 +765,10 @@ $string['fontnamedesc'] = 'Google Font used in site. Empty to use the default fo
 $string['fontheadername'] = 'Headers font';
 $string['fontheadernamedesc'] = 'Google Font used in the text and blocks headers. Empty to use the default font.';
 
-$string['fontcolor'] = 'Font Colour';
+$string['fontcolor'] = 'Main font colour';
 $string['fontcolordesc'] = 'Set the colour of the font in the theme, use html hex code.';
 
-$string['fontheadercolor'] = 'Font Headers Colour';
+$string['fontheadercolor'] = 'Headers font colour';
 $string['fontheadercolordesc'] = 'Set the colour of the headers font in the theme, use html hex code.';
 
 $string['fontweight'] = 'Main font weight';
