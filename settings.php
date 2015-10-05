@@ -280,6 +280,8 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+
+
     // Overlay tiles colours heading.
     $name = 'theme_bcu/settingsoverlaycolors';
     $heading = get_string('settingsoverlaycolors', 'theme_bcu');
@@ -587,6 +589,14 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	$name = 'theme_bcu/buttontextcolor';
+    $title = get_string('buttontextcolor', 'theme_bcu');
+    $description = get_string('buttontextcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);	
 
     $name = 'theme_bcu/editonbk';
     $title = get_string('editonbk', 'theme_bcu');
@@ -605,13 +615,13 @@ if (is_siteadmin()) {
     $temp->add($setting);
 	
 	$name = 'theme_bcu/editfont';
-    $title = get_string('editfont', 'theme_bcu');
-    $description = get_string('editfontdesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-	
+	$title = get_string('editfont', 'theme_bcu');
+	$description = get_string('editfontdesc', 'theme_bcu');
+	$previewconfig = null;
+	$setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+	$setting->set_updatedcallback('theme_reset_all_caches');
+	$temp->add($setting);
+
 	$name = 'theme_bcu/buttonloginpadding';
     $title = get_string('buttonloginpadding', 'theme_bcu');
     $description = get_string('buttonloginpaddingdesc', 'theme_bcu');

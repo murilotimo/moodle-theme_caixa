@@ -395,6 +395,9 @@ $string['buttonlogincolordesc'] = 'The colour of the login button.';
 $string['buttonhovercolour'] = 'Button colour (When hovering)';
 $string['buttonhovercolourdesc'] = 'The colour that the button changes to when hovering over the button.';
 
+$string['buttontextcolor'] = 'Button text color';
+$string['buttontextcolordesc'] = 'The colour of text used on buttons';
+
 $string['covbkcolor'] = 'Coventry tiles title background colour';
 $string['covbkcolordesc'] = 'Set the title background colour with the Coventry Tiles renderer is selected.';
 

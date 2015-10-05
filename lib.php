@@ -53,6 +53,7 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:rendereroverlaycolour]]' => '#001E3C',
         '[[setting:rendereroverlayfontcolour]]' => '#FFFFFF',
         '[[setting:buttoncolour]]' => '#00AEEF',
+        '[[setting:buttontextcolor]]' => '#ffffff',
         '[[setting:buttonhovercolour]]' => '#0084C2',
         '[[setting:buttonloginpadding]]' => '4px',
         '[[setting:buttonradius]]' => '2px',
