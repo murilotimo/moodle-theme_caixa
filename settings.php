@@ -183,7 +183,30 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#b7b3ef', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	// Mobile Menu colours heading.
+    $name = 'theme_bcu/settingsmobilemenucolors';
+    $heading = get_string('settingsmobilemenucolors', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
 
+    // Mobile menu background colour.
+    $name = 'theme_bcu/mobilemenubkcolor';
+    $title = get_string('mobilemenubkcolor', 'theme_bcu');
+    $description = get_string('mobilemenubkcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Mobile menu text colour.
+    $name = 'theme_bcu/mobilemenufontcolor';
+    $title = get_string('mobilemenufontcolor', 'theme_bcu');
+    $description = get_string('mobilemenufontcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#000000', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     // Info Box colours heading.
     $name = 'theme_bcu/settingsinfoboxcolors';
@@ -257,13 +280,6 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/editfont';
-    $title = get_string('editfont', 'theme_bcu');
-    $description = get_string('editfontdesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
 
 
     // Overlay tiles colours heading.
@@ -573,6 +589,14 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	$name = 'theme_bcu/buttontextcolor';
+    $title = get_string('buttontextcolor', 'theme_bcu');
+    $description = get_string('buttontextcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);	
 
     $name = 'theme_bcu/editonbk';
     $title = get_string('editonbk', 'theme_bcu');
@@ -589,6 +613,14 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f01f1f', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	$name = 'theme_bcu/editfont';
+	$title = get_string('editfont', 'theme_bcu');
+	$description = get_string('editfontdesc', 'theme_bcu');
+	$previewconfig = null;
+	$setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+	$setting->set_updatedcallback('theme_reset_all_caches');
+	$temp->add($setting);
 
 	$name = 'theme_bcu/buttonloginpadding';
     $title = get_string('buttonloginpadding', 'theme_bcu');
@@ -1490,7 +1522,7 @@ if (is_siteadmin()) {
     $name = 'theme_bcu/enableticker';
     $title = get_string('enableticker', 'theme_bcu');
     $description = get_string('enabletickerdesc', 'theme_bcu');
-    $default = true;
+    $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     //$setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1712,7 +1744,7 @@ if (is_siteadmin()) {
     $name = 'theme_bcu/covhidebutton';
     $title = get_string('covhidebutton', 'theme_bcu');
     $description = get_string('covhidebuttondesc', 'theme_bcu');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);

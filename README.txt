@@ -20,6 +20,13 @@ Frontpage Marketing Block HTML structure BCU
     <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h3>
     <a href="#" class="submit">My Home</a>
  	</div>
+    
+Frontpage slider markup:
+
+<div class="span6 col-sm-6">
+<h3>Hand-crafted</h3> <h4>pixels and code for the Moodle community</h4>
+<a href="#" class="submit">Check out our custom theme pricing!</a>
+</div>
  	
 Frontpage Marketing Block HTML structure Coventry
 
