@@ -421,7 +421,7 @@ class theme_bcu_core_renderer extends core_renderer {
 
     public function tools_menu() {    	
     	global $PAGE;
-		$class = "<i class='fa fa-wrench'>";
+		$class = "<i class='fa fa-wrench'></i><span class='menutitle'>";		
     	$custommenuitems = '';
 		$access = true;	
 		
@@ -436,7 +436,7 @@ class theme_bcu_core_renderer extends core_renderer {
         if (!empty($PAGE->theme->settings->toolsmenu) && $access == true) {        	
         	$menu = ($PAGE->theme->settings->toolsmenu);
 			$label = get_string('toolsmenulabel', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label, $class);            
+			$custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');            
         }
          
         $custommenu = new custom_menu($custommenuitems);
@@ -445,7 +445,7 @@ class theme_bcu_core_renderer extends core_renderer {
 
     public function tools_menu2() {    	
     	global $PAGE;
-		$class = "<i class='fa fa-wrench'>";
+		$class = "<i class='fa fa-wrench'></i><span class='menutitle'>";
     	$custommenuitems = '';
 		$access = true;	
 		
@@ -460,7 +460,7 @@ class theme_bcu_core_renderer extends core_renderer {
         if (!empty($PAGE->theme->settings->toolsmenu2) && $access == true) {        	
         	$menu = ($PAGE->theme->settings->toolsmenu2);
 			$label = get_string('toolsmenulabel2', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label, $class);            
+			$custommenuitems = $this->parse_custom_menu($menu, $label, $class,'</span>');            
         }
          
         $custommenu = new custom_menu($custommenuitems);
@@ -756,8 +756,8 @@ class theme_bcu_core_renderer extends core_renderer {
 		return false;				
 	}
 	
-	public function parse_custom_menu($menu, $label, $class = ''){
-		$custommenuitems = "$class </i>".$label."|#|".$label."\n";
+	public function parse_custom_menu($menu, $label, $class = ' </i>', $close = ''){
+		$custommenuitems =  $class . $label. $close . "|#|".$label."\n";
         $arr = explode("\n", $menu);
         
         // We want to force everything inputted under this menu.
