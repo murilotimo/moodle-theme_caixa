@@ -731,6 +731,14 @@ if (is_siteadmin()) {
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/disablealertcoursepages';
+    $title = get_string('disablealertcoursepages', 'theme_bcu');
+    $description = get_string('disablealertcoursepagesdesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
     
     $ADMIN->add('theme_bcu', $temp);
 	
@@ -1291,6 +1299,13 @@ if (is_siteadmin()) {
 	$name = 'theme_bcu/enablemenus';
     $title = get_string('enablemenus', 'theme_bcu');
     $description = get_string('enablemenusdesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/disablemenuscoursepages';
+    $title = get_string('disablemenuscoursepages', 'theme_bcu');
+    $description = get_string('disablemenuscoursepagesdesc', 'theme_bcu');
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);

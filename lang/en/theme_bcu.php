@@ -282,6 +282,9 @@ $string['noenrolments'] = 'No enrolments found.';
 $string['alertbox'] = 'Top Alert Box';
 $string['alertboxdesc'] = 'Alert box to display at the top of all pages';
 
+$string['disablealertcoursepages'] = 'Disable Alert Box on Course Pages';
+$string['disablealertcoursepagesdesc'] = 'Turning this option on will limit the display of the top alert box to site pages, the homepage, and dashboard (My Home) etc. and will not show in any course pages';
+
 $string['jssection'] = 'Javascript Section';
 $string['jssectiondesc'] = 'Add javascript code to the site, e.g. Google Analytics';
 
@@ -644,6 +647,9 @@ $string['newmenu2triggerdesc'] = 'Set a Top Menu Dropdown 2 trigger word. Font a
 
 $string['enablemenus'] = 'Enable Menus';
 $string['enablemenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
+
+$string['disablemenuscoursepages'] = 'Disable Menus on Course Pages';
+$string['disablemenuscoursepagesdesc'] = 'urning this option on will limit the display of top menus to site pages, the homepage, and dashboard (My Home) etc. and will not show in any course pages';
 
 $string['menusheading1'] = 'Top Menu 1';
 $string['newmenu1'] = 'Top Menu Dropdown 1';

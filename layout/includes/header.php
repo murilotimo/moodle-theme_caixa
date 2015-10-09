@@ -103,7 +103,7 @@ echo $OUTPUT->doctype();
 </div>
 
 <?php
-} else if (!empty($PAGE->theme->settings->alertbox)) {
+} else if (!empty($PAGE->theme->settings->alertbox) && (!$PAGE->theme->settings->disablealertcoursepages) || $COURSE->id == 1) {
 ?>
 <div class="customalert">
 <div class="container">
@@ -201,7 +201,7 @@ echo $OUTPUT->doctype();
                  } ?>
             </div>
 
-<?php  if ($PAGE->theme->settings->enablemenus) { 
+<?php  if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) { 
 
 	 echo $OUTPUT->tools_menu3();
 	 echo $OUTPUT->tools_menu4();
