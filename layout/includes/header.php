@@ -239,37 +239,37 @@ echo $OUTPUT->doctype();
 		<a alt="Search Moodle" title="Search Moodle" href="<?php echo $CFG->wwwroot . '/course/search.php ' ?>"><i class="fa fa-search"></i></a>
 		<?php } ?>	
 		<?php if (!empty($PAGE->theme->settings->social1)) { ?>
-		<a alt="facebook" title="facebook" href="<?php echo $PAGE->theme->settings->social1 ?>"><i class="fa <?php echo $PAGE->theme->settings->social1icon ?>"></i></a>
+		<a alt="facebook" title="<?php echo get_string('social1', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social1 ?>"><i class="fa <?php echo $PAGE->theme->settings->social1icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social2)) { ?>
-		<a alt="twitter" title="twitter" href="<?php echo $PAGE->theme->settings->social2 ?>"><i class="fa <?php echo $PAGE->theme->settings->social2icon ?>"></i></a>
+		<a alt="twitter" title="<?php echo get_string('social2', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social2 ?>"><i class="fa <?php echo $PAGE->theme->settings->social2icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social3)) { ?>
-		<a alt="google plus" title="google plus" href="<?php echo $PAGE->theme->settings->social3 ?>"><i class="fa <?php echo $PAGE->theme->settings->social3icon ?>"></i></a>
+		<a alt="google plus" title="<?php echo get_string('social3', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social3 ?>"><i class="fa <?php echo $PAGE->theme->settings->social3icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social4)) { ?>
-		<a alt="instagram" title="instagram" href="<?php echo $PAGE->theme->settings->social4 ?>"><i class="fa <?php echo $PAGE->theme->settings->social4icon ?>"></i></a>
+		<a alt="instagram" title="<?php echo get_string('social4', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social4 ?>"><i class="fa <?php echo $PAGE->theme->settings->social4icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social5)) { ?>
-		<a alt="tumblr" title="tumblr" href="<?php echo $PAGE->theme->settings->social5 ?>"><i class="fa <?php echo $PAGE->theme->settings->social5icon ?>"></i></a>
+		<a alt="tumblr" title="<?php echo get_string('social5', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social5 ?>"><i class="fa <?php echo $PAGE->theme->settings->social5icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social6)) { ?>
-		<a alt="linkedin" title="linkedin" href="<?php echo $PAGE->theme->settings->social6 ?>"><i class="fa <?php echo $PAGE->theme->settings->social6icon ?>"></i></a>
+		<a alt="linkedin" title="<?php echo get_string('social6', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social6 ?>"><i class="fa <?php echo $PAGE->theme->settings->social6icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social7)) { ?>
-		<a alt="youtube" title="youtube" href="<?php echo $PAGE->theme->settings->social7 ?>"><i class="fa <?php echo $PAGE->theme->settings->social7icon ?>"></i></a>
+		<a alt="youtube" title="<?php echo get_string('social7', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social7 ?>"><i class="fa <?php echo $PAGE->theme->settings->social7icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social8)) { ?>
-		<a alt="flickr" title="flickr" href="<?php echo $PAGE->theme->settings->social8 ?>"><i class="fa <?php echo $PAGE->theme->settings->social8icon ?>"></i></a>
+		<a alt="flickr" title="<?php echo get_string('social8', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social8 ?>"><i class="fa <?php echo $PAGE->theme->settings->social8icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social9)) { ?>
-		<a alt="pinterest" title="pinterest" href="<?php echo $PAGE->theme->settings->social9 ?>"><i class="fa <?php echo $PAGE->theme->settings->social9icon ?>"></i></a>
+		<a alt="pinterest" title="<?php echo get_string('social1', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social9 ?>"><i class="fa <?php echo $PAGE->theme->settings->social9icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social10)) { ?>
-		<a alt="web" title="web" href="<?php echo $PAGE->theme->settings->social10 ?>"><i class="fa <?php echo $PAGE->theme->settings->social10icon ?>"></i></a>
+		<a alt="web" title="<?php echo get_string('social10', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social10 ?>"><i class="fa <?php echo $PAGE->theme->settings->social10icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social11)) { ?>
-		<a alt="blog" title="blog" href="<?php echo $PAGE->theme->settings->social11 ?>"><i class="fa <?php echo $PAGE->theme->settings->social11icon ?>"></i></a>
+		<a alt="blog" title="<?php echo get_string('social11', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social11 ?>"><i class="fa <?php echo $PAGE->theme->settings->social11icon ?>"></i></a>
 		<?php } ?>
 		</div>
 		<?php } ?>
