@@ -107,6 +107,8 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:slideroption2color]]' => '#0066cc',
         '[[setting:slideroption2a]]' => '#0066cc',
         '[[setting:socialsize]]' => '22',
+        '[[setting:socialsizemobile]]' => '22',        
+        '[[setting:mobile]]' => '22',
         '[[setting:socialpaddingtop]]' => '1.8%',        
         '[[setting:fontname]]' => 'Open Sans',
         '[[setting:fontheadername]]' => 'Roboto',
@@ -122,6 +124,9 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:hidebreadcrumbmobile]]' => '',
         '[[setting:hidepagefootermobile]]' => '',
         '[[setting:hidesocialmobile]]' => '',
+        '[[setting:socialboxpaddingtopmobile]]' => '',
+        '[[setting:socialboxpaddingbottommobile]]' => '',
+        '[[setting:hidecoursetitlemobile]]' => '',
         '[[setting:hidelogomobile]]' => '',
         '[[setting:hideheadermobile]]' => ''
     );

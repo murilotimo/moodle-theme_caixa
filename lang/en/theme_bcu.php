@@ -461,13 +461,19 @@ $string['layoutmobilesettings'] = 'Mobile Settings';
 $string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
 
 $string['hidesocialmobile'] = 'Hide Social Icons (if in use) on mobile';
-$string['hidesocialmobiledesc'] = 'Checking this option will remove social icons on mobile devices';
+$string['hidesocialmobiledesc'] = 'Hide will remove social icons on mobile devices';
+
+$string['hidecoursetitlemobile'] = 'Hide Course Title on mobile';
+$string['hidecoursetitlemobiledesc'] = 'Hide the course title AND site title on mobile devices';
+
+$string['socialboxpaddingtopmobile'] = 'Set top padding of social container on mobile';
+$string['socialboxpaddingbottommobile'] = 'Set bottom padding of social container on mobile';
 
 $string['hidelogomobile'] = 'Hide Logo on mobile';
-$string['hidelogomobiledesc'] = 'Checking this option will remove the logo on mobile devices';
+$string['hidelogomobiledesc'] = 'Hide will remove the logo on mobile devices';
 
 $string['hideheadermobile'] = 'Hide header on mobile';
-$string['hideheadermobiledesc'] = 'Checking this option will remove the header with logo / social icons / search box on mobile devices';
+$string['hideheadermobiledesc'] = 'Hide will remove the header with logo / social icons / search box on mobile devices';
 
 $string['hidebreadcrumbmobile'] = 'Hide breadcrumb on mobile';
 $string['hidebreadcrumbmobiledesc'] = 'Checking this option will remove the breadcrumb on mobile devices';
@@ -723,6 +729,7 @@ $string['socialset'] = 'Add social icons and hide search bar';
 $string['socialsetdesc'] = 'Check this box to hide the search bar and add social icons in the same location instead.';
 
 $string['socialsize'] = 'Set the font size of the social icons';
+$string['socialsizemobile'] = 'Set the font size of the social icons on Mobile';
 $string['socialpaddingtop'] = 'Adjust padding above social icons (alters vertical position)';
 
 $string['socialsearchicon'] = 'Search Moodle';

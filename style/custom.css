@@ -723,6 +723,16 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     #region-main {
         padding: 0px;
     }
+    
+    #page-header {
+		min-height: 0px;		
+	}
+	
+	.socialbox{
+		padding-top:[[setting:socialboxpaddingtopmobile]];
+		padding-top:[[setting:socialboxpaddingbottommobile]];
+	}
+    
     #logo {
         margin-bottom: 10px;
     }
@@ -794,6 +804,12 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
         float: none;
         width: auto;
     }
+    
+    .socialbox a {
+		color: [[setting:headertextcolor2]];
+		font-size: [[setting:socialsizemobile]]px;
+		padding-left: 10px;
+	}
 
     .message .contactselector {
         float: none;

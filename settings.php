@@ -995,6 +995,23 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
+    $name = 'theme_bcu/socialsizemobile';
+    $title = get_string('socialsizemobile', 'theme_bcu');
+    $description = get_string('socialsizemobile', 'theme_bcu');
+    $choices = array(
+    	14 => "14px",
+    	16 => "16px",
+        18 => "18px",
+        22 => "22px",
+        26 => "26px",
+        32 => "32px",
+        36 => "36px",
+        42 => "42px",
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, '14', $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);	
+		
 	$name = 'theme_bcu/socialpaddingtop';
     $title = get_string('socialpaddingtop', 'theme_bcu');
     $description = get_string('socialpaddingtop', 'theme_bcu');
@@ -1856,10 +1873,62 @@ if (is_siteadmin()) {
     $radchoices = array(    	
         ', .socialbox' => 'Hide',
         '' => 'Show',
-    );
+    );	
 	$setting = new admin_setting_configselect($name, $title, $description, ', .socialbox', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);	
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/socialboxpaddingtopmobile';
+    $title = get_string('socialboxpaddingtopmobile', 'theme_bcu');
+    $description = get_string('socialboxpaddingtopmobile', 'theme_bcu');
+    $choices = array(
+    	'5px' => "5px",
+    	'6px' => "6px",
+    	'7px' => "7px",
+    	'8px' => "8px",
+    	'9px' => "9px",
+    	'10px' => "10px",
+        '12px' => "12px",
+        '14px' => "14px",
+        '16px' => "'16px'",
+        '18px' => "18px",
+        '20px' => "20px",
+        '22px' => "22px",
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, '10px', $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/socialboxpaddingbottommobile';
+    $title = get_string('socialboxpaddingbottommobile', 'theme_bcu');
+    $description = get_string('socialboxpaddingbottommobile', 'theme_bcu');
+    $choices = array(
+    	'1px' => "1px",
+    	'2px' => "2px",
+    	'3px' => "3px",
+    	'4px' => "4px",
+    	'5px' => "5px",
+    	'6px' => "6px",
+        '7px' => "7px",
+        '8px' => "8px",
+        '9px' => "'9px'",
+        '10px' => "10px",        
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, '10px', $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	
+	$name = 'theme_bcu/hidecoursetitlemobile';
+    $title = get_string('hidecoursetitlemobile', 'theme_bcu');
+    $description = get_string('hidecoursetitlemobiledesc', 'theme_bcu');
+    $radchoices = array(    	
+        ', #coursetitle' => 'Hide',
+        '' => 'Show',
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, ', #coursetitle', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);		
 	
 	$name = 'theme_bcu/hidelogomobile';
     $title = get_string('hidelogomobile', 'theme_bcu');
