@@ -239,37 +239,37 @@ echo $OUTPUT->doctype();
 		<a alt="Search Moodle" title="Search Moodle" href="<?php echo $CFG->wwwroot . '/course/search.php ' ?>"><i class="fa fa-search"></i></a>
 		<?php } ?>	
 		<?php if (!empty($PAGE->theme->settings->social1)) { ?>
-		<a alt="facebook" title="facebook" href="<?php echo $PAGE->theme->settings->social1 ?>"><i class="fa fa-facebook-square"></i></a>
+		<a alt="facebook" title="facebook" href="<?php echo $PAGE->theme->settings->social1 ?>"><i class="fa <?php echo $PAGE->theme->settings->social1icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social2)) { ?>
-		<a alt="twitter" title="twitter" href="<?php echo $PAGE->theme->settings->social2 ?>"><i class="fa fa-twitter-square"></i></a>
+		<a alt="twitter" title="twitter" href="<?php echo $PAGE->theme->settings->social2 ?>"><i class="fa <?php echo $PAGE->theme->settings->social2icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social3)) { ?>
-		<a alt="google plus" title="google plus" href="<?php echo $PAGE->theme->settings->social3 ?>"><i class="fa fa-google-plus"></i></a>
+		<a alt="google plus" title="google plus" href="<?php echo $PAGE->theme->settings->social3 ?>"><i class="fa <?php echo $PAGE->theme->settings->social3icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social4)) { ?>
-		<a alt="instagram" title="instagram" href="<?php echo $PAGE->theme->settings->social4 ?>"><i class="fa fa-instagram"></i></a>
+		<a alt="instagram" title="instagram" href="<?php echo $PAGE->theme->settings->social4 ?>"><i class="fa <?php echo $PAGE->theme->settings->social4icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social5)) { ?>
-		<a alt="tumblr" title="tumblr" href="<?php echo $PAGE->theme->settings->social5 ?>"><i class="fa fa-tumblr-square"></i></a>
+		<a alt="tumblr" title="tumblr" href="<?php echo $PAGE->theme->settings->social5 ?>"><i class="fa <?php echo $PAGE->theme->settings->social5icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social6)) { ?>
-		<a alt="linkedin" title="linkedin" href="<?php echo $PAGE->theme->settings->social6 ?>"><i class="fa fa-linkedin"></i></a>
+		<a alt="linkedin" title="linkedin" href="<?php echo $PAGE->theme->settings->social6 ?>"><i class="fa <?php echo $PAGE->theme->settings->social6icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social7)) { ?>
-		<a alt="youtube" title="youtube" href="<?php echo $PAGE->theme->settings->social7 ?>"><i class="fa fa-youtube-square"></i></a>
+		<a alt="youtube" title="youtube" href="<?php echo $PAGE->theme->settings->social7 ?>"><i class="fa <?php echo $PAGE->theme->settings->social7icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social8)) { ?>
-		<a alt="flickr" title="flickr" href="<?php echo $PAGE->theme->settings->social8 ?>"><i class="fa fa-flickr"></i></a>
+		<a alt="flickr" title="flickr" href="<?php echo $PAGE->theme->settings->social8 ?>"><i class="fa <?php echo $PAGE->theme->settings->social8icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social9)) { ?>
-		<a alt="pinterest" title="pinterest" href="<?php echo $PAGE->theme->settings->social9 ?>"><i class="fa fa-pinterest-p"></i></a>
+		<a alt="pinterest" title="pinterest" href="<?php echo $PAGE->theme->settings->social9 ?>"><i class="fa <?php echo $PAGE->theme->settings->social9icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social10)) { ?>
-		<a alt="web" title="web" href="<?php echo $PAGE->theme->settings->social10 ?>"><i class="fa fa-globe"></i></a>
+		<a alt="web" title="web" href="<?php echo $PAGE->theme->settings->social10 ?>"><i class="fa <?php echo $PAGE->theme->settings->social10icon ?>"></i></a>
 		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social11)) { ?>
-		<a alt="blog" title="blog" href="<?php echo $PAGE->theme->settings->social11 ?>"><i class="fa fa-rss"></i></a>
+		<a alt="blog" title="blog" href="<?php echo $PAGE->theme->settings->social11 ?>"><i class="fa <?php echo $PAGE->theme->settings->social11icon ?>"></i></a>
 		<?php } ?>
 		</div>
 		<?php } ?>
