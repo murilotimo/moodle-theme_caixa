@@ -124,9 +124,18 @@ echo $OUTPUT->doctype();
             <div class="headermenu row">
                 <?php if (!isloggedin() || isguestuser()) { ?>
                   <?php echo $OUTPUT->page_heading_menu(); ?>
-                      <div class="loginbutton">
-                          <a class="btn-login" href="<?php p($CFG->wwwroot) ?>/login/index.php">Log in</a>
-                      </div>
+                    <?php if (!empty($PAGE->theme->settings->frontpagelogin)) { ?>
+                        <form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
+		                    <input style="height:12px; padding-bottom:4px;" type="text" name="username" placeholder="Username" size="10">
+		                    <input style="height:12px; padding-bottom:4px;" type="password" name="password" placeholder="Password"  size="10">                     
+		                    <button class="btn-login" type="submit">Login</button>
+	                    </form>
+                    <?php }	else { ?>                    	
+                    	  <div class="loginbutton">
+                          	<a class="btn-login" href="<?php p($CFG->wwwroot) ?>/login/index.php">Log in</a>
+                      	  </div>
+                    <?php } ?>
+                  
 <?php
 } else {
 ?>

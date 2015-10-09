@@ -101,7 +101,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
     padding: [[setting:buttonloginpadding]] 15px;
     text-shadow: none;
     transition: background 0.2s ease-out 0s;
-    margin-top: 3px;
+	margin-top: 3px;    
 }
 
 .btn-login:hover {
@@ -109,6 +109,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 	color: [[setting:buttontextcolor]] !important;
     text-decoration: none;
 }
+
 
 /* Custom CSS Settings
 -------------------------*/

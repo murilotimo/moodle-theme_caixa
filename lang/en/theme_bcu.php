@@ -425,6 +425,9 @@ $string['loadingcolordesc'] = 'Loading Colour';
 $string['sitetitle'] = 'Site title';
 $string['sitetitledesc'] = 'Show / Hide site title';
 
+$string['frontpagelogin'] = 'Front Page Login';
+$string['frontpagelogindesc'] = 'Enable login form in header (will show button if turned off)';
+
 $string['hideblocks'] = 'Hide blocks';
 $string['showblocks'] = 'Show blocks';
 $string['fullscreen'] = 'Full screen';

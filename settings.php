@@ -665,6 +665,14 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	$name = 'theme_bcu/frontpagelogin';
+    $title = get_string('frontpagelogin', 'theme_bcu');
+    $description = get_string('frontpagelogindesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     $name = 'theme_bcu/alertbox';
     $title = get_string('alertbox', 'theme_bcu');
