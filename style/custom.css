@@ -499,6 +499,15 @@ span.fa-chevron-right.fa {
 
 }
 
+.navbar .nav {
+    display: block;
+    float: left;
+    left: 0;
+    margin: 0 0px 0 -20px;
+    position: relative;
+}
+
+
 .navbar .nav > li > a {
     margin: 0 10px 0 10px !important;
 }
