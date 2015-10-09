@@ -353,6 +353,12 @@ $string['buttonradiusdesc'] = 'Higher radius = curved buttons, lower radius = sq
 $string['buttonloginpadding'] = 'Set Padding for Login Button';
 $string['buttonloginpaddingdesc'] = 'Higher number = bigger login button';
 
+$string['buttonloginheight'] = 'Set Height for Login Button';
+$string['buttonloginheightdesc'] = 'Only effective if using a login form in the upper header';
+
+$string['buttonloginmargintop'] = 'Set Top Margin for Login Button';
+$string['buttonloginmargintopdesc'] = 'Allows spacing / position of login button to be altered';
+
 $string['headersettings'] = 'Header';
 $string['headersettingsheading'] = 'Customise the header of this theme.';
 $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
@@ -391,6 +397,12 @@ $string['buttoncolourdesc'] = 'The colour of the main buttons used throughout th
 
 $string['buttonlogincolor'] = 'Login button colour';
 $string['buttonlogincolordesc'] = 'The colour of the login button.';
+
+$string['buttonloginhovercolor'] = 'Login button hover colour';
+$string['buttonloginhovercolordesc'] = 'The hover colour of the login button.';
+
+$string['buttonlogintextcolor'] = 'Login button text color';
+$string['buttonlogintextcolordesc'] = 'The color of text used on the login button.';
 
 $string['buttonhovercolour'] = 'Button colour (When hovering)';
 $string['buttonhovercolourdesc'] = 'The colour that the button changes to when hovering over the button.';

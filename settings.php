@@ -621,11 +621,36 @@ if (is_siteadmin()) {
 	$setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
 	$setting->set_updatedcallback('theme_reset_all_caches');
 	$temp->add($setting);
+	
+	$name = 'theme_bcu/buttonlogincolor';
+    $title = get_string('buttonlogincolor', 'theme_bcu');
+    $description = get_string('buttonlogincolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0C901F', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/buttonloginhovercolor';
+    $title = get_string('buttonloginhovercolor', 'theme_bcu');
+    $description = get_string('buttonloginhovercolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/buttonlogintextcolor';
+    $title = get_string('buttonlogintextcolor', 'theme_bcu');
+    $description = get_string('buttonlogintextcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFFFFF', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
 	$name = 'theme_bcu/buttonloginpadding';
     $title = get_string('buttonloginpadding', 'theme_bcu');
     $description = get_string('buttonloginpaddingdesc', 'theme_bcu');
     $radchoices = array(
+    	'0px' => "0px",
         '2px' => "2px",
         '3px' => "3px",
         '4px' => "4px",
@@ -637,12 +662,38 @@ if (is_siteadmin()) {
 	$setting = new admin_setting_configselect($name, $title, $description, '4px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);	
-
-	$name = 'theme_bcu/buttonlogincolor';
-    $title = get_string('buttonlogincolor', 'theme_bcu');
-    $description = get_string('buttonlogincolordesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0C901F', $previewconfig);
+	
+	$name = 'theme_bcu/buttonloginheight';
+    $title = get_string('buttonloginheight', 'theme_bcu');
+    $description = get_string('buttonloginheightdesc', 'theme_bcu');
+    $radchoices = array(
+    	'16px' => "16px",
+        '18px' => "18px",
+        '20px' => "20px",
+        '22px' => "22px",
+        '24px' => "24px",
+        '26px' => "26px",  
+        '28px' => "28px",
+        '30px' => "30px",            
+        '32px' => "32px",
+        '34px' => "34px",
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '22px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/buttonloginmargintop';
+    $title = get_string('buttonloginmargintop', 'theme_bcu');
+    $description = get_string('buttonloginmargintopdesc', 'theme_bcu');
+    $radchoices = array(
+    	'0px' => "0px",
+        '1px' => "1px",
+        '2px' => "2px",
+        '3px' => "3px",
+        '4px' => "4px",
+        '5px' => "5px",            
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '3px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 			
