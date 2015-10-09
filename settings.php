@@ -1059,11 +1059,25 @@ if (is_siteadmin()) {
     $description = get_string('social1desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-
+    
+	$name = 'theme_bcu/social1icon';
+    $title = get_string('social1icon', 'theme_bcu');
+	$default = 'fa-facebook-square';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
+	
     $name = 'theme_bcu/social2';
     $title = get_string('social2', 'theme_bcu');
     $description = get_string('social2desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/social2icon';
+    $title = get_string('social2icon', 'theme_bcu');
+	$default = 'fa-twitter-square';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_bcu/social3';
@@ -1071,11 +1085,25 @@ if (is_siteadmin()) {
     $description = get_string('social3desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/social3icon';
+    $title = get_string('social3icon', 'theme_bcu');
+	$default = 'fa-google-plus';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
 
     $name = 'theme_bcu/social4';
     $title = get_string('social4', 'theme_bcu');
     $description = get_string('social4desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/social4icon';
+    $title = get_string('social4icon', 'theme_bcu');
+	$default = 'fa-instagram';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_bcu/social5';
@@ -1083,11 +1111,25 @@ if (is_siteadmin()) {
     $description = get_string('social5desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/social5icon';
+    $title = get_string('social5icon', 'theme_bcu');
+	$default = 'fa-tumblr-square';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
 
     $name = 'theme_bcu/social6';
     $title = get_string('social6', 'theme_bcu');
     $description = get_string('social6desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/social6icon';
+    $title = get_string('social6icon', 'theme_bcu');
+	$default = 'fa-linkedin';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_bcu/social7';
@@ -1095,11 +1137,25 @@ if (is_siteadmin()) {
     $description = get_string('social7desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/social7icon';
+    $title = get_string('social7icon', 'theme_bcu');
+	$default = 'fa-youtube-square';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
 
     $name = 'theme_bcu/social8';
     $title = get_string('social8', 'theme_bcu');
     $description = get_string('social8desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/social8icon';
+    $title = get_string('social8icon', 'theme_bcu');
+	$default = 'fa-flickr';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_bcu/social9';
@@ -1107,17 +1163,38 @@ if (is_siteadmin()) {
     $description = get_string('social9desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/social9icon';
+    $title = get_string('social9icon', 'theme_bcu');
+	$default = 'fa-pinterest-p';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
 
 	$name = 'theme_bcu/social10';
     $title = get_string('social10', 'theme_bcu');
     $description = get_string('social10desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/social10icon';
+    $title = get_string('social10icon', 'theme_bcu');
+	$default = 'fa-globe';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
 
     $name = 'theme_bcu/social11';
     $title = get_string('social11', 'theme_bcu');
     $description = get_string('social11desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/social11icon';
+    $title = get_string('social11icon', 'theme_bcu');
+	$default = 'fa-rss';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 	
 	$ADMIN->add('theme_bcu', $temp);

@@ -723,7 +723,12 @@ $string['mobilemenufontcolordesc'] = 'Set a Main Menu font colour on mobile devi
 
 $string['socialsettings'] = 'Header Social';
 $string['socialheading'] = 'Social Icon Settings';
-$string['socialtitledesc'] = '<pre>You can disable the sitewide search box and enable social icons / links in its place.</pre>';
+$string['socialtitledesc'] = '<pre>You can disable the sitewide search box and enable social icons / links in its place.
+
+If you want to use these links for something other than social icons (links to other applications like email for example) you can:
+
+1) Change the names of services in the language pack (language customisation)
+2) Alter the default icons below. </pre>';
 
 $string['socialset'] = 'Add social icons and hide search bar';
 $string['socialsetdesc'] = 'Check this box to hide the search bar and add social icons in the same location instead.';
@@ -767,6 +772,20 @@ $string['social10desc'] = 'Add URL for the website icon';
 
 $string['social11'] = 'Blog';
 $string['social11desc'] = 'Add URL for the blog icon';
+
+$string['socialicondesc'] = 'Set Font Awesome icon for example fa-facebook';
+
+$string['social1icon'] = 'Social Link 1 Icon';
+$string['social2icon'] = 'Social Link 2 Icon';
+$string['social3icon'] = 'Social Link 3 Icon';
+$string['social4icon'] = 'Social Link 4 Icon';
+$string['social5icon'] = 'Social Link 5 Icon';
+$string['social6icon'] = 'Social Link 6 Icon';
+$string['social7icon'] = 'Social Link 7 Icon';
+$string['social8icon'] = 'Social Link 8 Icon';
+$string['social9icon'] = 'Social Link 9 Icon';
+$string['social10icon'] = 'Social Link 10 Icon';
+$string['social11icon'] = 'Social Link 11 Icon';
 
 $string['homebk'] = 'Frontpage Background Image';
 $string['homebkdesc'] = 'Upload an image that will be a bacgkound image on the homepage.';
