@@ -32,8 +32,7 @@
     color: [[setting:menufontcolor]] !important;
     line-height: 40px;
     float: none;
-    padding: 0px 20px 0px;
-/*    padding: 0; */
+    padding: 0px 10px 0px 10px;
     text-decoration: none;
     text-shadow: none;
     font-weight: 400;
@@ -236,7 +235,7 @@ color: [[setting:headertextcolor]];
 }
 
 @media (max-width: 768px) {
-	.newmenu1, .newmenu2, .newmenu3, .newmenu4, .newmenu5, .newmenu6, .newmenu7, .newmenu8, .newmenu9, .newmenu10[[setting:hidepagefootermobile]][[setting:hidebreadcrumbmobile]][[setting:hidesocialmobile]][[setting:hideheadermobile]] {
+	.newmenu1, .newmenu2, .newmenu3, .newmenu4, .newmenu5, .newmenu6, .newmenu7, .newmenu8, .newmenu9, .newmenu10[[setting:hidepagefootermobile]][[setting:hidebreadcrumbmobile]][[setting:hidesocialmobile]][[setting:hideheadermobile]][[setting:hidelogomobile]][[setting:hidecoursetitlemobile]] {
 	    display: none;
 	}
 

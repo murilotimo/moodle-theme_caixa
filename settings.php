@@ -621,11 +621,36 @@ if (is_siteadmin()) {
 	$setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
 	$setting->set_updatedcallback('theme_reset_all_caches');
 	$temp->add($setting);
+	
+	$name = 'theme_bcu/buttonlogincolor';
+    $title = get_string('buttonlogincolor', 'theme_bcu');
+    $description = get_string('buttonlogincolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0C901F', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/buttonloginhovercolor';
+    $title = get_string('buttonloginhovercolor', 'theme_bcu');
+    $description = get_string('buttonloginhovercolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/buttonlogintextcolor';
+    $title = get_string('buttonlogintextcolor', 'theme_bcu');
+    $description = get_string('buttonlogintextcolordesc', 'theme_bcu');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFFFFF', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
 	$name = 'theme_bcu/buttonloginpadding';
     $title = get_string('buttonloginpadding', 'theme_bcu');
     $description = get_string('buttonloginpaddingdesc', 'theme_bcu');
     $radchoices = array(
+    	'0px' => "0px",
         '2px' => "2px",
         '3px' => "3px",
         '4px' => "4px",
@@ -637,12 +662,38 @@ if (is_siteadmin()) {
 	$setting = new admin_setting_configselect($name, $title, $description, '4px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);	
-
-	$name = 'theme_bcu/buttonlogincolor';
-    $title = get_string('buttonlogincolor', 'theme_bcu');
-    $description = get_string('buttonlogincolordesc', 'theme_bcu');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0C901F', $previewconfig);
+	
+	$name = 'theme_bcu/buttonloginheight';
+    $title = get_string('buttonloginheight', 'theme_bcu');
+    $description = get_string('buttonloginheightdesc', 'theme_bcu');
+    $radchoices = array(
+    	'16px' => "16px",
+        '18px' => "18px",
+        '20px' => "20px",
+        '22px' => "22px",
+        '24px' => "24px",
+        '26px' => "26px",  
+        '28px' => "28px",
+        '30px' => "30px",            
+        '32px' => "32px",
+        '34px' => "34px",
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '22px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/buttonloginmargintop';
+    $title = get_string('buttonloginmargintop', 'theme_bcu');
+    $description = get_string('buttonloginmargintopdesc', 'theme_bcu');
+    $radchoices = array(
+    	'0px' => "0px",
+        '1px' => "1px",
+        '2px' => "2px",
+        '3px' => "3px",
+        '4px' => "4px",
+        '5px' => "5px",            
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '3px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 			
@@ -944,6 +995,23 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
+    $name = 'theme_bcu/socialsizemobile';
+    $title = get_string('socialsizemobile', 'theme_bcu');
+    $description = get_string('socialsizemobile', 'theme_bcu');
+    $choices = array(
+    	14 => "14px",
+    	16 => "16px",
+        18 => "18px",
+        22 => "22px",
+        26 => "26px",
+        32 => "32px",
+        36 => "36px",
+        42 => "42px",
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, '14', $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);	
+		
 	$name = 'theme_bcu/socialpaddingtop';
     $title = get_string('socialpaddingtop', 'theme_bcu');
     $description = get_string('socialpaddingtop', 'theme_bcu');
@@ -991,11 +1059,25 @@ if (is_siteadmin()) {
     $description = get_string('social1desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
-
+    
+	$name = 'theme_bcu/social1icon';
+    $title = get_string('social1icon', 'theme_bcu');
+	$default = 'fa-facebook-square';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
+	
     $name = 'theme_bcu/social2';
     $title = get_string('social2', 'theme_bcu');
     $description = get_string('social2desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/social2icon';
+    $title = get_string('social2icon', 'theme_bcu');
+	$default = 'fa-twitter-square';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_bcu/social3';
@@ -1003,11 +1085,25 @@ if (is_siteadmin()) {
     $description = get_string('social3desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/social3icon';
+    $title = get_string('social3icon', 'theme_bcu');
+	$default = 'fa-google-plus';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
 
     $name = 'theme_bcu/social4';
     $title = get_string('social4', 'theme_bcu');
     $description = get_string('social4desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/social4icon';
+    $title = get_string('social4icon', 'theme_bcu');
+	$default = 'fa-instagram';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_bcu/social5';
@@ -1015,11 +1111,25 @@ if (is_siteadmin()) {
     $description = get_string('social5desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/social5icon';
+    $title = get_string('social5icon', 'theme_bcu');
+	$default = 'fa-tumblr-square';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
 
     $name = 'theme_bcu/social6';
     $title = get_string('social6', 'theme_bcu');
     $description = get_string('social6desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/social6icon';
+    $title = get_string('social6icon', 'theme_bcu');
+	$default = 'fa-linkedin';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_bcu/social7';
@@ -1027,11 +1137,25 @@ if (is_siteadmin()) {
     $description = get_string('social7desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/social7icon';
+    $title = get_string('social7icon', 'theme_bcu');
+	$default = 'fa-youtube-square';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
 
     $name = 'theme_bcu/social8';
     $title = get_string('social8', 'theme_bcu');
     $description = get_string('social8desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/social8icon';
+    $title = get_string('social8icon', 'theme_bcu');
+	$default = 'fa-flickr';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_bcu/social9';
@@ -1039,17 +1163,38 @@ if (is_siteadmin()) {
     $description = get_string('social9desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/social9icon';
+    $title = get_string('social9icon', 'theme_bcu');
+	$default = 'fa-pinterest-p';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
 
 	$name = 'theme_bcu/social10';
     $title = get_string('social10', 'theme_bcu');
     $description = get_string('social10desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
+	
+	$name = 'theme_bcu/social10icon';
+    $title = get_string('social10icon', 'theme_bcu');
+	$default = 'fa-globe';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $temp->add($setting);
 
     $name = 'theme_bcu/social11';
     $title = get_string('social11', 'theme_bcu');
     $description = get_string('social11desc', 'theme_bcu');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/social11icon';
+    $title = get_string('social11icon', 'theme_bcu');
+	$default = 'fa-rss';
+    $description = get_string('socialicondesc', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 	
 	$ADMIN->add('theme_bcu', $temp);
@@ -1805,10 +1950,73 @@ if (is_siteadmin()) {
     $radchoices = array(    	
         ', .socialbox' => 'Hide',
         '' => 'Show',
-    );
+    );	
 	$setting = new admin_setting_configselect($name, $title, $description, ', .socialbox', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);	
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/socialboxpaddingtopmobile';
+    $title = get_string('socialboxpaddingtopmobile', 'theme_bcu');
+    $description = get_string('socialboxpaddingtopmobile', 'theme_bcu');
+    $choices = array(
+    	'5px' => "5px",
+    	'6px' => "6px",
+    	'7px' => "7px",
+    	'8px' => "8px",
+    	'9px' => "9px",
+    	'10px' => "10px",
+        '12px' => "12px",
+        '14px' => "14px",
+        '16px' => "'16px'",
+        '18px' => "18px",
+        '20px' => "20px",
+        '22px' => "22px",
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, '10px', $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/socialboxpaddingbottommobile';
+    $title = get_string('socialboxpaddingbottommobile', 'theme_bcu');
+    $description = get_string('socialboxpaddingbottommobile', 'theme_bcu');
+    $choices = array(
+    	'1px' => "1px",
+    	'2px' => "2px",
+    	'3px' => "3px",
+    	'4px' => "4px",
+    	'5px' => "5px",
+    	'6px' => "6px",
+        '7px' => "7px",
+        '8px' => "8px",
+        '9px' => "'9px'",
+        '10px' => "10px",        
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, '10px', $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	
+	$name = 'theme_bcu/hidecoursetitlemobile';
+    $title = get_string('hidecoursetitlemobile', 'theme_bcu');
+    $description = get_string('hidecoursetitlemobiledesc', 'theme_bcu');
+    $radchoices = array(    	
+        ', #coursetitle' => 'Hide',
+        '' => 'Show',
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, ', #coursetitle', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);		
+	
+	$name = 'theme_bcu/hidelogomobile';
+    $title = get_string('hidelogomobile', 'theme_bcu');
+    $description = get_string('hidelogomobiledesc', 'theme_bcu');
+    $radchoices = array(    	
+        ', #logocontainer' => 'Hide',
+        '' => 'Show',
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, ', #logocontainer', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 	
 	$name = 'theme_bcu/hideheadermobile';
     $title = get_string('hideheadermobile', 'theme_bcu');

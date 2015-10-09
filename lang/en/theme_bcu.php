@@ -353,6 +353,12 @@ $string['buttonradiusdesc'] = 'Higher radius = curved buttons, lower radius = sq
 $string['buttonloginpadding'] = 'Set Padding for Login Button';
 $string['buttonloginpaddingdesc'] = 'Higher number = bigger login button';
 
+$string['buttonloginheight'] = 'Set Height for Login Button';
+$string['buttonloginheightdesc'] = 'Only effective if using a login form in the upper header';
+
+$string['buttonloginmargintop'] = 'Set Top Margin for Login Button';
+$string['buttonloginmargintopdesc'] = 'Allows spacing / position of login button to be altered';
+
 $string['headersettings'] = 'Header';
 $string['headersettingsheading'] = 'Customise the header of this theme.';
 $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
@@ -391,6 +397,12 @@ $string['buttoncolourdesc'] = 'The colour of the main buttons used throughout th
 
 $string['buttonlogincolor'] = 'Login button colour';
 $string['buttonlogincolordesc'] = 'The colour of the login button.';
+
+$string['buttonloginhovercolor'] = 'Login button hover colour';
+$string['buttonloginhovercolordesc'] = 'The hover colour of the login button.';
+
+$string['buttonlogintextcolor'] = 'Login button text color';
+$string['buttonlogintextcolordesc'] = 'The color of text used on the login button.';
 
 $string['buttonhovercolour'] = 'Button colour (When hovering)';
 $string['buttonhovercolourdesc'] = 'The colour that the button changes to when hovering over the button.';
@@ -449,10 +461,19 @@ $string['layoutmobilesettings'] = 'Mobile Settings';
 $string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
 
 $string['hidesocialmobile'] = 'Hide Social Icons (if in use) on mobile';
-$string['hidesocialmobiledesc'] = 'Checking this option will remove social icons on mobile devices';
+$string['hidesocialmobiledesc'] = 'Hide will remove social icons on mobile devices';
+
+$string['hidecoursetitlemobile'] = 'Hide Course Title on mobile';
+$string['hidecoursetitlemobiledesc'] = 'Hide the course title AND site title on mobile devices';
+
+$string['socialboxpaddingtopmobile'] = 'Set top padding of social container on mobile';
+$string['socialboxpaddingbottommobile'] = 'Set bottom padding of social container on mobile';
+
+$string['hidelogomobile'] = 'Hide Logo on mobile';
+$string['hidelogomobiledesc'] = 'Hide will remove the logo on mobile devices';
 
 $string['hideheadermobile'] = 'Hide header on mobile';
-$string['hideheadermobiledesc'] = 'Checking this option will remove the header with logo / social icons / search box on mobile devices';
+$string['hideheadermobiledesc'] = 'Hide will remove the header with logo / social icons / search box on mobile devices';
 
 $string['hidebreadcrumbmobile'] = 'Hide breadcrumb on mobile';
 $string['hidebreadcrumbmobiledesc'] = 'Checking this option will remove the breadcrumb on mobile devices';
@@ -702,12 +723,18 @@ $string['mobilemenufontcolordesc'] = 'Set a Main Menu font colour on mobile devi
 
 $string['socialsettings'] = 'Header Social';
 $string['socialheading'] = 'Social Icon Settings';
-$string['socialtitledesc'] = '<pre>You can disable the sitewide search box and enable social icons / links in its place.</pre>';
+$string['socialtitledesc'] = '<pre>You can disable the sitewide search box and enable social icons / links in its place.
+
+If you want to use these links for something other than social icons (links to other applications like email for example) you can:
+
+1) Change the names of services in the language pack (language customisation)
+2) Alter the default icons below. </pre>';
 
 $string['socialset'] = 'Add social icons and hide search bar';
 $string['socialsetdesc'] = 'Check this box to hide the search bar and add social icons in the same location instead.';
 
 $string['socialsize'] = 'Set the font size of the social icons';
+$string['socialsizemobile'] = 'Set the font size of the social icons on Mobile';
 $string['socialpaddingtop'] = 'Adjust padding above social icons (alters vertical position)';
 
 $string['socialsearchicon'] = 'Search Moodle';
@@ -745,6 +772,20 @@ $string['social10desc'] = 'Add URL for the website icon';
 
 $string['social11'] = 'Blog';
 $string['social11desc'] = 'Add URL for the blog icon';
+
+$string['socialicondesc'] = 'Set Font Awesome icon for example fa-facebook';
+
+$string['social1icon'] = 'Social Link 1 Icon';
+$string['social2icon'] = 'Social Link 2 Icon';
+$string['social3icon'] = 'Social Link 3 Icon';
+$string['social4icon'] = 'Social Link 4 Icon';
+$string['social5icon'] = 'Social Link 5 Icon';
+$string['social6icon'] = 'Social Link 6 Icon';
+$string['social7icon'] = 'Social Link 7 Icon';
+$string['social8icon'] = 'Social Link 8 Icon';
+$string['social9icon'] = 'Social Link 9 Icon';
+$string['social10icon'] = 'Social Link 10 Icon';
+$string['social11icon'] = 'Social Link 11 Icon';
 
 $string['homebk'] = 'Frontpage Background Image';
 $string['homebkdesc'] = 'Upload an image that will be a bacgkound image on the homepage.';

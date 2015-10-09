@@ -96,17 +96,19 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
     -moz-border-radius: [[setting:buttonradius]];
     border-radius: [[setting:buttonradius]];
     box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
-    color: [[setting:buttontextcolor]] !important;
+    color: [[setting:buttonlogintextcolor]] !important;
     cursor: pointer;
     padding: [[setting:buttonloginpadding]] 15px;
     text-shadow: none;
     transition: background 0.2s ease-out 0s;
-	margin-top: 3px;    
+	margin-top: [[setting:buttonloginmargintop]];
+	margin-right:2px;	
+	height:[[setting:buttonloginheight]];    
 }
 
 .btn-login:hover {
-    background-color: [[setting:buttonhovercolour]];
-	color: [[setting:buttontextcolor]] !important;
+    background-color: [[setting:buttonloginhovercolor]];
+	color: [[setting:buttonlogintextcolor]] !important;
     text-decoration: none;
 }
 
