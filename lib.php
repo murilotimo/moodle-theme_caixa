@@ -122,6 +122,7 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:hidebreadcrumbmobile]]' => '',
         '[[setting:hidepagefootermobile]]' => '',
         '[[setting:hidesocialmobile]]' => '',
+        '[[setting:hidelogomobile]]' => '',
         '[[setting:hideheadermobile]]' => ''
     );
 

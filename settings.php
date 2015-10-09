@@ -1861,6 +1861,17 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);	
 	
+	$name = 'theme_bcu/hidelogomobile';
+    $title = get_string('hidelogomobile', 'theme_bcu');
+    $description = get_string('hidelogomobiledesc', 'theme_bcu');
+    $radchoices = array(    	
+        ', #logocontainer' => 'Hide',
+        '' => 'Show',
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, ', #logocontainer', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
 	$name = 'theme_bcu/hideheadermobile';
     $title = get_string('hideheadermobile', 'theme_bcu');
     $description = get_string('hideheadermobiledesc', 'theme_bcu');

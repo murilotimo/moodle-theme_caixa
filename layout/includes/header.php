@@ -220,7 +220,7 @@ echo $OUTPUT->doctype();
     </div>
     <div id="page-header" class="clearfix container">
         <?php if ($haslogo) { ?>
-            <a href="<?php p($CFG->wwwroot) ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('logo', 'logo')."' alt='logo' id='logo' />"; echo "</a>";
+            <div id="logocontainer"><a href="<?php p($CFG->wwwroot) ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('logo', 'logo')."' alt='logo' id='logo' />"; echo "</a></div>";
         } 
 
     if (isset($PAGE) && !$PAGE->theme->settings->sitetitle) {

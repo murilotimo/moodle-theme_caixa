@@ -463,6 +463,9 @@ $string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
 $string['hidesocialmobile'] = 'Hide Social Icons (if in use) on mobile';
 $string['hidesocialmobiledesc'] = 'Checking this option will remove social icons on mobile devices';
 
+$string['hidelogomobile'] = 'Hide Logo on mobile';
+$string['hidelogomobiledesc'] = 'Checking this option will remove the logo on mobile devices';
+
 $string['hideheadermobile'] = 'Hide header on mobile';
 $string['hideheadermobiledesc'] = 'Checking this option will remove the header with logo / social icons / search box on mobile devices';
 
