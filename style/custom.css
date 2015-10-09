@@ -494,6 +494,16 @@ span.fa-chevron-right.fa {
 	margin: 10px 0px;
 }
 
+.navbar .nav {
+/*    margin: 0 10px 0 20px !important;*/
+
+}
+
+.navbar .nav > li > a {
+    margin: 0 10px 0 20px !important;
+}
+
+
 .breadcrumb {
 	padding: 0px 0px 0px;
 	margin: 0 0;
@@ -689,6 +699,11 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     .navbar .pull-right {
             float: none;
     }
+    
+    .navbar .nav > li > a {
+        margin: 0 10px 0 0px !important;
+    }
+    
     .flex-direction-nav .flex-next {
             right: 0px !important;
     }
@@ -749,6 +764,15 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
         margin: 50px 0px 0px;
     }
 
+/*    .navbar .nav {
+        margin: 0 10px 0 0px !important;
+    }
+*/    
+    .navbar .nav > li > a {
+    margin: 0 10px 0 0px !important;
+}
+
+    
     .nav > li > a:hover, 
     .nav > li > a:focus {
         background-color: transparent !important;
@@ -1093,7 +1117,7 @@ div.no-overflow, .yui3-datatable {
             width: calc(100% - 39px);
 	}
 
-        div#coursetitle {
+/*        div#coursetitle {
 	    clear: both;
 	    float: none;
 	    max-width: inherit;
@@ -1102,6 +1126,8 @@ div.no-overflow, .yui3-datatable {
 	    width: auto;
 	    margin-bottom: -25px;
 	}
+	
+*/	
 }
 
 @media (min-width: 767px) {
