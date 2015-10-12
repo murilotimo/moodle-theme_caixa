@@ -44,6 +44,7 @@
 
 .navbar .nav > li > a:hover {
     color: [[setting:menufonthovercolor]];
+    background-color: none;
     text-decoration: none;
 }
 

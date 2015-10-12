@@ -518,6 +518,19 @@ span.fa-chevron-right.fa {
 }
 
 
+.nav > li > a:hover, 
+.nav > li > a:focus {
+    background: none !important;
+    text-decoration: none !important;
+}
+
+langmenu a:hover {
+    background-color: none !important;
+    text-decoration: none !important;
+
+}
+
+
 .breadcrumb {
 	padding: 0px 0px 0px;
 	margin: 0 0;
@@ -794,17 +807,10 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 */    
     .navbar .nav > li > a {
     margin: 0 10px 0 0px !important;
-}
-
-    
-    .nav > li > a:hover, 
-    .nav > li > a:focus {
-        background-color: transparent !important;
-        text-decoration: none !important;
     }
 
-
-    .nav .dropdown-menu li a:hover, .navbar .nav > li > a:hover {
+    .nav .dropdown-menu li a:hover, 
+    .navbar .nav > li > a:hover {
         background: rgba(255,255,255,.1);
         color: [[setting:fontcolor]]; !important;
     }
