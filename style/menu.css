@@ -32,11 +32,11 @@
     color: [[setting:menufontcolor]] !important;
     line-height: 40px;
     float: none;
-    padding: 0px 20px 0px;
+    padding: 0px 20px 0px 20px;
     text-decoration: none;
     text-shadow: none;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: none;
     border-right: 0px solid rgba(0,0,0, .2);
     background: transparent !important;

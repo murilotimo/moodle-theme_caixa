@@ -503,13 +503,13 @@ span.fa-chevron-right.fa {
     display: block;
     float: left;
     left: 0;
-    margin: 0 0px 0 -20px;
+    margin: 0 0px 0 4px;
     position: relative;
 }
 
 
 .navbar .nav > li > a {
-    margin: 0 10px 0 10px !important;
+    margin: 0 0 0 0 !important;
 }
 
 

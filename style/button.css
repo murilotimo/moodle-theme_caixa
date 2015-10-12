@@ -81,12 +81,14 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 
 #edittingbutton .btn, #edittingbutton input[type="submit"] {
 	background-color: [[setting:editonbk]];
-	color: [[setting:editfont]] !important;
+	color: [[setting:editfont]] !important;	
+	padding: 2px 6px;
 }
 
 .editing #edittingbutton .btn, .editing #edittingbutton input[type="submit"] {
 	color: [[setting:editfont]];
-	background-color: [[setting:editoffbk]];
+	background-color: [[setting:editoffbk]];	
+	padding: 2px 6px;
 }
 
 .btn-login {
