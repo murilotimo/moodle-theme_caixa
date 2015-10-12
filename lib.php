@@ -125,6 +125,7 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:fonttitlesize]]' => '24px',
         '[[setting:fonttitlecolor]]' => '#FFFFFF',
         '[[setting:fullscreenwidth]]' => '95%',
+        '[[setting:coursetitlemaxwidth]]' => '',
         '[[setting:hidebreadcrumbmobile]]' => '',
         '[[setting:hidepagefootermobile]]' => '',
         '[[setting:hidesocialmobile]]' => '',

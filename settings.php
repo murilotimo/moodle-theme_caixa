@@ -2028,8 +2028,33 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
+	$name = 'theme_bcu/coursetitlemaxwidth';
+    $title = get_string('coursetitlemaxwidth', 'theme_bcu');
+    $description = get_string('coursetitlemaxwidthdesc', 'theme_bcu');
+    $radchoices = array(
+    	'35%' => '35%',
+        '36%' => '36%',
+        '37%' => '37%',
+        '38%' => '38%',
+        '39%' => '39%',
+        '40%' => '40%',
+        '41%' => '41%',
+        '42%' => '42%',
+        '43%' => '43%',
+        '44%' => '44%',
+        '45%' => '45%',
+        '46%' => '46%',
+        '47%' => '47%',
+        '48%' => '48%',
+        '49%' => '49%',
+        '50%' => '50%',
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '35%', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
 	$temp->add(new admin_setting_heading('theme_bcu_mobile', get_string('layoutmobilesettings', 'theme_bcu'),
-        format_text(get_string('layoutmobilesettingsdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    format_text(get_string('layoutmobilesettingsdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 		
 	$name = 'theme_bcu/hidesocialmobile';
     $title = get_string('hidesocialmobile', 'theme_bcu');

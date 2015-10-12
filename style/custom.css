@@ -144,7 +144,7 @@ a:focus {
     font-weight: [[setting:fonttitleweight]];
     padding-left: 15px;
     padding-top: 20px;
-    max-width: 35%;
+    max-width: [[setting:coursetitlemaxwidth]];
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

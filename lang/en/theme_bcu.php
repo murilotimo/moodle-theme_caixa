@@ -460,6 +460,9 @@ $string['enableshowhideblocksdesc'] = 'Allows users to show / hide all blocks.';
 $string['fullscreenwidth'] = 'Full screen width.';
 $string['fullscreenwidthdesc'] = 'Set the max width of the theme when it is in full screen mode / zoom.';
 
+$string['coursetitlemaxwidth'] = 'Course Title Maximum Width';
+$string['coursetitlemaxwidthdesc'] = 'Set the maximum width of the course title area';
+
 $string['layoutmobilesettings'] = 'Mobile Settings';
 $string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
 
