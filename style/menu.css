@@ -36,7 +36,7 @@
     text-decoration: none;
     text-shadow: none;
     font-weight: 400;
-    font-size: 14px;
+    font-size: [[setting:menufontsize]];    
     text-transform: none;
     border-right: 0px solid rgba(0,0,0, .2);
     background: transparent !important;

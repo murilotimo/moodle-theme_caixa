@@ -566,6 +566,8 @@ $string['breadcrumbtextcolordesc'] = 'Set the text colour of the breadcrumb.';
 $string['activebreadcrumb'] = 'Active breadcrumb background colour';
 $string['activebreadcrumbdesc'] = 'Set the background colour of the active breadcrumb colour, and remainder of the breadcrumb bar.';
 
+$string['menufontsize'] = 'Font size for navigation bar';
+$string['menufontsizedesc'] = 'Set the size of the font used in the main navigation bar.';
 
 $string['usernavheading'] = 'Customise the user navigation dropdown';
 $string['usernavdesc'] = 'Allows you to control all of the elements that appear in the user navigation dropdown.';

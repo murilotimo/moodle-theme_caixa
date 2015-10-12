@@ -802,6 +802,22 @@ if (is_siteadmin()) {
 	$temp->add(new admin_setting_heading('theme_bcu_navbar', get_string('navbarsettingsheading', 'theme_bcu'),
         format_text(get_string('navbardesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 	
+	
+	$name = 'theme_bcu/menufontsize';
+    $title = get_string('menufontsize', 'theme_bcu');
+    $description = get_string('menufontsizedesc', 'theme_bcu');
+    $radchoices = array(
+    	'11px' => "11px",
+    	'12px' => "12px",
+        '13px' => "13px",
+        '14px' => "14px",
+        '15px' => "15px",
+        '16px' => "16px",        
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '12px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+		
 	$name = 'theme_bcu/enablehome';
     $title = get_string('home');
     $description = get_string('enablehomedesc', 'theme_bcu');
