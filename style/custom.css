@@ -359,6 +359,10 @@ span.fa-chevron-right.fa {
    	font-size: 110%;
 }
 
+#page-footer h3 {
+	color: [[setting:footertextcolor]] !important;
+}
+
 #page-footer a {
 	color: [[setting:footerlinkcolor]];
 }
@@ -1179,6 +1183,7 @@ div.no-overflow, .yui3-datatable {
 
 #navwrap {
     background: [[setting:menubkcolor]];
+    margin-bottom:20px;
 }
 
 div.questionbankwindow.block {
