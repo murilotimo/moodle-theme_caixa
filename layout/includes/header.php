@@ -140,7 +140,7 @@ echo $OUTPUT->doctype();
 } else {
 ?>
                     <div class="dropdown secondone">
-                        <a class="dropdown-toggle usermendrop" data-toggle="dropdown" href="#"><span class="fa fa-user"></span><?php echo fullname($USER) ?> <span class="fa fa-angle-down"></span></a>
+                        <a class="dropdown-toggle usermendrop" data-toggle="dropdown" href="#"><span class="fa fa-user"></span><span><?php echo fullname($USER) ?></span><span class="fa fa-angle-down"></span></a>
                         <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
                             <?php if (!empty($PAGE->theme->settings->enablemy)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/my" title="<?php echo get_string('myhome') ?>"><i class="fa fa-dashboard"></i><?php echo get_string('myhome') ?></a></li>
