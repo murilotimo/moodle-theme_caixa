@@ -103,7 +103,7 @@ echo $OUTPUT->doctype();
 </div>
 
 <?php
-} else if (!empty($PAGE->theme->settings->alertbox) && (!$PAGE->theme->settings->disablealertcoursepages) || $COURSE->id == 1) {
+} else if (!empty($PAGE->theme->settings->alertbox) && (!$PAGE->theme->settings->disablealertcoursepages || $COURSE->id == 1)) {
 ?>
 <div class="customalert">
 <div class="container">
@@ -130,10 +130,10 @@ echo $OUTPUT->doctype();
 		                    <input style="height:12px; padding-bottom:4px;" type="password" name="password" placeholder="Password"  size="10">                     
 		                    <button class="btn-login" type="submit">Login</button>
 	                    </form>
-                    <?php }	else { ?>                    	
-                    	  <div class="loginbutton">
-                          	<a class="btn-login" href="<?php p($CFG->wwwroot) ?>/login/index.php">Log in</a>
-                      	  </div>
+                    <?php }	else { ?>
+                    	<form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">		                                         
+		                    <button class="btn-login" type="submit">Login</button>
+	                    </form>
                     <?php } ?>
                   
 <?php
