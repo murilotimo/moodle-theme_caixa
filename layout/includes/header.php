@@ -188,7 +188,7 @@ echo $OUTPUT->doctype();
                             <?php if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/calendar/view.php" title="<?php echo get_string('pluginname', 'block_calendar_month') ?>"><i class="fa fa-calendar"></i><?php echo get_string('pluginname', 'block_calendar_month') ?></a></li>
                             <?php } ?>
-                            <li><a href="<?php p($CFG->wwwroot) ?>/login/logout.php" title="<?php echo get_string('logout') ?>"><i class="fa fa-lock"></i><?php echo get_string('logout') ?></a></li>
+                            <li><a href="<?php echo $CFG->wwwroot.'/login/logout.php?sesskey='.sesskey(); ?>" title="<?php echo get_string('logout') ?>"><i class="fa fa-lock"></i><?php echo get_string('logout') ?></a></li>
                         </ul>
                     </div>
                 <?php } ?>
