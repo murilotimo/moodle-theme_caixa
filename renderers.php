@@ -720,6 +720,7 @@ class theme_bcu_core_renderer extends core_renderer {
 
 	public function check_menu_access($ftype, $setvalue, $menu){
 		global $PAGE, $USER, $CFG;			
+		$usersvalue = 'default-zz'; // just want a value that will not be matched by accident
 		$sessttl = (time() + ($PAGE->theme->settings->menusessionttl * 60));		
 		$menuttl = $menu . 'ttl';			
 		
