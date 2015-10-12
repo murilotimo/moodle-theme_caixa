@@ -1182,8 +1182,7 @@ div.no-overflow, .yui3-datatable {
 }
 
 #navwrap {
-    background: [[setting:menubkcolor]];
-    margin-bottom:20px;
+    background: [[setting:menubkcolor]];    
 }
 
 div.questionbankwindow.block {
