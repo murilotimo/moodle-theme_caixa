@@ -804,6 +804,10 @@ $string['editonbkdesc'] = 'Set the background colour for the editing and customi
 $string['editoffbk'] = 'Editing and Customize this page OFF button background';
 $string['editoffbkdesc'] = 'Set the background colour for the editing and customize this page button in OFF state.';
 
+$string['editverticalpadding'] = 'Set vertical padding of editing buttons';
+$string['edithorizontalpadding'] = 'Set Horizontal padding of editing buttons';
+$string['edittopmargin'] = 'Set top margin of editing buttons';
+
 $string['editfont'] = 'Editing and Customize this page button font colour';
 $string['editfontdesc'] = 'Set the Editing and Customize this page button font colour';
 

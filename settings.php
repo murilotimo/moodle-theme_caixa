@@ -622,6 +622,62 @@ if (is_siteadmin()) {
 	$setting->set_updatedcallback('theme_reset_all_caches');
 	$temp->add($setting);
 	
+	$name = 'theme_bcu/editverticalpadding';
+    $title = get_string('editverticalpadding', 'theme_bcu');
+    $description = get_string('editverticalpadding', 'theme_bcu');
+    $radchoices = array(
+    	'0px' => "0px",
+        '1px' => "1px",
+        '2px' => "2px",
+        '3px' => "3px",
+        '4px' => "4px",
+        '5px' => "5px",
+        '6px' => "6px",                
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '4px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/edithorizontalpadding';
+    $title = get_string('edithorizontalpadding', 'theme_bcu');
+    $description = get_string('edithorizontalpadding', 'theme_bcu');
+    $radchoices = array(
+    	'0px' => "0px",
+        '1px' => "1px",
+        '2px' => "2px",
+        '3px' => "3px",
+        '4px' => "4px",  
+        '5px' => "5px",
+        '6px' => "6px",
+        '7px' => "7px",
+        '8px' => "8px",                  
+        '9px' => "9px",
+        '10px' => "10px",
+        '11px' => "11px",
+        '12px' => "12px",
+        '13px' => "13px",
+        '14px' => "14px",
+        '15px' => "15px",
+        '16px' => "16px",
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '6px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/edittopmargin';
+    $title = get_string('edittopmargin', 'theme_bcu');
+    $description = get_string('edittopmargin', 'theme_bcu');
+    $radchoices = array(
+    	'0px' => "0px",
+        '1px' => "1px",
+        '2px' => "2px",
+        '3px' => "3px",
+        '4px' => "4px",                  
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, '1px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
 	$name = 'theme_bcu/buttonlogincolor';
     $title = get_string('buttonlogincolor', 'theme_bcu');
     $description = get_string('buttonlogincolordesc', 'theme_bcu');
