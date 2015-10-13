@@ -297,11 +297,11 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 }
 
 .usermendrop {
-	font-size: 115%;
+/*	font-size: 115%; */
 }
 
 .usermendrop span {
-    font-size: 125%;
+	font-size: [[setting:headerprofilefontsize]];
     padding-right: 5px;
 }
 
@@ -548,14 +548,11 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 	background: #388f9d !important;
 }
 
-
 #page-login-index2 #loginbtn {
 	background: #4f9e4f;
   	background-color: #4f9e4f;
   	text-shadow: none;
 }
-
-
 
 .block_login2 .content .footer div:nth-child(1) a, #page-login-index2 .forgetpass a {
 	color: #fff;

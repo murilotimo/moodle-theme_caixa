@@ -104,9 +104,16 @@ a:focus {
 	color: [[setting:headertextcolor]];
 }
 
-#above-header .headermenu .dropdown-menu,#above-header .headermenu .dropdown-menu a {
+#above-header .headermenu .dropdown-menu,
+#above-header .headermenu .dropdown-menu a {
+    font-family: [[setting:fontname]], sans-serif !important;
+	font-size: [[setting:headerprofilefontsize]];
 	color: [[setting:linkcolor]];
-	font-size: 16px;
+}
+
+#above-header .langdesc {
+	color: [[setting:linkcolor]];
+	font-size: [[setting:headerprofilefontsize]];
 }
 
 #page-header {
@@ -206,6 +213,7 @@ a:focus {
 }
 
 a.usermendrop {
+    font-family: [[setting:fontname]], sans-serif !important;
 	font-size: [[setting:headerprofilefontsize]];
 }
 
@@ -224,6 +232,8 @@ a.usermendrop {
 }
 
 .usermenu2.nav a.dropdown-toggle {
+    font-family: [[setting:fontname]], sans-serif !important;
+	font-size: [[setting:headerprofilefontsize]];
 	color: [[setting:headertextcolor]];
 }
 
@@ -921,8 +931,8 @@ a.carousel-control {
 }	
 	
 .langmenu a:hover {
-	    color: [[setting:menufonthovercolor]];
-	    background-color: none;
+    color: [[setting:menufonthovercolor]];
+	background-color: none;
 }	
 	
 	
