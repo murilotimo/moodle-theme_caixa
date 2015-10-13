@@ -76,6 +76,8 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
     font-size: [[setting:menufontsize]];    
     padding: 0px 0px;
+    top: 23px;
+    
 /*    border-bottom: 2px solid #001e3c;*/
 }
 
@@ -118,7 +120,7 @@
         left: 0%;
         position: absolute;
         visibility: hidden;
-        margin-top: -1px;
+        margin-top: 3px;
     }
 
     .dropdown-submenu>.dropdown-menu {

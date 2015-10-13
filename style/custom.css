@@ -100,7 +100,8 @@ a:focus {
 	position: relative;
 }
 
-#above-header .headermenu, #above-header .headermenu a {
+#above-header .headermenu, 
+#above-header .headermenu a {
 	color: [[setting:headertextcolor]];
 }
 
@@ -112,7 +113,7 @@ a:focus {
 }
 
 #above-header .langdesc {
-	color: [[setting:linkcolor]];
+	color: [[setting:headertextcolor]];
 	font-size: [[setting:headerprofilefontsize]];
 }
 
