@@ -305,14 +305,25 @@ a.usermendrop {
 	padding-right: 25px;
 }
 
+#themessage h1,
+#themessage h2,
+#themessage h3,
+#themessage h4,
+#themessage h5,
+#themessage h6,
+#themessage p {
+	color: [[setting:infoboxtextcolor2]] !important; 
+}
+
+/*
 #themessage .span10 {
 	color: [[setting:infoboxtextcolor2]];
-    font-size: 16px;
     font-weight: normal;
     line-height: 23px;
     padding-right: 30px;
     padding-top: 10px;
 }
+*/
 
 .personpic {
 	text-align: center;
@@ -347,13 +358,16 @@ span.fa-chevron-right.fa {
 
 #theinfo-internal {
 	padding: 15px 25px;
-	color: [[setting:infoboxtextcolor]];
-	font-size: 16px;
 }
 
-#theinfo h4 {
-	font-weight: 700;
-	font-size: 24px;
+#theinfo h1,
+#theinfo h2,
+#theinfo h3,
+#theinfo h4,
+#theinfo h5,
+#theinfo h6,
+#theinfo p {
+	color: [[setting:infoboxtextcolor]] !important; 
 }
 
 #theinfo .span3 {
