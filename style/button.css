@@ -91,21 +91,32 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 	color: [[setting:buttontextcolor]] !important;
 }
 
-#edittingbutton .btn, #edittingbutton input[type="submit"] {
+#edittingbutton .btn, 
+#edittingbutton input[type="submit"],
+#edittingbutton a {
 	background-color: [[setting:editonbk]];
 	color: [[setting:editfont]] !important;	
 	margin-top: [[setting:edittopmargin]];
 	padding: [[setting:editverticalpadding]] [[setting:edithorizontalpadding]];
+    -webkit-border-radius: [[setting:buttonradius]];
+    -moz-border-radius: [[setting:buttonradius]];
+    border-radius: [[setting:buttonradius]];
+    box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
 }
 
-.editing #edittingbutton .btn, .editing #edittingbutton input[type="submit"] {
+.editing #edittingbutton .btn,
+.editing #edittingbutton input[type="submit"],
+.editing #edittingbutton a:hover {
 	color: [[setting:editfont]];
 	background-color: [[setting:editoffbk]];	
 	margin-top: [[setting:edittopmargin]];
 	padding: [[setting:editverticalpadding]] [[setting:edithorizontalpadding]];
+    text-decoration: none;
 }
 
-.btn-login, .purgecaches a {
+.btn-login, 
+.purgecaches a,
+ {
     background: [[setting:buttonlogincolour]];
     border: 0 none;
     -webkit-border-radius: [[setting:buttonradius]];

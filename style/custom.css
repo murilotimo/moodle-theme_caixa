@@ -604,6 +604,10 @@ langmenu a:hover {
 	display: none !important;
 }
 
+.breadcrumb-button {
+    margin-top: 10px;
+}
+
 .arrow-top {
     border-bottom: 18px solid transparent;
     border-left: 17px solid [[setting:breadcrumb]];
