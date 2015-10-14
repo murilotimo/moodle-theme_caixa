@@ -147,7 +147,12 @@ if (!empty($PAGE->theme->settings->slideroption2)) {echo " slidestyle2"; } ?>">
     </div>
 <?php } ?>
 
+
+
 <?php
+// Display marketing blocks
+if (!empty($PAGE->theme->settings->frontpagemarketenabled)) {
+
 if (!empty($PAGE->theme->settings->frontpagemarketoption)) {
 $extramarketclass = "covtiles";
 } else {
@@ -330,7 +335,11 @@ if ($hasmarket9 && $hasmarket10 && $hasmarket11 && $hasmarket12) {
     <?php } ?>
 
  </div>
- <?php } //end 3rd row of blocks ?>
+ <?php } // End 3rd row of blocks. 
+ 
+ } // End marketing blocks.
+ 
+ ?>
 
  </div>
 

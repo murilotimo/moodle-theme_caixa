@@ -1660,6 +1660,13 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_bcu_marketing', get_string('marketingsettingsheading', 'theme_bcu'),
         format_text(get_string('marketingdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
+	$name = 'theme_bcu/frontpagemarketenabled';
+    $title = get_string('frontpagemarketenabled', 'theme_bcu');
+    $description = get_string('frontpagemarketenableddesc', 'theme_bcu');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
 	$name = 'theme_bcu/frontpagemarketoption';
     $title = get_string('frontpagemarketoption', 'theme_bcu');
     $description = get_string('frontpagemarketoptiondesc', 'theme_bcu');
