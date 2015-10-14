@@ -1368,6 +1368,10 @@ line-height: normal;
 	max-width: 300px;
 }
 
+.course-content ul.topics li.section .summary {
+    margin: 15px;
+}
+
 .paging .paging-morelink {
     clear: both;
 }
