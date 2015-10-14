@@ -9,8 +9,7 @@ html,body {
     font-weight: [[setting:fontweight]] !important;
 }
 
-/* background: #f1eee7 url([[pix:theme|bkg]]) no-repeat 100% 0; */
-html,body,p,ul,ol,dl,input,textarea {
+html, body, p, ul, ol, dl, input, textarea, select {
     font-family: [[setting:fontname]], sans-serif !important;
     color: [[setting:fontcolor]];
 }
