@@ -91,7 +91,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 	color: [[setting:buttontextcolor]] !important;
 }
 
-#edittingbutton .btn, 
+#edittingbutton .btn,
 #edittingbutton input[type="submit"],
 #edittingbutton a {
 	background-color: [[setting:editonbk]];
@@ -115,8 +115,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 }
 
 .btn-login, 
-.purgecaches a,
- {
+.purgecaches a {
     background: [[setting:buttonlogincolour]];
     border: 0 none;
     -webkit-border-radius: [[setting:buttonradius]];
@@ -133,7 +132,8 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 	height:[[setting:buttonloginheight]];    
 }
 
-.btn-login:hover, .purgecaches a:hover {
+.btn-login:hover,
+.purgecaches a:hover {
     background: [[setting:buttonloginhovercolor]];
 	color: [[setting:buttonlogintextcolor]];
     text-decoration: none;

@@ -212,7 +212,7 @@ $string['enablefeed'] = 'My Feedback';
 $string['enablefeeddesc'] = 'Display a link to the users feedback page';
 
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
-$string['frontpagemarketoptiondesc'] = 'Set the marketing blocks in the frontpage.';
+$string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
 
 $string['frontpagemarketoption'] = 'Coventry Tiles style marketing blocks';
 $string['frontpagemarketoptiondesc'] = 'Set the marketing blocks to use the Coventry Tiles style. Set colour for this in the colour settings.';
