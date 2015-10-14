@@ -329,7 +329,7 @@ $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowsettingsheading'] = 'Customise the carousel on the front page';
 $string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
 
-$string['marketingsettings'] = 'Marketing';
+$string['marketingsettings'] = 'Marketing Blocks';
 $string['marketingsettingsheading'] = 'Customise the marketing blocks that appear on the front page';
 $string['marketingdesc'] = 'You can build marketting blocks, up to 4 on the front page. For examples, please see the README file that comes with this theme.';
 
@@ -376,7 +376,7 @@ $string['menusettingsheading'] = 'Customise menus in the upper header the header
 $string['thiscourse'] = 'This course';
 
 $string['blocksettings'] = 'Block Settings';
-$string['frontpageblocksettings'] = 'Frontpage Blocks';
+$string['frontpageblocksettings'] = 'Marketing Blocks';
 $string['frontpagetickersettings'] = 'Frontpage Ticker';
 $string['frontpageslidersettings'] = 'Frontpage Slider';
 $string['frontpagecoursesettings'] = 'Frontpage Courses';
