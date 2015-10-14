@@ -877,5 +877,7 @@ $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
 $string['settingsfootercolors'] = 'Footer Colours';
 $string['settingsfonts'] = 'Fonts';
 
+// Login button.
+$string['logintextbutton'] = 'Login';
 
 

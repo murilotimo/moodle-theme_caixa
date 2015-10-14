@@ -105,7 +105,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 	padding: [[setting:editverticalpadding]] [[setting:edithorizontalpadding]];
 }
 
-.btn-login {
+.btn-login, .purgecaches a {
     background: [[setting:buttonlogincolour]];
     border: 0 none;
     -webkit-border-radius: [[setting:buttonradius]];
@@ -122,7 +122,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 	height:[[setting:buttonloginheight]];    
 }
 
-.btn-login:hover {
+.btn-login:hover, .purgecaches a:hover {
     background: [[setting:buttonloginhovercolor]];
 	color: [[setting:buttonlogintextcolor]];
     text-decoration: none;
