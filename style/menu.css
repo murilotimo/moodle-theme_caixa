@@ -71,7 +71,7 @@
 }
 
 .dropdown-menu {
-    border: 0px solid transparent;
+    border: 1px solid #c0c0c0;
     border-radius: 0px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
     font-size: [[setting:menufontsize]];    

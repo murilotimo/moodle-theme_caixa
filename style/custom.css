@@ -61,8 +61,15 @@ a:focus {
     font-weight: bold;
 }
 
-.headingblock, h2.main, #site-news-forum h2, #frontpage-course-list h2, #frontpage-category-names h2, #frontpage-category-combo h2, .course_category_tree .category > .info > .categoryname {
-  color: [[setting:fontcolor]];
+.headingblock, h2.main, 
+#site-news-forum h2, 
+#frontpage-course-list h2, 
+#frontpage-category-names h2, 
+#frontpage-category-combo h2, 
+.course_category_tree .category > .info > .categoryname {
+    font-family: [[setting:fontheadername]], sans-serif !important;
+    font-weight: [[setting:fontheaderweight]] !important;
+    color: [[setting:fontheadercolor]];
   font-size: 24px;
   border-bottom: 0px solid #eee;
   font-weight: bold;
