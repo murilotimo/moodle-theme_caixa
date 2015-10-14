@@ -375,6 +375,7 @@ $string['menusettingsheading'] = 'Customise menus in the upper header the header
 
 $string['thiscourse'] = 'This course';
 
+// Admin Menu Strings.
 $string['blocksettings'] = 'Block Settings';
 $string['frontpageblocksettings'] = 'Marketing Blocks';
 $string['frontpagetickersettings'] = 'Frontpage Ticker';
