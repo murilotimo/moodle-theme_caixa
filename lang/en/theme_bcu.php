@@ -879,5 +879,3 @@ $string['settingsfonts'] = 'Fonts';
 
 // Login button.
 $string['logintextbutton'] = 'Login';
-
-
