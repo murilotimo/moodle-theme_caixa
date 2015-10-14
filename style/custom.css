@@ -724,6 +724,12 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     padding-bottom: 10px;
 }
 
+
+input[type="radio"], input[type="checkbox"] {
+    margin-left: 15px;
+    margin-right: 1px;
+}
+
 #adminsettings h3 {
 /*	border-bottom: 1px solid [[setting:blocklinecolor]];*/
 /*    background-color: #e8eaeb;*/
