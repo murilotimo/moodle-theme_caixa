@@ -112,7 +112,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
     -moz-border-radius: [[setting:buttonradius]];
     border-radius: [[setting:buttonradius]];
     box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
-    color: [[setting:buttonlogintextcolor]] !important;
+    color: [[setting:buttonlogintextcolor]];
     cursor: pointer;
     padding: [[setting:buttonloginpadding]] 15px;
     text-shadow: none;
@@ -123,8 +123,8 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 }
 
 .btn-login:hover {
-    background-color: [[setting:buttonloginhovercolor]];
-	color: [[setting:buttonlogintextcolor]] !important;
+    background: [[setting:buttonloginhovercolor]];
+	color: [[setting:buttonlogintextcolor]];
     text-decoration: none;
 }
 

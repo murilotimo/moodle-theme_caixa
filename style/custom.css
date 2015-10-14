@@ -88,11 +88,11 @@ a:focus {
 
 #above-header {
 	border-bottom: 1px solid [[setting:dividingline]];
-        height: 20px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        margin-bottom:10px;
-        background: [[setting:headerbkcolor]];
+    height: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom:10px;
+    background: [[setting:headerbkcolor]];
 }
 
 #above-header .container {
@@ -745,6 +745,10 @@ input[type="radio"], input[type="checkbox"] {
     width: 100%;
 }
 
+#region-main {
+	margin-top: 10px;
+}
+
 #region-main #coursesearch .btn {
 	margin-top: 10px;
 }
@@ -1224,6 +1228,12 @@ div.no-overflow, .yui3-datatable {
 
 div.questionbankwindow.block {
 	overflow: auto;
+}
+
+.que .formulation {
+    background-color: [[setting:currentcolor]];
+    border-color: #bce8f1;
+    color: [[setting:fontcolor]];
 }
 
 /* End classes for search box */
