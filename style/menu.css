@@ -167,10 +167,11 @@
 
 .newmenus .dropdown-toggle {
 	color: [[setting:headertextcolor]];
+	background: transparent !important;
 }
 
 .newmenus .dropdown-menu li a {
-    color: [[setting:maincolor]];
+    color: [[setting:maincolor]] !important;
     font-size: 13px;
     font-weight: 400;
     padding: 3px 10px;

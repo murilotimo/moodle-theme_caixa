@@ -360,6 +360,7 @@ function theme_bcu_page_init(moodle_page $page) {
     //  REMOVED: Deprecated function    error_log($CFG->version);
     if($CFG->version < 2015051100) {
       $page->requires->jquery_plugin('bootstrap', 'theme_bcu');
+      $page->requires->jquery_plugin('dropdown', 'theme_bcu');
     }
     $page->requires->jquery_plugin('pace', 'theme_bcu');
     $page->requires->jquery_plugin('flexslider', 'theme_bcu');

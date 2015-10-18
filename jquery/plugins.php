@@ -47,6 +47,7 @@ $plugins = array(
     'flexslider' => array('files' => array('jquery-flexslider-min.js')),
     'easing' => array('files' => array('jquery-easing-min.js')),
     'ticker' => array('files' => array('tickerme.js')),
+    'dropdown' => array('files' => array('dropdown.js')),
     'bcu' => array('files' => array('custom.js')),
     'pace' => array('files' => array('pace-min.js'))
 );
