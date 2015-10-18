@@ -74,17 +74,17 @@ echo $OUTPUT->doctype();
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <?php if (!empty($fontname)) { ?>
+    <?php if (!empty($fontname) && $fontname != 'default') { ?>
         <link href='http://fonts.googleapis.com/css?family=<?php echo $fontname; ?>' rel='stylesheet' type='text/css'><?php
-} ?>
+        } ?>
 
-    <?php if (!empty($fontheadername)) { ?>
+    <?php if (!empty($fontheadername) && $fontheadername != 'default') { ?>
         <link href='http://fonts.googleapis.com/css?family=<?php echo $fontheadername; ?>' rel='stylesheet' type='text/css'><?php
-} ?>
+        } ?>
 
-    <?php if (!empty($fonttitlename)) { ?>
+    <?php if (!empty($fonttitlename)  && $fonttitlename != 'default') { ?>
         <link href='http://fonts.googleapis.com/css?family=<?php echo $fonttitlename; ?>' rel='stylesheet' type='text/css'><?php
-} ?>
+        } ?>
 
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

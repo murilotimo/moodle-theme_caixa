@@ -29,6 +29,7 @@ require_once(__DIR__.'/libs/admin_confightmleditor.php');
 defined('MOODLE_INTERNAL') || die;
 
 $fontlist = array(
+'default' => "default",
 'ABeeZee' => "ABeeZee",
 'Abel' => "Abel",
 'Abril Fatface' => "Abril Fatface",
