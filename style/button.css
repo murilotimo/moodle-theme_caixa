@@ -94,7 +94,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 #edittingbutton .btn,
 #edittingbutton input[type="submit"],
 #edittingbutton a,
-.purgecaches a {
+.purgecaches a:hover {
 	background-color: [[setting:editonbk]];
 	color: [[setting:editfont]] !important;	
 	margin-top: [[setting:edittopmargin]];
@@ -108,7 +108,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 .editing #edittingbutton .btn,
 .editing #edittingbutton input[type="submit"],
 .editing #edittingbutton a:hover,
-.purgecaches a:hover {
+.purgecaches a {
 	color: [[setting:editfont]];
 	background-color: [[setting:editoffbk]];	
 	margin-top: [[setting:edittopmargin]];
