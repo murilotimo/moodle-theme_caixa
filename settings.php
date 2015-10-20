@@ -2748,7 +2748,7 @@ if (is_siteadmin()) {
         ));
     $temp->add($setting);
 
-    // view default.
+    // View default.
     $name = 'theme_bcu/viewselect';
     $title = get_string('viewselect', 'theme_bcu');
     $description = get_string('viewselectdesc', 'theme_bcu');
@@ -2757,7 +2757,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 		
-	// fullscreen width
+	// Fullscreen width.
 	$name = 'theme_bcu/fullscreenwidth';
     $title = get_string('fullscreenwidth', 'theme_bcu');
     $description = get_string('fullscreenwidthdesc', 'theme_bcu');
