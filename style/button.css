@@ -93,7 +93,8 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 
 #edittingbutton .btn,
 #edittingbutton input[type="submit"],
-#edittingbutton a {
+#edittingbutton a,
+.purgecaches a {
 	background-color: [[setting:editonbk]];
 	color: [[setting:editfont]] !important;	
 	margin-top: [[setting:edittopmargin]];
@@ -106,7 +107,8 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 
 .editing #edittingbutton .btn,
 .editing #edittingbutton input[type="submit"],
-.editing #edittingbutton a:hover {
+.editing #edittingbutton a:hover,
+.purgecaches a:hover {
 	color: [[setting:editfont]];
 	background-color: [[setting:editoffbk]];	
 	margin-top: [[setting:edittopmargin]];
@@ -114,8 +116,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
     text-decoration: none;
 }
 
-.btn-login, 
-.purgecaches a {
+.btn-login {
     background: [[setting:buttonlogincolour]];
     border: 0 none;
     -webkit-border-radius: [[setting:buttonradius]];
@@ -132,8 +133,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 	height:[[setting:buttonloginheight]];    
 }
 
-.btn-login:hover,
-.purgecaches a:hover {
+.btn-login:hover {
     background: [[setting:buttonloginhovercolor]];
 	color: [[setting:buttonlogintextcolor]];
     text-decoration: none;
