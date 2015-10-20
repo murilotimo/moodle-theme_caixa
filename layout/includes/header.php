@@ -74,17 +74,18 @@ echo $OUTPUT->doctype();
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <?php if (!empty($fontname)) { ?>
+
+    <?php if (!empty($fontname) && $fontname != 'default') { ?>
         <link href='http://fonts.googleapis.com/css?family=<?php echo $fontname; ?>' rel='stylesheet' type='text/css'><?php
-} ?>
+        } ?>
 
-    <?php if (!empty($fontheadername)) { ?>
+    <?php if (!empty($fontheadername) && $fontheadername != 'default') { ?>
         <link href='http://fonts.googleapis.com/css?family=<?php echo $fontheadername; ?>' rel='stylesheet' type='text/css'><?php
-} ?>
+        } ?>
 
-    <?php if (!empty($fonttitlename)) { ?>
+    <?php if (!empty($fonttitlename)  && $fonttitlename != 'default') { ?>
         <link href='http://fonts.googleapis.com/css?family=<?php echo $fonttitlename; ?>' rel='stylesheet' type='text/css'><?php
-} ?>
+        } ?>
 
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,15 +128,17 @@ echo $OUTPUT->doctype();
                     <?php if (!empty($PAGE->theme->settings->frontpagelogin)) { ?>
                         <form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
 		                    <input style="height:12px; padding-bottom:4px;" type="text" name="username" placeholder="Username" size="10">
-		                    <input style="height:12px; padding-bottom:4px;" type="password" name="password" placeholder="Password"  size="10">                     
-		                    <button class="btn-login" type="submit">logintextbutton</button>
-	                    </form>
-                    <?php }	else { ?>
-                    	<form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">		                                         
+		                    <input style="height:12px; padding-bottom:4px;" type="password" name="password" placeholder="Password"  size="10">
 		                    <button class="btn-login" type="submit"><?php echo get_string('logintextbutton') ?></button>
 	                    </form>
+                    <?php }	else { ?>
+                    	<form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
+		                    <button class="btn-login" type="submit">
+                          <?php echo get_string('logintextbutton') ?>
+                          </button>
+	                    </form>
                     <?php } ?>
-                  
+
 <?php
 } else {
 ?>
@@ -201,7 +204,7 @@ echo $OUTPUT->doctype();
                  } ?>
             </div>
 
-<?php  if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) { 
+<?php  if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
 
 	 echo $OUTPUT->tools_menu3();
 	 echo $OUTPUT->tools_menu4();
@@ -221,7 +224,7 @@ echo $OUTPUT->doctype();
     <div id="page-header" class="clearfix container">
         <?php if ($haslogo) { ?>
             <div id="logocontainer"><a href="<?php p($CFG->wwwroot) ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('logo', 'logo')."' alt='logo' id='logo' />"; echo "</a></div>";
-        } 
+        }
 
     if (isset($PAGE) && !$PAGE->theme->settings->sitetitle) {
         $header = theme_bcu_remove_site_fullname($PAGE->heading);
@@ -237,7 +240,7 @@ echo $OUTPUT->doctype();
 		<div class="socialbox pull-right">
 		<?php if (isset($PAGE->theme->settings->socialsearchicon)) { ?>
 		<a alt="Search Moodle" title="Search Moodle" href="<?php echo $CFG->wwwroot . '/course/search.php ' ?>"><i class="fa fa-search"></i></a>
-		<?php } ?>	
+		<?php } ?>
 		<?php if (!empty($PAGE->theme->settings->social1)) { ?>
 		<a alt="facebook" title="<?php echo get_string('social1', 'theme_bcu') ?>" href="<?php echo $PAGE->theme->settings->social1 ?>"><i class="fa <?php echo $PAGE->theme->settings->social1icon ?>"></i></a>
 		<?php } ?>
@@ -313,7 +316,7 @@ echo $OUTPUT->doctype();
                             <ul class="nav pull-right">
                                 <?php if (isloggedin()) { ?>
 	                                <?php if ($PAGE->theme->settings->enableshowhideblocks) { ?>
-	                                	
+
 	                                <li class="hbl">
 	                                    <a href="#" class="moodlezoom" title="<?php echo get_string('hideblocks', 'theme_bcu') ?>">
 	                                        <i class="fa fa-indent fa-lg"></i>

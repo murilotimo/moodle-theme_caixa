@@ -318,15 +318,14 @@ $string['genericsettingsdescription'] = 'Here you can find various settings to a
 $string['tickersettings'] = 'News Ticker';
 $string['tickersettingsheading'] = 'Setup News Ticker on Front Page';
 $string['tickerdesc'] = 'Here you can set a news ticker to run across the front page of your Moodle site.
-	it is intended as a less intrusive alternative to the slider taking up very little space. 
-	To setup your ticker simply entere a bulleted list and include any hyperlinks you need to in that text.	
-	Note: you must not put ul tags around our list, only li. Moodles text editor tends to add ul tags. 
+	It is intended as a less intrusive alternative to the slider taking up very little space.
+	To setup your ticker simply entere a bulleted list and include any hyperlinks you need to in that text.
+	Note: you must not put ul tags around our list, only li. Moodles text editor tends to add ul tags.
 	If your ticker does not load properly switch to HTML view and ensure you have only li tags:
 	<pre>
 	&lt;li&gt;News item one.....&lt;/li&gt;
-	&lt;li&gt;News item two.....&lt;/li&gt;	
+	&lt;li&gt;News item two.....&lt;/li&gt;
 	</pre>';
-	
 
 $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowsettingsheading'] = 'Customise the carousel on the front page';
@@ -335,7 +334,6 @@ $string['slideshowdesc'] = 'Upload the images, add the links and description for
 $string['marketingsettings'] = 'Marketing Blocks';
 $string['marketingsettingsheading'] = 'Customise the marketing blocks that appear on the front page';
 $string['marketingdesc'] = 'You can build marketting blocks, up to 4 on the front page. For examples, please see the README file that comes with this theme.';
-
 
 $string['footersettings'] = 'Footer';
 $string['footersettingsheading'] = 'Set the content that should appear in the footer.';
@@ -374,7 +372,9 @@ $string['usernavheading'] = 'Customise dropdown menu for users profile.';
 
 $string['menusettings'] = 'Header Menus';
 $string['menusettingsheading'] = 'Customise menus in the upper header the header of this theme.';
-// $string['menudesc'] = 'Display link menus to users. Can be targeted based on custom profile fields (optional)';
+
+// TO BE REMOVED $string['menudesc'] = 'Display link menus to users. Can be targeted based on custom profile fields (optional)';!!!
+
 
 $string['thiscourse'] = 'This course';
 
@@ -619,7 +619,7 @@ You also have the ability to add fa icons into your dropdown navigation lists us
 &lt;span class=&quot;fa fa-picture-o&quot;&gt;&lt;/span&gt; ThinkStock|http://google.co.uk|ThinkStock
 &lt;span class=&quot;fa fa-clock-o&quot;&gt;&lt;/span&gt; Exam Clock|http://google.co.uk|Exam Clock
 </pre>
-The reason there are so many menus is that they can be targeted to different audiences. 
+The reason there are so many menus is that they can be targeted to different audiences.
 The following example uses six menus but only two are ever visible to a given user, one based on whether they are staff or student the other for their faculty:
 <pre>
 Menu 1 - Staff Links - custom field usertype = staff
@@ -645,7 +645,7 @@ $string['topmenusheading'] = 'Menus (navigation in upper header)';
 $string['topmenusheadingdesc'] = 'You can configure links to be shown in drop down menus (in the upper header). The format is the same as it is for menus above including the ability to add fa icons.';
 
 
-// generic strings for all five menus
+// Generic strings for all five menus.
 $string['newmenudesc'] = 'Configure links to be shown under a top header menu.';
 $string['newmenufield'] = 'Custom Profile Field Name (optional)';
 $string['newmenuvalue'] = '= Custom Profile Field Value (optional)';
@@ -710,13 +710,6 @@ $string['toolsmenulabel1'] = 'Tools Menu';
 $string['toolsmenuheading2'] = 'Tools Menu 2';
 $string['toolsmenu2'] = 'Tools Menu Dropdown 2';
 $string['toolsmenulabel2'] = 'Tools Menu';
-
-// delete following strings when sure no longer required as we now use common string applied to all custom field limits
-// $string['toolsmenu1field'] = 'Limit tools menu to profile field. Select field';
-// $string['toolsmenu1value'] = 'Limit tools menu to profile field. Select value';
-
-// $string['toolsmenu2field'] = 'Limit 2nd tools menu to profile field. Select field';
-// $string['toolsmenu2value'] = 'Limit 2nd tools menu to profile field. Select value';
 
 $string['menubkcolor'] = 'Main Menu background colour';
 $string['menubkcolordesc'] = 'Set a Main Menu background colour';
@@ -834,10 +827,13 @@ $string['slideroption2adesc'] = 'Set the slider style option 2 arrow background 
 
 // Fonts.
 $string['fontname'] = 'Main font';
-$string['fontnamedesc'] = 'Google Font used in site. Empty to use the default font.';
+$string['fontnamedesc'] = 'Select the default font or Google Font used in site.';
 
 $string['fontheadername'] = 'Headers font';
-$string['fontheadernamedesc'] = 'Google Font used in the text and blocks headers. Empty to use the default font.';
+$string['fontheadernamedesc'] = 'Select the default font or Google Font used in the text and blocks headers.';
+
+$string['fontheadercustom'] = 'Headers custom font name';
+$string['fontheadercustomdesc'] = 'Enter the header custom name font if you selected custom as a font name.';
 
 $string['fontcolor'] = 'Main font colour';
 $string['fontcolordesc'] = 'Set the colour of the font in the theme, use html hex code.';
@@ -852,7 +848,7 @@ $string['fontheaderweight'] = 'Headers font weight';
 $string['fontheaderweightdesc'] = 'Headers font weight used in the site. Enter a value from 100 to 900 depending the font selected.';
 
 $string['fonttitlename'] = 'Site title font';
-$string['fonttitlenamedesc'] = 'Google Font used in title site. Empty to use the default font.';
+$string['fonttitlenamedesc'] = 'Select the default font or Google Font used in title site.';
 
 $string['fonttitlecolor'] = 'Site title font colour';
 $string['fonttitlecolordesc'] = 'Set the colour of the site title font in the theme, use html hex code.';
