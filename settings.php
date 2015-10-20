@@ -1733,6 +1733,15 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Enable Grades.
+    $name = 'theme_bcu/enablegrades';
+    $title = get_string('enablegrades', 'theme_bcu');
+    $description = get_string('enablegradesdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Enable Badges.
     $name = 'theme_bcu/enablebadges';
     $title = get_string('enablebadges', 'theme_bcu');
@@ -1742,7 +1751,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/enablepref';
+    $name = 'theme_bcu/enablepref';
     $title = get_string('enablepref', 'theme_bcu');
     $description = get_string('enableprefdesc', 'theme_bcu');
     $default = false;

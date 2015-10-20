@@ -157,6 +157,9 @@ echo $OUTPUT->doctype();
                             <?php if (!empty($PAGE->theme->settings->enableprivatefiles)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/user/files.php" title="<?php echo get_string('privatefiles', 'block_private_files') ?>"><i class="fa fa-file"></i><?php echo get_string('privatefiles', 'block_private_files') ?></a></li>
                             <?php } ?>
+                            <?php  if (!empty($PAGE->theme->settings->enablegrades)) { ?>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/grade/report/overview/index.php" title="<?php echo get_string('enablegrades') ?>"><i class="fa fa-list-alt"></i><?php echo get_string('enablegrades') ?></a></li>
+                            <?php } ?>
                             <?php  if (!empty($PAGE->theme->settings->enablebadges)) { ?>
                                 <li><a href="<?php p($CFG->wwwroot) ?>/badges/mybadges.php" title="<?php echo get_string('badges') ?>"><i class="fa fa-certificate"></i><?php echo get_string('badges') ?></a></li>
                             <?php } ?>

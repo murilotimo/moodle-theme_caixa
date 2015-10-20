@@ -177,7 +177,6 @@ if ($CFG->version > 2015051100) {
     $string['enablemydesc'] = 'Display a link to My Home page';
 };
 
-
 $string['enableprofile'] = 'User Profile';
 $string['enableprofiledesc'] = 'Display a link to the users profile';
 
@@ -186,6 +185,9 @@ $string['enableeditprofiledesc'] = 'Display a link to edit the users profile';
 
 $string['enablebadges'] = 'Badges';
 $string['enablebadgesdesc'] = 'Display a link to the users badges';
+
+$string['enablegrades'] = 'Grades';
+$string['enablegradesdesc'] = 'Display a link to the users grades';
 
 $string['enablecalendar'] = 'User Calendar';
 $string['enablecalendardesc'] = 'Display a link to the users calendar';
