@@ -182,7 +182,7 @@ echo $OUTPUT->doctype();
                             <?php } ?>
 
                              <?php  if (!empty($PAGE->theme->settings->enablefeed)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>" title="<?php echo get_string('feedback') ?>"><i class="fa fa-bullhorn"></i><?php echo get_string('feedback') ?></a></li>
+                                <li><a href="<?php p($CFG->wwwroot) ?>/report/myfeedback/index.php?userid=<?php echo "$userid"; ?>" title="<?php echo get_string('feedback') ?>"><i class="fa fa-bullhorn"></i><?php echo get_string('feedback') ?></a></li>
                             <?php } ?>
 
                             <?php if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
