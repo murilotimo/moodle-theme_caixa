@@ -129,12 +129,12 @@ echo $OUTPUT->doctype();
                         <form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
 		                    <input style="height:12px; padding-bottom:4px;" type="text" name="username" placeholder="Username" size="10">
 		                    <input style="height:12px; padding-bottom:4px;" type="password" name="password" placeholder="Password"  size="10">
-		                    <button class="btn-login" type="submit"><?php echo get_string('logintextbutton') ?></button>
+		                    <button class="btn-login" type="submit"><?php echo get_string('logintextbutton', 'theme_bcu'); ?></button>
 	                    </form>
                     <?php }	else { ?>
                     	<form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
 		                    <button class="btn-login" type="submit">
-                          <?php echo get_string('logintextbutton') ?>
+                          <?php echo get_string('logintextbutton', 'theme_bcu'); ?>
                           </button>
 	                    </form>
                     <?php } ?>
