@@ -117,7 +117,7 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 }
 
 .btn-login {
-    background: [[setting:buttonlogincolour]];
+    background: [[setting:buttonlogincolor]];
     border: 0 none;
     -webkit-border-radius: [[setting:buttonradius]];
     -moz-border-radius: [[setting:buttonradius]];
