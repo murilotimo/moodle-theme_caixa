@@ -72,13 +72,24 @@
 
 .dropdown-menu {
     border: 1px solid #c0c0c0;
-    border-radius: 0px;
+    border-radius: 0;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
     font-size: [[setting:menufontsize]];    
-    padding: 0px 0px;
     top: 40px;
-    
-/*    border-bottom: 2px solid #001e3c;*/
+    background-clip: padding-box;
+    background-color: #ffffff;
+    display: none;
+    float: right;
+    list-style: outside none none;
+    margin: 2px 0 0;
+    min-width: 160px;
+    padding: 5px 0;
+    position: absolute;
+    right: 0;
+    left: -65px;
+    width: 200px;
+    top: 100%;
+    z-index: 1000;
 }
 
 .nav .dropdown-menu li a {
