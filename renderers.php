@@ -307,6 +307,7 @@ class theme_bcu_core_renderer extends core_renderer {
     public function navigation_menu() {
         global $PAGE, $COURSE, $OUTPUT, $CFG;
         $menu = new custom_menu();
+		$access = true;
 
         if (isloggedin() && !isguestuser()) {
             if (!empty($PAGE->theme->settings->enablehome)) {
@@ -394,22 +395,34 @@ class theme_bcu_core_renderer extends core_renderer {
             }
         }
 
-        if (!empty($PAGE->theme->settings->enablehelp)) {        	
+        if (!empty($PAGE->theme->settings->enablehelp)) {
+        	$access = true;        	
 			$ftype = $PAGE->theme->settings->helpprofilefield;			
-			$setvalue = $PAGE->theme->settings->helpprofilevalue;			
-			if ($this->check_menu_access($ftype, $setvalue, 'help1')){			
-	            $branchtitle = "Help";
+			$setvalue = $PAGE->theme->settings->helpprofilevalue;		
+			if (!empty($PAGE->theme->settings->helpprofilefield) && !empty($PAGE->theme->settings->helpprofilevalue)){	
+				if (!$this->check_menu_access($ftype, $setvalue, 'help1')){			
+		        	$access = false;
+	            }
+			}
+			if ($access){
+				$branchtitle = get_string('helptitle', 'theme_bcu');
 	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
 	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
 	            $branchsort  = 10003;
 	            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-            }
+			}
         }
-		if (!empty($PAGE->theme->settings->enablehelp2)) {        	
+		if (!empty($PAGE->theme->settings->enablehelp2)) {
+			$access = true;           	
 			$ftype = $PAGE->theme->settings->helpprofilefield2;			
-			$setvalue = $PAGE->theme->settings->helpprofilevalue2;			
-			if ($this->check_menu_access($ftype, $setvalue, 'help2')){			
-	            $branchtitle = "Help";
+			$setvalue = $PAGE->theme->settings->helpprofilevalue2;				
+			if (!empty($PAGE->theme->settings->helpprofilefield2) && !empty($PAGE->theme->settings->helpprofilevalue2)){	
+				if (!$this->check_menu_access($ftype, $setvalue, 'help2')){			
+		        	$access = false;
+	            }
+			}					
+			if ($access){			
+	            $branchtitle = get_string('helptitle2', 'theme_bcu');
 	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
 	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2);
 	            $branchsort  = 10003;
