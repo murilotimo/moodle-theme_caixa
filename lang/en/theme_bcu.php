@@ -69,6 +69,8 @@ $string['p5desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an
 
 $string['enablehelp'] = 'Help Link';
 $string['enablehelpdesc'] = 'Add a help link in the navbar.';
+$string['helptitle'] = 'Help';
+$string['helptitle2'] = 'Help';
 
 $string['helpprofilefield'] = 'Help custom profile field (optional)';
 $string['helpprofilevalue'] = 'Expected custom profile field value (optional)';
