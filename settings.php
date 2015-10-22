@@ -1411,6 +1411,10 @@ if (is_siteadmin()) {
         '2px' => "2px",
         '3px' => "3px",
         '4px' => "4px",                  
+        '5px' => "5px",                  
+        '6px' => "6px",                  
+        '7px' => "7px",                  
+        '8px' => "8px",                  
     );
 	$setting = new admin_setting_configselect($name, $title, $description, '1px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1486,6 +1490,9 @@ if (is_siteadmin()) {
         '3px' => "3px",
         '4px' => "4px",
         '5px' => "5px",            
+        '6px' => "6px",                  
+        '7px' => "7px",                  
+        '8px' => "8px",                  
     );
 	$setting = new admin_setting_configselect($name, $title, $description, '3px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');

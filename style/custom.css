@@ -605,7 +605,7 @@ langmenu a:hover {
 }
 
 .breadcrumb-button {
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .arrow-top {
@@ -757,7 +757,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 #region-main {
-	margin-top: 10px;
+	margin-top: 0px;
 }
 
 #region-main #coursesearch .btn {

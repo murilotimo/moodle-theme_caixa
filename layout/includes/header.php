@@ -76,15 +76,15 @@ echo $OUTPUT->doctype();
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
     <?php if (!empty($fontname) && $fontname != 'default') { ?>
-        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontname; ?>' rel='stylesheet' type='text/css'><?php
+        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontname; ?>&subset=latin,cyrillic' rel='stylesheet' type='text/css'><?php
         } ?>
 
     <?php if (!empty($fontheadername) && $fontheadername != 'default') { ?>
-        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontheadername; ?>' rel='stylesheet' type='text/css'><?php
+        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontheadername; ?>&subset=latin,cyrillic' rel='stylesheet' type='text/css'><?php
         } ?>
-
+        
     <?php if (!empty($fonttitlename)  && $fonttitlename != 'default') { ?>
-        <link href='http://fonts.googleapis.com/css?family=<?php echo $fonttitlename; ?>' rel='stylesheet' type='text/css'><?php
+        <link href='http://fonts.googleapis.com/css?family=<?php echo $fonttitlename; ?>&subset=latin,cyrillic' rel='stylesheet' type='text/css'><?php
         } ?>
 
     <?php echo $OUTPUT->standard_head_html() ?>
