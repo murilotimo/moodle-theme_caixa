@@ -1525,7 +1525,7 @@ if (is_siteadmin()) {
     $radchoices = array(
     	'fullname' => "Course Full Name",
         'shortname' => "Course Short Name",
-        'off' => "Off"
+        'off' => "None"
     );
 	$setting = new admin_setting_configselect($name, $title, $description, 'fullname', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');

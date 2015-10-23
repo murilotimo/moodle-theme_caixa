@@ -38,6 +38,7 @@ $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-firs
 $hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $haslogo = (!empty($PAGE->theme->settings->logo));
+$enableheadingtitle = $PAGE->theme->settings->enableheading;
 
 // Get the fonts.
 $fontname = str_replace(" ", "+", $PAGE->theme->settings->fontname);
@@ -127,8 +128,8 @@ echo $OUTPUT->doctype();
                   <?php echo $OUTPUT->page_heading_menu(); ?>
                     <?php if (!empty($PAGE->theme->settings->frontpagelogin)) { ?>
                         <form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
-		                    <input style="height:12px; padding-bottom:4px;" type="text" name="username" placeholder="Username" size="10">
-		                    <input style="height:12px; padding-bottom:4px;" type="password" name="password" placeholder="Password"  size="10">
+		                    <input style="height: 12px; padding-bottom: 4px;" type="text" name="username" placeholder="Username" size="10">
+		                    <input style="height: 12px; padding-bottom: 4px;" type="password" name="password" placeholder="Password"  size="10">
 		                    <button class="btn-login" type="submit"><?php echo get_string('logintextbutton', 'theme_bcu'); ?></button>
 	                    </form>
                     <?php }	else { ?>
@@ -234,14 +235,19 @@ echo $OUTPUT->doctype();
         $PAGE->set_heading($header);
     }
     ?>
+
     <div id="coursetitle" class="pull-left">
-        <?php if ($PAGE->theme->settings->enableheading = 'fullname') { ?>
-            <span title="<?php echo $PAGE->heading; ?>"><?php echo $PAGE->heading; ?></span>
-        <?php } else if ($PAGE->theme->settings->enableheading = 'shortname') { ?>
-            <span title="<?php echo $PAGE->heading ?>"><?php echo $PAGE->heading; ?></span>
-        <?php } else if ($PAGE->theme->settings->enableheading = 'off') { ?>
-            <span><?php echo ""; ?></span>
-        <?php } ?>    
+        <?php switch($enableheadingtitle) {
+            case "fullname" :
+                echo $PAGE->heading;
+                break;
+            case "shortname" :
+                echo $PAGE->heading;
+                break;
+            case "off" :
+                echo "";
+                break;
+            } ?>
     </div>
 
 		<?php if (!empty($PAGE->theme->settings->socialset)) { ?>
@@ -302,7 +308,6 @@ echo $OUTPUT->doctype();
         </div>
     </div>
 
-
     <div id="navwrap">
         <div class="container">
             <div class="navbar">
@@ -354,7 +359,9 @@ echo $OUTPUT->doctype();
 	      			                <?php } ?>
       			                <?php } ?>
                             </ul>
-                            <div id="edittingbutton" class="pull-right breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
+                            <div id="edittingbutton" class="pull-right breadcrumb-button">
+                                <?php echo $OUTPUT->page_heading_button(); ?>
+                            </div>
                         </div>
                     </div>
                 </nav>
