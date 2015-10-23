@@ -50,9 +50,9 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:linkhover]]' => '#001E3C',
         '[[setting:maincolor]]' => '#001E3C',
         '[[setting:backcolor]]' => '#FFFFFF',
-        '[[setting:rendereroverlaycolour]]' => '#001E3C',
-        '[[setting:rendereroverlayfontcolour]]' => '#FFFFFF',
-        '[[setting:buttoncolour]]' => '#00AEEF',
+        '[[setting:rendereroverlaycolor]]' => '#001E3C',
+        '[[setting:rendereroverlayfontcolor]]' => '#FFFFFF',
+        '[[setting:buttoncolor]]' => '#00AEEF',
         '[[setting:buttontextcolor]]' => '#ffffff',
         '[[setting:buttonhovercolor]]' => '#0084C2',
         '[[setting:buttonlogincolor]]' => '#0C901F',
@@ -133,7 +133,9 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:socialboxpaddingbottommobile]]' => '',
         '[[setting:hidecoursetitlemobile]]' => '',
         '[[setting:hidelogomobile]]' => '',
-        '[[setting:hideheadermobile]]' => ''
+        '[[setting:hideheadermobile]]' => '',
+        '[[setting:enableheading]]' => 'fullname',
+        '[[setting:breadcrumbtitle]]' => 'shortname',
     );
 
     // Get all the defined settings for the theme and replace defaults.

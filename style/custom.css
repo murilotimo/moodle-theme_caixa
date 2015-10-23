@@ -1146,7 +1146,7 @@ div.no-overflow, .yui3-datatable {
 }
 
 .search-box__button:hover {
-    background-color: [[setting:buttonhovercolour]];
+    background-color: [[setting:buttonhovercolor]];
 	color: [[setting:buttontextcolor]] !important;
 }
 
@@ -1314,7 +1314,7 @@ div.questionbankwindow.block {
 	overflow: auto;
 	position: absolute;
 	text-align: center;
-	color: [[setting:rendereroverlayfontcolour]] !important;
+	color: [[setting:rendereroverlayfontcolor]] !important;
 	padding: 15px;
 	top: 0px;
 	left: 0px;
@@ -1322,11 +1322,11 @@ div.questionbankwindow.block {
 }
 
 .coursebox.panel.hover .panel-body:hover .coursebox-content h3 a {
-	color: [[setting:rendereroverlayfontcolour]] !important;
+	color: [[setting:rendereroverlayfontcolor]] !important;
 }
 
 .coursebox.hover .teachers li a, .coursebox.hover .summary > a:link, .coursebox.hover .summary > a:visited {
-	color: [[setting:rendereroverlayfontcolour]] !important;
+	color: [[setting:rendereroverlayfontcolor]] !important;
 }
 
 .coursebox.hover .teachers {
@@ -1344,7 +1344,7 @@ div.questionbankwindow.block {
 }
 
 .coursebox.panel.hover .panel-body:hover {
-	background: [[setting:rendereroverlaycolour]] !important;
+	background: [[setting:rendereroverlaycolor]] !important;
 	-webkit-transition: all .5s ease-in-out;
 	-moz-transition: all .5s ease-in-out;
 	-o-transition: all .5s ease-in-out;

@@ -1024,17 +1024,17 @@ if (is_siteadmin()) {
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    $name = 'theme_bcu/rendereroverlaycolour';
-    $title = get_string('rendereroverlaycolour', 'theme_bcu');
-    $description = get_string('rendereroverlaycolourdesc', 'theme_bcu');
+    $name = 'theme_bcu/rendereroverlaycolor';
+    $title = get_string('rendereroverlaycolor', 'theme_bcu');
+    $description = get_string('rendereroverlaycolordesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/rendereroverlayfontcolour';
-    $title = get_string('rendereroverlayfontcolour', 'theme_bcu');
-    $description = get_string('rendereroverlayfontcolourdesc', 'theme_bcu');
+    $name = 'theme_bcu/rendereroverlayfontcolor';
+    $title = get_string('rendereroverlayfontcolor', 'theme_bcu');
+    $description = get_string('rendereroverlayfontcolordesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1312,17 +1312,17 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-	$name = 'theme_bcu/buttoncolour';
-    $title = get_string('buttoncolour', 'theme_bcu');
-    $description = get_string('buttoncolourdesc', 'theme_bcu');
+	$name = 'theme_bcu/buttoncolor';
+    $title = get_string('buttoncolor', 'theme_bcu');
+    $description = get_string('buttoncolordesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#00aeef', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/buttonhovercolour';
-    $title = get_string('buttonhovercolour', 'theme_bcu');
-    $description = get_string('buttonhovercolourdesc', 'theme_bcu');
+    $name = 'theme_bcu/buttonhovercolor';
+    $title = get_string('buttonhovercolor', 'theme_bcu');
+    $description = get_string('buttonhovercolordesc', 'theme_bcu');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1517,6 +1517,31 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+
+    // Display Course title in the header.	
+	$name = 'theme_bcu/enableheading';
+    $title = get_string('enableheading', 'theme_bcu');
+    $description = get_string('enableheadingdesc', 'theme_bcu');
+    $radchoices = array(
+    	'fullname' => "Course Full Name",
+        'shortname' => "Course Short Name",
+        'off' => "Off"
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, 'fullname', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);	
+
+    // Display Course title in the breadcrumb.	
+	$name = 'theme_bcu/breadcrumbtitle';
+    $title = get_string('breadcrumbtitle', 'theme_bcu');
+    $description = get_string('breadcrumbtitledesc', 'theme_bcu');
+    $radchoices = array(
+    	'fullname' => "Course Full Name",
+        'shortname' => "Course Short Name"
+    );
+	$setting = new admin_setting_configselect($name, $title, $description, 'shortname', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);	
 	
 	$name = 'theme_bcu/frontpagelogin';
     $title = get_string('frontpagelogin', 'theme_bcu');

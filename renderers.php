@@ -1149,7 +1149,7 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
             $summs = $chelper->get_course_formatted_summary($course, array('overflowdiv' => false, 'noclean' => true,
                     'para' => false));
             $summs = strip_tags($summs);
-            $truncsum = strlen($summs) > 70 ? substr($summs, 0, 70)."..." : $summs;
+            $truncsum = mb_strimwidth($summs, 0, 70, "...");
             $content .= html_writer::tag('span', $truncsum, array('title' => $summs));
         }
         $coursecontacts = theme_bcu_get_setting('tilesshowcontacts');

@@ -371,6 +371,12 @@ $string['headersettings'] = 'Header';
 $string['headersettingsheading'] = 'Customise the header of this theme.';
 $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
 
+$string['enableheading'] = 'Header course title';
+$string['enableheadingdesc'] = 'Set the mode to display the course title in the header.';
+
+$string['breadcrumbtitle'] = 'Breadcrumb course name';
+$string['breadcrumbtitledesc'] = 'Set the mode to display the course title in the breadcrumb.';
+
 $string['usernav'] = 'Header User';
 $string['usernavheading'] = 'Customise dropdown menu for users profile.';
 
@@ -397,14 +403,14 @@ $string['frontpagerendereroption2'] = 'Tiles w/ overlay';
 $string['frontpagerendereroption3'] = 'Moodle default';
 $string['frontpagerendereroption4'] = 'Coventry Tiles';
 
-$string['rendereroverlaycolour'] = 'Overlay colour';
-$string['rendereroverlaycolourdesc'] = 'The colour of the overlay, when the "Tiles w/ overlay" renderer is selected.';
+$string['rendereroverlaycolor'] = 'Overlay colour';
+$string['rendereroverlaycolordesc'] = 'The colour of the overlay, when the "Tiles w/ overlay" renderer is selected.';
 
-$string['rendereroverlayfontcolour'] = 'Overlay font colour';
-$string['rendereroverlayfontcolourdesc'] = 'The colour of the font, when hovering over a coursebox with "Tiles w/ overlay" renderer enabled.';
+$string['rendereroverlayfontcolor'] = 'Overlay font colour';
+$string['rendereroverlayfontcolordesc'] = 'The colour of the font, when hovering over a coursebox with "Tiles w/ overlay" renderer enabled.';
 
-$string['buttoncolour'] = 'Button colour';
-$string['buttoncolourdesc'] = 'The colour of the main buttons used throughout the site.';
+$string['buttoncolor'] = 'Button colour';
+$string['buttoncolordesc'] = 'The colour of the main buttons used throughout the site.';
 
 $string['buttonlogincolor'] = 'Login button colour';
 $string['buttonlogincolordesc'] = 'The colour of the login button.';
@@ -415,8 +421,8 @@ $string['buttonloginhovercolordesc'] = 'The hover colour of the login button.';
 $string['buttonlogintextcolor'] = 'Login button text color';
 $string['buttonlogintextcolordesc'] = 'The color of text used on the login button.';
 
-$string['buttonhovercolour'] = 'Button colour (When hovering)';
-$string['buttonhovercolourdesc'] = 'The colour that the button changes to when hovering over the button.';
+$string['buttonhovercolor'] = 'Button colour (When hovering)';
+$string['buttonhovercolordesc'] = 'The colour that the button changes to when hovering over the button.';
 
 $string['buttontextcolor'] = 'Button text color';
 $string['buttontextcolordesc'] = 'The colour of text used on buttons';

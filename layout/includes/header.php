@@ -234,10 +234,15 @@ echo $OUTPUT->doctype();
         $PAGE->set_heading($header);
     }
     ?>
-     <div id="coursetitle" class="pull-left">
-     <span title='<?php echo $PAGE->heading ?>'><?php echo $PAGE->heading ?></span>
-     </div>
-
+    <div id="coursetitle" class="pull-left">
+        <?php if ($PAGE->theme->settings->enableheading = 'fullname') { ?>
+            <span title="<?php echo $PAGE->heading; ?>"><?php echo $PAGE->heading; ?></span>
+        <?php } else if ($PAGE->theme->settings->enableheading = 'shortname') { ?>
+            <span title="<?php echo $PAGE->heading ?>"><?php echo $PAGE->heading; ?></span>
+        <?php } else if ($PAGE->theme->settings->enableheading = 'off') { ?>
+            <span><?php echo ""; ?></span>
+        <?php } ?>    
+    </div>
 
 		<?php if (!empty($PAGE->theme->settings->socialset)) { ?>
 		<div class="socialbox pull-right">
