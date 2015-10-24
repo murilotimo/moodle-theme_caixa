@@ -869,6 +869,11 @@ $string['fonttitleweightdesc'] = 'Set the font weight used in the title site. En
 $string['fonttitlesize'] = 'Site title font size';
 $string['fonttitlesizedesc'] = 'Site title font size used in site. Enter a decimal value in pixels: 24px';
 
+// Font subset.
+$string['fontsubset'] = 'Google Fonts subset';
+$string['fontsubsetdesc'] = 'Select other character subset to be applied to all the fonts. latin subset is already included with Google Fonts';
+
+
 // Moodle Docs link.
 $string['moodledocs'] = 'Moodle Docs link';
 $string['moodledocsdesc'] = 'Display the Moodle Docs link in the footer.';

@@ -26,7 +26,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2015102303;
+$plugin->version   = 2015102401;
 $plugin->requires  = 2013110500;
 $plugin->component = 'theme_bcu';
 $plugin->release = '1.3.1';

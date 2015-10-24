@@ -998,8 +998,11 @@ a.carousel-control {
    margin-left: 5px;
 }
 
-.navbar .forumsearch, .navbar #coursesearchnavbar, .navbar .wikisearch {
-	display: none;
+.navbar .forumsearch,
+.navbar #coursesearchnavbar,
+.navbar .wikisearch {
+/*	display: none;*/
+margin-top: 6px;
 }
 
 .nav-tabs > li > a {

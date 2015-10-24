@@ -1207,6 +1207,23 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Main Font Subset.
+    $name = 'theme_bcu/fontsubset';
+    $title = get_string('fontsubset', 'theme_bcu');
+    $description = get_string('fontsubsetdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_configmulticheckbox($name, $title, $description, $default, array(
+        'latin-ext' => "latin-ext",
+        'cyrillic' => "cyrillic",
+        'cyrillic-ext' => "cyrillic-ext",
+        'greek' => "greek",
+        'greek-ext' => "greek-ext",
+        'vietnamese' => "vietnamese",
+    ));
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+
     // Main Font weight.
     $name = 'theme_bcu/fontweight';
     $title = get_string('fontweight', 'theme_bcu');

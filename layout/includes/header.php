@@ -45,6 +45,13 @@ $fontname = str_replace(" ", "+", $PAGE->theme->settings->fontname);
 $fontheadername = str_replace(" ", "+", $PAGE->theme->settings->fontheadername);
 $fonttitlename = str_replace(" ", "+", $PAGE->theme->settings->fonttitlename);
 
+// Get the fonts subset.
+if (!empty($PAGE->theme->settings->fontsubset)) {
+    $fontssubset = '&subset=latin,'.$PAGE->theme->settings->fontsubset;
+} else {
+    $fontssubset = '';
+}
+
 // Get the HTML for the settings bits.
 $html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
 
@@ -61,7 +68,8 @@ if ($showicons == 1) {
 } else {
 	$showiconsclass = " ";
 }
-//setting for default screen view. does not override user's preference
+
+// Setting for default screen view. does not override user's preference.
 $defaultview = "";
 $defaultview = $PAGE->theme->settings->viewselect;
 if ($defaultview == 1 && $setfull == "") {
@@ -77,15 +85,15 @@ echo $OUTPUT->doctype();
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
     <?php if (!empty($fontname) && $fontname != 'default') { ?>
-        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontname; ?>&subset=latin,cyrillic' rel='stylesheet' type='text/css'><?php
+        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontname.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
         } ?>
 
     <?php if (!empty($fontheadername) && $fontheadername != 'default') { ?>
-        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontheadername; ?>&subset=latin,cyrillic' rel='stylesheet' type='text/css'><?php
+        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontheadername.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
         } ?>
         
     <?php if (!empty($fonttitlename)  && $fonttitlename != 'default') { ?>
-        <link href='http://fonts.googleapis.com/css?family=<?php echo $fonttitlename; ?>&subset=latin,cyrillic' rel='stylesheet' type='text/css'><?php
+        <link href='http://fonts.googleapis.com/css?family=<?php echo $fonttitlename.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
         } ?>
 
     <?php echo $OUTPUT->standard_head_html() ?>
