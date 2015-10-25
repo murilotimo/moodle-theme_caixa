@@ -605,7 +605,7 @@ langmenu a:hover {
 }
 
 .breadcrumb-button {
-    margin-top: 0px;
+    margin-top: 4px;
 }
 
 .arrow-top {
@@ -1001,9 +1001,18 @@ a.carousel-control {
 .navbar .forumsearch,
 .navbar #coursesearchnavbar,
 .navbar .wikisearch {
-/*	display: none;*/
-margin-top: 6px;
+    margin-top: 3px;
 }
+
+#edittingbutton .helptooltip a {
+    background-color: transparent !important;
+    box-shadow: none !important;    
+    border: none !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
 
 .nav-tabs > li > a {
   color: #555555;
