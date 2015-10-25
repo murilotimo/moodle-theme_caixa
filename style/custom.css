@@ -789,6 +789,12 @@ input[type="radio"], input[type="checkbox"] {
     .enrolmenticons {
         display: none;
     }
+    
+    #edittingbutton a,
+    #edittingbutton .btn {
+        margin-left: 10px !important;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -842,14 +848,16 @@ input[type="radio"], input[type="checkbox"] {
     .block .header {
         margin: 0px 10px !important;
     }
+    
     #page-footer {
         margin: 50px 0px 0px;
     }
 
-/*    .navbar .nav {
-        margin: 0 10px 0 0px !important;
+    #edittingbutton a,
+    #edittingbutton .btn {
+        margin-left: -10px !important;
     }
-*/    
+    
     .navbar .nav > li > a {
     margin: 0 10px 0 0px !important;
     }
