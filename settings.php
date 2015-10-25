@@ -1542,7 +1542,7 @@ if (is_siteadmin()) {
     $radchoices = array(
     	'fullname' => "Course Full Name",
         'shortname' => "Course Short Name",
-        'off' => "None"
+        'off' => "Hide"
     );
 	$setting = new admin_setting_configselect($name, $title, $description, 'fullname', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -2742,6 +2742,8 @@ if (is_siteadmin()) {
 
     $ADMIN->add('theme_bcu', $temp);
 
+
+    // Frontpage courses section.
     $temp = new admin_settingpage('theme_bcu_frontpage_courses', get_string('frontpagecoursesettings', 'theme_bcu'));
     $temp->add(new admin_setting_heading('theme_bcu_frontpage_courses', get_string('frontpagesettingsheading', 'theme_bcu'),
         format_text(get_string('frontpagedesc', 'theme_bcu'), FORMAT_MARKDOWN)));
@@ -2766,6 +2768,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Show course contacts.
     $name = 'theme_bcu/tilesshowcontacts';
     $title = get_string('tilesshowcontacts', 'theme_bcu');
     $description = get_string('tilesshowcontactsdesc', 'theme_bcu');
@@ -2788,6 +2791,17 @@ if (is_siteadmin()) {
     $title = get_string('covhidebutton', 'theme_bcu');
     $description = get_string('covhidebuttondesc', 'theme_bcu');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $temp->add($setting);
+
+    // Show 'Available Courses' label.
+    $name = 'theme_bcu/enableavailablecourses';
+    $title = get_string('enableavailablecourses', 'theme_bcu');
+    $description = get_string('enableavailablecoursesdesc', 'theme_bcu');
+    $setting = new admin_setting_configselect($name, $title, $description, 0,
+    array(
+            'inherit' => "Show",
+            'none' => "Hide"
+        ));
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);

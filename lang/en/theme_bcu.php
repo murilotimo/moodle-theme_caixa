@@ -218,6 +218,9 @@ $string['enablefeeddesc'] = 'Display a link to the users feedback page';
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
 $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
 
+$string['enableavailablecourses'] = 'Display Available Courses';
+$string['enableavailablecoursesdesc'] = 'Display Available Courses label in the frontpage';
+
 $string['frontpagemarketoption'] = 'Coventry Tiles style marketing blocks';
 $string['frontpagemarketoptiondesc'] = 'Set the marketing blocks to use the Coventry Tiles style. Set colour for this in the colour settings.';
 
@@ -402,6 +405,7 @@ $string['frontpagerendereroption1'] = 'Tiles';
 $string['frontpagerendereroption2'] = 'Tiles w/ overlay';
 $string['frontpagerendereroption3'] = 'Moodle default';
 $string['frontpagerendereroption4'] = 'Coventry Tiles';
+
 
 $string['rendereroverlaycolor'] = 'Overlay colour';
 $string['rendereroverlaycolordesc'] = 'The colour of the overlay, when the "Tiles w/ overlay" renderer is selected.';

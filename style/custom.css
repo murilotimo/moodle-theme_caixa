@@ -47,8 +47,7 @@ a:focus {
     background-color: #FFF;
     background-image: none;
 }
-/* Custom CSS
--------------------------*/
+
 /* real main headings */
 #page-content {
     padding: 0 0px 20px;
@@ -321,16 +320,6 @@ a.usermendrop {
 	color: [[setting:infoboxtextcolor2]] !important; 
 }
 
-/*
-#themessage .span10 {
-	color: [[setting:infoboxtextcolor2]];
-    font-weight: normal;
-    line-height: 23px;
-    padding-right: 30px;
-    padding-top: 10px;
-}
-*/
-
 .personpic {
 	text-align: center;
 }
@@ -379,6 +368,10 @@ span.fa-chevron-right.fa {
 #theinfo .span3 {
 	text-align: right;
 	padding-top: 35px;
+}
+
+#frontpage-course-list h2 {
+    display: [[setting:enableavailablecourses]];
 }
 
 #page-footer,

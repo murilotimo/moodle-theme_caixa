@@ -136,6 +136,7 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:hideheadermobile]]' => '',
         '[[setting:enableheading]]' => 'fullname',
         '[[setting:breadcrumbtitle]]' => 'shortname',
+        '[[setting:enableavailablecourses]]' => 'display'
     );
 
     // Get all the defined settings for the theme and replace defaults.
