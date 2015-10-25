@@ -1542,7 +1542,7 @@ if (is_siteadmin()) {
     $radchoices = array(
     	'fullname' => "Course Full Name",
         'shortname' => "Course Short Name",
-        'off' => "Hide"
+        'off' => get_string('hide'),
     );
 	$setting = new admin_setting_configselect($name, $title, $description, 'fullname', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -2799,8 +2799,8 @@ if (is_siteadmin()) {
     $description = get_string('enableavailablecoursesdesc', 'theme_bcu');
     $setting = new admin_setting_configselect($name, $title, $description, 0,
     array(
-            'inherit' => "Show",
-            'none' => "Hide"
+            'inherit' => get_string('show'),
+            'none' => get_string('hide')
         ));
     $temp->add($setting);
 
@@ -2877,8 +2877,8 @@ if (is_siteadmin()) {
     $title = get_string('hidesocialmobile', 'theme_bcu');
     $description = get_string('hidesocialmobiledesc', 'theme_bcu');
     $radchoices = array(    	
-        ', .socialbox' => 'Hide',
-        '' => 'Show',
+        ', .socialbox' => get_string('hide'),
+        '' =>  get_string('show'),
     );	
 	$setting = new admin_setting_configselect($name, $title, $description, ', .socialbox', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -2929,8 +2929,8 @@ if (is_siteadmin()) {
     $title = get_string('hidecoursetitlemobile', 'theme_bcu');
     $description = get_string('hidecoursetitlemobiledesc', 'theme_bcu');
     $radchoices = array(    	
-        ', #coursetitle' => 'Hide',
-        '' => 'Show',
+        ', #coursetitle' => get_string('hide'),
+        '' => get_string('show'),
     );
 	$setting = new admin_setting_configselect($name, $title, $description, ', #coursetitle', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -2940,8 +2940,8 @@ if (is_siteadmin()) {
     $title = get_string('hidelogomobile', 'theme_bcu');
     $description = get_string('hidelogomobiledesc', 'theme_bcu');
     $radchoices = array(    	
-        ', #logocontainer' => 'Hide',
-        '' => 'Show',
+        ', #logocontainer' => get_string('hide'),
+        '' => get_string('show'),
     );
 	$setting = new admin_setting_configselect($name, $title, $description, ', #logocontainer', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -2951,8 +2951,8 @@ if (is_siteadmin()) {
     $title = get_string('hideheadermobile', 'theme_bcu');
     $description = get_string('hideheadermobiledesc', 'theme_bcu');
     $radchoices = array(        
-        ', #page-header' => 'Hide',
-        '' => 'Show',
+        ', #page-header' => get_string('hide'),
+        '' => get_string('show'),
     );
 	$setting = new admin_setting_configselect($name, $title, $description, ', #page-header', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -2962,8 +2962,8 @@ if (is_siteadmin()) {
     $title = get_string('hidebreadcrumbmobile', 'theme_bcu');
     $description = get_string('hidebreadcrumbmobiledesc', 'theme_bcu');
     $radchoices = array(        
-        ', .breadcrumb' => 'Hide',
-        '' => 'Show',
+        ', .breadcrumb' => get_string('hide'),
+        '' => get_string('show'),
     );
 	$setting = new admin_setting_configselect($name, $title, $description, ', .breadcrumb', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -2973,8 +2973,8 @@ if (is_siteadmin()) {
     $title = get_string('hidepagefootermobile', 'theme_bcu');
     $description = get_string('hidepagefootermobiledesc', 'theme_bcu');
     $radchoices = array(        
-        ', #page-footer' => 'Hide',
-        '' => 'Show',
+        ', #page-footer' => get_string('hide'),
+        '' => get_string('show'),
     );
 	$setting = new admin_setting_configselect($name, $title, $description, ', #page-footer', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
