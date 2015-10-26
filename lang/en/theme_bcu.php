@@ -42,8 +42,6 @@ $string['region-middle'] = 'middle';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 
-
-
 $string['pluginname'] = 'BCU';
 
 $string['region-side-post'] = 'Right';
@@ -69,8 +67,9 @@ $string['p5desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an
 
 $string['enablehelp'] = 'Help Link';
 $string['enablehelpdesc'] = 'Add a help link in the navbar.';
+
 $string['helptitle'] = 'Help';
-$string['helptitle2'] = 'Help';
+$string['helptitle2'] = 'Second Help link';
 
 $string['helpprofilefield'] = 'Help custom profile field (optional)';
 $string['helpprofilevalue'] = 'Expected custom profile field value (optional)';
@@ -873,7 +872,6 @@ $string['fonttitleweightdesc'] = 'Set the font weight used in the title site. En
 $string['fonttitlesize'] = 'Site title font size';
 $string['fonttitlesizedesc'] = 'Site title font size used in site. Enter a decimal value in pixels: 24px';
 
-// Font subset.
 $string['fontsubset'] = 'Google Fonts subset';
 $string['fontsubsetdesc'] = 'Select other character subset to be applied to all the fonts. latin subset is already included with Google Fonts';
 
