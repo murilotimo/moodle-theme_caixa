@@ -48,6 +48,17 @@ a:focus {
     background-image: none;
 }
 
+/* Selection **************************/
+::selection  {
+    color: #000000;
+    background-color: #eeff41;
+}
+
+::-moz-selection  {
+    color: #000000;
+    background-color: #eeff41;
+}
+
 /* real main headings */
 #page-content {
     padding: 0 0px 20px;
