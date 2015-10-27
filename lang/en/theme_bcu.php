@@ -288,14 +288,27 @@ $string['infoboxtextcolor2desc'] = 'Set the secondary frontpage Info Box text co
 
 $string['noenrolments'] = 'No enrolments found.';
 
-$string['alertbox'] = 'Top Alert Box';
-$string['alertboxdesc'] = 'Alert box to display at the top of all pages';
+// Alerts.
+$string['enablealert'] = 'Enable Alert Box';
+$string['enablealertdesc'] = 'Enable an Alert box to display at the top of all pages';
+
+$string['alerttype'] = 'Alert Box Type';
+$string['alerttypedesc'] = 'Select the type of alert: info (blue), warning (yellow) or announcement (green)';
+
+$string['alertinfo'] = 'Info';
+$string['alertinfodesc'] = 'Display information in the Alert Box';
+
+$string['alertwarning'] = 'Warning';
+$string['alertinfodesc'] = 'Display a warning in the Alert Box';
+
+$string['alertannounce'] = 'Announcement';
+$string['alertinfodesc'] = 'Display an announcement in the Alert Box';
+
+$string['alerttext'] = 'The alert text';
+$string['alerttextdesc'] = 'Enter the text to display in the Alert box';
 
 $string['disablealertcoursepages'] = 'Disable Alert Box on Course Pages';
 $string['disablealertcoursepagesdesc'] = 'Turning this option on will limit the display of the top alert box to site pages, the homepage, and dashboard (My Home) etc. and will not show in any course pages';
-
-$string['jssection'] = 'Javascript Section';
-$string['jssectiondesc'] = 'Add javascript code to the site, e.g. Google Analytics';
 
 $string['footer1header'] = 'Footer Section 1 Title';
 $string['footer2header'] = 'Footer Section 2 Title';
@@ -321,6 +334,10 @@ $string['customcssjssettings'] = 'Custom CSS & JS';
 $string['genericsettingsheading'] = 'Apply your own modifications';
 $string['genericsettingsdescription'] = 'Here you can find various settings to add your own CSS and JavaScript code to the theme.';
 
+$string['jssection'] = 'Javascript Section';
+$string['jssectiondesc'] = 'Add javascript code to the site, e.g. Google Analytics';
+
+
 $string['tickersettings'] = 'News Ticker';
 $string['tickersettingsheading'] = 'Setup News Ticker on Front Page';
 $string['tickerdesc'] = 'Here you can set a news ticker to run across the front page of your Moodle site.
@@ -333,28 +350,36 @@ $string['tickerdesc'] = 'Here you can set a news ticker to run across the front 
 	&lt;li&gt;News item two.....&lt;/li&gt;
 	</pre>';
 
+$string['alertsettings'] = 'Alert Box';
+$string['alertsettingsheading'] = 'Customize the top Alert Box';
+$string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert.';
+
 $string['slideshowsettings'] = 'Slideshow';
-$string['slideshowsettingsheading'] = 'Customise the carousel on the front page';
+$string['slideshowsettingsheading'] = 'Customize the carousel on the front page';
 $string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
 
 $string['marketingsettings'] = 'Marketing Blocks';
-$string['marketingsettingsheading'] = 'Customise the marketing blocks that appear on the front page';
-$string['marketingdesc'] = 'You can build marketting blocks, up to 4 on the front page. For examples, please see the README file that comes with this theme.';
+$string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page';
+$string['marketingdesc'] = 'You can build marketting blocks, up to 12 on the front page. For examples, please see the README file that comes with this theme.';
 
 $string['footersettings'] = 'Footer';
 $string['footersettingsheading'] = 'Set the content that should appear in the footer.';
 $string['footerdesc'] = 'Control the content that appears in the 4 footer sections of the page.';
 
 $string['navbarsettings'] = 'Header Navbar';
-$string['navbarsettingsheading'] = 'Customise the navigation bar';
+$string['navbarsettingsheading'] = 'Customize the navigation bar';
 $string['navbardesc'] = 'Allows you to control all of the elements that appear on the navigation bar.';
 
-$string['coloursettings'] = 'Colours & Fonts';
+$string['coloursettings'] = 'Colours';
 $string['coloursettingsheading'] = 'Modify the main colours and fonts used throughout the theme.';
 $string['colourdesc'] = 'You can select the colours and fonts that you would like to use throughout the theme.';
 
+$string['fontsettings'] = 'Fonts';
+$string['fontsettingsheading'] = 'Modify the fonts used throughout the theme.';
+$string['fontdesc'] = 'You can select the Google Fonts that you would like to use throughout the theme.';
+
 $string['buttonsettings'] = 'Buttons';
-$string['buttonsettingsheading'] = 'Customise the buttons of this theme.';
+$string['buttonsettingsheading'] = 'Customize the buttons of this theme.';
 $string['buttondesc'] = 'Alter the appearance of buttons used in this theme.';
 
 $string['buttonradius'] = 'Set Button Radius';
@@ -370,7 +395,7 @@ $string['buttonloginmargintop'] = 'Set Top Margin for Login Button';
 $string['buttonloginmargintopdesc'] = 'Allows spacing / position of login button to be altered';
 
 $string['headersettings'] = 'Header';
-$string['headersettingsheading'] = 'Customise the header of this theme.';
+$string['headersettingsheading'] = 'Customize the header of this theme.';
 $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
 
 $string['enableheading'] = 'Header course title';
@@ -380,10 +405,10 @@ $string['breadcrumbtitle'] = 'Breadcrumb course name';
 $string['breadcrumbtitledesc'] = 'Set the mode to display the course title in the breadcrumb.';
 
 $string['usernav'] = 'Header User';
-$string['usernavheading'] = 'Customise dropdown menu for users profile.';
+$string['usernavheading'] = 'Customize dropdown menu for users profile.';
 
 $string['menusettings'] = 'Header Menus';
-$string['menusettingsheading'] = 'Customise menus in the upper header the header of this theme.';
+$string['menusettingsheading'] = 'Customize menus in the upper header the header of this theme.';
 
 // TO BE REMOVED $string['menudesc'] = 'Display link menus to users. Can be targeted based on custom profile fields (optional)';!!!
 
@@ -392,6 +417,7 @@ $string['thiscourse'] = 'This course';
 
 // Admin Menu Strings.
 $string['blocksettings'] = 'Block Settings';
+$string['frontpagealertsettings'] = 'Alert Box';
 $string['frontpageblocksettings'] = 'Marketing Blocks';
 $string['frontpagetickersettings'] = 'Frontpage Ticker';
 $string['frontpageslidersettings'] = 'Frontpage Slider';
@@ -589,7 +615,7 @@ $string['activebreadcrumbdesc'] = 'Set the background colour of the active bread
 $string['menufontsize'] = 'Font size for navigation bar';
 $string['menufontsizedesc'] = 'Set the size of the font used in the main navigation bar.';
 
-$string['usernavheading'] = 'Customise the user navigation dropdown';
+$string['usernavheading'] = 'Customize the user navigation dropdown';
 $string['usernavdesc'] = 'Allows you to control all of the elements that appear in the user navigation dropdown.';
 $string['enablehomedesc'] = 'Display a link to the frontpage.';
 
@@ -890,9 +916,10 @@ $string['settingssecondinfoboxcolors'] = 'Second Info Box Colours';
 $string['settingsmarketingcolors'] = 'Marketing Block Colours';
 $string['settingsoverlaycolors'] = 'Overlay Tiles Colours';
 $string['settingsnavbarcolors'] = 'Marketing Block Colours';
+$string['settingsalertbox'] = 'Alert Box';
 $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
 $string['settingsfootercolors'] = 'Footer Colours';
 $string['settingsfonts'] = 'Fonts';
 
 // Login button.
-$string['logintextbutton'] = 'Login';
+$string['logintextbutton'] = 'Log In';
