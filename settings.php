@@ -1000,6 +1000,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
+    // Market blocks border colour.
     $name = 'theme_bcu/marketblockbordercolor';
     $title = get_string('marketblockbordercolor', 'theme_bcu');
     $description = get_string('marketblockbordercolordesc', 'theme_bcu');
@@ -1008,6 +1009,8 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+
+    // Market blocks background colour.
     $name = 'theme_bcu/marketblocksbackgroundcolor';
     $title = get_string('marketblocksbackgroundcolor', 'theme_bcu');
     $description = get_string('marketblocksbackgroundcolordesc', 'theme_bcu');
@@ -1015,7 +1018,6 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFFFFF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
 
 
     // Overlay tiles colours heading.
@@ -1329,6 +1331,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Buttons background colour.
 	$name = 'theme_bcu/buttoncolor';
     $title = get_string('buttoncolor', 'theme_bcu');
     $description = get_string('buttoncolordesc', 'theme_bcu');
@@ -1337,6 +1340,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Buttons background hover colour.
     $name = 'theme_bcu/buttonhovercolor';
     $title = get_string('buttonhovercolor', 'theme_bcu');
     $description = get_string('buttonhovercolordesc', 'theme_bcu');
@@ -1345,6 +1349,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
+    // Buttons text colour.
 	$name = 'theme_bcu/buttontextcolor';
     $title = get_string('buttontextcolor', 'theme_bcu');
     $description = get_string('buttontextcolordesc', 'theme_bcu');
@@ -1466,6 +1471,7 @@ if (is_siteadmin()) {
     $description = get_string('buttonloginpaddingdesc', 'theme_bcu');
     $radchoices = array(
     	'0px' => "0px",
+        '1px' => "1px",
         '2px' => "2px",
         '3px' => "3px",
         '4px' => "4px",
@@ -1510,6 +1516,10 @@ if (is_siteadmin()) {
         '6px' => "6px",                  
         '7px' => "7px",                  
         '8px' => "8px",                  
+        '9px' => "9px",                  
+        '10px' => "10px",                  
+        '11px' => "11px",                  
+        '12px' => "12px",                  
     );
 	$setting = new admin_setting_configselect($name, $title, $description, '3px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1594,6 +1604,7 @@ if (is_siteadmin()) {
     $title = get_string('menufontsize', 'theme_bcu');
     $description = get_string('menufontsizedesc', 'theme_bcu');
     $radchoices = array(
+    	'10px' => "10px",
     	'11px' => "11px",
     	'12px' => "12px",
         '13px' => "13px",
@@ -1800,6 +1811,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Enable Preferences.
     $name = 'theme_bcu/enablepref';
     $title = get_string('enablepref', 'theme_bcu');
     $description = get_string('enableprefdesc', 'theme_bcu');
@@ -1808,7 +1820,8 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/enablenote';
+    // Enable Notes.
+    $name = 'theme_bcu/enablenote';
     $title = get_string('enablenote', 'theme_bcu');
     $description = get_string('enablenotedesc', 'theme_bcu');
     $default = false;
@@ -1816,7 +1829,8 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/enableblog';
+    // Enable Blog.
+    $name = 'theme_bcu/enableblog';
     $title = get_string('enableblog', 'theme_bcu');
     $description = get_string('enableblogdesc', 'theme_bcu');
     $default = false;
@@ -1824,7 +1838,8 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/enableposts';
+    // Enable Forum posts.
+    $name = 'theme_bcu/enableposts';
     $title = get_string('enableposts', 'theme_bcu');
     $description = get_string('enablepostsdesc', 'theme_bcu');
     $default = false;
@@ -1832,7 +1847,8 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-     $name = 'theme_bcu/enablefeed';
+    // Enable Feed.
+    $name = 'theme_bcu/enablefeed';
     $title = get_string('enablefeed', 'theme_bcu');
     $description = get_string('enablefeeddesc', 'theme_bcu');
     $default = false;
@@ -2810,6 +2826,7 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_bcu_layout', get_string('layoutsettingsheading', 'theme_bcu'),
         format_text(get_string('layoutdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
+    // Display block in the Left/Right side.
     $name = 'theme_bcu/blockside';
     $title = get_string('blockside', 'theme_bcu');
     $description = get_string('blocksidedesc', 'theme_bcu');
