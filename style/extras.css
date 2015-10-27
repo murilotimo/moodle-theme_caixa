@@ -634,7 +634,7 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 
 /*new ticker */
 #ticker, #ticker_container {
-	font-size: 85%;
+	font-size: 100%;
 }
 
 #ticker-wrap {

@@ -42,18 +42,21 @@
                 <?php echo $OUTPUT->get_setting('footer1content', 'format_html'); ?>
             </div>
             <?php } ?>
+
             <?php if (!empty($PAGE->theme->settings->footer2content)) { ?>
             <div class="left-col span3" id="footer-faculties">
                 <h3 title="<?php $OUTPUT->get_setting('footer2header', 'format_text'); ?>"><?php echo $OUTPUT->get_setting('footer2header', 'format_text'); ?></h3>
                 <?php echo $OUTPUT->get_setting('footer2content', 'format_html'); ?>
             </div>
             <?php } ?>
+
             <?php if (!empty($PAGE->theme->settings->footer3content)) { ?>
             <div class="left-col span3" id="social-connectOLD">
                 <h3 title="<?php $OUTPUT->get_setting('footer3header', 'format_text'); ?>"><?php echo $OUTPUT->get_setting('footer3header', 'format_text'); ?></h3>
                 <?php echo $OUTPUT->get_setting('footer3content', 'format_html'); ?>
             </div>
             <?php } ?>
+
             <?php if (!empty($PAGE->theme->settings->footer4content)) { ?>
             <div class="left-col span3">
                 <h3 title="<?php $OUTPUT->get_setting('footer4header', 'format_text'); ?>"><?php echo $OUTPUT->get_setting('footer4header', 'format_text'); ?></h3>
@@ -63,19 +66,22 @@
         </div>
     </div>
     <?php } ?>
+
     <?php if($PAGE->theme->settings->showfooterblocks) { ?>
     <div class="info container2 clearfix">
         <div class="container">
             <div class="row-fluid">
-                <div class="span3">
+                <div class="span4">
                     <?php echo $html->footnote; ?>
                 </div>
-                <div class="span6 helplink">
-                <?php if ($PAGE->theme->settings->moodledocs) { 
+
+                <div class="span4 helplink">
+                    <?php if ($PAGE->theme->settings->moodledocs) { 
                           echo $OUTPUT->page_doc_link(); 
-                      } ?>
+                    } ?>
                 </div>
-                <div class="span3">
+
+                <div class="span4">
                     <?php echo $OUTPUT->standard_footer_html(); ?>
                 </div>
             </div>
