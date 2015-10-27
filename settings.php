@@ -1726,7 +1726,15 @@ if (is_siteadmin()) {
     );
     $setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
     $temp->add($setting);	
-		
+	
+	$name = 'theme_bcu/hideinforum';
+    $title = get_string('hideinforum', 'theme_bcu');
+    $description = get_string('hideinforumdesc', 'theme_bcu');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
 	$ADMIN->add('theme_bcu', $temp);
 	
 	$temp = new admin_settingpage('theme_bcu_usernav', get_string('usernav', 'theme_bcu'));

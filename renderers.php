@@ -82,8 +82,7 @@ class theme_bcu_core_renderer extends core_renderer {
     }
 
     protected function render_user_menu(custom_menu $menu) {
-        global $CFG, $USER, $DB, $OUTPUT;
-
+        global $CFG, $USER, $DB, $OUTPUT;        
         $addlangmenu = true;
         $addmessagemenu = true;
 
@@ -404,7 +403,7 @@ class theme_bcu_core_renderer extends core_renderer {
 		        	$access = false;
 	            }
 			}
-			if ($access){
+			if ($access && !$this->hideinforum()){
 				$branchtitle = get_string('helptitle', 'theme_bcu');
 	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
 	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
@@ -412,7 +411,7 @@ class theme_bcu_core_renderer extends core_renderer {
 	            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 			}
         }
-		if (!empty($PAGE->theme->settings->enablehelp2)) {
+		if (!empty($PAGE->theme->settings->enablehelp2 )) {
 			$access = true;           	
 			$ftype = $PAGE->theme->settings->helpprofilefield2;			
 			$setvalue = $PAGE->theme->settings->helpprofilevalue2;				
@@ -421,7 +420,7 @@ class theme_bcu_core_renderer extends core_renderer {
 		        	$access = false;
 	            }
 			}					
-			if ($access){			
+			if ($access && !$this->hideinforum()){			
 	            $branchtitle = get_string('helptitle2', 'theme_bcu');
 	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
 	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2);
@@ -446,7 +445,7 @@ class theme_bcu_core_renderer extends core_renderer {
 			}
 		}
 			
-        if (!empty($PAGE->theme->settings->toolsmenu) && $access == true) {        	
+        if (!empty($PAGE->theme->settings->toolsmenu) && $access == true && !$this->hideinforum()) {        	
         	$menu = ($PAGE->theme->settings->toolsmenu);
 			$label = get_string('toolsmenulabel', 'theme_bcu');
 			$custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');            
@@ -470,7 +469,7 @@ class theme_bcu_core_renderer extends core_renderer {
 			}
 		}
 			
-        if (!empty($PAGE->theme->settings->toolsmenu2) && $access == true) {        	
+        if (!empty($PAGE->theme->settings->toolsmenu2) && $access == true && !$this->hideinforum()) {        	
         	$menu = ($PAGE->theme->settings->toolsmenu2);
 			$label = get_string('toolsmenulabel2', 'theme_bcu');
 			$custommenuitems = $this->parse_custom_menu($menu, $label, $class,'</span>');            
@@ -781,6 +780,17 @@ class theme_bcu_core_renderer extends core_renderer {
         
         $custommenuitems .= implode("\n", $arr);
 		return $custommenuitems;
+	}
+	
+	public function hideinforum() {
+		global $PAGE;
+		$hidelinks = false;		
+		if (!empty($PAGE->theme->settings->hideinforum)) {					
+			if (strstr($_SERVER['REQUEST_URI'], '/mod/forum/')) {				
+				$hidelinks = true;
+			}
+		}		
+		return $hidelinks;
 	}
 	
 	public function wrap_custom_menu_top($custommenu, $classno){
