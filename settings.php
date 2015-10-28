@@ -2619,9 +2619,9 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     // Disable alert in course pages.
-    $name = 'theme_bcu/disablealertcoursepages';
-    $title = get_string('disablealertcoursepages', 'theme_bcu');
-    $description = get_string('disablealertcoursepagesdesc', 'theme_bcu');
+    $name = 'theme_bcu/enablealertcoursepages';
+    $title = get_string('enablealertcoursepages', 'theme_bcu');
+    $description = get_string('enablealertcoursepagesdesc', 'theme_bcu');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');

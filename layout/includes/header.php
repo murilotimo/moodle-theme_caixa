@@ -52,6 +52,22 @@ if (!empty($PAGE->theme->settings->fontsubset)) {
     $fontssubset = '';
 }
 
+// Alert text.
+$alertclass = $PAGE->theme->settings->alerttype;
+$alerttext =  strip_tags($PAGE->theme->settings->alerttext);
+
+switch ($alertclass) {
+    case "success":
+    $alerticon = "bullhorn";
+    break;
+    case "info":
+    $alerticon = "info-circle";
+    break;
+    case "warning":
+    $alerticon = "exclamation-triangle";
+    break;
+}
+
 // Get the HTML for the settings bits.
 $html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
 
@@ -102,26 +118,21 @@ echo $OUTPUT->doctype();
 
 <body <?php echo $OUTPUT->body_attributes(array('two-column', $setzoom)); ?>>
 
+
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <div id="page" class="container-fluid <?php echo "$setfull $showiconsclass"; ?>">
 
-<?php if (core\session\manager::is_loggedinas()) { ?>
-<div class="customalert">
-<div class="container">
-<?php echo $OUTPUT->login_info(); ?>
-</div>
-</div>
-
+<?php if ($PAGE->theme->settings->enablealert && !empty($PAGE->theme->settings->alerttext)) { 
+          if ($PAGE->theme->settings->enablealertcoursepages && $PAGE->bodyid == 'page-course-view-topics') {
+          } else{ ?> 
+        <div class="customalert alert alert-<?php echo $alertclass ?>" role="alert">
+        <div class="container">
+            <i class="fa fa-<?php echo $alerticon; ?> fa-lg"></i>&nbsp;
+            <?php echo strip_tags($PAGE->theme->settings->alerttext); ?>
+        </div>
+       </div>
 <?php
-} else if (!empty($PAGE->theme->settings->alertbox) && (!$PAGE->theme->settings->disablealertcoursepages || $COURSE->id == 1)) {
-?>
-<div class="customalert">
-<div class="container">
-<?php echo $OUTPUT->get_setting('alertbox', 'format_html');; ?>
-</div>
-</div>
-<?php
-}
+}}
 ?>
 
 <header id="page-header-wrapper" <?php if($fixedheader) { ?> style="position: fixed;" <?php } ?>>

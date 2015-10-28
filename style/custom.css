@@ -988,22 +988,28 @@ a.carousel-control {
 	
 	
 /*alert message */
+
+.alert {
+    margin-bottom: 0;
+}
+
 .customalert {
-	background: #fbf3bb;
 	font-weight: 600;
-	padding: 8px 0px;
 	font-size: 14px;
-	color: #be1e2d;
-	border-bottom: 1px solid #f2b535;
 	text-align: center;
 }
 
+/*
 .customalert p {
 	margin: 0 0;
  	padding: 0 0;
 }
+*/
 
-.navbar .singlebutton, .navbar input, .navbar .singlebutton div, .path-mod-data .navbar form {
+.navbar .singlebutton,
+.navbar input,
+.navbar .singlebutton div,
+.path-mod-data .navbar form {
 	margin: 0 0;
 }
 

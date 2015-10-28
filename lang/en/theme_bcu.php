@@ -304,11 +304,11 @@ $string['alertinfodesc'] = 'Display a warning in the Alert Box';
 $string['alertannounce'] = 'Announcement';
 $string['alertinfodesc'] = 'Display an announcement in the Alert Box';
 
-$string['alerttext'] = 'The alert text';
+$string['alerttext'] = 'Alert text';
 $string['alerttextdesc'] = 'Enter the text to display in the Alert box';
 
-$string['disablealertcoursepages'] = 'Disable Alert Box on Course Pages';
-$string['disablealertcoursepagesdesc'] = 'Turning this option on will limit the display of the top alert box to site pages, the homepage, and dashboard (My Home) etc. and will not show in any course pages';
+$string['enablealertcoursepages'] = 'Enable Alert Box on Course Pages';
+$string['enablealertcoursepagesdesc'] = 'Turning this option on will display the top alert box in the courses pages';
 
 $string['footer1header'] = 'Footer Section 1 Title';
 $string['footer2header'] = 'Footer Section 2 Title';
