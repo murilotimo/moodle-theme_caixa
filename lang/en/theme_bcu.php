@@ -557,6 +557,11 @@ $string['rightblocks'] = 'Right';
 $string['helptarget'] = 'Help target';
 $string['helptargetdesc'] = 'Do you want the help link to open in a new window?';
 
+$string['hideinforum'] = 'Hide Help and Tools in Forums';
+$string['hideinforumdesc'] = 'When using fixed width and all menu options the forum search box spills onto the line below. 
+Turning this optoin on will hide tools and help menu items in forums allowing it to display properly.';
+
+
 $string['targetnewwindow'] = 'New window';
 $string['targetsamewindow'] = 'Same window';
 

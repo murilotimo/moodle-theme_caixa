@@ -1724,6 +1724,7 @@ if (is_siteadmin()) {
         '_self' => get_string('targetsamewindow', 'theme_bcu'),
     );
     $setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
+<<<<<<< HEAD
     $temp->add($setting);
 
     $ADMIN->add('theme_bcu', $temp);
@@ -1733,6 +1734,23 @@ if (is_siteadmin()) {
     $temp = new admin_settingpage('theme_bcu_usernav', get_string('usernav', 'theme_bcu'));
 
     $temp->add(new admin_setting_heading('theme_bcu_usernav', get_string('usernavheading', 'theme_bcu'),
+=======
+    $temp->add($setting);	
+	
+	$name = 'theme_bcu/hideinforum';
+    $title = get_string('hideinforum', 'theme_bcu');
+    $description = get_string('hideinforumdesc', 'theme_bcu');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$ADMIN->add('theme_bcu', $temp);
+	
+	$temp = new admin_settingpage('theme_bcu_usernav', get_string('usernav', 'theme_bcu'));
+	
+	$temp->add(new admin_setting_heading('theme_bcu_usernav', get_string('usernavheading', 'theme_bcu'),
+>>>>>>> 8baf936cb92b8ffd171f146c64b245c93d562300
     format_text(get_string('usernavdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
     $name = 'theme_bcu/headerprofilefontsize';

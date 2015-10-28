@@ -1025,6 +1025,11 @@ a.carousel-control {
     margin-top: 3px;
 }
 
+.navbar .forumsearch input[type=text] {
+	height: 16px !important;	
+	margin-bottom:4px !important;
+}
+
 #edittingbutton .helptooltip a {
     background-color: transparent !important;
     box-shadow: none !important;    
