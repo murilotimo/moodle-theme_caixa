@@ -351,8 +351,8 @@ class theme_bcu_core_renderer extends core_renderer {
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-                            $branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id),
-                                    format_string($course->shortname));
+                            $branch->add($trunc = mb_strimwidth(format_string($course->fullname), 0, 40, "..."), 
+                                         new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }
                 } else {

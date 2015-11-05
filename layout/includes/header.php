@@ -98,18 +98,18 @@ echo $OUTPUT->doctype();
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <?php if (!empty($fontname) && $fontname != 'default') { ?>
-        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontname.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
+        <link href='https://fonts.googleapis.com/css?family=<?php echo $fontname.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
         } ?>
 
     <?php if (!empty($fontheadername) && $fontheadername != 'default') { ?>
-        <link href='http://fonts.googleapis.com/css?family=<?php echo $fontheadername.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
+        <link href='https://fonts.googleapis.com/css?family=<?php echo $fontheadername.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
         } ?>
         
     <?php if (!empty($fonttitlename)  && $fonttitlename != 'default') { ?>
-        <link href='http://fonts.googleapis.com/css?family=<?php echo $fonttitlename.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
+        <link href='https://fonts.googleapis.com/css?family=<?php echo $fonttitlename.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
         } ?>
 
     <?php echo $OUTPUT->standard_head_html() ?>
@@ -122,20 +122,36 @@ echo $OUTPUT->doctype();
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <div id="page" class="container-fluid <?php echo "$setfull $showiconsclass"; ?>">
 
-<?php if ($PAGE->theme->settings->enablealert && !empty($PAGE->theme->settings->alerttext)) { 
-          if ($PAGE->theme->settings->enablealertcoursepages && $PAGE->bodyid == 'page-course-view-topics') {
-          } else{ ?> 
-        <div class="customalert alert alert-<?php echo $alertclass ?>" role="alert">
-        <div class="container">
-            <i class="fa fa-<?php echo $alerticon; ?> fa-lg"></i>&nbsp;
-            <?php echo strip_tags($PAGE->theme->settings->alerttext); ?>
-        </div>
-       </div>
-<?php
-}}
-?>
+<?php if (($PAGE->theme->settings->enablealert) && !empty($PAGE->theme->settings->alerttext)) {
+          if (!$PAGE->theme->settings->enablealertcoursepages) {
+              if ($PAGE->bodyid == 'pagelayout-frontpage') {  ?>
+          
+             <?php } else {?>
+            
+           
+            <div class="customalert alert alert-<?php echo $alertclass ?>" role="alert">
+                <div class="container">
+                    <i class="fa fa-<?php echo $alerticon; ?> fa-lg"></i>&nbsp;
+                    <?php echo strip_tags($PAGE->theme->settings->alerttext); ?>
+               </div>
+            </div>
 
-<header id="page-header-wrapper" <?php if($fixedheader) { ?> style="position: fixed;" <?php } ?>>
+
+
+            
+            
+            
+<?php }}} ?>
+
+
+
+
+
+
+
+
+
+<header id="page-header-wrapper" <?php if($fixedheader) { ?> style="position: fixed;" <?php } ?> >
     <div id="above-header">
         <div class="clearfix container userhead">
             <div class="pull-left">
