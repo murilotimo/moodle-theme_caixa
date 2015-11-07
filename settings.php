@@ -2596,27 +2596,90 @@ if (is_siteadmin()) {
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    // Enable Alert.
-    $name = 'theme_bcu/enablealert';
-    $title = get_string('enablealert', 'theme_bcu');
-    $description = get_string('enablealertdesc', 'theme_bcu');
+
+    // Enable Global Alert.
+    $name = 'theme_bcu/enablealertglobal';
+    $title = get_string('enablealertglobal', 'theme_bcu');
+    $description = get_string('enablealertglobaldesc', 'theme_bcu');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Alert text.
-    $name = 'theme_bcu/alerttext';
-    $title = get_string('alerttext', 'theme_bcu');
-    $description = get_string('alerttextdesc', 'theme_bcu');
+    // Global Alert text.
+    $name = 'theme_bcu/alerttextglobal';
+    $title = get_string('alerttextglobal', 'theme_bcu');
+    $description = get_string('alerttextglobaldesc', 'theme_bcu');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    // Alert type.
-    $name = 'theme_bcu/alerttype';
-    $title = get_string('alerttype', 'theme_bcu');
-    $description = get_string('alerttypedesc', 'theme_bcu');
+    // Global Alert type.
+    $name = 'theme_bcu/alerttypeglobal';
+    $title = get_string('alerttypeglobal', 'theme_bcu');
+    $description = get_string('alerttypeglobaldesc', 'theme_bcu');
+    $default = 'info';
+    $choices = array(
+        'info' => get_string('alertinfo', 'theme_bcu'),
+        'warning' => get_string('alertwarning', 'theme_bcu'),
+        'success' => get_string('alertannounce', 'theme_bcu'));
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+
+    // Enable Admins Alert.
+    $name = 'theme_bcu/enablealertadmins';
+    $title = get_string('enablealertadmins', 'theme_bcu');
+    $description = get_string('enablealertadminsdesc', 'theme_bcu');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Admins Alert text.
+    $name = 'theme_bcu/alerttextadmins';
+    $title = get_string('alerttextadmins', 'theme_bcu');
+    $description = get_string('alerttextadminsdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    // Admins Alert type.
+    $name = 'theme_bcu/alerttypeadmins';
+    $title = get_string('alerttypeadmins', 'theme_bcu');
+    $description = get_string('alerttypeadminsdesc', 'theme_bcu');
+    $default = 'info';
+    $choices = array(
+        'info' => get_string('alertinfo', 'theme_bcu'),
+        'warning' => get_string('alertwarning', 'theme_bcu'),
+        'success' => get_string('alertannounce', 'theme_bcu'));
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+
+    // Enable Users Alert.
+    $name = 'theme_bcu/enablealertusers';
+    $title = get_string('enablealertusers', 'theme_bcu');
+    $description = get_string('enablealertusersdesc', 'theme_bcu');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Users Alert text.
+    $name = 'theme_bcu/alerttextusers';
+    $title = get_string('alerttextusers', 'theme_bcu');
+    $description = get_string('alerttextusersdesc', 'theme_bcu');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+
+    // Users Alert type.
+    $name = 'theme_bcu/alerttypeusers';
+    $title = get_string('alerttypeusers', 'theme_bcu');
+    $description = get_string('alerttypeusersdesc', 'theme_bcu');
     $default = 'info';
     $choices = array(
         'info' => get_string('alertinfo', 'theme_bcu'),

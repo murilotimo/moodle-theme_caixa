@@ -52,19 +52,49 @@ if (!empty($PAGE->theme->settings->fontsubset)) {
     $fontssubset = '';
 }
 
-// Alert text.
-$alertclass = $PAGE->theme->settings->alerttype;
-$alerttext =  strip_tags($PAGE->theme->settings->alerttext);
-
-switch ($alertclass) {
+// Global Alert.
+$alertclassglobal = $PAGE->theme->settings->alerttypeglobal;
+$alerttextglobal =  strip_tags($PAGE->theme->settings->alerttextglobal);
+switch ($alertclassglobal) {
     case "success":
-    $alerticon = "bullhorn";
+    $alerticonglobal = "bullhorn";
     break;
     case "info":
-    $alerticon = "info-circle";
+    $alerticonglobal = "info-circle";
     break;
     case "warning":
-    $alerticon = "exclamation-triangle";
+    $alerticonglobal = "exclamation-triangle";
+    break;
+}
+
+// Admins Alert.
+$alertclassadmins = $PAGE->theme->settings->alerttypeadmins;
+$alerttextadmins =  strip_tags($PAGE->theme->settings->alerttextadmins);
+switch ($alertclassadmins) {
+    case "success":
+    $alerticonadmins = "bullhorn";
+    break;
+    case "info":
+    $alerticonadmins = "info-circle";
+    break;
+    case "warning":
+    $alerticonadmins = "exclamation-triangle";
+    break;
+}
+
+// Students Alert.
+$alertclassusers = $PAGE->theme->settings->alerttypeusers;
+$alerttextusers =  strip_tags($PAGE->theme->settings->alerttextusers);
+
+switch ($alertclassusers) {
+    case "success":
+    $alerticonusers = "bullhorn";
+    break;
+    case "info":
+    $alerticonusers = "info-circle";
+    break;
+    case "warning":
+    $alerticonusers = "exclamation-triangle";
     break;
 }
 
@@ -118,36 +148,42 @@ echo $OUTPUT->doctype();
 
 <body <?php echo $OUTPUT->body_attributes(array('two-column', $setzoom)); ?>>
 
-
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <div id="page" class="container-fluid <?php echo "$setfull $showiconsclass"; ?>">
 
-<?php if (($PAGE->theme->settings->enablealert) && !empty($PAGE->theme->settings->alerttext)) {
-          if (!$PAGE->theme->settings->enablealertcoursepages) {
-              if ($PAGE->bodyid == 'pagelayout-frontpage') {  ?>
-          
-             <?php } else {?>
-            
-           
-            <div class="customalert alert alert-<?php echo $alertclass ?>" role="alert">
+<?php 
+
+// Global Alert.
+if (($PAGE->theme->settings->enablealertglobal) && !empty($PAGE->theme->settings->alerttextglobal)) { ?>
+            <div class="customalert alert alert-<?php echo $alertclassglobal ?>" role="alert">
                 <div class="container">
-                    <i class="fa fa-<?php echo $alerticon; ?> fa-lg"></i>&nbsp;
-                    <?php echo strip_tags($PAGE->theme->settings->alerttext); ?>
+                    <i class="fa fa-<?php echo $alerticonglobal; ?> fa-2x"></i>&nbsp;
+                    <?php echo strip_tags($PAGE->theme->settings->alerttextglobal); ?>
                </div>
             </div>
+<?php } 
 
 
 
-            
-            
-            
-<?php }}} ?>
+// Users Alert.
+if (($PAGE->theme->settings->enablealertusers) && !empty($PAGE->theme->settings->alerttextusers) && isloggedin()) { ?>
+            <div class="customalert alert alert-<?php echo $alertclassusers ?>" role="alert">
+                <div class="container">
+                    <i class="fa fa-<?php echo $alerticonusers; ?> fa-2x"></i>&nbsp;
+                    <?php echo strip_tags($PAGE->theme->settings->alerttextusers); ?>
+               </div>
+            </div>
+<?php } 
 
-
-
-
-
-
+// Admins Alert.
+if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings->alerttextadmins) && is_siteadmin()) { ?>
+            <div class="customalert alert alert-<?php echo $alertclassadmins ?>" role="alert">
+                <div class="container">
+                    <i class="fa fa-<?php echo $alerticonadmins; ?> fa-2x"></i>&nbsp;
+                    <?php echo strip_tags($PAGE->theme->settings->alerttextadmins); ?>
+               </div>
+            </div>
+<?php } ?>
 
 
 

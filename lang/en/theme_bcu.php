@@ -288,13 +288,8 @@ $string['infoboxtextcolor2desc'] = 'Set the secondary frontpage Info Box text co
 
 $string['noenrolments'] = 'No enrolments found.';
 
+
 // Alerts.
-$string['enablealert'] = 'Enable Alert Box';
-$string['enablealertdesc'] = 'Enable an Alert box to display at the top of all pages';
-
-$string['alerttype'] = 'Alert Box Type';
-$string['alerttypedesc'] = 'Select the type of alert: info (blue), warning (yellow) or announcement (green)';
-
 $string['alertinfo'] = 'Info';
 $string['alertinfodesc'] = 'Display information in the Alert Box';
 
@@ -304,8 +299,37 @@ $string['alertinfodesc'] = 'Display a warning in the Alert Box';
 $string['alertannounce'] = 'Announcement';
 $string['alertinfodesc'] = 'Display an announcement in the Alert Box';
 
-$string['alerttext'] = 'Alert text';
-$string['alerttextdesc'] = 'Enter the text to display in the Alert box';
+// Global.
+$string['enablealertglobal'] = 'Enable Global Alert Box';
+$string['enablealertglobaldesc'] = 'Enable a Global Alert box to display at the top of all pages';
+
+$string['alerttypeglobal'] = 'Global Alert Box Type';
+$string['alerttypeglobaldesc'] = 'Select the type of alert: info (blue), warning (yellow) or announcement (green)';
+
+$string['alerttextglobal'] = 'Alert text';
+$string['alerttextglobaldesc'] = 'Enter the text to display in the Alert box';
+
+// Admins.
+$string['enablealertadmins'] = 'Enable admins Alert Box';
+$string['enablealertadminsdesc'] = 'Enable a admins only Alert box to display at the top of all pages';
+
+$string['alerttypeadmins'] = 'Admins Alert Box Type';
+$string['alerttypeadminsdesc'] = 'Select the type of alert: info (blue), warning (yellow) or announcement (green)';
+
+$string['alerttextadmins'] = 'Admins Alert text';
+$string['alerttextadminsdesc'] = 'Enter the text to display in the Alert box';
+
+// Users.
+$string['enablealertusers'] = 'Enable Users Alert Box';
+$string['enablealertusersdesc'] = 'Enable a users Alert box to display at the top of all pages';
+
+$string['alerttypeusers'] = 'Users Alert Box Type';
+$string['alerttypeusersdesc'] = 'Select the type of alert: info (blue), warning (yellow) or announcement (green)';
+
+$string['alerttextusers'] = 'Users Alert text';
+$string['alerttextusersdesc'] = 'Enter the text to display in the Alert box';
+
+
 
 $string['enablealertcoursepages'] = 'Enable Alert Box on Course Pages';
 $string['enablealertcoursepagesdesc'] = 'Turning this option on will display the top alert box in the courses pages';
