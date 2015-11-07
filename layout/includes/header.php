@@ -23,6 +23,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
+
 // Fixed header is determined by the individual layouts.
 if(!ISSET($fixedheader)) {
     $fixedheader = false;
@@ -51,6 +52,26 @@ if (!empty($PAGE->theme->settings->fontsubset)) {
 } else {
     $fontssubset = '';
 }
+
+// Font weights
+if (!empty($PAGE->theme->settings->fontweight)) {
+    $fontweight = ':'.$PAGE->theme->settings->fontweight;
+} else {
+    $fontweight = ':400';
+}
+
+if (!empty($PAGE->theme->settings->fontheaderweight)) {
+    $fontheaderweight = ':'.$PAGE->theme->settings->fontheaderweight;
+} else {
+    $fontheaderweight = ':400';
+}
+
+if (!empty($PAGE->theme->settings->fonttitleweight)) {
+    $fonttitleweight = ':'.$PAGE->theme->settings->fonttitleweight;
+} else {
+    $fonttitleweight = ':700';
+}
+    
 
 // Global Alert.
 $alertclassglobal = $PAGE->theme->settings->alerttypeglobal;
@@ -131,15 +152,15 @@ echo $OUTPUT->doctype();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <?php if (!empty($fontname) && $fontname != 'default') { ?>
-        <link href='https://fonts.googleapis.com/css?family=<?php echo $fontname.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
+        <link href='https://fonts.googleapis.com/css?family=<?php echo $fontname.$fontweight.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
         } ?>
 
     <?php if (!empty($fontheadername) && $fontheadername != 'default') { ?>
-        <link href='https://fonts.googleapis.com/css?family=<?php echo $fontheadername.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
+        <link href='https://fonts.googleapis.com/css?family=<?php echo $fontheadername.$fontheaderweight.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
         } ?>
         
     <?php if (!empty($fonttitlename)  && $fonttitlename != 'default') { ?>
-        <link href='https://fonts.googleapis.com/css?family=<?php echo $fonttitlename.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
+        <link href='https://fonts.googleapis.com/css?family=<?php echo $fonttitlename.$fonttitleweight.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
         } ?>
 
     <?php echo $OUTPUT->standard_head_html() ?>
@@ -280,7 +301,6 @@ if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings
             </div>
 
 <?php  if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
-
 	 echo $OUTPUT->tools_menu3();
 	 echo $OUTPUT->tools_menu4();
 	 echo $OUTPUT->tools_menu5();
@@ -291,7 +311,6 @@ if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings
 	 echo $OUTPUT->tools_menu10();
 	 echo $OUTPUT->tools_menu11();
 	 echo $OUTPUT->tools_menu12();
-
 } ?>
 
         </div>
