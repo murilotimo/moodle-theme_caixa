@@ -258,19 +258,10 @@ a.usermendrop {
 	padding-right: 3px;
 }
 
-#messagebubble {
-    background: red;
-    border-radius: 10px;
-    display: block;
-    font-size: 0.7em;
-    line-height: 1.2em;
-    padding: 3.5px 5px 1px;
-    position: absolute;
-    right: -14px;
-    text-align: center;
-    top: -3px;
+.badge {
+    background-color: #ff0000;
 }
-
+    
 .slidewrap {
 	margin-top: [[setting:slidermargintop]];
 	margin-bottom: [[setting:slidermarginbottom]];
