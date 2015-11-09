@@ -33,23 +33,29 @@ $left = theme_bcu_get_block_side();
     <div id="page-navbar" class="span12">
         <?php echo $OUTPUT->navbar(); ?>
     </div>
-        <?php
-        if($left == 1) {
+<?php
+if ($left == 1) {
             echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
-        }
+}
         ?>
-        <section id="region-main" class="span9 <?php if ($left) { echo ' '; } else { echo 'desktop-first-column'; } ?> ">
+        <section id="region-main" class="span9 
+        <?php if ($left) {
+            echo ' ';
+} else {
+            echo 'desktop-first-column';
+} ?> ">
+        
             <?php
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();
             ?>
         </section>
-        <?php
-        if ($left == 0) {
+<?php
+if ($left == 0) {
             echo $OUTPUT->blocks('side-post', 'span3');
-        }
-        ?>
+}
+?>
     </div>
     </div>
 
