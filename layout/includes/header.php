@@ -25,7 +25,7 @@
  */
 
 // Fixed header is determined by the individual layouts.
-if(!ISSET($fixedheader)) {
+if (!ISSET($fixedheader)) {
     $fixedheader = false;
 }
 theme_bcu_initialise_zoom($PAGE);
@@ -54,7 +54,7 @@ if (!empty($PAGE->theme->settings->fontsubset)) {
     $fontssubset = '';
 }
 
-// Font weights
+// Font weights.
 if (!empty($PAGE->theme->settings->fontweight)) {
     $fontweight = ':'.$PAGE->theme->settings->fontweight;
 } else {
@@ -72,51 +72,51 @@ if (!empty($PAGE->theme->settings->fonttitleweight)) {
 } else {
     $fonttitleweight = ':700';
 }
-    
 
-// Global Alert.
+
+// Global Alerts.
 $alertclassglobal = $PAGE->theme->settings->alerttypeglobal;
-$alerttextglobal =  strip_tags($PAGE->theme->settings->alerttextglobal);
+$alerttextglobal = strip_tags($PAGE->theme->settings->alerttextglobal);
 switch ($alertclassglobal) {
     case "success":
-    $alerticonglobal = "bullhorn";
+        $alerticonglobal = "bullhorn";
     break;
     case "info":
-    $alerticonglobal = "info-circle";
+        $alerticonglobal = "info-circle";
     break;
     case "warning":
-    $alerticonglobal = "exclamation-triangle";
+        $alerticonglobal = "exclamation-triangle";
     break;
 }
 
 // Admins Alert.
 $alertclassadmins = $PAGE->theme->settings->alerttypeadmins;
-$alerttextadmins =  strip_tags($PAGE->theme->settings->alerttextadmins);
+$alerttextadmins = strip_tags($PAGE->theme->settings->alerttextadmins);
 switch ($alertclassadmins) {
     case "success":
-    $alerticonadmins = "bullhorn";
+        $alerticonadmins = "bullhorn";
     break;
     case "info":
-    $alerticonadmins = "info-circle";
+        $alerticonadmins = "info-circle";
     break;
     case "warning":
-    $alerticonadmins = "exclamation-triangle";
+        $alerticonadmins = "exclamation-triangle";
     break;
 }
 
 // Students Alert.
 $alertclassusers = $PAGE->theme->settings->alerttypeusers;
-$alerttextusers =  strip_tags($PAGE->theme->settings->alerttextusers);
+$alerttextusers = strip_tags($PAGE->theme->settings->alerttextusers);
 
 switch ($alertclassusers) {
     case "success":
-    $alerticonusers = "bullhorn";
+        $alerticonusers = "bullhorn";
     break;
     case "info":
-    $alerticonusers = "info-circle";
+        $alerticonusers = "info-circle";
     break;
     case "warning":
-    $alerticonusers = "exclamation-triangle";
+        $alerticonusers = "exclamation-triangle";
     break;
 }
 
@@ -132,16 +132,16 @@ if (right_to_left()) {
 $showicons = "";
 $showicons = $PAGE->theme->settings->blockicons;
 if ($showicons == 1) {
-	$showiconsclass = "showblockicons";
+    $showiconsclass = "showblockicons";
 } else {
-	$showiconsclass = " ";
+    $showiconsclass = " ";
 }
 
 // Setting for default screen view. does not override user's preference.
 $defaultview = "";
 $defaultview = $PAGE->theme->settings->viewselect;
 if ($defaultview == 1 && $setfull == "") {
-	$setfull = "fullin";
+    $setfull = "fullin";
 }
 
 echo $OUTPUT->doctype();
@@ -152,19 +152,37 @@ echo $OUTPUT->doctype();
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-    <?php if (!empty($fontname) && $fontname != 'default') { ?>
-        <link href='https://fonts.googleapis.com/css?family=<?php echo $fontname.$fontweight.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
-        } ?>
+<?php
+if (!empty($fontname) && $fontname != 'default') {
+?>
+        <link href='https://fonts.googleapis.com/css?family=<?php echo $fontname.$fontweight.$fontssubset; ?>'
+        rel='stylesheet'
+        type='text/css'>
+<?php
+}
+?>
 
-    <?php if (!empty($fontheadername) && $fontheadername != 'default') { ?>
-        <link href='https://fonts.googleapis.com/css?family=<?php echo $fontheadername.$fontheaderweight.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
-        } ?>
-        
-    <?php if (!empty($fonttitlename)  && $fonttitlename != 'default') { ?>
-        <link href='https://fonts.googleapis.com/css?family=<?php echo $fonttitlename.$fonttitleweight.$fontssubset; ?>' rel='stylesheet' type='text/css'><?php
-        } ?>
+<?php
+if (!empty($fontheadername) && $fontheadername != 'default') {
+?>
+    <link href='https://fonts.googleapis.com/css?family=<?php echo $fontheadername.$fontheaderweight.$fontssubset; ?>'
+    rel='stylesheet'
+    type='text/css'>
+<?php
+}
+?>
 
-    <?php echo $OUTPUT->standard_head_html() ?>
+<?php
+if (!empty($fonttitlename)  && $fonttitlename != 'default') {
+?>
+    <link href='https://fonts.googleapis.com/css?family=<?php echo $fonttitlename.$fonttitleweight.$fontssubset; ?>'
+    rel='stylesheet'
+    type='text/css'>
+<?php
+}
+?>
+
+<?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -173,7 +191,7 @@ echo $OUTPUT->doctype();
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <div id="page" class="container-fluid <?php echo "$setfull $showiconsclass"; ?>">
 
-<?php 
+<?php
 
 // Global Alert.
 if (($PAGE->theme->settings->enablealertglobal) && !empty($PAGE->theme->settings->alerttextglobal)) { ?>
@@ -183,7 +201,8 @@ if (($PAGE->theme->settings->enablealertglobal) && !empty($PAGE->theme->settings
                     <?php echo strip_tags($PAGE->theme->settings->alerttextglobal); ?>
                </div>
             </div>
-<?php } 
+<?php
+}
 
 // Users Alert.
 if (($PAGE->theme->settings->enablealertusers) && !empty($PAGE->theme->settings->alerttextusers) && isloggedin()) { ?>
@@ -193,7 +212,8 @@ if (($PAGE->theme->settings->enablealertusers) && !empty($PAGE->theme->settings-
                     <?php echo strip_tags($PAGE->theme->settings->alerttextusers); ?>
                </div>
             </div>
-<?php } 
+<?php
+}
 
 // Admins Alert.
 if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings->alerttextadmins) && is_siteadmin()) { ?>
@@ -203,9 +223,18 @@ if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings
                     <?php echo strip_tags($PAGE->theme->settings->alerttextadmins); ?>
                </div>
             </div>
-<?php } ?>
+<?php
+}
+?>
 
-<header id="page-header-wrapper" <?php if($fixedheader) { ?> style="position: fixed;" <?php } ?> >
+<header id="page-header-wrapper"
+<?php
+if ($fixedheader) {
+?>
+style="position: fixed;"
+<?php
+}
+?> >
     <div id="above-header">
         <div class="clearfix container userhead">
             <div class="pull-left">
@@ -213,130 +242,254 @@ if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings
             </div>
 
             <div class="headermenu row">
-                <?php if (!isloggedin() || isguestuser()) { ?>
-                  <?php echo $OUTPUT->page_heading_menu(); ?>
-                    <?php if (!empty($PAGE->theme->settings->frontpagelogin)) { ?>
-                        <form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
-		                    <input style="height: 12px; padding-bottom: 4px;" type="text" name="username" placeholder="Username" size="10">
-		                    <input style="height: 12px; padding-bottom: 4px;" type="password" name="password" placeholder="Password"  size="10">
-		                    <button class="btn-login" type="submit"><?php echo get_string('logintextbutton', 'theme_bcu'); ?></button>
-	                    </form>
-                    <?php }	else { ?>
-                    	<form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
-		                    <button class="btn-login" type="submit">
-                          <?php echo get_string('logintextbutton', 'theme_bcu'); ?>
-                          </button>
-	                    </form>
-                    <?php } ?>
-
 <?php
+if (!isloggedin() || isguestuser()) {
+    echo $OUTPUT->page_heading_menu();
+    if (!empty($PAGE->theme->settings->frontpagelogin)) { ?>
+        <form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
+            <input style="height: 12px; padding-bottom: 4px;" type="text" name="username" placeholder="Username" size="10">
+            <input style="height: 12px; padding-bottom: 4px;" type="password" name="password" placeholder="Password"  size="10">
+            <button class="btn-login" type="submit"><?php echo get_string('logintextbutton', 'theme_bcu'); ?></button>
+        </form>
+<?php
+    } else {
+?>
+        <form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
+            <button class="btn-login" type="submit">
+                <?php echo get_string('logintextbutton', 'theme_bcu'); ?>
+            </button>
+        </form>
+<?php
+    }
 } else {
 ?>
-                    <div class="dropdown secondone">
-                        <a class="dropdown-toggle usermendrop" data-toggle="dropdown" href="#"><span class="fa fa-user"></span><span><?php echo fullname($USER) ?></span><span class="fa fa-angle-down"></span></a>
-                        <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
-                            <?php if (!empty($PAGE->theme->settings->enablemy)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/my" title="<?php echo get_string('myhome') ?>"><i class="fa fa-dashboard"></i><?php echo get_string('myhome') ?></a></li>
-                            <?php } ?>
-                            <?php if (!empty($PAGE->theme->settings->enableprofile)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/user/profile.php" title="<?php echo get_string('viewprofile') ?>"><i class="fa fa-user"></i><?php echo get_string('viewprofile') ?></a></li>
-                            <?php } ?>
-                            <?php if (!empty($PAGE->theme->settings->enableeditprofile)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/user/edit.php" title="<?php echo get_string('editmyprofile') ?>"><i class="fa fa-cog"></i><?php echo get_string('editmyprofile') ?></a></li>
-                            <?php } ?>
-                            <?php if (!empty($PAGE->theme->settings->enableprivatefiles)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/user/files.php" title="<?php echo get_string('privatefiles', 'block_private_files') ?>"><i class="fa fa-file"></i><?php echo get_string('privatefiles', 'block_private_files') ?></a></li>
-                            <?php } ?>
-                            <?php  if (!empty($PAGE->theme->settings->enablegrades)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/grade/report/overview/index.php" title="<?php echo get_string('grades') ?>"><i class="fa fa-list-alt"></i><?php echo get_string('grades') ?></a></li>
-                            <?php } ?>
-                            <?php  if (!empty($PAGE->theme->settings->enablebadges)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/badges/mybadges.php" title="<?php echo get_string('badges') ?>"><i class="fa fa-certificate"></i><?php echo get_string('badges') ?></a></li>
-                            <?php } ?>
+        <div class="dropdown secondone">
+            <a class="dropdown-toggle usermendrop" data-toggle="dropdown" href="#">
+                <span class="fa fa-user"></span>
+                <span><?php echo fullname($USER) ?></span>
+                <span class="fa fa-angle-down"></span>
+            </a>
+        <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
+<?php
+    if (!empty($PAGE->theme->settings->enablemy)) { ?>
+        <li>
+            <a href="<?php p($CFG->wwwroot) ?>/my"
+                title="<?php echo get_string('myhome') ?>">
+                <i class="fa fa-dashboard"></i>
+                <?php echo get_string('myhome') ?>
+            </a>
+        </li>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->enableprofile)) { ?>
+        <li>
+            <a href="<?php p($CFG->wwwroot) ?>/user/profile.php"
+                title="<?php echo get_string('viewprofile') ?>">
+                <i class="fa fa-user"></i>
+                <?php echo get_string('viewprofile') ?>
+            </a>
+        </li>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->enableeditprofile)) { ?>
+        <li>
+            <a href="<?php p($CFG->wwwroot) ?>/user/edit.php"
+                title="<?php echo get_string('editmyprofile') ?>">
+                <i class="fa fa-cog"></i>
+                <?php echo get_string('editmyprofile') ?>
+            </a>
+        </li>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->enableprivatefiles)) { ?>
+        <li>
+        <a href="<?php p($CFG->wwwroot) ?>/user/files.php"
+            title="<?php echo get_string('privatefiles', 'block_private_files') ?>">
+                <i class="fa fa-file"></i>
+                <?php echo get_string('privatefiles', 'block_private_files') ?>
+        </a>
+        </li>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->enablegrades)) { ?>
+        <li>
+        <a href="<?php p($CFG->wwwroot) ?>/grade/report/overview/index.php"
+            title="<?php echo get_string('grades') ?>">
+                <i class="fa fa-list-alt"></i><?php echo get_string('grades') ?>
+        </a>
+        </li>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->enablebadges)) { ?>
+        <li>
+        <a href="<?php p($CFG->wwwroot) ?>/badges/mybadges.php" title="<?php echo get_string('badges') ?>">
+                <i class="fa fa-certificate"></i><?php echo get_string('badges') ?>
+        </a>
+        </li>
+<?php
+    }
+?>
 
-                            <?php
-                                if ($CFG->version > 2015051100) { ?>
-                                <li>
-                                  <a href="<?php p($CFG->wwwroot) ?>/user/preferences.php" title="<?php echo get_string('preferences') ?>">
-                                    <i class="fa fa-cog"></i><?php echo get_string('preferences') ?>
-                                  </a>
-                                </li>
-                            <?php
-                                }
-                            ?>
+<?php
+    if ($CFG->version > 2015051100) { ?>
+        <li>
+        <a href="<?php p($CFG->wwwroot) ?>/user/preferences.php"
+            title="<?php echo get_string('preferences') ?>">
+            <i class="fa fa-cog"></i><?php echo get_string('preferences') ?>
+        </a>
+        </li>
+<?php
+    }
+?>
 
-                             <?php  if (!empty($PAGE->theme->settings->enablenote)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/message/edit.php?id=<?php echo "$userid"; ?>" title="<?php echo get_string('notifications') ?>"><i class="fa fa-paper-plane"></i><?php echo get_string('notifications') ?></a></li>
-                            <?php } ?>
+<?php
+    if (!empty($PAGE->theme->settings->enablenote)) { ?>
+        <li>
+        <a href="<?php p($CFG->wwwroot) ?>/message/edit.php?id=<?php echo "$userid"; ?>"
+            title="<?php echo get_string('notifications') ?>">
+                <i class="fa fa-paper-plane"></i>
+                <?php echo get_string('notifications') ?>
+        </a>
+        </li>
+<?php
+    }
+?>
 
-                            <?php  if (!empty($PAGE->theme->settings->enableblog)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/blog/index.php?userid=<?php echo "$userid"; ?>" title="<?php echo get_string('myblogs','theme_bcu') ?>"><i class="fa fa-rss"></i><?php echo get_string('myblogs','theme_bcu') ?></a></li>
-                            <?php } ?>
+<?php
+    if (!empty($PAGE->theme->settings->enableblog)) { ?>
+        <li>
+        <a href="<?php p($CFG->wwwroot) ?>/blog/index.php?userid=<?php echo "$userid"; ?>"
+            title="<?php echo get_string('myblogs', 'theme_bcu') ?>">
+                <i class="fa fa-rss"></i>
+                <?php echo get_string('myblogs', 'theme_bcu') ?>
+        </a>
+        </li>
+<?php
+    }
+?>
 
-                            <?php  if (!empty($PAGE->theme->settings->enableposts)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>" title="<?php echo get_string('posts') ?>"><i class="fa fa-commenting"></i><?php echo get_string('posts') ?></a></li>
-                            <?php } ?>
+<?php
+    if (!empty($PAGE->theme->settings->enableposts)) { ?>
+        <li>
+        <a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>"
+            title="<?php echo get_string('posts') ?>">
+                <i class="fa fa-commenting"></i>
+                <?php echo get_string('posts') ?>
+        </a>
+        </li>
+<?php
+    }
+?>
 
-                             <?php  if (!empty($PAGE->theme->settings->enablefeed)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/report/myfeedback/index.php?userid=<?php echo "$userid"; ?>" title="<?php echo get_string('feedback') ?>"><i class="fa fa-bullhorn"></i><?php echo get_string('feedback') ?></a></li>
-                            <?php } ?>
+<?php
+    if (!empty($PAGE->theme->settings->enablefeed)) { ?>
+        <li>
+        <a href="<?php p($CFG->wwwroot) ?>/report/myfeedback/index.php?userid=<?php echo "$userid"; ?>"
+            title="<?php echo get_string('feedback') ?>">
+                <i class="fa fa-bullhorn"></i>
+                <?php echo get_string('feedback') ?>
+        </a>
+        </li>
+<?php
+    }
+?>
 
-                            <?php if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
-                                <li><a href="<?php p($CFG->wwwroot) ?>/calendar/view.php" title="<?php echo get_string('pluginname', 'block_calendar_month') ?>"><i class="fa fa-calendar"></i><?php echo get_string('pluginname', 'block_calendar_month') ?></a></li>
-                            <?php } ?>
-                            <li><a href="<?php echo $CFG->wwwroot.'/login/logout.php?sesskey='.sesskey(); ?>" title="<?php echo get_string('logout') ?>"><i class="fa fa-lock"></i><?php echo get_string('logout') ?></a></li>
-                        </ul>
-                    </div>
-                <?php } ?>
-            </div>
+<?php
+    if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
+        <li>
+        <a href="<?php p($CFG->wwwroot) ?>/calendar/view.php"
+            title="<?php echo get_string('pluginname', 'block_calendar_month') ?>">
+                <i class="fa fa-calendar"></i>
+                <?php echo get_string('pluginname', 'block_calendar_month') ?>
+        </a>
+        </li>
+<?php
+    }
+?>
+        <li>
+        <a href="<?php echo $CFG->wwwroot.'/login/logout.php?sesskey='.sesskey(); ?>"
+            title="<?php echo get_string('logout') ?>">
+                <i class="fa fa-lock"></i>
+                <?php echo get_string('logout') ?>
+        </a>
+        </li>
+    </ul>
+</div>
+<?php
+}
+?>
+</div>
 
-            <div style="float: right; position: relative; display: inline; margin-left: 15px;">
-                <?php
-                 if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu']) {
-                    echo $OUTPUT->lang_menu();
-                 } ?>
-            </div>
+<div style="float: right; position: relative; display: inline; margin-left: 15px;">
+<?php
+if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu']) {
+    echo $OUTPUT->lang_menu();
+}
+?>
+</div>
 
-<?php  if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
-	 echo $OUTPUT->tools_menu3();
-	 echo $OUTPUT->tools_menu4();
-	 echo $OUTPUT->tools_menu5();
-	 echo $OUTPUT->tools_menu6();
-	 echo $OUTPUT->tools_menu7();
-	 echo $OUTPUT->tools_menu8();
-	 echo $OUTPUT->tools_menu9();
-	 echo $OUTPUT->tools_menu10();
-	 echo $OUTPUT->tools_menu11();
-	 echo $OUTPUT->tools_menu12();
-} ?>
-
-        </div>
+<?php
+if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
+    echo $OUTPUT->tools_menu3();
+    echo $OUTPUT->tools_menu4();
+    echo $OUTPUT->tools_menu5();
+    echo $OUTPUT->tools_menu6();
+    echo $OUTPUT->tools_menu7();
+    echo $OUTPUT->tools_menu8();
+    echo $OUTPUT->tools_menu9();
+    echo $OUTPUT->tools_menu10();
+    echo $OUTPUT->tools_menu11();
+    echo $OUTPUT->tools_menu12();
+}
+?>
     </div>
-    <div id="page-header" class="clearfix container">
+</div>
+<div id="page-header" class="clearfix container">
         <?php if ($haslogo) { ?>
-            <div id="logocontainer"><a href="<?php p($CFG->wwwroot) ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('logo', 'logo')."' alt='logo' id='logo' />"; echo "</a></div>";
-        } else if ($hastitle) { ?>
-            <div id="titlecontainer"><a href="<?php p($CFG->wwwroot) ?>"><?php echo $SITE->fullname; ?></a></div>
-        <?php } 
+            <div id="logocontainer">
+                <a href="<?php p($CFG->wwwroot) ?>">
+                    <?php echo "<img src='".$PAGE->theme->setting_file_url('logo', 'logo')."' alt='logo' id='logo' />";
+                    echo "</a></div>";
+} else if ($hastitle) {
+?>
+            <div id="titlecontainer">
+                <a href="<?php p($CFG->wwwroot) ?>">
+                    <?php echo $SITE->fullname; ?>
+                </a>
+            </div>
+        <?php
+}
 
-    if (isset($PAGE) && !$PAGE->theme->settings->sitetitle) {
+if (isset($PAGE) && !$PAGE->theme->settings->sitetitle) {
         $header = theme_bcu_remove_site_fullname($PAGE->heading);
         $PAGE->set_heading($header);
-    }
-    ?>
+}
+?>
 
-    <div id="coursetitle" class="pull-left">
-        <?php switch($enableheadingtitle) {
-            case "fullname" :
+<div id="coursetitle" class="pull-left">
+<?php
+switch($enableheadingtitle) {
+    case "fullname" :
                 echo $PAGE->heading;
                 break;
-            case "shortname" :
+    case "shortname" :
                 echo $PAGE->heading;
                 break;
-            case "off" :
+    case "off" :
                 echo "";
                 break;
-            } ?>
+    }
+?>
     </div>
 
 		<?php if (!empty($PAGE->theme->settings->socialset)) { ?>

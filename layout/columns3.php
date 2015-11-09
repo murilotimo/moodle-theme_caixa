@@ -24,7 +24,7 @@
  *
  */
 
-require_once(dirname(__FILE__) . '/includes/header.php'); 
+require_once(dirname(__FILE__) . '/includes/header.php');
 $left = theme_bcu_get_block_side();
 ?>
 <div id="page" class="container-fluid">
@@ -65,11 +65,11 @@ $left = theme_bcu_get_block_side();
                     <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
                     <?php echo $OUTPUT->navbar(); ?>
                 </div>
-                <?php
-                    if($left == 1) {
-                        echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
-                    }
-                ?>
+<?php
+if ($left == echo) {
+    $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
+}
+?>
                 <section id="region-main" class="span8 pull-right">
                     <?php
                     echo $OUTPUT->course_content_header();
@@ -80,11 +80,11 @@ $left = theme_bcu_get_block_side();
                 <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
             </div>
         </div>
-        <?php
-            if($left == 0) {
-                echo $OUTPUT->blocks('side-post', 'span3');
-            }
-        ?>
+<?php
+if ($left == 0) {
+    echo $OUTPUT->blocks('side-post', 'span3');
+}
+?>
     </div>
 
-    <?php require_once(dirname(__FILE__) . '/includes/footer.php'); ?>
+<?php require_once(dirname(__FILE__) . '/includes/footer.php');

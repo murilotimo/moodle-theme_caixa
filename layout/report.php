@@ -23,8 +23,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
-if($PAGE->pagetype=='grade-report-grader-index') {
-    if($CFG->version <= 2014111000) {
+if ($PAGE->pagetype == 'grade-report-grader-index') {
+    if ($CFG->version <= 2014111000) {
         require_once(dirname(__FILE__) .'/columns2.php');
     } else {
         require_once(dirname(__FILE__) .'/grader.php');
