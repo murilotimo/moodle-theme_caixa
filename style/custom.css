@@ -151,6 +151,23 @@ a:focus {
     max-width: 250px;
 }
 
+#titlecontainer {
+    padding-top: 10px;
+}
+
+#titlecontainer a {
+    font-family: [[setting:fonttitlename]], sans-serif !important;
+	font-size: [[setting:fonttitlesize]];
+	font-weight: [[setting:fonttitleweight]];
+	color: [[setting:fonttitlecolor]];
+    padding-top: 10px;
+}
+
+#titlecontainer a:hover {
+	color: [[setting:linkhovercolor]];
+	text-decoration: none;
+}
+
 #moodlelogo {
 	padding-top: 20px;
 }

@@ -39,6 +39,7 @@ $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-firs
 $hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $haslogo = (!empty($PAGE->theme->settings->logo));
+$hastitle = (!empty($PAGE->theme->settings->sitetitle));
 $enableheadingtitle = $PAGE->theme->settings->enableheading;
 
 // Get the fonts.
@@ -184,8 +185,6 @@ if (($PAGE->theme->settings->enablealertglobal) && !empty($PAGE->theme->settings
             </div>
 <?php } 
 
-
-
 // Users Alert.
 if (($PAGE->theme->settings->enablealertusers) && !empty($PAGE->theme->settings->alerttextusers) && isloggedin()) { ?>
             <div class="customalert alert alert-<?php echo $alertclassusers ?>" role="alert">
@@ -205,8 +204,6 @@ if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings
                </div>
             </div>
 <?php } ?>
-
-
 
 <header id="page-header-wrapper" <?php if($fixedheader) { ?> style="position: fixed;" <?php } ?> >
     <div id="above-header">
@@ -318,7 +315,9 @@ if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings
     <div id="page-header" class="clearfix container">
         <?php if ($haslogo) { ?>
             <div id="logocontainer"><a href="<?php p($CFG->wwwroot) ?>"><?php echo "<img src='".$PAGE->theme->setting_file_url('logo', 'logo')."' alt='logo' id='logo' />"; echo "</a></div>";
-        }
+        } else if ($hastitle) { ?>
+            <div id="titlecontainer"><a href="<?php p($CFG->wwwroot) ?>"><?php echo $SITE->fullname; ?></a></div>
+        <?php } 
 
     if (isset($PAGE) && !$PAGE->theme->settings->sitetitle) {
         $header = theme_bcu_remove_site_fullname($PAGE->heading);
@@ -398,6 +397,7 @@ if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings
         </div>
     </div>
 
+    <?php if (isloggedin()) { ?>
     <div id="navwrap">
         <div class="container">
             <div class="navbar">
@@ -458,6 +458,7 @@ if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings
             </div>
         </div>
     </div>
+    <?php } ?>
 </header>
 
 
