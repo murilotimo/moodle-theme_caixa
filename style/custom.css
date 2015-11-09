@@ -213,7 +213,8 @@ a:focus {
 }
 
 .socialbox {
-	padding-top: [[setting:socialpaddingtop]];	
+	padding-top: [[setting:socialpaddingtop]];
+	padding-bottom: 5px;
 }
 
 .socialbox a {
@@ -547,6 +548,10 @@ span.fa-chevron-right.fa {
 
 }
 
+.navbar .nav-collapse.in {
+    border-top: none;
+}
+
 .navbar .nav {
     display: block;
     float: left;
@@ -874,7 +879,7 @@ input[type="radio"], input[type="checkbox"] {
     }
     
     .navbar .nav > li > a {
-    margin: 0 10px 0 0px !important;
+    margin: 0 10px 0 4px !important;
     }
 
     .nav .dropdown-menu li a:hover, 
