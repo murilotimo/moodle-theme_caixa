@@ -197,8 +197,8 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 if (($PAGE->theme->settings->enablealertglobal) && !empty($PAGE->theme->settings->alerttextglobal)) { ?>
             <div class="customalert alert alert-<?php echo $alertclassglobal ?>" role="alert">
                 <div class="container">
-                    <i class="fa fa-<?php echo $alerticonglobal; ?> fa-2x"></i>&nbsp;
-                    <?php echo strip_tags($PAGE->theme->settings->alerttextglobal); ?>
+                    <i class="fa fa-<?php echo $alerticonglobal; ?> fa-lg"></i>&nbsp;
+                    <?php echo $PAGE->theme->settings->alerttextglobal; ?>
                </div>
             </div>
 <?php
@@ -208,8 +208,8 @@ if (($PAGE->theme->settings->enablealertglobal) && !empty($PAGE->theme->settings
 if (($PAGE->theme->settings->enablealertusers) && !empty($PAGE->theme->settings->alerttextusers) && isloggedin()) { ?>
             <div class="customalert alert alert-<?php echo $alertclassusers ?>" role="alert">
                 <div class="container">
-                    <i class="fa fa-<?php echo $alerticonusers; ?> fa-2x"></i>&nbsp;
-                    <?php echo strip_tags($PAGE->theme->settings->alerttextusers); ?>
+                    <i class="fa fa-<?php echo $alerticonusers; ?> fa-lg"></i>&nbsp;
+                    <?php echo $PAGE->theme->settings->alerttextusers; ?>
                </div>
             </div>
 <?php
@@ -219,8 +219,8 @@ if (($PAGE->theme->settings->enablealertusers) && !empty($PAGE->theme->settings-
 if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings->alerttextadmins) && is_siteadmin()) { ?>
             <div class="customalert alert alert-<?php echo $alertclassadmins ?>" role="alert">
                 <div class="container">
-                    <i class="fa fa-<?php echo $alerticonadmins; ?> fa-2x"></i>&nbsp;
-                    <?php echo strip_tags($PAGE->theme->settings->alerttextadmins); ?>
+                    <i class="fa fa-<?php echo $alerticonadmins; ?> fa-lg"></i>&nbsp;
+                    <?php echo $PAGE->theme->settings->alerttextadmins; ?>
                </div>
             </div>
 <?php
