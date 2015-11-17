@@ -299,6 +299,16 @@ $string['alertinfodesc'] = 'Display a warning in the Alert Box';
 $string['alertannounce'] = 'Announcement';
 $string['alertinfodesc'] = 'Display an announcement in the Alert Box';
 
+// Alert Access / Visibility
+
+$string['alertaccess'] = 'Alert Visibility';
+$string['alertaccessdesc'] = 'Set access restriction type for alert box visibility';
+
+$string['alertaccessglobal'] = 'Visibile to everyone';
+$string['alertaccessusers'] = 'Visibile to logged in users';
+$string['alertaccessadmins'] = 'Visibile to administrators';
+$string['alertaccessprofile'] = 'Add custom profile field restriction';
+
 // Global.
 $string['enablealertglobal'] = 'Enable Global Alert Box';
 $string['enablealertglobaldesc'] = 'Enable a Global Alert box to display at the top of all pages';
@@ -374,9 +384,12 @@ $string['tickerdesc'] = 'Here you can set a news ticker to run across the front 
 	&lt;li&gt;News item two.....&lt;/li&gt;
 	</pre>';
 
-$string['alertsettings'] = 'Alert Box';
-$string['alertsettingsheading'] = 'Customize the top Alert Box';
-$string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert.';
+$string['alertsettingsone'] = 'Alert Box One';
+$string['alertsettingstwo'] = 'Alert Box Two';
+$string['alertsettingsthree'] = 'Alert Box Three';
+
+$string['alertsettingsheading'] = 'Customize top Alert Box';
+$string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';
 
 $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowsettingsheading'] = 'Customize the carousel on the front page';

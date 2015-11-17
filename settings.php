@@ -2589,13 +2589,12 @@ if (is_siteadmin()) {
     $temp = new admin_settingpage('theme_bcu_frontpage_alert', get_string('frontpagealertsettings', 'theme_bcu'));
     $temp->add(new admin_setting_heading('theme_bcu_alert', get_string('alertsettingsheading', 'theme_bcu'),
         format_text(get_string('alertdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-
-    // Alert Box heading.
-    $name = 'theme_bcu/settingsalertbox';
-    $heading = get_string('settingsalertbox', 'theme_bcu');
+		
+	// Alert Box One Heading.
+    $name = 'theme_bcu/settingsalertboxone';
+    $heading = get_string('alertsettingsone', 'theme_bcu');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
-
 
     // Enable Global Alert.
     $name = 'theme_bcu/enablealertglobal';
@@ -2626,7 +2625,26 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
+	
+	// Alert One Access.
+    $name = 'theme_bcu/alertoneaccess';
+    $title = get_string('alertaccess', 'theme_bcu');
+    $description = get_string('alertaccessdesc', 'theme_bcu');
+    $default = 'global';
+    $choices = array(
+        'global' => get_string('alertaccessglobal', 'theme_bcu'),
+        'users' => get_string('alertaccessusers', 'theme_bcu'),
+        'admin' => get_string('alertaccessadmins', 'theme_bcu'),
+		'profile' => get_string('alertaccessprofile', 'theme_bcu'));
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	// Alert Box Two Heading.
+    $name = 'theme_bcu/settingsalertboxtwo';
+    $heading = get_string('alertsettingstwo', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
 
     // Enable Admins Alert.
     $name = 'theme_bcu/enablealertadmins';
@@ -2658,6 +2676,25 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+	// Alert Two Access.
+    $name = 'theme_bcu/alerttwoaccess';
+    $title = get_string('alertaccess', 'theme_bcu');
+    $description = get_string('alertaccessdesc', 'theme_bcu');
+    $default = 'global';
+    $choices = array(
+        'global' => get_string('alertaccessglobal', 'theme_bcu'),
+        'users' => get_string('alertaccessusers', 'theme_bcu'),
+        'admin' => get_string('alertaccessadmins', 'theme_bcu'),
+		'profile' => get_string('alertaccessprofile', 'theme_bcu'));
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	// Alert Box Three Heading.
+    $name = 'theme_bcu/settingsalertboxthree';
+    $heading = get_string('alertsettingsthree', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
 
     // Enable Users Alert.
     $name = 'theme_bcu/enablealertusers';
@@ -2688,18 +2725,31 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
-    // Disable alert in course pages.
+	
+	// Alert One Access.
+    $name = 'theme_bcu/alertthreeaccess';
+    $title = get_string('alertaccess', 'theme_bcu');
+    $description = get_string('alertaccessdesc', 'theme_bcu');
+    $default = 'global';
+    $choices = array(
+        'global' => get_string('alertaccessglobal', 'theme_bcu'),
+        'users' => get_string('alertaccessusers', 'theme_bcu'),
+        'admin' => get_string('alertaccessadmins', 'theme_bcu'),
+		'profile' => get_string('alertaccessprofile', 'theme_bcu'));
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);   
+	
+	// Disable alert in course pages.
     $name = 'theme_bcu/enablealertcoursepages';
     $title = get_string('enablealertcoursepages', 'theme_bcu');
     $description = get_string('enablealertcoursepagesdesc', 'theme_bcu');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    $temp->add($setting); 
 
     $ADMIN->add('theme_bcu', $temp);
-
 
     // Frontpage Ticker heading.
     $temp = new admin_settingpage('theme_bcu_frontpage_ticker', get_string('frontpagetickersettings', 'theme_bcu'));
