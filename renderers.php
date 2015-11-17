@@ -64,6 +64,21 @@ class theme_bcu_core_renderer extends core_renderer {
      * Written by G J Barnard
      */
 
+    public function alert_icon($alertclassglobal){
+	    switch ($alertclassglobal) {
+		    case "success":
+		        $alerticonglobal = "bullhorn";
+		    break;
+		    case "info":
+		        $alerticonglobal = "info-circle";
+		    break;
+		    case "warning":
+		        $alerticonglobal = "exclamation-triangle";
+		    break;
+		}
+		return $alerticonglobal;			
+    }
+    
     public function edit_button(moodle_url $url) {
         $url->param('sesskey', sesskey());
         if ($this->page->user_is_editing()) {
