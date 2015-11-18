@@ -75,16 +75,16 @@ if (!empty($PAGE->theme->settings->fonttitleweight)) {
 
 
 // Global Alerts.
-$alertclassglobal = $PAGE->theme->settings->alerttypeglobal;
-$alerttextglobal = strip_tags($PAGE->theme->settings->alerttextglobal);
+$alertclass1 = $PAGE->theme->settings->alerttype1;
+$alerttext1 = strip_tags($PAGE->theme->settings->alerttext1);
 
 // Admins Alert.
-$alertclassadmins = $PAGE->theme->settings->alerttypeadmins;
-$alerttextadmins = strip_tags($PAGE->theme->settings->alerttextadmins);
+$alertclass2 = $PAGE->theme->settings->alerttype2;
+$alerttext2 = strip_tags($PAGE->theme->settings->alerttext2);
 
 // Students Alert.
-$alertclassusers = $PAGE->theme->settings->alerttypeusers;
-$alerttextusers = strip_tags($PAGE->theme->settings->alerttextusers);
+$alertclass3 = $PAGE->theme->settings->alerttype3;
+$alerttext3 = strip_tags($PAGE->theme->settings->alerttext3);
 
 // Get the HTML for the settings bits.
 $html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
@@ -159,38 +159,8 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 
 <?php
 
-// Global Alert.
-if (($PAGE->theme->settings->enablealertglobal) && !empty($PAGE->theme->settings->alerttextglobal)) { ?>
-            <div class="customalert alert alert-<?php echo $alertclassglobal ?>" role="alert">
-                <div class="container">
-                    <i class="fa fa-<?php echo $OUTPUT->alert_icon($alertclassglobal); ?> fa-lg"></i>&nbsp;
-                    <?php echo $PAGE->theme->settings->alerttextglobal; ?>
-               </div>
-            </div>
-<?php
-}
+echo $OUTPUT->get_alert_messages();
 
-// Users Alert.
-if (($PAGE->theme->settings->enablealertusers) && !empty($PAGE->theme->settings->alerttextusers) && isloggedin()) { ?>
-            <div class="customalert alert alert-<?php echo $alertclassusers ?>" role="alert">
-                <div class="container">
-                    <i class="fa fa-<?php echo $OUTPUT->alert_icon($alertclassusers); ?> fa-lg"></i>&nbsp;
-                    <?php echo $PAGE->theme->settings->alerttextusers; ?>
-               </div>
-            </div>
-<?php
-}
-
-// Admins Alert.
-if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings->alerttextadmins) && is_siteadmin()) { ?>
-            <div class="customalert alert alert-<?php echo $alertclassadmins ?>" role="alert">
-                <div class="container">
-                    <i class="fa fa-<?php echo $OUTPUT->alert_icon($alertclassadmins); ?> fa-lg"></i>&nbsp;
-                    <?php echo $PAGE->theme->settings->alerttextadmins; ?>
-               </div>
-            </div>
-<?php
-}
 ?>
 
 <header id="page-header-wrapper"

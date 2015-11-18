@@ -56,14 +56,74 @@ class theme_bcu_core_renderer extends core_renderer {
         return $this->render_user_menu($usermenu);
     }
 
-    /**
-     * Returns HTML to display a "Turn editing on/off" button in a form.
-     *
-     * @param moodle_url $url The URL + params to send through when clicking the button
-     * @return string HTML the button
-     * Written by G J Barnard
-     */
-
+    public function get_alert_messages(){
+    	global $PAGE;
+    	$alerts = '';
+		
+    	for ($i=1; $i < 4; $i++) {
+    		
+    		$enablealert = 'enablealert' . $i;
+			$alerttext = 'alerttext' . $i;
+			
+			$enablealert = $PAGE->theme->settings->$enablealert;
+			$alerttext = $PAGE->theme->settings->$alerttext;		
+			
+			if ($enablealert && !empty($alerttext)){
+					
+				$alerttype = 'alerttype' . $i;
+				$alertaccess = 'alertaccess' . $i;
+				$alertprofilefield = 'alertprofilefield' . $i;
+				$alertprofilevalue = 'alertprofilevalue' . $i;
+				
+				$alerttype = $PAGE->theme->settings->$alerttype;
+				$alertaccess = $PAGE->theme->settings->$alertaccess;
+				$alertprofilefield = $PAGE->theme->settings->$alertprofilefield;
+				$alertprofilevalue = $PAGE->theme->settings->$alertprofilevalue;				
+				
+				if ($this->get_alert_access($alertaccess, $alertprofilefield, $alertprofilevalue)){
+					//echo $i . 'is true ';
+					$alerts .= $this->get_alert_message($alerttext, $alerttype);
+				}
+			}
+		}	
+		return $alerts;
+    }
+	
+	public function get_alert_message($text, $type){
+		$retval = '<div class="customalert alert alert-' . $type . '" role="alert">';
+		$retval .= '<div class="container">';
+		$retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp';
+		$retval .= $text;
+        $retval .= '</div>';
+        $retval .= '</div>';
+		return $retval;
+	}
+	
+	public function get_alert_access($access, $profilefield, $profilevalue){
+		$retval = false;
+		switch ($access) {
+			case "global":
+				$retval = true;
+			break;
+			
+			case "user":
+				if (isloggedin()){
+					$retval = true;
+				}
+			break;
+			
+			case "admin":
+				if (is_siteadmin()){
+					$retval = true;
+				}
+			
+			case "profile":
+				// check profile field access
+			break;					
+		}
+		return $retval;
+	}
+    
     public function alert_icon($alertclassglobal){
 	    switch ($alertclassglobal) {
 		    case "success":
@@ -79,6 +139,14 @@ class theme_bcu_core_renderer extends core_renderer {
 		return $alerticonglobal;			
     }
     
+    /**
+     * Returns HTML to display a "Turn editing on/off" button in a form.
+     *
+     * @param moodle_url $url The URL + params to send through when clicking the button
+     * @return string HTML the button
+     * Written by G J Barnard
+     */
+
     public function edit_button(moodle_url $url) {
         $url->param('sesskey', sesskey());
         if ($this->page->user_is_editing()) {
