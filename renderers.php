@@ -99,11 +99,12 @@ class theme_bcu_core_renderer extends core_renderer {
     }
 	
 	public function get_alert_message($text, $type){
-		$retval = '<div class="customalert alert alert-' . $type . '" role="alert">';
-		$retval .= '<div class="container">';
+		$retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
+		$retval .= '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+		// $retval .= '<div class="container">';
 		$retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp';
-		$retval .= $text;
-        $retval .= '</div>';
+		$retval .= $text;		
+        // $retval .= '</div>';
         $retval .= '</div>';
 		return $retval;
 	}
