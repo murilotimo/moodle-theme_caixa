@@ -64,6 +64,7 @@ class theme_bcu_core_renderer extends core_renderer {
     		
     		$enablealert = 'enablealert' . $i;
 			$alerttext = 'alerttext' . $i;
+			$alertsession = 'alert' . $i;
 			
 			$enablealert = $PAGE->theme->settings->$enablealert;
 			$alerttext = $PAGE->theme->settings->$alerttext;	
@@ -80,7 +81,7 @@ class theme_bcu_core_renderer extends core_renderer {
 				$alertprofilefield = $PAGE->theme->settings->$alertprofilefield;
 				$alertprofilevalue = $PAGE->theme->settings->$alertprofilevalue;				
 				
-				if ($this->get_alert_access($alertaccess, $alertprofilefield, $alertprofilevalue)){
+				if ($this->get_alert_access($alertaccess, $alertprofilefield, $alertprofilevalue, $alertsession)){
 					//echo $i . 'is true ';
 					$alerts .= $this->get_alert_message($alerttext, $alerttype);
 				}
@@ -107,7 +108,7 @@ class theme_bcu_core_renderer extends core_renderer {
 		return $retval;
 	}
 	
-	public function get_alert_access($access, $profilefield, $profilevalue){
+	public function get_alert_access($access, $profilefield, $profilevalue, $alertsession){
 		$retval = false;
 		switch ($access) {
 			case "global":
@@ -119,7 +120,7 @@ class theme_bcu_core_renderer extends core_renderer {
 			case "admin":
 				if (is_siteadmin()){ $retval = true; }			
 			case "profile":
-				// check profile field access
+				if ($this->check_menu_access($profilefield, $profilevalue, $alertsession)){	$retval = true; }				
 			break;					
 		}
 		return $retval;
