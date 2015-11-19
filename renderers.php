@@ -66,7 +66,7 @@ class theme_bcu_core_renderer extends core_renderer {
 			$alerttext = 'alerttext' . $i;
 			
 			$enablealert = $PAGE->theme->settings->$enablealert;
-			$alerttext = $PAGE->theme->settings->$alerttext;		
+			$alerttext = $PAGE->theme->settings->$alerttext;	
 			
 			if ($enablealert && !empty($alerttext)){
 					
@@ -86,6 +86,14 @@ class theme_bcu_core_renderer extends core_renderer {
 				}
 			}
 		}	
+		
+		if (core\session\manager::is_loggedinas()) {
+			$logininfo = $this->login_info();
+			$logininfo = str_replace('<div class="logininfo">', '', $logininfo);
+			$logininfo = str_replace('</div>', '', $logininfo);
+			$alerts = $this->get_alert_message($logininfo, 'warning') . $alerts;
+		}
+		
 		return $alerts;
     }
 	
@@ -104,19 +112,12 @@ class theme_bcu_core_renderer extends core_renderer {
 		switch ($access) {
 			case "global":
 				$retval = true;
-			break;
-			
+			break;			
 			case "user":
-				if (isloggedin()){
-					$retval = true;
-				}
-			break;
-			
+				if (isloggedin()){ $retval = true; }
+			break;			
 			case "admin":
-				if (is_siteadmin()){
-					$retval = true;
-				}
-			
+				if (is_siteadmin()){ $retval = true; }			
 			case "profile":
 				// check profile field access
 			break;					
