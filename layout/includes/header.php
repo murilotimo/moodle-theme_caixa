@@ -73,19 +73,6 @@ if (!empty($PAGE->theme->settings->fonttitleweight)) {
     $fonttitleweight = ':700';
 }
 
-
-// Global Alerts.
-$alertclass1 = $PAGE->theme->settings->alerttype1;
-$alerttext1 = strip_tags($PAGE->theme->settings->alerttext1);
-
-// Admins Alert.
-$alertclass2 = $PAGE->theme->settings->alerttype2;
-$alerttext2 = strip_tags($PAGE->theme->settings->alerttext2);
-
-// Students Alert.
-$alertclass3 = $PAGE->theme->settings->alerttype3;
-$alerttext3 = strip_tags($PAGE->theme->settings->alerttext3);
-
 // Get the HTML for the settings bits.
 $html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
 
