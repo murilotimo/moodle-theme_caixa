@@ -3114,6 +3114,17 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_bcu_mobile', get_string('layoutmobilesettings', 'theme_bcu'),
     format_text(get_string('layoutmobilesettingsdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
+    $name = 'theme_bcu/hidealertsmobile';
+    $title = get_string('hidealertsmobile', 'theme_bcu');
+    $description = get_string('hidealertsmobiledesc', 'theme_bcu');
+    $radchoices = array(
+        ', .customalert' => get_string('hide'),
+        '' => get_string('show'),
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, ', .socialbox', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     $name = 'theme_bcu/hidesocialmobile';
     $title = get_string('hidesocialmobile', 'theme_bcu');
     $description = get_string('hidesocialmobiledesc', 'theme_bcu');

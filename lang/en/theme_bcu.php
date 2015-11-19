@@ -540,6 +540,9 @@ $string['coursetitlemaxwidthdesc'] = 'Set the maximum width of the course title 
 $string['layoutmobilesettings'] = 'Mobile Settings';
 $string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
 
+$string['hidealertsmobile'] = 'Hide Alerts (if in use) on mobile';
+$string['hidealertsmobiledesc'] = 'Hide will remove alerts on mobile devices';
+
 $string['hidesocialmobile'] = 'Hide Social Icons (if in use) on mobile';
 $string['hidesocialmobiledesc'] = 'Hide will remove social icons on mobile devices';
 

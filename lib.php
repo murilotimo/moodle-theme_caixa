@@ -128,6 +128,7 @@ function theme_bcu_process_css($css, $theme) {
         '[[setting:coursetitlemaxwidth]]' => '',
         '[[setting:hidebreadcrumbmobile]]' => '',
         '[[setting:hidepagefootermobile]]' => '',
+        '[[setting:hidealertsmobile]]' => '',
         '[[setting:hidesocialmobile]]' => '',
         '[[setting:socialboxpaddingtopmobile]]' => '',
         '[[setting:socialboxpaddingbottommobile]]' => '',
