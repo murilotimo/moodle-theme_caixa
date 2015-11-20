@@ -3215,8 +3215,11 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $temp->add(new admin_setting_heading('theme_bcu_mobile', get_string('layoutmobilesettings', 'theme_bcu'),
-    format_text(get_string('layoutmobilesettingsdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $ADMIN->add('theme_bcu', $temp);
+
+    $temp = new admin_settingpage('theme_bcu_mobile', get_string('mobilesettings', 'theme_bcu'));
+    $temp->add(new admin_setting_heading('theme_bcu_mobile', get_string('mobilesettingsheading', 'theme_bcu'),
+        '', FORMAT_MARKDOWN));
 
     $name = 'theme_bcu/hidealertsmobile';
     $title = get_string('hidealertsmobile', 'theme_bcu');

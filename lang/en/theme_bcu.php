@@ -575,8 +575,11 @@ $string['tilescontactstitle'] = 'Show course contacts role';
 $string['tilescontactstitledesc'] = 'Show / hide the role of a course contact. If not displayed, an image will be displayed before each contact';
 
 $string['layoutsettings'] = 'Layout';
-$string['layoutdesc'] = 'Fine control the default layout that users see.';
+$string['layoutdesc'] = 'Set the default layout that users see.';
 $string['layoutsettingsheading'] = 'Control aspects of the site\'s layout';
+
+$string['mobilesettings'] = 'Mobile Settings';
+$string['mobilesettingsheading'] = 'Control how your site looks on mobile devices';
 
 $string['blockside'] = 'Location of the blocks';
 $string['blocksidedesc'] = 'Control whether blocks appear on the left or right of the page';
