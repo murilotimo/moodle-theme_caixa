@@ -726,6 +726,9 @@ $string['topmenusheadingdesc'] = 'You can configure links to be shown in drop do
 $string['newmenudesc'] = 'Configure links to be shown under a top header menu.';
 $string['newmenufield'] = 'Custom Profile Field Name (optional)';
 $string['newmenuvalue'] = '= Custom Profile Field Value (optional)';
+$string['newmenurequirelogin'] = 'Require login';
+$string['newmenurequirelogindesc'] = 'If enabled this menu will only be visible to logged in users';
+
 $string['menusdesc'] = '';
 
 $string['newmenu2trigger'] = 'Top Menu Dropdown 2 trigger word';

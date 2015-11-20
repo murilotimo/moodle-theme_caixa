@@ -2208,6 +2208,14 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
 
+    $name = 'theme_bcu/newmenu1requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_bcu');
+    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     $name = 'theme_bcu/newmenu1field';
     $title = get_string('newmenufield', 'theme_bcu');
     $description = '';
@@ -2227,6 +2235,14 @@ if (is_siteadmin()) {
     $title = get_string('newmenu2', 'theme_bcu');
     $description = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/newmenu2requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_bcu');
+    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_bcu/newmenu2field';
@@ -2250,6 +2266,14 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
 
+    $name = 'theme_bcu/newmenu3requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_bcu');
+    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
     $name = 'theme_bcu/newmenu3field';
     $title = get_string('newmenufield', 'theme_bcu');
     $description = '';
@@ -2269,6 +2293,14 @@ if (is_siteadmin()) {
     $title = get_string('newmenu4', 'theme_bcu');
     $description = get_string('newmenudesc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/newmenu4requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_bcu');
+    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_bcu/newmenu4field';
@@ -2291,6 +2323,14 @@ if (is_siteadmin()) {
     $description = get_string('newmenudesc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
+	
+	$name = 'theme_bcu/newmenu5requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_bcu');
+    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     $name = 'theme_bcu/newmenu5field';
     $title = get_string('newmenufield', 'theme_bcu');
@@ -2312,6 +2352,14 @@ if (is_siteadmin()) {
     $description = get_string('newmenudesc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
+	
+	$name = 'theme_bcu/newmenu6requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_bcu');
+    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     $name = 'theme_bcu/newmenu6field';
     $title = get_string('newmenufield', 'theme_bcu');
@@ -2332,6 +2380,14 @@ if (is_siteadmin()) {
     $title = get_string('newmenu7', 'theme_bcu');
     $description = get_string('newmenudesc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/newmenu7requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_bcu');
+    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_bcu/newmenu7field';
@@ -2355,6 +2411,14 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
 
+	$name = 'theme_bcu/newmenu8requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_bcu');
+    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
     $name = 'theme_bcu/newmenu8field';
     $title = get_string('newmenufield', 'theme_bcu');
     $description = '';
@@ -2374,6 +2438,14 @@ if (is_siteadmin()) {
     $title = get_string('newmenu9', 'theme_bcu');
     $description = get_string('newmenudesc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/newmenu9requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_bcu');
+    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_bcu/newmenu9field';
@@ -2395,6 +2467,14 @@ if (is_siteadmin()) {
     $title = get_string('newmenu10', 'theme_bcu');
     $description = get_string('newmenudesc', 'theme_bcu');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_bcu/newmenu10requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_bcu');
+    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_bcu/newmenu10field';

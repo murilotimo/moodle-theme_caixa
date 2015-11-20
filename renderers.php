@@ -580,27 +580,31 @@ class theme_bcu_core_renderer extends core_renderer {
 				$fieldsetting = 'newmenu' . $i . 'field';
 				$valuesetting = 'newmenu' . $i . 'value';
 				$newmenulabel = 'newmenu' . $i . 'label';
+				$requirelogin = 'newmenu' . $i . 'requirelogin';
+				$logincheck = true;
 				$custommenuitems = '';
 				$access = true;
 				$pre = '<div class="dropdown pull-right newmenus ' . $class . '">';
 				$post = '</div>';
-	
-				if (!empty($PAGE->theme->settings->$fieldsetting) && !empty($PAGE->theme->settings->$valuesetting)){
-					$ftype = $PAGE->theme->settings->$fieldsetting;
-					$setvalue = $PAGE->theme->settings->$valuesetting;
-					if (!$this->check_menu_access($ftype, $setvalue, $menunumber)){
-						$access = false;
+				
+				if (empty($PAGE->theme->settings->$requirelogin) || isloggedin()){	
+					if (!empty($PAGE->theme->settings->$fieldsetting) && !empty($PAGE->theme->settings->$valuesetting)){
+						$ftype = $PAGE->theme->settings->$fieldsetting;
+						$setvalue = $PAGE->theme->settings->$valuesetting;
+						if (!$this->check_menu_access($ftype, $setvalue, $menunumber)){
+							$access = false;
+						}
 					}
-				}
-					
-		        if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
-		        	$menu = ($PAGE->theme->settings->$newmenu);
-					$label = get_string($newmenulabel, 'theme_bcu');
-					$custommenuitems = $this->parse_custom_menu($menu, $label);            
-		        }
-		         
-		        $custommenu = new custom_menu($custommenuitems);
-		        $retval .= $this->render_custom_menu($custommenu, $pre, $post);			
+						
+			        if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
+			        	$menu = ($PAGE->theme->settings->$newmenu);
+						$label = get_string($newmenulabel, 'theme_bcu');
+						$custommenuitems = $this->parse_custom_menu($menu, $label);            
+			        }
+			         
+			        $custommenu = new custom_menu($custommenuitems);
+			        $retval .= $this->render_custom_menu($custommenu, $pre, $post);
+				}			
 			}			
 		}				
 		return $retval;
