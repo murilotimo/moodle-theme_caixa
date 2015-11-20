@@ -42,6 +42,7 @@ $haslogo = (!empty($PAGE->theme->settings->logo));
 $hastitle = (!empty($PAGE->theme->settings->sitetitle));
 $enableheadingtitle = $PAGE->theme->settings->enableheading;
 
+
 // Get the fonts.
 $fontname = str_replace(" ", "+", $PAGE->theme->settings->fontname);
 $fontheadername = str_replace(" ", "+", $PAGE->theme->settings->fontheadername);
@@ -269,7 +270,8 @@ if (!isloggedin() || isguestuser()) {
                 <span><?php echo fullname($USER) ?></span>
                 <span class="fa fa-angle-down"></span>
             </a>
-        <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
+            
+<ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
 <?php
     if (!empty($PAGE->theme->settings->enablemy)) { ?>
         <li>
