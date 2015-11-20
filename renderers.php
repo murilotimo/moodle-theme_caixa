@@ -571,43 +571,94 @@ class theme_bcu_core_renderer extends core_renderer {
 		global $PAGE, $COURSE;
 		$menus = '';
 		$retval = '';
+		$visibility = true;
 		
-		if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {			
-			for ($i = 1; $i < 11; $i++){			
-				$menunumber = 'menu' . $i;
-				$newmenu = 'newmenu' . $i;
-				$class = 'newmenu' . ($i + 4);
-				$fieldsetting = 'newmenu' . $i . 'field';
-				$valuesetting = 'newmenu' . $i . 'value';
-				$newmenulabel = 'newmenu' . $i . 'label';
-				$requirelogin = 'newmenu' . $i . 'requirelogin';
-				$logincheck = true;
-				$custommenuitems = '';
-				$access = true;
-				$pre = '<div class="dropdown pull-right newmenus ' . $class . '">';
-				$post = '</div>';
-				
-				if (empty($PAGE->theme->settings->$requirelogin) || isloggedin()){	
-					if (!empty($PAGE->theme->settings->$fieldsetting) && !empty($PAGE->theme->settings->$valuesetting)){
-						$ftype = $PAGE->theme->settings->$fieldsetting;
-						$setvalue = $PAGE->theme->settings->$valuesetting;
-						if (!$this->check_menu_access($ftype, $setvalue, $menunumber)){
-							$access = false;
+		if (!empty($PAGE->theme->settings->menuuseroverride)){
+			$visibility = $this->check_menu_user_visibility();			
+		}
+		
+		if ($visibility){
+			if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {			
+				for ($i = 1; $i < 11; $i++){			
+					$menunumber = 'menu' . $i;
+					$newmenu = 'newmenu' . $i;
+					$class = 'newmenu' . ($i + 4);
+					$fieldsetting = 'newmenu' . $i . 'field';
+					$valuesetting = 'newmenu' . $i . 'value';
+					$newmenulabel = 'newmenu' . $i . 'label';
+					$requirelogin = 'newmenu' . $i . 'requirelogin';
+					$logincheck = true;
+					$custommenuitems = '';
+					$access = true;
+					$pre = '<div class="dropdown pull-right newmenus ' . $class . '">';
+					$post = '</div>';
+					
+					if (empty($PAGE->theme->settings->$requirelogin) || isloggedin()){	
+						if (!empty($PAGE->theme->settings->$fieldsetting) && !empty($PAGE->theme->settings->$valuesetting)){
+							$ftype = $PAGE->theme->settings->$fieldsetting;
+							$setvalue = $PAGE->theme->settings->$valuesetting;
+							if (!$this->check_menu_access($ftype, $setvalue, $menunumber)){
+								$access = false;
+							}
 						}
-					}
-						
-			        if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
-			        	$menu = ($PAGE->theme->settings->$newmenu);
-						$label = get_string($newmenulabel, 'theme_bcu');
-						$custommenuitems = $this->parse_custom_menu($menu, $label);            
-			        }
-			         
-			        $custommenu = new custom_menu($custommenuitems);
-			        $retval .= $this->render_custom_menu($custommenu, $pre, $post);
+							
+				        if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
+				        	$menu = ($PAGE->theme->settings->$newmenu);
+							$label = get_string($newmenulabel, 'theme_bcu');
+							$custommenuitems = $this->parse_custom_menu($menu, $label);            
+				        }
+				         
+				        $custommenu = new custom_menu($custommenuitems);
+				        $retval .= $this->render_custom_menu($custommenu, $pre, $post);
+					}			
 				}			
 			}			
 		}				
 		return $retval;
+	}
+
+	public function check_menu_user_visibility(){
+		global $PAGE, $USER, $COURSE;
+		$uservalue = '';			
+		
+		if (empty($PAGE->theme->settings->menuuseroverride)){
+			return true;
+		}
+		
+		if (isset($USER->theme_bcu_menus['menuvisibility'])){
+			$uservalue = $USER->theme_bcu_menus['menuvisibility'];
+		} 
+		else {
+			$profilefield = $PAGE->theme->settings->menuoverrideprofilefield;
+			$profilefield = 'profile_field_' . $profilefield;
+			$uservalue = $this->get_user_visibility($profilefield);
+		}		
+		
+		if ($uservalue == 0){			
+			return true;
+		}
+		
+		if ($uservalue == 1 && $COURSE->id != 1){			
+			return false;
+		}
+		
+		if ($uservalue == 2){		
+			return false;
+		}		
+		return true; // default to true means we dont have to evaluate sitewide setting and guarantees return value		
+	}
+	
+	public function get_user_visibility($profilefield){
+		global $USER, $CFG;		
+		$uservisibility = '';
+		
+		require_once($CFG->dirroot.'/user/profile/lib.php');
+		require_once($CFG->dirroot.'/user/lib.php');
+		profile_load_data($USER);
+		
+		$uservisibility = $USER->$profilefield;
+		$USER->theme_bcu_menus['menuvisibility'] = $uservisibility;
+		return $uservisibility;
 	}
     
 	public function check_menu_access($ftype, $setvalue, $menu){

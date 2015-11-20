@@ -738,7 +738,23 @@ $string['enablemenus'] = 'Enable Menus';
 $string['enablemenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
 
 $string['disablemenuscoursepages'] = 'Disable Menus on Course Pages';
-$string['disablemenuscoursepagesdesc'] = 'urning this option on will limit the display of top menus to site pages, the homepage, and dashboard (My Home) etc. and will not show in any course pages';
+$string['disablemenuscoursepagesdesc'] = 'Turning this option on will limit the display of top menus to site pages, the homepage, and dashboard (My Home) etc. and will not show in any course pages';
+
+$string['menuuseroverride'] = 'Allow user override';
+$string['menuuseroverridedesc'] = 'These settings can be used to give users control over where menus appear via a custom profile field. To use this option you will need to create a custom profile field in the "list" format with values in the corresponding order:
+<pre>1. Sitewide (the first item in the list will be for sitewide menu visibility)
+2. Homepages Only (the second item in the list will set visibility to only site / homepages)
+3. Hidden (the third value in the list will hide menus entirely)</pre>
+You should NOT use the "' . $string['disablemenuscoursepages'] . '" option in conjuction with profile field settings, instead use set the default value to your "Homepages Only" entry when setting up your profile field list.
+
+Note: Users will have to log out of Moodle and back in again for this change to take effect, you may want to add a note explaining this in the custom profile field.';
+
+$string['menuoverrideprofilefield'] = 'Custom profile field name';
+$string['menuoverrideprofilefielddesc'] = 'The name of the custom profile "list" field used for user override';
+$string['menuoverrideprofilefielddefault'] = 'topmenusettings';
+
+$string['menusheadingvisibility'] = 'General settings for Top Menu visibility';
+$string['menusheadingvisibilitydesc'] = 'The following settings allow you to control where menus appear and optionally allow users to customise their settings';
 
 $string['menusheading1'] = 'Top Menu 1';
 $string['newmenu1'] = 'Top Menu Dropdown 1';

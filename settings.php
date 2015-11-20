@@ -2185,8 +2185,8 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_bcu_topmenus', get_string('topmenusheading', 'theme_bcu'),
     format_text(get_string('topmenusheadingdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
-    $temp->add(new admin_setting_heading('theme_bcu_menus1', get_string('menusheading1', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_bcu_menus_visibility', get_string('menusheadingvisibility', 'theme_bcu'),
+    format_text(get_string('menusheadingvisibilitydesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
     $name = 'theme_bcu/enablemenus';
     $title = get_string('enablemenus', 'theme_bcu');
@@ -2201,6 +2201,24 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	$name = 'theme_bcu/menuuseroverride';
+    $title = get_string('menuuseroverride', 'theme_bcu');
+    $description = get_string('menuuseroverridedesc', 'theme_bcu');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_bcu/menuoverrideprofilefield';
+    $title = get_string('menuoverrideprofilefield', 'theme_bcu');
+    $description = get_string('menuoverrideprofilefielddesc', 'theme_bcu');
+	$default = get_string('menuoverrideprofilefielddefault', 'theme_bcu');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_RAW);
+    $temp->add($setting);	
+	
+	$temp->add(new admin_setting_heading('theme_bcu_menus1', get_string('menusheading1', 'theme_bcu'),
+    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 
     $name = 'theme_bcu/newmenu1';
     $title = get_string('newmenu1', 'theme_bcu');
