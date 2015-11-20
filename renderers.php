@@ -567,257 +567,45 @@ class theme_bcu_core_renderer extends core_renderer {
         return $this->render_custom_menu($custommenu);
     }
 
-    public function tools_menu3() {
-    	global $PAGE;
-    	$custommenuitems = '';
-		$access = true;	
-		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
-		$post = '</div>';
+	public function get_top_menus(){
+		global $PAGE, $COURSE;
+		$menus = '';
+		$retval = '';
 		
-		if (!empty($PAGE->theme->settings->newmenu1field) && !empty($PAGE->theme->settings->newmenu1value)){
-			$ftype = $PAGE->theme->settings->newmenu1field;
-			$setvalue = $PAGE->theme->settings->newmenu1value;
-			if (!$this->check_menu_access($ftype, $setvalue, 'menu1')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->newmenu1) && $access == true) {
-        	$menu = ($PAGE->theme->settings->newmenu1);
-			$label = get_string('newmenu1label', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label);            
-        }
-         
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu, $pre, $post);
-    }
-
-    public function tools_menu4() {
-    	global $PAGE;
-    	$custommenuitems = '';
-		$access = true;	
-		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
-		$post = '</div>';
-		
-		if (!empty($PAGE->theme->settings->newmenu2field) && !empty($PAGE->theme->settings->newmenu2value)){
-			$ftype = $PAGE->theme->settings->newmenu2field;
-			$setvalue = $PAGE->theme->settings->newmenu2value;
-			if (!$this->check_menu_access($ftype, $setvalue, 'menu2')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->newmenu2) && $access == true) {
-        	$menu = ($PAGE->theme->settings->newmenu2);
-			$label = get_string('newmenu2label', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label);            
-        }
-         
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu, $pre, $post);
-    }
-
-    public function tools_menu5() {
-    	global $PAGE;
-    	$custommenuitems = '';
-		$access = true;	
-		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
-		$post = '</div>';
-		
-		if (!empty($PAGE->theme->settings->newmenu3field) && !empty($PAGE->theme->settings->newmenu3value)){
-			$ftype = $PAGE->theme->settings->newmenu3field;
-			$setvalue = $PAGE->theme->settings->newmenu3value;
-			if (!$this->check_menu_access($ftype, $setvalue, 'menu3')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->newmenu3) && $access == true) {
-        	$menu = ($PAGE->theme->settings->newmenu3);
-			$label = get_string('newmenu3label', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label);            
-        }
-         
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu, $pre, $post);
-    }
-
-
-    public function tools_menu6() {
-    	global $PAGE;
-    	$custommenuitems = '';
-		$access = true;	
-		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
-		$post = '</div>';
-		
-		if (!empty($PAGE->theme->settings->newmenu4field) && !empty($PAGE->theme->settings->newmenu4value)){
-			$ftype = $PAGE->theme->settings->newmenu4field;
-			$setvalue = $PAGE->theme->settings->newmenu4value;
-			if (!$this->check_menu_access($ftype, $setvalue, 'menu4')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->newmenu4) && $access == true) {
-        	$menu = ($PAGE->theme->settings->newmenu4);
-			$label = get_string('newmenu4label', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label);            
-        }
-         
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu, $pre, $post);
-    }
-
-    public function tools_menu7() {
-    	global $PAGE;
-    	$custommenuitems = '';
-		$access = true;
-		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
-		$post = '</div>';	
-		
-		if (!empty($PAGE->theme->settings->newmenu5field) && !empty($PAGE->theme->settings->newmenu5value)){
-			$ftype = $PAGE->theme->settings->newmenu5field;
-			$setvalue = $PAGE->theme->settings->newmenu5value;
-			if (!$this->check_menu_access($ftype, $setvalue, 'menu5')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->newmenu5) && $access == true) {        	
-        	$menu = ($PAGE->theme->settings->newmenu5);
-			$label = get_string('newmenu5label', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label);		     
-        }        
-		$custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu, $pre, $post);        
-    }
+		if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {			
+			for ($i = 1; $i < 11; $i++){			
+				$menunumber = 'menu' . $i;
+				$newmenu = 'newmenu' . $i;
+				$class = 'newmenu' . ($i + 4);
+				$fieldsetting = 'newmenu' . $i . 'field';
+				$valuesetting = 'newmenu' . $i . 'value';
+				$newmenulabel = 'newmenu' . $i . 'label';
+				$custommenuitems = '';
+				$access = true;
+				$pre = '<div class="dropdown pull-right newmenus ' . $class . '">';
+				$post = '</div>';
 	
-    public function tools_menu8(){
-    	global $PAGE;
-    	$custommenuitems = '';
-		$access = true;	
-		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
-		$post = '</div>';
-		
-		if (!empty($PAGE->theme->settings->newmenu6field) && !empty($PAGE->theme->settings->newmenu6value)){
-			$ftype = $PAGE->theme->settings->newmenu6field;
-			$setvalue = $PAGE->theme->settings->newmenu6value;
-			if (!$this->check_menu_access($ftype, $setvalue, 'menu6')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->newmenu6) && $access == true) {
-        	$menu = ($PAGE->theme->settings->newmenu6);
-			$label = get_string('newmenu6label', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label);            
-        }
-         
-        $custommenu = new custom_menu($custommenuitems);		
-        return $this->render_custom_menu($custommenu, $pre, $post);
-    }
-
-    public function tools_menu9() {
-    	global $PAGE;
-    	$custommenuitems = '';
-		$access = true;	
-		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
-		$post = '</div>';
-		
-		if (!empty($PAGE->theme->settings->newmenu7field) && !empty($PAGE->theme->settings->newmenu7value)){
-			$ftype = $PAGE->theme->settings->newmenu7field;
-			$setvalue = $PAGE->theme->settings->newmenu7value;
-			if (!$this->check_menu_access($ftype, $setvalue, 'menu7')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->newmenu7) && $access == true) {
-        	$menu = ($PAGE->theme->settings->newmenu7);
-			$label = get_string('newmenu7label', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label);            
-        }
-         
-        $custommenu = new custom_menu($custommenuitems);		
-        return $this->render_custom_menu($custommenu, $pre, $post);
-    }
-
-    public function tools_menu10(){
-    	global $PAGE;
-    	$custommenuitems = '';
-		$access = true;	
-		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
-		$post = '</div>';
-		
-		if (!empty($PAGE->theme->settings->newmenu8field) && !empty($PAGE->theme->settings->newmenu8value)){
-			$ftype = $PAGE->theme->settings->newmenu8field;
-			$setvalue = $PAGE->theme->settings->newmenu8value;
-			if (!$this->check_menu_access($ftype, $setvalue, 'menu8')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->newmenu8) && $access == true) {
-        	$menu = ($PAGE->theme->settings->newmenu8);
-			$label = get_string('newmenu8label', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label);            
-        }
-         
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu, $pre, $post);
-    }
-
-    public function tools_menu11(){
-    	global $PAGE;
-    	$custommenuitems = '';
-		$access = true;	
-		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
-		$post = '</div>';
-		
-		if (!empty($PAGE->theme->settings->newmenu9field) && !empty($PAGE->theme->settings->newmenu9value)){
-			$ftype = $PAGE->theme->settings->newmenu9field;
-			$setvalue = $PAGE->theme->settings->newmenu9value;
-			if (!$this->check_menu_access($ftype, $setvalue, 'menu9')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->newmenu9) && $access == true) {
-        	$menu = ($PAGE->theme->settings->newmenu9);
-			$label = get_string('newmenu9label', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label);            
-        }
-         
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu, $pre, $post);
-    }
-
-    public function tools_menu12(){
-    	global $PAGE;
-    	$custommenuitems = '';
-		$access = true;	
-		$pre = '<div class="dropdown pull-right newmenus newmenu5">';
-		$post = '</div>';
-		
-		if (!empty($PAGE->theme->settings->newmenu10field) && !empty($PAGE->theme->settings->newmenu10value)){
-			$ftype = $PAGE->theme->settings->newmenu10field;
-			$setvalue = $PAGE->theme->settings->newmenu10value;
-			if (!$this->check_menu_access($ftype, $setvalue, 'menu10')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->newmenu10) && $access == true) {
-        	$menu = ($PAGE->theme->settings->newmenu10);
-			$label = get_string('newmenu10label', 'theme_bcu');
-			$custommenuitems = $this->parse_custom_menu($menu, $label);            
-        }
-         
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu, $pre, $post);
-    }
-	
-
+				if (!empty($PAGE->theme->settings->$fieldsetting) && !empty($PAGE->theme->settings->$valuesetting)){
+					$ftype = $PAGE->theme->settings->$fieldsetting;
+					$setvalue = $PAGE->theme->settings->$valuesetting;
+					if (!$this->check_menu_access($ftype, $setvalue, $menunumber)){
+						$access = false;
+					}
+				}
+					
+		        if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
+		        	$menu = ($PAGE->theme->settings->$newmenu);
+					$label = get_string($newmenulabel, 'theme_bcu');
+					$custommenuitems = $this->parse_custom_menu($menu, $label);            
+		        }
+		         
+		        $custommenu = new custom_menu($custommenuitems);
+		        $retval .= $this->render_custom_menu($custommenu, $pre, $post);			
+			}			
+		}				
+		return $retval;
+	}
+    
 	public function check_menu_access($ftype, $setvalue, $menu){
 		global $PAGE, $USER, $CFG;			
 		$usersvalue = 'default-zz'; // just want a value that will not be matched by accident

@@ -364,18 +364,7 @@ if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu'
 </div>
 
 <?php
-if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
-    echo $OUTPUT->tools_menu3();
-    echo $OUTPUT->tools_menu4();
-    echo $OUTPUT->tools_menu5();
-    echo $OUTPUT->tools_menu6();
-    echo $OUTPUT->tools_menu7();
-    echo $OUTPUT->tools_menu8();
-    echo $OUTPUT->tools_menu9();
-    echo $OUTPUT->tools_menu10();
-    echo $OUTPUT->tools_menu11();
-    echo $OUTPUT->tools_menu12();
-}
+echo $OUTPUT->get_top_menus();
 ?>
     </div>
 </div>
