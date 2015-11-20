@@ -299,41 +299,45 @@ $string['alertinfodesc'] = 'Display a warning in the Alert Box';
 $string['alertannounce'] = 'Announcement';
 $string['alertinfodesc'] = 'Display an announcement in the Alert Box';
 
-// Global.
-$string['enablealertglobal'] = 'Enable Global Alert Box';
-$string['enablealertglobaldesc'] = 'Enable a Global Alert box to display at the top of all pages';
+$string['alertprofilefield'] = 'Custom Profile Field Name:';
+$string['alertprofilevalue'] = '= Custom Profile Field Value:';
 
-$string['alerttypeglobal'] = 'Global Alert Box Type';
-$string['alerttypeglobaldesc'] = 'Select the type of alert: info (blue), warning (yellow) or announcement (green)';
+// Alert Access / Visibility
 
-$string['alerttextglobal'] = 'Alert text';
-$string['alerttextglobaldesc'] = 'Enter the text to display in the Alert box';
+$string['alertaccessglobal'] = 'Visibile to everyone';
+$string['alertaccessusers'] = 'Visibile to logged in users';
+$string['alertaccessadmins'] = 'Visibile to administrators';
+$string['alertaccessprofile'] = 'Add custom profile field restriction';
 
-// Admins.
-$string['enablealertadmins'] = 'Enable admins Alert Box';
-$string['enablealertadminsdesc'] = 'Enable a admins only Alert box to display at the top of all pages';
+$string['alertaccess'] = 'Alert Visibility';
+$string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "' . $string['alertaccessprofile'] . '" you will need to add values for profile fields below.';
 
-$string['alerttypeadmins'] = 'Admins Alert Box Type';
-$string['alerttypeadminsdesc'] = 'Select the type of alert: info (blue), warning (yellow) or announcement (green)';
+// Alert Box 1
+$string['enablealert1'] = 'Enable Alert Box One';
+$string['enablealertdesc1'] = 'Enable Alert Box One';
 
-$string['alerttextadmins'] = 'Admins Alert text';
-$string['alerttextadminsdesc'] = 'Enter the text to display in the Alert box';
+// Alert Box 2
+$string['enablealert2'] = 'Enable Alert Box Two';
+$string['enablealertdesc2'] = 'Enable Alert Box Two';
 
-// Users.
-$string['enablealertusers'] = 'Enable Users Alert Box';
-$string['enablealertusersdesc'] = 'Enable a users Alert box to display at the top of all pages';
+// Alert Box 3
+$string['enablealert3'] = 'Enable Alert Box Three';
+$string['enablealertdesc3'] = 'Enable Alert Box Three';
 
-$string['alerttypeusers'] = 'Users Alert Box Type';
-$string['alerttypeusersdesc'] = 'Select the type of alert: info (blue), warning (yellow) or announcement (green)';
+// Alert Box Generic Strings
+$string['alerttype'] = 'Alert Box Type';
+$string['alerttypedesc'] = 'Select the type of alert: info (blue), warning (yellow) or announcement (green)';
 
-$string['alerttextusers'] = 'Users Alert text';
-$string['alerttextusersdesc'] = 'Enter the text to display in the Alert box';
-
-
+$string['alerttext'] = 'Alert text';
+$string['alerttextdesc'] = 'Enter the text to display in the Alert box';
 
 $string['enablealertcoursepages'] = 'Enable Alert Box on Course Pages';
 $string['enablealertcoursepagesdesc'] = 'Turning this option on will display the top alert box in the courses pages';
 
+$string['enablealertstriptags'] = 'Automatically strip html tags from alerts';
+$string['enablealertstriptagsdesc'] = 'Enable will clean up alert messages automatically, Disable will allow you to use html / links in messages but you will have to clean up manually in html view';
+
+// Footer strings
 $string['footer1header'] = 'Footer Section 1 Title';
 $string['footer2header'] = 'Footer Section 2 Title';
 $string['footer3header'] = 'Footer Section 3 Title';
@@ -374,9 +378,12 @@ $string['tickerdesc'] = 'Here you can set a news ticker to run across the front 
 	&lt;li&gt;News item two.....&lt;/li&gt;
 	</pre>';
 
-$string['alertsettings'] = 'Alert Box';
-$string['alertsettingsheading'] = 'Customize the top Alert Box';
-$string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert.';
+$string['alertsettings1'] = 'Alert Box One';
+$string['alertsettings2'] = 'Alert Box Two';
+$string['alertsettings3'] = 'Alert Box Three';
+
+$string['alertsettingsheading'] = 'Customize top Alert Box';
+$string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';
 
 $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowsettingsheading'] = 'Customize the carousel on the front page';
@@ -532,6 +539,9 @@ $string['coursetitlemaxwidthdesc'] = 'Set the maximum width of the course title 
 
 $string['layoutmobilesettings'] = 'Mobile Settings';
 $string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
+
+$string['hidealertsmobile'] = 'Hide Alerts (if in use) on mobile';
+$string['hidealertsmobiledesc'] = 'Hide will remove alerts on mobile devices';
 
 $string['hidesocialmobile'] = 'Hide Social Icons (if in use) on mobile';
 $string['hidesocialmobiledesc'] = 'Hide will remove social icons on mobile devices';

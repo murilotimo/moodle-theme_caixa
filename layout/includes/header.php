@@ -74,53 +74,6 @@ if (!empty($PAGE->theme->settings->fonttitleweight)) {
     $fonttitleweight = ':700';
 }
 
-
-// Global Alerts.
-$alertclassglobal = $PAGE->theme->settings->alerttypeglobal;
-$alerttextglobal = strip_tags($PAGE->theme->settings->alerttextglobal);
-switch ($alertclassglobal) {
-    case "success":
-        $alerticonglobal = "bullhorn";
-    break;
-    case "info":
-        $alerticonglobal = "info-circle";
-    break;
-    case "warning":
-        $alerticonglobal = "exclamation-triangle";
-    break;
-}
-
-// Admins Alert.
-$alertclassadmins = $PAGE->theme->settings->alerttypeadmins;
-$alerttextadmins = strip_tags($PAGE->theme->settings->alerttextadmins);
-switch ($alertclassadmins) {
-    case "success":
-        $alerticonadmins = "bullhorn";
-    break;
-    case "info":
-        $alerticonadmins = "info-circle";
-    break;
-    case "warning":
-        $alerticonadmins = "exclamation-triangle";
-    break;
-}
-
-// Students Alert.
-$alertclassusers = $PAGE->theme->settings->alerttypeusers;
-$alerttextusers = strip_tags($PAGE->theme->settings->alerttextusers);
-
-switch ($alertclassusers) {
-    case "success":
-        $alerticonusers = "bullhorn";
-    break;
-    case "info":
-        $alerticonusers = "info-circle";
-    break;
-    case "warning":
-        $alerticonusers = "exclamation-triangle";
-    break;
-}
-
 // Get the HTML for the settings bits.
 $html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
 
@@ -194,38 +147,8 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 
 <?php
 
-// Global Alert.
-if (($PAGE->theme->settings->enablealertglobal) && !empty($PAGE->theme->settings->alerttextglobal)) { ?>
-            <div class="customalert alert alert-<?php echo $alertclassglobal ?>" role="alert">
-                <div class="container">
-                    <i class="fa fa-<?php echo $alerticonglobal; ?> fa-2x"></i>&nbsp;
-                    <?php echo strip_tags($PAGE->theme->settings->alerttextglobal); ?>
-               </div>
-            </div>
-<?php
-}
+echo $OUTPUT->get_alert_messages();
 
-// Users Alert.
-if (($PAGE->theme->settings->enablealertusers) && !empty($PAGE->theme->settings->alerttextusers) && isloggedin()) { ?>
-            <div class="customalert alert alert-<?php echo $alertclassusers ?>" role="alert">
-                <div class="container">
-                    <i class="fa fa-<?php echo $alerticonusers; ?> fa-2x"></i>&nbsp;
-                    <?php echo strip_tags($PAGE->theme->settings->alerttextusers); ?>
-               </div>
-            </div>
-<?php
-}
-
-// Admins Alert.
-if (($PAGE->theme->settings->enablealertadmins) && !empty($PAGE->theme->settings->alerttextadmins) && is_siteadmin()) { ?>
-            <div class="customalert alert alert-<?php echo $alertclassadmins ?>" role="alert">
-                <div class="container">
-                    <i class="fa fa-<?php echo $alerticonadmins; ?> fa-2x"></i>&nbsp;
-                    <?php echo strip_tags($PAGE->theme->settings->alerttextadmins); ?>
-               </div>
-            </div>
-<?php
-}
 ?>
 
 <header id="page-header-wrapper"
@@ -565,7 +488,7 @@ switch($enableheadingtitle) {
                         </a>
                         <div class="nav-collapse collapse ">
                             <?php echo $OUTPUT->navigation_menu(); ?>
-                            <?php if (!EMPTY($PAGE->theme->settings->disablecustommenu)) {echo $OUTPUT->custom_menu(); } ?>
+                            <?php if (empty($PAGE->theme->settings->disablecustommenu)) {echo $OUTPUT->custom_menu(); } ?>                            
                             <?php  if ($PAGE->theme->settings->enabletoolsmenus) { ?>
 		                        <?php echo $OUTPUT->tools_menu(); ?>
 		                        <?php echo $OUTPUT->tools_menu2(); ?>

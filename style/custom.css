@@ -1008,12 +1008,25 @@ a.carousel-control {
 
 .alert {
     margin-bottom: 0;
+    border-radius: 0;
+}
+
+.alert .close {
+	text-decoration:none;	
 }
 
 .customalert {
 	font-weight: 600;
 	font-size: 14px;
-	text-align: center;
+	text-align: center;	
+}
+
+.customalert a {
+	text-decoration:underline;	
+}
+
+.customalert a:hover {
+	color:red;
 }
 
 /*

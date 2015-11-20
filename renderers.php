@@ -56,6 +56,92 @@ class theme_bcu_core_renderer extends core_renderer {
         return $this->render_user_menu($usermenu);
     }
 
+    public function get_alert_messages(){
+    	global $PAGE;
+    	$alerts = '';
+		
+    	for ($i=1; $i < 4; $i++) {
+    		
+    		$enablealert = 'enablealert' . $i;
+			$alerttext = 'alerttext' . $i;
+			$alertsession = 'alert' . $i;
+			
+			$enablealert = $PAGE->theme->settings->$enablealert;
+			$alerttext = $PAGE->theme->settings->$alerttext;	
+			
+			if ($enablealert && !empty($alerttext)){
+					
+				$alerttype = 'alerttype' . $i;
+				$alertaccess = 'alertaccess' . $i;
+				$alertprofilefield = 'alertprofilefield' . $i;
+				$alertprofilevalue = 'alertprofilevalue' . $i;
+				
+				$alerttype = $PAGE->theme->settings->$alerttype;
+				$alertaccess = $PAGE->theme->settings->$alertaccess;
+				$alertprofilefield = $PAGE->theme->settings->$alertprofilefield;
+				$alertprofilevalue = $PAGE->theme->settings->$alertprofilevalue;				
+				
+				if ($this->get_alert_access($alertaccess, $alertprofilefield, $alertprofilevalue, $alertsession)){
+					//echo $i . 'is true ';
+					$alerts .= $this->get_alert_message($alerttext, $alerttype);
+				}
+			}
+		}	
+		
+		if (core\session\manager::is_loggedinas()) {
+			$logininfo = $this->login_info();
+			$logininfo = str_replace('<div class="logininfo">', '', $logininfo);
+			$logininfo = str_replace('</div>', '', $logininfo);
+			$alerts = $this->get_alert_message($logininfo, 'warning') . $alerts;
+		}
+		
+		return $alerts;
+    }
+	
+	public function get_alert_message($text, $type){
+		$retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
+		$retval .= '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+		// $retval .= '<div class="container">';
+		$retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp';
+		$retval .= $text;		
+        // $retval .= '</div>';
+        $retval .= '</div>';
+		return $retval;
+	}
+	
+	public function get_alert_access($access, $profilefield, $profilevalue, $alertsession){
+		$retval = false;
+		switch ($access) {
+			case "global":
+				$retval = true;
+			break;			
+			case "user":
+				if (isloggedin()){ $retval = true; }
+			break;			
+			case "admin":
+				if (is_siteadmin()){ $retval = true; }			
+			case "profile":
+				if ($this->check_menu_access($profilefield, $profilevalue, $alertsession)){	$retval = true; }				
+			break;					
+		}
+		return $retval;
+	}
+    
+    public function alert_icon($alertclassglobal){
+	    switch ($alertclassglobal) {
+		    case "success":
+		        $alerticonglobal = "bullhorn";
+		    break;
+		    case "info":
+		        $alerticonglobal = "info-circle";
+		    break;
+		    case "warning":
+		        $alerticonglobal = "exclamation-triangle";
+		    break;
+		}
+		return $alerticonglobal;			
+    }
+    
     /**
      * Returns HTML to display a "Turn editing on/off" button in a form.
      *
