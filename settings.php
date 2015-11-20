@@ -2688,6 +2688,30 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_bcu_alert', get_string('alertsettingsheading', 'theme_bcu'),
         format_text(get_string('alertdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
 		
+	// Alert General Settings Heading.
+    $name = 'theme_bcu/settingsalertgeneral';
+    $heading = get_string('alertsettingsgeneral', 'theme_bcu');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);	
+		
+	// Disable alert in course pages.
+    $name = 'theme_bcu/enablealertcoursepages';
+    $title = get_string('enablealertcoursepages', 'theme_bcu');
+    $description = get_string('enablealertcoursepagesdesc', 'theme_bcu');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting); 
+	
+	// Strip Tags
+    $name = 'theme_bcu/enablealertstriptags';
+    $title = get_string('enablealertstriptags', 'theme_bcu');
+    $description = get_string('enablealertstriptagsdesc', 'theme_bcu');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting); 
+		
 	// Alert Box Heading 1.
     $name = 'theme_bcu/settingsalertbox';
     $heading = get_string('alertsettings1', 'theme_bcu');
@@ -2874,24 +2898,6 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);	   
 	
-	// Disable alert in course pages.
-    $name = 'theme_bcu/enablealertcoursepages';
-    $title = get_string('enablealertcoursepages', 'theme_bcu');
-    $description = get_string('enablealertcoursepagesdesc', 'theme_bcu');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting); 
-	
-	// Strip Tags
-    $name = 'theme_bcu/enablealertstriptags';
-    $title = get_string('enablealertstriptags', 'theme_bcu');
-    $description = get_string('enablealertstriptagsdesc', 'theme_bcu');
-    $default = true;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting); 
-
     $ADMIN->add('theme_bcu', $temp);
 
     // Frontpage Ticker heading.

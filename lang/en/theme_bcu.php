@@ -378,6 +378,7 @@ $string['tickerdesc'] = 'Here you can set a news ticker to run across the front 
 	&lt;li&gt;News item two.....&lt;/li&gt;
 	</pre>';
 
+$string['alertsettingsgeneral'] = 'General Alert Settings';
 $string['alertsettings1'] = 'Alert Box One';
 $string['alertsettings2'] = 'Alert Box Two';
 $string['alertsettings3'] = 'Alert Box Three';

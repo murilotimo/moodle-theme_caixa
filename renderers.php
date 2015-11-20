@@ -70,6 +70,10 @@ class theme_bcu_core_renderer extends core_renderer {
 			$alerttext = $PAGE->theme->settings->$alerttext;	
 			
 			if ($enablealert && !empty($alerttext)){
+				
+				if (!empty($PAGE->theme->settings->enablealertstriptags)){
+					$alerttext = strip_tags($alerttext);
+				}
 					
 				$alerttype = 'alerttype' . $i;
 				$alertaccess = 'alertaccess' . $i;
