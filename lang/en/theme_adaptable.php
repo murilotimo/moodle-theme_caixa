@@ -302,8 +302,7 @@ $string['alertinfodesc'] = 'Display an announcement in the Alert Box';
 $string['alertprofilefield'] = 'Custom Profile Field Name:';
 $string['alertprofilevalue'] = '= Custom Profile Field Value:';
 
-// Alert Access / Visibility
-
+// Alert Access - Visibility.
 $string['alertaccessglobal'] = 'Visibile to everyone';
 $string['alertaccessusers'] = 'Visibile to logged in users';
 $string['alertaccessadmins'] = 'Visibile to administrators';
@@ -312,19 +311,19 @@ $string['alertaccessprofile'] = 'Add custom profile field restriction';
 $string['alertaccess'] = 'Alert Visibility';
 $string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "' . $string['alertaccessprofile'] . '" you will need to add values for profile fields below.';
 
-// Alert Box 1
+// Alert Box 1.
 $string['enablealert1'] = 'Enable Alert Box One';
 $string['enablealertdesc1'] = 'Enable Alert Box One';
 
-// Alert Box 2
+// Alert Box 2.
 $string['enablealert2'] = 'Enable Alert Box Two';
 $string['enablealertdesc2'] = 'Enable Alert Box Two';
 
-// Alert Box 3
+// Alert Box 3.
 $string['enablealert3'] = 'Enable Alert Box Three';
 $string['enablealertdesc3'] = 'Enable Alert Box Three';
 
-// Alert Box Generic Strings
+// Alert Box Generic Strings.
 $string['alerttype'] = 'Alert Box Type';
 $string['alerttypedesc'] = 'Select the type of alert: info (blue), warning (yellow) or announcement (green)';
 
@@ -337,7 +336,7 @@ $string['enablealertcoursepagesdesc'] = 'Turning this option on will display the
 $string['enablealertstriptags'] = 'Automatically strip html tags from alerts';
 $string['enablealertstriptagsdesc'] = 'Enable will clean up alert messages automatically, Disable will allow you to use html / links in messages but you will have to clean up manually in html view';
 
-// Footer strings
+// Footer strings.
 $string['footer1header'] = 'Footer Section 1 Title';
 $string['footer2header'] = 'Footer Section 2 Title';
 $string['footer3header'] = 'Footer Section 3 Title';

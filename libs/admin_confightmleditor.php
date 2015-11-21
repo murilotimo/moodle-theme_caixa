@@ -40,7 +40,9 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
      * @param mixed $defaultsetting string or array
      * @param mixed $paramtype
      */
-    public function __construct($name, $visiblename, $description, $defaultsetting, $paramtype=PARAM_RAW, $cols='60', $rows='8', $filearea = 'adaptablemarketingimages') {
+    public function __construct($name, $visiblename, $description, $defaultsetting,
+                                $paramtype=PARAM_RAW, $cols='60', $rows='8',
+                                $filearea = 'adaptablemarketingimages') {
         $this->rows = $rows;
         $this->cols = $cols;
         $this->filearea = $filearea;
@@ -87,52 +89,59 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
         $options = $this->get_options();
         $draftitemid = file_get_unused_draft_itemid();
         $component = is_null($this->plugin) ? 'core' : $this->plugin;
-        $data = file_prepare_draft_area($draftitemid, $options['context']->id, $component, $this->get_full_name().'_draftitemid', $draftitemid, $options, $data);
-        
+        $data = file_prepare_draft_area($draftitemid, $options['context']->id,
+                                        $component, $this->get_full_name().'_draftitemid',
+                                        $draftitemid, $options, $data);
+
         $fpoptions = array();
         $args = new stdClass();
-        // need these three to filter repositories list
+
+        // Need these three to filter repositories list.
         $args->accepted_types = array('web_image');
         $args->return_types = $options['return_types'];
         $args->context = $ctx;
         $args->env = 'filepicker';
-        // advimage plugin
-        $image_options = initialise_filepicker($args);
-        $image_options->context = $ctx;
-        $image_options->client_id = uniqid();
-        $image_options->maxbytes = $options['maxbytes'];
-        $image_options->areamaxbytes = $options['areamaxbytes'];
-        $image_options->env = 'editor';
-        $image_options->itemid = $draftitemid;
 
-        // moodlemedia plugin
+        // Advimage plugin.
+        $imageoptions = initialise_filepicker($args);
+        $imageoptions->context = $ctx;
+        $imageoptions->client_id = uniqid();
+        $imageoptions->maxbytes = $options['maxbytes'];
+        $imageoptions->areamaxbytes = $options['areamaxbytes'];
+        $imageoptions->env = 'editor';
+        $imageoptions->itemid = $draftitemid;
+
+        // Moodlemedia plugin.
         $args->accepted_types = array('video', 'audio');
-        $media_options = initialise_filepicker($args);
-        $media_options->context = $ctx;
-        $media_options->client_id = uniqid();
-        $media_options->maxbytes  = $options['maxbytes'];
-        $media_options->areamaxbytes  = $options['areamaxbytes'];
-        $media_options->env = 'editor';
-        $media_options->itemid = $draftitemid;
+        $mediaoptions = initialise_filepicker($args);
+        $mediaoptions->context = $ctx;
+        $mediaoptions->client_id = uniqid();
+        $mediaoptions->maxbytes  = $options['maxbytes'];
+        $mediaoptions->areamaxbytes  = $options['areamaxbytes'];
+        $mediaoptions->env = 'editor';
+        $mediaoptions->itemid = $draftitemid;
 
-        // advlink plugin
+        // Advlink plugin.
         $args->accepted_types = '*';
-        $link_options = initialise_filepicker($args);
-        $link_options->context = $ctx;
-        $link_options->client_id = uniqid();
-        $link_options->maxbytes  = $options['maxbytes'];
-        $link_options->areamaxbytes  = $options['areamaxbytes'];
-        $link_options->env = 'editor';
-        $link_options->itemid = $draftitemid;
+        $linkoptions = initialise_filepicker($args);
+        $linkoptions->context = $ctx;
+        $linkoptions->client_id = uniqid();
+        $linkoptions->maxbytes  = $options['maxbytes'];
+        $linkoptions->areamaxbytes  = $options['areamaxbytes'];
+        $linkoptions->env = 'editor';
+        $linkoptions->itemid = $draftitemid;
 
-        $fpoptions['image'] = $image_options;
-        $fpoptions['media'] = $media_options;
-        $fpoptions['link'] = $link_options;
-        
+        $fpoptions['image'] = $imageoptions;
+        $fpoptions['media'] = $mediaoptions;
+        $fpoptions['link'] = $linkoptions;
+
         $editor->use_editor($this->get_id(), $options, $fpoptions);
 
         return format_admin_setting($this, $this->visiblename,
-        '<div class="form-textarea"><textarea rows="'. $this->rows .'" cols="'. $this->cols .'" id="'. $this->get_id() .'" name="'. $this->get_full_name() .'" spellcheck="true">'. s($data) .'</textarea></div>
+        '<div class="form-textarea">
+<textarea rows="'. $this->rows .'" cols="'. $this->cols .'" id="'. $this->get_id() .'" name="'.$this->get_full_name() .'"spellcheck="true">'. s($data) .'
+</textarea>
+</div>
         <input value="'.$draftitemid.'" name="'.$this->get_full_name().'_draftitemid" type="hidden" />',
         $this->description, true, '', $defaultinfo, $query);
     }
@@ -141,10 +150,10 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
         global $CFG;
 
         if ($this->paramtype === PARAM_INT and $data === '') {
-        // do not complain if '' used instead of 0
+            // ... do not complain if '' used instead of 0 !
             $data = 0;
         }
-        // $data is a string
+        // ... $data is a string.
         $validated = $this->validate($data);
         if ($validated !== true) {
             return $validated;
@@ -162,9 +171,9 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
         $draftfiles = $fs->get_area_files($options['context']->id, 'user', 'draft', $draftitemid, 'id');
         foreach ($draftfiles as $file) {
             if (!$file->is_directory()) {
-                $strToSearch = "$wwwroot/draftfile.php/".$options['context']->id."/user/draft/$draftitemid/".$file->get_filename();
-                if (stripos($data, $strToSearch) !== false) {
-                    $file_record = array(
+                $strtosearch = "$wwwroot/draftfile.php/".$options['context']->id."/user/draft/$draftitemid/".$file->get_filename();
+                if (stripos($data, $strtosearch) !== false) {
+                    $filerecord = array(
                         'contextid' => context_system::instance()->id,
                         'component' => $component,
                         'filearea' => $this->filearea,
@@ -173,15 +182,25 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
                         'itemid' => 0,
                         'timemodified' => time()
                     );
-                    if (!$filerec = $fs->get_file($file_record['contextid'], $file_record['component'], $file_record['filearea'], $file_record['itemid'], $file_record['filepath'], $file_record['filename'])) {
-                        $filerec = $fs->create_file_from_storedfile($file_record, $file);
-                    }                    
-                    $url = moodle_url::make_pluginfile_url($filerec->get_contextid(), $filerec->get_component(), $filerec->get_filearea(), $filerec->get_itemid(), $filerec->get_filepath(), $filerec->get_filename());
-                    $data = str_ireplace($strToSearch, $url, $data);
+                    if (!$filerec = $fs->get_file($filerecord['contextid'],
+                                                  $filerecord['component'],
+                                                  $filerecord['filearea'],
+                                                  $filerecord['itemid'],
+                                                  $filerecord['filepath'],
+                                                  $filerecord['filename'])) {
+                        $filerec = $fs->create_file_from_storedfile($filerecord, $file);
+                    }
+                    $url = moodle_url::make_pluginfile_url($filerec->get_contextid(),
+                                                           $filerec->get_component(),
+                                                           $filerec->get_filearea(),
+                                                           $filerec->get_itemid(),
+                                                           $filerec->get_filepath(),
+                                                           $filerec->get_filename());
+                    $data = str_ireplace($strtosearch, $url, $data);
                 }
             }
         }
-        
+
         return ($this->config_write($this->name, $data) ? '' : get_string('errorsetting', 'admin'));
     }
 }

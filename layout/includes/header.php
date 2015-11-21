@@ -402,69 +402,140 @@ switch($enableheadingtitle) {
     case "off" :
                 echo "";
                 break;
-    }
+}
 ?>
     </div>
 
-		<?php if (!empty($PAGE->theme->settings->socialset)) { ?>
+<?php
+if (!empty($PAGE->theme->settings->socialset)) { ?>
 		<div class="socialbox pull-right">
-		<?php if (isset($PAGE->theme->settings->socialsearchicon)) { ?>
-		<a alt="Search Moodle" title="Search Moodle" href="<?php echo $CFG->wwwroot . '/course/search.php ' ?>"><i class="fa fa-search"></i></a>
-		<?php } ?>
-		<?php if (!empty($PAGE->theme->settings->social1)) { ?>
-		<a alt="facebook" title="<?php echo get_string('social1', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social1 ?>"><i class="fa <?php echo $PAGE->theme->settings->social1icon ?>"></i></a>
-		<?php } ?>
-		<?php if (!empty($PAGE->theme->settings->social2)) { ?>
-		<a alt="twitter" title="<?php echo get_string('social2', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social2 ?>"><i class="fa <?php echo $PAGE->theme->settings->social2icon ?>"></i></a>
-		<?php } ?>
-		<?php if (!empty($PAGE->theme->settings->social3)) { ?>
-		<a alt="google plus" title="<?php echo get_string('social3', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social3 ?>"><i class="fa <?php echo $PAGE->theme->settings->social3icon ?>"></i></a>
-		<?php } ?>
-		<?php if (!empty($PAGE->theme->settings->social4)) { ?>
-		<a alt="instagram" title="<?php echo get_string('social4', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social4 ?>"><i class="fa <?php echo $PAGE->theme->settings->social4icon ?>"></i></a>
-		<?php } ?>
-		<?php if (!empty($PAGE->theme->settings->social5)) { ?>
-		<a alt="tumblr" title="<?php echo get_string('social5', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social5 ?>"><i class="fa <?php echo $PAGE->theme->settings->social5icon ?>"></i></a>
-		<?php } ?>
-		<?php if (!empty($PAGE->theme->settings->social6)) { ?>
-		<a alt="linkedin" title="<?php echo get_string('social6', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social6 ?>"><i class="fa <?php echo $PAGE->theme->settings->social6icon ?>"></i></a>
-		<?php } ?>
-		<?php if (!empty($PAGE->theme->settings->social7)) { ?>
-		<a alt="youtube" title="<?php echo get_string('social7', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social7 ?>"><i class="fa <?php echo $PAGE->theme->settings->social7icon ?>"></i></a>
-		<?php } ?>
-		<?php if (!empty($PAGE->theme->settings->social8)) { ?>
-		<a alt="flickr" title="<?php echo get_string('social8', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social8 ?>"><i class="fa <?php echo $PAGE->theme->settings->social8icon ?>"></i></a>
-		<?php } ?>
-		<?php if (!empty($PAGE->theme->settings->social9)) { ?>
-		<a alt="pinterest" title="<?php echo get_string('social1', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social9 ?>"><i class="fa <?php echo $PAGE->theme->settings->social9icon ?>"></i></a>
-		<?php } ?>
-		<?php if (!empty($PAGE->theme->settings->social10)) { ?>
-		<a alt="web" title="<?php echo get_string('social10', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social10 ?>"><i class="fa <?php echo $PAGE->theme->settings->social10icon ?>"></i></a>
-		<?php } ?>
-		<?php if (!empty($PAGE->theme->settings->social11)) { ?>
-		<a alt="blog" title="<?php echo get_string('social11', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social11 ?>"><i class="fa <?php echo $PAGE->theme->settings->social11icon ?>"></i></a>
-		<?php } ?>
-		</div>
-		<?php } ?>
+<?php
+    if (isset($PAGE->theme->settings->socialsearchicon)) { ?>
+    <a alt="<?php echo get_string('socialsearchicon', 'theme_adaptable') ?>" title="<?php echo get_string('socialsearchicon', 'theme_adaptable') ?>" href="<?php echo $CFG->wwwroot . '/course/search.php ' ?>">
+        <i class="fa fa-search"></i>
+    </a>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->social1)) { ?>
+    <a alt="<?php echo get_string('social1', 'theme_adaptable') ?>" title="<?php echo get_string('social1', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social1 ?>">
+	<i class="fa <?php echo $PAGE->theme->settings->social1icon ?>"></i>
+	</a>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->social2)) { ?>
+    <a alt="<?php echo get_string('social2', 'theme_adaptable') ?>" title="<?php echo get_string('social2', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social2 ?>">
+        <i class="fa <?php echo $PAGE->theme->settings->social2icon ?>"></i>
+    </a>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->social3)) { ?>
+    <a alt="<?php echo get_string('social3', 'theme_adaptable') ?>" title="<?php echo get_string('social3', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social3 ?>">
+        <i class="fa <?php echo $PAGE->theme->settings->social3icon ?>"></i>
+    </a>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->social4)) { ?>
+    <a alt="<?php echo get_string('social4', 'theme_adaptable') ?>" title="<?php echo get_string('social4', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social4 ?>">
+    <i class="fa <?php echo $PAGE->theme->settings->social4icon ?>"></i>
+    </a>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->social5)) { ?>
+    <a alt="<?php echo get_string('social5', 'theme_adaptable') ?>" title="<?php echo get_string('social5', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social5 ?>">
+        <i class="fa <?php echo $PAGE->theme->settings->social5icon ?>"></i>
+    </a>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->social6)) { ?>
+    <a alt="<?php echo get_string('social6', 'theme_adaptable') ?>" title="<?php echo get_string('social6', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social6 ?>">
+        <i class="fa <?php echo $PAGE->theme->settings->social6icon ?>"></i>
+    </a>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->social7)) { ?>
+    <a alt="<?php echo get_string('social7', 'theme_adaptable') ?>" title="<?php echo get_string('social7', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social7 ?>">
+        <i class="fa <?php echo $PAGE->theme->settings->social7icon ?>"></i>
+    </a>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->social8)) { ?>
+    <a alt="<?php echo get_string('social8', 'theme_adaptable') ?>" title="<?php echo get_string('social8', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social8 ?>">
+        <i class="fa <?php echo $PAGE->theme->settings->social8icon ?>"></i>
+    </a>
+<?php
+    }
+?>
+		
+<?php
+    if (!empty($PAGE->theme->settings->social9)) { ?>
+    <a alt="<?php echo get_string('social9', 'theme_adaptable') ?>" title="<?php echo get_string('social9', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social9 ?>">
+        <i class="fa <?php echo $PAGE->theme->settings->social9icon ?>"></i>
+    </a>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->social10)) { ?>
+    <a alt="<?php echo get_string('social10', 'theme_adaptable') ?>" title="<?php echo get_string('social10', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social10 ?>">
+        <i class="fa <?php echo $PAGE->theme->settings->social10icon ?>"></i>
+    </a>
+<?php
+    }
+?>
+<?php
+    if (!empty($PAGE->theme->settings->social11)) { ?>
+    <a alt="<?php echo get_string('social11', 'theme_adaptable') ?>" title="<?php echo get_string('social11', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social11 ?>">
+        <i class="fa <?php echo $PAGE->theme->settings->social11icon ?>"></i>
+    </a>
+<?php
+    }
+?>
+	</div>
+<?php
+}
+?>
 
-		<?php if (empty($PAGE->theme->settings->socialset)) { ?>
+<?php
+if (empty($PAGE->theme->settings->socialset)) { ?>
         <div class="searchbox">
             <form action="<?php p($CFG->wwwroot) ?>/course/search.php">
                 <label class="hidden" for="search-1" style="display: none;">Search iCity</label>
                 <div class="search-box grey-box bg-white clear-fix">
                     <input placeholder="<?php echo get_string("searchcourses")?>" accesskey="6" class="search_tour bg-white no-border left search-box__input ui-autocomplete-input" type="text" name="search" id="search-1" autocomplete="off">
-                    <button type="submit" class="no-border bg-white pas search-box__button"><abbr class="fa fa-search"></abbr></button>
+                    <button type="submit" class="no-border bg-white pas search-box__button">
+                        <abbr class="fa fa-search"></abbr>
+                    </button>
                 </div>
             </form>
         </div>
-        <?php } ?>
+<?php
+}
+?>
 
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>
         </div>
     </div>
 
-    <?php if (isloggedin()) { ?>
+<?php
+if (isloggedin()) {
+?>
     <div id="navwrap">
         <div class="container">
             <div class="navbar">
@@ -477,44 +548,54 @@ switch($enableheadingtitle) {
                         </a>
                         <div class="nav-collapse collapse ">
                             <?php echo $OUTPUT->navigation_menu(); ?>
-                            <?php if (empty($PAGE->theme->settings->disablecustommenu)) {echo $OUTPUT->custom_menu(); } ?>                            
-                            <?php  if ($PAGE->theme->settings->enabletoolsmenus) { ?>
-		                        <?php echo $OUTPUT->tools_menu(); ?>
-		                        <?php echo $OUTPUT->tools_menu2(); ?>
-                            <?php } ?>
+<?php
+    if (empty($PAGE->theme->settings->disablecustommenu)) {
+        echo $OUTPUT->custom_menu();
+    }
+?>                            
+<?php
+    if ($PAGE->theme->settings->enabletoolsmenus) {
+        echo $OUTPUT->tools_menu();
+        echo $OUTPUT->tools_menu2();
+    }
+?>
 
                             <ul class="nav pull-right">
-                                <?php if (isloggedin()) { ?>
-	                                <?php if ($PAGE->theme->settings->enableshowhideblocks) { ?>
+<?php
+    if (isloggedin()) {
+        if ($PAGE->theme->settings->enableshowhideblocks) { ?>
+	                            <li class="hbl">
+                                <a href="#" class="moodlezoom" title="<?php echo get_string('hideblocks', 'theme_adaptable') ?>">
+	                            <i class="fa fa-indent fa-lg"></i>
+	                            <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_adaptable') ?></span>
+	                            </a>
+	                            </li>
+	                            <li class="sbl">
+                                <a href="#" class="moodlezoom" title="<?php echo get_string('showblocks', 'theme_adaptable') ?>">
+	                            <i class="fa fa-outdent fa-lg"></i>
+	                            <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_adaptable') ?></span>
+	                            </a>
+	                            </li>
+<?php
+        }
 
-	                                <li class="hbl">
-	                                    <a href="#" class="moodlezoom" title="<?php echo get_string('hideblocks', 'theme_adaptable') ?>">
-	                                        <i class="fa fa-indent fa-lg"></i>
-	                                        <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_adaptable') ?></span>
-	                                    </a>
-	                                </li>
-	                                <li class="sbl">
-	                                    <a href="#" class="moodlezoom" title="<?php echo get_string('showblocks', 'theme_adaptable') ?>">
-	                                        <i class="fa fa-outdent fa-lg"></i>
-	                                        <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_adaptable') ?></span>
-	                                    </a>
-	                                </li>
-	                                <?php } ?>
-	                                <?php if ($PAGE->theme->settings->enablezoom) { ?>
+        if ($PAGE->theme->settings->enablezoom) { ?>
 	                                <li class="hbll">
-	                                    <a href="#" class="moodlewidth" title="<?php echo get_string('fullscreen', 'theme_adaptable') ?>">
-	                                        <i class="fa fa-expand fa-lg"></i>
-	                                        <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_adaptable') ?></span>
-	                                    </a>
+                                    <a href="#" class="moodlewidth" title="<?php echo get_string('fullscreen', 'theme_adaptable') ?>">
+	                                <i class="fa fa-expand fa-lg"></i>
+	                                <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_adaptable') ?></span>
+	                                </a>
 	                                </li>
 	                                <li class="sbll">
-	                                    <a href="#" class="moodlewidth" title="<?php echo get_string('standardview', 'theme_adaptable') ?>">
-	                                        <i class="fa fa-compress fa-lg"></i>
-	                                        <span class="zoomdesc"><?php echo get_string('standardview', 'theme_adaptable') ?></span>
-	                                    </a>
+                                    <a href="#" class="moodlewidth" title="<?php echo get_string('standardview', 'theme_adaptable') ?>">
+	                                <i class="fa fa-compress fa-lg"></i>
+	                                <span class="zoomdesc"><?php echo get_string('standardview', 'theme_adaptable') ?></span>
+	                                </a>
 	                                </li>
-	      			                <?php } ?>
-      			                <?php } ?>
+<?php
+        }
+    }
+?>
                             </ul>
                             <div id="edittingbutton" class="pull-right breadcrumb-button">
                                 <?php echo $OUTPUT->page_heading_button(); ?>
@@ -525,23 +606,31 @@ switch($enableheadingtitle) {
             </div>
         </div>
     </div>
-    <?php } ?>
+<?php
+}
+?>
 </header>
 
 
-<?php if (!empty($PAGE->theme->settings->enableticker)) { ?>
-<div id="ticker-wrap" class="clearfix container">
-<div class="pull-left" id="ticker-announce">
-<?php echo get_string('ticker', 'theme_adaptable'); ?>
-</div>
-<ul id="ticker">
-<?php if (empty($PAGE->theme->settings->tickertext)) { ?>
-			<li>Set the ticker text from the settings page!</li>
-			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae.</li>
-			<li>A short Headline is here</li>
-			<li>A long headline is not here either. <a href="#">A link is here!</a></li>
-<?php } else { echo $PAGE->theme->settings->tickertext; } ?>
+<?php
+if (!empty($PAGE->theme->settings->enableticker)) { ?>
+    <div id="ticker-wrap" class="clearfix container">
+        <div class="pull-left" id="ticker-announce">
+            <?php echo get_string('ticker', 'theme_adaptable'); ?>
+    </div>
+    <ul id="ticker">
+<?php
+    if (empty($PAGE->theme->settings->tickertext)) { ?>
+        <li>Set the ticker text from the settings page!</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae.</li>
+        <li>A short Headline is here</li>
+        <li>A long headline is not here either. <a href="#">A link is here!</a></li>
+<?php
+    } else {
+        echo $PAGE->theme->settings->tickertext;
+} ?>
 
 </ul>
 </div>
-<?php } ?>
+<?php 
+}
