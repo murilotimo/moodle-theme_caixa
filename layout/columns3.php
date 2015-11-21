@@ -18,14 +18,14 @@
  * Version details
  *
  * @package    theme
- * @subpackage bcu
+ * @subpackage adaptable
  * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
 
 require_once(dirname(__FILE__) . '/includes/header.php');
-$left = theme_bcu_get_block_side();
+$left = theme_adaptable_get_block_side();
 ?>
 <div id="page" class="container-fluid">
 

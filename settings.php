@@ -18,7 +18,7 @@
  * Version details
  *
  * @package    theme
- * @subpackage bcu
+ * @subpackage adaptable
  * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -764,54 +764,54 @@ $fontlist = array(
 'Zeyada' => "Zeyada");
 
 if (is_siteadmin()) {
-    // BCU theme settings page.
-    $ADMIN->add('themes', new admin_category('theme_bcu', 'BCU'));
+    // adaptable theme settings page.
+    $ADMIN->add('themes', new admin_category('theme_adaptable', 'adaptable'));
 
 
     // Colours section.
-    $temp = new admin_settingpage('theme_bcu_colour', get_string('coloursettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_colour', get_string('coloursettingsheading', 'theme_bcu'),
-                   format_text(get_string('colourdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_colour', get_string('coloursettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_colour', get_string('coloursettingsheading', 'theme_adaptable'),
+                   format_text(get_string('colourdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
 
     // Main colours heading.
-    $name = 'theme_bcu/settingsmaincolors';
-    $heading = get_string('settingsmaincolors', 'theme_bcu');
+    $name = 'theme_adaptable/settingsmaincolors';
+    $heading = get_string('settingsmaincolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
 
     // Site main colour.
-    $name = 'theme_bcu/maincolor';
-    $title = get_string('maincolor', 'theme_bcu');
-    $description = get_string('maincolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/maincolor';
+    $title = get_string('maincolor', 'theme_adaptable');
+    $description = get_string('maincolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Site background colour.
-    $name = 'theme_bcu/backcolor';
-    $title = get_string('backcolor', 'theme_bcu');
-    $description = get_string('backcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/backcolor';
+    $title = get_string('backcolor', 'theme_adaptable');
+    $description = get_string('backcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Link colour.
-    $name = 'theme_bcu/linkcolor';
-    $title = get_string('linkcolor', 'theme_bcu');
-    $description = get_string('linkcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/linkcolor';
+    $title = get_string('linkcolor', 'theme_adaptable');
+    $description = get_string('linkcolordesc', 'theme_adaptable');
     $default = '#001E3C';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $temp->add($setting);
 
     // Link hover colour.
-    $name = 'theme_bcu/linkhover';
-    $title = get_string('linkhover', 'theme_bcu');
-    $description = get_string('linkhoverdesc', 'theme_bcu');
+    $name = 'theme_adaptable/linkhover';
+    $title = get_string('linkhover', 'theme_adaptable');
+    $description = get_string('linkhoverdesc', 'theme_adaptable');
     $default = '#001E3C';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
@@ -820,60 +820,60 @@ if (is_siteadmin()) {
 
 
     // Header colours heading.
-    $name = 'theme_bcu/settingsheadercolors';
-    $heading = get_string('settingsheadercolors', 'theme_bcu');
+    $name = 'theme_adaptable/settingsheadercolors';
+    $heading = get_string('settingsheadercolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Loading bar colour.
-    $name = 'theme_bcu/loadingcolor';
-    $title = get_string('loadingcolor', 'theme_bcu');
-    $description = get_string('loadingcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/loadingcolor';
+    $title = get_string('loadingcolor', 'theme_adaptable');
+    $description = get_string('loadingcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#29d', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Top header background colour.
-    $name = 'theme_bcu/headerbkcolor';
-    $title = get_string('headerbkcolor', 'theme_bcu');
-    $description = get_string('headerbkcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/headerbkcolor';
+    $title = get_string('headerbkcolor', 'theme_adaptable');
+    $description = get_string('headerbkcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Top header text colour.
-    $name = 'theme_bcu/headertextcolor';
-    $title = get_string('headertextcolor', 'theme_bcu');
-    $description = get_string('headertextcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/headertextcolor';
+    $title = get_string('headertextcolor', 'theme_adaptable');
+    $description = get_string('headertextcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Bottom header background colour.
-    $name = 'theme_bcu/headerbkcolor2';
-    $title = get_string('headerbkcolor2', 'theme_bcu');
-    $description = get_string('headerbkcolor2desc', 'theme_bcu');
+    $name = 'theme_adaptable/headerbkcolor2';
+    $title = get_string('headerbkcolor2', 'theme_adaptable');
+    $description = get_string('headerbkcolor2desc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Bottom header text colour.
-    $name = 'theme_bcu/headertextcolor2';
-    $title = get_string('headertextcolor2', 'theme_bcu');
-    $description = get_string('headertextcolor2desc', 'theme_bcu');
+    $name = 'theme_adaptable/headertextcolor2';
+    $title = get_string('headertextcolor2', 'theme_adaptable');
+    $description = get_string('headertextcolor2desc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Loading bar colour.
-    $name = 'theme_bcu/loadingcolor';
-    $title = get_string('loadingcolor', 'theme_bcu');
-    $description = get_string('loadingcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/loadingcolor';
+    $title = get_string('loadingcolor', 'theme_adaptable');
+    $description = get_string('loadingcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#29d', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -881,66 +881,66 @@ if (is_siteadmin()) {
 
 
     // Menu colours heading.
-    $name = 'theme_bcu/settingsmenucolors';
-    $heading = get_string('settingsmenucolors', 'theme_bcu');
+    $name = 'theme_adaptable/settingsmenucolors';
+    $heading = get_string('settingsmenucolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Main menu background colour.
-    $name = 'theme_bcu/menubkcolor';
-    $title = get_string('menubkcolor', 'theme_bcu');
-    $description = get_string('menubkcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/menubkcolor';
+    $title = get_string('menubkcolor', 'theme_adaptable');
+    $description = get_string('menubkcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Main menu text colour.
-    $name = 'theme_bcu/menufontcolor';
-    $title = get_string('menufontcolor', 'theme_bcu');
-    $description = get_string('menufontcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/menufontcolor';
+    $title = get_string('menufontcolor', 'theme_adaptable');
+    $description = get_string('menufontcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#444444', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Main menu text hover colour.
-    $name = 'theme_bcu/menufonthovercolor';
-    $title = get_string('menufonthovercolor', 'theme_bcu');
-    $description = get_string('menufonthovercolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/menufonthovercolor';
+    $title = get_string('menufonthovercolor', 'theme_adaptable');
+    $description = get_string('menufonthovercolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#3c469c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Main menu bottom border colour.
-    $name = 'theme_bcu/menubordercolor';
-    $title = get_string('menubordercolor', 'theme_bcu');
-    $description = get_string('menubordercolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/menubordercolor';
+    $title = get_string('menubordercolor', 'theme_adaptable');
+    $description = get_string('menubordercolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#b7b3ef', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Mobile Menu colours heading.
-    $name = 'theme_bcu/settingsmobilemenucolors';
-    $heading = get_string('settingsmobilemenucolors', 'theme_bcu');
+    $name = 'theme_adaptable/settingsmobilemenucolors';
+    $heading = get_string('settingsmobilemenucolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Mobile menu background colour.
-    $name = 'theme_bcu/mobilemenubkcolor';
-    $title = get_string('mobilemenubkcolor', 'theme_bcu');
-    $description = get_string('mobilemenubkcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/mobilemenubkcolor';
+    $title = get_string('mobilemenubkcolor', 'theme_adaptable');
+    $description = get_string('mobilemenubkcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Mobile menu text colour.
-    $name = 'theme_bcu/mobilemenufontcolor';
-    $title = get_string('mobilemenufontcolor', 'theme_bcu');
-    $description = get_string('mobilemenufontcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/mobilemenufontcolor';
+    $title = get_string('mobilemenufontcolor', 'theme_adaptable');
+    $description = get_string('mobilemenufontcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#000000', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -948,24 +948,24 @@ if (is_siteadmin()) {
 
 
     // Info Box colours heading.
-    $name = 'theme_bcu/settingsinfoboxcolors';
-    $heading = get_string('settingsinfoboxcolors', 'theme_bcu');
+    $name = 'theme_adaptable/settingsinfoboxcolors';
+    $heading = get_string('settingsinfoboxcolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Info Box background colour.
-    $name = 'theme_bcu/infoboxcolor';
-    $title = get_string('infoboxcolor', 'theme_bcu');
-    $description = get_string('infoboxcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/infoboxcolor';
+    $title = get_string('infoboxcolor', 'theme_adaptable');
+    $description = get_string('infoboxcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Info Box text colour.
-    $name = 'theme_bcu/infoboxtextcolor';
-    $title = get_string('infoboxtextcolor', 'theme_bcu');
-    $description = get_string('infoboxtextcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/infoboxtextcolor';
+    $title = get_string('infoboxtextcolor', 'theme_adaptable');
+    $description = get_string('infoboxtextcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -973,24 +973,24 @@ if (is_siteadmin()) {
 
 
     // Info Box 2 colours heading.
-    $name = 'theme_bcu/settingssecondinfoboxcolors';
-    $heading = get_string('settingssecondinfoboxcolors', 'theme_bcu');
+    $name = 'theme_adaptable/settingssecondinfoboxcolors';
+    $heading = get_string('settingssecondinfoboxcolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Info Box 2 background colour.
-    $name = 'theme_bcu/infoboxcolor2';
-    $title = get_string('infoboxcolor2', 'theme_bcu');
-    $description = get_string('infoboxcolor2desc', 'theme_bcu');
+    $name = 'theme_adaptable/infoboxcolor2';
+    $title = get_string('infoboxcolor2', 'theme_adaptable');
+    $description = get_string('infoboxcolor2desc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f3f3f3', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Info Box 2 text colour.
-    $name = 'theme_bcu/infoboxtextcolor2';
-    $title = get_string('infoboxtextcolor2', 'theme_bcu');
-    $description = get_string('infoboxtextcolor2desc', 'theme_bcu');
+    $name = 'theme_adaptable/infoboxtextcolor2';
+    $title = get_string('infoboxtextcolor2', 'theme_adaptable');
+    $description = get_string('infoboxtextcolor2desc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#666666', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -998,24 +998,24 @@ if (is_siteadmin()) {
 
 
     // Market blocks colours heading.
-    $name = 'theme_bcu/settingsmarketingcolors';
-    $heading = get_string('settingsmarketingcolors', 'theme_bcu');
+    $name = 'theme_adaptable/settingsmarketingcolors';
+    $heading = get_string('settingsmarketingcolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Market blocks border colour.
-    $name = 'theme_bcu/marketblockbordercolor';
-    $title = get_string('marketblockbordercolor', 'theme_bcu');
-    $description = get_string('marketblockbordercolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/marketblockbordercolor';
+    $title = get_string('marketblockbordercolor', 'theme_adaptable');
+    $description = get_string('marketblockbordercolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#e8eaeb', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Market blocks background colour.
-    $name = 'theme_bcu/marketblocksbackgroundcolor';
-    $title = get_string('marketblocksbackgroundcolor', 'theme_bcu');
-    $description = get_string('marketblocksbackgroundcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/marketblocksbackgroundcolor';
+    $title = get_string('marketblocksbackgroundcolor', 'theme_adaptable');
+    $description = get_string('marketblocksbackgroundcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFFFFF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1023,62 +1023,62 @@ if (is_siteadmin()) {
 
 
     // Overlay tiles colours heading.
-    $name = 'theme_bcu/settingsoverlaycolors';
-    $heading = get_string('settingsoverlaycolors', 'theme_bcu');
+    $name = 'theme_adaptable/settingsoverlaycolors';
+    $heading = get_string('settingsoverlaycolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    $name = 'theme_bcu/rendereroverlaycolor';
-    $title = get_string('rendereroverlaycolor', 'theme_bcu');
-    $description = get_string('rendereroverlaycolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/rendereroverlaycolor';
+    $title = get_string('rendereroverlaycolor', 'theme_adaptable');
+    $description = get_string('rendereroverlaycolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/rendereroverlayfontcolor';
-    $title = get_string('rendereroverlayfontcolor', 'theme_bcu');
-    $description = get_string('rendereroverlayfontcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/rendereroverlayfontcolor';
+    $title = get_string('rendereroverlayfontcolor', 'theme_adaptable');
+    $description = get_string('rendereroverlayfontcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/tilesbordercolor';
-    $title = get_string('tilesbordercolor', 'theme_bcu');
-    $description = get_string('tilesbordercolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/tilesbordercolor';
+    $title = get_string('tilesbordercolor', 'theme_adaptable');
+    $description = get_string('tilesbordercolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#e8eaeb', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/covbkcolor';
-    $title = get_string('covbkcolor', 'theme_bcu');
-    $description = get_string('covbkcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/covbkcolor';
+    $title = get_string('covbkcolor', 'theme_adaptable');
+    $description = get_string('covbkcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/covfontcolor';
-    $title = get_string('covfontcolor', 'theme_bcu');
-    $description = get_string('covfontcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/covfontcolor';
+    $title = get_string('covfontcolor', 'theme_adaptable');
+    $description = get_string('covfontcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/dividingline';
-    $title = get_string('dividingline', 'theme_bcu');
-    $description = get_string('dividinglinedesc', 'theme_bcu');
+    $name = 'theme_adaptable/dividingline';
+    $title = get_string('dividingline', 'theme_adaptable');
+    $description = get_string('dividinglinedesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#B7B3EF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/dividingline2';
-    $title = get_string('dividingline2', 'theme_bcu');
-    $description = get_string('dividingline2desc', 'theme_bcu');
+    $name = 'theme_adaptable/dividingline2';
+    $title = get_string('dividingline2', 'theme_adaptable');
+    $description = get_string('dividingline2desc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#B7B3EF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1086,22 +1086,22 @@ if (is_siteadmin()) {
 
 
     // Navbar colours heading.
-    $name = 'theme_bcu/settingsnavbarcolors';
-    $heading = get_string('settingsnavbarcolors', 'theme_bcu');
+    $name = 'theme_adaptable/settingsnavbarcolors';
+    $heading = get_string('settingsnavbarcolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    $name = 'theme_bcu/navbarborder';
-    $title = get_string('navbarborder', 'theme_bcu');
-    $description = get_string('navbarborderdesc', 'theme_bcu');
+    $name = 'theme_adaptable/navbarborder';
+    $title = get_string('navbarborder', 'theme_adaptable');
+    $description = get_string('navbarborderdesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#B7B3EF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/navbarhover';
-    $title = get_string('navbarhover', 'theme_bcu');
-    $description = get_string('navbarhoverdesc', 'theme_bcu');
+    $name = 'theme_adaptable/navbarhover';
+    $title = get_string('navbarhover', 'theme_adaptable');
+    $description = get_string('navbarhoverdesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#3C469C', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1109,108 +1109,108 @@ if (is_siteadmin()) {
 
 
     // Breadcrumb colours heading.
-    $name = 'theme_bcu/settingsbreadcrumbcolors';
-    $heading = get_string('settingsbreadcrumbcolors', 'theme_bcu');
+    $name = 'theme_adaptable/settingsbreadcrumbcolors';
+    $heading = get_string('settingsbreadcrumbcolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    $name = 'theme_bcu/breadcrumb';
-    $title = get_string('breadcrumb', 'theme_bcu');
-    $description = get_string('breadcrumbdesc', 'theme_bcu');
+    $name = 'theme_adaptable/breadcrumb';
+    $title = get_string('breadcrumb', 'theme_adaptable');
+    $description = get_string('breadcrumbdesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#b4bbbf', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Breadcrumb text colour.
-    $name = 'theme_bcu/breadcrumbtextcolor';
-    $title = get_string('breadcrumbtextcolor', 'theme_bcu');
-    $description = get_string('breadcrumbtextcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/breadcrumbtextcolor';
+    $title = get_string('breadcrumbtextcolor', 'theme_adaptable');
+    $description = get_string('breadcrumbtextcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#444444', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/activebreadcrumb';
-    $title = get_string('activebreadcrumb', 'theme_bcu');
-    $description = get_string('activebreadcrumbdesc', 'theme_bcu');
+    $name = 'theme_adaptable/activebreadcrumb';
+    $title = get_string('activebreadcrumb', 'theme_adaptable');
+    $description = get_string('activebreadcrumbdesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#e8eaeb', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/sectionheadingcolor';
-    $title = get_string('sectionheadingcolor', 'theme_bcu');
-    $description = get_string('sectionheadingcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/sectionheadingcolor';
+    $title = get_string('sectionheadingcolor', 'theme_adaptable');
+    $description = get_string('sectionheadingcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#5f588a', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/currentcolor';
-    $title = get_string('currentcolor', 'theme_bcu');
-    $description = get_string('currentcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/currentcolor';
+    $title = get_string('currentcolor', 'theme_adaptable');
+    $description = get_string('currentcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#d9edf7', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Footer colours heading.
-    $name = 'theme_bcu/settingsfootercolors';
-    $heading = get_string('settingsfootercolors', 'theme_bcu');
+    $name = 'theme_adaptable/settingsfootercolors';
+    $heading = get_string('settingsfootercolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    $name = 'theme_bcu/footerbkcolor';
-    $title = get_string('footerbkcolor', 'theme_bcu');
-    $description = get_string('footerbkcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/footerbkcolor';
+    $title = get_string('footerbkcolor', 'theme_adaptable');
+    $description = get_string('footerbkcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/footertextcolor';
-    $title = get_string('footertextcolor', 'theme_bcu');
-    $description = get_string('footertextcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/footertextcolor';
+    $title = get_string('footertextcolor', 'theme_adaptable');
+    $description = get_string('footertextcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/footertextcolor2';
-    $title = get_string('footertextcolor2', 'theme_bcu');
-    $description = get_string('footertextcolor2desc', 'theme_bcu');
+    $name = 'theme_adaptable/footertextcolor2';
+    $title = get_string('footertextcolor2', 'theme_adaptable');
+    $description = get_string('footertextcolor2desc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/footerlinkcolor';
-    $title = get_string('footerlinkcolor', 'theme_bcu');
-    $description = get_string('footerlinkcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/footerlinkcolor';
+    $title = get_string('footerlinkcolor', 'theme_adaptable');
+    $description = get_string('footerlinkcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
 
     // Fonts Section.
-    $temp = new admin_settingpage('theme_bcu_font', get_string('fontsettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_font', get_string('fontsettingsheading', 'theme_bcu'),
-                   format_text(get_string('fontdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_font', get_string('fontsettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_font', get_string('fontsettingsheading', 'theme_adaptable'),
+                   format_text(get_string('fontdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
     // Fonts heading.
-    $name = 'theme_bcu/settingsfonts';
-    $heading = get_string('settingsfonts', 'theme_bcu');
+    $name = 'theme_adaptable/settingsfonts';
+    $heading = get_string('settingsfonts', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Main Font Name.
-    $name = 'theme_bcu/fontname';
-    $title = get_string('fontname', 'theme_bcu');
-    $description = get_string('fontnamedesc', 'theme_bcu');
+    $name = 'theme_adaptable/fontname';
+    $title = get_string('fontname', 'theme_adaptable');
+    $description = get_string('fontnamedesc', 'theme_adaptable');
     $default = 'Open Sans';
     $choices = $fontlist;
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
@@ -1218,9 +1218,9 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     // Main Font Subset.
-    $name = 'theme_bcu/fontsubset';
-    $title = get_string('fontsubset', 'theme_bcu');
-    $description = get_string('fontsubsetdesc', 'theme_bcu');
+    $name = 'theme_adaptable/fontsubset';
+    $title = get_string('fontsubset', 'theme_adaptable');
+    $description = get_string('fontsubsetdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_configmulticheckbox($name, $title, $description, $default, array(
         'latin-ext' => "latin-ext",
@@ -1235,52 +1235,52 @@ if (is_siteadmin()) {
 
 
     // Main Font weight.
-    $name = 'theme_bcu/fontweight';
-    $title = get_string('fontweight', 'theme_bcu');
-    $description = get_string('fontweightdesc', 'theme_bcu');
+    $name = 'theme_adaptable/fontweight';
+    $title = get_string('fontweight', 'theme_adaptable');
+    $description = get_string('fontweightdesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '400');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Main Font color.
-    $name = 'theme_bcu/fontcolor';
-    $title = get_string('fontcolor', 'theme_bcu');
-    $description = get_string('fontcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/fontcolor';
+    $title = get_string('fontcolor', 'theme_adaptable');
+    $description = get_string('fontcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Header Font Name.
-    $name = 'theme_bcu/fontheadername';
-    $title = get_string('fontheadername', 'theme_bcu');
-    $description = get_string('fontheadernamedesc', 'theme_bcu');
+    $name = 'theme_adaptable/fontheadername';
+    $title = get_string('fontheadername', 'theme_adaptable');
+    $description = get_string('fontheadernamedesc', 'theme_adaptable');
     $default = 'Roboto';
     $choices = $fontlist;
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $temp->add($setting);
 
     // Header Font weight.
-    $name = 'theme_bcu/fontheaderweight';
-    $title = get_string('fontheaderweight', 'theme_bcu');
-    $description = get_string('fontheaderweightdesc', 'theme_bcu');
+    $name = 'theme_adaptable/fontheaderweight';
+    $title = get_string('fontheaderweight', 'theme_adaptable');
+    $description = get_string('fontheaderweightdesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '400');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Header font color.
-    $name = 'theme_bcu/fontheadercolor';
-    $title = get_string('fontheadercolor', 'theme_bcu');
-    $description = get_string('fontheadercolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/fontheadercolor';
+    $title = get_string('fontheadercolor', 'theme_adaptable');
+    $description = get_string('fontheadercolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Title Font Name.
-    $name = 'theme_bcu/fonttitlename';
-    $title = get_string('fonttitlename', 'theme_bcu');
-    $description = get_string('fonttitlenamedesc', 'theme_bcu');
+    $name = 'theme_adaptable/fonttitlename';
+    $title = get_string('fonttitlename', 'theme_adaptable');
+    $description = get_string('fonttitlenamedesc', 'theme_adaptable');
     $default = 'Roboto';
     $choices = $fontlist;
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
@@ -1288,41 +1288,41 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     // Title Font size.
-    $name = 'theme_bcu/fonttitlesize';
-    $title = get_string('fonttitlesize', 'theme_bcu');
-    $description = get_string('fonttitlesizedesc', 'theme_bcu');
+    $name = 'theme_adaptable/fonttitlesize';
+    $title = get_string('fonttitlesize', 'theme_adaptable');
+    $description = get_string('fonttitlesizedesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '24px');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Title Font weight.
-    $name = 'theme_bcu/fonttitleweight';
-    $title = get_string('fonttitleweight', 'theme_bcu');
-    $description = get_string('fonttitleweightdesc', 'theme_bcu');
+    $name = 'theme_adaptable/fonttitleweight';
+    $title = get_string('fonttitleweight', 'theme_adaptable');
+    $description = get_string('fonttitleweightdesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '700');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Title font color.
-    $name = 'theme_bcu/fonttitlecolor';
-    $title = get_string('fonttitlecolor', 'theme_bcu');
-    $description = get_string('fonttitlecolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/fonttitlecolor';
+    $title = get_string('fonttitlecolor', 'theme_adaptable');
+    $description = get_string('fonttitlecolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
 
     // Buttons Section.
-    $temp = new admin_settingpage('theme_bcu_buttons', get_string('buttonsettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_header', get_string('buttonsettingsheading', 'theme_bcu'),
-    format_text(get_string('buttondesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_buttons', get_string('buttonsettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_header', get_string('buttonsettingsheading', 'theme_adaptable'),
+    format_text(get_string('buttondesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/buttonradius';
-    $title = get_string('buttonradius', 'theme_bcu');
-    $description = get_string('buttonradiusdesc', 'theme_bcu');
+    $name = 'theme_adaptable/buttonradius';
+    $title = get_string('buttonradius', 'theme_adaptable');
+    $description = get_string('buttonradiusdesc', 'theme_adaptable');
     $radchoices = array(
         '0px' => "0px",
         '1px' => "1px",
@@ -1343,59 +1343,59 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     // Buttons background colour.
-    $name = 'theme_bcu/buttoncolor';
-    $title = get_string('buttoncolor', 'theme_bcu');
-    $description = get_string('buttoncolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/buttoncolor';
+    $title = get_string('buttoncolor', 'theme_adaptable');
+    $description = get_string('buttoncolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#00aeef', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Buttons background hover colour.
-    $name = 'theme_bcu/buttonhovercolor';
-    $title = get_string('buttonhovercolor', 'theme_bcu');
-    $description = get_string('buttonhovercolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/buttonhovercolor';
+    $title = get_string('buttonhovercolor', 'theme_adaptable');
+    $description = get_string('buttonhovercolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Buttons text colour.
-    $name = 'theme_bcu/buttontextcolor';
-    $title = get_string('buttontextcolor', 'theme_bcu');
-    $description = get_string('buttontextcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/buttontextcolor';
+    $title = get_string('buttontextcolor', 'theme_adaptable');
+    $description = get_string('buttontextcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/editonbk';
-    $title = get_string('editonbk', 'theme_bcu');
-    $description = get_string('editonbkdesc', 'theme_bcu');
+    $name = 'theme_adaptable/editonbk';
+    $title = get_string('editonbk', 'theme_adaptable');
+    $description = get_string('editonbkdesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0c901f', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/editoffbk';
-    $title = get_string('editoffbk', 'theme_bcu');
-    $description = get_string('editoffbkdesc', 'theme_bcu');
+    $name = 'theme_adaptable/editoffbk';
+    $title = get_string('editoffbk', 'theme_adaptable');
+    $description = get_string('editoffbkdesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f01f1f', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/editfont';
-    $title = get_string('editfont', 'theme_bcu');
-    $description = get_string('editfontdesc', 'theme_bcu');
+    $name = 'theme_adaptable/editfont';
+    $title = get_string('editfont', 'theme_adaptable');
+    $description = get_string('editfontdesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/editverticalpadding';
-    $title = get_string('editverticalpadding', 'theme_bcu');
-    $description = get_string('editverticalpadding', 'theme_bcu');
+    $name = 'theme_adaptable/editverticalpadding';
+    $title = get_string('editverticalpadding', 'theme_adaptable');
+    $description = get_string('editverticalpadding', 'theme_adaptable');
     $radchoices = array(
         '0px' => "0px",
         '1px' => "1px",
@@ -1409,9 +1409,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/edithorizontalpadding';
-    $title = get_string('edithorizontalpadding', 'theme_bcu');
-    $description = get_string('edithorizontalpadding', 'theme_bcu');
+    $name = 'theme_adaptable/edithorizontalpadding';
+    $title = get_string('edithorizontalpadding', 'theme_adaptable');
+    $description = get_string('edithorizontalpadding', 'theme_adaptable');
     $radchoices = array(
         '0px' => "0px",
         '1px' => "1px",
@@ -1435,9 +1435,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/edittopmargin';
-    $title = get_string('edittopmargin', 'theme_bcu');
-    $description = get_string('edittopmargin', 'theme_bcu');
+    $name = 'theme_adaptable/edittopmargin';
+    $title = get_string('edittopmargin', 'theme_adaptable');
+    $description = get_string('edittopmargin', 'theme_adaptable');
     $radchoices = array(
         '0px' => "0px",
         '1px' => "1px",
@@ -1453,33 +1453,33 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/buttonlogincolor';
-    $title = get_string('buttonlogincolor', 'theme_bcu');
-    $description = get_string('buttonlogincolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/buttonlogincolor';
+    $title = get_string('buttonlogincolor', 'theme_adaptable');
+    $description = get_string('buttonlogincolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0C901F', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/buttonloginhovercolor';
-    $title = get_string('buttonloginhovercolor', 'theme_bcu');
-    $description = get_string('buttonloginhovercolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/buttonloginhovercolor';
+    $title = get_string('buttonloginhovercolor', 'theme_adaptable');
+    $description = get_string('buttonloginhovercolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/buttonlogintextcolor';
-    $title = get_string('buttonlogintextcolor', 'theme_bcu');
-    $description = get_string('buttonlogintextcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/buttonlogintextcolor';
+    $title = get_string('buttonlogintextcolor', 'theme_adaptable');
+    $description = get_string('buttonlogintextcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFFFFF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/buttonloginpadding';
-    $title = get_string('buttonloginpadding', 'theme_bcu');
-    $description = get_string('buttonloginpaddingdesc', 'theme_bcu');
+    $name = 'theme_adaptable/buttonloginpadding';
+    $title = get_string('buttonloginpadding', 'theme_adaptable');
+    $description = get_string('buttonloginpaddingdesc', 'theme_adaptable');
     $radchoices = array(
         '0px' => "0px",
         '1px' => "1px",
@@ -1495,9 +1495,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/buttonloginheight';
-    $title = get_string('buttonloginheight', 'theme_bcu');
-    $description = get_string('buttonloginheightdesc', 'theme_bcu');
+    $name = 'theme_adaptable/buttonloginheight';
+    $title = get_string('buttonloginheight', 'theme_adaptable');
+    $description = get_string('buttonloginheightdesc', 'theme_adaptable');
     $radchoices = array(
         '16px' => "16px",
         '18px' => "18px",
@@ -1514,9 +1514,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/buttonloginmargintop';
-    $title = get_string('buttonloginmargintop', 'theme_bcu');
-    $description = get_string('buttonloginmargintopdesc', 'theme_bcu');
+    $name = 'theme_adaptable/buttonloginmargintop';
+    $title = get_string('buttonloginmargintop', 'theme_adaptable');
+    $description = get_string('buttonloginmargintopdesc', 'theme_adaptable');
     $radchoices = array(
         '0px' => "0px",
         '1px' => "1px",
@@ -1536,32 +1536,32 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
 
     // Header heading.
-    $temp = new admin_settingpage('theme_bcu_header', get_string('headersettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_header', get_string('headersettingsheading', 'theme_bcu'),
-    format_text(get_string('headerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_header', get_string('headersettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_header', get_string('headersettingsheading', 'theme_adaptable'),
+    format_text(get_string('headerdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/sitetitle';
-    $title = get_string('sitetitle', 'theme_bcu');
-    $description = get_string('sitetitledesc', 'theme_bcu');
+    $name = 'theme_adaptable/sitetitle';
+    $title = get_string('sitetitle', 'theme_adaptable');
+    $description = get_string('sitetitledesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/logo';
-    $title = get_string('logo', 'theme_bcu');
-    $description = get_string('logodesc', 'theme_bcu');
+    $name = 'theme_adaptable/logo';
+    $title = get_string('logo', 'theme_adaptable');
+    $description = get_string('logodesc', 'theme_adaptable');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Display Course title in the header.
-    $name = 'theme_bcu/enableheading';
-    $title = get_string('enableheading', 'theme_bcu');
-    $description = get_string('enableheadingdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enableheading';
+    $title = get_string('enableheading', 'theme_adaptable');
+    $description = get_string('enableheadingdesc', 'theme_adaptable');
     $radchoices = array(
         'fullname' => "Course Full Name",
         'shortname' => "Course Short Name",
@@ -1572,9 +1572,9 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     // Display Course title in the breadcrumb.
-    $name = 'theme_bcu/breadcrumbtitle';
-    $title = get_string('breadcrumbtitle', 'theme_bcu');
-    $description = get_string('breadcrumbtitledesc', 'theme_bcu');
+    $name = 'theme_adaptable/breadcrumbtitle';
+    $title = get_string('breadcrumbtitle', 'theme_adaptable');
+    $description = get_string('breadcrumbtitledesc', 'theme_adaptable');
     $radchoices = array(
         'fullname' => "Course Full Name",
         'shortname' => "Course Short Name"
@@ -1583,25 +1583,25 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/frontpagelogin';
-    $title = get_string('frontpagelogin', 'theme_bcu');
-    $description = get_string('frontpagelogindesc', 'theme_bcu');
+    $name = 'theme_adaptable/frontpagelogin';
+    $title = get_string('frontpagelogin', 'theme_adaptable');
+    $description = get_string('frontpagelogindesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
     // Navbar.
-    $temp = new admin_settingpage('theme_bcu_navbar', get_string('navbarsettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_navbar', get_string('navbarsettingsheading', 'theme_bcu'),
-        format_text(get_string('navbardesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_navbar', get_string('navbarsettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_navbar', get_string('navbarsettingsheading', 'theme_adaptable'),
+        format_text(get_string('navbardesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
 
-    $name = 'theme_bcu/menufontsize';
-    $title = get_string('menufontsize', 'theme_bcu');
-    $description = get_string('menufontsizedesc', 'theme_bcu');
+    $name = 'theme_adaptable/menufontsize';
+    $title = get_string('menufontsize', 'theme_adaptable');
+    $description = get_string('menufontsizedesc', 'theme_adaptable');
     $radchoices = array(
         '10px' => "10px",
         '11px' => "11px",
@@ -1615,137 +1615,137 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/enablehome';
+    $name = 'theme_adaptable/enablehome';
     $title = get_string('home');
-    $description = get_string('enablehomedesc', 'theme_bcu');
+    $description = get_string('enablehomedesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/enablehomeredirect';
-    $title = get_string('enablehomeredirect', 'theme_bcu');
-    $description = get_string('enablehomeredirectdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablehomeredirect';
+    $title = get_string('enablehomeredirect', 'theme_adaptable');
+    $description = get_string('enablehomeredirectdesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/enablemyhome';
+    $name = 'theme_adaptable/enablemyhome';
     $title = get_string('myhome');
-    $description = get_string('enablemyhomedesc', 'theme_bcu', get_string('myhome'));
+    $description = get_string('enablemyhomedesc', 'theme_adaptable', get_string('myhome'));
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/enableevents';
-    $title = get_string('events', 'theme_bcu');
-    $description = get_string('enableeventsdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enableevents';
+    $title = get_string('events', 'theme_adaptable');
+    $description = get_string('enableeventsdesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/enablemysites';
-    $title = get_string('mysites', 'theme_bcu');
-    $description = get_string('enablemysitesdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablemysites';
+    $title = get_string('mysites', 'theme_adaptable');
+    $description = get_string('enablemysitesdesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/enablethiscourse';
-    $title = get_string('thiscourse', 'theme_bcu');
-    $description = get_string('enablethiscoursedesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablethiscourse';
+    $title = get_string('thiscourse', 'theme_adaptable');
+    $description = get_string('enablethiscoursedesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/enablezoom';
-    $title = get_string('enablezoom', 'theme_bcu');
-    $description = get_string('enablezoomdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablezoom';
+    $title = get_string('enablezoom', 'theme_adaptable');
+    $description = get_string('enablezoomdesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/enableshowhideblocks';
-    $title = get_string('enableshowhideblocks', 'theme_bcu');
-    $description = get_string('enableshowhideblocksdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enableshowhideblocks';
+    $title = get_string('enableshowhideblocks', 'theme_adaptable');
+    $description = get_string('enableshowhideblocksdesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable help link.
-    $name = 'theme_bcu/enablehelp';
-    $title = get_string('enablehelp', 'theme_bcu');
-    $description = get_string('enablehelpdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablehelp';
+    $title = get_string('enablehelp', 'theme_adaptable');
+    $description = get_string('enablehelpdesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/helpprofilefield';
-    $title = get_string('helpprofilefield', 'theme_bcu');
+    $name = 'theme_adaptable/helpprofilefield';
+    $title = get_string('helpprofilefield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/helpprofilevalue';
-    $title = get_string('helpprofilevalue', 'theme_bcu');
+    $name = 'theme_adaptable/helpprofilevalue';
+    $title = get_string('helpprofilevalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/enablehelp2';
-    $title = get_string('enablehelp', 'theme_bcu');
-    $description = get_string('enablehelpdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablehelp2';
+    $title = get_string('enablehelp', 'theme_adaptable');
+    $description = get_string('enablehelpdesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/helpprofilefield2';
-    $title = get_string('helpprofilefield', 'theme_bcu');
+    $name = 'theme_adaptable/helpprofilefield2';
+    $title = get_string('helpprofilefield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/helpprofilevalue2';
-    $title = get_string('helpprofilevalue', 'theme_bcu');
+    $name = 'theme_adaptable/helpprofilevalue2';
+    $title = get_string('helpprofilevalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/helptarget';
-    $title = get_string('helptarget', 'theme_bcu');
-    $description = get_string('helptargetdesc', 'theme_bcu');
+    $name = 'theme_adaptable/helptarget';
+    $title = get_string('helptarget', 'theme_adaptable');
+    $description = get_string('helptargetdesc', 'theme_adaptable');
     $choices = array(
-        '_blank' => get_string('targetnewwindow', 'theme_bcu'),
-        '_self' => get_string('targetsamewindow', 'theme_bcu'),
+        '_blank' => get_string('targetnewwindow', 'theme_adaptable'),
+        '_self' => get_string('targetsamewindow', 'theme_adaptable'),
     );
     $setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
 
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
 
     // Navbar.
-    $temp = new admin_settingpage('theme_bcu_usernav', get_string('usernav', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_usernav', get_string('usernavheading', 'theme_bcu'),
-           format_text(get_string('usernavdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_usernav', get_string('usernav', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_usernav', get_string('usernavheading', 'theme_adaptable'),
+           format_text(get_string('usernavdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/hideinforum';
-    $title = get_string('hideinforum', 'theme_bcu');
-    $description = get_string('hideinforumdesc', 'theme_bcu');
+    $name = 'theme_adaptable/hideinforum';
+    $title = get_string('hideinforum', 'theme_adaptable');
+    $description = get_string('hideinforumdesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/headerprofilefontsize';
-    $title = get_string('headerprofilefontsize', 'theme_bcu');
-    $description = get_string('headerprofilefontsizedesc', 'theme_bcu');
+    $name = 'theme_adaptable/headerprofilefontsize';
+    $title = get_string('headerprofilefontsize', 'theme_adaptable');
+    $description = get_string('headerprofilefontsizedesc', 'theme_adaptable');
     $radchoices = array(
         '12px' => "12px",
         '13px' => "13px",
@@ -1758,133 +1758,133 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     // Enable My.
-    $name = 'theme_bcu/enablemy';
-    $title = get_string('enablemy', 'theme_bcu');
-    $description = get_string('enablemydesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablemy';
+    $title = get_string('enablemy', 'theme_adaptable');
+    $description = get_string('enablemydesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable View Profile.
-    $name = 'theme_bcu/enableprofile';
-    $title = get_string('enableprofile', 'theme_bcu');
-    $description = get_string('enableprofiledesc', 'theme_bcu');
+    $name = 'theme_adaptable/enableprofile';
+    $title = get_string('enableprofile', 'theme_adaptable');
+    $description = get_string('enableprofiledesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable Edit Profile.
-    $name = 'theme_bcu/enableeditprofile';
-    $title = get_string('enableeditprofile', 'theme_bcu');
-    $description = get_string('enableeditprofiledesc', 'theme_bcu');
+    $name = 'theme_adaptable/enableeditprofile';
+    $title = get_string('enableeditprofile', 'theme_adaptable');
+    $description = get_string('enableeditprofiledesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable Calendar.
-    $name = 'theme_bcu/enablecalendar';
-    $title = get_string('enablecalendar', 'theme_bcu');
-    $description = get_string('enablecalendardesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablecalendar';
+    $title = get_string('enablecalendar', 'theme_adaptable');
+    $description = get_string('enablecalendardesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable Private Files.
-    $name = 'theme_bcu/enableprivatefiles';
-    $title = get_string('enableprivatefiles', 'theme_bcu');
-    $description = get_string('enableprivatefilesdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enableprivatefiles';
+    $title = get_string('enableprivatefiles', 'theme_adaptable');
+    $description = get_string('enableprivatefilesdesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable Grades.
-    $name = 'theme_bcu/enablegrades';
-    $title = get_string('enablegrades', 'theme_bcu');
-    $description = get_string('enablegradesdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablegrades';
+    $title = get_string('enablegrades', 'theme_adaptable');
+    $description = get_string('enablegradesdesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable Badges.
-    $name = 'theme_bcu/enablebadges';
-    $title = get_string('enablebadges', 'theme_bcu');
-    $description = get_string('enablebadgesdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablebadges';
+    $title = get_string('enablebadges', 'theme_adaptable');
+    $description = get_string('enablebadgesdesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable Preferences.
-    $name = 'theme_bcu/enablepref';
-    $title = get_string('enablepref', 'theme_bcu');
-    $description = get_string('enableprefdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablepref';
+    $title = get_string('enablepref', 'theme_adaptable');
+    $description = get_string('enableprefdesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable Notes.
-    $name = 'theme_bcu/enablenote';
-    $title = get_string('enablenote', 'theme_bcu');
-    $description = get_string('enablenotedesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablenote';
+    $title = get_string('enablenote', 'theme_adaptable');
+    $description = get_string('enablenotedesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable Blog.
-    $name = 'theme_bcu/enableblog';
-    $title = get_string('enableblog', 'theme_bcu');
-    $description = get_string('enableblogdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enableblog';
+    $title = get_string('enableblog', 'theme_adaptable');
+    $description = get_string('enableblogdesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable Forum posts.
-    $name = 'theme_bcu/enableposts';
-    $title = get_string('enableposts', 'theme_bcu');
-    $description = get_string('enablepostsdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enableposts';
+    $title = get_string('enableposts', 'theme_adaptable');
+    $description = get_string('enablepostsdesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Enable Feed.
-    $name = 'theme_bcu/enablefeed';
-    $title = get_string('enablefeed', 'theme_bcu');
-    $description = get_string('enablefeeddesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablefeed';
+    $title = get_string('enablefeed', 'theme_adaptable');
+    $description = get_string('enablefeeddesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
 
     // Social links.
-    $temp = new admin_settingpage('theme_bcu_social', get_string('socialsettings', 'theme_bcu'));
+    $temp = new admin_settingpage('theme_adaptable_social', get_string('socialsettings', 'theme_adaptable'));
 
-    $temp->add(new admin_setting_heading('theme_bcu_social', get_string('socialheading', 'theme_bcu'),
-    format_text(get_string('socialtitledesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_social', get_string('socialheading', 'theme_adaptable'),
+    format_text(get_string('socialtitledesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/socialset';
-    $title = get_string('socialset', 'theme_bcu');
-    $description = get_string('socialsetdesc', 'theme_bcu');
+    $name = 'theme_adaptable/socialset';
+    $title = get_string('socialset', 'theme_adaptable');
+    $description = get_string('socialsetdesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/socialsize';
-    $title = get_string('socialsize', 'theme_bcu');
-    $description = get_string('socialsize', 'theme_bcu');
+    $name = 'theme_adaptable/socialsize';
+    $title = get_string('socialsize', 'theme_adaptable');
+    $description = get_string('socialsize', 'theme_adaptable');
     $choices = array(
         16 => "16px",
         18 => "18px",
@@ -1898,9 +1898,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/socialsizemobile';
-    $title = get_string('socialsizemobile', 'theme_bcu');
-    $description = get_string('socialsizemobile', 'theme_bcu');
+    $name = 'theme_adaptable/socialsizemobile';
+    $title = get_string('socialsizemobile', 'theme_adaptable');
+    $description = get_string('socialsizemobile', 'theme_adaptable');
     $choices = array(
         14 => "14px",
         16 => "16px",
@@ -1915,9 +1915,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/socialpaddingtop';
-    $title = get_string('socialpaddingtop', 'theme_bcu');
-    $description = get_string('socialpaddingtop', 'theme_bcu');
+    $name = 'theme_adaptable/socialpaddingtop';
+    $title = get_string('socialpaddingtop', 'theme_adaptable');
+    $description = get_string('socialpaddingtop', 'theme_adaptable');
     $choices = array(
         '0%' => "0%",
         '0.1%' => "0.1%",
@@ -1951,992 +1951,992 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     // Social settings.
-    $name = 'theme_bcu/socialsearchicon';
-    $title = get_string('socialsearchicon', 'theme_bcu');
-    $description = get_string('socialsearchicondesc', 'theme_bcu');
+    $name = 'theme_adaptable/socialsearchicon';
+    $title = get_string('socialsearchicon', 'theme_adaptable');
+    $description = get_string('socialsearchicondesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, false, false);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social1';
-    $title = get_string('social1', 'theme_bcu');
-    $description = get_string('social1desc', 'theme_bcu');
+    $name = 'theme_adaptable/social1';
+    $title = get_string('social1', 'theme_adaptable');
+    $description = get_string('social1desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social1icon';
-    $title = get_string('social1icon', 'theme_bcu') . ' - ' . get_string('social1', 'theme_bcu');
+    $name = 'theme_adaptable/social1icon';
+    $title = get_string('social1icon', 'theme_adaptable') . ' - ' . get_string('social1', 'theme_adaptable');
     $default = 'fa-facebook-square';
-    $description = get_string('socialicondesc', 'theme_bcu');
+    $description = get_string('socialicondesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social2';
-    $title = get_string('social2', 'theme_bcu');
-    $description = get_string('social2desc', 'theme_bcu');
+    $name = 'theme_adaptable/social2';
+    $title = get_string('social2', 'theme_adaptable');
+    $description = get_string('social2desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social2icon';
-    $title = get_string('social2icon', 'theme_bcu') . ' - ' . get_string('social2', 'theme_bcu');
+    $name = 'theme_adaptable/social2icon';
+    $title = get_string('social2icon', 'theme_adaptable') . ' - ' . get_string('social2', 'theme_adaptable');
     $default = 'fa-twitter-square';
-    $description = get_string('socialicondesc', 'theme_bcu');
+    $description = get_string('socialicondesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social3';
-    $title = get_string('social3', 'theme_bcu');
-    $description = get_string('social3desc', 'theme_bcu');
+    $name = 'theme_adaptable/social3';
+    $title = get_string('social3', 'theme_adaptable');
+    $description = get_string('social3desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social3icon';
-    $title = get_string('social3icon', 'theme_bcu') . ' - ' . get_string('social3', 'theme_bcu');
+    $name = 'theme_adaptable/social3icon';
+    $title = get_string('social3icon', 'theme_adaptable') . ' - ' . get_string('social3', 'theme_adaptable');
     $default = 'fa-google-plus';
-    $description = get_string('socialicondesc', 'theme_bcu');
+    $description = get_string('socialicondesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social4';
-    $title = get_string('social4', 'theme_bcu');
-    $description = get_string('social4desc', 'theme_bcu');
+    $name = 'theme_adaptable/social4';
+    $title = get_string('social4', 'theme_adaptable');
+    $description = get_string('social4desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social4icon';
-    $title = get_string('social4icon', 'theme_bcu') . ' - ' . get_string('social4', 'theme_bcu');
+    $name = 'theme_adaptable/social4icon';
+    $title = get_string('social4icon', 'theme_adaptable') . ' - ' . get_string('social4', 'theme_adaptable');
     $default = 'fa-instagram';
-    $description = get_string('socialicondesc', 'theme_bcu');
+    $description = get_string('socialicondesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social5';
-    $title = get_string('social5', 'theme_bcu');
-    $description = get_string('social5desc', 'theme_bcu');
+    $name = 'theme_adaptable/social5';
+    $title = get_string('social5', 'theme_adaptable');
+    $description = get_string('social5desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social5icon';
-    $title = get_string('social5icon', 'theme_bcu') . ' - ' . get_string('social5', 'theme_bcu');
+    $name = 'theme_adaptable/social5icon';
+    $title = get_string('social5icon', 'theme_adaptable') . ' - ' . get_string('social5', 'theme_adaptable');
     $default = 'fa-tumblr-square';
-    $description = get_string('socialicondesc', 'theme_bcu');
+    $description = get_string('socialicondesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social6';
-    $title = get_string('social6', 'theme_bcu');
-    $description = get_string('social6desc', 'theme_bcu');
+    $name = 'theme_adaptable/social6';
+    $title = get_string('social6', 'theme_adaptable');
+    $description = get_string('social6desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social6icon';
-    $title = get_string('social6icon', 'theme_bcu') . ' - ' . get_string('social6', 'theme_bcu');
+    $name = 'theme_adaptable/social6icon';
+    $title = get_string('social6icon', 'theme_adaptable') . ' - ' . get_string('social6', 'theme_adaptable');
     $default = 'fa-linkedin';
-    $description = get_string('socialicondesc', 'theme_bcu');
+    $description = get_string('socialicondesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social7';
-    $title = get_string('social7', 'theme_bcu');
-    $description = get_string('social7desc', 'theme_bcu');
+    $name = 'theme_adaptable/social7';
+    $title = get_string('social7', 'theme_adaptable');
+    $description = get_string('social7desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social7icon';
-    $title = get_string('social7icon', 'theme_bcu') . ' - ' . get_string('social7', 'theme_bcu');
+    $name = 'theme_adaptable/social7icon';
+    $title = get_string('social7icon', 'theme_adaptable') . ' - ' . get_string('social7', 'theme_adaptable');
     $default = 'fa-youtube-square';
-    $description = get_string('socialicondesc', 'theme_bcu');
+    $description = get_string('socialicondesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social8';
-    $title = get_string('social8', 'theme_bcu');
-    $description = get_string('social8desc', 'theme_bcu');
+    $name = 'theme_adaptable/social8';
+    $title = get_string('social8', 'theme_adaptable');
+    $description = get_string('social8desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social8icon';
-    $title = get_string('social8icon', 'theme_bcu') . ' - ' . get_string('social8', 'theme_bcu');
+    $name = 'theme_adaptable/social8icon';
+    $title = get_string('social8icon', 'theme_adaptable') . ' - ' . get_string('social8', 'theme_adaptable');
     $default = 'fa-flickr';
-    $description = get_string('socialicondesc', 'theme_bcu');
+    $description = get_string('socialicondesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social9';
-    $title = get_string('social9', 'theme_bcu');
-    $description = get_string('social9desc', 'theme_bcu');
+    $name = 'theme_adaptable/social9';
+    $title = get_string('social9', 'theme_adaptable');
+    $description = get_string('social9desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social9icon';
-    $title = get_string('social9icon', 'theme_bcu') . ' - ' . get_string('social9', 'theme_bcu');
+    $name = 'theme_adaptable/social9icon';
+    $title = get_string('social9icon', 'theme_adaptable') . ' - ' . get_string('social9', 'theme_adaptable');
     $default = 'fa-pinterest-p';
-    $description = get_string('socialicondesc', 'theme_bcu');
+    $description = get_string('socialicondesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social10';
-    $title = get_string('social10', 'theme_bcu');
-    $description = get_string('social10desc', 'theme_bcu');
+    $name = 'theme_adaptable/social10';
+    $title = get_string('social10', 'theme_adaptable');
+    $description = get_string('social10desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social10icon';
-    $title = get_string('social10icon', 'theme_bcu') . ' - ' . get_string('social10', 'theme_bcu');
+    $name = 'theme_adaptable/social10icon';
+    $title = get_string('social10icon', 'theme_adaptable') . ' - ' . get_string('social10', 'theme_adaptable');
     $default = 'fa-globe';
-    $description = get_string('socialicondesc', 'theme_bcu');
+    $description = get_string('socialicondesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social11';
-    $title = get_string('social11', 'theme_bcu');
-    $description = get_string('social11desc', 'theme_bcu');
+    $name = 'theme_adaptable/social11';
+    $title = get_string('social11', 'theme_adaptable');
+    $description = get_string('social11desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/social11icon';
-    $title = get_string('social11icon', 'theme_bcu') . ' - ' . get_string('social11', 'theme_bcu');
+    $name = 'theme_adaptable/social11icon';
+    $title = get_string('social11icon', 'theme_adaptable') . ' - ' . get_string('social11', 'theme_adaptable');
     $default = 'fa-rss';
-    $description = get_string('socialicondesc', 'theme_bcu');
+    $description = get_string('socialicondesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
-    $temp = new admin_settingpage('theme_bcu_menus', get_string('menusettings', 'theme_bcu'));
+    $temp = new admin_settingpage('theme_adaptable_menus', get_string('menusettings', 'theme_adaptable'));
 
-    $temp->add(new admin_setting_heading('theme_bcu_menus', get_string('menusheading', 'theme_bcu'),
-    format_text(get_string('menustitledesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_menus', get_string('menusheading', 'theme_adaptable'),
+    format_text(get_string('menustitledesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/disablecustommenu';
-    $title = get_string('disablecustommenu', 'theme_bcu');
-    $description = get_string('disablecustommenudesc', 'theme_bcu');
+    $name = 'theme_adaptable/disablecustommenu';
+    $title = get_string('disablecustommenu', 'theme_adaptable');
+    $description = get_string('disablecustommenudesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, false, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/menusession';
-    $title = get_string('menusession', 'theme_bcu');
-    $description = get_string('menusessiondesc', 'theme_bcu');
+    $name = 'theme_adaptable/menusession';
+    $title = get_string('menusession', 'theme_adaptable');
+    $description = get_string('menusessiondesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, true, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/menusessionttl';
-    $title = get_string('menusessionttl', 'theme_bcu');
-    $description = get_string('menusessionttldesc', 'theme_bcu');
+    $name = 'theme_adaptable/menusessionttl';
+    $title = get_string('menusessionttl', 'theme_adaptable');
+    $description = get_string('menusessionttldesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '30', PARAM_INT);
     $temp->add($setting);
 
 
     // Settings for tools menus.
-    $temp->add(new admin_setting_heading('theme_bcu_toolsmenu', get_string('toolsmenu', 'theme_bcu'),
-    format_text(get_string('toolsmenustitledesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_toolsmenu', get_string('toolsmenu', 'theme_adaptable'),
+    format_text(get_string('toolsmenustitledesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $temp->add(new admin_setting_heading('theme_bcu_toolsmenu1', get_string('toolsmenuheading1', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_toolsmenu1', get_string('toolsmenuheading1', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/enabletoolsmenus';
-    $title = get_string('enabletoolsmenus', 'theme_bcu');
-    $description = get_string('enabletoolsmenusdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enabletoolsmenus';
+    $title = get_string('enabletoolsmenus', 'theme_adaptable');
+    $description = get_string('enabletoolsmenusdesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/toolsmenu';
-    $title = get_string('toolsmenu1', 'theme_bcu');
+    $name = 'theme_adaptable/toolsmenu';
+    $title = get_string('toolsmenu1', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
 
-    $name = 'theme_bcu/toolsmenu1field';
-    $title = get_string('newmenufield', 'theme_bcu');
+    $name = 'theme_adaptable/toolsmenu1field';
+    $title = get_string('newmenufield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/toolsmenu1value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
+    $name = 'theme_adaptable/toolsmenu1value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $temp->add(new admin_setting_heading('theme_bcu_toolsmenu2', get_string('toolsmenuheading2', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_toolsmenu2', get_string('toolsmenuheading2', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/toolsmenu2';
-    $title = get_string('toolsmenu2', 'theme_bcu');
+    $name = 'theme_adaptable/toolsmenu2';
+    $title = get_string('toolsmenu2', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
 
-    $name = 'theme_bcu/toolsmenu2field';
-    $title = get_string('newmenufield', 'theme_bcu');
+    $name = 'theme_adaptable/toolsmenu2field';
+    $title = get_string('newmenufield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/toolsmenu2value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
+    $name = 'theme_adaptable/toolsmenu2value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
     // Settings for top header menus.
-    $temp->add(new admin_setting_heading('theme_bcu_topmenus', get_string('topmenusheading', 'theme_bcu'),
-    format_text(get_string('topmenusheadingdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_topmenus', get_string('topmenusheading', 'theme_adaptable'),
+    format_text(get_string('topmenusheadingdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $temp->add(new admin_setting_heading('theme_bcu_menus_visibility', get_string('menusheadingvisibility', 'theme_bcu'),
-    format_text(get_string('menusheadingvisibilitydesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_menus_visibility', get_string('menusheadingvisibility', 'theme_adaptable'),
+    format_text(get_string('menusheadingvisibilitydesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/enablemenus';
-    $title = get_string('enablemenus', 'theme_bcu');
-    $description = get_string('enablemenusdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablemenus';
+    $title = get_string('enablemenus', 'theme_adaptable');
+    $description = get_string('enablemenusdesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/disablemenuscoursepages';
-    $title = get_string('disablemenuscoursepages', 'theme_bcu');
-    $description = get_string('disablemenuscoursepagesdesc', 'theme_bcu');
+    $name = 'theme_adaptable/disablemenuscoursepages';
+    $title = get_string('disablemenuscoursepages', 'theme_adaptable');
+    $description = get_string('disablemenuscoursepagesdesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
-	$name = 'theme_bcu/menuuseroverride';
-    $title = get_string('menuuseroverride', 'theme_bcu');
-    $description = get_string('menuuseroverridedesc', 'theme_bcu');
+	$name = 'theme_adaptable/menuuseroverride';
+    $title = get_string('menuuseroverride', 'theme_adaptable');
+    $description = get_string('menuuseroverridedesc', 'theme_adaptable');
 	$default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/menuoverrideprofilefield';
-    $title = get_string('menuoverrideprofilefield', 'theme_bcu');
-    $description = get_string('menuoverrideprofilefielddesc', 'theme_bcu');
-	$default = get_string('menuoverrideprofilefielddefault', 'theme_bcu');
+    $name = 'theme_adaptable/menuoverrideprofilefield';
+    $title = get_string('menuoverrideprofilefield', 'theme_adaptable');
+    $description = get_string('menuoverrideprofilefielddesc', 'theme_adaptable');
+	$default = get_string('menuoverrideprofilefielddefault', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_RAW);
     $temp->add($setting);	
 	
-	$temp->add(new admin_setting_heading('theme_bcu_menus1', get_string('menusheading1', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+	$temp->add(new admin_setting_heading('theme_adaptable_menus1', get_string('menusheading1', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/newmenu1';
-    $title = get_string('newmenu1', 'theme_bcu');
-    $description = get_string('newmenudesc', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu1';
+    $title = get_string('newmenu1', 'theme_adaptable');
+    $description = get_string('newmenudesc', 'theme_adaptable');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
 
-    $name = 'theme_bcu/newmenu1requirelogin';
-    $title = get_string('newmenurequirelogin', 'theme_bcu');
-    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu1requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_adaptable');
+    $description = get_string('newmenurequirelogindesc', 'theme_adaptable');
 	$default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/newmenu1field';
-    $title = get_string('newmenufield', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu1field';
+    $title = get_string('newmenufield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/newmenu1value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu1value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $temp->add(new admin_setting_heading('theme_bcu_menus2', get_string('menusheading2', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_menus2', get_string('menusheading2', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/newmenu2';
-    $title = get_string('newmenu2', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu2';
+    $title = get_string('newmenu2', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
 	
-	$name = 'theme_bcu/newmenu2requirelogin';
-    $title = get_string('newmenurequirelogin', 'theme_bcu');
-    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$name = 'theme_adaptable/newmenu2requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_adaptable');
+    $description = get_string('newmenurequirelogindesc', 'theme_adaptable');
 	$default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/newmenu2field';
-    $title = get_string('newmenufield', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu2field';
+    $title = get_string('newmenufield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/newmenu2value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu2value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $temp->add(new admin_setting_heading('theme_bcu_menus3', get_string('menusheading3', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_menus3', get_string('menusheading3', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/newmenu3';
-    $title = get_string('newmenu3', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu3';
+    $title = get_string('newmenu3', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
 
-    $name = 'theme_bcu/newmenu3requirelogin';
-    $title = get_string('newmenurequirelogin', 'theme_bcu');
-    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
-	$default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-	
-    $name = 'theme_bcu/newmenu3field';
-    $title = get_string('newmenufield', 'theme_bcu');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu3value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $temp->add(new admin_setting_heading('theme_bcu_menus4', get_string('menusheading4', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-
-    $name = 'theme_bcu/newmenu4';
-    $title = get_string('newmenu4', 'theme_bcu');
-    $description = get_string('newmenudesc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-	
-	$name = 'theme_bcu/newmenu4requirelogin';
-    $title = get_string('newmenurequirelogin', 'theme_bcu');
-    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
-	$default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu4field';
-    $title = get_string('newmenufield', 'theme_bcu');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu4value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $temp->add(new admin_setting_heading('theme_bcu_menus5', get_string('menusheading5', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-
-    $name = 'theme_bcu/newmenu5';
-    $title = get_string('newmenu5', 'theme_bcu');
-    $description = get_string('newmenudesc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-	
-	$name = 'theme_bcu/newmenu5requirelogin';
-    $title = get_string('newmenurequirelogin', 'theme_bcu');
-    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
-	$default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu5field';
-    $title = get_string('newmenufield', 'theme_bcu');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu5value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $temp->add(new admin_setting_heading('theme_bcu_menus6', get_string('menusheading6', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-
-    $name = 'theme_bcu/newmenu6';
-    $title = get_string('newmenu6', 'theme_bcu');
-    $description = get_string('newmenudesc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-	
-	$name = 'theme_bcu/newmenu6requirelogin';
-    $title = get_string('newmenurequirelogin', 'theme_bcu');
-    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
-	$default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu6field';
-    $title = get_string('newmenufield', 'theme_bcu');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu6value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $temp->add(new admin_setting_heading('theme_bcu_menus7', get_string('menusheading7', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-
-    $name = 'theme_bcu/newmenu7';
-    $title = get_string('newmenu7', 'theme_bcu');
-    $description = get_string('newmenudesc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-	
-	$name = 'theme_bcu/newmenu7requirelogin';
-    $title = get_string('newmenurequirelogin', 'theme_bcu');
-    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
-	$default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu7field';
-    $title = get_string('newmenufield', 'theme_bcu');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_bcu/newmenu7value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $temp->add(new admin_setting_heading('theme_bcu_menus8', get_string('menusheading8', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
-
-    $name = 'theme_bcu/newmenu8';
-    $title = get_string('newmenu8', 'theme_bcu');
-    $description = get_string('newmenudesc', 'theme_bcu');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-    $temp->add($setting);
-
-	$name = 'theme_bcu/newmenu8requirelogin';
-    $title = get_string('newmenurequirelogin', 'theme_bcu');
-    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu3requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_adaptable');
+    $description = get_string('newmenurequirelogindesc', 'theme_adaptable');
 	$default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
-    $name = 'theme_bcu/newmenu8field';
-    $title = get_string('newmenufield', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu3field';
+    $title = get_string('newmenufield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/newmenu8value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu3value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $temp->add(new admin_setting_heading('theme_bcu_menus9', get_string('menusheading9', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_menus4', get_string('menusheading4', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/newmenu9';
-    $title = get_string('newmenu9', 'theme_bcu');
-    $description = get_string('newmenudesc', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu4';
+    $title = get_string('newmenu4', 'theme_adaptable');
+    $description = get_string('newmenudesc', 'theme_adaptable');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
 	
-	$name = 'theme_bcu/newmenu9requirelogin';
-    $title = get_string('newmenurequirelogin', 'theme_bcu');
-    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$name = 'theme_adaptable/newmenu4requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_adaptable');
+    $description = get_string('newmenurequirelogindesc', 'theme_adaptable');
 	$default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/newmenu9field';
-    $title = get_string('newmenufield', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu4field';
+    $title = get_string('newmenufield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/newmenu9value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu4value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $temp->add(new admin_setting_heading('theme_bcu_menus10', get_string('menusheading10', 'theme_bcu'),
-    format_text(get_string('menusdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_menus5', get_string('menusheading5', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/newmenu10';
-    $title = get_string('newmenu10', 'theme_bcu');
-    $description = get_string('newmenudesc', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu5';
+    $title = get_string('newmenu5', 'theme_adaptable');
+    $description = get_string('newmenudesc', 'theme_adaptable');
     $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
     $temp->add($setting);
 	
-	$name = 'theme_bcu/newmenu10requirelogin';
-    $title = get_string('newmenurequirelogin', 'theme_bcu');
-    $description = get_string('newmenurequirelogindesc', 'theme_bcu');
+	$name = 'theme_adaptable/newmenu5requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_adaptable');
+    $description = get_string('newmenurequirelogindesc', 'theme_adaptable');
 	$default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/newmenu10field';
-    $title = get_string('newmenufield', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu5field';
+    $title = get_string('newmenufield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/newmenu10value';
-    $title = get_string('newmenuvalue', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu5value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $temp->add(new admin_setting_heading('theme_adaptable_menus6', get_string('menusheading6', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $temp = new admin_settingpage('theme_bcu_blocks', get_string('blocksettings', 'theme_bcu'));
-
-    $name = 'theme_bcu/blockicons';
-    $title = get_string('blockicons', 'theme_bcu');
-    $description = get_string('blockiconsdesc', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu6';
+    $title = get_string('newmenu6', 'theme_adaptable');
+    $description = get_string('newmenudesc', 'theme_adaptable');
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/newmenu6requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_adaptable');
+    $description = get_string('newmenurequirelogindesc', 'theme_adaptable');
+	$default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/blockheadercolor';
-    $title = get_string('blockheadercolor', 'theme_bcu');
-    $description = get_string('blockheadercolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/newmenu6field';
+    $title = get_string('newmenufield', 'theme_adaptable');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/newmenu6value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $temp->add(new admin_setting_heading('theme_adaptable_menus7', get_string('menusheading7', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_adaptable/newmenu7';
+    $title = get_string('newmenu7', 'theme_adaptable');
+    $description = get_string('newmenudesc', 'theme_adaptable');
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/newmenu7requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_adaptable');
+    $description = get_string('newmenurequirelogindesc', 'theme_adaptable');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/newmenu7field';
+    $title = get_string('newmenufield', 'theme_adaptable');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/newmenu7value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $temp->add(new admin_setting_heading('theme_adaptable_menus8', get_string('menusheading8', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_adaptable/newmenu8';
+    $title = get_string('newmenu8', 'theme_adaptable');
+    $description = get_string('newmenudesc', 'theme_adaptable');
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+
+	$name = 'theme_adaptable/newmenu8requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_adaptable');
+    $description = get_string('newmenurequirelogindesc', 'theme_adaptable');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+    $name = 'theme_adaptable/newmenu8field';
+    $title = get_string('newmenufield', 'theme_adaptable');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/newmenu8value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $temp->add(new admin_setting_heading('theme_adaptable_menus9', get_string('menusheading9', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_adaptable/newmenu9';
+    $title = get_string('newmenu9', 'theme_adaptable');
+    $description = get_string('newmenudesc', 'theme_adaptable');
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/newmenu9requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_adaptable');
+    $description = get_string('newmenurequirelogindesc', 'theme_adaptable');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/newmenu9field';
+    $title = get_string('newmenufield', 'theme_adaptable');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/newmenu9value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $temp->add(new admin_setting_heading('theme_adaptable_menus10', get_string('menusheading10', 'theme_adaptable'),
+    format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_adaptable/newmenu10';
+    $title = get_string('newmenu10', 'theme_adaptable');
+    $description = get_string('newmenudesc', 'theme_adaptable');
+    $setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/newmenu10requirelogin';
+    $title = get_string('newmenurequirelogin', 'theme_adaptable');
+    $description = get_string('newmenurequirelogindesc', 'theme_adaptable');
+	$default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/newmenu10field';
+    $title = get_string('newmenufield', 'theme_adaptable');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/newmenu10value';
+    $title = get_string('newmenuvalue', 'theme_adaptable');
+    $description = '';
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+
+    $ADMIN->add('theme_adaptable', $temp);
+
+    $temp = new admin_settingpage('theme_adaptable_blocks', get_string('blocksettings', 'theme_adaptable'));
+
+    $name = 'theme_adaptable/blockicons';
+    $title = get_string('blockicons', 'theme_adaptable');
+    $description = get_string('blockiconsdesc', 'theme_adaptable');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/blockheadercolor';
+    $title = get_string('blockheadercolor', 'theme_adaptable');
+    $description = get_string('blockheadercolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#002f67', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/blocklinecolor';
-    $title = get_string('blocklinecolor', 'theme_bcu');
-    $description = get_string('blocklinecolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/blocklinecolor';
+    $title = get_string('blocklinecolor', 'theme_adaptable');
+    $description = get_string('blocklinecolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/blocklinkcolor';
-    $title = get_string('blocklinkcolor', 'theme_bcu');
-    $description = get_string('blocklinkcolordesc', 'theme_bcu');
+    $name = 'theme_adaptable/blocklinkcolor';
+    $title = get_string('blocklinkcolor', 'theme_adaptable');
+    $description = get_string('blocklinkcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
 
     // Marketing blocks section.
-    $temp = new admin_settingpage('theme_bcu_frontpage_blocks', get_string('frontpageblocksettings', 'theme_bcu'));
+    $temp = new admin_settingpage('theme_adaptable_frontpage_blocks', get_string('frontpageblocksettings', 'theme_adaptable'));
 
-    $name = 'theme_bcu/homebk';
-    $title = get_string('homebk', 'theme_bcu');
-    $description = get_string('homebkdesc', 'theme_bcu');
+    $name = 'theme_adaptable/homebk';
+    $title = get_string('homebk', 'theme_adaptable');
+    $description = get_string('homebkdesc', 'theme_adaptable');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'homebk');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/infobox';
-    $title = get_string('infobox', 'theme_bcu');
-    $description = get_string('infoboxdesc', 'theme_bcu');
+    $name = 'theme_adaptable/infobox';
+    $title = get_string('infobox', 'theme_adaptable');
+    $description = get_string('infoboxdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/infoboxfullscreen';
-    $title = get_string('infoboxfullscreen', 'theme_bcu');
-    $description = get_string('infoboxfullscreendesc', 'theme_bcu');
+    $name = 'theme_adaptable/infoboxfullscreen';
+    $title = get_string('infoboxfullscreen', 'theme_adaptable');
+    $description = get_string('infoboxfullscreendesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/infobox2';
-    $title = get_string('infobox2', 'theme_bcu');
-    $description = get_string('infobox2desc', 'theme_bcu');
+    $name = 'theme_adaptable/infobox2';
+    $title = get_string('infobox2', 'theme_adaptable');
+    $description = get_string('infobox2desc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $temp->add(new admin_setting_heading('theme_bcu_marketing', get_string('marketingsettingsheading', 'theme_bcu'),
-        format_text(get_string('marketingdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_marketing', get_string('marketingsettingsheading', 'theme_adaptable'),
+        format_text(get_string('marketingdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/frontpagemarketenabled';
-    $title = get_string('frontpagemarketenabled', 'theme_bcu');
-    $description = get_string('frontpagemarketenableddesc', 'theme_bcu');
+    $name = 'theme_adaptable/frontpagemarketenabled';
+    $title = get_string('frontpagemarketenabled', 'theme_adaptable');
+    $description = get_string('frontpagemarketenableddesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/frontpagemarketoption';
-    $title = get_string('frontpagemarketoption', 'theme_bcu');
-    $description = get_string('frontpagemarketoptiondesc', 'theme_bcu');
+    $name = 'theme_adaptable/frontpagemarketoption';
+    $title = get_string('frontpagemarketoption', 'theme_adaptable');
+    $description = get_string('frontpagemarketoptiondesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
 
-    $name = 'theme_bcu/market1';
-    $title = get_string('market1', 'theme_bcu');
-    $description = get_string('market1desc', 'theme_bcu');
+    $name = 'theme_adaptable/market1';
+    $title = get_string('market1', 'theme_adaptable');
+    $description = get_string('market1desc', 'theme_adaptable');
     $default = '';
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/market2';
-    $title = get_string('market2', 'theme_bcu');
-    $description = get_string('market2desc', 'theme_bcu');
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/market2';
+    $title = get_string('market2', 'theme_adaptable');
+    $description = get_string('market2desc', 'theme_adaptable');
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/market3';
-    $title = get_string('market3', 'theme_bcu');
-    $description = get_string('market3desc', 'theme_bcu');
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/market3';
+    $title = get_string('market3', 'theme_adaptable');
+    $description = get_string('market3desc', 'theme_adaptable');
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/market4';
-    $title = get_string('market4', 'theme_bcu');
-    $description = get_string('market4desc', 'theme_bcu');
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/market4';
+    $title = get_string('market4', 'theme_adaptable');
+    $description = get_string('market4desc', 'theme_adaptable');
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/market5';
-    $title = get_string('market5', 'theme_bcu');
-    $description = get_string('market5desc', 'theme_bcu');
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/market5';
+    $title = get_string('market5', 'theme_adaptable');
+    $description = get_string('market5desc', 'theme_adaptable');
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/market6';
-    $title = get_string('market6', 'theme_bcu');
-    $description = get_string('market6desc', 'theme_bcu');
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/market6';
+    $title = get_string('market6', 'theme_adaptable');
+    $description = get_string('market6desc', 'theme_adaptable');
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/market7';
-    $title = get_string('market7', 'theme_bcu');
-    $description = get_string('market7desc', 'theme_bcu');
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/market7';
+    $title = get_string('market7', 'theme_adaptable');
+    $description = get_string('market7desc', 'theme_adaptable');
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/market8';
-    $title = get_string('market8', 'theme_bcu');
-    $description = get_string('market8desc', 'theme_bcu');
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/market8';
+    $title = get_string('market8', 'theme_adaptable');
+    $description = get_string('market8desc', 'theme_adaptable');
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/market9';
-    $title = get_string('market9', 'theme_bcu');
-    $description = get_string('market9desc', 'theme_bcu');
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/market9';
+    $title = get_string('market9', 'theme_adaptable');
+    $description = get_string('market9desc', 'theme_adaptable');
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/market10';
-    $title = get_string('market10', 'theme_bcu');
-    $description = get_string('market10desc', 'theme_bcu');
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/market10';
+    $title = get_string('market10', 'theme_adaptable');
+    $description = get_string('market10desc', 'theme_adaptable');
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/market11';
-    $title = get_string('market11', 'theme_bcu');
-    $description = get_string('market11desc', 'theme_bcu');
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/market11';
+    $title = get_string('market11', 'theme_adaptable');
+    $description = get_string('market11desc', 'theme_adaptable');
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/market12';
-    $title = get_string('market12', 'theme_bcu');
-    $description = get_string('market12desc', 'theme_bcu');
-    $setting = new bcu_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/market12';
+    $title = get_string('market12', 'theme_adaptable');
+    $description = get_string('market12desc', 'theme_adaptable');
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
 
     // Alert Section.
-    $temp = new admin_settingpage('theme_bcu_frontpage_alert', get_string('frontpagealertsettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_alert', get_string('alertsettingsheading', 'theme_bcu'),
-        format_text(get_string('alertdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_frontpage_alert', get_string('frontpagealertsettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_alert', get_string('alertsettingsheading', 'theme_adaptable'),
+        format_text(get_string('alertdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 		
 	// Alert General Settings Heading.
-    $name = 'theme_bcu/settingsalertgeneral';
-    $heading = get_string('alertsettingsgeneral', 'theme_bcu');
+    $name = 'theme_adaptable/settingsalertgeneral';
+    $heading = get_string('alertsettingsgeneral', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);	
 		
 	// Disable alert in course pages.
-    $name = 'theme_bcu/enablealertcoursepages';
-    $title = get_string('enablealertcoursepages', 'theme_bcu');
-    $description = get_string('enablealertcoursepagesdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablealertcoursepages';
+    $title = get_string('enablealertcoursepages', 'theme_adaptable');
+    $description = get_string('enablealertcoursepagesdesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting); 
 	
 	// Strip Tags
-    $name = 'theme_bcu/enablealertstriptags';
-    $title = get_string('enablealertstriptags', 'theme_bcu');
-    $description = get_string('enablealertstriptagsdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enablealertstriptags';
+    $title = get_string('enablealertstriptags', 'theme_adaptable');
+    $description = get_string('enablealertstriptagsdesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting); 
 		
 	// Alert Box Heading 1.
-    $name = 'theme_bcu/settingsalertbox';
-    $heading = get_string('alertsettings1', 'theme_bcu');
+    $name = 'theme_adaptable/settingsalertbox';
+    $heading = get_string('alertsettings1', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Enable Alert 1.
-    $name = 'theme_bcu/enablealert1';
-    $title = get_string('enablealert1', 'theme_bcu');
-    $description = get_string('enablealertdesc1', 'theme_bcu');
+    $name = 'theme_adaptable/enablealert1';
+    $title = get_string('enablealert1', 'theme_adaptable');
+    $description = get_string('enablealertdesc1', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Alert Text 1.
-    $name = 'theme_bcu/alerttext1';
-    $title = get_string('alerttext', 'theme_bcu');
-    $description = get_string('alerttextdesc', 'theme_bcu');
+    $name = 'theme_adaptable/alerttext1';
+    $title = get_string('alerttext', 'theme_adaptable');
+    $description = get_string('alerttextdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
     // Alert Type 1.
-    $name = 'theme_bcu/alerttype1';
-    $title = get_string('alerttype', 'theme_bcu');
-    $description = get_string('alerttypedesc', 'theme_bcu');
+    $name = 'theme_adaptable/alerttype1';
+    $title = get_string('alerttype', 'theme_adaptable');
+    $description = get_string('alerttypedesc', 'theme_adaptable');
     $default = 'info';
     $choices = array(
-        'info' => get_string('alertinfo', 'theme_bcu'),
-        'warning' => get_string('alertwarning', 'theme_bcu'),
-        'success' => get_string('alertannounce', 'theme_bcu'));
+        'info' => get_string('alertinfo', 'theme_adaptable'),
+        'warning' => get_string('alertwarning', 'theme_adaptable'),
+        'success' => get_string('alertannounce', 'theme_adaptable'));
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
 	// Alert Access 1.
-    $name = 'theme_bcu/alertaccess1';
-    $title = get_string('alertaccess', 'theme_bcu');
-    $description = get_string('alertaccessdesc', 'theme_bcu');
+    $name = 'theme_adaptable/alertaccess1';
+    $title = get_string('alertaccess', 'theme_adaptable');
+    $description = get_string('alertaccessdesc', 'theme_adaptable');
     $default = 'global';
     $choices = array(
-        'global' => get_string('alertaccessglobal', 'theme_bcu'),
-        'users' => get_string('alertaccessusers', 'theme_bcu'),
-        'admin' => get_string('alertaccessadmins', 'theme_bcu'),
-		'profile' => get_string('alertaccessprofile', 'theme_bcu'));
+        'global' => get_string('alertaccessglobal', 'theme_adaptable'),
+        'users' => get_string('alertaccessusers', 'theme_adaptable'),
+        'admin' => get_string('alertaccessadmins', 'theme_adaptable'),
+		'profile' => get_string('alertaccessprofile', 'theme_adaptable'));
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
-	$name = 'theme_bcu/alertprofilefield1';
-    $title = get_string('alertprofilefield', 'theme_bcu');
+	$name = 'theme_adaptable/alertprofilefield1';
+    $title = get_string('alertprofilefield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/alertprofilevalue1';
-    $title = get_string('alertprofilevalue', 'theme_bcu');
+    $name = 'theme_adaptable/alertprofilevalue1';
+    $title = get_string('alertprofilevalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 		
 	// Alert Box Heading 2.
-    $name = 'theme_bcu/settingsalertbox2';
-    $heading = get_string('alertsettings2', 'theme_bcu');
+    $name = 'theme_adaptable/settingsalertbox2';
+    $heading = get_string('alertsettings2', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Enable Alert 2.
-    $name = 'theme_bcu/enablealert2';
-    $title = get_string('enablealert2', 'theme_bcu');
-    $description = get_string('enablealertdesc2', 'theme_bcu');
+    $name = 'theme_adaptable/enablealert2';
+    $title = get_string('enablealert2', 'theme_adaptable');
+    $description = get_string('enablealertdesc2', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Alert text 2.
-    $name = 'theme_bcu/alerttext2';
-    $title = get_string('alerttext', 'theme_bcu');
-    $description = get_string('alerttextdesc', 'theme_bcu');
+    $name = 'theme_adaptable/alerttext2';
+    $title = get_string('alerttext', 'theme_adaptable');
+    $description = get_string('alerttextdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
     // Admins Alert type.
-    $name = 'theme_bcu/alerttype2';
-    $title = get_string('alerttype', 'theme_bcu');
-    $description = get_string('alerttypedesc', 'theme_bcu');
+    $name = 'theme_adaptable/alerttype2';
+    $title = get_string('alerttype', 'theme_adaptable');
+    $description = get_string('alerttypedesc', 'theme_adaptable');
     $default = 'info';
     $choices = array(
-        'info' => get_string('alertinfo', 'theme_bcu'),
-        'warning' => get_string('alertwarning', 'theme_bcu'),
-        'success' => get_string('alertannounce', 'theme_bcu'));
+        'info' => get_string('alertinfo', 'theme_adaptable'),
+        'warning' => get_string('alertwarning', 'theme_adaptable'),
+        'success' => get_string('alertannounce', 'theme_adaptable'));
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
 	// Alert Access 2.
-    $name = 'theme_bcu/alertaccess2';
-    $title = get_string('alertaccess', 'theme_bcu');
-    $description = get_string('alertaccessdesc', 'theme_bcu');
+    $name = 'theme_adaptable/alertaccess2';
+    $title = get_string('alertaccess', 'theme_adaptable');
+    $description = get_string('alertaccessdesc', 'theme_adaptable');
     $default = 'global';
     $choices = array(
-        'global' => get_string('alertaccessglobal', 'theme_bcu'),
-        'users' => get_string('alertaccessusers', 'theme_bcu'),
-        'admin' => get_string('alertaccessadmins', 'theme_bcu'),
-		'profile' => get_string('alertaccessprofile', 'theme_bcu'));
+        'global' => get_string('alertaccessglobal', 'theme_adaptable'),
+        'users' => get_string('alertaccessusers', 'theme_adaptable'),
+        'admin' => get_string('alertaccessadmins', 'theme_adaptable'),
+		'profile' => get_string('alertaccessprofile', 'theme_adaptable'));
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
-	$name = 'theme_bcu/alertprofilefield2';
-    $title = get_string('alertprofilefield', 'theme_bcu');
+	$name = 'theme_adaptable/alertprofilefield2';
+    $title = get_string('alertprofilefield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/alertprofilevalue2';
-    $title = get_string('alertprofilevalue', 'theme_bcu');
+    $name = 'theme_adaptable/alertprofilevalue2';
+    $title = get_string('alertprofilevalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);	
 	
 	// Alert Box Heading 3.
-    $name = 'theme_bcu/settingsalertbox3';
-    $heading = get_string('alertsettings3', 'theme_bcu');
+    $name = 'theme_adaptable/settingsalertbox3';
+    $heading = get_string('alertsettings3', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Enable Alert 3.
-    $name = 'theme_bcu/enablealert3';
-    $title = get_string('enablealert3', 'theme_bcu');
-    $description = get_string('enablealertdesc3', 'theme_bcu');
+    $name = 'theme_adaptable/enablealert3';
+    $title = get_string('enablealert3', 'theme_adaptable');
+    $description = get_string('enablealertdesc3', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Users Alert text.
-    $name = 'theme_bcu/alerttext3';
-    $title = get_string('alerttext', 'theme_bcu');
-    $description = get_string('alerttextdesc', 'theme_bcu');
+    $name = 'theme_adaptable/alerttext3';
+    $title = get_string('alerttext', 'theme_adaptable');
+    $description = get_string('alerttextdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
     // Users Alert type.
-    $name = 'theme_bcu/alerttype3';
-    $title = get_string('alerttype', 'theme_bcu');
-    $description = get_string('alerttypedesc', 'theme_bcu');
+    $name = 'theme_adaptable/alerttype3';
+    $title = get_string('alerttype', 'theme_adaptable');
+    $description = get_string('alerttypedesc', 'theme_adaptable');
     $default = 'info';
     $choices = array(
-        'info' => get_string('alertinfo', 'theme_bcu'),
-        'warning' => get_string('alertwarning', 'theme_bcu'),
-        'success' => get_string('alertannounce', 'theme_bcu'));
+        'info' => get_string('alertinfo', 'theme_adaptable'),
+        'warning' => get_string('alertwarning', 'theme_adaptable'),
+        'success' => get_string('alertannounce', 'theme_adaptable'));
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
 	// Alert Three Access.
-    $name = 'theme_bcu/alertaccess3';
-    $title = get_string('alertaccess', 'theme_bcu');
-    $description = get_string('alertaccessdesc', 'theme_bcu');
+    $name = 'theme_adaptable/alertaccess3';
+    $title = get_string('alertaccess', 'theme_adaptable');
+    $description = get_string('alertaccessdesc', 'theme_adaptable');
     $default = 'global';
     $choices = array(
-        'global' => get_string('alertaccessglobal', 'theme_bcu'),
-        'users' => get_string('alertaccessusers', 'theme_bcu'),
-        'admin' => get_string('alertaccessadmins', 'theme_bcu'),
-		'profile' => get_string('alertaccessprofile', 'theme_bcu'));
+        'global' => get_string('alertaccessglobal', 'theme_adaptable'),
+        'users' => get_string('alertaccessusers', 'theme_adaptable'),
+        'admin' => get_string('alertaccessadmins', 'theme_adaptable'),
+		'profile' => get_string('alertaccessprofile', 'theme_adaptable'));
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
-	$name = 'theme_bcu/alertprofilefield3';
-    $title = get_string('alertprofilefield', 'theme_bcu');
+	$name = 'theme_adaptable/alertprofilefield3';
+    $title = get_string('alertprofilefield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_bcu/alertprofilevalue3';
-    $title = get_string('alertprofilevalue', 'theme_bcu');
+    $name = 'theme_adaptable/alertprofilevalue3';
+    $title = get_string('alertprofilevalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);	   
 	
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
     // Frontpage Ticker heading.
-    $temp = new admin_settingpage('theme_bcu_frontpage_ticker', get_string('frontpagetickersettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_ticker', get_string('tickersettingsheading', 'theme_bcu'),
-        format_text(get_string('tickerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_frontpage_ticker', get_string('frontpagetickersettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_ticker', get_string('tickersettingsheading', 'theme_adaptable'),
+        format_text(get_string('tickerdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/enableticker';
-    $title = get_string('enableticker', 'theme_bcu');
-    $description = get_string('enabletickerdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enableticker';
+    $title = get_string('enableticker', 'theme_adaptable');
+    $description = get_string('enabletickerdesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-       $name = 'theme_bcu/tickertext';
-    $title = get_string('tickertext', 'theme_bcu');
-    $description = get_string('tickertextdesc', 'theme_bcu');
+       $name = 'theme_adaptable/tickertext';
+    $title = get_string('tickertext', 'theme_adaptable');
+    $description = get_string('tickertextdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
     // Frontpage Slider.
-    $temp = new admin_settingpage('theme_bcu_frontpage_slider', get_string('frontpageslidersettings', 'theme_bcu'));
+    $temp = new admin_settingpage('theme_adaptable_frontpage_slider', get_string('frontpageslidersettings', 'theme_adaptable'));
 
-    $temp->add(new admin_setting_heading('theme_bcu_slideshow', get_string('slideshowsettingsheading', 'theme_bcu'),
-        format_text(get_string('slideshowdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_slideshow', get_string('slideshowsettingsheading', 'theme_adaptable'),
+        format_text(get_string('slideshowdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-     $name = 'theme_bcu/sliderfullscreen';
-    $title = get_string('sliderfullscreen', 'theme_bcu');
-    $description = get_string('sliderfullscreendesc', 'theme_bcu');
+     $name = 'theme_adaptable/sliderfullscreen';
+    $title = get_string('sliderfullscreen', 'theme_adaptable');
+    $description = get_string('sliderfullscreendesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $temp->add($setting);
 
-    $name = 'theme_bcu/slidermargintop';
-    $title = get_string('slidermargintop', 'theme_bcu');
-    $description = get_string('slidermargintopdesc', 'theme_bcu');
+    $name = 'theme_adaptable/slidermargintop';
+    $title = get_string('slidermargintop', 'theme_adaptable');
+    $description = get_string('slidermargintopdesc', 'theme_adaptable');
     $radchoices = array(
         '0px' => "0px",
         '5px' => "5px",
@@ -2948,9 +2948,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/slidermarginbottom';
-    $title = get_string('slidermarginbottom', 'theme_bcu');
-    $description = get_string('slidermarginbottomdesc', 'theme_bcu');
+    $name = 'theme_adaptable/slidermarginbottom';
+    $title = get_string('slidermarginbottom', 'theme_adaptable');
+    $description = get_string('slidermarginbottomdesc', 'theme_adaptable');
     $radchoices = array(
         '0px' => "0px",
         '5px' => "5px",
@@ -2962,185 +2962,185 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/slideroption2';
-    $title = get_string('slideroption2', 'theme_bcu');
-    $description = get_string('slideroption2desc', 'theme_bcu');
+    $name = 'theme_adaptable/slideroption2';
+    $title = get_string('slideroption2', 'theme_adaptable');
+    $description = get_string('slideroption2desc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $temp->add($setting);
 
-    $name = 'theme_bcu/p1';
-    $title = get_string('p1', 'theme_bcu');
-    $description = get_string('p1desc', 'theme_bcu');
+    $name = 'theme_adaptable/p1';
+    $title = get_string('p1', 'theme_adaptable');
+    $description = get_string('p1desc', 'theme_adaptable');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'p1');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/p1url';
-    $title = get_string('p1url', 'theme_bcu');
-    $description = get_string('p1urldesc', 'theme_bcu');
+    $name = 'theme_adaptable/p1url';
+    $title = get_string('p1url', 'theme_adaptable');
+    $description = get_string('p1urldesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/p1cap';
-    $title = get_string('p1cap', 'theme_bcu');
-    $description = get_string('p1capdesc', 'theme_bcu');
+    $name = 'theme_adaptable/p1cap';
+    $title = get_string('p1cap', 'theme_adaptable');
+    $description = get_string('p1capdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/p2';
-    $title = get_string('p2', 'theme_bcu');
-    $description = get_string('p2desc', 'theme_bcu');
+    $name = 'theme_adaptable/p2';
+    $title = get_string('p2', 'theme_adaptable');
+    $description = get_string('p2desc', 'theme_adaptable');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'p2');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/p2url';
-    $title = get_string('p2url', 'theme_bcu');
-    $description = get_string('p2urldesc', 'theme_bcu');
+    $name = 'theme_adaptable/p2url';
+    $title = get_string('p2url', 'theme_adaptable');
+    $description = get_string('p2urldesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/p2cap';
-    $title = get_string('p2cap', 'theme_bcu');
-    $description = get_string('p2capdesc', 'theme_bcu');
+    $name = 'theme_adaptable/p2cap';
+    $title = get_string('p2cap', 'theme_adaptable');
+    $description = get_string('p2capdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/p3';
-    $title = get_string('p3', 'theme_bcu');
-    $description = get_string('p3desc', 'theme_bcu');
+    $name = 'theme_adaptable/p3';
+    $title = get_string('p3', 'theme_adaptable');
+    $description = get_string('p3desc', 'theme_adaptable');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'p3');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/p3url';
-    $title = get_string('p3url', 'theme_bcu');
-    $description = get_string('p3urldesc', 'theme_bcu');
+    $name = 'theme_adaptable/p3url';
+    $title = get_string('p3url', 'theme_adaptable');
+    $description = get_string('p3urldesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/p3cap';
-    $title = get_string('p3cap', 'theme_bcu');
-    $description = get_string('p3capdesc', 'theme_bcu');
+    $name = 'theme_adaptable/p3cap';
+    $title = get_string('p3cap', 'theme_adaptable');
+    $description = get_string('p3capdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/p4';
-    $title = get_string('p4', 'theme_bcu');
-    $description = get_string('p4desc', 'theme_bcu');
+    $name = 'theme_adaptable/p4';
+    $title = get_string('p4', 'theme_adaptable');
+    $description = get_string('p4desc', 'theme_adaptable');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'p4');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/p4url';
-    $title = get_string('p4url', 'theme_bcu');
-    $description = get_string('p4urldesc', 'theme_bcu');
+    $name = 'theme_adaptable/p4url';
+    $title = get_string('p4url', 'theme_adaptable');
+    $description = get_string('p4urldesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/p4cap';
-    $title = get_string('p4cap', 'theme_bcu');
-    $description = get_string('p4capdesc', 'theme_bcu');
+    $name = 'theme_adaptable/p4cap';
+    $title = get_string('p4cap', 'theme_adaptable');
+    $description = get_string('p4capdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/p5';
-    $title = get_string('p5', 'theme_bcu');
-    $description = get_string('p5desc', 'theme_bcu');
+    $name = 'theme_adaptable/p5';
+    $title = get_string('p5', 'theme_adaptable');
+    $description = get_string('p5desc', 'theme_adaptable');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'p5');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/p5url';
-    $title = get_string('p5url', 'theme_bcu');
-    $description = get_string('p5urldesc', 'theme_bcu');
+    $name = 'theme_adaptable/p5url';
+    $title = get_string('p5url', 'theme_adaptable');
+    $description = get_string('p5urldesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
-    $name = 'theme_bcu/p5cap';
-    $title = get_string('p5cap', 'theme_bcu');
-    $description = get_string('p5capdesc', 'theme_bcu');
+    $name = 'theme_adaptable/p5cap';
+    $title = get_string('p5cap', 'theme_adaptable');
+    $description = get_string('p5capdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/slideroption2color';
-    $title = get_string('slideroption2color', 'theme_bcu');
-    $description = get_string('slideroption2colordesc', 'theme_bcu');
+    $name = 'theme_adaptable/slideroption2color';
+    $title = get_string('slideroption2color', 'theme_adaptable');
+    $description = get_string('slideroption2colordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/slideroption2a';
-    $title = get_string('slideroption2a', 'theme_bcu');
-    $description = get_string('slideroption2adesc', 'theme_bcu');
+    $name = 'theme_adaptable/slideroption2a';
+    $title = get_string('slideroption2a', 'theme_adaptable');
+    $description = get_string('slideroption2adesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
 
     // Frontpage courses section.
-    $temp = new admin_settingpage('theme_bcu_frontpage_courses', get_string('frontpagecoursesettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_frontpage_courses', get_string('frontpagesettingsheading', 'theme_bcu'),
-        format_text(get_string('frontpagedesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_frontpage_courses', get_string('frontpagecoursesettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_frontpage_courses', get_string('frontpagesettingsheading', 'theme_adaptable'),
+        format_text(get_string('frontpagedesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_bcu/frontpagerenderer';
-    $title = get_string('frontpagerenderer', 'theme_bcu');
-    $description = get_string('frontpagerendererdesc', 'theme_bcu');
+    $name = 'theme_adaptable/frontpagerenderer';
+    $title = get_string('frontpagerenderer', 'theme_adaptable');
+    $description = get_string('frontpagerendererdesc', 'theme_adaptable');
     $choices = array(
-        1 => get_string('frontpagerendereroption1', 'theme_bcu'),
-        2 => get_string('frontpagerendereroption2', 'theme_bcu'),
-        3 => get_string('frontpagerendereroption3', 'theme_bcu'),
-        4 => get_string('frontpagerendereroption4', 'theme_bcu'),
+        1 => get_string('frontpagerendereroption1', 'theme_adaptable'),
+        2 => get_string('frontpagerendereroption2', 'theme_adaptable'),
+        3 => get_string('frontpagerendereroption3', 'theme_adaptable'),
+        4 => get_string('frontpagerendereroption4', 'theme_adaptable'),
     );
     $setting = new admin_setting_configselect($name, $title, $description, 2, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/frontpagerendererdefaultimage';
-    $title = get_string('frontpagerendererdefaultimage', 'theme_bcu');
-    $description = get_string('frontpagerendererdefaultimagedesc', 'theme_bcu');
+    $name = 'theme_adaptable/frontpagerendererdefaultimage';
+    $title = get_string('frontpagerendererdefaultimage', 'theme_adaptable');
+    $description = get_string('frontpagerendererdefaultimagedesc', 'theme_adaptable');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'frontpagerendererdefaultimage');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Show course contacts.
-    $name = 'theme_bcu/tilesshowcontacts';
-    $title = get_string('tilesshowcontacts', 'theme_bcu');
-    $description = get_string('tilesshowcontactsdesc', 'theme_bcu');
+    $name = 'theme_adaptable/tilesshowcontacts';
+    $title = get_string('tilesshowcontacts', 'theme_adaptable');
+    $description = get_string('tilesshowcontactsdesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $temp->add($setting);
 
-    $name = 'theme_bcu/tilesshowallcontacts';
-    $title = get_string('tilesshowallcontacts', 'theme_bcu');
-    $description = get_string('tilesshowallcontactsdesc', 'theme_bcu');
+    $name = 'theme_adaptable/tilesshowallcontacts';
+    $title = get_string('tilesshowallcontacts', 'theme_adaptable');
+    $description = get_string('tilesshowallcontactsdesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $temp->add($setting);
 
-    $name = 'theme_bcu/tilescontactstitle';
-    $title = get_string('tilescontactstitle', 'theme_bcu');
-    $description = get_string('tilescontactstitledesc', 'theme_bcu');
+    $name = 'theme_adaptable/tilescontactstitle';
+    $title = get_string('tilescontactstitle', 'theme_adaptable');
+    $description = get_string('tilescontactstitledesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $temp->add($setting);
 
-    $name = 'theme_bcu/covhidebutton';
-    $title = get_string('covhidebutton', 'theme_bcu');
-    $description = get_string('covhidebuttondesc', 'theme_bcu');
+    $name = 'theme_adaptable/covhidebutton';
+    $title = get_string('covhidebutton', 'theme_adaptable');
+    $description = get_string('covhidebuttondesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $temp->add($setting);
 
     // Show 'Available Courses' label.
-    $name = 'theme_bcu/enableavailablecourses';
-    $title = get_string('enableavailablecourses', 'theme_bcu');
-    $description = get_string('enableavailablecoursesdesc', 'theme_bcu');
+    $name = 'theme_adaptable/enableavailablecourses';
+    $title = get_string('enableavailablecourses', 'theme_adaptable');
+    $description = get_string('enableavailablecoursesdesc', 'theme_adaptable');
     $setting = new admin_setting_configselect($name, $title, $description, 0,
     array(
             'inherit' => get_string('show'),
@@ -3148,36 +3148,36 @@ if (is_siteadmin()) {
         ));
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
-    $temp = new admin_settingpage('theme_bcu_layout', get_string('layoutsettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_layout', get_string('layoutsettingsheading', 'theme_bcu'),
-        format_text(get_string('layoutdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_layout', get_string('layoutsettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_layout', get_string('layoutsettingsheading', 'theme_adaptable'),
+        format_text(get_string('layoutdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
     // Display block in the Left/Right side.
-    $name = 'theme_bcu/blockside';
-    $title = get_string('blockside', 'theme_bcu');
-    $description = get_string('blocksidedesc', 'theme_bcu');
+    $name = 'theme_adaptable/blockside';
+    $title = get_string('blockside', 'theme_adaptable');
+    $description = get_string('blocksidedesc', 'theme_adaptable');
     $setting = new admin_setting_configselect($name, $title, $description, 0,
     array(
-            0 => get_string('rightblocks', 'theme_bcu'),
-            1 => get_string('leftblocks', 'theme_bcu'),
+            0 => get_string('rightblocks', 'theme_adaptable'),
+            1 => get_string('leftblocks', 'theme_adaptable'),
         ));
     $temp->add($setting);
 
     // View default.
-    $name = 'theme_bcu/viewselect';
-    $title = get_string('viewselect', 'theme_bcu');
-    $description = get_string('viewselectdesc', 'theme_bcu');
+    $name = 'theme_adaptable/viewselect';
+    $title = get_string('viewselect', 'theme_adaptable');
+    $description = get_string('viewselectdesc', 'theme_adaptable');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Fullscreen width.
-    $name = 'theme_bcu/fullscreenwidth';
-    $title = get_string('fullscreenwidth', 'theme_bcu');
-    $description = get_string('fullscreenwidthdesc', 'theme_bcu');
+    $name = 'theme_adaptable/fullscreenwidth';
+    $title = get_string('fullscreenwidth', 'theme_adaptable');
+    $description = get_string('fullscreenwidthdesc', 'theme_adaptable');
     $radchoices = array(
         '95%' => '95%',
         '96%' => '96%',
@@ -3190,9 +3190,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/coursetitlemaxwidth';
-    $title = get_string('coursetitlemaxwidth', 'theme_bcu');
-    $description = get_string('coursetitlemaxwidthdesc', 'theme_bcu');
+    $name = 'theme_adaptable/coursetitlemaxwidth';
+    $title = get_string('coursetitlemaxwidth', 'theme_adaptable');
+    $description = get_string('coursetitlemaxwidthdesc', 'theme_adaptable');
     $radchoices = array(
         '35%' => '35%',
         '36%' => '36%',
@@ -3215,15 +3215,15 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
-    $temp = new admin_settingpage('theme_bcu_mobile', get_string('mobilesettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_mobile', get_string('mobilesettingsheading', 'theme_bcu'),
+    $temp = new admin_settingpage('theme_adaptable_mobile', get_string('mobilesettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_mobile', get_string('mobilesettingsheading', 'theme_adaptable'),
         '', FORMAT_MARKDOWN));
 
-    $name = 'theme_bcu/hidealertsmobile';
-    $title = get_string('hidealertsmobile', 'theme_bcu');
-    $description = get_string('hidealertsmobiledesc', 'theme_bcu');
+    $name = 'theme_adaptable/hidealertsmobile';
+    $title = get_string('hidealertsmobile', 'theme_adaptable');
+    $description = get_string('hidealertsmobiledesc', 'theme_adaptable');
     $radchoices = array(
         ', .customalert' => get_string('hide'),
         '' => get_string('show'),
@@ -3232,9 +3232,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/hidesocialmobile';
-    $title = get_string('hidesocialmobile', 'theme_bcu');
-    $description = get_string('hidesocialmobiledesc', 'theme_bcu');
+    $name = 'theme_adaptable/hidesocialmobile';
+    $title = get_string('hidesocialmobile', 'theme_adaptable');
+    $description = get_string('hidesocialmobiledesc', 'theme_adaptable');
     $radchoices = array(
         ', .socialbox' => get_string('hide'),
         '' => get_string('show'),
@@ -3243,9 +3243,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/socialboxpaddingtopmobile';
-    $title = get_string('socialboxpaddingtopmobile', 'theme_bcu');
-    $description = get_string('socialboxpaddingtopmobile', 'theme_bcu');
+    $name = 'theme_adaptable/socialboxpaddingtopmobile';
+    $title = get_string('socialboxpaddingtopmobile', 'theme_adaptable');
+    $description = get_string('socialboxpaddingtopmobile', 'theme_adaptable');
     $choices = array(
         '5px' => "5px",
         '6px' => "6px",
@@ -3264,9 +3264,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/socialboxpaddingbottommobile';
-    $title = get_string('socialboxpaddingbottommobile', 'theme_bcu');
-    $description = get_string('socialboxpaddingbottommobile', 'theme_bcu');
+    $name = 'theme_adaptable/socialboxpaddingbottommobile';
+    $title = get_string('socialboxpaddingbottommobile', 'theme_adaptable');
+    $description = get_string('socialboxpaddingbottommobile', 'theme_adaptable');
     $choices = array(
         '1px' => "1px",
         '2px' => "2px",
@@ -3284,9 +3284,9 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 
-    $name = 'theme_bcu/hidecoursetitlemobile';
-    $title = get_string('hidecoursetitlemobile', 'theme_bcu');
-    $description = get_string('hidecoursetitlemobiledesc', 'theme_bcu');
+    $name = 'theme_adaptable/hidecoursetitlemobile';
+    $title = get_string('hidecoursetitlemobile', 'theme_adaptable');
+    $description = get_string('hidecoursetitlemobiledesc', 'theme_adaptable');
     $radchoices = array(
         ', #coursetitle' => get_string('hide'),
         '' => get_string('show'),
@@ -3295,9 +3295,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/hidelogomobile';
-    $title = get_string('hidelogomobile', 'theme_bcu');
-    $description = get_string('hidelogomobiledesc', 'theme_bcu');
+    $name = 'theme_adaptable/hidelogomobile';
+    $title = get_string('hidelogomobile', 'theme_adaptable');
+    $description = get_string('hidelogomobiledesc', 'theme_adaptable');
     $radchoices = array(
         ', #logocontainer' => get_string('hide'),
         '' => get_string('show'),
@@ -3306,9 +3306,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/hideheadermobile';
-    $title = get_string('hideheadermobile', 'theme_bcu');
-    $description = get_string('hideheadermobiledesc', 'theme_bcu');
+    $name = 'theme_adaptable/hideheadermobile';
+    $title = get_string('hideheadermobile', 'theme_adaptable');
+    $description = get_string('hideheadermobiledesc', 'theme_adaptable');
     $radchoices = array(
         ', #page-header' => get_string('hide'),
         '' => get_string('show'),
@@ -3317,9 +3317,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/hidebreadcrumbmobile';
-    $title = get_string('hidebreadcrumbmobile', 'theme_bcu');
-    $description = get_string('hidebreadcrumbmobiledesc', 'theme_bcu');
+    $name = 'theme_adaptable/hidebreadcrumbmobile';
+    $title = get_string('hidebreadcrumbmobile', 'theme_adaptable');
+    $description = get_string('hidebreadcrumbmobiledesc', 'theme_adaptable');
     $radchoices = array(
         ', .breadcrumb' => get_string('hide'),
         '' => get_string('show'),
@@ -3328,9 +3328,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/hidepagefootermobile';
-    $title = get_string('hidepagefootermobile', 'theme_bcu');
-    $description = get_string('hidepagefootermobiledesc', 'theme_bcu');
+    $name = 'theme_adaptable/hidepagefootermobile';
+    $title = get_string('hidepagefootermobile', 'theme_adaptable');
+    $description = get_string('hidepagefootermobiledesc', 'theme_adaptable');
     $radchoices = array(
         ', #page-footer' => get_string('hide'),
         '' => get_string('show'),
@@ -3339,133 +3339,133 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
-    $temp = new admin_settingpage('theme_bcu_footer', get_string('footersettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_footer', get_string('footersettingsheading', 'theme_bcu'),
-        format_text(get_string('footerdesc', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_footer', get_string('footersettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_footer', get_string('footersettingsheading', 'theme_adaptable'),
+        format_text(get_string('footerdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
     // Show moodle docs link.
-    $name = 'theme_bcu/moodledocs';
-    $title = get_string('moodledocs', 'theme_bcu');
-    $description = get_string('moodledocsdesc', 'theme_bcu');
+    $name = 'theme_adaptable/moodledocs';
+    $title = get_string('moodledocs', 'theme_adaptable');
+    $description = get_string('moodledocsdesc', 'theme_adaptable');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_bcu/showfooterblocks';
-    $title = get_string('showfooterblocks', 'theme_bcu');
-    $description = get_string('showfooterblocksdesc', 'theme_bcu');
+    $name = 'theme_adaptable/showfooterblocks';
+    $title = get_string('showfooterblocks', 'theme_adaptable');
+    $description = get_string('showfooterblocksdesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $temp->add($setting);
 
-    $name = 'theme_bcu/footerblocksplacement';
-    $title = get_string('footerblocksplacement', 'theme_bcu');
-    $description = get_string('footerblocksplacementdesc', 'theme_bcu');
+    $name = 'theme_adaptable/footerblocksplacement';
+    $title = get_string('footerblocksplacement', 'theme_adaptable');
+    $description = get_string('footerblocksplacementdesc', 'theme_adaptable');
     $choices = array(
-        1 => get_string('footerblocksplacement1', 'theme_bcu'),
-        2 => get_string('footerblocksplacement2', 'theme_bcu'),
-        3 => get_string('footerblocksplacement3', 'theme_bcu'),
+        1 => get_string('footerblocksplacement1', 'theme_adaptable'),
+        2 => get_string('footerblocksplacement2', 'theme_adaptable'),
+        3 => get_string('footerblocksplacement3', 'theme_adaptable'),
     );
     $setting = new admin_setting_configselect($name, $title, $description, 2, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
 
-    $name = 'theme_bcu/footer1header';
-    $title = get_string('footer1header', 'theme_bcu');
-    $description = get_string('footer1desc', 'theme_bcu');
+    $name = 'theme_adaptable/footer1header';
+    $title = get_string('footer1header', 'theme_adaptable');
+    $description = get_string('footer1desc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/footer1content';
-    $title = get_string('footer1content', 'theme_bcu');
-    $description = get_string('footer1contentdesc', 'theme_bcu');
+    $name = 'theme_adaptable/footer1content';
+    $title = get_string('footer1content', 'theme_adaptable');
+    $description = get_string('footer1contentdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/footer2header';
-    $title = get_string('footer2header', 'theme_bcu');
-    $description = get_string('footer2desc', 'theme_bcu');
+    $name = 'theme_adaptable/footer2header';
+    $title = get_string('footer2header', 'theme_adaptable');
+    $description = get_string('footer2desc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/footer2content';
-    $title = get_string('footer2content', 'theme_bcu');
-    $description = get_string('footer2contentdesc', 'theme_bcu');
+    $name = 'theme_adaptable/footer2content';
+    $title = get_string('footer2content', 'theme_adaptable');
+    $description = get_string('footer2contentdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/footer3header';
-    $title = get_string('footer3header', 'theme_bcu');
-    $description = get_string('footer3desc', 'theme_bcu');
+    $name = 'theme_adaptable/footer3header';
+    $title = get_string('footer3header', 'theme_adaptable');
+    $description = get_string('footer3desc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/footer3content';
-    $title = get_string('footer3content', 'theme_bcu');
-    $description = get_string('footer3contentdesc', 'theme_bcu');
+    $name = 'theme_adaptable/footer3content';
+    $title = get_string('footer3content', 'theme_adaptable');
+    $description = get_string('footer3contentdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/footer4header';
-    $title = get_string('footer4header', 'theme_bcu');
-    $description = get_string('footer4desc', 'theme_bcu');
+    $name = 'theme_adaptable/footer4header';
+    $title = get_string('footer4header', 'theme_adaptable');
+    $description = get_string('footer4desc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/footer4content';
-    $title = get_string('footer4content', 'theme_bcu');
-    $description = get_string('footer4contentdesc', 'theme_bcu');
+    $name = 'theme_adaptable/footer4content';
+    $title = get_string('footer4content', 'theme_adaptable');
+    $description = get_string('footer4contentdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/footnote';
-    $title = get_string('footnote', 'theme_bcu');
-    $description = get_string('footnotedesc', 'theme_bcu');
+    $name = 'theme_adaptable/footnote';
+    $title = get_string('footnote', 'theme_adaptable');
+    $description = get_string('footnotedesc', 'theme_adaptable');
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 
 
 
     // Custom CSS and JS section.
-    $temp = new admin_settingpage('theme_bcu_generic', get_string('customcssjssettings', 'theme_bcu'));
-    $temp->add(new admin_setting_heading('theme_bcu_generic', get_string('genericsettingsheading', 'theme_bcu'),
-        format_text(get_string('genericsettingsdescription', 'theme_bcu'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_adaptable_generic', get_string('customcssjssettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_generic', get_string('genericsettingsheading', 'theme_adaptable'),
+        format_text(get_string('genericsettingsdescription', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
     // Custom CSS file.
-    $name = 'theme_bcu/customcss';
-    $title = get_string('customcss', 'theme_bcu');
-    $description = get_string('customcssdesc', 'theme_bcu');
+    $name = 'theme_adaptable/customcss';
+    $title = get_string('customcss', 'theme_adaptable');
+    $description = get_string('customcssdesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Section for javascript to be added e.g. Google Analytics.
-    $name = 'theme_bcu/jssection';
-    $title = get_string('jssection', 'theme_bcu');
-    $description = get_string('jssectiondesc', 'theme_bcu');
+    $name = 'theme_adaptable/jssection';
+    $title = get_string('jssection', 'theme_adaptable');
+    $description = get_string('jssectiondesc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_bcu/fsize';
-    $title = get_string('fsize', 'theme_bcu');
-    $description = get_string('fsizedesc', 'theme_bcu');
+    $name = 'theme_adaptable/fsize';
+    $title = get_string('fsize', 'theme_adaptable');
+    $description = get_string('fsizedesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '');
     $temp->add($setting);
 
-    $ADMIN->add('theme_bcu', $temp);
+    $ADMIN->add('theme_adaptable', $temp);
 }

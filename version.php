@@ -18,7 +18,7 @@
  * Version details
  *
  * @package    theme
- * @subpackage bcu
+ * @subpackage adaptable
  * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -28,8 +28,8 @@ defined('MOODLE_INTERNAL') || die;
 
 $plugin->version   = 2015110700;
 $plugin->requires  = 2013110500;
-$plugin->component = 'theme_bcu';
-$plugin->release = '1.3.1';
+$plugin->component = 'theme_adaptable';
+$plugin->release = '1.0.0';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = array(
     'block_course_overview' => ANY_VERSION

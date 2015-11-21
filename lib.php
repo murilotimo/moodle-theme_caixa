@@ -18,8 +18,8 @@
  * Version details
  *
  * @package    theme
- * @subpackage bcu
- * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @subpackage adaptable
+ * @copyright  2014 Birmingham City University 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -33,7 +33,7 @@
  * @param theme_config $theme The theme config object.
  * @return string The parsed CSS The parsed CSS.
  */
-function theme_bcu_process_css($css, $theme) {
+function theme_adaptable_process_css($css, $theme) {
 
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -41,7 +41,7 @@ function theme_bcu_process_css($css, $theme) {
     } else {
         $customcss = null;
     }
-    $css = theme_bcu_set_customcss($css, $customcss);
+    $css = theme_adaptable_set_customcss($css, $customcss);
 
     // Define the default settings for the theme incase they've not been set.
     $defaults = array(
@@ -149,9 +149,9 @@ function theme_bcu_process_css($css, $theme) {
     // Replace the CSS with values from the $defaults array.
     $css = strtr($css, $defaults);
     if (empty($theme->settings->tilesshowallcontacts) || $theme->settings->tilesshowallcontacts == false) {
-        $css = theme_bcu_set_tilesshowallcontacts($css, false);
+        $css = theme_adaptable_set_tilesshowallcontacts($css, false);
     } else {
-        $css = theme_bcu_set_tilesshowallcontacts($css, true);
+        $css = theme_adaptable_set_tilesshowallcontacts($css, true);
     }
     return $css;
 }
@@ -164,7 +164,7 @@ function theme_bcu_process_css($css, $theme) {
  * @param string $customcss The custom CSS to add.
  * @return string The CSS which now contains our custom CSS.
  */
-function theme_bcu_set_customcss($css, $customcss) {
+function theme_adaptable_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
     if (is_null($replacement)) {
@@ -176,7 +176,7 @@ function theme_bcu_set_customcss($css, $customcss) {
     return $css;
 }
 
-function theme_bcu_set_tilesshowallcontacts($css, $display) {
+function theme_adaptable_set_tilesshowallcontacts($css, $display) {
     $tag = '[[setting:tilesshowallcontacts]]';
     if ($display) {
         $replacement = 'block';
@@ -188,41 +188,41 @@ function theme_bcu_set_tilesshowallcontacts($css, $display) {
 }
 
 
-function theme_bcu_initialise_zoom(moodle_page $page) {
-    user_preference_allow_ajax_update('theme_bcu_zoom', PARAM_TEXT);
-    $page->requires->yui_module('moodle-theme_bcu-zoom', 'M.theme_bcu.zoom.init', array());
+function theme_adaptable_initialise_zoom(moodle_page $page) {
+    user_preference_allow_ajax_update('theme_adaptable_zoom', PARAM_TEXT);
+    $page->requires->yui_module('moodle-theme_adaptable-zoom', 'M.theme_adaptable.zoom.init', array());
 }
 
 /**
  * Get the user preference for the zoom function.
  */
-function theme_bcu_get_zoom() {
-    return get_user_preferences('theme_bcu_zoom', '');
+function theme_adaptable_get_zoom() {
+    return get_user_preferences('theme_adaptable_zoom', '');
 }
 
 // Full width funcs.
 
-function theme_bcu_initialise_full(moodle_page $page) {
-    user_preference_allow_ajax_update('theme_bcu_full', PARAM_TEXT);
-    $page->requires->yui_module('moodle-theme_bcu-full', 'M.theme_bcu.full.init', array());
+function theme_adaptable_initialise_full(moodle_page $page) {
+    user_preference_allow_ajax_update('theme_adaptable_full', PARAM_TEXT);
+    $page->requires->yui_module('moodle-theme_adaptable-full', 'M.theme_adaptable.full.init', array());
 }
 
 /**
  * Get the user preference for the zoom function.
  */
-function theme_bcu_get_full() {
-    return get_user_preferences('theme_bcu_full', '');
+function theme_adaptable_get_full() {
+    return get_user_preferences('theme_adaptable_full', '');
 }
 
-function theme_bcu_get_block_side() {
+function theme_adaptable_get_block_side() {
     static $theme;
     if (empty($theme)) {
-        $theme = theme_config::load('bcu');
+        $theme = theme_config::load('adaptable');
     }
-    return get_user_preferences('theme_bcu_block_side', $theme->settings->blockside);
+    return get_user_preferences('theme_adaptable_block_side', $theme->settings->blockside);
 }
 
-function theme_bcu_get_html_for_settings(renderer_base $output, moodle_page $page) {
+function theme_adaptable_get_html_for_settings(renderer_base $output, moodle_page $page) {
     global $CFG;
     $return = new stdClass;
 
@@ -245,10 +245,10 @@ function theme_bcu_get_html_for_settings(renderer_base $output, moodle_page $pag
     return $return;
 }
 
-function theme_bcu_get_setting($setting, $format = false) {
+function theme_adaptable_get_setting($setting, $format = false) {
     static $theme;
     if (empty($theme)) {
-        $theme = theme_config::load('bcu');
+        $theme = theme_config::load('adaptable');
     }
 
     if (empty($theme->settings->$setting)) {
@@ -276,10 +276,10 @@ function theme_bcu_get_setting($setting, $format = false) {
  * @param array $options
  * @return bool
  */
-function theme_bcu_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+function theme_adaptable_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     static $theme;
     if (empty($theme)) {
-        $theme = theme_config::load('bcu');
+        $theme = theme_config::load('adaptable');
     }
     if ($context->contextlevel == CONTEXT_SYSTEM) {
         if ($filearea === 'logo') {
@@ -308,8 +308,8 @@ function theme_bcu_pluginfile($course, $cm, $context, $filearea, $args, $forcedo
             return $theme->setting_file_serve('fontfilettfheading', $args, $forcedownload, $options);
         } else if ($filearea === 'fontfilettfbody') {
             return $theme->setting_file_serve('fontfilettfbody', $args, $forcedownload, $options);
-        } else if ($filearea === 'bcumarkettingimages') {
-            return $theme->setting_file_serve('bcumarkettingimages', $args, $forcedownload, $options);
+        } else if ($filearea === 'adaptablemarkettingimages') {
+            return $theme->setting_file_serve('adaptablemarkettingimages', $args, $forcedownload, $options);
         } else {
             send_file_not_found();
         }
@@ -318,7 +318,7 @@ function theme_bcu_pluginfile($course, $cm, $context, $filearea, $args, $forcedo
     }
 }
 
-function theme_bcu_get_course_activities() {
+function theme_adaptable_get_course_activities() {
     GLOBAL $CFG, $PAGE, $OUTPUT;
     // A copy of block_activity_modules.
     $course = $PAGE->course;
@@ -352,28 +352,28 @@ function theme_bcu_get_course_activities() {
     return $modfullnames;
 }
 
-function theme_bcu_performance_output($param) {
-    $html = html_writer::tag('span', get_string('loadtime', 'theme_bcu').' '. round($param['realtime'], 2) . ' ' .
+function theme_adaptable_performance_output($param) {
+    $html = html_writer::tag('span', get_string('loadtime', 'theme_adaptable').' '. round($param['realtime'], 2) . ' ' .
             get_string('seconds'), array('id' => 'load'));
     return $html;
 }
 
-function theme_bcu_page_init(moodle_page $page) {
+function theme_adaptable_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
     //  REMOVED: Deprecated function    error_log($CFG->version);
     if($CFG->version < 2015051100) {
-      $page->requires->jquery_plugin('bootstrap', 'theme_bcu');
-	  $page->requires->jquery_plugin('dropdown', 'theme_bcu');	
+      $page->requires->jquery_plugin('bootstrap', 'theme_adaptable');
+	  $page->requires->jquery_plugin('dropdown', 'theme_adaptable');	
     }
-    $page->requires->jquery_plugin('pace', 'theme_bcu');
-    $page->requires->jquery_plugin('flexslider', 'theme_bcu');
-    $page->requires->jquery_plugin('ticker', 'theme_bcu');
-    $page->requires->jquery_plugin('easing', 'theme_bcu');
-    $page->requires->jquery_plugin('bcu', 'theme_bcu');
+    $page->requires->jquery_plugin('pace', 'theme_adaptable');
+    $page->requires->jquery_plugin('flexslider', 'theme_adaptable');
+    $page->requires->jquery_plugin('ticker', 'theme_adaptable');
+    $page->requires->jquery_plugin('easing', 'theme_adaptable');
+    $page->requires->jquery_plugin('adaptable', 'theme_adaptable');
 }
 
-function theme_bcu_remove_site_fullname($heading) {
+function theme_adaptable_remove_site_fullname($heading) {
     global $SITE, $PAGE;
     if (strpos($PAGE->pagetype, 'course-view-') === 0) {
         return $heading;

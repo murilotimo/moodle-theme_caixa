@@ -17,8 +17,9 @@
 /**
  * Version details
  *
- * @package    theme_bcu
- * @copyright  2015 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @package    theme
+ * @subpackage adaptable
+ * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -26,7 +27,7 @@
 // Special thanks to Iban Cardona i Subiela (http://icsbcn.blogspot.com.es/2015/03/use-image-repository-in-theme-settings.html)
 // This post laid the ground work for most of the code featured in this file.
 
-class bcu_setting_confightmleditor extends admin_setting_configtext {
+class adaptable_setting_confightmleditor extends admin_setting_configtext {
     private $rows;
     private $cols;
     private $options;
@@ -39,7 +40,7 @@ class bcu_setting_confightmleditor extends admin_setting_configtext {
      * @param mixed $defaultsetting string or array
      * @param mixed $paramtype
      */
-    public function __construct($name, $visiblename, $description, $defaultsetting, $paramtype=PARAM_RAW, $cols='60', $rows='8', $filearea = 'bcumarketingimages') {
+    public function __construct($name, $visiblename, $description, $defaultsetting, $paramtype=PARAM_RAW, $cols='60', $rows='8', $filearea = 'adaptablemarketingimages') {
         $this->rows = $rows;
         $this->cols = $cols;
         $this->filearea = $filearea;

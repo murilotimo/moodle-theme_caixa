@@ -18,7 +18,7 @@
  * Version details
  *
  * @package    theme
- * @subpackage bcu
+ * @subpackage 
  * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -28,13 +28,13 @@ require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot . "/course/renderer.php");
 require_once($CFG->libdir. '/coursecatlib.php');
 
-class theme_bcu_core_renderer extends core_renderer {
+class theme_adaptable_core_renderer extends core_renderer {
     /** @var custom_menu_item language The language menu if created */
     protected $language = null;
 
     public function get_setting($setting, $format = false, $theme = null) {
         if (empty($theme)) {
-            $theme = theme_config::load('bcu');
+            $theme = theme_config::load('adaptable');
         }
 
         if (empty($theme->settings->$setting)) {
@@ -382,7 +382,7 @@ class theme_bcu_core_renderer extends core_renderer {
                 error_log("PERF: " . $perf['txt']);
             }
             if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
-                $performanceinfo = theme_bcu_performance_output($perf);
+                $performanceinfo = theme_adaptable_performance_output($perf);
             }
         }
 
@@ -424,7 +424,7 @@ class theme_bcu_core_renderer extends core_renderer {
 
 
             if (!empty($PAGE->theme->settings->enableevents)) {
-                $branchtitle = get_string('events', 'theme_bcu');
+                $branchtitle = get_string('events', 'theme_adaptable');
                 $branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
                 $branchurl   = new moodle_url('/calendar/view.php');
                 $branchsort  = 10000;
@@ -432,7 +432,7 @@ class theme_bcu_core_renderer extends core_renderer {
             }
 
             if (!empty($PAGE->theme->settings->enablemysites)) {
-                $branchtitle = get_string('mysites', 'theme_bcu');
+                $branchtitle = get_string('mysites', 'theme_adaptable');
                 $branchlabel = '<i class="fa fa-briefcase"></i><span class="menutitle">'.$branchtitle.'</span>';
                 $branchurl   = new moodle_url('/my/index.php');
                 $branchsort  = 10001;
@@ -448,14 +448,14 @@ class theme_bcu_core_renderer extends core_renderer {
                         }
                     }
                 } else {
-                    $noenrolments = get_string('noenrolments', 'theme_bcu');
+                    $noenrolments = get_string('noenrolments', 'theme_adaptable');
                     $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
                 }
             }
 
             if (!empty($PAGE->theme->settings->enablethiscourse)) {
                 if (ISSET($COURSE->id) && $COURSE->id > 1) {
-                    $branchtitle = get_string('thiscourse', 'theme_bcu');
+                    $branchtitle = get_string('thiscourse', 'theme_adaptable');
                     $branchlabel = '<i class="fa fa-sitemap"></i><span class="menutitle">'.$branchtitle.'</span>';
                     $branchurl = new moodle_url('#');
                     $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
@@ -470,7 +470,7 @@ class theme_bcu_core_renderer extends core_renderer {
                     $branchurl = new moodle_url('/grade/report/index.php', array('id' => $PAGE->course->id));
                     $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
 
-                    $data = theme_bcu_get_course_activities();
+                    $data = theme_adaptable_get_course_activities();
 
                     foreach ($data as $modname => $modfullname) {
                         if ($modname === 'resources') {
@@ -496,7 +496,7 @@ class theme_bcu_core_renderer extends core_renderer {
 	            }
 			}
 			if ($access && !$this->hideinforum()){
-				$branchtitle = get_string('helptitle', 'theme_bcu');
+				$branchtitle = get_string('helptitle', 'theme_adaptable');
 	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
 	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
 	            $branchsort  = 10003;
@@ -513,7 +513,7 @@ class theme_bcu_core_renderer extends core_renderer {
 	            }
 			}					
 			if ($access && !$this->hideinforum()){			
-	            $branchtitle = get_string('helptitle2', 'theme_bcu');
+	            $branchtitle = get_string('helptitle2', 'theme_adaptable');
 	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
 	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2);
 	            $branchsort  = 10003;
@@ -539,7 +539,7 @@ class theme_bcu_core_renderer extends core_renderer {
 			
         if (!empty($PAGE->theme->settings->toolsmenu) && $access == true && !$this->hideinforum()) {        	
         	$menu = ($PAGE->theme->settings->toolsmenu);
-			$label = get_string('toolsmenulabel', 'theme_bcu');
+			$label = get_string('toolsmenulabel', 'theme_adaptable');
 			$custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');            
         }
          
@@ -563,7 +563,7 @@ class theme_bcu_core_renderer extends core_renderer {
 			
         if (!empty($PAGE->theme->settings->toolsmenu2) && $access == true && !$this->hideinforum()) {        	
         	$menu = ($PAGE->theme->settings->toolsmenu2);
-			$label = get_string('toolsmenulabel2', 'theme_bcu');
+			$label = get_string('toolsmenulabel2', 'theme_adaptable');
 			$custommenuitems = $this->parse_custom_menu($menu, $label, $class,'</span>');            
         }
          
@@ -608,7 +608,7 @@ class theme_bcu_core_renderer extends core_renderer {
 							
 				        if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
 				        	$menu = ($PAGE->theme->settings->$newmenu);
-							$label = get_string($newmenulabel, 'theme_bcu');
+							$label = get_string($newmenulabel, 'theme_adaptable');
 							$custommenuitems = $this->parse_custom_menu($menu, $label);            
 				        }
 				         
@@ -629,8 +629,8 @@ class theme_bcu_core_renderer extends core_renderer {
 			return true;
 		}
 		
-		if (isset($USER->theme_bcu_menus['menuvisibility'])){
-			$uservalue = $USER->theme_bcu_menus['menuvisibility'];
+		if (isset($USER->theme_adaptable_menus['menuvisibility'])){
+			$uservalue = $USER->theme_adaptable_menus['menuvisibility'];
 		} 
 		else {
 			$profilefield = $PAGE->theme->settings->menuoverrideprofilefield;
@@ -661,7 +661,7 @@ class theme_bcu_core_renderer extends core_renderer {
 		profile_load_data($USER);
 		
 		$uservisibility = $USER->$profilefield;
-		$USER->theme_bcu_menus['menuvisibility'] = $uservisibility;
+		$USER->theme_adaptable_menus['menuvisibility'] = $uservisibility;
 		return $uservisibility;
 	}
     
@@ -672,13 +672,13 @@ class theme_bcu_core_renderer extends core_renderer {
 		$menuttl = $menu . 'ttl';			
 		
 		if ($PAGE->theme->settings->menusession){			
-			if (isset($USER->theme_bcu_menus[$menu])){				
+			if (isset($USER->theme_adaptable_menus[$menu])){				
 				
-				if ($USER->theme_bcu_menus[$menuttl] >= time()){										
-					if ($USER->theme_bcu_menus[$menu] == true){					
+				if ($USER->theme_adaptable_menus[$menuttl] >= time()){										
+					if ($USER->theme_adaptable_menus[$menu] == true){					
 						return true;
 					}
-					else if ($USER->theme_bcu_menus[$menu] == false){
+					else if ($USER->theme_adaptable_menus[$menu] == false){
 						return false;
 					}
 				}
@@ -694,13 +694,13 @@ class theme_bcu_core_renderer extends core_renderer {
 			$usersvalue = $USER->$ftype;									
 		}			
 		if ($usersvalue == $setvalue){						
-			$USER->theme_bcu_menus[$menu] = true;
-			$USER->theme_bcu_menus[$menuttl] = $sessttl;				
+			$USER->theme_adaptable_menus[$menu] = true;
+			$USER->theme_adaptable_menus[$menuttl] = $sessttl;				
 			return true;
 		}			
 			
-		$USER->theme_bcu_menus[$menu] = false;
-		$USER->theme_bcu_menus[$menuttl] = $sessttl;
+		$USER->theme_adaptable_menus[$menu] = false;
+		$USER->theme_adaptable_menus[$menuttl] = $sessttl;
 		return false;				
 	}
 	
@@ -903,7 +903,7 @@ class theme_bcu_core_renderer extends core_renderer {
         return '';
     }
 
-    public function bcublocks($region, $classes = array(), $tag = 'aside') {
+    public function adaptableblocks($region, $classes = array(), $tag = 'aside') {
         $classes = (array)$classes;
         $classes[] = 'block-region';
         $attributes = array(
@@ -916,10 +916,10 @@ class theme_bcu_core_renderer extends core_renderer {
     }
 }
 
-class theme_bcu_core_course_renderer extends core_course_renderer {
+class theme_adaptable_core_course_renderer extends core_course_renderer {
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG, $OUTPUT, $PAGE;
-        $type = theme_bcu_get_setting('frontpagerenderer');
+        $type = theme_adaptable_get_setting('frontpagerenderer');
         if ($type == 3 || $OUTPUT->body_id() != 'page-site-index') {
             return parent::coursecat_coursebox($chelper, $course, $additionalclasses = '');
         }
@@ -1097,9 +1097,9 @@ class theme_bcu_core_course_renderer extends core_course_renderer {
             $truncsum = mb_strimwidth($summs, 0, 70, "...");
             $content .= html_writer::tag('span', $truncsum, array('title' => $summs));
         }
-        $coursecontacts = theme_bcu_get_setting('tilesshowcontacts');
+        $coursecontacts = theme_adaptable_get_setting('tilesshowcontacts');
         if ($coursecontacts) {
-            $coursecontacttitle = theme_bcu_get_setting('tilescontactstitle');
+            $coursecontacttitle = theme_adaptable_get_setting('tilescontactstitle');
             // Display course contacts. See course_in_list::get_course_contacts().
             if ($course->has_course_contacts()) {
                 $content .= html_writer::start_tag('ul', array('class' => 'teachers'));

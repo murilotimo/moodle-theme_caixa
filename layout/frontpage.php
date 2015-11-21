@@ -18,7 +18,7 @@
  * Version details
  *
  * @package    theme
- * @subpackage bcu
+ * @subpackage adaptable
  * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -26,7 +26,7 @@
 
 require_once(dirname(__FILE__) . '/includes/header.php');
 
-$left = theme_bcu_get_block_side();
+$left = theme_adaptable_get_block_side();
 
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $haslogo = (!empty($PAGE->theme->settings->logo));
@@ -478,7 +478,7 @@ if (is_siteadmin()) {
 ?>
       <div class="hidden-blocks">
         <div class="row-fluid">
-          <h4><?php echo get_string('frnt-footer', 'theme_bcu') ?></h4>
+          <h4><?php echo get_string('frnt-footer', 'theme_adaptable') ?></h4>
           <?php
             echo $OUTPUT->blocks('frnt-footer');
           ?>

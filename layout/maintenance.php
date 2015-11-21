@@ -18,14 +18,14 @@
  * Version details
  *
  * @package    theme
- * @subpackage bcu
+ * @subpackage adaptable
  * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
 
 // Get the HTML for the settings bits.
-$html = theme_bcu_get_html_for_settings($OUTPUT, $PAGE);
+$html = theme_adaptable_get_html_for_settings($OUTPUT, $PAGE);
 
 echo $OUTPUT->doctype();
 ?>

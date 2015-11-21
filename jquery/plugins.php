@@ -18,7 +18,7 @@
  * This is built using the bootstrapbase template to allow for new theme's using
  * Moodle's new Bootstrap theme engine
  *
- * @package     theme_essential
+ * @package     theme_adaptable
  * @copyright   2013 Julian Ridden
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -48,6 +48,6 @@ $plugins = array(
     'easing' => array('files' => array('jquery-easing-min.js')),
     'ticker' => array('files' => array('tickerme.js')),
     'dropdown' => array('files' => array('dropdown.js')),
-    'bcu' => array('files' => array('custom.js')),
+    'adaptable' => array('files' => array('adaptable.js')),
     'pace' => array('files' => array('pace-min.js'))
 );

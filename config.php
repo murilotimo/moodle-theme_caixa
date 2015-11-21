@@ -18,16 +18,16 @@
  * Version details
  *
  * @package    theme
- * @subpackage bcu
+ * @subpackage adaptable
  * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
 
-$THEME->name = 'bcu';
+$THEME->name = 'adaptable';
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('custom', 'blocks', 'menu', 'course', 'slider', 'extras', 'zoom', 'button');
+$THEME->sheets = array('adaptable', 'blocks', 'menu', 'course', 'slider', 'extras', 'zoom', 'button', 'custom');
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
 
@@ -156,7 +156,7 @@ $THEME->layouts = array(
     ),
 );
 
-$THEME->csspostprocess = 'theme_bcu_process_css';
+$THEME->csspostprocess = 'theme_adaptable_process_css';
 $THEME->blockrtlmanipulations = array(
     'side-pre' => 'side-post',
     'side-post' => 'side-pre'
