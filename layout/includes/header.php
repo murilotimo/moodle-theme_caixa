@@ -378,7 +378,7 @@ echo $OUTPUT->get_top_menus();
 ?>
             <div id="titlecontainer">
                 <a href="<?php p($CFG->wwwroot) ?>">
-                    <?php echo $SITE->fullname; ?>
+                    <?php echo $PAGE->theme->settings->sitetitletext; ?>
                 </a>
             </div>
         <?php

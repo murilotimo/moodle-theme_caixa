@@ -1544,13 +1544,23 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_adaptable_header', get_string('headersettingsheading', 'theme_adaptable'),
     format_text(get_string('headerdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
+    // Enable Site title.
     $name = 'theme_adaptable/sitetitle';
     $title = get_string('sitetitle', 'theme_adaptable');
     $description = get_string('sitetitledesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    // Site title.
+    $name = 'theme_adaptable/sitetitletext';
+    $title = get_string('sitetitletext', 'theme_adaptable');
+    $description = get_string('sitetitletextdesc', 'theme_adaptable');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
 
+    // Logo.
     $name = 'theme_adaptable/logo';
     $title = get_string('logo', 'theme_adaptable');
     $description = get_string('logodesc', 'theme_adaptable');

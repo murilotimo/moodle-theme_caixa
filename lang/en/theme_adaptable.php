@@ -511,8 +511,11 @@ $string['loadtime'] = 'Page loaded in';
 $string['loadingcolor'] = 'Loading Colour';
 $string['loadingcolordesc'] = 'Loading Colour';
 
-$string['sitetitle'] = 'Site title';
+$string['sitetitle'] = 'Display site title';
 $string['sitetitledesc'] = 'Show / Hide site title';
+
+$string['sitetitletext'] = 'Site title';
+$string['sitetitletextdesc'] = 'Site title displayed in the header';
 
 $string['frontpagelogin'] = 'Front Page Login';
 $string['frontpagelogindesc'] = 'Enable login form in header (will show button if turned off)';
