@@ -407,107 +407,8 @@ switch($enableheadingtitle) {
     </div>
 
 <?php
-if (!empty($PAGE->theme->settings->socialset)) { ?>
-		<div class="socialbox pull-right">
-<?php
-    if (isset($PAGE->theme->settings->socialsearchicon)) { ?>
-    <a alt="<?php echo get_string('socialsearchicon', 'theme_adaptable') ?>" title="<?php echo get_string('socialsearchicon', 'theme_adaptable') ?>" href="<?php echo $CFG->wwwroot . '/course/search.php ' ?>">
-        <i class="fa fa-search"></i>
-    </a>
-<?php
-    }
-?>
-<?php
-    if (!empty($PAGE->theme->settings->social1)) { ?>
-    <a alt="<?php echo get_string('social1', 'theme_adaptable') ?>" title="<?php echo get_string('social1', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social1 ?>">
-	<i class="fa <?php echo $PAGE->theme->settings->social1icon ?>"></i>
-	</a>
-<?php
-    }
-?>
-<?php
-    if (!empty($PAGE->theme->settings->social2)) { ?>
-    <a alt="<?php echo get_string('social2', 'theme_adaptable') ?>" title="<?php echo get_string('social2', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social2 ?>">
-        <i class="fa <?php echo $PAGE->theme->settings->social2icon ?>"></i>
-    </a>
-<?php
-    }
-?>
-<?php
-    if (!empty($PAGE->theme->settings->social3)) { ?>
-    <a alt="<?php echo get_string('social3', 'theme_adaptable') ?>" title="<?php echo get_string('social3', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social3 ?>">
-        <i class="fa <?php echo $PAGE->theme->settings->social3icon ?>"></i>
-    </a>
-<?php
-    }
-?>
-<?php
-    if (!empty($PAGE->theme->settings->social4)) { ?>
-    <a alt="<?php echo get_string('social4', 'theme_adaptable') ?>" title="<?php echo get_string('social4', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social4 ?>">
-    <i class="fa <?php echo $PAGE->theme->settings->social4icon ?>"></i>
-    </a>
-<?php
-    }
-?>
-<?php
-    if (!empty($PAGE->theme->settings->social5)) { ?>
-    <a alt="<?php echo get_string('social5', 'theme_adaptable') ?>" title="<?php echo get_string('social5', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social5 ?>">
-        <i class="fa <?php echo $PAGE->theme->settings->social5icon ?>"></i>
-    </a>
-<?php
-    }
-?>
-<?php
-    if (!empty($PAGE->theme->settings->social6)) { ?>
-    <a alt="<?php echo get_string('social6', 'theme_adaptable') ?>" title="<?php echo get_string('social6', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social6 ?>">
-        <i class="fa <?php echo $PAGE->theme->settings->social6icon ?>"></i>
-    </a>
-<?php
-    }
-?>
-<?php
-    if (!empty($PAGE->theme->settings->social7)) { ?>
-    <a alt="<?php echo get_string('social7', 'theme_adaptable') ?>" title="<?php echo get_string('social7', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social7 ?>">
-        <i class="fa <?php echo $PAGE->theme->settings->social7icon ?>"></i>
-    </a>
-<?php
-    }
-?>
-<?php
-    if (!empty($PAGE->theme->settings->social8)) { ?>
-    <a alt="<?php echo get_string('social8', 'theme_adaptable') ?>" title="<?php echo get_string('social8', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social8 ?>">
-        <i class="fa <?php echo $PAGE->theme->settings->social8icon ?>"></i>
-    </a>
-<?php
-    }
-?>
-		
-<?php
-    if (!empty($PAGE->theme->settings->social9)) { ?>
-    <a alt="<?php echo get_string('social9', 'theme_adaptable') ?>" title="<?php echo get_string('social9', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social9 ?>">
-        <i class="fa <?php echo $PAGE->theme->settings->social9icon ?>"></i>
-    </a>
-<?php
-    }
-?>
-<?php
-    if (!empty($PAGE->theme->settings->social10)) { ?>
-    <a alt="<?php echo get_string('social10', 'theme_adaptable') ?>" title="<?php echo get_string('social10', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social10 ?>">
-        <i class="fa <?php echo $PAGE->theme->settings->social10icon ?>"></i>
-    </a>
-<?php
-    }
-?>
-<?php
-    if (!empty($PAGE->theme->settings->social11)) { ?>
-    <a alt="<?php echo get_string('social11', 'theme_adaptable') ?>" title="<?php echo get_string('social11', 'theme_adaptable') ?>" href="<?php echo $PAGE->theme->settings->social11 ?>">
-        <i class="fa <?php echo $PAGE->theme->settings->social11icon ?>"></i>
-    </a>
-<?php
-    }
-?>
-	</div>
-<?php
+if (!empty($PAGE->theme->settings->socialset)) {		
+    echo $OUTPUT->socialicons();
 }
 ?>
 
@@ -613,24 +514,5 @@ if (isloggedin()) {
 
 
 <?php
-if (!empty($PAGE->theme->settings->enableticker)) { ?>
-    <div id="ticker-wrap" class="clearfix container">
-        <div class="pull-left" id="ticker-announce">
-            <?php echo get_string('ticker', 'theme_adaptable'); ?>
-    </div>
-    <ul id="ticker">
-<?php
-    if (empty($PAGE->theme->settings->tickertext)) { ?>
-        <li>Set the ticker text from the settings page!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae.</li>
-        <li>A short Headline is here</li>
-        <li>A long headline is not here either. <a href="#">A link is here!</a></li>
-<?php
-    } else {
-        echo $PAGE->theme->settings->tickertext;
-} ?>
-
-</ul>
-</div>
-<?php 
-}
+	echo $OUTPUT->get_news_ticker();
+?>

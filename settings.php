@@ -1674,16 +1674,10 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/helpprofilefield';
     $title = get_string('helpprofilefield', 'theme_adaptable');
-    $description = '';
+    $description = get_string('helpprofilefielddesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-
-    $name = 'theme_adaptable/helpprofilevalue';
-    $title = get_string('helpprofilevalue', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
+    
     $name = 'theme_adaptable/enablehelp2';
     $title = get_string('enablehelp', 'theme_adaptable');
     $description = get_string('enablehelpdesc', 'theme_adaptable');
@@ -1692,13 +1686,7 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/helpprofilefield2';
     $title = get_string('helpprofilefield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/helpprofilevalue2';
-    $title = get_string('helpprofilevalue', 'theme_adaptable');
-    $description = '';
+    $description = get_string('helpprofilefielddesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
@@ -2130,13 +2118,7 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/toolsmenu1field';
     $title = get_string('newmenufield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/toolsmenu1value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
-    $description = '';
+    $description = get_string('newmenufielddesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
@@ -2151,13 +2133,7 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/toolsmenu2field';
     $title = get_string('newmenufield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/toolsmenu2value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
-    $description = '';
+    $description = get_string('newmenufielddesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
@@ -2216,13 +2192,7 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/newmenu1field';
     $title = get_string('newmenufield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/newmenu1value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
-    $description = '';
+    $description = get_string('newmenufielddesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
@@ -2245,12 +2215,6 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/newmenu2field';
     $title = get_string('newmenufield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/newmenu2value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
@@ -2278,12 +2242,6 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_adaptable/newmenu3value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
     $temp->add(new admin_setting_heading('theme_adaptable_menus4', get_string('menusheading4', 'theme_adaptable'),
     format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
@@ -2303,12 +2261,6 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/newmenu4field';
     $title = get_string('newmenufield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/newmenu4value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
@@ -2336,12 +2288,6 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_adaptable/newmenu5value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
     $temp->add(new admin_setting_heading('theme_adaptable_menus6', get_string('menusheading6', 'theme_adaptable'),
     format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
@@ -2361,12 +2307,6 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/newmenu6field';
     $title = get_string('newmenufield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/newmenu6value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
@@ -2394,12 +2334,6 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_adaptable/newmenu7value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
     $temp->add(new admin_setting_heading('theme_adaptable_menus8', get_string('menusheading8', 'theme_adaptable'),
     format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
@@ -2419,12 +2353,6 @@ if (is_siteadmin()) {
 	
     $name = 'theme_adaptable/newmenu8field';
     $title = get_string('newmenufield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/newmenu8value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
@@ -2452,12 +2380,6 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_adaptable/newmenu9value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
     $temp->add(new admin_setting_heading('theme_adaptable_menus10', get_string('menusheading10', 'theme_adaptable'),
     format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
@@ -2477,12 +2399,6 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/newmenu10field';
     $title = get_string('newmenufield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/newmenu10value';
-    $title = get_string('newmenuvalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
@@ -2892,8 +2808,27 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+	
+	$name = 'theme_adaptable/enabletickermy';
+    $title = get_string('enabletickermy', 'theme_adaptable');
+    $description = get_string('enabletickermydesc', 'theme_adaptable');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/disablebreadcrumbmy';
+    $title = get_string('disablebreadcrumbmy', 'theme_adaptable');
+    $description = get_string('disablebreadcrumbmydesc', 'theme_adaptable');
+    $default = ' inline;';
+    $choices = array(
+        ' inline;' => get_string('disablebreadcrumbmyfalse', 'theme_adaptable'),
+        ' none;' => get_string('disablebreadcrumbmytrue', 'theme_adaptable'));		
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
-       $name = 'theme_adaptable/tickertext';
+    $name = 'theme_adaptable/tickertext';
     $title = get_string('tickertext', 'theme_adaptable');
     $description = get_string('tickertextdesc', 'theme_adaptable');
     $default = '';

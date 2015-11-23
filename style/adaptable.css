@@ -543,6 +543,10 @@ span.fa-chevron-right.fa {
 	margin: 10px 0px;
 }
 
+#page-my-index #page-navbar{
+	display: [[setting:disablebreadcrumbmy]];
+}
+
 .navbar .nav {
 /*    margin: 0 10px 0 20px !important;*/
 

@@ -64,6 +64,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:buttonradius]]' => '2px',        
         '[[setting:dividingline]]' => '#3C469C',
         '[[setting:dividingline2]]' => '#3C469C',
+        '[[setting:disablebreadcrumbmy]]' => ' inline',
         '[[setting:navbarborder]]' => '#B7B3EF',
         '[[setting:navbarhover]]' => '#3C469C',
         '[[setting:breadcrumb]]' => '#b4bbbf',

@@ -350,11 +350,57 @@ class theme_adaptable_core_renderer extends core_renderer {
         return "<div class=\"$type\">$message</div>";
     }
 
+    public function socialicons(){
+    	global $CFG, $PAGE;
+		
+    	$retval = '<div class="socialbox pull-right">';	
+			
+		if (isset($PAGE->theme->settings->socialsearchicon)) { 
+            $val = '<a alt="' . get_string('socialsearchicon', 'theme_adaptable') . '" title="' . get_string('socialsearchicon', 'theme_adaptable'); 
+            $val .= '" href="' . $CFG->wwwroot . '/course/search.php' . '">';
+            $val .= '<i class="fa fa-search"></i></a>';
+			$retval .= $val;
+		}
+		
+    	for ($i = 1; $i<12; $i++){    		
+    		$socialno = 'social' . $i;
+			$socialicon = 'social' . $i . 'icon';
+						
+			if (!empty($PAGE->theme->settings->$socialno)){						
+				$val = '<a alt="' . get_string($socialno, 'theme_adaptable');
+				$val .= '" title="' . get_string($socialno, 'theme_adaptable');
+				$val .= '" href="' . $PAGE->theme->settings->$socialno . '">';
+				$val .= '<i class="fa ' . $PAGE->theme->settings->$socialicon . '"></i>';
+				$val .= '</a>';				 
+				$retval .= $val; 
+			}
+    	}
+		$retval .= '</div>';
+		return $retval; 
+    }
+
+	public function get_news_ticker(){
+		global $PAGE;
+		$retval = '';
+		
+		if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index") || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")){			
+			$retval .= '<div id="ticker-wrap" class="clearfix container">';
+        	$retval .= '<div class="pull-left" id="ticker-announce">';
+            $retval.= get_string('ticker', 'theme_adaptable');
+			$retval .= '</div>';
+			$retval .= '<ul id="ticker">';
+			$retval .= $PAGE->theme->settings->tickertext;			
+			$retval .= '</ul>';
+			$retval .= '</div>';
+		}
+		return $retval;
+	}
+
     /*
      * This renders the navbar.
      * Uses bootstrap compatible html.
      */
-    public function navbar() {
+    public function navbar() {    	
         $items = $this->page->navbar->get_items();
         $breadcrumbs = array();
         foreach ($items as $item) {
@@ -487,10 +533,12 @@ class theme_adaptable_core_renderer extends core_renderer {
         }
 
         if (!empty($PAGE->theme->settings->enablehelp)) {
-        	$access = true;        	
-			$ftype = $PAGE->theme->settings->helpprofilefield;			
-			$setvalue = $PAGE->theme->settings->helpprofilevalue;		
-			if (!empty($PAGE->theme->settings->helpprofilefield) && !empty($PAGE->theme->settings->helpprofilevalue)){	
+        	$access = true;
+					
+			if (!empty($PAGE->theme->settings->helpprofilefield)){
+				$fields = explode('=', $PAGE->theme->settings->helpprofilefield);        	
+				$ftype = $fields[0];			
+				$setvalue = $fields[1];	
 				if (!$this->check_menu_access($ftype, $setvalue, 'help1')){			
 		        	$access = false;
 	            }
@@ -504,10 +552,11 @@ class theme_adaptable_core_renderer extends core_renderer {
 			}
         }
 		if (!empty($PAGE->theme->settings->enablehelp2 )) {
-			$access = true;           	
-			$ftype = $PAGE->theme->settings->helpprofilefield2;			
-			$setvalue = $PAGE->theme->settings->helpprofilevalue2;				
-			if (!empty($PAGE->theme->settings->helpprofilefield2) && !empty($PAGE->theme->settings->helpprofilevalue2)){	
+			$access = true;          	
+			if (!empty($PAGE->theme->settings->helpprofilefield2)){
+				$fields = explode('=', $PAGE->theme->settings->helpprofilefield2);        	
+				$ftype = $fields[0];			
+				$setvalue = $fields[1];		
 				if (!$this->check_menu_access($ftype, $setvalue, 'help2')){			
 		        	$access = false;
 	            }
@@ -527,13 +576,14 @@ class theme_adaptable_core_renderer extends core_renderer {
     	global $PAGE;
 		$class = "<i class='fa fa-wrench'></i><span class='menutitle'>";		
     	$custommenuitems = '';
-		$access = true;	
+		$access = true;		
 		
-		if (!empty($PAGE->theme->settings->toolsmenu1field) && !empty($PAGE->theme->settings->toolsmenu1value)){			
-			$ftype = $PAGE->theme->settings->toolsmenu1field;
-			$setvalue = $PAGE->theme->settings->toolsmenu1value;
+		if (!empty($PAGE->theme->settings->toolsmenu1field)){			
+			$fields = explode ('=', $PAGE->theme->settings->toolsmenu1field);						
+			$ftype = $fields[0];
+			$setvalue = $fields[1];
 			if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu1')){
-				$access = false;
+				$access = false;			
 			}
 		}
 			
@@ -553,9 +603,10 @@ class theme_adaptable_core_renderer extends core_renderer {
     	$custommenuitems = '';
 		$access = true;	
 		
-		if (!empty($PAGE->theme->settings->toolsmenu2field) && !empty($PAGE->theme->settings->toolsmenu2value)){			
-			$ftype = $PAGE->theme->settings->toolsmenu2field;
-			$setvalue = $PAGE->theme->settings->toolsmenu2value;
+		if (!empty($PAGE->theme->settings->toolsmenu2field)){
+			$fields = explode ('=', $PAGE->theme->settings->toolsmenu2field);						
+			$ftype = $fields[0];
+			$setvalue = $fields[1];			
 			if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu2')){
 				$access = false;
 			}
@@ -598,9 +649,10 @@ class theme_adaptable_core_renderer extends core_renderer {
 					$post = '</div>';
 					
 					if (empty($PAGE->theme->settings->$requirelogin) || isloggedin()){	
-						if (!empty($PAGE->theme->settings->$fieldsetting) && !empty($PAGE->theme->settings->$valuesetting)){
-							$ftype = $PAGE->theme->settings->$fieldsetting;
-							$setvalue = $PAGE->theme->settings->$valuesetting;
+						if (!empty($PAGE->theme->settings->$fieldsetting)){
+							$fields = explode ('=', $PAGE->theme->settings->$fieldsetting);
+							$ftype = $fields[0];
+							$setvalue = $fields[1];
 							if (!$this->check_menu_access($ftype, $setvalue, $menunumber)){
 								$access = false;
 							}
@@ -609,11 +661,10 @@ class theme_adaptable_core_renderer extends core_renderer {
 				        if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
 				        	$menu = ($PAGE->theme->settings->$newmenu);
 							$label = get_string($newmenulabel, 'theme_adaptable');
-							$custommenuitems = $this->parse_custom_menu($menu, $label);            
-				        }
-				         
-				        $custommenu = new custom_menu($custommenuitems);
-				        $retval .= $this->render_custom_menu($custommenu, $pre, $post);
+							$custommenuitems = $this->parse_custom_menu($menu, $label);
+							$custommenu = new custom_menu($custommenuitems);
+				        	$retval .= $this->render_custom_menu($custommenu, $pre, $post);            
+				        }				        
 					}			
 				}			
 			}			
@@ -691,8 +742,9 @@ class theme_adaptable_core_renderer extends core_renderer {
 		profile_load_data($USER);		
 		$ftype ="profile_field_$ftype";						
 		if (isset($USER->$ftype)){						
-			$usersvalue = $USER->$ftype;									
+			$usersvalue = $USER->$ftype;											
 		}			
+		
 		if ($usersvalue == $setvalue){						
 			$USER->theme_adaptable_menus[$menu] = true;
 			$USER->theme_adaptable_menus[$menuttl] = $sessttl;				

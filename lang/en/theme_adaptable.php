@@ -72,7 +72,7 @@ $string['helptitle'] = 'Help';
 $string['helptitle2'] = 'Second Help link';
 
 $string['helpprofilefield'] = 'Help custom profile field (optional)';
-$string['helpprofilevalue'] = 'Expected custom profile field value (optional)';
+$string['helpprofilefielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
 
 $string['p1cap'] = 'Picture1 caption';
 $string['p1capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
@@ -676,6 +676,15 @@ $string['frnt-footer'] = 'Blocks in this area will only be visible to admin user
 $string['enableticker'] = 'Enable the news ticker on the homepage?';
 $string['enabletickerdesc'] = 'Check to enable the homepage ticker.';
 
+$string['enabletickermy'] = 'Enable the news ticker on the My Home / Dashboard page?';
+$string['enabletickermydesc'] = 'Check to enable the ticker on My Home / Dashboard.';
+
+$string['disablebreadcrumbmy'] = 'Disable breadcrumb on My Home / Dashboard';
+$string['disablebreadcrumbmydesc'] = 'When using the news ticker on My Home / Dashboard you may want to disable breadcrumbs.';
+
+$string['disablebreadcrumbmytrue'] = 'Disable Breadcrumb on My Home / Dashboard';
+$string['disablebreadcrumbmyfalse'] = 'Enable Breadcrumb on My Home / Dashboard';
+
 $string['enabletickerc'] = 'Enable the news ticker on internal pages?';
 $string['enabletickercdesc'] = 'Check to enable the ticker on internal pages.';
 
@@ -730,8 +739,8 @@ $string['topmenusheadingdesc'] = 'You can configure links to be shown in drop do
 
 // Generic strings for all five menus.
 $string['newmenudesc'] = 'Configure links to be shown under a top header menu.';
-$string['newmenufield'] = 'Custom Profile Field Name (optional)';
-$string['newmenuvalue'] = '= Custom Profile Field Value (optional)';
+$string['newmenufield'] = 'Custom Profile Field Name=Value (optional)';
+$string['newmenufielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
 $string['newmenurequirelogin'] = 'Require login';
 $string['newmenurequirelogindesc'] = 'If enabled this menu will only be visible to logged in users';
 
