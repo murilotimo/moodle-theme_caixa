@@ -676,6 +676,15 @@ $string['frnt-footer'] = 'Blocks in this area will only be visible to admin user
 $string['enableticker'] = 'Enable the news ticker on the homepage?';
 $string['enabletickerdesc'] = 'Check to enable the homepage ticker.';
 
+$string['enabletickermy'] = 'Enable the news ticker on the My Home / Dashboard page?';
+$string['enabletickermydesc'] = 'Check to enable the ticker on My Home / Dashboard.';
+
+$string['disablebreadcrumbmy'] = 'Disable breadcrumb on My Home / Dashboard';
+$string['disablebreadcrumbmydesc'] = 'When using the news ticker on My Home / Dashboard you may want to disable breadcrumbs.';
+
+$string['disablebreadcrumbmytrue'] = 'Disable Breadcrumb on My Home / Dashboard';
+$string['disablebreadcrumbmyfalse'] = 'Enable Breadcrumb on My Home / Dashboard';
+
 $string['enabletickerc'] = 'Enable the news ticker on internal pages?';
 $string['enabletickercdesc'] = 'Check to enable the ticker on internal pages.';
 

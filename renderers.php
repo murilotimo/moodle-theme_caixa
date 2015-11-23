@@ -379,11 +379,28 @@ class theme_adaptable_core_renderer extends core_renderer {
 		return $retval; 
     }
 
+	public function get_news_ticker(){
+		global $PAGE;
+		$retval = '';
+		
+		if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index") || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")){			
+			$retval .= '<div id="ticker-wrap" class="clearfix container">';
+        	$retval .= '<div class="pull-left" id="ticker-announce">';
+            $retval.= get_string('ticker', 'theme_adaptable');
+			$retval .= '</div>';
+			$retval .= '<ul id="ticker">';
+			$retval .= $PAGE->theme->settings->tickertext;			
+			$retval .= '</ul>';
+			$retval .= '</div>';
+		}
+		return $retval;
+	}
+
     /*
      * This renders the navbar.
      * Uses bootstrap compatible html.
      */
-    public function navbar() {
+    public function navbar() {    	
         $items = $this->page->navbar->get_items();
         $breadcrumbs = array();
         foreach ($items as $item) {

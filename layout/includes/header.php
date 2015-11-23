@@ -514,24 +514,5 @@ if (isloggedin()) {
 
 
 <?php
-if (!empty($PAGE->theme->settings->enableticker)) { ?>
-    <div id="ticker-wrap" class="clearfix container">
-        <div class="pull-left" id="ticker-announce">
-            <?php echo get_string('ticker', 'theme_adaptable'); ?>
-    </div>
-    <ul id="ticker">
-<?php
-    if (empty($PAGE->theme->settings->tickertext)) { ?>
-        <li>Set the ticker text from the settings page!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, molestiae.</li>
-        <li>A short Headline is here</li>
-        <li>A long headline is not here either. <a href="#">A link is here!</a></li>
-<?php
-    } else {
-        echo $PAGE->theme->settings->tickertext;
-} ?>
-
-</ul>
-</div>
-<?php 
-}
+	echo $OUTPUT->get_news_ticker();
+?>
