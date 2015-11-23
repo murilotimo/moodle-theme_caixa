@@ -350,6 +350,35 @@ class theme_adaptable_core_renderer extends core_renderer {
         return "<div class=\"$type\">$message</div>";
     }
 
+    public function socialicons(){
+    	global $CFG, $PAGE;
+		
+    	$retval = '<div class="socialbox pull-right">';	
+			
+		if (isset($PAGE->theme->settings->socialsearchicon)) { 
+            $val = '<a alt="' . get_string('socialsearchicon', 'theme_adaptable') . '" title="' . get_string('socialsearchicon', 'theme_adaptable'); 
+            $val .= '" href="' . $CFG->wwwroot . '/course/search.php' . '">';
+            $val .= '<i class="fa fa-search"></i></a>';
+			$retval .= $val;
+		}
+		
+    	for ($i = 1; $i<12; $i++){    		
+    		$socialno = 'social' . $i;
+			$socialicon = 'social' . $i . 'icon';
+						
+			if (!empty($PAGE->theme->settings->$socialno)){						
+				$val = '<a alt="' . get_string($socialno, 'theme_adaptable');
+				$val .= '" title="' . get_string($socialno, 'theme_adaptable');
+				$val .= '" href="' . $PAGE->theme->settings->$socialno . '">';
+				$val .= '<i class="fa ' . $PAGE->theme->settings->$socialicon . '"></i>';
+				$val .= '</a>';				 
+				$retval .= $val; 
+			}
+    	}
+		$retval .= '</div>';
+		return $retval; 
+    }
+
     /*
      * This renders the navbar.
      * Uses bootstrap compatible html.
