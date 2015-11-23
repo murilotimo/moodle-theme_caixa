@@ -2817,17 +2817,6 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
-	$name = 'theme_adaptable/disablebreadcrumbmy';
-    $title = get_string('disablebreadcrumbmy', 'theme_adaptable');
-    $description = get_string('disablebreadcrumbmydesc', 'theme_adaptable');
-    $default = ' inline;';
-    $choices = array(
-        ' inline;' => get_string('disablebreadcrumbmyfalse', 'theme_adaptable'),
-        ' none;' => get_string('disablebreadcrumbmytrue', 'theme_adaptable'));		
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     $name = 'theme_adaptable/tickertext';
     $title = get_string('tickertext', 'theme_adaptable');
     $description = get_string('tickertextdesc', 'theme_adaptable');

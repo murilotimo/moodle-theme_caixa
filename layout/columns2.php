@@ -29,10 +29,8 @@ $left = theme_adaptable_get_block_side();
 ?>
 
 <div class="container outercont">
-    <div id="page-content" class="row-fluid">
-    <div id="page-navbar" class="span12">
-        <?php echo $OUTPUT->navbar(); ?>
-    </div>
+    <div id="page-content" class="row-fluid">    
+        <?php echo $OUTPUT->page_navbar(false); ?>    
 <?php
 if ($left == 1) {
             echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
