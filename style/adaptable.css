@@ -153,13 +153,15 @@ a:focus {
 
 #titlecontainer {
     padding-top: 10px;
+    
 }
 
-#titlecontainer a {
+#titlecontainer a,
+#titlecontainer a p {
     font-family: [[setting:fonttitlename]], sans-serif !important;
-	font-size: [[setting:fonttitlesize]];
-	font-weight: [[setting:fonttitleweight]];
-	color: [[setting:fonttitlecolor]];
+	font-size: [[setting:fonttitlesize]] !important;
+	font-weight: [[setting:fonttitleweight]] !important;
+	color: [[setting:fonttitlecolor]] !important;
     padding-top: 10px;
 }
 
