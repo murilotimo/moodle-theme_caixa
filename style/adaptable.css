@@ -1220,6 +1220,7 @@ div.no-overflow, .yui3-datatable {
 
 .search-box {
 	float: right;
+	margin-bottom: 5px;
 }
 
 
