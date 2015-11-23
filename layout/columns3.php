@@ -60,11 +60,8 @@ $left = theme_adaptable_get_block_side();
 
     <div id="page-content" class="row-fluid">    
         <div id="<?php echo $regionbsid ?>" class="span9">
-            <div class="row-fluid">
-                <div id="page-navbar" class="span12">
-                    <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-                    <?php echo $OUTPUT->navbar(); ?>
-                </div>
+            <div class="row-fluid">                
+                    <?php echo $OUTPUT->page_navbar(true); ?>                
 <?php
 if ($left == echo) {
     $OUTPUT->blocks('side-post', 'span3 desktop-first-column');

@@ -544,7 +544,7 @@ span.fa-chevron-right.fa {
 }
 
 #page-my-index #page-navbar{
-	display: [[setting:disablebreadcrumbmy]];
+	display: inline;
 }
 
 .navbar .nav {

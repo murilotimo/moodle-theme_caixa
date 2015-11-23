@@ -400,6 +400,26 @@ class theme_adaptable_core_renderer extends core_renderer {
      * This renders the navbar.
      * Uses bootstrap compatible html.
      */
+     
+    public function page_navbar($addbutton = false){
+    	global $PAGE;	
+    	$retval = '';
+		
+		// Do not show navbar on dashboard / my home if news ticker is rendering
+		if (!($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")){
+						
+	    	$retval = '<div id="page-navbar" class="span12">';
+			
+			if ($addbutton){
+				$retval .= '<nav class="breadcrumb-button">' . $this->page_heading_button() . '</nav>';
+			}
+			
+	    	$retval .= $this->navbar();
+			$retval .= '</div>';			
+		}		
+		return $retval;
+    } 
+	
     public function navbar() {    	
         $items = $this->page->navbar->get_items();
         $breadcrumbs = array();

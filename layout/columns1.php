@@ -29,11 +29,8 @@ require_once(dirname(__FILE__) . '/includes/header.php');
 ?>
 
 <div class="container outercont">
-    <div id="page-content" class="row-fluid">
-        <div id="page-navbar" class="span12">
-            <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-            <?php echo $OUTPUT->navbar(); ?>
-        </div>
+    <div id="page-content" class="row-fluid">        
+            <?php echo $OUTPUT->page_navbar(true); ?>        
         <section id="region-main" class="span12">
             <?php
             echo $OUTPUT->course_content_header();
