@@ -761,7 +761,65 @@ $fontlist = array(
 'Yellowtail' => "Yellowtail",
 'Yeseva One' => "Yeseva One",
 'Yesteryear' => "Yesteryear",
-'Zeyada' => "Zeyada");
+'Zeyada' => "Zeyada"
+);
+
+$from0to6 = array(
+        '0px' => "0px",
+        '1px' => "1px",
+        '2px' => "2px",
+        '3px' => "3px",
+        '4px' => "4px",
+        '5px' => "5px",
+        '6px' => "6px",
+);
+
+$from0to8 = array(
+        '0px' => "0px",
+        '1px' => "1px",
+        '2px' => "2px",
+        '3px' => "3px",
+        '4px' => "4px",
+        '5px' => "5px",
+        '6px' => "6px",
+        '7px' => "7px",
+        '8px' => "8px",
+);
+
+$from0to12 = array(
+        '0px' => "0px",
+        '1px' => "1px",
+        '2px' => "2px",
+        '3px' => "3px",
+        '4px' => "4px",
+        '5px' => "5px",
+        '6px' => "6px",
+        '7px' => "7px",
+        '8px' => "8px",
+        '9px' => "9px",
+        '10px' => "10px",
+        '11px' => "11px",
+        '12px' => "12px",
+);
+
+$from10to16 = array(
+        '10px' => "10px",
+        '11px' => "11px",
+        '12px' => "12px",
+        '13px' => "13px",
+        '14px' => "14px",
+        '15px' => "15px",
+        '16px' => "16px",
+);
+
+$from0to20 = array(
+        '0px' => "0px",
+        '5px' => "5px",
+        '10px' => "10px",
+        '15px' => "15px",
+        '20px' => "20px",
+    );
+
 
 if (is_siteadmin()) {
     // adaptable theme settings page.
@@ -1323,21 +1381,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/buttonradius';
     $title = get_string('buttonradius', 'theme_adaptable');
     $description = get_string('buttonradiusdesc', 'theme_adaptable');
-    $radchoices = array(
-        '0px' => "0px",
-        '1px' => "1px",
-        '2px' => "2px",
-        '3px' => "3px",
-        '4px' => "4px",
-        '5px' => "5px",
-        '6px' => "6px",
-        '7px' => "7px",
-        '8px' => "8px",
-        '9px' => "9px",
-        '10px' => "10px",
-        '11px' => "11px",
-        '12px' => "12px",
-    );
+    $radchoices = $from0to6;
     $setting = new admin_setting_configselect($name, $title, $description, '2px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1396,15 +1440,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/editverticalpadding';
     $title = get_string('editverticalpadding', 'theme_adaptable');
     $description = get_string('editverticalpadding', 'theme_adaptable');
-    $radchoices = array(
-        '0px' => "0px",
-        '1px' => "1px",
-        '2px' => "2px",
-        '3px' => "3px",
-        '4px' => "4px",
-        '5px' => "5px",
-        '6px' => "6px",
-    );
+    $radchoices = $from0to6;
     $setting = new admin_setting_configselect($name, $title, $description, '4px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1412,25 +1448,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/edithorizontalpadding';
     $title = get_string('edithorizontalpadding', 'theme_adaptable');
     $description = get_string('edithorizontalpadding', 'theme_adaptable');
-    $radchoices = array(
-        '0px' => "0px",
-        '1px' => "1px",
-        '2px' => "2px",
-        '3px' => "3px",
-        '4px' => "4px",
-        '5px' => "5px",
-        '6px' => "6px",
-        '7px' => "7px",
-        '8px' => "8px",
-        '9px' => "9px",
-        '10px' => "10px",
-        '11px' => "11px",
-        '12px' => "12px",
-        '13px' => "13px",
-        '14px' => "14px",
-        '15px' => "15px",
-        '16px' => "16px",
-    );
+    $radchoices = $from0to6;
     $setting = new admin_setting_configselect($name, $title, $description, '6px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1438,17 +1456,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/edittopmargin';
     $title = get_string('edittopmargin', 'theme_adaptable');
     $description = get_string('edittopmargin', 'theme_adaptable');
-    $radchoices = array(
-        '0px' => "0px",
-        '1px' => "1px",
-        '2px' => "2px",
-        '3px' => "3px",
-        '4px' => "4px",
-        '5px' => "5px",
-        '6px' => "6px",
-        '7px' => "7px",
-        '8px' => "8px",
-    );
+    $radchoices = $from0to8;
     $setting = new admin_setting_configselect($name, $title, $description, '1px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1480,17 +1488,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/buttonloginpadding';
     $title = get_string('buttonloginpadding', 'theme_adaptable');
     $description = get_string('buttonloginpaddingdesc', 'theme_adaptable');
-    $radchoices = array(
-        '0px' => "0px",
-        '1px' => "1px",
-        '2px' => "2px",
-        '3px' => "3px",
-        '4px' => "4px",
-        '5px' => "5px",
-        '6px' => "6px",
-        '7px' => "7px",
-        '8px' => "8px",
-    );
+    $radchoices = $from0to8;
     $setting = new admin_setting_configselect($name, $title, $description, '4px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1517,21 +1515,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/buttonloginmargintop';
     $title = get_string('buttonloginmargintop', 'theme_adaptable');
     $description = get_string('buttonloginmargintopdesc', 'theme_adaptable');
-    $radchoices = array(
-        '0px' => "0px",
-        '1px' => "1px",
-        '2px' => "2px",
-        '3px' => "3px",
-        '4px' => "4px",
-        '5px' => "5px",
-        '6px' => "6px",
-        '7px' => "7px",
-        '8px' => "8px",
-        '9px' => "9px",
-        '10px' => "10px",
-        '11px' => "11px",
-        '12px' => "12px",
-    );
+    $radchoices = $from0to12;
     $setting = new admin_setting_configselect($name, $title, $description, '3px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1612,15 +1596,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/menufontsize';
     $title = get_string('menufontsize', 'theme_adaptable');
     $description = get_string('menufontsizedesc', 'theme_adaptable');
-    $radchoices = array(
-        '10px' => "10px",
-        '11px' => "11px",
-        '12px' => "12px",
-        '13px' => "13px",
-        '14px' => "14px",
-        '15px' => "15px",
-        '16px' => "16px",
-    );
+    $radchoices = $from10to16;
     $setting = new admin_setting_configselect($name, $title, $description, '12px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1756,13 +1732,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/headerprofilefontsize';
     $title = get_string('headerprofilefontsize', 'theme_adaptable');
     $description = get_string('headerprofilefontsizedesc', 'theme_adaptable');
-    $radchoices = array(
-        '12px' => "12px",
-        '13px' => "13px",
-        '14px' => "14px",
-        '15px' => "15px",
-        '16px' => "16px",
-    );
+    $radchoices = $from10to16;
     $setting = new admin_setting_configselect($name, $title, $description, '12px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -2947,13 +2917,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/slidermargintop';
     $title = get_string('slidermargintop', 'theme_adaptable');
     $description = get_string('slidermargintopdesc', 'theme_adaptable');
-    $radchoices = array(
-        '0px' => "0px",
-        '5px' => "5px",
-        '10px' => "10px",
-        '15px' => "15px",
-        '20px' => "20px",
-    );
+    $radchoices = $from0to20;
     $setting = new admin_setting_configselect($name, $title, $description, '20px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -2961,13 +2925,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/slidermarginbottom';
     $title = get_string('slidermarginbottom', 'theme_adaptable');
     $description = get_string('slidermarginbottomdesc', 'theme_adaptable');
-    $radchoices = array(
-        '0px' => "0px",
-        '5px' => "5px",
-        '10px' => "10px",
-        '15px' => "15px",
-        '20px' => "20px",
-    );
+    $radchoices = $from0to20;
     $setting = new admin_setting_configselect($name, $title, $description, '20px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -3265,7 +3223,7 @@ if (is_siteadmin()) {
         '10px' => "10px",
         '12px' => "12px",
         '14px' => "14px",
-        '16px' => "'16px'",
+        '16px' => "16px",
         '18px' => "18px",
         '20px' => "20px",
         '22px' => "22px",
@@ -3277,18 +3235,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/socialboxpaddingbottommobile';
     $title = get_string('socialboxpaddingbottommobile', 'theme_adaptable');
     $description = get_string('socialboxpaddingbottommobile', 'theme_adaptable');
-    $choices = array(
-        '1px' => "1px",
-        '2px' => "2px",
-        '3px' => "3px",
-        '4px' => "4px",
-        '5px' => "5px",
-        '6px' => "6px",
-        '7px' => "7px",
-        '8px' => "8px",
-        '9px' => "'9px'",
-        '10px' => "10px",
-    );
+    $choices = $from0to12;
     $setting = new admin_setting_configselect($name, $title, $description, '10px', $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -3446,7 +3393,6 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     $ADMIN->add('theme_adaptable', $temp);
-
 
 
     // Custom CSS and JS section.
