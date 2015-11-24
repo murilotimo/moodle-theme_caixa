@@ -188,6 +188,18 @@ $string['blockheaderbordertopstyledesc'] = 'Set the style of the border of block
 $string['blockmainbordertopstyle'] = 'Block header border style';
 $string['blockmainbordertopstyledesc'] = 'Set the style of the border of block headers';
 
+$string['blockheadertopradius'] = 'Block header top radius';
+$string['blockheadertopradiusdesc'] = 'Set the radius of top header block to achieve a curved / rounded effect';
+
+$string['blockheaderbottomradius'] = 'Block header bottom radius';
+$string['blockheaderbottomradiusdesc'] = 'Set the radius of bottom header block to achieve a curved / rounded effect';
+
+$string['blockmaintopradius'] = 'Block main top radius';
+$string['blockmaintopradiusdesc'] = 'Set the top radius of main block area to achieve a curved / rounded effect';
+
+$string['blockmainbottomradius'] = 'Block main bottom radius';
+$string['blockmainbottomradiusdesc'] = 'Set the bottom radius of main block area to achieve a curved / rounded effect';
+
 $string['marketblockbordercolor'] = 'Marketing block border line color';
 $string['marketblockbordercolordesc'] = 'Set the marketing block border line color';
 

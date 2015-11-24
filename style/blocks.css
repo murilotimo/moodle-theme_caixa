@@ -14,6 +14,9 @@
 	padding: 10px 10px;
 	padding-right: 0px;
 	background: [[setting:blockheaderbackgroundcolor]];	
+	-webkit-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]]; 
+	-moz-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
+	border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
 }
 
 .block.hidden .header {
@@ -42,6 +45,9 @@
 	font-size: 90%;
 	background: [[setting:blockbackgroundcolor]];
 	color: #333;
+	-webkit-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]]; 
+	-moz-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
+	border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
 }
 
 .block .content a, .block .content li a, .block .content td a {
