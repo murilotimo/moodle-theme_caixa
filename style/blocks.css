@@ -8,11 +8,12 @@
 }
 
 .block .header {
-	border-top: 1px solid [[setting:blocklinecolor]];
+	border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]]; 
+	border-color: [[setting:blockbordercolor]];
+	border-style: [[setting:blockheaderbordertopstyle]];	
 	padding: 10px 10px;
 	padding-right: 0px;
-	background: [[setting:blockheaderbackgroundcolor]];
-	border-bottom: 0px solid #e8eaeb;
+	background: [[setting:blockheaderbackgroundcolor]];	
 }
 
 .block.hidden .header {
@@ -33,6 +34,9 @@
 }
 
 .block .content {
+	border-width: [[setting:blockmainbordertop]] [[setting:blockmainborderright]] [[setting:blockmainborderbottom]] [[setting:blockmainborderleft]];
+	border-color: [[setting:blockbordercolor]];
+	border-style: [[setting:blockmainbordertopstyle]];		
 	padding: 10px 10px;
 	font-weight: normal;
 	font-size: 90%;

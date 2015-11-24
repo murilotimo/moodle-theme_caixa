@@ -152,11 +152,41 @@ $string['blockbackgroundcolordesc'] = 'Set the background color for all blocks.'
 $string['blockheaderbackgroundcolor'] = 'Block heading background color';
 $string['blockheaderbackgroundcolordesc'] = 'Set the heading background color for all blocks.';
 
-$string['blocklinecolor'] = 'Block dividing line color';
-$string['blocklinecolordesc'] = 'Set the block divider line color.';
+$string['blockbordercolor'] = 'Block border color';
+$string['blockbordercolordesc'] = 'Set the block border color.';
 
 $string['blocklinkcolor'] = 'Block link color';
 $string['blocklinkcolordesc'] = 'Set the blocks link color';
+
+$string['blockheaderbordertop'] = 'Block header top border thickness';
+$string['blockheaderbordertopdesc'] = 'Set the thickness of the top border of block headers';
+
+$string['blockheaderborderleft'] = 'Block header left border thickness';
+$string['blockheaderborderleftdesc'] = 'Set the thickness of the left hand border of block headers';
+
+$string['blockheaderborderright'] = 'Block header right border thickness';
+$string['blockheaderborderrightdesc'] = 'Set the thickness of the right hand border of block headers';
+
+$string['blockheaderborderbottom'] = 'Block header bottom border thickness';
+$string['blockheaderborderbottomdesc'] = 'Set the thickness of the bottom border of block headers';
+
+$string['blockmainbordertop'] = 'Block main top border thickness';
+$string['blockmainbordertopdesc'] = 'Set the thickness of the top border of the main block area';
+
+$string['blockmainborderleft'] = 'Block main left border thickness';
+$string['blockmainborderleftdesc'] = 'Set the thickness of the left hand border of the main block area';
+
+$string['blockmainborderright'] = 'Block main right border thickness';
+$string['blockmainborderrightdesc'] = 'Set the thickness of the right hand border of the main block area';
+
+$string['blockmainborderbottom'] = 'Block main bottom border thickness';
+$string['blockmainborderbottomdesc'] = 'Set the thickness of the bottom border of the main block area';
+
+$string['blockheaderbordertopstyle'] = 'Block header border style';
+$string['blockheaderbordertopstyledesc'] = 'Set the style of the border of block headers';
+
+$string['blockmainbordertopstyle'] = 'Block header border style';
+$string['blockmainbordertopstyledesc'] = 'Set the style of the border of block headers';
 
 $string['marketblockbordercolor'] = 'Marketing block border line color';
 $string['marketblockbordercolordesc'] = 'Set the marketing block border line color';
