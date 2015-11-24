@@ -403,7 +403,11 @@ class theme_adaptable_core_renderer extends core_renderer {
 				if ($access){
 					$msg .= $PAGE->theme->settings->$textfield;
 				}
-			}						
+			}		
+			
+			if ($msg == ''){
+				$msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
+			}				
 						
 			$retval .= '<div id="ticker-wrap" class="clearfix container">';
         	$retval .= '<div class="pull-left" id="ticker-announce">';
