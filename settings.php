@@ -2952,11 +2952,30 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
-    $name = 'theme_adaptable/tickertext';
-    $title = get_string('tickertext', 'theme_adaptable');
-    $description = get_string('tickertextdesc', 'theme_adaptable');
+    $name = 'theme_adaptable/tickertext1';
+    $title = get_string('tickertext1', 'theme_adaptable');
+    $description = get_string('tickertext1desc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/tickertext1profilefield';
+    $title = get_string('tickertextprofilefield', 'theme_adaptable');
+    $description = get_string('tickertextprofilefielddesc', 'theme_adaptable');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/tickertext2';
+    $title = get_string('tickertext2', 'theme_adaptable');
+    $description = get_string('tickertext2desc', 'theme_adaptable');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/tickertext2profilefield';
+    $title = get_string('tickertextprofilefield', 'theme_adaptable');
+    $description = get_string('tickertextprofilefielddesc', 'theme_adaptable');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
     $ADMIN->add('theme_adaptable', $temp);
