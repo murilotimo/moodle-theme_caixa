@@ -80,6 +80,8 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:headertextcolor]]' => '#ffffff',
         '[[setting:headertextcolor2]]' => '#ffffff',
         '[[setting:blockheadercolor]]' => '#002f67',
+        '[[setting:blockbackgroundcolor]]' => '#FFFFFF',    
+        '[[setting:blockheaderbackgroundcolor]]' => '#FFFFFF',        
         '[[setting:blocklinecolor]]' => '#001e3c',
         '[[setting:marketblockbordercolor]]' => '#e8eaeb',
         '[[setting:marketblocksbackgroundcolor]]' => '#FFFFFF',

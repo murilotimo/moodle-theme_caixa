@@ -146,6 +146,12 @@ $string['headertextcolor2desc'] = 'Set the lower header blocks text and link col
 $string['blockheadercolor'] = 'Block header font color';
 $string['blockheadercolordesc'] = 'Set the block header font color.';
 
+$string['blockbackgroundcolor'] = 'Block background color';
+$string['blockbackgroundcolordesc'] = 'Set the background color for all blocks.';
+
+$string['blockheaderbackgroundcolor'] = 'Block heading background color';
+$string['blockheaderbackgroundcolordesc'] = 'Set the heading background color for all blocks.';
+
 $string['blocklinecolor'] = 'Block dividing line color';
 $string['blocklinecolordesc'] = 'Set the block divider line color.';
 
