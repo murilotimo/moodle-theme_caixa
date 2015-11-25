@@ -820,26 +820,33 @@ $from0to20 = array(
         '20px' => "20px",
     );
 
+$borderstyles = array(
+		'solid' => 'solid',
+		'dashed' => 'dashed',
+		'dotted' => 'dotted',
+		'double' => 'double',			
+		);
+
 
 if (is_siteadmin()) {
     // adaptable theme settings page.
     $ADMIN->add('themes', new admin_category('theme_adaptable', 'adaptable'));
 
 
-    // Colours section.
-    $temp = new admin_settingpage('theme_adaptable_colour', get_string('coloursettings', 'theme_adaptable'));
-    $temp->add(new admin_setting_heading('theme_adaptable_colour', get_string('coloursettingsheading', 'theme_adaptable'),
-                   format_text(get_string('colourdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+    // Colors section.
+    $temp = new admin_settingpage('theme_adaptable_color', get_string('colorsettings', 'theme_adaptable'));
+    $temp->add(new admin_setting_heading('theme_adaptable_color', get_string('colorsettingsheading', 'theme_adaptable'),
+                   format_text(get_string('colordesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
 
-    // Main colours heading.
+    // Main colors heading.
     $name = 'theme_adaptable/settingsmaincolors';
     $heading = get_string('settingsmaincolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
 
-    // Site main colour.
+    // Site main color.
     $name = 'theme_adaptable/maincolor';
     $title = get_string('maincolor', 'theme_adaptable');
     $description = get_string('maincolordesc', 'theme_adaptable');
@@ -848,7 +855,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Site background colour.
+    // Site background color.
     $name = 'theme_adaptable/backcolor';
     $title = get_string('backcolor', 'theme_adaptable');
     $description = get_string('backcolordesc', 'theme_adaptable');
@@ -857,7 +864,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Link colour.
+    // Link color.
     $name = 'theme_adaptable/linkcolor';
     $title = get_string('linkcolor', 'theme_adaptable');
     $description = get_string('linkcolordesc', 'theme_adaptable');
@@ -866,7 +873,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $temp->add($setting);
 
-    // Link hover colour.
+    // Link hover color.
     $name = 'theme_adaptable/linkhover';
     $title = get_string('linkhover', 'theme_adaptable');
     $description = get_string('linkhoverdesc', 'theme_adaptable');
@@ -877,13 +884,13 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 
-    // Header colours heading.
+    // Header colors heading.
     $name = 'theme_adaptable/settingsheadercolors';
     $heading = get_string('settingsheadercolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    // Loading bar colour.
+    // Loading bar color.
     $name = 'theme_adaptable/loadingcolor';
     $title = get_string('loadingcolor', 'theme_adaptable');
     $description = get_string('loadingcolordesc', 'theme_adaptable');
@@ -892,7 +899,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Top header background colour.
+    // Top header background color.
     $name = 'theme_adaptable/headerbkcolor';
     $title = get_string('headerbkcolor', 'theme_adaptable');
     $description = get_string('headerbkcolordesc', 'theme_adaptable');
@@ -901,7 +908,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Top header text colour.
+    // Top header text color.
     $name = 'theme_adaptable/headertextcolor';
     $title = get_string('headertextcolor', 'theme_adaptable');
     $description = get_string('headertextcolordesc', 'theme_adaptable');
@@ -910,7 +917,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Bottom header background colour.
+    // Bottom header background color.
     $name = 'theme_adaptable/headerbkcolor2';
     $title = get_string('headerbkcolor2', 'theme_adaptable');
     $description = get_string('headerbkcolor2desc', 'theme_adaptable');
@@ -919,7 +926,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Bottom header text colour.
+    // Bottom header text color.
     $name = 'theme_adaptable/headertextcolor2';
     $title = get_string('headertextcolor2', 'theme_adaptable');
     $description = get_string('headertextcolor2desc', 'theme_adaptable');
@@ -928,7 +935,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Loading bar colour.
+    // Loading bar color.
     $name = 'theme_adaptable/loadingcolor';
     $title = get_string('loadingcolor', 'theme_adaptable');
     $description = get_string('loadingcolordesc', 'theme_adaptable');
@@ -938,13 +945,13 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 
-    // Menu colours heading.
+    // Menu colors heading.
     $name = 'theme_adaptable/settingsmenucolors';
     $heading = get_string('settingsmenucolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    // Main menu background colour.
+    // Main menu background color.
     $name = 'theme_adaptable/menubkcolor';
     $title = get_string('menubkcolor', 'theme_adaptable');
     $description = get_string('menubkcolordesc', 'theme_adaptable');
@@ -953,7 +960,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Main menu text colour.
+    // Main menu text color.
     $name = 'theme_adaptable/menufontcolor';
     $title = get_string('menufontcolor', 'theme_adaptable');
     $description = get_string('menufontcolordesc', 'theme_adaptable');
@@ -962,7 +969,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Main menu text hover colour.
+    // Main menu text hover color.
     $name = 'theme_adaptable/menufonthovercolor';
     $title = get_string('menufonthovercolor', 'theme_adaptable');
     $description = get_string('menufonthovercolordesc', 'theme_adaptable');
@@ -971,7 +978,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Main menu bottom border colour.
+    // Main menu bottom border color.
     $name = 'theme_adaptable/menubordercolor';
     $title = get_string('menubordercolor', 'theme_adaptable');
     $description = get_string('menubordercolordesc', 'theme_adaptable');
@@ -980,13 +987,13 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Mobile Menu colours heading.
+    // Mobile Menu colors heading.
     $name = 'theme_adaptable/settingsmobilemenucolors';
     $heading = get_string('settingsmobilemenucolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    // Mobile menu background colour.
+    // Mobile menu background color.
     $name = 'theme_adaptable/mobilemenubkcolor';
     $title = get_string('mobilemenubkcolor', 'theme_adaptable');
     $description = get_string('mobilemenubkcolordesc', 'theme_adaptable');
@@ -995,7 +1002,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Mobile menu text colour.
+    // Mobile menu text color.
     $name = 'theme_adaptable/mobilemenufontcolor';
     $title = get_string('mobilemenufontcolor', 'theme_adaptable');
     $description = get_string('mobilemenufontcolordesc', 'theme_adaptable');
@@ -1005,13 +1012,13 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 
-    // Info Box colours heading.
+    // Info Box colors heading.
     $name = 'theme_adaptable/settingsinfoboxcolors';
     $heading = get_string('settingsinfoboxcolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    // Info Box background colour.
+    // Info Box background color.
     $name = 'theme_adaptable/infoboxcolor';
     $title = get_string('infoboxcolor', 'theme_adaptable');
     $description = get_string('infoboxcolordesc', 'theme_adaptable');
@@ -1020,7 +1027,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Info Box text colour.
+    // Info Box text color.
     $name = 'theme_adaptable/infoboxtextcolor';
     $title = get_string('infoboxtextcolor', 'theme_adaptable');
     $description = get_string('infoboxtextcolordesc', 'theme_adaptable');
@@ -1030,13 +1037,13 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 
-    // Info Box 2 colours heading.
+    // Info Box 2 colors heading.
     $name = 'theme_adaptable/settingssecondinfoboxcolors';
     $heading = get_string('settingssecondinfoboxcolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    // Info Box 2 background colour.
+    // Info Box 2 background color.
     $name = 'theme_adaptable/infoboxcolor2';
     $title = get_string('infoboxcolor2', 'theme_adaptable');
     $description = get_string('infoboxcolor2desc', 'theme_adaptable');
@@ -1045,7 +1052,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Info Box 2 text colour.
+    // Info Box 2 text color.
     $name = 'theme_adaptable/infoboxtextcolor2';
     $title = get_string('infoboxtextcolor2', 'theme_adaptable');
     $description = get_string('infoboxtextcolor2desc', 'theme_adaptable');
@@ -1055,13 +1062,13 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 
-    // Market blocks colours heading.
+    // Market blocks colors heading.
     $name = 'theme_adaptable/settingsmarketingcolors';
     $heading = get_string('settingsmarketingcolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-    // Market blocks border colour.
+    // Market blocks border color.
     $name = 'theme_adaptable/marketblockbordercolor';
     $title = get_string('marketblockbordercolor', 'theme_adaptable');
     $description = get_string('marketblockbordercolordesc', 'theme_adaptable');
@@ -1070,7 +1077,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Market blocks background colour.
+    // Market blocks background color.
     $name = 'theme_adaptable/marketblocksbackgroundcolor';
     $title = get_string('marketblocksbackgroundcolor', 'theme_adaptable');
     $description = get_string('marketblocksbackgroundcolordesc', 'theme_adaptable');
@@ -1080,7 +1087,7 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 
-    // Overlay tiles colours heading.
+    // Overlay tiles colors heading.
     $name = 'theme_adaptable/settingsoverlaycolors';
     $heading = get_string('settingsoverlaycolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
@@ -1143,7 +1150,7 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 
-    // Navbar colours heading.
+    // Navbar colors heading.
     $name = 'theme_adaptable/settingsnavbarcolors';
     $heading = get_string('settingsnavbarcolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
@@ -1166,7 +1173,7 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
 
-    // Breadcrumb colours heading.
+    // Breadcrumb colors heading.
     $name = 'theme_adaptable/settingsbreadcrumbcolors';
     $heading = get_string('settingsbreadcrumbcolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
@@ -1180,7 +1187,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Breadcrumb text colour.
+    // Breadcrumb text color.
     $name = 'theme_adaptable/breadcrumbtextcolor';
     $title = get_string('breadcrumbtextcolor', 'theme_adaptable');
     $description = get_string('breadcrumbtextcolordesc', 'theme_adaptable');
@@ -1213,7 +1220,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Footer colours heading.
+    // Footer colors heading.
     $name = 'theme_adaptable/settingsfootercolors';
     $heading = get_string('settingsfootercolors', 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
@@ -1386,7 +1393,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Buttons background colour.
+    // Buttons background color.
     $name = 'theme_adaptable/buttoncolor';
     $title = get_string('buttoncolor', 'theme_adaptable');
     $description = get_string('buttoncolordesc', 'theme_adaptable');
@@ -1395,7 +1402,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Buttons background hover colour.
+    // Buttons background hover color.
     $name = 'theme_adaptable/buttonhovercolor';
     $title = get_string('buttonhovercolor', 'theme_adaptable');
     $description = get_string('buttonhovercolordesc', 'theme_adaptable');
@@ -1404,7 +1411,7 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Buttons text colour.
+    // Buttons text color.
     $name = 'theme_adaptable/buttontextcolor';
     $title = get_string('buttontextcolor', 'theme_adaptable');
     $description = get_string('buttontextcolordesc', 'theme_adaptable');
@@ -2414,6 +2421,22 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    $name = 'theme_adaptable/blockbackgroundcolor';
+    $title = get_string('blockbackgroundcolor', 'theme_adaptable');
+    $description = get_string('blockbackgroundcolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFFFFF', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/blockheaderbackgroundcolor';
+    $title = get_string('blockheaderbackgroundcolor', 'theme_adaptable');
+    $description = get_string('blockheaderbackgroundcolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFFFFF', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);	
+	
     $name = 'theme_adaptable/blockheadercolor';
     $title = get_string('blockheadercolor', 'theme_adaptable');
     $description = get_string('blockheadercolordesc', 'theme_adaptable');
@@ -2422,9 +2445,9 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/blocklinecolor';
-    $title = get_string('blocklinecolor', 'theme_adaptable');
-    $description = get_string('blocklinecolordesc', 'theme_adaptable');
+    $name = 'theme_adaptable/blockbordercolor';
+    $title = get_string('blockbordercolor', 'theme_adaptable');
+    $description = get_string('blockbordercolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -2435,6 +2458,118 @@ if (is_siteadmin()) {
     $description = get_string('blocklinkcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+	$name = 'theme_adaptable/blockheaderbordertopstyle';
+    $title = get_string('blockheaderbordertopstyle', 'theme_adaptable');
+    $description = get_string('blockheaderbordertopstyledesc', 'theme_adaptable');
+    $radchoices = $borderstyles;
+    $setting = new admin_setting_configselect($name, $title, $description, 'solid', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/blockheadertopradius';
+    $title = get_string('blockheadertopradius', 'theme_adaptable');
+    $description = get_string('blockheadertopradiusdesc', 'theme_adaptable');
+    $radchoices = $from0to20;
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/blockheaderbottomradius';
+    $title = get_string('blockheaderbottomradius', 'theme_adaptable');
+    $description = get_string('blockheaderbottomradiusdesc', 'theme_adaptable');
+    $radchoices = $from0to20;
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/blockheaderbordertop';
+    $title = get_string('blockheaderbordertop', 'theme_adaptable');
+    $description = get_string('blockheaderbordertopdesc', 'theme_adaptable');
+    $radchoices = $from0to6;
+    $setting = new admin_setting_configselect($name, $title, $description, '1px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/blockheaderborderleft';
+    $title = get_string('blockheaderborderleft', 'theme_adaptable');
+    $description = get_string('blockheaderborderleftdesc', 'theme_adaptable');
+    $radchoices = $from0to6;
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/blockheaderborderright';
+    $title = get_string('blockheaderborderright', 'theme_adaptable');
+    $description = get_string('blockheaderborderrightdesc', 'theme_adaptable');
+    $radchoices = $from0to6;
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/blockheaderborderbottom';
+    $title = get_string('blockheaderborderbottom', 'theme_adaptable');
+    $description = get_string('blockheaderborderbottomdesc', 'theme_adaptable');
+    $radchoices = $from0to6;
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+	$name = 'theme_adaptable/blockmainbordertopstyle';
+    $title = get_string('blockmainbordertopstyle', 'theme_adaptable');
+    $description = get_string('blockmainbordertopstyledesc', 'theme_adaptable');
+    $radchoices = $borderstyles;
+    $setting = new admin_setting_configselect($name, $title, $description, 'solid', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/blockmaintopradius';
+    $title = get_string('blockmaintopradius', 'theme_adaptable');
+    $description = get_string('blockmaintopradiusdesc', 'theme_adaptable');
+    $radchoices = $from0to20;
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/blockmainbottomradius';
+    $title = get_string('blockmainbottomradius', 'theme_adaptable');
+    $description = get_string('blockmainbottomradiusdesc', 'theme_adaptable');
+    $radchoices = $from0to20;
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);	
+	
+	$name = 'theme_adaptable/blockmainbordertop';
+    $title = get_string('blockmainbordertop', 'theme_adaptable');
+    $description = get_string('blockmainbordertopdesc', 'theme_adaptable');
+    $radchoices = $from0to6;
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/blockmainborderleft';
+    $title = get_string('blockmainborderleft', 'theme_adaptable');
+    $description = get_string('blockmainborderleftdesc', 'theme_adaptable');
+    $radchoices = $from0to6;
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/blockmainborderright';
+    $title = get_string('blockmainborderright', 'theme_adaptable');
+    $description = get_string('blockmainborderrightdesc', 'theme_adaptable');
+    $radchoices = $from0to6;
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/blockmainborderbottom';
+    $title = get_string('blockmainborderbottom', 'theme_adaptable');
+    $description = get_string('blockmainborderbottomdesc', 'theme_adaptable');
+    $radchoices = $from0to6;
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -2817,11 +2952,30 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
-    $name = 'theme_adaptable/tickertext';
-    $title = get_string('tickertext', 'theme_adaptable');
-    $description = get_string('tickertextdesc', 'theme_adaptable');
+    $name = 'theme_adaptable/tickertext1';
+    $title = get_string('tickertext1', 'theme_adaptable');
+    $description = get_string('tickertext1desc', 'theme_adaptable');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/tickertext1profilefield';
+    $title = get_string('tickertextprofilefield', 'theme_adaptable');
+    $description = get_string('tickertextprofilefielddesc', 'theme_adaptable');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/tickertext2';
+    $title = get_string('tickertext2', 'theme_adaptable');
+    $description = get_string('tickertext2desc', 'theme_adaptable');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/tickertext2profilefield';
+    $title = get_string('tickertextprofilefield', 'theme_adaptable');
+    $description = get_string('tickertextprofilefielddesc', 'theme_adaptable');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
     $ADMIN->add('theme_adaptable', $temp);

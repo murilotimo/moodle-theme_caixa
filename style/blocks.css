@@ -8,11 +8,15 @@
 }
 
 .block .header {
-	border-top: 1px solid [[setting:blocklinecolor]];
+	border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]]; 
+	border-color: [[setting:blockbordercolor]];
+	border-style: [[setting:blockheaderbordertopstyle]];	
 	padding: 10px 10px;
 	padding-right: 0px;
-	background: transparent;
-	border-bottom: 0px solid #e8eaeb;
+	background: [[setting:blockheaderbackgroundcolor]];	
+	-webkit-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]]; 
+	-moz-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
+	border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
 }
 
 .block.hidden .header {
@@ -33,11 +37,17 @@
 }
 
 .block .content {
+	border-width: [[setting:blockmainbordertop]] [[setting:blockmainborderright]] [[setting:blockmainborderbottom]] [[setting:blockmainborderleft]];
+	border-color: [[setting:blockbordercolor]];
+	border-style: [[setting:blockmainbordertopstyle]];		
 	padding: 10px 10px;
 	font-weight: normal;
 	font-size: 90%;
-	background: [[setting:maincolour]];
+	background: [[setting:blockbackgroundcolor]];
 	color: #333;
+	-webkit-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]]; 
+	-moz-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
+	border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
 }
 
 .block .content a, .block .content li a, .block .content td a {

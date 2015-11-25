@@ -383,13 +383,38 @@ class theme_adaptable_core_renderer extends core_renderer {
 		global $PAGE;
 		$retval = '';
 		
-		if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index") || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")){			
+		if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index") || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")){
+				
+			$msg = '';			
+			
+			for ($i=1; $i<3; $i++){
+				$textfield = 'tickertext' . $i;
+				$profilefield = 'tickertext' . $i . 'profilefield';
+				$access = true;			 
+				
+								
+				if (!empty($PAGE->theme->settings->$profilefield)){
+					$profilevals = explode('=', $PAGE->theme->settings->$profilefield);					
+					if (!$this->check_menu_access($profilevals[0], $profilevals[1], $textfield)){
+						$access = false; 
+					}	
+				}								
+				
+				if ($access){
+					$msg .= $PAGE->theme->settings->$textfield;
+				}
+			}		
+			
+			if ($msg == ''){
+				$msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
+			}				
+						
 			$retval .= '<div id="ticker-wrap" class="clearfix container">';
         	$retval .= '<div class="pull-left" id="ticker-announce">';
             $retval.= get_string('ticker', 'theme_adaptable');
 			$retval .= '</div>';
 			$retval .= '<ul id="ticker">';
-			$retval .= $PAGE->theme->settings->tickertext;			
+			$retval .= $msg;			
 			$retval .= '</ul>';
 			$retval .= '</div>';
 		}
@@ -755,7 +780,6 @@ class theme_adaptable_core_renderer extends core_renderer {
 				}
 			}
 		}
-		
                 	
 		require_once($CFG->dirroot.'/user/profile/lib.php');
 		require_once($CFG->dirroot.'/user/lib.php');
