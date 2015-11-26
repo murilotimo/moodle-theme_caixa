@@ -107,6 +107,9 @@ $string['p5urldesc'] = 'Add a URL to slide 5.';
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'Upload a logo for use on your site,';
 
+$string['favicon'] = 'Favicon';
+$string['favicondesc'] = 'Upload a favicon for use on your site,';
+
 $string['linkcolor'] = 'Link Color';
 $string['linkcolordesc'] = 'Set the color of links in the theme, use html hex code.';
 

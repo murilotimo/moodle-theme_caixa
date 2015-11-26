@@ -32,6 +32,18 @@ class theme_adaptable_core_renderer extends core_renderer {
     /** @var custom_menu_item language The language menu if created */
     protected $language = null;
 
+    /**
+     * Returns the URL for the favicon.
+     *
+     * @return string The favicon URL
+     */
+    public function favicon() {
+        if (!empty($this->page->theme->settings->favicon)) {
+            return $this->page->theme->setting_file_url('favicon', 'favicon');
+        }
+        return parent::favicon();
+    }
+
     public function get_setting($setting, $format = false, $theme = null) {
         if (empty($theme)) {
             $theme = theme_config::load('adaptable');

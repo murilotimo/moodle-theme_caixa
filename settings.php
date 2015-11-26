@@ -1559,6 +1559,14 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Favicon file setting.
+    $name = 'theme_adaptable/favicon';
+    $title = get_string('favicon', 'theme_adaptable');
+    $description = get_string('favicondesc', 'theme_adaptable');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Display Course title in the header.
     $name = 'theme_adaptable/enableheading';
     $title = get_string('enableheading', 'theme_adaptable');
@@ -3471,7 +3479,6 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     $ADMIN->add('theme_adaptable', $temp);
-
 
     // Custom CSS and JS section.
     $temp = new admin_settingpage('theme_adaptable_generic', get_string('customcssjssettings', 'theme_adaptable'));

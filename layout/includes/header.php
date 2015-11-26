@@ -138,6 +138,7 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 
 <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(array('two-column', $setzoom)); ?>>
