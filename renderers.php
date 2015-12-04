@@ -546,7 +546,7 @@ class theme_adaptable_core_renderer extends core_renderer {
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-                            $branch->add($trunc = mb_strimwidth(format_string($course->fullname), 0, 40, "..."), 
+                                         $branch->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 40))."...", 
                                          new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }

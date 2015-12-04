@@ -42,7 +42,7 @@ $string['region-middle'] = 'middle';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 
-$string['pluginname'] = 'adaptable';
+$string['pluginname'] = 'Adaptable';
 
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
