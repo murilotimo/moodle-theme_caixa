@@ -387,6 +387,9 @@ $string['enablealertcoursepagesdesc'] = 'Turning this option on will display the
 $string['enablealertstriptags'] = 'Automatically strip html tags from alerts';
 $string['enablealertstriptagsdesc'] = 'Enable will clean up alert messages automatically, Disable will allow you to use html / links in messages but you will have to clean up manually in html view';
 
+$string['alertkeyvalue'] = 'Alert Key';
+$string['alertkeyvalue_details'] = 'The key that identifies this alert, from previous alerts. If you change this, all users who have dismissed the alert previously will see it again. If you change the alert, you will likely want to change this to ensure all users see it.';
+
 // Footer strings.
 $string['footer1header'] = 'Footer Section 1 Title';
 $string['footer2header'] = 'Footer Section 2 Title';

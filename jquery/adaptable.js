@@ -1,4 +1,18 @@
 jQuery(document).ready(function($) {
+
+    //Bootstrap will close the alert because it spots the data-dismiss="alert" attribute
+    //Here we also handle the alert close event. We have added two custom tags data-alertindex
+    //and data-alertkey. e.g Alert1  has alertindex1. The alertkey value identifies the
+    // alert content, since Alert1 (2 and 3) will be reused. We use a YUI function to set
+    //the user preference for the key to the last dismissed key for the alertindex.
+    //Justin 2015/12/05
+   $('.close').click(function(){	
+      var alertindex = $(this).data('alertindex');
+      var alertkey = $(this).data('alertkey');
+         M.util.set_user_preference('theme_adaptable_alertkey' + alertindex, alertkey);	
+    });
+
+
 	$('#ticker').tickerme();
     //new for every three
     if($('header').css("position") == "fixed") {
@@ -93,10 +107,6 @@ $(".container.slidewrap").on('transitionend', function() {
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     }) 
-
-
-
-
 });
 
 
@@ -135,6 +145,6 @@ var onFull = function() {
 M.theme_adaptable = M.theme_adaptable || {};
 M.theme_adaptable.full =  {
   init: function() {
-    Y.one('body').delegate('click', onFull, '.moodlewidth');
+    Y.one('body').delegate('click', onFull, '.moodlewidth');    
   }
 };
