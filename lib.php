@@ -230,6 +230,16 @@ function theme_adaptable_get_full() {
     return get_user_preferences('theme_adaptable_full', '');
 }
 
+/**
+ * Get the key of the last closed alert for a specific alert index.
+ * This will be used in the renderer to decide whether to include the alert or not
+ */
+function theme_adaptable_get_alertkey($alertindex) {
+	user_preference_allow_ajax_update('theme_adaptable_alertkey' . $alertindex, PARAM_TEXT);
+    return get_user_preferences('theme_adaptable_alertkey' . $alertindex, '');
+}
+
+
 function theme_adaptable_get_block_side() {
     static $theme;
     if (empty($theme)) {

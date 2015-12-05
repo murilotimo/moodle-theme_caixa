@@ -2765,6 +2765,13 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    //Alert Key
+    $name = 'theme_adaptable/alertkey1';
+    $title = get_string('alertkeyvalue', 'theme_adaptable');
+    $description = get_string('alertkeyvalue_details', 'theme_adaptable');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
 
     // Alert Text 1.
     $name = 'theme_adaptable/alerttext1';
@@ -2827,6 +2834,13 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    //Alert Key
+    $name = 'theme_adaptable/alertkey2';
+    $title = get_string('alertkeyvalue', 'theme_adaptable');
+    $description = get_string('alertkeyvalue_details', 'theme_adaptable');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+    $temp->add($setting);
 
     // Alert text 2.
     $name = 'theme_adaptable/alerttext2';
@@ -2888,6 +2902,13 @@ if (is_siteadmin()) {
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    //Alert Key
+    $name = 'theme_adaptable/alertkey3';
+    $title = get_string('alertkeyvalue', 'theme_adaptable');
+    $description = get_string('alertkeyvalue_details', 'theme_adaptable');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
     // Users Alert text.
