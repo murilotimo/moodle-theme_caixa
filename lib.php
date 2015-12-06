@@ -24,6 +24,8 @@
  *
  */
 
+define('THEME_ADAPTABLE_MAX_ALERTS', 3);
+
 /**
  * Parses CSS before it is cached.
  *

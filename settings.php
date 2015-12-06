@@ -26,6 +26,7 @@
 
 $settings = null;
 require_once(__DIR__.'/libs/admin_confightmleditor.php');
+require_once(__DIR__.'/lib.php');
 defined('MOODLE_INTERNAL') || die;
 
 $fontlist = array(
@@ -2750,31 +2751,33 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting); 
+    
+    for($alertindex=1;$alertindex <= THEME_ADAPTABLE_MAX_ALERTS;$alertindex++){
 		
 	// Alert Box Heading 1.
-    $name = 'theme_adaptable/settingsalertbox';
-    $heading = get_string('alertsettings1', 'theme_adaptable');
+    $name = 'theme_adaptable/settingsalertbox' . $alertindex;
+    $heading = get_string('alertsettings' . $alertindex, 'theme_adaptable');
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Enable Alert 1.
-    $name = 'theme_adaptable/enablealert1';
-    $title = get_string('enablealert1', 'theme_adaptable');
-    $description = get_string('enablealertdesc1', 'theme_adaptable');
+    $name = 'theme_adaptable/enablealert' . $alertindex;;
+    $title = get_string('enablealert', 'theme_adaptable',$alertindex);
+    $description = get_string('enablealertdesc', 'theme_adaptable', $alertindex);
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
     //Alert Key
-    $name = 'theme_adaptable/alertkey1';
+    $name = 'theme_adaptable/alertkey' . $alertindex;;
     $title = get_string('alertkeyvalue', 'theme_adaptable');
     $description = get_string('alertkeyvalue_details', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
     // Alert Text 1.
-    $name = 'theme_adaptable/alerttext1';
+    $name = 'theme_adaptable/alerttext' . $alertindex;;
     $title = get_string('alerttext', 'theme_adaptable');
     $description = get_string('alerttextdesc', 'theme_adaptable');
     $default = '';
@@ -2782,7 +2785,7 @@ if (is_siteadmin()) {
     $temp->add($setting);
 
     // Alert Type 1.
-    $name = 'theme_adaptable/alerttype1';
+    $name = 'theme_adaptable/alerttype' . $alertindex;;
     $title = get_string('alerttype', 'theme_adaptable');
     $description = get_string('alerttypedesc', 'theme_adaptable');
     $default = 'info';
@@ -2794,8 +2797,8 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
-	// Alert Access 1.
-    $name = 'theme_adaptable/alertaccess1';
+	// Alert Access
+    $name = 'theme_adaptable/alertaccess' . $alertindex;;
     $title = get_string('alertaccess', 'theme_adaptable');
     $description = get_string('alertaccessdesc', 'theme_adaptable');
     $default = 'global';
@@ -2808,18 +2811,19 @@ if (is_siteadmin()) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
-	$name = 'theme_adaptable/alertprofilefield1';
+	$name = 'theme_adaptable/alertprofilefield' . $alertindex;;
     $title = get_string('alertprofilefield', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_adaptable/alertprofilevalue1';
+    $name = 'theme_adaptable/alertprofilevalue' . $alertindex;;
     $title = get_string('alertprofilevalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-		
+    }
+/*		
 	// Alert Box Heading 2.
     $name = 'theme_adaptable/settingsalertbox2';
     $heading = get_string('alertsettings2', 'theme_adaptable');
@@ -2956,7 +2960,9 @@ if (is_siteadmin()) {
     $title = get_string('alertprofilevalue', 'theme_adaptable');
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);	   
+    $temp->add($setting);	
+    
+*/   
 	
     $ADMIN->add('theme_adaptable', $temp);
 

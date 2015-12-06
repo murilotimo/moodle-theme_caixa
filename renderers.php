@@ -71,9 +71,8 @@ class theme_adaptable_core_renderer extends core_renderer {
     public function get_alert_messages(){
     	global $PAGE;
     	$alerts = '';
-    	$maxalert = 4;
 		
-    	for ($i=1; $i < $maxalert; $i++) {
+    	for ($i=1; $i <= THEME_ADAPTABLE_MAX_ALERTS; $i++) {
 
     		
     		$enablealert = 'enablealert' . $i;
@@ -102,15 +101,14 @@ class theme_adaptable_core_renderer extends core_renderer {
 				$alertprofilevalue = $PAGE->theme->settings->$alertprofilevalue;				
 				
 				if ($this->get_alert_access($alertaccess, $alertprofilefield, $alertprofilevalue, $alertsession)){
-					//echo $i . 'is true ';
 					$alerts .= $this->get_alert_message($alerttext, $alerttype, $i, $alertkey);
 				}
 			}
 		}	
 		
 		if (core\session\manager::is_loggedinas()) {
-			$alertindex = $maxalert;
-			$alertkey="doweneedakeyhere?";
+			$alertindex = THEME_ADAPTABLE_MAX_ALERTS+1;
+			$alertkey="undismissable";
 			$logininfo = $this->login_info();
 			$logininfo = str_replace('<div class="logininfo">', '', $logininfo);
 			$logininfo = str_replace('</div>', '', $logininfo);
@@ -121,7 +119,7 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 	
 	public function get_alert_message($text, $type, $alertindex, $alertkey){
-		if(theme_adaptable_get_alertkey($alertindex)==$alertkey){
+		if($alertkey=='' || theme_adaptable_get_alertkey($alertindex)==$alertkey){
 			return '';
 		}
 		$retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
