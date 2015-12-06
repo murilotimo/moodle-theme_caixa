@@ -426,9 +426,11 @@ $string['tickerdesc'] = 'Here you can set a news ticker to run across the front 
 $string['tickerdefault'] = 'No news items to display';
 
 $string['alertsettingsgeneral'] = 'General Alert Settings';
-$string['alertsettings1'] = 'Alert Box One';
-$string['alertsettings2'] = 'Alert Box Two';
-$string['alertsettings3'] = 'Alert Box Three';
+$string['alertsettings'] = 'Alert Box {$a}';
+
+
+$string['alertcount'] = 'Alert count';
+$string['alertcountdesc'] = 'The number of alerts to show in the edit area below.';
 
 $string['alertsettingsheading'] = 'Customize top Alert Box';
 $string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';

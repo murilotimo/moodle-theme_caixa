@@ -71,8 +71,9 @@ class theme_adaptable_core_renderer extends core_renderer {
     public function get_alert_messages(){
     	global $PAGE;
     	$alerts = '';
+    	$alertcount = get_config('theme_adapatable','alertcount');
 		
-    	for ($i=1; $i <= THEME_ADAPTABLE_MAX_ALERTS; $i++) {
+    	for ($i=1; $i <= $alertcount; $i++) {
 
     		
     		$enablealert = 'enablealert' . $i;
@@ -107,7 +108,7 @@ class theme_adaptable_core_renderer extends core_renderer {
 		}	
 		
 		if (core\session\manager::is_loggedinas()) {
-			$alertindex = THEME_ADAPTABLE_MAX_ALERTS+1;
+			$alertindex = $alertcount+1;
 			$alertkey="undismissable";
 			$logininfo = $this->login_info();
 			$logininfo = str_replace('<div class="logininfo">', '', $logininfo);
