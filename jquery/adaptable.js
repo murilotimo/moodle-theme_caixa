@@ -5,11 +5,15 @@ jQuery(document).ready(function($) {
     //and data-alertkey. e.g Alert1  has alertindex1. The alertkey value identifies the
     // alert content, since Alert1 (2 and 3) will be reused. We use a YUI function to set
     //the user preference for the key to the last dismissed key for the alertindex.
+    //alertkey undismissable is a special case for "loginas" alert which shouldn't really
+    //be permanently dismissed.
     //Justin 2015/12/05
    $('.close').click(function(){	
       var alertindex = $(this).data('alertindex');
       var alertkey = $(this).data('alertkey');
+      if(alertkey!='undismissable'){
          M.util.set_user_preference('theme_adaptable_alertkey' + alertindex, alertkey);	
+      }
     });
 
 

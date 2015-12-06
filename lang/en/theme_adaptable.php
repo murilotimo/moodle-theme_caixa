@@ -362,17 +362,9 @@ $string['alertaccessprofile'] = 'Add custom profile field restriction';
 $string['alertaccess'] = 'Alert Visibility';
 $string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "' . $string['alertaccessprofile'] . '" you will need to add values for profile fields below.';
 
-// Alert Box 1.
-$string['enablealert1'] = 'Enable Alert Box One';
-$string['enablealertdesc1'] = 'Enable Alert Box One';
-
-// Alert Box 2.
-$string['enablealert2'] = 'Enable Alert Box Two';
-$string['enablealertdesc2'] = 'Enable Alert Box Two';
-
-// Alert Box 3.
-$string['enablealert3'] = 'Enable Alert Box Three';
-$string['enablealertdesc3'] = 'Enable Alert Box Three';
+// Alert Box Enable
+$string['enablealert'] = 'Enable Alert Box {$a}';
+$string['enablealertdesc'] = 'Enable Alert Box {$a}';
 
 // Alert Box Generic Strings.
 $string['alerttype'] = 'Alert Box Type';
@@ -434,9 +426,11 @@ $string['tickerdesc'] = 'Here you can set a news ticker to run across the front 
 $string['tickerdefault'] = 'No news items to display';
 
 $string['alertsettingsgeneral'] = 'General Alert Settings';
-$string['alertsettings1'] = 'Alert Box One';
-$string['alertsettings2'] = 'Alert Box Two';
-$string['alertsettings3'] = 'Alert Box Three';
+$string['alertsettings'] = 'Alert Box {$a}';
+
+
+$string['alertcount'] = 'Alert count';
+$string['alertcountdesc'] = 'The number of alerts to show in the edit area below.';
 
 $string['alertsettingsheading'] = 'Customize top Alert Box';
 $string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';
