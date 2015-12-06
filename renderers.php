@@ -71,7 +71,7 @@ class theme_adaptable_core_renderer extends core_renderer {
     public function get_alert_messages(){
     	global $PAGE;
     	$alerts = '';
-    	$alertcount = get_config('theme_adapatable','alertcount');
+    	$alertcount = get_config('theme_adaptable','alertcount');
 		
     	for ($i=1; $i <= $alertcount; $i++) {
 
