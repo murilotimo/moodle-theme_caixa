@@ -896,7 +896,7 @@ if (is_siteadmin()) {
     $title = get_string('loadingcolor', 'theme_adaptable');
     $description = get_string('loadingcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#29d', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f44336', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1098,7 +1098,7 @@ if (is_siteadmin()) {
     $title = get_string('rendereroverlaycolor', 'theme_adaptable');
     $description = get_string('rendereroverlaycolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1114,7 +1114,7 @@ if (is_siteadmin()) {
     $title = get_string('tilesbordercolor', 'theme_adaptable');
     $description = get_string('tilesbordercolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#e8eaeb', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1122,7 +1122,7 @@ if (is_siteadmin()) {
     $title = get_string('covbkcolor', 'theme_adaptable');
     $description = get_string('covbkcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1878,7 +1878,7 @@ if (is_siteadmin()) {
         36 => "36px",
         42 => "42px",
     );
-    $setting = new admin_setting_configselect($name, $title, $description, 26, $choices);
+    $setting = new admin_setting_configselect($name, $title, $description, 32, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1944,7 +1944,8 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social1';
     $title = get_string('social1', 'theme_adaptable');
     $description = get_string('social1desc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $default = 'http://facebook.com/';
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_adaptable/social1icon';
@@ -1957,7 +1958,8 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social2';
     $title = get_string('social2', 'theme_adaptable');
     $description = get_string('social2desc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+	$default = 'http://twitter.com/';
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_adaptable/social2icon';
@@ -1970,6 +1972,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social3';
     $title = get_string('social3', 'theme_adaptable');
     $description = get_string('social3desc', 'theme_adaptable');
+	$default = 'https://plus.google.com/';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
@@ -1983,7 +1986,8 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social4';
     $title = get_string('social4', 'theme_adaptable');
     $description = get_string('social4desc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+	$default = 'https://www.instagram.com/';
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_adaptable/social4icon';
@@ -1995,7 +1999,7 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/social5';
     $title = get_string('social5', 'theme_adaptable');
-    $description = get_string('social5desc', 'theme_adaptable');
+    $description = get_string('social5desc', 'theme_adaptable');	
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
@@ -2022,7 +2026,8 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social7';
     $title = get_string('social7', 'theme_adaptable');
     $description = get_string('social7desc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+	$default = 'https://youtube.com/';
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_adaptable/social7icon';
@@ -2426,6 +2431,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/blockicons';
     $title = get_string('blockicons', 'theme_adaptable');
     $description = get_string('blockiconsdesc', 'theme_adaptable');
+	$default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -2450,7 +2456,7 @@ if (is_siteadmin()) {
     $title = get_string('blockheadercolor', 'theme_adaptable');
     $description = get_string('blockheadercolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#59585D', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -2466,7 +2472,7 @@ if (is_siteadmin()) {
     $title = get_string('blocklinkcolor', 'theme_adaptable');
     $description = get_string('blocklinkcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
