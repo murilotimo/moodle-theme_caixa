@@ -84,24 +84,29 @@ class theme_adaptable_core_renderer extends core_renderer {
 			$alerttext = $PAGE->theme->settings->$alerttext;	
 			
 			if ($enablealert && !empty($alerttext)){
+
+				$alertprofilefield = 'alertprofilefield' . $i;
+				$profilevals = array('','');
+				
+				if (!empty($PAGE->theme->settings->$alertprofilefield)){
+					$profilevals = explode('=', $PAGE->theme->settings->$alertprofilefield);
+				}
 				
 				if (!empty($PAGE->theme->settings->enablealertstriptags)){
 					$alerttext = strip_tags($alerttext);
 				}
-					
+			
 				$alerttype = 'alerttype' . $i;
 				$alertaccess = 'alertaccess' . $i;
 				$alertkey = 'alertkey' . $i;
-				$alertprofilefield = 'alertprofilefield' . $i;
-				$alertprofilevalue = 'alertprofilevalue' . $i;
 				
 				$alerttype = $PAGE->theme->settings->$alerttype;
 				$alertaccess = $PAGE->theme->settings->$alertaccess;
 				$alertkey = $PAGE->theme->settings->$alertkey;
-				$alertprofilefield = $PAGE->theme->settings->$alertprofilefield;
-				$alertprofilevalue = $PAGE->theme->settings->$alertprofilevalue;				
+				//$alertprofilefield = $PAGE->theme->settings->$alertprofilefield;
+				//$alertprofilevalue = $PAGE->theme->settings->$alertprofilevalue;				
 				
-				if ($this->get_alert_access($alertaccess, $alertprofilefield, $alertprofilevalue, $alertsession)){
+				if ($this->get_alert_access($alertaccess, $profilevals[0], $profilevals[1], $alertsession)){
 					$alerts .= $this->get_alert_message($alerttext, $alerttype, $i, $alertkey);
 				}
 			}
@@ -123,12 +128,13 @@ class theme_adaptable_core_renderer extends core_renderer {
 		if($alertkey=='' || theme_adaptable_get_alertkey($alertindex)==$alertkey){
 			return '';
 		}
+		
 		$retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
 		$retval .= '<a href="#" class="close" data-dismiss="alert" data-alertkey="' . $alertkey . 
 			'" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
 		// $retval .= '<div class="container">';
 		$retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp';
-		$retval .= $text;		
+		$retval .= $text . ' ' . theme_adaptable_get_alertkey($alertindex);		
         // $retval .= '</div>';
         $retval .= '</div>';
 		return $retval;
@@ -145,7 +151,7 @@ class theme_adaptable_core_renderer extends core_renderer {
 			break;			
 			case "admin":
 				if (is_siteadmin()){ $retval = true; }			
-			case "profile":
+			case "profile":				
 				if ($this->check_menu_access($profilefield, $profilevalue, $alertsession)){	$retval = true; }				
 			break;					
 		}
