@@ -1596,7 +1596,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/frontpagelogin';
     $title = get_string('frontpagelogin', 'theme_adaptable');
     $description = get_string('frontpagelogindesc', 'theme_adaptable');
-    $default = false;
+    $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
