@@ -24,7 +24,7 @@
  *
  */
 
-define('THEME_ADAPTABLE_DEFAULT_ALERTCOUNT', '3');
+define('THEME_ADAPTABLE_DEFAULT_ALERTCOUNT', '1');
 
 /**
  * Parses CSS before it is cached.
@@ -156,6 +156,8 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:enableheading]]' => 'fullname',
         '[[setting:breadcrumbtitle]]' => 'shortname',
         '[[setting:enableavailablecourses]]' => 'display',
+        '[[setting:enableticker]]' => true,
+        '[[setting:enabletickermy]]' => true,           
     );
 
     // Get all the defined settings for the theme and replace defaults.

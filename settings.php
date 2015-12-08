@@ -2995,7 +2995,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/enableticker';
     $title = get_string('enableticker', 'theme_adaptable');
     $description = get_string('enabletickerdesc', 'theme_adaptable');
-    $default = false;
+    $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -3003,7 +3003,7 @@ if (is_siteadmin()) {
 	$name = 'theme_adaptable/enabletickermy';
     $title = get_string('enabletickermy', 'theme_adaptable');
     $description = get_string('enabletickermydesc', 'theme_adaptable');
-    $default = false;
+    $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
