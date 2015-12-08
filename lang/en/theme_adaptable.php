@@ -350,8 +350,8 @@ $string['alertinfodesc'] = 'Display a warning in the Alert Box';
 $string['alertannounce'] = 'Announcement';
 $string['alertinfodesc'] = 'Display an announcement in the Alert Box';
 
-$string['alertprofilefield'] = 'Custom Profile Field Name:';
-$string['alertprofilevalue'] = '= Custom Profile Field Value:';
+$string['alertprofilefield'] = 'Custom Profile Field Name=Value (optional)';
+$string['alertprofilefielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
 
 // Alert Access - Visibility.
 $string['alertaccessglobal'] = 'Visibile to everyone';
