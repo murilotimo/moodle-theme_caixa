@@ -26,6 +26,7 @@
 
 $settings = null;
 require_once(__DIR__.'/libs/admin_confightmleditor.php');
+require_once(__DIR__.'/lib.php');
 defined('MOODLE_INTERNAL') || die;
 
 $fontlist = array(
@@ -851,7 +852,7 @@ if (is_siteadmin()) {
     $title = get_string('maincolor', 'theme_adaptable');
     $description = get_string('maincolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -868,7 +869,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/linkcolor';
     $title = get_string('linkcolor', 'theme_adaptable');
     $description = get_string('linkcolordesc', 'theme_adaptable');
-    $default = '#001E3C';
+    $default = '#009688';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $temp->add($setting);
@@ -877,7 +878,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/linkhover';
     $title = get_string('linkhover', 'theme_adaptable');
     $description = get_string('linkhoverdesc', 'theme_adaptable');
-    $default = '#001E3C';
+    $default = '#009688';
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -895,7 +896,7 @@ if (is_siteadmin()) {
     $title = get_string('loadingcolor', 'theme_adaptable');
     $description = get_string('loadingcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#29d', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f44336', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -904,7 +905,7 @@ if (is_siteadmin()) {
     $title = get_string('headerbkcolor', 'theme_adaptable');
     $description = get_string('headerbkcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#00796B', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -922,7 +923,7 @@ if (is_siteadmin()) {
     $title = get_string('headerbkcolor2', 'theme_adaptable');
     $description = get_string('headerbkcolor2desc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -940,7 +941,7 @@ if (is_siteadmin()) {
     $title = get_string('loadingcolor', 'theme_adaptable');
     $description = get_string('loadingcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#29d', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#4db6ac', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -983,7 +984,7 @@ if (is_siteadmin()) {
     $title = get_string('menubordercolor', 'theme_adaptable');
     $description = get_string('menubordercolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#b7b3ef', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#80cbc4', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -998,7 +999,7 @@ if (is_siteadmin()) {
     $title = get_string('mobilemenubkcolor', 'theme_adaptable');
     $description = get_string('mobilemenubkcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#F9F9F9', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1097,7 +1098,7 @@ if (is_siteadmin()) {
     $title = get_string('rendereroverlaycolor', 'theme_adaptable');
     $description = get_string('rendereroverlaycolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001E3C', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1113,7 +1114,7 @@ if (is_siteadmin()) {
     $title = get_string('tilesbordercolor', 'theme_adaptable');
     $description = get_string('tilesbordercolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#e8eaeb', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1121,7 +1122,7 @@ if (is_siteadmin()) {
     $title = get_string('covbkcolor', 'theme_adaptable');
     $description = get_string('covbkcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1137,7 +1138,7 @@ if (is_siteadmin()) {
     $title = get_string('dividingline', 'theme_adaptable');
     $description = get_string('dividinglinedesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#B7B3EF', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1145,7 +1146,7 @@ if (is_siteadmin()) {
     $title = get_string('dividingline2', 'theme_adaptable');
     $description = get_string('dividingline2desc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#B7B3EF', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1230,7 +1231,7 @@ if (is_siteadmin()) {
     $title = get_string('footerbkcolor', 'theme_adaptable');
     $description = get_string('footerbkcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#424242', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1320,7 +1321,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/fontheadername';
     $title = get_string('fontheadername', 'theme_adaptable');
     $description = get_string('fontheadernamedesc', 'theme_adaptable');
-    $default = 'Roboto';
+    $default = 'Roboto Slab';
     $choices = $fontlist;
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $temp->add($setting);
@@ -1346,7 +1347,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/fonttitlename';
     $title = get_string('fonttitlename', 'theme_adaptable');
     $description = get_string('fonttitlenamedesc', 'theme_adaptable');
-    $default = 'Roboto';
+    $default = 'Audiowide';
     $choices = $fontlist;
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -1356,7 +1357,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/fonttitlesize';
     $title = get_string('fonttitlesize', 'theme_adaptable');
     $description = get_string('fonttitlesizedesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '24px');
+    $setting = new admin_setting_configtext($name, $title, $description, '48px');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1364,7 +1365,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/fonttitleweight';
     $title = get_string('fonttitleweight', 'theme_adaptable');
     $description = get_string('fonttitleweightdesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '700');
+    $setting = new admin_setting_configtext($name, $title, $description, '400');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1389,7 +1390,7 @@ if (is_siteadmin()) {
     $title = get_string('buttonradius', 'theme_adaptable');
     $description = get_string('buttonradiusdesc', 'theme_adaptable');
     $radchoices = $from0to6;
-    $setting = new admin_setting_configselect($name, $title, $description, '2px', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, '5px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1398,7 +1399,7 @@ if (is_siteadmin()) {
     $title = get_string('buttoncolor', 'theme_adaptable');
     $description = get_string('buttoncolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#00aeef', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1407,7 +1408,7 @@ if (is_siteadmin()) {
     $title = get_string('buttonhovercolor', 'theme_adaptable');
     $description = get_string('buttonhovercolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#00695c', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1424,7 +1425,7 @@ if (is_siteadmin()) {
     $title = get_string('editonbk', 'theme_adaptable');
     $description = get_string('editonbkdesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0c901f', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#4caf50', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1432,7 +1433,7 @@ if (is_siteadmin()) {
     $title = get_string('editoffbk', 'theme_adaptable');
     $description = get_string('editoffbkdesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f01f1f', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f44336', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1472,7 +1473,7 @@ if (is_siteadmin()) {
     $title = get_string('buttonlogincolor', 'theme_adaptable');
     $description = get_string('buttonlogincolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0C901F', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ef5350', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1480,7 +1481,7 @@ if (is_siteadmin()) {
     $title = get_string('buttonloginhovercolor', 'theme_adaptable');
     $description = get_string('buttonloginhovercolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0084c2', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#e53935', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1496,7 +1497,7 @@ if (is_siteadmin()) {
     $title = get_string('buttonloginpadding', 'theme_adaptable');
     $description = get_string('buttonloginpaddingdesc', 'theme_adaptable');
     $radchoices = $from0to8;
-    $setting = new admin_setting_configselect($name, $title, $description, '4px', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1515,7 +1516,7 @@ if (is_siteadmin()) {
         '32px' => "32px",
         '34px' => "34px",
     );
-    $setting = new admin_setting_configselect($name, $title, $description, '22px', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, '24px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1523,7 +1524,7 @@ if (is_siteadmin()) {
     $title = get_string('buttonloginmargintop', 'theme_adaptable');
     $description = get_string('buttonloginmargintopdesc', 'theme_adaptable');
     $radchoices = $from0to12;
-    $setting = new admin_setting_configselect($name, $title, $description, '3px', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, '2px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1612,7 +1613,7 @@ if (is_siteadmin()) {
     $title = get_string('menufontsize', 'theme_adaptable');
     $description = get_string('menufontsizedesc', 'theme_adaptable');
     $radchoices = $from10to16;
-    $setting = new admin_setting_configselect($name, $title, $description, '12px', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, '14px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1860,7 +1861,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/socialset';
     $title = get_string('socialset', 'theme_adaptable');
     $description = get_string('socialsetdesc', 'theme_adaptable');
-    $default = false;
+    $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -1877,7 +1878,7 @@ if (is_siteadmin()) {
         36 => "36px",
         42 => "42px",
     );
-    $setting = new admin_setting_configselect($name, $title, $description, 22, $choices);
+    $setting = new admin_setting_configselect($name, $title, $description, 32, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -1943,7 +1944,8 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social1';
     $title = get_string('social1', 'theme_adaptable');
     $description = get_string('social1desc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $default = 'http://facebook.com/';
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_adaptable/social1icon';
@@ -1956,7 +1958,8 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social2';
     $title = get_string('social2', 'theme_adaptable');
     $description = get_string('social2desc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+	$default = 'http://twitter.com/';
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_adaptable/social2icon';
@@ -1969,6 +1972,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social3';
     $title = get_string('social3', 'theme_adaptable');
     $description = get_string('social3desc', 'theme_adaptable');
+	$default = 'https://plus.google.com/';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
@@ -1982,7 +1986,8 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social4';
     $title = get_string('social4', 'theme_adaptable');
     $description = get_string('social4desc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+	$default = 'https://www.instagram.com/';
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_adaptable/social4icon';
@@ -1994,7 +1999,7 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/social5';
     $title = get_string('social5', 'theme_adaptable');
-    $description = get_string('social5desc', 'theme_adaptable');
+    $description = get_string('social5desc', 'theme_adaptable');	
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
@@ -2021,7 +2026,8 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social7';
     $title = get_string('social7', 'theme_adaptable');
     $description = get_string('social7desc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+	$default = 'https://youtube.com/';
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
     $name = 'theme_adaptable/social7icon';
@@ -2425,6 +2431,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/blockicons';
     $title = get_string('blockicons', 'theme_adaptable');
     $description = get_string('blockiconsdesc', 'theme_adaptable');
+	$default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -2449,7 +2456,7 @@ if (is_siteadmin()) {
     $title = get_string('blockheadercolor', 'theme_adaptable');
     $description = get_string('blockheadercolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#002f67', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -2457,7 +2464,7 @@ if (is_siteadmin()) {
     $title = get_string('blockbordercolor', 'theme_adaptable');
     $description = get_string('blockbordercolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#001e3c', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#59585D', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -2465,7 +2472,7 @@ if (is_siteadmin()) {
     $title = get_string('blocklinkcolor', 'theme_adaptable');
     $description = get_string('blocklinkcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -2473,7 +2480,7 @@ if (is_siteadmin()) {
     $title = get_string('blockheaderbordertopstyle', 'theme_adaptable');
     $description = get_string('blockheaderbordertopstyledesc', 'theme_adaptable');
     $radchoices = $borderstyles;
-    $setting = new admin_setting_configselect($name, $title, $description, 'solid', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, 'dashed', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 	
@@ -2750,192 +2757,87 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting); 
+    
+    // Number of Alerts 
+    $name = 'theme_adaptable/alertcount';
+    $title = get_string('alertcount', 'theme_adaptable');
+    $description = get_string('alertcountdesc', 'theme_adaptable');
+    $default = THEME_ADAPTABLE_DEFAULT_ALERTCOUNT;
+    $choices = array('1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10');
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting); 
+    
+    //if we don't have an an alertcount yet, default to the preset
+    $alertcount = get_config('theme_adaptable','alertcount');
+    if(!$alertcount){$alertcount=THEME_ADAPTABLE_DEFAULT_ALERTCOUNT;}
+    
+    
+    for($alertindex=1;$alertindex <= $alertcount;$alertindex++){
 		
-	// Alert Box Heading 1.
-    $name = 'theme_adaptable/settingsalertbox';
-    $heading = get_string('alertsettings1', 'theme_adaptable');
-    $setting = new admin_setting_heading($name, $heading, '');
-    $temp->add($setting);
+		// Alert Box Heading 1.
+		$name = 'theme_adaptable/settingsalertbox' . $alertindex;
+		$heading = get_string('alertsettings', 'theme_adaptable',$alertindex);
+		$setting = new admin_setting_heading($name, $heading, '');
+		$temp->add($setting);
 
-    // Enable Alert 1.
-    $name = 'theme_adaptable/enablealert1';
-    $title = get_string('enablealert1', 'theme_adaptable');
-    $description = get_string('enablealertdesc1', 'theme_adaptable');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Alert Text 1.
-    $name = 'theme_adaptable/alerttext1';
-    $title = get_string('alerttext', 'theme_adaptable');
-    $description = get_string('alerttextdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-
-    // Alert Type 1.
-    $name = 'theme_adaptable/alerttype1';
-    $title = get_string('alerttype', 'theme_adaptable');
-    $description = get_string('alerttypedesc', 'theme_adaptable');
-    $default = 'info';
-    $choices = array(
-        'info' => get_string('alertinfo', 'theme_adaptable'),
-        'warning' => get_string('alertwarning', 'theme_adaptable'),
-        'success' => get_string('alertannounce', 'theme_adaptable'));
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+		// Enable Alert 1.
+		$name = 'theme_adaptable/enablealert' . $alertindex;
+		$title = get_string('enablealert', 'theme_adaptable',$alertindex);
+		$description = get_string('enablealertdesc', 'theme_adaptable', $alertindex);
+		$default = false;
+		$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+		$setting->set_updatedcallback('theme_reset_all_caches');
+		$temp->add($setting);
 	
-	// Alert Access 1.
-    $name = 'theme_adaptable/alertaccess1';
-    $title = get_string('alertaccess', 'theme_adaptable');
-    $description = get_string('alertaccessdesc', 'theme_adaptable');
-    $default = 'global';
-    $choices = array(
-        'global' => get_string('alertaccessglobal', 'theme_adaptable'),
-        'users' => get_string('alertaccessusers', 'theme_adaptable'),
-        'admin' => get_string('alertaccessadmins', 'theme_adaptable'),
-		'profile' => get_string('alertaccessprofile', 'theme_adaptable'));
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+		//Alert Key
+		$name = 'theme_adaptable/alertkey' . $alertindex;
+		$title = get_string('alertkeyvalue', 'theme_adaptable');
+		$description = get_string('alertkeyvalue_details', 'theme_adaptable');
+		$setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+		$temp->add($setting);
+
+		// Alert Text 1.
+		$name = 'theme_adaptable/alerttext' . $alertindex;
+		$title = get_string('alerttext', 'theme_adaptable');
+		$description = get_string('alerttextdesc', 'theme_adaptable');
+		$default = '';
+		$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+		$temp->add($setting);
+
+		// Alert Type 1.
+		$name = 'theme_adaptable/alerttype' . $alertindex;
+		$title = get_string('alerttype', 'theme_adaptable');
+		$description = get_string('alerttypedesc', 'theme_adaptable');
+		$default = 'info';
+		$choices = array(
+			'info' => get_string('alertinfo', 'theme_adaptable'),
+			'warning' => get_string('alertwarning', 'theme_adaptable'),
+			'success' => get_string('alertannounce', 'theme_adaptable'));
+		$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+		$setting->set_updatedcallback('theme_reset_all_caches');
+		$temp->add($setting);
 	
-	$name = 'theme_adaptable/alertprofilefield1';
-    $title = get_string('alertprofilefield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/alertprofilevalue1';
-    $title = get_string('alertprofilevalue', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-		
-	// Alert Box Heading 2.
-    $name = 'theme_adaptable/settingsalertbox2';
-    $heading = get_string('alertsettings2', 'theme_adaptable');
-    $setting = new admin_setting_heading($name, $heading, '');
-    $temp->add($setting);
-
-    // Enable Alert 2.
-    $name = 'theme_adaptable/enablealert2';
-    $title = get_string('enablealert2', 'theme_adaptable');
-    $description = get_string('enablealertdesc2', 'theme_adaptable');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Alert text 2.
-    $name = 'theme_adaptable/alerttext2';
-    $title = get_string('alerttext', 'theme_adaptable');
-    $description = get_string('alerttextdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-
-    // Admins Alert type.
-    $name = 'theme_adaptable/alerttype2';
-    $title = get_string('alerttype', 'theme_adaptable');
-    $description = get_string('alerttypedesc', 'theme_adaptable');
-    $default = 'info';
-    $choices = array(
-        'info' => get_string('alertinfo', 'theme_adaptable'),
-        'warning' => get_string('alertwarning', 'theme_adaptable'),
-        'success' => get_string('alertannounce', 'theme_adaptable'));
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-	// Alert Access 2.
-    $name = 'theme_adaptable/alertaccess2';
-    $title = get_string('alertaccess', 'theme_adaptable');
-    $description = get_string('alertaccessdesc', 'theme_adaptable');
-    $default = 'global';
-    $choices = array(
-        'global' => get_string('alertaccessglobal', 'theme_adaptable'),
-        'users' => get_string('alertaccessusers', 'theme_adaptable'),
-        'admin' => get_string('alertaccessadmins', 'theme_adaptable'),
-		'profile' => get_string('alertaccessprofile', 'theme_adaptable'));
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+		// Alert Access
+		$name = 'theme_adaptable/alertaccess' . $alertindex;
+		$title = get_string('alertaccess', 'theme_adaptable');
+		$description = get_string('alertaccessdesc', 'theme_adaptable');
+		$default = 'global';
+		$choices = array(
+			'global' => get_string('alertaccessglobal', 'theme_adaptable'),
+			'users' => get_string('alertaccessusers', 'theme_adaptable'),
+			'admin' => get_string('alertaccessadmins', 'theme_adaptable'),
+			'profile' => get_string('alertaccessprofile', 'theme_adaptable'));
+		$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+		$setting->set_updatedcallback('theme_reset_all_caches');
+		$temp->add($setting);
 	
-	$name = 'theme_adaptable/alertprofilefield2';
-    $title = get_string('alertprofilefield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/alertprofilevalue2';
-    $title = get_string('alertprofilevalue', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);	
-	
-	// Alert Box Heading 3.
-    $name = 'theme_adaptable/settingsalertbox3';
-    $heading = get_string('alertsettings3', 'theme_adaptable');
-    $setting = new admin_setting_heading($name, $heading, '');
-    $temp->add($setting);
-
-    // Enable Alert 3.
-    $name = 'theme_adaptable/enablealert3';
-    $title = get_string('enablealert3', 'theme_adaptable');
-    $description = get_string('enablealertdesc3', 'theme_adaptable');
-    $default = false;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Users Alert text.
-    $name = 'theme_adaptable/alerttext3';
-    $title = get_string('alerttext', 'theme_adaptable');
-    $description = get_string('alerttextdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-
-    // Users Alert type.
-    $name = 'theme_adaptable/alerttype3';
-    $title = get_string('alerttype', 'theme_adaptable');
-    $description = get_string('alerttypedesc', 'theme_adaptable');
-    $default = 'info';
-    $choices = array(
-        'info' => get_string('alertinfo', 'theme_adaptable'),
-        'warning' => get_string('alertwarning', 'theme_adaptable'),
-        'success' => get_string('alertannounce', 'theme_adaptable'));
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-	
-	// Alert Three Access.
-    $name = 'theme_adaptable/alertaccess3';
-    $title = get_string('alertaccess', 'theme_adaptable');
-    $description = get_string('alertaccessdesc', 'theme_adaptable');
-    $default = 'global';
-    $choices = array(
-        'global' => get_string('alertaccessglobal', 'theme_adaptable'),
-        'users' => get_string('alertaccessusers', 'theme_adaptable'),
-        'admin' => get_string('alertaccessadmins', 'theme_adaptable'),
-		'profile' => get_string('alertaccessprofile', 'theme_adaptable'));
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-	
-	$name = 'theme_adaptable/alertprofilefield3';
-    $title = get_string('alertprofilefield', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/alertprofilevalue3';
-    $title = get_string('alertprofilevalue', 'theme_adaptable');
-    $description = '';
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);	   
+		$name = 'theme_adaptable/alertprofilefield' . $alertindex;
+		$title = get_string('alertprofilefield', 'theme_adaptable');
+		$description = get_string('alertprofilefielddesc', 'theme_adaptable');
+		$setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+		$temp->add($setting);
+    }
 	
     $ADMIN->add('theme_adaptable', $temp);
 
@@ -2947,7 +2849,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/enableticker';
     $title = get_string('enableticker', 'theme_adaptable');
     $description = get_string('enabletickerdesc', 'theme_adaptable');
-    $default = false;
+    $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -2955,7 +2857,7 @@ if (is_siteadmin()) {
 	$name = 'theme_adaptable/enabletickermy';
     $title = get_string('enabletickermy', 'theme_adaptable');
     $description = get_string('enabletickermydesc', 'theme_adaptable');
-    $default = false;
+    $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -3223,7 +3125,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/viewselect';
     $title = get_string('viewselect', 'theme_adaptable');
     $description = get_string('viewselectdesc', 'theme_adaptable');
-    $default = false;
+    $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -3240,7 +3142,7 @@ if (is_siteadmin()) {
         '99%' => '99%',
         '100%' => '100%',
     );
-    $setting = new admin_setting_configselect($name, $title, $description, '95%', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, '98%', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -3265,7 +3167,7 @@ if (is_siteadmin()) {
         '49%' => '49%',
         '50%' => '50%',
     );
-    $setting = new admin_setting_configselect($name, $title, $description, '35%', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, '50%', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

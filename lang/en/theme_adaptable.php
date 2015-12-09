@@ -42,7 +42,7 @@ $string['region-middle'] = 'middle';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 
-$string['pluginname'] = 'adaptable';
+$string['pluginname'] = 'Adaptable';
 
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
@@ -350,8 +350,8 @@ $string['alertinfodesc'] = 'Display a warning in the Alert Box';
 $string['alertannounce'] = 'Announcement';
 $string['alertinfodesc'] = 'Display an announcement in the Alert Box';
 
-$string['alertprofilefield'] = 'Custom Profile Field Name:';
-$string['alertprofilevalue'] = '= Custom Profile Field Value:';
+$string['alertprofilefield'] = 'Custom Profile Field Name=Value (optional)';
+$string['alertprofilefielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
 
 // Alert Access - Visibility.
 $string['alertaccessglobal'] = 'Visibile to everyone';
@@ -362,17 +362,9 @@ $string['alertaccessprofile'] = 'Add custom profile field restriction';
 $string['alertaccess'] = 'Alert Visibility';
 $string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "' . $string['alertaccessprofile'] . '" you will need to add values for profile fields below.';
 
-// Alert Box 1.
-$string['enablealert1'] = 'Enable Alert Box One';
-$string['enablealertdesc1'] = 'Enable Alert Box One';
-
-// Alert Box 2.
-$string['enablealert2'] = 'Enable Alert Box Two';
-$string['enablealertdesc2'] = 'Enable Alert Box Two';
-
-// Alert Box 3.
-$string['enablealert3'] = 'Enable Alert Box Three';
-$string['enablealertdesc3'] = 'Enable Alert Box Three';
+// Alert Box Enable
+$string['enablealert'] = 'Enable Alert Box {$a}';
+$string['enablealertdesc'] = 'Enable Alert Box {$a}';
 
 // Alert Box Generic Strings.
 $string['alerttype'] = 'Alert Box Type';
@@ -386,6 +378,9 @@ $string['enablealertcoursepagesdesc'] = 'Turning this option on will display the
 
 $string['enablealertstriptags'] = 'Automatically strip html tags from alerts';
 $string['enablealertstriptagsdesc'] = 'Enable will clean up alert messages automatically, Disable will allow you to use html / links in messages but you will have to clean up manually in html view';
+
+$string['alertkeyvalue'] = 'Alert Key';
+$string['alertkeyvalue_details'] = 'The key that identifies this alert, from previous alerts. If you change this, all users who have dismissed the alert previously will see it again. If you change the alert, you will likely want to change this to ensure all users see it.';
 
 // Footer strings.
 $string['footer1header'] = 'Footer Section 1 Title';
@@ -431,9 +426,11 @@ $string['tickerdesc'] = 'Here you can set a news ticker to run across the front 
 $string['tickerdefault'] = 'No news items to display';
 
 $string['alertsettingsgeneral'] = 'General Alert Settings';
-$string['alertsettings1'] = 'Alert Box One';
-$string['alertsettings2'] = 'Alert Box Two';
-$string['alertsettings3'] = 'Alert Box Three';
+$string['alertsettings'] = 'Alert Box {$a}';
+
+
+$string['alertcount'] = 'Alert count';
+$string['alertcountdesc'] = 'The number of alerts to show in the edit area below.';
 
 $string['alertsettingsheading'] = 'Customize top Alert Box';
 $string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';

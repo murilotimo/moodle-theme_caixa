@@ -24,6 +24,8 @@
  *
  */
 
+define('THEME_ADAPTABLE_DEFAULT_ALERTCOUNT', '1');
+
 /**
  * Parses CSS before it is cached.
  *
@@ -46,46 +48,46 @@ function theme_adaptable_process_css($css, $theme) {
     // Define the default settings for the theme incase they've not been set.
     $defaults = array(
         '[[setting:fsize]]' => '90',
-        '[[setting:linkcolor]]' => '#001E3C',
-        '[[setting:linkhover]]' => '#001E3C',
-        '[[setting:maincolor]]' => '#001E3C',
+        '[[setting:linkcolor]]' => '#009688',
+        '[[setting:linkhover]]' => '#009688',
+        '[[setting:maincolor]]' => '#009688',
         '[[setting:backcolor]]' => '#FFFFFF',
-        '[[setting:rendereroverlaycolor]]' => '#001E3C',
+        '[[setting:rendereroverlaycolor]]' => '#009688',
         '[[setting:rendereroverlayfontcolor]]' => '#FFFFFF',
-        '[[setting:buttoncolor]]' => '#00AEEF',
+        '[[setting:buttoncolor]]' => '#009688',
         '[[setting:buttontextcolor]]' => '#ffffff',
-        '[[setting:buttonhovercolor]]' => '#0084C2',
-        '[[setting:buttonlogincolor]]' => '#0C901F',
-        '[[setting:buttonloginhovercolor]]' => '#0084c2',
+        '[[setting:buttonhovercolor]]' => '#00695c',
+        '[[setting:buttonlogincolor]]' => '#ef5350',
+        '[[setting:buttonloginhovercolor]]' => '#e53935',
         '[[setting:buttonlogintextcolor]]' => '#0084c2',		
-        '[[setting:buttonloginpadding]]' => '4px',
-        '[[setting:buttonloginheight]]' => '22px',		
-        '[[setting:buttonloginmargintop]]' => '3px',		
-        '[[setting:buttonradius]]' => '2px',        
-        '[[setting:dividingline]]' => '#3C469C',
-        '[[setting:dividingline2]]' => '#3C469C',        
+        '[[setting:buttonloginpadding]]' => '0px',
+        '[[setting:buttonloginheight]]' => '24px',		
+        '[[setting:buttonloginmargintop]]' => '2px',		
+        '[[setting:buttonradius]]' => '5px',        
+        '[[setting:dividingline]]' => '#ffffff',
+        '[[setting:dividingline2]]' => '#ffffff',        
         '[[setting:navbarborder]]' => '#B7B3EF',
         '[[setting:navbarhover]]' => '#3C469C',
         '[[setting:breadcrumb]]' => '#b4bbbf',
         '[[setting:breadcrumbtextcolor]]' => '#444444',
         '[[setting:activebreadcrumb]]' => '#e8eaeb',
-        '[[setting:loadingcolor]]' => '#29d',
-        '[[setting:footerbkcolor]]' => '#001e3c',
+        '[[setting:loadingcolor]]' => '#f44336',
+        '[[setting:footerbkcolor]]' => '#424242',
         '[[setting:footertextcolor]]' => '#ffffff',
         '[[setting:footertextcolor2]]' => '#ffffff',
         '[[setting:footerlinkcolor]]' => '#ffffff',
-        '[[setting:headerbkcolor]]' => '#001e3c',
-        '[[setting:headerbkcolor2]]' => '#001e3c',
+        '[[setting:headerbkcolor]]' => '#00796B',
+        '[[setting:headerbkcolor2]]' => '#009688',
         '[[setting:headerprofilefontsize]]' => '12px',
         '[[setting:headertextcolor]]' => '#ffffff',
         '[[setting:headertextcolor2]]' => '#ffffff',
-        '[[setting:blockheadercolor]]' => '#002f67',
+        '[[setting:blockheadercolor]]' => '#009688',
         '[[setting:blockbackgroundcolor]]' => '#FFFFFF',    
         '[[setting:blockheaderbackgroundcolor]]' => '#FFFFFF',        
-        '[[setting:blockbordercolor]]' => '#001e3c',
+        '[[setting:blockbordercolor]]' => '#59585D',
         '[[setting:marketblockbordercolor]]' => '#e8eaeb',
         '[[setting:marketblocksbackgroundcolor]]' => '#FFFFFF',
-        '[[setting:blocklinkcolor]]' => '#333333',
+        '[[setting:blocklinkcolor]]' => '#009688',
         '[[setting:blockheaderbordertop]]' => '1px',
         '[[setting:blockheaderborderleft]]' => '0px',        
         '[[setting:blockheaderborderright]]' => '0px',
@@ -94,13 +96,13 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:blockmainborderleft]]' => '0px',
         '[[setting:blockmainborderright]]' => '0px',
         '[[setting:blockmainborderbottom]]' => '0px',
-        '[[setting:blockheaderbordertopstyle]]' => 'solid',
+        '[[setting:blockheaderbordertopstyle]]' => 'dashed',
         '[[setting:blockmainbordertopstyle]]' => 'solid',
         '[[setting:blockheadertopradius]]' => '0px',
         '[[setting:blockheaderbottomradius]]' => '0px',
         '[[setting:blockmaintopradius]]' => '0px',
         '[[setting:blockmainbottomradius]]' => '0px',		
-        '[[setting:tilesbordercolor]]' => '#e8eaeb',
+        '[[setting:tilesbordercolor]]' => '#009688',
         '[[setting:infoboxcolor]]' => '#333333',
         '[[setting:infoboxcolor2]]' => '#f3f3f3',
         '[[setting:slidermargintop]]' => '20px',		
@@ -109,39 +111,39 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:sectionheadingcolor]]' => '#5f588a',
         '[[setting:infoboxtextcolor]]' => '#ffffff',
         '[[setting:infoboxtextcolor2]]' => '#666666',
-        '[[setting:menufontsize]]' => '',
+        '[[setting:menufontsize]]' => '14px',
         '[[setting:menubkcolor]]' => '#ffffff',
         '[[setting:menufontcolor]]' => '#444444',        
         '[[setting:menufonthovercolor]]' => '#3c469c',
-        '[[setting:menubordercolor]]' => '#b7b3ef',
-        '[[setting:mobilemenubkcolor]]' => '#ffffff',
+        '[[setting:menubordercolor]]' => '#80cbc4',
+        '[[setting:mobilemenubkcolor]]' => '#F9F9F9',
         '[[setting:mobilemenufontcolor]]' => '#000000',
-        '[[setting:covbkcolor]]' => '#0066cc',
+        '[[setting:covbkcolor]]' => '#009688',
         '[[setting:covfontcolor]]' => '#ffffff',
-        '[[setting:editonbk]]' => '#0c901f',
-        '[[setting:editoffbk]]' => '#f01f1f',
+        '[[setting:editonbk]]' => '#4caf50',
+        '[[setting:editoffbk]]' => '#f44336',
         '[[setting:editverticalpadding]]' => '',
 		'[[setting:edithorizontalpadding]]' => '',
 		'[[setting:edittopmargin]]' => '',
         '[[setting:editfont]]' => '#ffffff',
         '[[setting:slideroption2color]]' => '#0066cc',
         '[[setting:slideroption2a]]' => '#0066cc',
-        '[[setting:socialsize]]' => '22',
+        '[[setting:socialsize]]' => '32',
         '[[setting:socialsizemobile]]' => '22',        
         '[[setting:mobile]]' => '22',
         '[[setting:socialpaddingtop]]' => '1.8%',        
         '[[setting:fontname]]' => 'Open Sans',
-        '[[setting:fontheadername]]' => 'Roboto',
+        '[[setting:fontheadername]]' => 'Roboto Slab',
         '[[setting:fontcolor]]' => '#333333',
         '[[setting:fontheadercolor]]' => '#333333',
         '[[setting:fontweight]]' => '400',
         '[[setting:fontheaderweight]]' => '400',  
-        '[[setting:fonttitlename]]' => 'Roboto',
-        '[[setting:fonttitleweight]]' => '700',
-        '[[setting:fonttitlesize]]' => '24px',
+        '[[setting:fonttitlename]]' => 'Audiowide',
+        '[[setting:fonttitleweight]]' => '400',
+        '[[setting:fonttitlesize]]' => '48px',
         '[[setting:fonttitlecolor]]' => '#FFFFFF',
-        '[[setting:fullscreenwidth]]' => '95%',
-        '[[setting:coursetitlemaxwidth]]' => '',
+        '[[setting:fullscreenwidth]]' => '98%',
+        '[[setting:coursetitlemaxwidth]]' => '50%',
         '[[setting:hidebreadcrumbmobile]]' => '',
         '[[setting:hidepagefootermobile]]' => '',
         '[[setting:hidealertsmobile]]' => '',
@@ -154,6 +156,8 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:enableheading]]' => 'fullname',
         '[[setting:breadcrumbtitle]]' => 'shortname',
         '[[setting:enableavailablecourses]]' => 'display',
+        '[[setting:enableticker]]' => true,
+        '[[setting:enabletickermy]]' => true,           
     );
 
     // Get all the defined settings for the theme and replace defaults.
@@ -229,6 +233,16 @@ function theme_adaptable_initialise_full(moodle_page $page) {
 function theme_adaptable_get_full() {
     return get_user_preferences('theme_adaptable_full', '');
 }
+
+/**
+ * Get the key of the last closed alert for a specific alert index.
+ * This will be used in the renderer to decide whether to include the alert or not
+ */
+function theme_adaptable_get_alertkey($alertindex) {
+	user_preference_allow_ajax_update('theme_adaptable_alertkey' . $alertindex, PARAM_TEXT);
+    return get_user_preferences('theme_adaptable_alertkey' . $alertindex, '');
+}
+
 
 function theme_adaptable_get_block_side() {
     static $theme;
