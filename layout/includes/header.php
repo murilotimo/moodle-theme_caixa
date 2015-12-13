@@ -39,7 +39,7 @@ $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-firs
 $hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $haslogo = (!empty($PAGE->theme->settings->logo));
-$hastitle = (!empty($PAGE->theme->settings->sitetitle));
+$hastitle = (!empty($PAGE->theme->settings->sitetitletext));
 $enableheadingtitle = $PAGE->theme->settings->enableheading;
 
 
