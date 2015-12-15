@@ -43,6 +43,14 @@ a:focus {
     outline-offset: -2px;
 }
 
+img {
+    vertical-align: middle;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+}
+
+
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
     background-color: #FFF;
     background-image: none;
