@@ -50,7 +50,6 @@ img {
     max-width: 100%;
 }
 
-
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
     background-color: #FFF;
     background-image: none;
