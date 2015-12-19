@@ -122,51 +122,57 @@ class theme_adaptable_core_renderer extends core_renderer {
     public function get_alert_message($text, $type, $alertindex, $alertkey) {
         if ($alertkey == '' || theme_adaptable_get_alertkey($alertindex) == $alertkey) {
             return '';
-    }
+        }
 
         $retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
         $retval .= '<a href="#" class="close" data-dismiss="alert" data-alertkey="' . $alertkey .
-			'" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
-		// $retval .= '<div class="container">';.
+        '" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
         $retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-2x"></i>&nbsp';
-        $retval .= $text . ' ' . theme_adaptable_get_alertkey($alertindex);		
-                $retval .= '</div>';
+        $retval .= $text . ' ' . theme_adaptable_get_alertkey($alertindex);
+        $retval .= '</div>';
         return $retval;
     }
-	
-    public function get_alert_access($access, $profilefield, $profilevalue, $alertsession){
-		$retval = false;
-		switch ($access) {
-			case "global":
-				$retval = true;
-			break;			
-			case "user":
-				if (isloggedin()){ $retval = true; }
-			break;			
-			case "admin":
-				if (is_siteadmin()){ $retval = true; }			
-			case "profile":				
-				if ($this->check_menu_access($profilefield, $profilevalue, $alertsession)){	$retval = true; }				
-			break;					
-		}
-		return $retval;
-	}
-    
-    public function alert_icon($alertclassglobal){
-	    switch ($alertclassglobal) {
-		    case "success":
-		        $alerticonglobal = "bullhorn";
-		    break;
-		    case "info":
-		        $alerticonglobal = "info-circle";
-		    break;
-		    case "warning":
-		        $alerticonglobal = "exclamation-triangle";
-		    break;
-		}
-		return $alerticonglobal;			
+
+    public function get_alert_access($access, $profilefield, $profilevalue, $alertsession) {
+        $retval = false;
+        switch ($access) {
+            case "global":
+                $retval = true;
+            break;
+            case "user":
+                if (isloggedin()) {
+                    $retval = true;
+                }
+            break;
+            case "admin":
+                if (is_siteadmin()) {
+                    $retval = true;
+                }
+            break;
+            case "profile":
+                if ($this->check_menu_access($profilefield, $profilevalue, $alertsession)) {
+                    $retval = true;
+                }
+            break;
+        }
+        return $retval;
     }
-    
+
+    public function alert_icon($alertclassglobal) {
+        switch ($alertclassglobal) {
+            case "success":
+                $alerticonglobal = "bullhorn";
+                break;
+            case "info":
+                $alerticonglobal = "info-circle";
+                break;
+            case "warning":
+                $alerticonglobal = "exclamation-triangle";
+                break;
+        }
+        return $alerticonglobal;
+    }
+
     /**
      * Returns HTML to display a "Turn editing on/off" button in a form.
      *
@@ -193,7 +199,7 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 
     protected function render_user_menu(custom_menu $menu) {
-        global $CFG, $USER, $DB, $OUTPUT;        
+        global $CFG, $USER, $DB, $OUTPUT;
         $addlangmenu = true;
         $addmessagemenu = true;
 
@@ -214,16 +220,14 @@ class theme_adaptable_core_renderer extends core_renderer {
         if ($addmessagemenu) {
             $messages = $this->get_user_messages();
             $messagecount = count($messages);
-               // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
-               if ($messagecount > 0) {
-                   $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message') .' '.
-                   '<span class="badge">' . $messagecount . '</span>', new moodle_url('#'),
-                   
-                   
-                   get_string('messages', 'message'), 9999);
-               } else { $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message'), new moodle_url('/message/index.php'),
-                        get_string('messages', 'message'), 9999);
-               }
+            // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
+            if ($messagecount > 0) {
+                $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message') .' '.
+                '<span class="badge">' . $messagecount . '</span>', new moodle_url('#'), get_string('messages', 'message'), 9999);
+            } else {
+                $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message'),
+                                            new moodle_url('/message/index.php'), get_string('messages', 'message'), 9999);
+            }
 
             foreach ($messages as $message) {
                 if (!is_object($message->from)) {
@@ -328,7 +332,8 @@ class theme_adaptable_core_renderer extends core_renderer {
             $messagecontent->type = 'notification';
             $messagecontent->url = new moodle_url($message->contexturl);
             if (empty($message->contexturl)) {
-                $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'viewing' => 'recentnotifications'));
+                $messagecontent->url = new moodle_url('/message/index.php',
+                                        array('user1' => $USER->id, 'viewing' => 'recentnotifications'));
             }
         } else {
             $messagecontent->type = 'message';
@@ -341,7 +346,8 @@ class theme_adaptable_core_renderer extends core_renderer {
                 $messagecontent->text = $message->smallmessage;
             }
             $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
-            $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->useridfrom));
+            $messagecontent->url = new moodle_url('/message/index.php',
+                                    array('user1' => $USER->id, 'user2' => $message->useridfrom));
         }
         $messagecontent->date = userdate($message->timecreated, get_string('strftimetime', 'langconfig'));
         $messagecontent->unread = empty($message->timeread);
@@ -371,55 +377,54 @@ class theme_adaptable_core_renderer extends core_renderer {
         return "<div class=\"$type\">$message</div>";
     }
 
-    public function socialicons(){
-    	global $CFG, $PAGE;
-		
-    	$retval = '<div class="socialbox pull-right">';	
-			
-		if (isset($PAGE->theme->settings->socialsearchicon)) { 
+    public function socialicons() {
+        global $CFG, $PAGE;
+
+        $retval = '<div class="socialbox pull-right">';
+
+        if (isset($PAGE->theme->settings->socialsearchicon)) {
             $val = '<a alt="' . get_string('socialsearchicon', 'theme_adaptable') . '" title="' . get_string('socialsearchicon', 'theme_adaptable'); 
             $val .= '" href="' . $CFG->wwwroot . '/course/search.php' . '">';
             $val .= '<i class="fa fa-search"></i></a>';
-			$retval .= $val;
-		}
-		
-    	for ($i = 1; $i<12; $i++){    		
-    		$socialno = 'social' . $i;
-			$socialicon = 'social' . $i . 'icon';
-						
-			if (!empty($PAGE->theme->settings->$socialno)){						
-				$val = '<a alt="' . get_string($socialno, 'theme_adaptable');
-				$val .= '" title="' . get_string($socialno, 'theme_adaptable');
-				$val .= '" href="' . $PAGE->theme->settings->$socialno . '">';
-				$val .= '<i class="fa ' . $PAGE->theme->settings->$socialicon . '"></i>';
-				$val .= '</a>';				 
-				$retval .= $val; 
-			}
-    	}
-		$retval .= '</div>';
-		return $retval; 
+            $retval .= $val;
+        }
+
+        for ($i = 1; $i < 12; $i++) {
+            $socialno = 'social' . $i;
+            $socialicon = 'social' . $i . 'icon';
+
+            if (!empty($PAGE->theme->settings->$socialno)) {
+                $val = '<a alt="' . get_string($socialno, 'theme_adaptable');
+                $val .= '" title="' . get_string($socialno, 'theme_adaptable');
+                $val .= '" href="' . $PAGE->theme->settings->$socialno . '">';
+                $val .= '<i class="fa ' . $PAGE->theme->settings->$socialicon . '"></i>';
+                $val .= '</a>';
+                $retval .= $val;
+            }
+        }
+        $retval .= '</div>';
+        return $retval;
     }
 
-	public function get_news_ticker(){
+    public function get_news_ticker() {
 		global $PAGE;
-		$retval = '';
-		
-		if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index") || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")){
-				
-			$msg = '';			
-			
-			for ($i=1; $i<3; $i++){
-				$textfield = 'tickertext' . $i;
-				$profilefield = 'tickertext' . $i . 'profilefield';
-				$access = true;			 
-				
-								
-				if (!empty($PAGE->theme->settings->$profilefield)){
-					$profilevals = explode('=', $PAGE->theme->settings->$profilefield);					
-					if (!$this->check_menu_access($profilevals[0], $profilevals[1], $textfield)){
-						$access = false; 
-					}	
-				}								
+        $retval = '';
+
+        if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index") 
+            || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
+            $msg = '';			
+
+            for ($i = 1; $i < 3; $i++) {
+                $textfield = 'tickertext' . $i;
+                $profilefield = 'tickertext' . $i . 'profilefield';
+                $access = true;			 
+
+                if (!empty($PAGE->theme->settings->$profilefield)){
+                    $profilevals = explode('=', $PAGE->theme->settings->$profilefield);					
+                    if (!$this->check_menu_access($profilevals[0], $profilevals[1], $textfield)){
+                        $access = false; 
+                    }	
+                }								
 				
 				if ($access){
 					$msg .= $PAGE->theme->settings->$textfield;

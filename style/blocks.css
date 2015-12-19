@@ -259,6 +259,10 @@ font-weight: normal;
   content: "\f017";
   font-family: FontAwesome;
 }
+.showblockicons .block_rss_client .header .title h2:before {
+  content: "\f09e";
+  font-family: FontAwesome;
+}
 .showblockicons .block_search_forums .header .title h2:before {
   content: "\f0e6";
   font-family: FontAwesome;
