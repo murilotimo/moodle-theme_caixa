@@ -147,6 +147,13 @@ a.dimmed, a.dimmed:link, a.dimmed:visited, a.dimmed_text, a.dimmed_text:link, a.
 }
 
 
+/* squared dot */
+.block_settings .block_tree li.item_with_icon > p img {
+    left: 3px;
+    top: 2px;
+}
+
+
 /* add or hide block icons */
 .showblockicons .block .header .title h2:before{
 font-family:FontAwesome;
