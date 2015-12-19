@@ -133,10 +133,9 @@ class theme_adaptable_core_renderer extends core_renderer {
 		$retval .= '<a href="#" class="close" data-dismiss="alert" data-alertkey="' . $alertkey . 
 			'" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
 		// $retval .= '<div class="container">';
-		$retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp';
+		$retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-2x"></i>&nbsp';
 		$retval .= $text . ' ' . theme_adaptable_get_alertkey($alertindex);		
-        // $retval .= '</div>';
-        $retval .= '</div>';
+                $retval .= '</div>';
 		return $retval;
 	}
 	
