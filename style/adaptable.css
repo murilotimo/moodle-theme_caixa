@@ -93,7 +93,24 @@ img {
   margin-bottom: 20px;
 }
 
-#nologo, #nologo a, .generalbox h2, h3.sectionname, div.tabtree li.selected a span, .forumpost .subject, .blog_entry div.subject a, h2.headingblock, h2.main, h3.main, h2.main a, h3.main a, div.loginpanel h2, div.signuppanel h2 {
+.jsenabled .block_settings .block_tree .tree_item.branch,
+.block_navigation .block_tree .tree_item.branch {
+    color: [[setting:linkcolor]];
+}
+
+
+#nologo, #nologo a,
+.generalbox h2, h3.sectionname,
+div.tabtree li.selected a span,
+.forumpost .subject,
+.blog_entry div.subject a,
+h2.headingblock,
+h2.main,
+h3.main,
+h2.main a,
+h3.main a,
+div.loginpanel h2,
+div.signuppanel h2 {
    font-weight: bold;
 }
 
