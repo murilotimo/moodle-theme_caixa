@@ -102,17 +102,17 @@ html[xmlns] .slides {display: block;}
   -o-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
  }
- 
+
  .slidestyle2 .flex-caption .span6 {
  	margin-left: 6%;
  }
- 
+
  /*for css transitions on larger screens */
  @media screen and (min-width: 960px) {
  .slidestyle2 .flex-caption {
  	right: -800px;
  }
- 
+
  .slidestyle2 .flex-active-slide .flex-caption {
  right: 0px;
  -webkit-transition: all 1s ease;
@@ -132,7 +132,7 @@ html[xmlns] .slides {display: block;}
     margin: 0px;
     margin-left: 30px;
     padding: 5px 15px;
-    float:left;	
+    float:left;
     text-transform: uppercase;
     max-width: 1170px;
     clear: both;
@@ -197,21 +197,21 @@ html[xmlns] .slides {display: block;}
 	.slidestyle2 .flex-caption br {
 		display: none;
 	}
-	
+
 	.slidestyle2 .flex-caption {
 		top:25%;
 	}
-	
+
 	.slidestyle2 .flex-direction-nav {
 		display: none;
 	}
-	
+
 	.slidestyle2 .flex-caption h4 {
 		font-size: 23px;
 		line-height: 30px;
 	}
-	
-	.slidestyle2 .flex-caption a.submit { 
+
+	.slidestyle2 .flex-caption a.submit {
 		font-size: 14px;
 		float: none;
 		white-space: normal;
@@ -220,31 +220,31 @@ html[xmlns] .slides {display: block;}
 }
 
 @media screen and (max-width: 768px) {
-	
+
 	.slidestyle2 .flex-caption {
  		position: relative;
  		top:auto;
  		left: 0px;
  		background: transparent !important;
 	}
-	
+
 	 .slidestyle2 .flex-caption .span6 {
  	margin-left: 0%;
  	}
-	
+
 	.slidestyle2 .flex-caption a.submit {
 		margin: 0 0;
 		float: none;
 		width: auto;
 		text-align: center;
 	}
-	
+
 	.slidestyle2 .flex-caption h3 {
 		margin-left: 0px;
 		background: #000;
 		margin: 0px !Important;
 	}
-	
+
 	.slidestyle2 .flex-caption h4 {
     font-size: 18px;
     line-height: 22px;

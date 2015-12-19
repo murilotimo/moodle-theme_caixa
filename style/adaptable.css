@@ -78,11 +78,11 @@ img {
     font-weight: bold;
 }
 
-.headingblock, h2.main, 
-#site-news-forum h2, 
-#frontpage-course-list h2, 
-#frontpage-category-names h2, 
-#frontpage-category-combo h2, 
+.headingblock, h2.main,
+#site-news-forum h2,
+#frontpage-course-list h2,
+#frontpage-category-names h2,
+#frontpage-category-combo h2,
 .course_category_tree .category > .info > .categoryname {
     font-family: [[setting:fontheadername]], sans-serif !important;
     font-weight: [[setting:fontheaderweight]] !important;
@@ -128,7 +128,7 @@ div.signuppanel h2 {
 }
 
 #above-header {
-	border-bottom: 1px solid [[setting:dividingline]];
+    border-bottom: 1px solid [[setting:dividingline]];
     height: 25px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -137,34 +137,34 @@ div.signuppanel h2 {
 }
 
 #above-header .container {
-	position: relative;
+    position: relative;
 }
 
-#above-header .headermenu, 
+#above-header .headermenu,
 #above-header .headermenu a {
-	color: [[setting:headertextcolor]];
+    color: [[setting:headertextcolor]];
 }
 
 #above-header .headermenu .dropdown-menu,
 #above-header .headermenu .dropdown-menu a {
     font-family: [[setting:fontname]], sans-serif !important;
-	font-size: [[setting:headerprofilefontsize]];
-	color: [[setting:linkcolor]];
+    font-size: [[setting:headerprofilefontsize]];
+    color: [[setting:linkcolor]];
 }
 
 #above-header .langdesc {
-	color: [[setting:headertextcolor]];
-	font-size: [[setting:headerprofilefontsize]];
+    color: [[setting:headertextcolor]];
+    font-size: [[setting:headerprofilefontsize]];
 }
 
 #page-header {
-	border-bottom: 0px solid [[setting:maincolor]];
-	clear: both;
-	margin-bottom: 0px;
-	background: transparent;
-	padding-top: 0px;
-	min-height: 82px;
-	color: [[setting:headertextcolor2]];
+    border-bottom: 0px solid [[setting:maincolor]];
+    clear: both;
+    margin-bottom: 0px;
+    background: transparent;
+    padding-top: 0px;
+    min-height: 82px;
+    color: [[setting:headertextcolor2]];
 }
 
 #logo {
@@ -177,36 +177,35 @@ div.signuppanel h2 {
 
 #titlecontainer {
     padding-top: 10px;
-    
 }
 
 #titlecontainer a,
 #titlecontainer a p {
     font-family: [[setting:fonttitlename]], sans-serif !important;
-	font-size: [[setting:fonttitlesize]] !important;
-	font-weight: [[setting:fonttitleweight]] !important;
-	color: [[setting:fonttitlecolor]] !important;
+    font-size: [[setting:fonttitlesize]] !important;
+    font-weight: [[setting:fonttitleweight]] !important;
+    color: [[setting:fonttitlecolor]] !important;
     padding-top: 10px;
 }
 
 #titlecontainer a:hover {
-	color: [[setting:linkhovercolor]];
-	text-decoration: none;
+    color: [[setting:linkhovercolor]];
+    text-decoration: none;
 }
 
 #moodlelogo {
-	padding-top: 20px;
+    padding-top: 20px;
 }
 
 #logomoodle {
-	display: block;
+    display: block;
     margin-bottom: 6px;
     margin-left: 0px;
 }
 
 #coursetitle {
     font-family: [[setting:fonttitlename]], sans-serif !important;
-	color: [[setting:fonttitlecolor]] !important;
+    color: [[setting:fonttitlecolor]] !important;
     font-size: [[setting:fonttitlesize]] !important;
     line-height: normal;
     font-weight: [[setting:fonttitleweight]];
@@ -219,7 +218,7 @@ div.signuppanel h2 {
 }
 
 #coursesearchbox2 {
-	border-radius: 0;
+    border-radius: 0;
     box-shadow: none;
     min-width: 240px;
     padding: 8px 10px 5px;
@@ -232,40 +231,40 @@ div.signuppanel h2 {
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
-	#coursesearchbox2 {
-		min-width: 140px;
-		margin-top: 5px;
-	}
+    #coursesearchbox2 {
+        min-width: 140px;
+        margin-top: 5px;
+    }
 }
 
 .socialbox {
-	padding-top: [[setting:socialpaddingtop]];
-	padding-bottom: 5px;
+    padding-top: [[setting:socialpaddingtop]];
+    padding-bottom: 5px;
 }
 
 .socialbox a {
-	color: [[setting:headertextcolor2]];
-	font-size: [[setting:socialsize]]px;
-	padding-left: 10px;
+    color: [[setting:headertextcolor2]];
+    font-size: [[setting:socialsize]]px;
+    padding-left: 10px;
 }
 
 @media (max-width: 980px) {
-	.socialbox {
-    float: none;
-    padding-bottom: 10px;
-    padding-top: 20px;
-    text-align: center;
-	}
+    .socialbox {
+        float: none;
+        padding-bottom: 10px;
+        padding-top: 20px;
+        text-align: center;
+    }
 }
 
 .headermenu {
-	float: right;
-	padding-top: 0px;
-	padding-right: 0px;
-	font-size: 12px;
-	color: #ccc;
-	text-align: right;
-	margin-left: 15px;
+    float: right;
+    padding-top: 0px;
+    padding-right: 0px;
+    font-size: 12px;
+    color: #ccc;
+    text-align: right;
+    margin-left: 15px;
 }
 
 .headermenu span.fa.fa-angle-down {
@@ -275,7 +274,7 @@ div.signuppanel h2 {
 
 a.usermendrop {
     font-family: [[setting:fontname]], sans-serif !important;
-	font-size: [[setting:headerprofilefontsize]];
+    font-size: [[setting:headerprofilefontsize]];
 }
 
 #page-header .userimg {
@@ -286,74 +285,74 @@ a.usermendrop {
 }
 
 .usermenu2.nav {
-	margin-bottom: 0px;
-	color: [[setting:headertextcolor]];
-	font-size: 12px;
-	padding-left: 10px;
+    margin-bottom: 0px;
+    color: [[setting:headertextcolor]];
+    font-size: 12px;
+    padding-left: 10px;
 }
 
 .usermenu2.nav a.dropdown-toggle {
     font-family: [[setting:fontname]], sans-serif !important;
-	font-size: [[setting:headerprofilefontsize]];
-	color: [[setting:headertextcolor]];
+    font-size: [[setting:headerprofilefontsize]];
+    color: [[setting:headertextcolor]];
 }
 
 .usermenu2 .fa.fa-comments {
-	padding-right: 3px;
+    padding-right: 3px;
 }
 
 .badge {
     background-color: #ff0000;
 }
-    
+
 .slidewrap {
-	margin-top: [[setting:slidermargintop]];
-	margin-bottom: [[setting:slidermarginbottom]];
+    margin-top: [[setting:slidermargintop]];
+    margin-bottom: [[setting:slidermarginbottom]];
 }
 
 #marketblocks {
-	margin-bottom: 20px;
-	overflow: hidden;
-	background-color: [[setting:marketblocksbackgroundcolor]];
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: [[setting:marketblocksbackgroundcolor]];
 }
 
 #marketblocks .span4 {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 #marketblocks .internalmarket {
-	padding: 10px 15px 30px;
-	text-align: center;
-	border: 1px solid [[setting:marketblockbordercolor]];
-	border-top: 0px;
+    padding: 10px 15px 30px;
+    text-align: center;
+    border: 1px solid [[setting:marketblockbordercolor]];
+    border-top: 0px;
 }
 
 .marketimage {
-	display: block;
-	width: 100%;
-	border: 0px;
+    display: block;
+    width: 100%;
+    border: 0px;
 }
 
 #marketblocks h3 {
-	font-size: 24px;
-	line-height: 48px;
-	font-weight: normal;
-	margin: 10px auto;
+    font-size: 24px;
+    line-height: 48px;
+    font-weight: normal;
+    margin: 10px auto;
 }
 
 .marketrow {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 #themessage {
-	background: [[setting:infoboxcolor2]];
-	position: relative;
-	margin-bottom: 20px;
+    background: [[setting:infoboxcolor2]];
+    position: relative;
+    margin-bottom: 20px;
 }
 
 #themessage-internal {
-	padding: 15px;
-	padding-right: 25px;
+    padding: 15px;
+    padding-right: 25px;
 }
 
 #themessage h1,
@@ -363,26 +362,26 @@ a.usermendrop {
 #themessage h5,
 #themessage h6,
 #themessage p {
-	color: [[setting:infoboxtextcolor2]] !important; 
+    color: [[setting:infoboxtextcolor2]] !important;
 }
 
 .personpic {
-	text-align: center;
+    text-align: center;
 }
 
 #person img {
-	border: 6px solid #fff;
-	max-width: 130px;
-	display: block;
-	margin: 0 auto;
+    border: 6px solid #fff;
+    max-width: 130px;
+    display: block;
+    margin: 0 auto;
 }
 
 .persontitle {
-	padding-top: 40px;
+    padding-top: 40px;
 }
 
 span.fa-chevron-right.fa {
-	font-size: 10px;
+    font-size: 10px;
 }
 
 #themessage .submit {
@@ -393,8 +392,8 @@ span.fa-chevron-right.fa {
 }
 
 #theinfo {
-	background: [[setting:infoboxcolor]];
-	margin-bottom: 20px;
+    background: [[setting:infoboxcolor]];
+    margin-bottom: 20px;
 }
 
 #theinfo-internal {
@@ -408,12 +407,12 @@ span.fa-chevron-right.fa {
 #theinfo h5,
 #theinfo h6,
 #theinfo p {
-	color: [[setting:infoboxtextcolor]] !important; 
+    color: [[setting:infoboxtextcolor]] !important;
 }
 
 #theinfo .span3 {
-	text-align: right;
-	padding-top: 35px;
+    text-align: right;
+    padding-top: 35px;
 }
 
 #frontpage-course-list h2 {
@@ -422,20 +421,20 @@ span.fa-chevron-right.fa {
 
 #page-footer,
 #page-footer p {
-	background: [[setting:footerbkcolor]];
-	margin: 10px 0px 0;
-   	text-align: left;
-   	color: [[setting:footertextcolor]] !important;
-   	border-top: 0px;
-   	font-size: 110%;
+    background: [[setting:footerbkcolor]];
+    margin: 10px 0px 0;
+    text-align: left;
+    color: [[setting:footertextcolor]] !important;
+    border-top: 0px;
+    font-size: 110%;
 }
 
 #page-footer h3 {
-	color: [[setting:footertextcolor]] !important;
+    color: [[setting:footertextcolor]] !important;
 }
 
 #page-footer a {
-	color: [[setting:footerlinkcolor]];
+    color: [[setting:footerlinkcolor]];
 }
 
 #page-footer .block-list > li {
@@ -596,7 +595,7 @@ span.fa-chevron-right.fa {
 }
 
 
-.nav > li > a:hover, 
+.nav > li > a:hover,
 .nav > li > a:focus {
     background: none !important;
     text-decoration: none !important;
@@ -767,7 +766,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     height: 20px;
     display: inline;
 }
-   
+
 .form-item .form-label, .mform .fitem div.fitemtitle {
 	text-align: left;
 }
@@ -825,11 +824,11 @@ input[type="radio"], input[type="checkbox"] {
     .navbar .pull-right {
             float: none;
     }
-    
+
     .navbar .nav > li > a {
         margin: 0 10px 0 0px !important;
     }
-    
+
     .flex-direction-nav .flex-next {
             right: 0px !important;
     }
@@ -843,28 +842,27 @@ input[type="radio"], input[type="checkbox"] {
     .enrolmenticons {
         display: none;
     }
-    
+
     #edittingbutton a,
     #edittingbutton .btn {
         margin-left: 10px !important;
     }
-
 }
 
 @media (max-width: 768px) {
     #region-main {
         padding: 0px;
     }
-    
+
     #page-header {
-		min-height: 0px;		
-	}
-	
-	.socialbox{
-		padding-top:[[setting:socialboxpaddingtopmobile]];
-		padding-top:[[setting:socialboxpaddingbottommobile]];
-	}
-    
+        min-height: 0px;
+    }
+
+    .socialbox{
+        padding-top:[[setting:socialboxpaddingtopmobile]];
+        padding-top:[[setting:socialboxpaddingbottommobile]];
+    }
+
     #logo {
         margin-bottom: 10px;
     }
@@ -902,7 +900,7 @@ input[type="radio"], input[type="checkbox"] {
     .block .header {
         margin: 0px 10px !important;
     }
-    
+
     #page-footer {
         margin: 50px 0px 0px;
     }
@@ -911,12 +909,12 @@ input[type="radio"], input[type="checkbox"] {
     #edittingbutton .btn {
         margin-left: -10px !important;
     }
-    
+
     .navbar .nav > li > a {
     margin: 0 10px 0 4px !important;
     }
 
-    .nav .dropdown-menu li a:hover, 
+    .nav .dropdown-menu li a:hover,
     .navbar .nav > li > a:hover {
         background: rgba(255,255,255,.1);
         color: [[setting:fontcolor]]; !important;
@@ -931,12 +929,12 @@ input[type="radio"], input[type="checkbox"] {
         float: none;
         width: auto;
     }
-    
+
     .socialbox a {
-		color: [[setting:headertextcolor2]];
-		font-size: [[setting:socialsizemobile]]px;
-		padding-left: 10px;
-	}
+        color: [[setting:headertextcolor2]];
+        font-size: [[setting:socialsizemobile]]px;
+        padding-left: 10px;
+    }
 
     .message .contactselector {
         float: none;
@@ -952,20 +950,10 @@ input[type="radio"], input[type="checkbox"] {
     .navbar .nav-collapse.in > .nav > li > a {
         border-radius: 0;
         padding-left: 0px !important;
-}
-    
+    }
 }
 
 @media (max-width: 520px) {
-    #main-slider {
-
-    }
-    #page-header {
-
-    }
-    #logo {
-
-    }
     .flex-caption {
         width: auto !important;
         padding: 5px 0px !important;
@@ -973,10 +961,12 @@ input[type="radio"], input[type="checkbox"] {
         margin-top: -1px !important;
         background: #000 !important;
     }
+
     #page-content {
         padding: 0 0px;
         width: auto;
     }
+
     #page-header .userimg {
         display: none;
     }
@@ -987,53 +977,51 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 #id_message_tbl {
-	width: 98%;
+    width: 98%;
 }
 
 .pull-left .usermenu2 .dropdown-menu {
-	margin: 0 0;
+    margin: 0 0;
 }
 
 .pull-left .usermenu2.nav {
-	position: relative;
-	color: #fff;
+    position: relative;
+    color: #fff;
 }
 
 .pull-left .usermenu2.nav a {
-	color: [[setting:headertextcolor]];
+    color: [[setting:headertextcolor]];
 }
 
 .pull-left .usermenu2.nav .dropdown-menu a {
-	color: #333;
+    color: #333;
 }
 
 #contactdetails a {
-	color: #fff !important;
+    color: #fff !important;
 }
 
 .submit {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
 a.carousel-control {
-	color: #fff;
-	line-height: 38px;
+    color: #fff;
+    line-height: 38px;
 }
 
 
 /* lang menu */
 .langmenu a {
-	color: [[setting:headertextcolor]];
-	
-}	
-	
+    color: [[setting:headertextcolor]];
+
+}
+
 .langmenu a:hover {
     color: [[setting:menufonthovercolor]];
-	background-color: none;
-}	
-	
-	
-	
+    background-color: none;
+}
+
 /*alert message */
 
 .alert {
@@ -1042,21 +1030,21 @@ a.carousel-control {
 }
 
 .alert .close {
-	text-decoration:none;	
+    text-decoration:none;
 }
 
 .customalert {
-	font-weight: 600;
-	font-size: 14px;
-	text-align: center;	
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
 }
 
 .customalert a {
-	text-decoration:underline;	
+    text-decoration: underline;
 }
 
 .customalert a:hover {
-	color:red;
+    color: red;
 }
 
 
@@ -1085,13 +1073,13 @@ a.carousel-control {
 }
 
 .navbar .forumsearch input[type=text] {
-	height: 16px !important;	
-	margin-bottom:4px !important;
+    height: 16px !important;
+    margin-bottom:4px !important;
 }
 
 #edittingbutton .helptooltip a {
     background-color: transparent !important;
-    box-shadow: none !important;    
+    box-shadow: none !important;
     border: none !important;
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
@@ -1282,41 +1270,30 @@ div.no-overflow, .yui3-datatable {
 }
 
 .icon-search {
-	font-size: 1.4em;
+    font-size: 1.4em;
 }
 
 @media (max-width: 979px) {
-	.searchbox {
+    .searchbox {
             padding-bottom: 5px;
-	}
-	.search-box, .searchbox {
+    }
+    .search-box, .searchbox {
             width: 100%;
-	}
-	#search-1 {
+    }
+    #search-1 {
             width: calc(100% - 39px);
-	}
+    }
 
-/*        div#coursetitle {
-	    clear: both;
-	    float: none;
-	    max-width: inherit;
-	    padding: 10px;
-	    text-align: center;
-	    width: auto;
-	    margin-bottom: -25px;
-	}
-	
-*/	
 }
 
 @media (min-width: 767px) {
-	.userprofile dl.list dt {
-		width: 110px !important;
-	}
+    .userprofile dl.list dt {
+        width: 110px !important;
+    }
 
-	.userprofile dl.list dd {
-		margin-left: 120px !important;
-	}
+    .userprofile dl.list dd {
+        margin-left: 120px !important;
+    }
 }
 
 @media (max-width: 1345px) {
@@ -1332,11 +1309,11 @@ div.no-overflow, .yui3-datatable {
 }
 
 #navwrap {
-    background: [[setting:menubkcolor]];    
+    background: [[setting:menubkcolor]];
 }
 
 div.questionbankwindow.block {
-	overflow: auto;
+    overflow: auto;
 }
 
 .que .formulation {

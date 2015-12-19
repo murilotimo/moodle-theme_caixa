@@ -8,13 +8,13 @@
 }
 
 .block .header {
-	border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]]; 
+	border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]];
 	border-color: [[setting:blockbordercolor]];
-	border-style: [[setting:blockheaderbordertopstyle]];	
+	border-style: [[setting:blockheaderbordertopstyle]];
 	padding: 10px 10px;
 	padding-right: 0px;
-	background: [[setting:blockheaderbackgroundcolor]];	
-	-webkit-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]]; 
+	background: [[setting:blockheaderbackgroundcolor]];
+	-webkit-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
 	-moz-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
 	border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
 }
@@ -39,13 +39,13 @@
 .block .content {
 	border-width: [[setting:blockmainbordertop]] [[setting:blockmainborderright]] [[setting:blockmainborderbottom]] [[setting:blockmainborderleft]];
 	border-color: [[setting:blockbordercolor]];
-	border-style: [[setting:blockmainbordertopstyle]];		
+	border-style: [[setting:blockmainbordertopstyle]];
 	padding: 10px 10px;
 	font-weight: normal;
 	font-size: 90%;
 	background: [[setting:blockbackgroundcolor]];
 	color: #333;
-	-webkit-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]]; 
+	-webkit-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
 	-moz-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
 	border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
 }

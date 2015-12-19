@@ -184,7 +184,6 @@ h3.sectionname {
     margin: 0;
     padding: 5px 10px;
     text-align: left;
-    
     width: auto;
     max-width: 100%;
 }
@@ -211,7 +210,6 @@ h3.sectionname {
     right: 0;
     top: inherit;
     width: 98%;
-    
     height: 0px;
     min-height: 0px;
     max-height: 0px;
@@ -226,7 +224,6 @@ h3.sectionname {
 	height: auto;
 	min-height: 30px;
 	padding: 10px 1%;
-	
 	max-height: 1000px;
 	opacity: 1;
 	-webkit-transition: max-height 1.0s !important;
@@ -256,11 +253,10 @@ h3.sectionname {
     bottom: 5px;
     left: 5px;
     right: 4px;
-    
     height: 38px;
     position: absolute;
     width: auto;
-    	-webkit-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
 	-moz-transition: all .5s ease-in-out;
 	-o-transition: all .5s ease-in-out;
 	transition: all .5s ease-in-out;
@@ -273,7 +269,7 @@ h3.sectionname {
     position: absolute;
     width: auto;
     background: [[setting:covbkcolor]];
-    	-webkit-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
 	-moz-transition: all .5s ease-in-out;
 	-o-transition: all .5s ease-in-out;
 	transition: all .5s ease-in-out;

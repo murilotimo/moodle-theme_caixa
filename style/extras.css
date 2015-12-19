@@ -642,7 +642,7 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 	margin-bottom: 15px;
 	margin-top: 15px;
 	background: #eee;
-	line-height: 40px;	
+	line-height: 40px;
 }
 
 #page-site-index #ticker-wrap {
@@ -685,7 +685,7 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 		margin: 0 0;
 		text-align: center;
 	}
-	
+
 	#ticker-wrap #newscontent {
 		max-width: inherit;
 		overflow: inherit;
@@ -693,13 +693,12 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 		padding: 10px 10px 10px;
 		line-height: normal;
 	}
-	
+
 	#ticker-wrap #newscontent #news {
 		white-space: normal;
 	}
-	
+
 	#ticker-wrap #controls {
 		display: none;
 	}
 }
-

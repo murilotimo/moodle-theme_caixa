@@ -496,7 +496,7 @@ class theme_adaptable_core_renderer extends core_renderer {
             $perf = get_performance_info();
             // Deprecated function.
             // if (defined('MDL_PERFTOLOG') && !function_exists('register_shutdown_function')) {.
-            //    error_log("PERF: " . $perf['txt']);.
+            // error_log("PERF: " . $perf['txt']);.
             // }.
             if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
                 $performanceinfo = theme_adaptable_performance_output($perf);
