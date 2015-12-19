@@ -383,7 +383,8 @@ class theme_adaptable_core_renderer extends core_renderer {
         $retval = '<div class="socialbox pull-right">';
 
         if (isset($PAGE->theme->settings->socialsearchicon)) {
-            $val = '<a alt="' . get_string('socialsearchicon', 'theme_adaptable') . '" title="' . get_string('socialsearchicon', 'theme_adaptable'); 
+            $val = '<a alt="' . get_string('socialsearchicon', 'theme_adaptable') . '" title="'
+                   . get_string('socialsearchicon', 'theme_adaptable');
             $val .= '" href="' . $CFG->wwwroot . '/course/search.php' . '">';
             $val .= '<i class="fa fa-search"></i></a>';
             $retval .= $val;
@@ -407,71 +408,69 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 
     public function get_news_ticker() {
-		global $PAGE;
+        global $PAGE;
         $retval = '';
 
-        if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index") 
+        if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index")
             || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
-            $msg = '';			
+            $msg = '';
 
             for ($i = 1; $i < 3; $i++) {
                 $textfield = 'tickertext' . $i;
                 $profilefield = 'tickertext' . $i . 'profilefield';
-                $access = true;			 
+                $access = true;
 
-                if (!empty($PAGE->theme->settings->$profilefield)){
-                    $profilevals = explode('=', $PAGE->theme->settings->$profilefield);					
-                    if (!$this->check_menu_access($profilevals[0], $profilevals[1], $textfield)){
-                        $access = false; 
-                    }	
-                }								
-				
-				if ($access){
-					$msg .= $PAGE->theme->settings->$textfield;
-				}
-			}		
-			
-			if ($msg == ''){
-				$msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
-			}				
-						
-			$retval .= '<div id="ticker-wrap" class="clearfix container">';
-        	$retval .= '<div class="pull-left" id="ticker-announce">';
-            $retval.= get_string('ticker', 'theme_adaptable');
-			$retval .= '</div>';
-			$retval .= '<ul id="ticker">';
-			$retval .= $msg;			
-			$retval .= '</ul>';
-			$retval .= '</div>';
-		}
-		return $retval;
-	}
+                if (!empty($PAGE->theme->settings->$profilefield)) {
+                    $profilevals = explode('=', $PAGE->theme->settings->$profilefield);
+                    if (!$this->check_menu_access($profilevals[0], $profilevals[1], $textfield)) {
+                        $access = false;
+                    }
+                }
+
+                if ($access) {
+                    $msg .= $PAGE->theme->settings->$textfield;
+                }
+            }
+
+            if ($msg == '') {
+                $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
+            }
+
+            $retval .= '<div id="ticker-wrap" class="clearfix container">';
+            $retval .= '<div class="pull-left" id="ticker-announce">';
+            $retval .= get_string('ticker', 'theme_adaptable');
+            $retval .= '</div>';
+            $retval .= '<ul id="ticker">';
+            $retval .= $msg;
+            $retval .= '</ul>';
+            $retval .= '</div>';
+        }
+        return $retval;
+    }
 
     /*
      * This renders the navbar.
      * Uses bootstrap compatible html.
      */
-     
-    public function page_navbar($addbutton = false){
-    	global $PAGE;	
-    	$retval = '';
-		
-		// Do not show navbar on dashboard / my home if news ticker is rendering
-		if (!($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")){
-						
-	    	$retval = '<div id="page-navbar" class="span12">';
-			
-			if ($addbutton){
-				$retval .= '<nav class="breadcrumb-button">' . $this->page_heading_button() . '</nav>';
-			}
-			
-	    	$retval .= $this->navbar();
-			$retval .= '</div>';			
-		}		
-		return $retval;
-    } 
-	
-    public function navbar() {    	
+
+    public function page_navbar($addbutton = false) {
+        global $PAGE;
+        $retval = '';
+
+        // Do not show navbar on dashboard / my home if news ticker is rendering.
+        if (!($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
+            $retval = '<div id="page-navbar" class="span12">';
+            if ($addbutton) {
+                $retval .= '<nav class="breadcrumb-button">' . $this->page_heading_button() . '</nav>';
+            }
+
+            $retval .= $this->navbar();
+            $retval .= '</div>';
+        }
+        return $retval;
+    }
+
+    public function navbar() {
         $items = $this->page->navbar->get_items();
         $breadcrumbs = array();
         foreach ($items as $item) {
@@ -495,9 +494,10 @@ class theme_adaptable_core_renderer extends core_renderer {
         $performanceinfo = '';
         if (defined('MDL_PERF') || (!empty($CFG->perfdebug) and $CFG->perfdebug > 7)) {
             $perf = get_performance_info();
-            if (defined('MDL_PERFTOLOG') && !function_exists('register_shutdown_function')) {
-                error_log("PERF: " . $perf['txt']);
-            }
+            // Deprecated function.
+            // if (defined('MDL_PERFTOLOG') && !function_exists('register_shutdown_function')) {.
+            //    error_log("PERF: " . $perf['txt']);.
+            // }.
             if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
                 $performanceinfo = theme_adaptable_performance_output($perf);
             }
@@ -515,18 +515,17 @@ class theme_adaptable_core_renderer extends core_renderer {
     public function navigation_menu() {
         global $PAGE, $COURSE, $OUTPUT, $CFG;
         $menu = new custom_menu();
-		$access = true;
+        $access = true;
 
         if (isloggedin() && !isguestuser()) {
             if (!empty($PAGE->theme->settings->enablehome)) {
                 $branchtitle = get_string('home');
                 $branchlabel = '<i class="fa fa-home"></i> '.$branchtitle;
-				if (!empty($PAGE->theme->settings->enablehomeredirect)) {
-				    $branchurl   = new moodle_url('/?redirect=0');	
-				}
-				else{
-				    $branchurl   = new moodle_url('/');	
-				}                
+                if (!empty($PAGE->theme->settings->enablehomeredirect)) {
+                    $branchurl   = new moodle_url('/?redirect=0');
+                } else {
+                    $branchurl   = new moodle_url('/');
+                }
                 $branchsort  = 9998;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
@@ -538,7 +537,6 @@ class theme_adaptable_core_renderer extends core_renderer {
                 $branchsort  = 9999;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
-
 
             if (!empty($PAGE->theme->settings->enableevents)) {
                 $branchtitle = get_string('events', 'theme_adaptable');
@@ -560,7 +558,7 @@ class theme_adaptable_core_renderer extends core_renderer {
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-                                         $branch->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 40))."...", 
+                                         $branch->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 40))."...",
                                          new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }
@@ -592,11 +590,12 @@ class theme_adaptable_core_renderer extends core_renderer {
                     foreach ($data as $modname => $modfullname) {
                         if ($modname === 'resources') {
                             $icon = $OUTPUT->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
-                            $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id' => $PAGE->course->id)));
+                            $branch->add($icon.$modfullname, new moodle_url('/course/resources.php',
+                                         array('id' => $PAGE->course->id)));
                         } else {
                             $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
                             $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
-                                    array('id' => $PAGE->course->id)));
+                                         array('id' => $PAGE->course->id)));
                         }
                     }
                 }
@@ -604,258 +603,261 @@ class theme_adaptable_core_renderer extends core_renderer {
         }
 
         if (!empty($PAGE->theme->settings->enablehelp)) {
-        	$access = true;
-					
-			if (!empty($PAGE->theme->settings->helpprofilefield)){
-				$fields = explode('=', $PAGE->theme->settings->helpprofilefield);        	
-				$ftype = $fields[0];			
-				$setvalue = $fields[1];	
-				if (!$this->check_menu_access($ftype, $setvalue, 'help1')){			
-		        	$access = false;
-	            }
-			}
-			if ($access && !$this->hideinforum()){
-				$branchtitle = get_string('helptitle', 'theme_adaptable');
-	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
-	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
-	            $branchsort  = 10003;
-	            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-			}
+            $access = true;
+
+            if (!empty($PAGE->theme->settings->helpprofilefield)) {
+                $fields = explode('=', $PAGE->theme->settings->helpprofilefield);
+                $ftype = $fields[0];
+                $setvalue = $fields[1];
+                if (!$this->check_menu_access($ftype, $setvalue, 'help1')) {
+                    $access = false;
+                }
+            }
+
+            if ($access && !$this->hideinforum()) {
+                $branchtitle = get_string('helptitle', 'theme_adaptable');
+                $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
+                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
+                $branchsort  = 10003;
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+            }
         }
-		if (!empty($PAGE->theme->settings->enablehelp2 )) {
-			$access = true;          	
-			if (!empty($PAGE->theme->settings->helpprofilefield2)){
-				$fields = explode('=', $PAGE->theme->settings->helpprofilefield2);        	
-				$ftype = $fields[0];			
-				$setvalue = $fields[1];		
-				if (!$this->check_menu_access($ftype, $setvalue, 'help2')){			
-		        	$access = false;
-	            }
-			}					
-			if ($access && !$this->hideinforum()){			
-	            $branchtitle = get_string('helptitle2', 'theme_adaptable');
-	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
-	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2);
-	            $branchsort  = 10003;
-	            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+
+        if (!empty($PAGE->theme->settings->enablehelp2 )) {
+            $access = true;
+            if (!empty($PAGE->theme->settings->helpprofilefield2)) {
+                $fields = explode('=', $PAGE->theme->settings->helpprofilefield2);
+                $ftype = $fields[0];
+                $setvalue = $fields[1];
+                if (!$this->check_menu_access($ftype, $setvalue, 'help2')) {
+                    $access = false;
+                }
+            }
+
+            if ($access && !$this->hideinforum()) {
+                $branchtitle = get_string('helptitle2', 'theme_adaptable');
+                $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
+                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2);
+                $branchsort  = 10003;
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
         }
         return $this->render_custom_menu($menu);
     }
 
-    public function tools_menu() {    	
-    	global $PAGE;
-		$class = "<i class='fa fa-wrench'></i><span class='menutitle'>";		
-    	$custommenuitems = '';
-		$access = true;		
-		
-		if (!empty($PAGE->theme->settings->toolsmenu1field)){			
-			$fields = explode ('=', $PAGE->theme->settings->toolsmenu1field);						
-			$ftype = $fields[0];
-			$setvalue = $fields[1];
-			if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu1')){
-				$access = false;			
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->toolsmenu) && $access == true && !$this->hideinforum()) {        	
-        	$menu = ($PAGE->theme->settings->toolsmenu);
-			$label = get_string('toolsmenulabel', 'theme_adaptable');
-			$custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');            
+    public function tools_menu() {
+        global $PAGE;
+        $class = "<i class='fa fa-wrench'></i><span class='menutitle'>";
+        $custommenuitems = '';
+        $access = true;
+
+        if (!empty($PAGE->theme->settings->toolsmenu1field)) {
+            $fields = explode ('=', $PAGE->theme->settings->toolsmenu1field);
+            $ftype = $fields[0];
+            $setvalue = $fields[1];
+            if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu1')) {
+                $access = false;
+            }
         }
-         
+
+        if (!empty($PAGE->theme->settings->toolsmenu) && $access == true && !$this->hideinforum()) {
+            $menu = ($PAGE->theme->settings->toolsmenu);
+            $label = get_string('toolsmenulabel', 'theme_adaptable');
+            $custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');
+        }
+
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
     }
 
-    public function tools_menu2() {    	
-    	global $PAGE;
-		$class = "<i class='fa fa-wrench'></i><span class='menutitle'>";
-    	$custommenuitems = '';
-		$access = true;	
-		
-		if (!empty($PAGE->theme->settings->toolsmenu2field)){
-			$fields = explode ('=', $PAGE->theme->settings->toolsmenu2field);						
-			$ftype = $fields[0];
-			$setvalue = $fields[1];			
-			if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu2')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->toolsmenu2) && $access == true && !$this->hideinforum()) {        	
-        	$menu = ($PAGE->theme->settings->toolsmenu2);
-			$label = get_string('toolsmenulabel2', 'theme_adaptable');
-			$custommenuitems = $this->parse_custom_menu($menu, $label, $class,'</span>');            
+    public function tools_menu2() {
+        global $PAGE;
+        $class = "<i class='fa fa-wrench'></i><span class='menutitle'>";
+        $custommenuitems = '';
+        $access = true;
+
+        if (!empty($PAGE->theme->settings->toolsmenu2field)) {
+            $fields = explode ('=', $PAGE->theme->settings->toolsmenu2field);
+            $ftype = $fields[0];
+            $setvalue = $fields[1];
+            if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu2')) {
+                $access = false;
+            }
         }
-         
+
+        if (!empty($PAGE->theme->settings->toolsmenu2) && $access == true && !$this->hideinforum()) {
+            $menu = ($PAGE->theme->settings->toolsmenu2);
+            $label = get_string('toolsmenulabel2', 'theme_adaptable');
+            $custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');
+        }
+
         $custommenu = new custom_menu($custommenuitems);
         return $this->render_custom_menu($custommenu);
     }
 
-	public function get_top_menus(){
-		global $PAGE, $COURSE;
-		$menus = '';
-		$retval = '';
-		$visibility = true;
-		
-		if (!empty($PAGE->theme->settings->menuuseroverride)){
-			$visibility = $this->check_menu_user_visibility();			
-		}
-		
-		if ($visibility){
-			if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {			
-				for ($i = 1; $i < 11; $i++){			
-					$menunumber = 'menu' . $i;
-					$newmenu = 'newmenu' . $i;
-					$class = 'newmenu' . ($i + 4);
-					$fieldsetting = 'newmenu' . $i . 'field';
-					$valuesetting = 'newmenu' . $i . 'value';
-					$newmenulabel = 'newmenu' . $i . 'label';
-					$requirelogin = 'newmenu' . $i . 'requirelogin';
-					$logincheck = true;
-					$custommenuitems = '';
-					$access = true;
-					$pre = '<div class="dropdown pull-right newmenus ' . $class . '">';
-					$post = '</div>';
-					
-					if (empty($PAGE->theme->settings->$requirelogin) || isloggedin()){	
-						if (!empty($PAGE->theme->settings->$fieldsetting)){
-							$fields = explode ('=', $PAGE->theme->settings->$fieldsetting);
-							$ftype = $fields[0];
-							$setvalue = $fields[1];
-							if (!$this->check_menu_access($ftype, $setvalue, $menunumber)){
-								$access = false;
-							}
-						}
-							
-				        if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
-				        	$menu = ($PAGE->theme->settings->$newmenu);
-							$label = get_string($newmenulabel, 'theme_adaptable');
-							$custommenuitems = $this->parse_custom_menu($menu, $label);
-							$custommenu = new custom_menu($custommenuitems);
-				        	$retval .= $this->render_custom_menu($custommenu, $pre, $post);            
-				        }				        
-					}			
-				}			
-			}			
-		}				
-		return $retval;
-	}
+    public function get_top_menus() {
+        global $PAGE, $COURSE;
+        $menus = '';
+        $retval = '';
+        $visibility = true;
 
-	public function check_menu_user_visibility(){
-		global $PAGE, $USER, $COURSE;
-		$uservalue = '';			
-		
-		if (empty($PAGE->theme->settings->menuuseroverride)){
-			return true;
-		}
-		
-		if (isset($USER->theme_adaptable_menus['menuvisibility'])){
-			$uservalue = $USER->theme_adaptable_menus['menuvisibility'];
-		} 
-		else {
-			$profilefield = $PAGE->theme->settings->menuoverrideprofilefield;
-			$profilefield = 'profile_field_' . $profilefield;
-			$uservalue = $this->get_user_visibility($profilefield);
-		}		
-		
-		if ($uservalue == 0){			
-			return true;
-		}
-		
-		if ($uservalue == 1 && $COURSE->id != 1){			
-			return false;
-		}
-		
-		if ($uservalue == 2){		
-			return false;
-		}		
-		return true; // default to true means we dont have to evaluate sitewide setting and guarantees return value		
-	}
-	
-	public function get_user_visibility($profilefield){
-		global $USER, $CFG;		
-		$uservisibility = '';
-		
-		require_once($CFG->dirroot.'/user/profile/lib.php');
-		require_once($CFG->dirroot.'/user/lib.php');
-		profile_load_data($USER);
-		
-		$uservisibility = $USER->$profilefield;
-		$USER->theme_adaptable_menus['menuvisibility'] = $uservisibility;
-		return $uservisibility;
-	}
-    
-	public function check_menu_access($ftype, $setvalue, $menu){
-		global $PAGE, $USER, $CFG;			
-		$usersvalue = 'default-zz'; // just want a value that will not be matched by accident
-		$sessttl = (time() + ($PAGE->theme->settings->menusessionttl * 60));		
-		$menuttl = $menu . 'ttl';			
-		
-		if ($PAGE->theme->settings->menusession){			
-			if (isset($USER->theme_adaptable_menus[$menu])){				
-				
-				if ($USER->theme_adaptable_menus[$menuttl] >= time()){										
-					if ($USER->theme_adaptable_menus[$menu] == true){					
-						return true;
-					}
-					else if ($USER->theme_adaptable_menus[$menu] == false){
-						return false;
-					}
-				}
-			}
-		}
-                	
-		require_once($CFG->dirroot.'/user/profile/lib.php');
-		require_once($CFG->dirroot.'/user/lib.php');
-		profile_load_data($USER);		
-		$ftype ="profile_field_$ftype";						
-		if (isset($USER->$ftype)){						
-			$usersvalue = $USER->$ftype;											
-		}			
-		
-		if ($usersvalue == $setvalue){						
-			$USER->theme_adaptable_menus[$menu] = true;
-			$USER->theme_adaptable_menus[$menuttl] = $sessttl;				
-			return true;
-		}			
-			
-		$USER->theme_adaptable_menus[$menu] = false;
-		$USER->theme_adaptable_menus[$menuttl] = $sessttl;
-		return false;				
-	}
-	
-	public function parse_custom_menu($menu, $label, $class = ' </i>', $close = ''){
-		$custommenuitems =  $class . $label. $close . "|#|".$label."\n";
+        if (!empty($PAGE->theme->settings->menuuseroverride)) {
+            $visibility = $this->check_menu_user_visibility();
+        }
+
+        if ($visibility) {
+            if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
+                for ($i = 1; $i < 11; $i++) {
+                    $menunumber = 'menu' . $i;
+                    $newmenu = 'newmenu' . $i;
+                    $class = 'newmenu' . ($i + 4);
+                    $fieldsetting = 'newmenu' . $i . 'field';
+                    $valuesetting = 'newmenu' . $i . 'value';
+                    $newmenulabel = 'newmenu' . $i . 'label';
+                    $requirelogin = 'newmenu' . $i . 'requirelogin';
+                    $logincheck = true;
+                    $custommenuitems = '';
+                    $access = true;
+                    $pre = '<div class="dropdown pull-right newmenus ' . $class . '">';
+                    $post = '</div>';
+
+                    if (empty($PAGE->theme->settings->$requirelogin) || isloggedin()) {
+                        if (!empty($PAGE->theme->settings->$fieldsetting)) {
+                            $fields = explode('=', $PAGE->theme->settings->$fieldsetting);
+                            $ftype = $fields[0];
+                            $setvalue = $fields[1];
+                            if (!$this->check_menu_access($ftype, $setvalue, $menunumber)) {
+                                $access = false;
+                            }
+                        }
+
+                        if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
+                            $menu = ($PAGE->theme->settings->$newmenu);
+                            $label = get_string($newmenulabel, 'theme_adaptable');
+                            $custommenuitems = $this->parse_custom_menu($menu, $label);
+                            $custommenu = new custom_menu($custommenuitems);
+                            $retval .= $this->render_custom_menu($custommenu, $pre, $post);
+                        }
+                    }
+                }
+            }
+        }
+        return $retval;
+    }
+
+    public function check_menu_user_visibility() {
+        global $PAGE, $USER, $COURSE;
+        $uservalue = '';
+
+        if (empty($PAGE->theme->settings->menuuseroverride)) {
+            return true;
+        }
+
+        if (isset($USER->theme_adaptable_menus['menuvisibility'])) {
+            $uservalue = $USER->theme_adaptable_menus['menuvisibility'];
+        } else {
+            $profilefield = $PAGE->theme->settings->menuoverrideprofilefield;
+            $profilefield = 'profile_field_' . $profilefield;
+            $uservalue = $this->get_user_visibility($profilefield);
+        }
+
+        if ($uservalue == 0) {
+            return true;
+        }
+
+        if ($uservalue == 1 && $COURSE->id != 1) {
+            return false;
+        }
+
+        if ($uservalue == 2) {
+            return false;
+        }
+
+        // Default to true means we dont have to evaluate sitewide setting and guarantees return value.
+        return true;
+    }
+
+    public function get_user_visibility($profilefield) {
+        global $USER, $CFG;
+        $uservisibility = '';
+
+        require_once($CFG->dirroot.'/user/profile/lib.php');
+        require_once($CFG->dirroot.'/user/lib.php');
+        profile_load_data($USER);
+
+        $uservisibility = $USER->$profilefield;
+        $USER->theme_adaptable_menus['menuvisibility'] = $uservisibility;
+        return $uservisibility;
+    }
+
+    public function check_menu_access($ftype, $setvalue, $menu) {
+        global $PAGE, $USER, $CFG;
+        $usersvalue = 'default-zz'; // Just want a value that will not be matched by accident.
+        $sessttl = (time() + ($PAGE->theme->settings->menusessionttl * 60));
+        $menuttl = $menu . 'ttl';
+
+        if ($PAGE->theme->settings->menusession) {
+            if (isset($USER->theme_adaptable_menus[$menu])) {
+
+                if ($USER->theme_adaptable_menus[$menuttl] >= time()) {
+                    if ($USER->theme_adaptable_menus[$menu] == true) {
+                        return true;
+                    } else if ($USER->theme_adaptable_menus[$menu] == false) {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        require_once($CFG->dirroot.'/user/profile/lib.php');
+        require_once($CFG->dirroot.'/user/lib.php');
+        profile_load_data($USER);
+        $ftype = "profile_field_$ftype";
+        if (isset($USER->$ftype)) {
+            $usersvalue = $USER->$ftype;
+        }
+
+        if ($usersvalue == $setvalue) {
+            $USER->theme_adaptable_menus[$menu] = true;
+            $USER->theme_adaptable_menus[$menuttl] = $sessttl;
+            return true;
+        }
+
+        $USER->theme_adaptable_menus[$menu] = false;
+        $USER->theme_adaptable_menus[$menuttl] = $sessttl;
+        return false;
+    }
+
+    public function parse_custom_menu($menu, $label, $class = ' </i>', $close = '') {
+        $custommenuitems = $class . $label. $close . "|#|".$label."\n";
         $arr = explode("\n", $menu);
-        
+
         // We want to force everything inputted under this menu.
         foreach ($arr as $key => $value) {
             $arr[$key] = '-' . $arr[$key];
         }
-        
+
         $custommenuitems .= implode("\n", $arr);
-		return $custommenuitems;
-	}
-	
-	public function hideinforum() {
-		global $PAGE;
-		$hidelinks = false;		
-		if (!empty($PAGE->theme->settings->hideinforum)) {					
-			if (strstr($_SERVER['REQUEST_URI'], '/mod/forum/')) {				
-				$hidelinks = true;
-			}
-		}		
-		return $hidelinks;
-	}
-	
-	public function wrap_custom_menu_top($custommenu, $classno){
-		$retval = '<div class="dropdown pull-right newmenus newmenu$classno">';
-		$retval .= $custommenu;
-		$retval .= '</div>';
-	}
-	
+        return $custommenuitems;
+    }
+
+    public function hideinforum() {
+        global $PAGE;
+        $hidelinks = false;
+        if (!empty($PAGE->theme->settings->hideinforum)) {
+            if (strstr($_SERVER['REQUEST_URI'], '/mod/forum/')) {
+                $hidelinks = true;
+            }
+        }
+        return $hidelinks;
+    }
+
+    public function wrap_custom_menu_top($custommenu, $classno) {
+        $retval = '<div class="dropdown pull-right newmenus newmenu$classno">';
+        $retval .= $custommenu;
+        $retval .= '</div>';
+    }
+
     public function lang_menu() {
         global $CFG;
         $langmenu = new custom_menu();
@@ -922,7 +924,7 @@ class theme_adaptable_core_renderer extends core_renderer {
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
-		$content = $wrappre . $content . $wrappost . '</ul>';
+        $content = $wrappre . $content . $wrappost . '</ul>';
         return $content;
     }
 
@@ -1055,9 +1057,8 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $type = 2;
             $covhidebutton = "true";
         } else {
-        	$covhidebutton = "false";
+            $covhidebutton = "false";
         }
-
 
         if (!isset($this->strings->summary)) {
             $this->strings->summary = get_string('summary');
@@ -1075,9 +1076,10 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $classes .= ' collapsed';
         }
-		//new to show blocks John
-		$spanclass = "span4";
-        $content .= html_writer::start_tag('div', array('class' => ' '.$spanclass.' panel panel-default coursebox '.$additionalcss));
+        // New to show blocks John.
+        $spanclass = "span4";
+        $content .= html_writer::start_tag('div',
+                                            array('class' => ' '.$spanclass.' panel panel-default coursebox '.$additionalcss));
         $urlb = new moodle_url('/course/view.php', array('id' => $course->id));
         $content .= "<a href='$urlb'>";
         $coursename = $chelper->get_course_formatted_name($course);
@@ -1120,8 +1122,8 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $arrow = html_writer::tag('span', '', array('class' => 'fa fa-chevron-'.$icondirection));
             $btn = html_writer::tag('span', get_string('course') . ' ' . $arrow, array('class' => 'coursequicklink'));
 
-           if (empty($PAGE->theme->settings->covhidebutton)) {
-            $content .= html_writer::link(new moodle_url('/course/view.php',
+            if (empty($PAGE->theme->settings->covhidebutton)) {
+                $content .= html_writer::link(new moodle_url('/course/view.php',
                 array('id' => $course->id)), $btn, array('class' => " coursebtn submit btn btn-info btn-sm pull-right"));
             }
         }
@@ -1179,7 +1181,8 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
                     $contentimages .= html_writer::link($link, html_writer::empty_tag('img', array('src' => $url)));
                     $contentimages .= html_writer::end_tag('div');
                 } else {
-                    $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";
+                    $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
+                                                                  background-size: contain;'></div>";
                 }
             } else {
                 $image = $this->output->pix_icon(file_file_icon($file, 24), $file->get_filename(), 'moodle');
@@ -1193,7 +1196,8 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         if (strlen($contentimages) == 0 && $type == 2) {
             // Default image.
             $url = $PAGE->theme->setting_file_url('frontpagerendererdefaultimage', 'frontpagerendererdefaultimage');
-            $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";
+            $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
+                                                          background-size: contain;'></div>";
         }
         $content .= $contentimages. $contentfiles;
 
@@ -1251,7 +1255,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         }
         if ($type == 2) {
             $content .= html_writer::end_tag('div');
-            //end course-content
+            // End course-content.
         }
         $content .= html_writer::tag('div', '', array('class' => 'boxfooter')); // Coursecat.
 
