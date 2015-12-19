@@ -59,13 +59,13 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:buttonhovercolor]]' => '#00695c',
         '[[setting:buttonlogincolor]]' => '#ef5350',
         '[[setting:buttonloginhovercolor]]' => '#e53935',
-        '[[setting:buttonlogintextcolor]]' => '#0084c2',		
+        '[[setting:buttonlogintextcolor]]' => '#0084c2',
         '[[setting:buttonloginpadding]]' => '0px',
-        '[[setting:buttonloginheight]]' => '24px',		
-        '[[setting:buttonloginmargintop]]' => '2px',		
-        '[[setting:buttonradius]]' => '5px',        
+        '[[setting:buttonloginheight]]' => '24px',
+        '[[setting:buttonloginmargintop]]' => '2px',
+        '[[setting:buttonradius]]' => '5px',
         '[[setting:dividingline]]' => '#ffffff',
-        '[[setting:dividingline2]]' => '#ffffff',        
+        '[[setting:dividingline2]]' => '#ffffff',
         '[[setting:navbarborder]]' => '#B7B3EF',
         '[[setting:navbarhover]]' => '#3C469C',
         '[[setting:breadcrumb]]' => '#b4bbbf',
@@ -82,14 +82,14 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:headertextcolor]]' => '#ffffff',
         '[[setting:headertextcolor2]]' => '#ffffff',
         '[[setting:blockheadercolor]]' => '#009688',
-        '[[setting:blockbackgroundcolor]]' => '#FFFFFF',    
-        '[[setting:blockheaderbackgroundcolor]]' => '#FFFFFF',        
+        '[[setting:blockbackgroundcolor]]' => '#FFFFFF',
+        '[[setting:blockheaderbackgroundcolor]]' => '#FFFFFF',
         '[[setting:blockbordercolor]]' => '#59585D',
         '[[setting:marketblockbordercolor]]' => '#e8eaeb',
         '[[setting:marketblocksbackgroundcolor]]' => '#FFFFFF',
         '[[setting:blocklinkcolor]]' => '#009688',
         '[[setting:blockheaderbordertop]]' => '1px',
-        '[[setting:blockheaderborderleft]]' => '0px',        
+        '[[setting:blockheaderborderleft]]' => '0px',
         '[[setting:blockheaderborderright]]' => '0px',
         '[[setting:blockheaderborderbottom]]' => '0px',
         '[[setting:blockmainbordertop]]' => '0px',
@@ -101,11 +101,11 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:blockheadertopradius]]' => '0px',
         '[[setting:blockheaderbottomradius]]' => '0px',
         '[[setting:blockmaintopradius]]' => '0px',
-        '[[setting:blockmainbottomradius]]' => '0px',		
+        '[[setting:blockmainbottomradius]]' => '0px',
         '[[setting:tilesbordercolor]]' => '#009688',
         '[[setting:infoboxcolor]]' => '#333333',
         '[[setting:infoboxcolor2]]' => '#f3f3f3',
-        '[[setting:slidermargintop]]' => '20px',		
+        '[[setting:slidermargintop]]' => '20px',
         '[[setting:slidermarginbottom]]' => '20px',
         '[[setting:currentcolor]]' => '#d9edf7',
         '[[setting:sectionheadingcolor]]' => '#5f588a',
@@ -113,7 +113,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:infoboxtextcolor2]]' => '#666666',
         '[[setting:menufontsize]]' => '14px',
         '[[setting:menubkcolor]]' => '#ffffff',
-        '[[setting:menufontcolor]]' => '#444444',        
+        '[[setting:menufontcolor]]' => '#444444',
         '[[setting:menufonthovercolor]]' => '#3c469c',
         '[[setting:menubordercolor]]' => '#80cbc4',
         '[[setting:mobilemenubkcolor]]' => '#F9F9F9',
@@ -123,21 +123,21 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:editonbk]]' => '#4caf50',
         '[[setting:editoffbk]]' => '#f44336',
         '[[setting:editverticalpadding]]' => '',
-		'[[setting:edithorizontalpadding]]' => '',
-		'[[setting:edittopmargin]]' => '',
+        '[[setting:edithorizontalpadding]]' => '',
+        '[[setting:edittopmargin]]' => '',
         '[[setting:editfont]]' => '#ffffff',
         '[[setting:slideroption2color]]' => '#0066cc',
         '[[setting:slideroption2a]]' => '#0066cc',
         '[[setting:socialsize]]' => '32',
-        '[[setting:socialsizemobile]]' => '22',        
+        '[[setting:socialsizemobile]]' => '22',
         '[[setting:mobile]]' => '22',
-        '[[setting:socialpaddingtop]]' => '1.8%',        
+        '[[setting:socialpaddingtop]]' => '1.8%',
         '[[setting:fontname]]' => 'Open Sans',
         '[[setting:fontheadername]]' => 'Roboto Slab',
         '[[setting:fontcolor]]' => '#333333',
         '[[setting:fontheadercolor]]' => '#333333',
         '[[setting:fontweight]]' => '400',
-        '[[setting:fontheaderweight]]' => '400',  
+        '[[setting:fontheaderweight]]' => '400',
         '[[setting:fonttitlename]]' => 'Audiowide',
         '[[setting:fonttitleweight]]' => '400',
         '[[setting:fonttitlesize]]' => '48px',
@@ -157,7 +157,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:breadcrumbtitle]]' => 'shortname',
         '[[setting:enableavailablecourses]]' => 'display',
         '[[setting:enableticker]]' => true,
-        '[[setting:enabletickermy]]' => true,           
+        '[[setting:enabletickermy]]' => true,
     );
 
     // Get all the defined settings for the theme and replace defaults.
@@ -239,7 +239,7 @@ function theme_adaptable_get_full() {
  * This will be used in the renderer to decide whether to include the alert or not
  */
 function theme_adaptable_get_alertkey($alertindex) {
-	user_preference_allow_ajax_update('theme_adaptable_alertkey' . $alertindex, PARAM_TEXT);
+    user_preference_allow_ajax_update('theme_adaptable_alertkey' . $alertindex, PARAM_TEXT);
     return get_user_preferences('theme_adaptable_alertkey' . $alertindex, '');
 }
 
@@ -316,11 +316,9 @@ function theme_adaptable_pluginfile($course, $cm, $context, $filearea, $args, $f
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'style') {
             theme_essential_serve_css($args[1]);
-        }
-        else if ($filearea === 'homebk') {
+        } else if ($filearea === 'homebk') {
             return $theme->setting_file_serve('homebk', $args, $forcedownload, $options);
-        }
-        else if ($filearea === 'pagebackground') {
+        } else if ($filearea === 'pagebackground') {
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
         } else if (preg_match("/p[1-9][0-9]/", $filearea) !== false) {
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
@@ -391,11 +389,12 @@ function theme_adaptable_performance_output($param) {
 function theme_adaptable_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
-    //  REMOVED: Deprecated function    error_log($CFG->version);
-    if($CFG->version < 2015051100) {
-      $page->requires->jquery_plugin('bootstrap', 'theme_adaptable');
-	  $page->requires->jquery_plugin('dropdown', 'theme_adaptable');	
+    // REMOVED: Deprecated function    error_log($CFG->version); ???
+    if ($CFG->version < 2015051100) {
+        $page->requires->jquery_plugin('bootstrap', 'theme_adaptable');
+        $page->requires->jquery_plugin('dropdown', 'theme_adaptable');
     }
+
     $page->requires->jquery_plugin('pace', 'theme_adaptable');
     $page->requires->jquery_plugin('flexslider', 'theme_adaptable');
     $page->requires->jquery_plugin('ticker', 'theme_adaptable');

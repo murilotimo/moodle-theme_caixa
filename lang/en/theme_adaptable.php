@@ -363,7 +363,7 @@ $string['alertaccessprofile'] = 'Add custom profile field restriction';
 $string['alertaccess'] = 'Alert Visibility';
 $string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "' . $string['alertaccessprofile'] . '" you will need to add values for profile fields below.';
 
-// Alert Box Enable
+// Alert Box Enable.
 $string['enablealert'] = 'Enable Alert Box {$a}';
 $string['enablealertdesc'] = 'Enable Alert Box {$a}';
 

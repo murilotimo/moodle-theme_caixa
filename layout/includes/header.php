@@ -408,7 +408,7 @@ switch($enableheadingtitle) {
     </div>
 
 <?php
-if (!empty($PAGE->theme->settings->socialset)) {		
+if (!empty($PAGE->theme->settings->socialset)) {
     echo $OUTPUT->socialicons();
 }
 ?>
@@ -419,7 +419,13 @@ if (empty($PAGE->theme->settings->socialset)) { ?>
             <form action="<?php p($CFG->wwwroot) ?>/course/search.php">
                 <label class="hidden" for="search-1" style="display: none;">Search iCity</label>
                 <div class="search-box grey-box bg-white clear-fix">
-                    <input placeholder="<?php echo get_string("searchcourses")?>" accesskey="6" class="search_tour bg-white no-border left search-box__input ui-autocomplete-input" type="text" name="search" id="search-1" autocomplete="off">
+                    <input placeholder="<?php echo get_string("searchcourses")?>" 
+                                        accesskey="6" 
+                                        class="search_tour bg-white no-border left search-box__input ui-autocomplete-input" 
+                                        type="text" 
+                                        name="search" 
+                                        id="search-1" 
+                                        autocomplete="off">
                     <button type="submit" class="no-border bg-white pas search-box__button">
                         <abbr class="fa fa-search"></abbr>
                     </button>
@@ -466,39 +472,39 @@ if (isloggedin()) {
 <?php
     if (isloggedin()) {
         if ($PAGE->theme->settings->enableshowhideblocks) { ?>
-	                            <li class="hbl">
-                                <a href="#" class="moodlezoom" title="<?php echo get_string('hideblocks', 'theme_adaptable') ?>">
-	                            <i class="fa fa-indent fa-lg"></i>
-	                            <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_adaptable') ?></span>
-	                            </a>
-	                            </li>
-	                            <li class="sbl">
-                                <a href="#" class="moodlezoom" title="<?php echo get_string('showblocks', 'theme_adaptable') ?>">
-	                            <i class="fa fa-outdent fa-lg"></i>
-	                            <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_adaptable') ?></span>
-	                            </a>
-	                            </li>
+           <li class="hbl">
+               <a href="#" class="moodlezoom" title="<?php echo get_string('hideblocks', 'theme_adaptable') ?>">
+                   <i class="fa fa-indent fa-lg"></i>
+	           <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_adaptable') ?></span>
+	       </a>
+	   </li>
+	   <li class="sbl">
+               <a href="#" class="moodlezoom" title="<?php echo get_string('showblocks', 'theme_adaptable') ?>">
+	           <i class="fa fa-outdent fa-lg"></i>
+	           <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_adaptable') ?></span>
+	       </a>
+	   </li>
 <?php
         }
 
         if ($PAGE->theme->settings->enablezoom) { ?>
-	                                <li class="hbll">
-                                    <a href="#" class="moodlewidth" title="<?php echo get_string('fullscreen', 'theme_adaptable') ?>">
-	                                <i class="fa fa-expand fa-lg"></i>
-	                                <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_adaptable') ?></span>
-	                                </a>
-	                                </li>
-	                                <li class="sbll">
-                                    <a href="#" class="moodlewidth" title="<?php echo get_string('standardview', 'theme_adaptable') ?>">
-	                                <i class="fa fa-compress fa-lg"></i>
-	                                <span class="zoomdesc"><?php echo get_string('standardview', 'theme_adaptable') ?></span>
-	                                </a>
-	                                </li>
+            <li class="hbll">
+                <a href="#" class="moodlewidth" title="<?php echo get_string('fullscreen', 'theme_adaptable') ?>">
+	            <i class="fa fa-expand fa-lg"></i>
+	            <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_adaptable') ?></span>
+	        </a>
+	    </li>
+	    <li class="sbll">
+                <a href="#" class="moodlewidth" title="<?php echo get_string('standardview', 'theme_adaptable') ?>">
+                    <i class="fa fa-compress fa-lg"></i>
+	            <span class="zoomdesc"><?php echo get_string('standardview', 'theme_adaptable') ?></span>
+	        </a>
+            </li>
 <?php
         }
     }
 ?>
-                            </ul>
+        </ul>
                             <div id="edittingbutton" class="pull-right breadcrumb-button">
                                 <?php echo $OUTPUT->page_heading_button(); ?>
                             </div>
@@ -515,5 +521,4 @@ if (isloggedin()) {
 
 
 <?php
-	echo $OUTPUT->get_news_ticker();
-?>
+    echo $OUTPUT->get_news_ticker();

@@ -766,71 +766,70 @@ $fontlist = array(
 );
 
 $from0to6 = array(
-        '0px' => "0px",
-        '1px' => "1px",
-        '2px' => "2px",
-        '3px' => "3px",
-        '4px' => "4px",
-        '5px' => "5px",
-        '6px' => "6px",
+    '0px' => "0px",
+    '1px' => "1px",
+    '2px' => "2px",
+    '3px' => "3px",
+    '4px' => "4px",
+    '5px' => "5px",
+    '6px' => "6px",
 );
 
 $from0to8 = array(
-        '0px' => "0px",
-        '1px' => "1px",
-        '2px' => "2px",
-        '3px' => "3px",
-        '4px' => "4px",
-        '5px' => "5px",
-        '6px' => "6px",
-        '7px' => "7px",
-        '8px' => "8px",
+    '0px' => "0px",
+    '1px' => "1px",
+    '2px' => "2px",
+    '3px' => "3px",
+    '4px' => "4px",
+    '5px' => "5px",
+    '6px' => "6px",
+    '7px' => "7px",
+    '8px' => "8px",
 );
 
 $from0to12 = array(
-        '0px' => "0px",
-        '1px' => "1px",
-        '2px' => "2px",
-        '3px' => "3px",
-        '4px' => "4px",
-        '5px' => "5px",
-        '6px' => "6px",
-        '7px' => "7px",
-        '8px' => "8px",
-        '9px' => "9px",
-        '10px' => "10px",
-        '11px' => "11px",
-        '12px' => "12px",
+    '0px' => "0px",
+    '1px' => "1px",
+    '2px' => "2px",
+    '3px' => "3px",
+    '4px' => "4px",
+    '5px' => "5px",
+    '6px' => "6px",
+    '7px' => "7px",
+    '8px' => "8px",
+    '9px' => "9px",
+    '10px' => "10px",
+    '11px' => "11px",
+    '12px' => "12px",
 );
 
 $from10to16 = array(
-        '10px' => "10px",
-        '11px' => "11px",
-        '12px' => "12px",
-        '13px' => "13px",
-        '14px' => "14px",
-        '15px' => "15px",
-        '16px' => "16px",
+    '10px' => "10px",
+    '11px' => "11px",
+    '12px' => "12px",
+    '13px' => "13px",
+    '14px' => "14px",
+    '15px' => "15px",
+    '16px' => "16px",
 );
 
 $from0to20 = array(
-        '0px' => "0px",
-        '5px' => "5px",
-        '10px' => "10px",
-        '15px' => "15px",
-        '20px' => "20px",
-    );
+    '0px' => "0px",
+    '5px' => "5px",
+    '10px' => "10px",
+    '15px' => "15px",
+    '20px' => "20px",
+);
 
 $borderstyles = array(
-		'solid' => 'solid',
-		'dashed' => 'dashed',
-		'dotted' => 'dotted',
-		'double' => 'double',			
-		);
-
+    'solid' => 'solid',
+    'dashed' => 'dashed',
+    'dotted' => 'dotted',
+    'double' => 'double',
+);
 
 if (is_siteadmin()) {
-    // adaptable theme settings page.
+    // Adaptable theme settings page.
     $ADMIN->add('themes', new admin_category('theme_adaptable', 'adaptable'));
 
 
@@ -1543,7 +1542,7 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
     // Site title.
     $name = 'theme_adaptable/sitetitletext';
     $title = get_string('sitetitletext', 'theme_adaptable');
@@ -1693,7 +1692,7 @@ if (is_siteadmin()) {
     $description = get_string('helpprofilefielddesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-    
+
     $name = 'theme_adaptable/enablehelp2';
     $title = get_string('enablehelp', 'theme_adaptable');
     $description = get_string('enablehelpdesc', 'theme_adaptable');
@@ -1958,7 +1957,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social2';
     $title = get_string('social2', 'theme_adaptable');
     $description = get_string('social2desc', 'theme_adaptable');
-	$default = 'http://twitter.com/';
+    $default = 'http://twitter.com/';
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
@@ -1972,7 +1971,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social3';
     $title = get_string('social3', 'theme_adaptable');
     $description = get_string('social3desc', 'theme_adaptable');
-	$default = 'https://plus.google.com/';
+    $default = 'https://plus.google.com/';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
@@ -1986,7 +1985,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social4';
     $title = get_string('social4', 'theme_adaptable');
     $description = get_string('social4desc', 'theme_adaptable');
-	$default = 'https://www.instagram.com/';
+    $default = 'https://www.instagram.com/';
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
@@ -1999,7 +1998,7 @@ if (is_siteadmin()) {
 
     $name = 'theme_adaptable/social5';
     $title = get_string('social5', 'theme_adaptable');
-    $description = get_string('social5desc', 'theme_adaptable');	
+    $description = get_string('social5desc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
     $temp->add($setting);
 
@@ -2026,7 +2025,7 @@ if (is_siteadmin()) {
     $name = 'theme_adaptable/social7';
     $title = get_string('social7', 'theme_adaptable');
     $description = get_string('social7desc', 'theme_adaptable');
-	$default = 'https://youtube.com/';
+    $default = 'https://youtube.com/';
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $temp->add($setting);
 
@@ -2162,8 +2161,9 @@ if (is_siteadmin()) {
     $temp->add(new admin_setting_heading('theme_adaptable_topmenus', get_string('topmenusheading', 'theme_adaptable'),
     format_text(get_string('topmenusheadingdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $temp->add(new admin_setting_heading('theme_adaptable_menus_visibility', get_string('menusheadingvisibility', 'theme_adaptable'),
-    format_text(get_string('menusheadingvisibilitydesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+    $temp->add(new admin_setting_heading('theme_adaptable_menus_visibility',
+            get_string('menusheadingvisibility', 'theme_adaptable'),
+            format_text(get_string('menusheadingvisibilitydesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
     $name = 'theme_adaptable/enablemenus';
     $title = get_string('enablemenus', 'theme_adaptable');

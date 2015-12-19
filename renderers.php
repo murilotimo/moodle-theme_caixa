@@ -68,78 +68,73 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $this->render_user_menu($usermenu);
     }
 
-    public function get_alert_messages(){
-    	global $PAGE;
-    	$alerts = '';
-    	$alertcount = get_config('theme_adaptable','alertcount');
-		
-    	for ($i=1; $i <= $alertcount; $i++) {
+    public function get_alert_messages() {
+        global $PAGE;
+        $alerts = '';
+        $alertcount = get_config('theme_adaptable', 'alertcount');
 
-    		
-    		$enablealert = 'enablealert' . $i;
-			$alerttext = 'alerttext' . $i;
-			$alertsession = 'alert' . $i;
-			
-			$enablealert = $PAGE->theme->settings->$enablealert;
-			$alerttext = $PAGE->theme->settings->$alerttext;	
-			
-			if ($enablealert && !empty($alerttext)){
+        for ($i = 1; $i <= $alertcount; $i++) {
+            $enablealert = 'enablealert' . $i;
+            $alerttext = 'alerttext' . $i;
+            $alertsession = 'alert' . $i;
 
-				$alertprofilefield = 'alertprofilefield' . $i;
-				$profilevals = array('','');
-				
-				if (!empty($PAGE->theme->settings->$alertprofilefield)){
-					$profilevals = explode('=', $PAGE->theme->settings->$alertprofilefield);
-				}
-				
-				if (!empty($PAGE->theme->settings->enablealertstriptags)){
-					$alerttext = strip_tags($alerttext);
-				}
-			
-				$alerttype = 'alerttype' . $i;
-				$alertaccess = 'alertaccess' . $i;
-				$alertkey = 'alertkey' . $i;
-				
-				$alerttype = $PAGE->theme->settings->$alerttype;
-				$alertaccess = $PAGE->theme->settings->$alertaccess;
-				$alertkey = $PAGE->theme->settings->$alertkey;
-				//$alertprofilefield = $PAGE->theme->settings->$alertprofilefield;
-				//$alertprofilevalue = $PAGE->theme->settings->$alertprofilevalue;				
-				
-				if ($this->get_alert_access($alertaccess, $profilevals[0], $profilevals[1], $alertsession)){
-					$alerts .= $this->get_alert_message($alerttext, $alerttype, $i, $alertkey);
-				}
-			}
-		}	
-		
-		if (core\session\manager::is_loggedinas()) {
-			$alertindex = $alertcount+1;
-			$alertkey="undismissable";
-			$logininfo = $this->login_info();
-			$logininfo = str_replace('<div class="logininfo">', '', $logininfo);
-			$logininfo = str_replace('</div>', '', $logininfo);
-			$alerts = $this->get_alert_message($logininfo, 'warning',$alertindex) . $alerts;
-		}
-		
-		return $alerts;
+            $enablealert = $PAGE->theme->settings->$enablealert;
+            $alerttext = $PAGE->theme->settings->$alerttext;
+
+            if ($enablealert && !empty($alerttext)) {
+                $alertprofilefield = 'alertprofilefield' . $i;
+                $profilevals = array('', '');
+
+                if (!empty($PAGE->theme->settings->$alertprofilefield)) {
+                    $profilevals = explode('=', $PAGE->theme->settings->$alertprofilefield);
+                }
+
+                if (!empty($PAGE->theme->settings->enablealertstriptags)) {
+                    $alerttext = strip_tags($alerttext);
+                }
+
+                $alerttype = 'alerttype' . $i;
+                $alertaccess = 'alertaccess' . $i;
+                $alertkey = 'alertkey' . $i;
+
+                $alerttype = $PAGE->theme->settings->$alerttype;
+                $alertaccess = $PAGE->theme->settings->$alertaccess;
+                $alertkey = $PAGE->theme->settings->$alertkey;
+
+                if ($this->get_alert_access($alertaccess, $profilevals[0], $profilevals[1], $alertsession)) {
+                    $alerts .= $this->get_alert_message($alerttext, $alerttype, $i, $alertkey);
+                }
+            }
+        }
+
+        if (core\session\manager::is_loggedinas()) {
+            $alertindex = $alertcount + 1;
+            $alertkey = "undismissable";
+            $logininfo = $this->login_info();
+            $logininfo = str_replace('<div class="logininfo">', '', $logininfo);
+            $logininfo = str_replace('</div>', '', $logininfo);
+            $alerts = $this->get_alert_message($logininfo, 'warning', $alertindex) . $alerts;
+        }
+
+        return $alerts;
+    }
+
+    public function get_alert_message($text, $type, $alertindex, $alertkey) {
+        if ($alertkey == '' || theme_adaptable_get_alertkey($alertindex) == $alertkey) {
+            return '';
+    }
+
+        $retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
+        $retval .= '<a href="#" class="close" data-dismiss="alert" data-alertkey="' . $alertkey .
+			'" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
+		// $retval .= '<div class="container">';.
+        $retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-2x"></i>&nbsp';
+        $retval .= $text . ' ' . theme_adaptable_get_alertkey($alertindex);		
+                $retval .= '</div>';
+        return $retval;
     }
 	
-	public function get_alert_message($text, $type, $alertindex, $alertkey){
-		if($alertkey=='' || theme_adaptable_get_alertkey($alertindex)==$alertkey){
-			return '';
-		}
-		
-		$retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
-		$retval .= '<a href="#" class="close" data-dismiss="alert" data-alertkey="' . $alertkey . 
-			'" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
-		// $retval .= '<div class="container">';
-		$retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-2x"></i>&nbsp';
-		$retval .= $text . ' ' . theme_adaptable_get_alertkey($alertindex);		
-                $retval .= '</div>';
-		return $retval;
-	}
-	
-	public function get_alert_access($access, $profilefield, $profilevalue, $alertsession){
+    public function get_alert_access($access, $profilefield, $profilevalue, $alertsession){
 		$retval = false;
 		switch ($access) {
 			case "global":
