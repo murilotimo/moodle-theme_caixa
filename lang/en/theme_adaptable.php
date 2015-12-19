@@ -19,7 +19,7 @@
  *
  * @package    theme
  * @subpackage adaptable
- * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @copyright  2014 Birmingham City University
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -39,6 +39,7 @@ $string['choosereadme'] = '
 
 $string['configtitle'] = 'Adaptable';
 $string['region-middle'] = 'middle';
+$string['region-frnt-footer'] = 'footer';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 

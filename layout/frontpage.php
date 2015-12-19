@@ -19,7 +19,7 @@
  *
  * @package    theme
  * @subpackage adaptable
- * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @copyright  2014 Birmingham City University
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
