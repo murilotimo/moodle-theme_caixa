@@ -283,8 +283,9 @@ font-weight: normal;
   content: "\f145";
   font-family: FontAwesome;
 }
-.showblockicons .block_course_badges .header .title h2:before {
-  content: "\f091";
+.showblockicons .block_course_badges .header .title h2:before,
+.showblockicons .block_badges .header .title h2:before {
+  content: "\f0a3";
   font-family: FontAwesome;
 }
 .showblockicons .block_twitter_search .header .title h2:before {
