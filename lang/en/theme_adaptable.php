@@ -449,6 +449,10 @@ $string['footersettings'] = 'Footer';
 $string['footersettingsheading'] = 'Set the content that should appear in the footer.';
 $string['footerdesc'] = 'Control the content that appears in the 4 footer sections of the page.';
 
+$string['navbarmenusettings'] = 'Navbar Tools Menu';
+$string['navbarmenusettingsheading'] = 'Customize the menu in the navigation bar';
+$string['navbarmenusettingsdesc'] = 'Allows you to add a menu to the navigation bar.';
+
 $string['navbarsettings'] = 'Header Navbar';
 $string['navbarsettingsheading'] = 'Customize the navigation bar';
 $string['navbardesc'] = 'Allows you to control all of the elements that appear on the navigation bar.';
@@ -660,7 +664,13 @@ $string['tilesshowallcontacts'] = 'Show all course contacts';
 $string['tilesshowallcontactsdesc'] = 'Show all course contacts or just one';
 
 $string['toolsmenu'] = 'Tools Menus (in main nagivation)';
-$string['toolsmenustitledesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar). The format is the same as it is for menus above including the ability to add fa icons.';
+$string['toolsmenustitledesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar). 
+The format is similar to that used for Moodle custom menus but allows you to add fa icons to menu items:
+<pre>
+&lt;span class=&quot;fa fa-video-camera&quot;&gt;&lt;/span&gt; Record Screen|http://google.co.uk|Record Screen
+&lt;span class=&quot;fa fa-picture-o&quot;&gt;&lt;/span&gt; ThinkStock|http://google.co.uk|ThinkStock
+&lt;span class=&quot;fa fa-clock-o&quot;&gt;&lt;/span&gt; Exam Clock|http://google.co.uk|Exam Clock
+</pre>';
 
 $string['toolsmenu2'] = '2nd Tools menu';
 $string['toolsmenu2desc'] = 'You can configure links to be shown under a tools menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
@@ -758,22 +768,6 @@ Moodle community|https://moodle.org
 --German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
 Moodle.com|http://moodle.com/
 </pre>
-You also have the ability to add fa icons into your dropdown navigation lists using the following format:
-<pre>
-&lt;span class=&quot;fa fa-video-camera&quot;&gt;&lt;/span&gt; Record Screen|http://google.co.uk|Record Screen
-&lt;span class=&quot;fa fa-picture-o&quot;&gt;&lt;/span&gt; ThinkStock|http://google.co.uk|ThinkStock
-&lt;span class=&quot;fa fa-clock-o&quot;&gt;&lt;/span&gt; Exam Clock|http://google.co.uk|Exam Clock
-</pre>
-The reason there are so many menus is that they can be targeted to different audiences.
-The following example uses six menus but only two are ever visible to a given user, one based on whether they are staff or student the other for their faculty:
-<pre>
-Menu 1 - Staff Links - custom field usertype = staff
-Menu 2 - Student Links - custom field usertype = student
-Menu 3 - Faculty One Links - custom field faculty = facultyone
-Menu 4 - Faculty Two Links - custom field faculty = facultytwo
-Menu 5 - Faculty Three Links - custom field faculty = facultythree
-Menu 6 - Faculty Four Links - custom field faculty = facultyfour
-</pre>
 
 To reduce the overhead of loading custom profile data on every page load access rules are stored in the users session. For testing new menus you may want to switch off "store access rules in session". You can also set the time to live for sessoins in minutes.';
 
@@ -781,7 +775,7 @@ $string['menusession'] = 'Store access details in session';
 $string['menusessiondesc'] = 'For performance reasons it is suggested this is enabled. You may want to disable when testing';
 
 $string['disablecustommenu'] = 'Disable Moodle Custom Menu';
-$string['disablecustommenudesc'] = 'Disable Moodle Custom Menus in this theme (will still render in other themes you may have installed)';
+$string['disablecustommenudesc'] = 'Disable Moodle Custom Menus in the navigation bar (will still render in other themes you may have installed)';
 
 $string['menusessionttl'] = 'Minutes to store access rules in session';
 $string['menusessionttldesc'] = 'Number of minutes after which menu access rules are refreshed in the users session.';

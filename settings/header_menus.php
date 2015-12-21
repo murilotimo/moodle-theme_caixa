@@ -4,13 +4,6 @@
     $temp->add(new admin_setting_heading('theme_adaptable_menus', get_string('menusheading', 'theme_adaptable'),
     format_text(get_string('menustitledesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_adaptable/disablecustommenu';
-    $title = get_string('disablecustommenu', 'theme_adaptable');
-    $description = get_string('disablecustommenudesc', 'theme_adaptable');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, false, true, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     $name = 'theme_adaptable/menusession';
     $title = get_string('menusession', 'theme_adaptable');
     $description = get_string('menusessiondesc', 'theme_adaptable');
@@ -332,3 +325,5 @@
     $description = '';
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
+
+    $ADMIN->add('theme_adaptable', $temp);

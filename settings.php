@@ -837,10 +837,11 @@ if (is_siteadmin()) {
 	require_once(dirname(__FILE__) . '/settings/fonts.php');
 	require_once(dirname(__FILE__) . '/settings/buttons.php');
 	require_once(dirname(__FILE__) . '/settings/header.php');
-	require_once(dirname(__FILE__) . '/settings/header_navbar.php');
+	require_once(dirname(__FILE__) . '/settings/header_menus.php');
 	require_once(dirname(__FILE__) . '/settings/header_user.php');
 	require_once(dirname(__FILE__) . '/settings/header_social.php');
-	require_once(dirname(__FILE__) . '/settings/header_menus.php');
+	require_once(dirname(__FILE__) . '/settings/header_navbar.php');
+	require_once(dirname(__FILE__) . '/settings/header_navbar_menu.php');	
 	require_once(dirname(__FILE__) . '/settings/block_settings.php');
 	require_once(dirname(__FILE__) . '/settings/marketing_blocks.php');
 	require_once(dirname(__FILE__) . '/settings/frontpage_ticker.php');
