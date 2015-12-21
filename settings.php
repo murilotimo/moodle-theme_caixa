@@ -832,7 +832,9 @@ $choices1to12 = array(
 	'7' => '7',
 	'8' => '8',
 	'9' => '9',
-	'10' => '10'
+	'10' => '10',
+	'11' => '11',
+	'12' => '12'
 );
 
 $borderstyles = array(
@@ -846,23 +848,23 @@ if (is_siteadmin()) {
     // Adaptable theme settings page.
     $ADMIN->add('themes', new admin_category('theme_adaptable', 'adaptable'));
 
-	require_once(dirname(__FILE__) . '/settings/colors.php');
-	require_once(dirname(__FILE__) . '/settings/fonts.php');
-	require_once(dirname(__FILE__) . '/settings/buttons.php');
-	require_once(dirname(__FILE__) . '/settings/header.php');
-	require_once(dirname(__FILE__) . '/settings/header_menus.php');
-	require_once(dirname(__FILE__) . '/settings/header_user.php');
-	require_once(dirname(__FILE__) . '/settings/header_social.php');
-	require_once(dirname(__FILE__) . '/settings/header_navbar.php');
-	require_once(dirname(__FILE__) . '/settings/header_navbar_menu.php');	
-	require_once(dirname(__FILE__) . '/settings/block_settings.php');
-	require_once(dirname(__FILE__) . '/settings/marketing_blocks.php');
-	require_once(dirname(__FILE__) . '/settings/frontpage_courses.php');
-	require_once(dirname(__FILE__) . '/settings/frontpage_ticker.php');
-	require_once(dirname(__FILE__) . '/settings/frontpage_slider.php');	
-	require_once(dirname(__FILE__) . '/settings/alert_box.php');	
-	require_once(dirname(__FILE__) . '/settings/layout.php');
-	require_once(dirname(__FILE__) . '/settings/mobile_settings.php');
-	require_once(dirname(__FILE__) . '/settings/custom_css.php');
-	require_once(dirname(__FILE__) . '/settings/analytics.php');
+	include(dirname(__FILE__) . '/settings/colors.php');
+	include(dirname(__FILE__) . '/settings/fonts.php');
+	include(dirname(__FILE__) . '/settings/buttons.php');
+	include(dirname(__FILE__) . '/settings/header.php');
+	include(dirname(__FILE__) . '/settings/header_menus.php');
+	include(dirname(__FILE__) . '/settings/header_user.php');
+	include(dirname(__FILE__) . '/settings/header_social.php');
+	include(dirname(__FILE__) . '/settings/header_navbar.php');
+	include(dirname(__FILE__) . '/settings/header_navbar_menu.php');	
+	include(dirname(__FILE__) . '/settings/block_settings.php');
+	include(dirname(__FILE__) . '/settings/marketing_blocks.php');
+	include(dirname(__FILE__) . '/settings/frontpage_courses.php');
+	include(dirname(__FILE__) . '/settings/frontpage_ticker.php');
+	include(dirname(__FILE__) . '/settings/frontpage_slider.php');	
+	include(dirname(__FILE__) . '/settings/alert_box.php');	
+	include(dirname(__FILE__) . '/settings/layout.php');
+	include(dirname(__FILE__) . '/settings/mobile_settings.php');
+	include(dirname(__FILE__) . '/settings/custom_css.php');
+	include(dirname(__FILE__) . '/settings/analytics.php');
 }

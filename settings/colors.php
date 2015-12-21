@@ -2,7 +2,7 @@
     // Colors section.
     $temp = new admin_settingpage('theme_adaptable_color', get_string('colorsettings', 'theme_adaptable'));
     $temp->add(new admin_setting_heading('theme_adaptable_color', get_string('colorsettingsheading', 'theme_adaptable'),
-    format_text(get_string('colordesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+                   format_text(get_string('colordesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
 
     // Main colors heading.
