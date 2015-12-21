@@ -822,6 +822,19 @@ $from0to20 = array(
     '20px' => "20px",
 );
 
+$choices1to12 = array(
+	'1' => '1',
+	'2' => '2',
+	'3' => '3',
+	'4' => '4',
+	'5' => '5',
+	'6' => '6',
+	'7' => '7',
+	'8' => '8',
+	'9' => '9',
+	'10' => '10'
+);
+
 $borderstyles = array(
     'solid' => 'solid',
     'dashed' => 'dashed',
@@ -844,10 +857,12 @@ if (is_siteadmin()) {
 	require_once(dirname(__FILE__) . '/settings/header_navbar_menu.php');	
 	require_once(dirname(__FILE__) . '/settings/block_settings.php');
 	require_once(dirname(__FILE__) . '/settings/marketing_blocks.php');
-	require_once(dirname(__FILE__) . '/settings/frontpage_ticker.php');
-	require_once(dirname(__FILE__) . '/settings/frontpage_slider.php');
 	require_once(dirname(__FILE__) . '/settings/frontpage_courses.php');
+	require_once(dirname(__FILE__) . '/settings/frontpage_ticker.php');
+	require_once(dirname(__FILE__) . '/settings/frontpage_slider.php');	
+	require_once(dirname(__FILE__) . '/settings/alert_box.php');	
 	require_once(dirname(__FILE__) . '/settings/layout.php');
 	require_once(dirname(__FILE__) . '/settings/mobile_settings.php');
 	require_once(dirname(__FILE__) . '/settings/custom_css.php');
+	require_once(dirname(__FILE__) . '/settings/analytics.php');
 }

@@ -430,12 +430,18 @@ $string['tickerdefault'] = 'No news items to display';
 $string['alertsettingsgeneral'] = 'General Alert Settings';
 $string['alertsettings'] = 'Alert Box {$a}';
 
-
 $string['alertcount'] = 'Alert count';
 $string['alertcountdesc'] = 'The number of alerts to show in the edit area below.';
 
 $string['alertsettingsheading'] = 'Customize top Alert Box';
 $string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';
+
+$string['analyticssettings'] = 'Analytics';
+$string['analyticssettingsheading'] = 'Setup Google Analytics';
+$string['analyticssettingsdesc'] = 'You can setup multiple codes for Google analytics and targed them to user profile fields.';
+
+$string['analyticscount'] = 'Analytics count';
+$string['analyticscountdesc'] = 'The number of analytics fields to show in the edit area below.';
 
 $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowsettingsheading'] = 'Customize the carousel on the front page';
