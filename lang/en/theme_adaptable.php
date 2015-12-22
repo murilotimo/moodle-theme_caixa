@@ -757,7 +757,7 @@ $string['ticker'] = 'Announcements';
 $string['newmenu1trigger'] = 'Top Menu Dropdown 1 trigger word';
 $string['newmenu1triggerdesc'] = 'Set a Top Menu Dropdown 1 trigger word. Font awesome icons can be used';
 
-$string['menusheading'] = 'Configure Navigation for Tools Menus (navbar) and Menus (upper header)';
+$string['menusheading'] = 'Configure Navigation for link Menus in the upper header';
 $string['menustitledesc'] = 'Tools Menus (in navbar) and Top Menus (upper header) can be restricted based on custom profile fields (optional). To add a restriction enter the name of the profile field and expected value. Menu Structure follows the common Moodle format:
 <pre>
 Moodle community|https://moodle.org
@@ -767,8 +767,7 @@ Moodle community|https://moodle.org
 --German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de
 Moodle.com|http://moodle.com/
 </pre>
-
-To reduce the overhead of loading custom profile data on every page load access rules are stored in the users session. For testing new menus you may want to switch off "store access rules in session". You can also set the time to live for sessoins in minutes.';
+';
 
 $string['menusession'] = 'Store access details in session';
 $string['menusessiondesc'] = 'For performance reasons it is suggested this is enabled. You may want to disable when testing';
@@ -778,10 +777,6 @@ $string['disablecustommenudesc'] = 'Disable Moodle Custom Menus in the navigatio
 
 $string['menusessionttl'] = 'Minutes to store access rules in session';
 $string['menusessionttldesc'] = 'Number of minutes after which menu access rules are refreshed in the users session.';
-
-$string['topmenusheading'] = 'Menus (navigation in upper header)';
-$string['topmenusheadingdesc'] = 'You can configure links to be shown in drop down menus (in the upper header). The format is the same as it is for menus above including the ability to add fa icons.';
-
 
 // Generic strings for all five menus.
 $string['newmenudesc'] = 'Configure links to be shown under a top header menu.';
