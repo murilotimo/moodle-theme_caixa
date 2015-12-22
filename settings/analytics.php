@@ -4,6 +4,15 @@
     $temp->add(new admin_setting_heading('theme_adaptable_analytics', get_string('analyticssettingsheading', 'theme_adaptable'),
         format_text(get_string('analyticssettingsdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
+	// Enable analytics
+    $name = 'theme_adaptable/enableanalytics';
+    $title = get_string('enableanalytics', 'theme_adaptable');
+    $description = get_string('enableanalyticsdesc', 'theme_adaptable');
+    $default = false;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Number of Analytics entries.
     $name = 'theme_adaptable/analyticscount';
     $title = get_string('analyticscount', 'theme_adaptable');

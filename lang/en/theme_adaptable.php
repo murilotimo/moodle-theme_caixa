@@ -1023,9 +1023,12 @@ $string['fontsubsetdesc'] = 'Select other character subset to be applied to all 
 // Analytics
 $string['analyticssettingsheading'] = 'Setup Google Analytics';
 $string['analyticssettingsdesc'] = 'You can setup multiple codes for Google analytics and targed them to user profile fields.';
+
+$string ['enableanalytics'] = 'Enable Google Analytics';
+$string ['enableanalyticsdesc'] = 'Enable Google Analytics settings on your Moodle site';
+
 $string ['analyticstext'] = 'Analytics ID';
 $string ['analyticstextdesc'] = 'Enter google analytics ID';
-
 
 $string['analyticscount'] = 'Analytics count';
 $string['analyticscountdesc'] = 'The number of analytics fields to show in the edit area below.';

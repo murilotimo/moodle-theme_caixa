@@ -123,5 +123,6 @@ if ($PAGE->theme->settings->showfooterblocks) { ?>
 
 </div>
 <?php echo $PAGE->theme->settings->jssection; ?>
+<?php echo $OUTPUT->get_analytics(); ?>
 </body>
 </html>
