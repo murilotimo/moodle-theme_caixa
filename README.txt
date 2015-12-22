@@ -1,45 +1,51 @@
 HTML code for settings and block areas
 
+
 Front page info block:
 
 The html for this block should look like:
+
 <div class="span9">
-	<h4>Information</h4>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-	</div>
-	
-	<div class="span3">
-	<a href="#" class="submit">2013/14 Courses <i class="fa-chevron-right fa"></i></a>
+    <h4>Information</h4>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</div>
+
+<div class="span3">
+    <a href="#" class="submit">2013/14 Courses <i class="fa-chevron-right fa"></i></a>
 </div>
 
 
 Frontpage Marketing Block HTML structure BCU
 
- 	<div><img src="/someimageURL.jpg" class="marketimage"></div>
-    <div class="internalmarket">
+<div>
+    <img src="/someimageURL.jpg" class="marketimage">
+</div>
+
+<div class="internalmarket">
     <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h3>
     <a href="#" class="submit">My Home</a>
- 	</div>
-    
+</div>
+
+
 Frontpage slider markup:
 
 <div class="span6 col-sm-6">
-<h3>Hand-crafted</h3> <h4>pixels and code for the Moodle community</h4>
-<a href="#" class="submit">Check out our custom theme pricing!</a>
+    <h3>Hand-crafted</h3> <h4>pixels and code for the Moodle community</h4>
+    <a href="#" class="submit">Check out our custom theme pricing!</a>
 </div>
- 	
+
+
 Frontpage Marketing Block HTML structure Coventry
 
-
 <div><img src="http://somewebsite.com/2.jpg" class="marketimage"></div>
-<h4><a href="#">International Courses</a></h4>
+    <h4><a href="#">International Courses</a></h4>
 <p>Some text below the link....</p>
 
  	
 Frontpage Secondary info Message HTML:
  
- <div class="span2 personpic">
-		<div id="person" class="spn5">
+<div class="span2 personpic">
+    <div id="person" class="spn5">
 		<img src="/urltoanimage.jpg" alt="person">
 		</div>
 		</div>
