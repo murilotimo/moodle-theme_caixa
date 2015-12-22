@@ -436,13 +436,6 @@ $string['alertcountdesc'] = 'The number of alerts to show in the edit area below
 $string['alertsettingsheading'] = 'Customize top Alert Box';
 $string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';
 
-$string['analyticssettings'] = 'Analytics';
-$string['analyticssettingsheading'] = 'Setup Google Analytics';
-$string['analyticssettingsdesc'] = 'You can setup multiple codes for Google analytics and targed them to user profile fields.';
-
-$string['analyticscount'] = 'Analytics count';
-$string['analyticscountdesc'] = 'The number of analytics fields to show in the edit area below.';
-
 $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowsettingsheading'] = 'Customize the carousel on the front page';
 $string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
@@ -893,6 +886,7 @@ $string['mobilemenubkcolordesc'] = 'Set the Main Menu background color on mobile
 $string['mobilemenufontcolor'] = 'Mobile Menu font color';
 $string['mobilemenufontcolordesc'] = 'Set a Main Menu font color on mobile devices (collapsed)';
 
+// social settings
 $string['socialsettings'] = 'Header Social';
 $string['socialheading'] = 'Social Icon Settings';
 $string['socialtitledesc'] = '<pre>You can disable the sitewide search box and enable social icons / links in its place.
@@ -1026,10 +1020,21 @@ $string['fonttitlesizedesc'] = 'Site title font size used in site. Enter a decim
 $string['fontsubset'] = 'Google Fonts subset';
 $string['fontsubsetdesc'] = 'Select other character subset to be applied to all the fonts. latin subset is already included with Google Fonts';
 
+// Analytics
+$string['analyticssettingsheading'] = 'Setup Google Analytics';
+$string['analyticssettingsdesc'] = 'You can setup multiple codes for Google analytics and targed them to user profile fields.';
+$string ['analyticstext'] = 'Analytics ID';
+$string ['analyticstextdesc'] = 'Enter google analytics ID';
+
+
+$string['analyticscount'] = 'Analytics count';
+$string['analyticscountdesc'] = 'The number of analytics fields to show in the edit area below.';
 
 // Moodle Docs link.
 $string['moodledocs'] = 'Moodle Docs link';
 $string['moodledocsdesc'] = 'Display the Moodle Docs link in the footer.';
+$string ['analyticsprofilefield'] = 'Custom Profile Field Name=Value (optional)';
+$string ['analyticsprofilefielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
 
 // Settings page headings.
 $string['settingsmaincolors'] = 'Main Colors';
@@ -1045,6 +1050,7 @@ $string['settingsalertbox'] = 'Alert Box';
 $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colors';
 $string['settingsfootercolors'] = 'Footer Colors';
 $string['settingsfonts'] = 'Fonts';
+$string['analyticssettings'] = 'Analytics';
 
 // Login button.
 $string['logintextbutton'] = 'Log In';

@@ -33,18 +33,7 @@
     $title = get_string('alertcount', 'theme_adaptable');
     $description = get_string('alertcountdesc', 'theme_adaptable');
 	$default = THEME_ADAPTABLE_DEFAULT_ALERTCOUNT;
-	$choices = array(
-	'1' => '1',
-	'2' => '2',
-	'3' => '3',
-	'4' => '4',
-	'5' => '5',
-	'6' => '6',
-	'7' => '7',
-	'8' => '8',
-	'9' => '9',
-	'10' => '10');    
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices1to12);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
