@@ -809,48 +809,17 @@ $string['menuoverrideprofilefield'] = 'Custom profile field name';
 $string['menuoverrideprofilefielddesc'] = 'The name of the custom profile "list" field used for user override';
 $string['menuoverrideprofilefielddefault'] = 'topmenusettings';
 
+$string['topmenuscount'] = 'Number of top Menus';
+$string['topmenuscountdesc'] = 'Set the number of top menus you want to add to the theme header';
+
 $string['menusheadingvisibility'] = 'General settings for Top Menu visibility';
 $string['menusheadingvisibilitydesc'] = 'The following settings allow you to control where menus appear and optionally allow users to customise their settings';
 
-$string['menusheading1'] = 'Top Menu 1';
-$string['newmenu1'] = 'Top Menu Dropdown 1';
-$string['newmenu1label'] = 'Top Menu 1';
-
-$string['menusheading2'] = 'Top Menu 2';
-$string['newmenu2'] = 'Top Menu Dropdown 2';
-$string['newmenu2label'] = 'Top Menu 2';
-
-$string['menusheading3'] = 'Top Menu 3';
-$string['newmenu3'] = 'Top Menu Dropdown 3';
-$string['newmenu3label'] = 'Top Menu 3';
-
-$string['menusheading4'] = 'Top Menu 4';
-$string['newmenu4'] = 'Top Menu Dropdown 4';
-$string['newmenu4label'] = 'Top Menu 4';
-
-$string['menusheading5'] = 'Top Menu 5';
-$string['newmenu5'] = 'Top Menu Dropdown 5';
-$string['newmenu5label'] = 'Top Menu 5';
-
-$string['menusheading6'] = 'Top Menu 6';
-$string['newmenu6'] = 'Top Menu Dropdown 6';
-$string['newmenu6label'] = 'Top Menu 6';
-
-$string['menusheading7'] = 'Top Menu 7';
-$string['newmenu7'] = 'Top Menu Dropdown 7';
-$string['newmenu7label'] = 'Top Menu 7';
-
-$string['menusheading8'] = 'Top Menu 8';
-$string['newmenu8'] = 'Top Menu Dropdown 8';
-$string['newmenu8label'] = 'Top Menu 8';
-
-$string['menusheading9'] = 'Top Menu 9';
-$string['newmenu9'] = 'Top Menu Dropdown 9';
-$string['newmenu9label'] = 'Top Menu 9';
-
-$string['menusheading10'] = 'Top Menu 10';
-$string['newmenu10'] = 'Top Menu Dropdown 10';
-$string['newmenu10label'] = 'Top Menu 10';
+$string['newmenuheading'] = 'Top Menu';
+$string['newmenu'] = 'Top Menu Dropdown';
+$string['newmenutitle'] = 'Top Menu Title';
+$string['newmenutitledesc'] = 'The title of the dropdown list that will appear in the header of your site';
+$string['newmenutitledefault'] = 'Menu';
 
 $string['enabletoolsmenus'] = 'Enable Tools Menus';
 $string['enabletoolsmenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';

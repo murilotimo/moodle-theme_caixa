@@ -755,13 +755,14 @@ EOT;
 
         if ($visibility) {
             if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
-                for ($i = 1; $i < 11; $i++) {
+            	$topmenuscount = $PAGE->theme->settings->topmenuscount;
+                for ($i = 1; $i <= $topmenuscount; $i++) {
                     $menunumber = 'menu' . $i;
                     $newmenu = 'newmenu' . $i;
                     $class = 'newmenu' . ($i + 4);
                     $fieldsetting = 'newmenu' . $i . 'field';
                     $valuesetting = 'newmenu' . $i . 'value';
-                    $newmenulabel = 'newmenu' . $i . 'label';
+                    $newmenutitle = 'newmenu' . $i . 'title';
                     $requirelogin = 'newmenu' . $i . 'requirelogin';
                     $logincheck = true;
                     $custommenuitems = '';
@@ -781,8 +782,8 @@ EOT;
 
                         if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
                             $menu = ($PAGE->theme->settings->$newmenu);
-                            $label = get_string($newmenulabel, 'theme_adaptable');
-                            $custommenuitems = $this->parse_custom_menu($menu, $label);
+                            $title = ($PAGE->theme->settings->$newmenutitle);
+                            $custommenuitems = $this->parse_custom_menu($menu, $title);
                             $custommenu = new custom_menu($custommenuitems);
                             $retval .= $this->render_custom_menu($custommenu, $pre, $post);
                         }
