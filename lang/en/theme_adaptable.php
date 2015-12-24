@@ -265,7 +265,7 @@ $string['enableposts'] = 'My posts';
 $string['enablepostsdesc'] = 'Display a link to the my posts page';
 
 $string['enablefeed'] = 'My Feedback';
-$string['enablefeeddesc'] = 'Display a link to the users feedback page';
+$string['enablefeeddesc'] = 'Display a link to the users "My Feedback" page - Note: this requires the <a href="https://moodle.org/plugins/report_myfeedback" target="blank">My Feedback Plugin</a>';
 
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
 $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
@@ -811,48 +811,17 @@ $string['menuoverrideprofilefield'] = 'Custom profile field name';
 $string['menuoverrideprofilefielddesc'] = 'The name of the custom profile "list" field used for user override';
 $string['menuoverrideprofilefielddefault'] = 'topmenusettings';
 
+$string['topmenuscount'] = 'Number of top Menus';
+$string['topmenuscountdesc'] = 'Set the number of top menus you want to add to the theme header';
+
 $string['menusheadingvisibility'] = 'General settings for Top Menu visibility';
 $string['menusheadingvisibilitydesc'] = 'The following settings allow you to control where menus appear and optionally allow users to customise their settings';
 
-$string['menusheading1'] = 'Top Menu 1';
-$string['newmenu1'] = 'Top Menu Dropdown 1';
-$string['newmenu1label'] = 'Top Menu 1';
-
-$string['menusheading2'] = 'Top Menu 2';
-$string['newmenu2'] = 'Top Menu Dropdown 2';
-$string['newmenu2label'] = 'Top Menu 2';
-
-$string['menusheading3'] = 'Top Menu 3';
-$string['newmenu3'] = 'Top Menu Dropdown 3';
-$string['newmenu3label'] = 'Top Menu 3';
-
-$string['menusheading4'] = 'Top Menu 4';
-$string['newmenu4'] = 'Top Menu Dropdown 4';
-$string['newmenu4label'] = 'Top Menu 4';
-
-$string['menusheading5'] = 'Top Menu 5';
-$string['newmenu5'] = 'Top Menu Dropdown 5';
-$string['newmenu5label'] = 'Top Menu 5';
-
-$string['menusheading6'] = 'Top Menu 6';
-$string['newmenu6'] = 'Top Menu Dropdown 6';
-$string['newmenu6label'] = 'Top Menu 6';
-
-$string['menusheading7'] = 'Top Menu 7';
-$string['newmenu7'] = 'Top Menu Dropdown 7';
-$string['newmenu7label'] = 'Top Menu 7';
-
-$string['menusheading8'] = 'Top Menu 8';
-$string['newmenu8'] = 'Top Menu Dropdown 8';
-$string['newmenu8label'] = 'Top Menu 8';
-
-$string['menusheading9'] = 'Top Menu 9';
-$string['newmenu9'] = 'Top Menu Dropdown 9';
-$string['newmenu9label'] = 'Top Menu 9';
-
-$string['menusheading10'] = 'Top Menu 10';
-$string['newmenu10'] = 'Top Menu Dropdown 10';
-$string['newmenu10label'] = 'Top Menu 10';
+$string['newmenuheading'] = 'Top Menu';
+$string['newmenu'] = 'Top Menu Dropdown';
+$string['newmenutitle'] = 'Top Menu Title';
+$string['newmenutitledesc'] = 'The title of the dropdown list that will appear in the header of your site';
+$string['newmenutitledefault'] = 'Menu';
 
 $string['enabletoolsmenus'] = 'Enable Tools Menus';
 $string['enabletoolsmenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
@@ -887,11 +856,17 @@ $string['mobilemenufontcolordesc'] = 'Set a Main Menu font colour on mobile devi
 $string['socialsettings'] = 'Header Social';
 $string['socialheading'] = 'Social Icon Settings';
 $string['socialtitledesc'] = '<pre>You can disable the sitewide search box and enable social icons / links in its place.
+To setup icons enter a de-limited list into the "Social Icon List" field below.
+This should be in the format:
 
-If you want to use these links for something other than social icons (links to other applications like email for example) you can:
+url|title|icon
 
-1) Change the names of services in the language pack (language customisation)
-2) Alter the default icons below. </pre>';
+For example:
+
+http://localhost/moodle/course/search.php|Search Moodle|fa-search
+http://facebook.com/|Facebook|fa-facebook-square
+http://twitter.com/|Twitter|fa-twitter-square
+http://instagram.com|Instagram|fa-instagram </pre>';
 
 $string['socialset'] = 'Add social icons and hide search bar';
 $string['socialsetdesc'] = 'Check this box to hide the search bar and add social icons in the same location instead.';
@@ -949,6 +924,9 @@ $string['social8icon'] = 'Social Link 8 Icon';
 $string['social9icon'] = 'Social Link 9 Icon';
 $string['social10icon'] = 'Social Link 10 Icon';
 $string['social11icon'] = 'Social Link 11 Icon';
+
+$string['socialiconlist'] = 'Social Icon List';
+$string['socialiconlistdesc'] = 'Enter a de-limited list to setup the social icons / links you need using the format: url|title|icon';
 
 $string['homebk'] = 'Frontpage Background Image';
 $string['homebkdesc'] = 'Upload an image that will be a bacgkound image on the homepage.';
@@ -1017,13 +995,13 @@ $string['fontsubsetdesc'] = 'Select other character subset than latin to be appl
 
 // Analytics.
 $string['analyticssettingsheading'] = 'Setup Google Analytics';
-$string['analyticssettingsdesc'] = 'You can setup multiple codes for Google analytics and targed them to user profile fields.';
+$string['analyticssettingsdesc'] = 'You can setup multiple codes for Google Analytics and targed them to user profile fields.';
 
 $string ['enableanalytics'] = 'Enable Google Analytics';
 $string ['enableanalyticsdesc'] = 'Enable Google Analytics settings on your Moodle site';
 
 $string ['analyticstext'] = 'Analytics ID';
-$string ['analyticstextdesc'] = 'Enter google analytics ID';
+$string ['analyticstextdesc'] = 'Enter Google Analytics ID';
 
 $string['analyticscount'] = 'Analytics count';
 $string['analyticscountdesc'] = 'The number of analytics fields to show in the edit area below.';

@@ -428,27 +428,20 @@ EOT;
 
         $retval = '<div class="socialbox pull-right">';
 
-        if (isset($PAGE->theme->settings->socialsearchicon)) {
-            $val = '<a alt="' . get_string('socialsearchicon', 'theme_adaptable') . '" title="'
-                   . get_string('socialsearchicon', 'theme_adaptable');
-            $val .= '" href="' . $CFG->wwwroot . '/course/search.php' . '">';
-            $val .= '<i class="fa fa-search"></i></a>';
+    	$socialiconlist = $PAGE->theme->settings->socialiconlist;
+		$lines = explode("\n", $socialiconlist);
+		foreach ($lines as $line){	
+			$fields = explode('|', $line);
+		    
+		    $val = '<a alt="' . $fields[1];
+            $val .= '" title="' . $fields[1];
+            $val .= '" href="' . $fields[0] . '">';
+            $val .= '<i class="fa ' . $fields[2] . '"></i>';
+            $val .= '</a>';
+            
             $retval .= $val;
-        }
-
-        for ($i = 1; $i < 12; $i++) {
-            $socialno = 'social' . $i;
-            $socialicon = 'social' . $i . 'icon';
-
-            if (!empty($PAGE->theme->settings->$socialno)) {
-                $val = '<a alt="' . get_string($socialno, 'theme_adaptable');
-                $val .= '" title="' . get_string($socialno, 'theme_adaptable');
-                $val .= '" href="' . $PAGE->theme->settings->$socialno . '">';
-                $val .= '<i class="fa ' . $PAGE->theme->settings->$socialicon . '"></i>';
-                $val .= '</a>';
-                $retval .= $val;
-            }
-        }
+			
+		}
         $retval .= '</div>';
         return $retval;
     }
@@ -755,13 +748,14 @@ EOT;
 
         if ($visibility) {
             if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
-                for ($i = 1; $i < 11; $i++) {
+            	$topmenuscount = $PAGE->theme->settings->topmenuscount;
+                for ($i = 1; $i <= $topmenuscount; $i++) {
                     $menunumber = 'menu' . $i;
                     $newmenu = 'newmenu' . $i;
                     $class = 'newmenu' . ($i + 4);
                     $fieldsetting = 'newmenu' . $i . 'field';
                     $valuesetting = 'newmenu' . $i . 'value';
-                    $newmenulabel = 'newmenu' . $i . 'label';
+                    $newmenutitle = 'newmenu' . $i . 'title';
                     $requirelogin = 'newmenu' . $i . 'requirelogin';
                     $logincheck = true;
                     $custommenuitems = '';
@@ -781,8 +775,8 @@ EOT;
 
                         if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
                             $menu = ($PAGE->theme->settings->$newmenu);
-                            $label = get_string($newmenulabel, 'theme_adaptable');
-                            $custommenuitems = $this->parse_custom_menu($menu, $label);
+                            $title = ($PAGE->theme->settings->$newmenutitle);
+                            $custommenuitems = $this->parse_custom_menu($menu, $title);
                             $custommenu = new custom_menu($custommenuitems);
                             $retval .= $this->render_custom_menu($custommenu, $pre, $post);
                         }

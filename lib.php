@@ -27,6 +27,7 @@
 
 define('THEME_ADAPTABLE_DEFAULT_ALERTCOUNT', '1');
 define('THEME_ADAPTABLE_DEFAULT_ANALYTICSCOUNT', '1');
+define('THEME_ADAPTABLE_DEFAULT_TOPMENUSCOUNT', '1');
 
 /**
  * Parses CSS before it is cached.

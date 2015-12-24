@@ -64,7 +64,7 @@ $left = theme_adaptable_get_block_side();
             <div class="row-fluid">                
                     <?php echo $OUTPUT->page_navbar(true); ?>                
 <?php
-if ($left == echo) {
+if ($left == 1) {
     $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
 }
 ?>
