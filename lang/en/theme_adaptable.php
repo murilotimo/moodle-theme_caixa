@@ -29,13 +29,13 @@ $string['choosereadme'] = '
 <div class="clearfix">
 <div class="well">
 <h2>Adaptable Responsive</h2>
-<p><img class=img-polaroid src="adaptable/pix/screenshot.png" /></p>
+<p><img class="img-polaroid" src="adaptable/pix/screenshot.png" /></p>
 </div>
 <div class="well">
 <h3>About</h3>
-<p>This is a modified Moodle bootstrap theme which inherits styles and renderers from its parent theme.</p>
+<p>Adaptable is a modified Moodle bootstrap theme based in BCU.</p>
 <h3>Parents</h3>
-<p>This theme is based upon the Bootstrap theme, which was created for Moodle 2.6</p>
+<p>This theme is based upon the Bootstrap theme</p>
 </div></div>';
 
 $string['configtitle'] = 'Adaptable';
@@ -112,56 +112,56 @@ $string['logodesc'] = 'Upload a logo for use on your site,';
 $string['favicon'] = 'Favicon';
 $string['favicondesc'] = 'Upload a favicon for use on your site,';
 
-$string['linkcolor'] = 'Link Color';
-$string['linkcolordesc'] = 'Set the color of links in the theme, use html hex code.';
+$string['linkcolor'] = 'Link Colour';
+$string['linkcolordesc'] = 'Set the colour of links in the theme, use html hex code.';
 
-$string['linkhover'] = 'Link Hover color';
-$string['linkhoverdesc'] = 'Set the color of links (on hover) in the theme, use html hex code.';
+$string['linkhover'] = 'Link Hover colour';
+$string['linkhoverdesc'] = 'Set the colour of links (on hover) in the theme, use html hex code.';
 
-$string['backcolor'] = 'Background color';
-$string['backcolordesc'] = 'Set the background color.';
+$string['backcolor'] = 'Background colour';
+$string['backcolordesc'] = 'Set the background colour.';
 
-$string['maincolor'] = 'Main color';
-$string['maincolordesc'] = 'Main color for blocks and footer.';
+$string['maincolor'] = 'Main colour';
+$string['maincolordesc'] = 'Main colour for blocks and footer.';
 
-$string['footerbkcolor'] = 'Footer background color';
-$string['footerbkcolordesc'] = 'Set the footer background color.';
+$string['footerbkcolor'] = 'Footer background colour';
+$string['footerbkcolordesc'] = 'Set the footer background colour.';
 
-$string['footertextcolor'] = 'Footer blocks text color';
-$string['footertextcolordesc'] = 'Footer blocks text color.';
+$string['footertextcolor'] = 'Footer blocks text colour';
+$string['footertextcolordesc'] = 'Footer blocks text colour.';
 
-$string['footertextcolor2'] = 'Lower footer text color';
-$string['footertextcolor2desc'] = 'Lower footer text color.';
+$string['footertextcolor2'] = 'Lower footer text colour';
+$string['footertextcolor2desc'] = 'Lower footer text colour.';
 
-$string['footerlinkcolor'] = 'Footer blocks link color';
-$string['footerlinkcolordesc'] = 'Footer blocks link color.';
+$string['footerlinkcolor'] = 'Footer blocks link colour';
+$string['footerlinkcolordesc'] = 'Footer blocks link colour.';
 
-$string['headerbkcolor'] = 'Top header background color';
-$string['headerbkcolordesc'] = 'Set the top header background color.';
+$string['headerbkcolor'] = 'Top header background colour';
+$string['headerbkcolordesc'] = 'Set the top header background colour.';
 
-$string['headerbkcolor2'] = 'Lower header background color';
-$string['headerbkcolor2desc'] = 'Set the lower header background color.';
+$string['headerbkcolor2'] = 'Lower header background colour';
+$string['headerbkcolor2desc'] = 'Set the lower header background colour.';
 
-$string['headertextcolor'] = 'Top Header blocks text and link color';
-$string['headertextcolordesc'] = 'Set the top header blocks text and link color.';
+$string['headertextcolor'] = 'Top Header blocks text and link colour';
+$string['headertextcolordesc'] = 'Set the top header blocks text and link colour.';
 
-$string['headertextcolor2'] = 'Lower Header blocks text and link color';
-$string['headertextcolor2desc'] = 'Set the lower header blocks text and link color.';
+$string['headertextcolor2'] = 'Lower Header blocks text and link colour';
+$string['headertextcolor2desc'] = 'Set the lower header blocks text and link colour.';
 
-$string['blockheadercolor'] = 'Block header font color';
-$string['blockheadercolordesc'] = 'Set the block header font color.';
+$string['blockheadercolor'] = 'Block header font colour';
+$string['blockheadercolordesc'] = 'Set the block header font colour.';
 
-$string['blockbackgroundcolor'] = 'Block background color';
-$string['blockbackgroundcolordesc'] = 'Set the background color for all blocks.';
+$string['blockbackgroundcolor'] = 'Block background colour';
+$string['blockbackgroundcolordesc'] = 'Set the background colour for all blocks.';
 
-$string['blockheaderbackgroundcolor'] = 'Block heading background color';
-$string['blockheaderbackgroundcolordesc'] = 'Set the heading background color for all blocks.';
+$string['blockheaderbackgroundcolor'] = 'Block heading background colour';
+$string['blockheaderbackgroundcolordesc'] = 'Set the heading background colour for all blocks.';
 
-$string['blockbordercolor'] = 'Block border color';
-$string['blockbordercolordesc'] = 'Set the block border color.';
+$string['blockbordercolor'] = 'Block border colour';
+$string['blockbordercolordesc'] = 'Set the block border colour.';
 
-$string['blocklinkcolor'] = 'Block link color';
-$string['blocklinkcolordesc'] = 'Set the blocks link color';
+$string['blocklinkcolor'] = 'Block link colour';
+$string['blocklinkcolordesc'] = 'Set the blocks link colour';
 
 $string['blockheaderbordertop'] = 'Block header top border thickness';
 $string['blockheaderbordertopdesc'] = 'Set the thickness of the top border of block headers';
@@ -205,17 +205,17 @@ $string['blockmaintopradiusdesc'] = 'Set the top radius of main block area to ac
 $string['blockmainbottomradius'] = 'Block main bottom radius';
 $string['blockmainbottomradiusdesc'] = 'Set the bottom radius of main block area to achieve a curved / rounded effect';
 
-$string['marketblockbordercolor'] = 'Marketing block border line color';
-$string['marketblockbordercolordesc'] = 'Set the marketing block border line color';
+$string['marketblockbordercolor'] = 'Marketing block border line colour';
+$string['marketblockbordercolordesc'] = 'Set the marketing block border line colour';
 
-$string['marketblocksbackgroundcolor'] = 'Marketing blocks region background color';
-$string['marketblocksbackgroundcolordesc'] = 'Set the Marketing blocks region background color, use html hex code.';
+$string['marketblocksbackgroundcolor'] = 'Marketing blocks region background colour';
+$string['marketblocksbackgroundcolordesc'] = 'Set the Marketing blocks region background colour.';
 
-$string['currentcolor'] = 'Current Section Highlight color';
-$string['currentcolordesc'] = 'Set the color for the Current Section Highlight color';
+$string['currentcolor'] = 'Current Section Highlight colour';
+$string['currentcolordesc'] = 'Set the colour for the Current Section Highlight';
 
-$string['sectionheadingcolor'] = 'Section Heading Text Color';
-$string['sectionheadingcolordesc'] = 'Set the color for section headings text color';
+$string['sectionheadingcolor'] = 'Section Heading Text Colour';
+$string['sectionheadingcolordesc'] = 'Set the colour for section headings text';
 
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Add text to the footer.';
@@ -274,7 +274,7 @@ $string['enableavailablecourses'] = 'Display Available Courses';
 $string['enableavailablecoursesdesc'] = 'Display Available Courses label in the frontpage';
 
 $string['frontpagemarketoption'] = 'Coventry Tiles style marketing blocks';
-$string['frontpagemarketoptiondesc'] = 'Set the marketing blocks to use the Coventry Tiles style. Set color for this in the color settings.';
+$string['frontpagemarketoptiondesc'] = 'Set the marketing blocks to use the Coventry Tiles style. Set the colour for this option in the colour settings.';
 
 $string['market1'] = 'Marketing Block 1';
 $string['market1desc'] = 'Add html for marketing block 1 (see the readme file for additional info and hints).';
@@ -324,20 +324,20 @@ $string['slidermargintopdesc'] = 'Set the size of the margin above the slider.';
 $string['slidermarginbottom'] = 'Margin below slider';
 $string['slidermarginbottomdesc'] = 'Set the size of the margin below the slider.';
 
-$string['infoboxcolor'] = 'Frontpage Info Box background color';
-$string['infoboxcolordesc'] = 'Set the frontpage Info Box background color';
+$string['infoboxcolor'] = 'Frontpage Info Box background colour';
+$string['infoboxcolordesc'] = 'Set the frontpage Info Box background colour';
 
-$string['infoboxtextcolor'] = 'Frontpage Info Box text color';
-$string['infoboxtextcolordesc'] = 'Set the frontpage Info Box text color';
+$string['infoboxtextcolor'] = 'Frontpage Info Box text colour';
+$string['infoboxtextcolordesc'] = 'Set the frontpage Info Box text colour';
 
 $string['infobox2'] = 'Frontpage Secondary Info Box';
 $string['infobox2desc'] = 'Frontpage Secondary Info Box (see the readme file for additional info and hints).';
 
-$string['infoboxcolor2'] = 'Secondary frontpage Info Box background color';
-$string['infoboxcolor2desc'] = 'Set the secondary frontpage Info Box background color';
+$string['infoboxcolor2'] = 'Secondary frontpage Info Box background colour';
+$string['infoboxcolor2desc'] = 'Set the secondary frontpage Info Box background colour';
 
-$string['infoboxtextcolor2'] = 'Secondary frontpage Info Box text color';
-$string['infoboxtextcolor2desc'] = 'Set the secondary frontpage Info Box text color';
+$string['infoboxtextcolor2'] = 'Secondary frontpage Info Box text colour';
+$string['infoboxtextcolor2desc'] = 'Set the secondary frontpage Info Box text colour';
 
 $string['noenrolments'] = 'No enrolments found.';
 
@@ -414,7 +414,7 @@ $string['jssectiondesc'] = 'Add javascript code to the site, e.g. Google Analyti
 
 
 $string['tickersettings'] = 'News Ticker';
-$string['tickersettingsheading'] = 'Setup News Ticker on Front Page';
+$string['tickersettingsheading'] = 'Setup News Ticker on Front Page. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['tickerdesc'] = 'Here you can set a news ticker to run across the front page of your Moodle site.
 	It is intended as a less intrusive alternative to the slider taking up very little space.
 	To setup your ticker simply entere a bulleted list and include any hyperlinks you need to in that text.
@@ -436,16 +436,18 @@ $string['alertcountdesc'] = 'The number of alerts to show in the edit area below
 $string['alertsettingsheading'] = 'Customize top Alert Box';
 $string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';
 
+
+// Settings.
 $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowsettingsheading'] = 'Customize the carousel on the front page';
 $string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
 
 $string['marketingsettings'] = 'Marketing Blocks';
 $string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page';
-$string['marketingdesc'] = 'You can build marketting blocks, up to 12 on the front page. For examples, please see the README file that comes with this theme.';
+$string['marketingdesc'] = 'You can build marketting blocks, up to 12 on the front page. For examples, please see the <a href="/adaptable/README.txt" target="_blank">README file</a> that comes with this theme.';
 
 $string['footersettings'] = 'Footer';
-$string['footersettingsheading'] = 'Set the content that should appear in the footer.';
+$string['footersettingsheading'] = 'Set the content that should appear in the footer. See ';
 $string['footerdesc'] = 'Control the content that appears in the 4 footer sections of the page.';
 
 $string['navbarmenusettings'] = 'Navbar Tools Menu';
@@ -456,13 +458,13 @@ $string['navbarsettings'] = 'Header Navbar';
 $string['navbarsettingsheading'] = 'Customize the navigation bar';
 $string['navbardesc'] = 'Allows you to control all of the elements that appear on the navigation bar.';
 
-$string['colorsettings'] = 'Colors';
-$string['colorsettingsheading'] = 'Modify the main colors and fonts used throughout the theme.';
-$string['colordesc'] = 'You can select the colors and fonts that you would like to use throughout the theme.';
+$string['colorsettings'] = 'Colours';
+$string['colorsettingsheading'] = 'Modify the main colours used throughout the theme.';
+$string['colordesc'] = 'You can select the colours that you would like to use throughout the theme. Use Hex or any other standard notation. As an alternate option you can use transparent and inherited as a value';
 
 $string['fontsettings'] = 'Fonts';
 $string['fontsettingsheading'] = 'Modify the fonts used throughout the theme.';
-$string['fontdesc'] = 'You can select the Google Fonts that you would like to use throughout the theme.';
+$string['fontdesc'] = 'You can select the <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> that you would like to use throughout the theme. Select the subset needed (latin is always included) and enter the right font weight or the font will not displayed.';
 
 $string['buttonsettings'] = 'Buttons';
 $string['buttonsettingsheading'] = 'Customize the buttons of this theme.';
@@ -471,8 +473,8 @@ $string['buttondesc'] = 'Alter the appearance of buttons used in this theme.';
 $string['buttonradius'] = 'Set Button Radius';
 $string['buttonradiusdesc'] = 'Higher radius = curved buttons, lower radius = square buttons';
 
-$string['buttonloginpadding'] = 'Set Padding for Login Button';
-$string['buttonloginpaddingdesc'] = 'Higher number = bigger login button';
+$string['buttonloginpadding'] = 'Set Padding for Log In Button';
+$string['buttonloginpaddingdesc'] = 'Higher number = bigger button';
 
 $string['buttonloginheight'] = 'Set Height for Login Button';
 $string['buttonloginheightdesc'] = 'Only effective if using a login form in the upper header';
@@ -518,53 +520,53 @@ $string['frontpagerendereroption3'] = 'Moodle default';
 $string['frontpagerendereroption4'] = 'Coventry Tiles';
 
 
-$string['rendereroverlaycolor'] = 'Overlay color';
-$string['rendereroverlaycolordesc'] = 'The color of the overlay, when the "Tiles w/ overlay" renderer is selected.';
+$string['rendereroverlaycolor'] = 'Overlay colour';
+$string['rendereroverlaycolordesc'] = 'The colour of the overlay, when the "Tiles w/ overlay" renderer is selected.';
 
-$string['rendereroverlayfontcolor'] = 'Overlay font color';
-$string['rendereroverlayfontcolordesc'] = 'The color of the font, when hovering over a coursebox with "Tiles w/ overlay" renderer enabled.';
+$string['rendereroverlayfontcolor'] = 'Overlay font colour';
+$string['rendereroverlayfontcolordesc'] = 'The colour of the font, when hovering over a coursebox with "Tiles w/ overlay" renderer enabled.';
 
-$string['buttoncolor'] = 'Button color';
-$string['buttoncolordesc'] = 'The color of the main buttons used throughout the site.';
+$string['buttoncolor'] = 'Button colour';
+$string['buttoncolordesc'] = 'The colour of the main buttons used throughout the site.';
 
-$string['buttonlogincolor'] = 'Login button color';
-$string['buttonlogincolordesc'] = 'The color of the login button.';
+$string['buttonlogincolor'] = 'Login button colour';
+$string['buttonlogincolordesc'] = 'The colour of the login button.';
 
-$string['buttonloginhovercolor'] = 'Login button hover color';
-$string['buttonloginhovercolordesc'] = 'The hover color of the login button.';
+$string['buttonloginhovercolor'] = 'Login button hover colour';
+$string['buttonloginhovercolordesc'] = 'The hover colour of the login button.';
 
-$string['buttonlogintextcolor'] = 'Login button text color';
-$string['buttonlogintextcolordesc'] = 'The color of text used on the login button.';
+$string['buttonlogintextcolor'] = 'Login button text colour';
+$string['buttonlogintextcolordesc'] = 'The colour of text used on the login button.';
 
-$string['buttonhovercolor'] = 'Button color (When hovering)';
-$string['buttonhovercolordesc'] = 'The color that the button changes to when hovering over the button.';
+$string['buttonhovercolor'] = 'Button colour (When hovering)';
+$string['buttonhovercolordesc'] = 'The colour that the button changes to when hovering over the button.';
 
-$string['buttontextcolor'] = 'Button text color';
-$string['buttontextcolordesc'] = 'The color of text used on buttons';
+$string['buttontextcolor'] = 'Button text colour';
+$string['buttontextcolordesc'] = 'The colour of text used on buttons';
 
-$string['covbkcolor'] = 'Coventry tiles title background color';
-$string['covbkcolordesc'] = 'Set the title background color with the Coventry Tiles renderer is selected.';
+$string['covbkcolor'] = 'Coventry tiles title background colour';
+$string['covbkcolordesc'] = 'Set the title background colour with the Coventry Tiles renderer is selected.';
 
-$string['covfontcolor'] = 'Coventry tiles title font color';
-$string['covfontcolordesc'] = 'Set the title font color with the Coventry Tiles renderer is selected.';
+$string['covfontcolor'] = 'Coventry tiles title font colour';
+$string['covfontcolordesc'] = 'Set the title font colour with the Coventry Tiles renderer is selected.';
 
 $string['covhidebutton'] = 'Coventry tiles course button';
 $string['covhidebuttondesc'] = 'Set this to hide the course button when Coventry Tiles is selected.';
 
-$string['footertextcolor'] = 'Footer text color';
-$string['footertextcolordesc'] = 'The color of the text in the footer, use html hex code.';
+$string['footertextcolor'] = 'Footer text colour';
+$string['footertextcolordesc'] = 'The colour of the text in the footer, use html hex code.';
 
-$string['footerbackgroundcolor'] = 'Footer background color';
-$string['footerbackgroundcolordesc'] = 'The background color of the footer, use html hex code.';
+$string['footerbackgroundcolor'] = 'Footer background colour';
+$string['footerbackgroundcolordesc'] = 'The background colour of the footer, use html hex code.';
 
-$string['buttontextcolor'] = 'Button text color';
-$string['buttontextcolordesc'] = 'The color of the text buttons used throughout the site, use html hex code.';
+$string['buttontextcolor'] = 'Button text colour';
+$string['buttontextcolordesc'] = 'The colour of the text buttons used throughout the site, use html hex code.';
 $string['frontpagerendererdefaultimage'] = 'Default course image';
 $string['frontpagerendererdefaultimagedesc'] = 'The default image to use when no course image is found, (only applies for Tiles w/ overlay)';
 $string['loadtime'] = 'Page loaded in';
 
-$string['loadingcolor'] = 'Loading Color';
-$string['loadingcolordesc'] = 'Loading Color';
+$string['loadingcolor'] = 'Loading colour';
+$string['loadingcolordesc'] = 'The loading bar colour in the top of the page';
 
 $string['sitetitle'] = 'Display site title';
 $string['sitetitledesc'] = 'Show / Hide site title';
@@ -625,8 +627,8 @@ $string['hidepagefootermobiledesc'] = 'Checking this option will remove the foot
 $string['tilesshowcontacts'] = 'Show course contacts';
 $string['tilesshowcontactsdesc'] = 'Show / hide course contacts';
 
-$string['tilesbordercolor'] = 'Coursebox tiles border color';
-$string['tilesbordercolordesc'] = 'Set a color for the coursebox tiles border color';
+$string['tilesbordercolor'] = 'Coursebox tiles border colour';
+$string['tilesbordercolordesc'] = 'Set a colour for the coursebox tiles border';
 
 $string['tilescontactstitle'] = 'Show course contacts role';
 $string['tilescontactstitledesc'] = 'Show / hide the role of a course contact. If not displayed, an image will be displayed before each contact';
@@ -690,15 +692,15 @@ $string['people'] = 'People';
 $string['help'] = 'Help';
 
 $string['dividingline'] = 'Dividing line in header';
-$string['dividinglinedesc'] = 'The color for the dividing line found in the header';
+$string['dividinglinedesc'] = 'The colour for the dividing line found in the header';
 
 $string['dividingline2'] = 'Dividing line in footer';
-$string['dividingline2desc'] = 'The color for the dividing line found in the footer';
+$string['dividingline2desc'] = 'The colour for the dividing line found in the footer';
 
-$string['navbarborder'] = 'Navbar bottom border color';
-$string['navbarborderdesc'] = 'Color for the bottom of the navbar';
-$string['navbarhover'] = 'Navbar hover color';
-$string['navbarhoverdesc'] = 'When hovering on a navigation item, the color of the border of the navbar.';
+$string['navbarborder'] = 'Navbar bottom border colour';
+$string['navbarborderdesc'] = 'Colour for the bottom of the navbar';
+$string['navbarhover'] = 'Navbar hover colour';
+$string['navbarhoverdesc'] = 'When hovering on a navigation item, the colour of the border of the navbar.';
 $string['showfooterblocks'] = 'Show footer blocks';
 $string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';
 
@@ -708,14 +710,14 @@ $string['footerblocksplacement1'] = 'Sitewide';
 $string['footerblocksplacement2'] = 'Homepage_only';
 $string['footerblocksplacement3'] = 'Never';
 
-$string['breadcrumb'] = 'Breadcrumb background color';
-$string['breadcrumbdesc'] = 'Set the background color of the breadcrumb.';
+$string['breadcrumb'] = 'Breadcrumb background colour';
+$string['breadcrumbdesc'] = 'Set the background colour of the breadcrumb.';
 
-$string['breadcrumbtextcolor'] = 'Breadcrumb text color';
-$string['breadcrumbtextcolordesc'] = 'Set the text color of the breadcrumb.';
+$string['breadcrumbtextcolor'] = 'Breadcrumb text colour';
+$string['breadcrumbtextcolordesc'] = 'Set the text colour of the breadcrumb.';
 
-$string['activebreadcrumb'] = 'Active breadcrumb background color';
-$string['activebreadcrumbdesc'] = 'Set the background color of the active breadcrumb color, and remainder of the breadcrumb bar.';
+$string['activebreadcrumb'] = 'Active breadcrumb background colour';
+$string['activebreadcrumbdesc'] = 'Set the background colour of the active breadcrumb colour, and remainder of the breadcrumb bar.';
 
 $string['menufontsize'] = 'Font size for navigation bar';
 $string['menufontsizedesc'] = 'Set the size of the font used in the main navigation bar.';
@@ -863,23 +865,23 @@ $string['toolsmenuheading2'] = 'Tools Menu 2';
 $string['toolsmenu2'] = 'Tools Menu Dropdown 2';
 $string['toolsmenulabel2'] = 'Tools Menu';
 
-$string['menubkcolor'] = 'Main Menu background color';
-$string['menubkcolordesc'] = 'Set a Main Menu background color';
+$string['menubkcolor'] = 'Main Menu background colour';
+$string['menubkcolordesc'] = 'Set a Main Menu background colour';
 
-$string['menubordercolor'] = 'Main Menu bottom border color';
-$string['menubordercolordesc'] = 'Set a Main Menu border bottom color';
+$string['menubordercolor'] = 'Main Menu bottom border colour';
+$string['menubordercolordesc'] = 'Set a Main Menu border bottom colour';
 
-$string['menufontcolor'] = 'Main Menu font color';
-$string['menufontcolordesc'] = 'Set a Main Menu font color';
+$string['menufontcolor'] = 'Main Menu font colour';
+$string['menufontcolordesc'] = 'Set a Main Menu font colour';
 
-$string['menufonthovercolor'] = 'Main Menu font color on hover';
-$string['menufonthovercolordesc'] = 'Set a Main Menu font color on hover';
+$string['menufonthovercolor'] = 'Main Menu font colour on hover';
+$string['menufonthovercolordesc'] = 'Set a Main Menu font colour on hover';
 
-$string['mobilemenubkcolor'] = 'Mobile Menu background color';
-$string['mobilemenubkcolordesc'] = 'Set the Main Menu background color on mobile devices (collapsed)';
+$string['mobilemenubkcolor'] = 'Mobile Menu background colour';
+$string['mobilemenubkcolordesc'] = 'Set the Main Menu background colour on mobile devices (collapsed)';
 
-$string['mobilemenufontcolor'] = 'Mobile Menu font color';
-$string['mobilemenufontcolordesc'] = 'Set a Main Menu font color on mobile devices (collapsed)';
+$string['mobilemenufontcolor'] = 'Mobile Menu font colour';
+$string['mobilemenufontcolordesc'] = 'Set a Main Menu font colour on mobile devices (collapsed)';
 
 // social settings
 $string['socialsettings'] = 'Header Social';
@@ -948,23 +950,21 @@ $string['social9icon'] = 'Social Link 9 Icon';
 $string['social10icon'] = 'Social Link 10 Icon';
 $string['social11icon'] = 'Social Link 11 Icon';
 
-
-
 $string['homebk'] = 'Frontpage Background Image';
 $string['homebkdesc'] = 'Upload an image that will be a bacgkound image on the homepage.';
 
 $string['editonbk'] = 'Editing and Customize this page button background';
-$string['editonbkdesc'] = 'Set the background color for the editing and customize this page button';
+$string['editonbkdesc'] = 'Set the background colour for the editing and customize this page button';
 
 $string['editoffbk'] = 'Editing and Customize this page OFF button background';
-$string['editoffbkdesc'] = 'Set the background color for the editing and customize this page button in OFF state.';
+$string['editoffbkdesc'] = 'Set the background colour for the editing and customize this page button in OFF state.';
 
 $string['editverticalpadding'] = 'Set vertical padding of editing buttons';
 $string['edithorizontalpadding'] = 'Set Horizontal padding of editing buttons';
 $string['edittopmargin'] = 'Set top margin of editing buttons';
 
-$string['editfont'] = 'Editing and Customize this page button font color';
-$string['editfontdesc'] = 'Set the Editing and Customize this page button font color';
+$string['editfont'] = 'Editing and Customize this page button font colour';
+$string['editfontdesc'] = 'Set the Editing and Customize this page button font colour';
 
 $string['sliderfullscreen'] = 'Slider full screen';
 $string['sliderfullscreendesc'] = 'Check this box to make the slider full screen (100% width)';
@@ -972,27 +972,27 @@ $string['sliderfullscreendesc'] = 'Check this box to make the slider full screen
 $string['slideroption2'] = 'Slider style option 2';
 $string['slideroption2desc'] = 'Check this box to turn on the 2nd Slider style';
 
-$string['slideroption2color'] = 'Slider style option 2 color';
-$string['slideroption2colordesc'] = 'Set a background color for the text in slider style option 2 color';
+$string['slideroption2color'] = 'Slider style option 2 colour';
+$string['slideroption2colordesc'] = 'Set a background colour for the text in slider style option 2 colour';
 
-$string['slideroption2a'] = 'Slider style option 2 arrow background color';
-$string['slideroption2adesc'] = 'Set the slider style option 2 arrow background color';
+$string['slideroption2a'] = 'Slider style option 2 arrow background colour';
+$string['slideroption2adesc'] = 'Set the slider style option 2 arrow background colour';
 
 // Fonts.
 $string['fontname'] = 'Main font';
-$string['fontnamedesc'] = 'Select the default font or Google Font used in site.';
+$string['fontnamedesc'] = 'Select the default font or <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> used in site.';
 
 $string['fontheadername'] = 'Headers font';
-$string['fontheadernamedesc'] = 'Select the default font or Google Font used in the text and blocks headers.';
+$string['fontheadernamedesc'] = 'Select the default font or <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> used in the text and blocks headers.';
 
 $string['fontheadercustom'] = 'Headers custom font name';
 $string['fontheadercustomdesc'] = 'Enter the header custom name font if you selected custom as a font name.';
 
-$string['fontcolor'] = 'Main font color';
-$string['fontcolordesc'] = 'Set the color of the font in the theme, use html hex code.';
+$string['fontcolor'] = 'Main font colour';
+$string['fontcolordesc'] = 'Set the colour of the font in the theme, use html hex code.';
 
-$string['fontheadercolor'] = 'Headers font color';
-$string['fontheadercolordesc'] = 'Set the color of the headers font in the theme, use html hex code.';
+$string['fontheadercolor'] = 'Headers font colour';
+$string['fontheadercolordesc'] = 'Set the colour of the headers font in the theme, use html hex code.';
 
 $string['fontweight'] = 'Main font weight';
 $string['fontweightdesc'] = 'Font weight used in site. Enter a value from 100 to 900 depending the font selected.';
@@ -1001,10 +1001,10 @@ $string['fontheaderweight'] = 'Headers font weight';
 $string['fontheaderweightdesc'] = 'Headers font weight used in the site. Enter a value from 100 to 900 depending the font selected.';
 
 $string['fonttitlename'] = 'Site title font';
-$string['fonttitlenamedesc'] = 'Select the default font or Google Font used in title site.';
+$string['fonttitlenamedesc'] = 'Select the default font or <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> used in title site.';
 
-$string['fonttitlecolor'] = 'Site title font color';
-$string['fonttitlecolordesc'] = 'Set the color of the site title font in the theme, use html hex code.';
+$string['fonttitlecolor'] = 'Site title font colour';
+$string['fonttitlecolordesc'] = 'Set the colour of the site title font in the theme, use html hex code.';
 
 $string['fonttitleweight'] = 'Site title font weight';
 $string['fonttitleweightdesc'] = 'Set the font weight used in the title site. Enter a value from 100 to 900 depending the font selected.';
@@ -1013,9 +1013,9 @@ $string['fonttitlesize'] = 'Site title font size';
 $string['fonttitlesizedesc'] = 'Site title font size used in site. Enter a decimal value in pixels: 24px';
 
 $string['fontsubset'] = 'Google Fonts subset';
-$string['fontsubsetdesc'] = 'Select other character subset to be applied to all the fonts. latin subset is already included with Google Fonts';
+$string['fontsubsetdesc'] = 'Select other character subset than latin to be applied to all the fonts. Latin subset is already included by default.';
 
-// Analytics
+// Analytics.
 $string['analyticssettingsheading'] = 'Setup Google Analytics';
 $string['analyticssettingsdesc'] = 'You can setup multiple codes for Google analytics and targed them to user profile fields.';
 
@@ -1035,18 +1035,18 @@ $string ['analyticsprofilefield'] = 'Custom Profile Field Name=Value (optional)'
 $string ['analyticsprofilefielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
 
 // Settings page headings.
-$string['settingsmaincolors'] = 'Main Colors';
-$string['settingsheadercolors'] = 'Header Colors';
-$string['settingsmenucolors'] = 'Menu Colors';
-$string['settingsmobilemenucolors'] = 'Mobile Menu Colors';
-$string['settingsinfoboxcolors'] = 'Info Box Colors';
-$string['settingssecondinfoboxcolors'] = 'Second Info Box Colors';
-$string['settingsmarketingcolors'] = 'Marketing Block Colors';
-$string['settingsoverlaycolors'] = 'Overlay Tiles Colors';
-$string['settingsnavbarcolors'] = 'Marketing Block Colors';
+$string['settingsmaincolors'] = 'Main Colours';
+$string['settingsheadercolors'] = 'Header Colours';
+$string['settingsmenucolors'] = 'Menu Colours';
+$string['settingsmobilemenucolors'] = 'Mobile Menu Colours';
+$string['settingsinfoboxcolors'] = 'Info Box Colours';
+$string['settingssecondinfoboxcolors'] = 'Second Info Box Colours';
+$string['settingsmarketingcolors'] = 'Marketing Block Colours';
+$string['settingsoverlaycolors'] = 'Overlay Tiles Colours';
+$string['settingsnavbarcolors'] = 'Marketing Block Colours';
 $string['settingsalertbox'] = 'Alert Box';
-$string['settingsbreadcrumbcolors'] = 'Breadcrumb Colors';
-$string['settingsfootercolors'] = 'Footer Colors';
+$string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
+$string['settingsfootercolors'] = 'Footer Colours';
 $string['settingsfonts'] = 'Fonts';
 $string['analyticssettings'] = 'Analytics';
 

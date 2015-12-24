@@ -11,7 +11,6 @@
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
-
     // Site main color.
     $name = 'theme_adaptable/maincolor';
     $title = get_string('maincolor', 'theme_adaptable');
