@@ -265,7 +265,7 @@ $string['enableposts'] = 'My posts';
 $string['enablepostsdesc'] = 'Display a link to the my posts page';
 
 $string['enablefeed'] = 'My Feedback';
-$string['enablefeeddesc'] = 'Display a link to the users feedback page';
+$string['enablefeeddesc'] = 'Display a link to the users "My Feedback" page - Note: this requires the <a href="https://moodle.org/plugins/report_myfeedback" target="blank">My Feedback Plugin</a>';
 
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
 $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
