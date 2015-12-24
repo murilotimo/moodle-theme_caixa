@@ -854,11 +854,17 @@ $string['mobilemenufontcolordesc'] = 'Set a Main Menu font color on mobile devic
 $string['socialsettings'] = 'Header Social';
 $string['socialheading'] = 'Social Icon Settings';
 $string['socialtitledesc'] = '<pre>You can disable the sitewide search box and enable social icons / links in its place.
+To setup icons enter a de-limited list into the "Social Icon List" field below.
+This should be in the format:
 
-If you want to use these links for something other than social icons (links to other applications like email for example) you can:
+url|title|icon
 
-1) Change the names of services in the language pack (language customisation)
-2) Alter the default icons below. </pre>';
+For example:
+
+http://localhost/moodle/course/search.php|Search Moodle|fa-search
+http://facebook.com/|Facebook|fa-facebook-square
+http://twitter.com/|Twitter|fa-twitter-square
+http://instagram.com|Instagram|fa-instagram </pre>';
 
 $string['socialset'] = 'Add social icons and hide search bar';
 $string['socialsetdesc'] = 'Check this box to hide the search bar and add social icons in the same location instead.';
@@ -867,57 +873,9 @@ $string['socialsize'] = 'Set the font size of the social icons';
 $string['socialsizemobile'] = 'Set the font size of the social icons on Mobile';
 $string['socialpaddingtop'] = 'Adjust padding above social icons (alters vertical position)';
 
-$string['socialsearchicon'] = 'Search Moodle';
-$string['socialsearchicondesc'] = 'Enable to put a search link alongside social icons (as using social disables sitewide search box)';
-
-$string['social1'] = 'Facebook';
-$string['social1desc'] = 'Add URL to facebook for social icon';
-
-$string['social2'] = 'Twitter';
-$string['social2desc'] = 'Add URL for the social icon';
-
-$string['social3'] = 'Google Plus';
-$string['social3desc'] = 'Add URL for the social icon';
-
-$string['social4'] = 'Instagram';
-$string['social4desc'] = 'Add URL for the social icon';
-
-$string['social5'] = 'Tumbler';
-$string['social5desc'] = 'Add URL for the social icon';
-
-$string['social6'] = 'Linkedin';
-$string['social6desc'] = 'Add URL for the social icon';
-
-$string['social7'] = 'YouTube';
-$string['social7desc'] = 'Add URL for the social icon';
-
-$string['social8'] = 'Flickr';
-$string['social8desc'] = 'Add URL for the social icon';
-
-$string['social9'] = 'Pinterest';
-$string['social9desc'] = 'Add URL for the social icon';
-
-$string['social10'] = 'Website';
-$string['social10desc'] = 'Add URL for the website icon';
-
-$string['social11'] = 'Blog';
-$string['social11desc'] = 'Add URL for the blog icon';
-
-$string['socialicondesc'] = 'Set Font Awesome icon for example fa-facebook';
-
-$string['social1icon'] = 'Social Link 1 Icon';
-$string['social2icon'] = 'Social Link 2 Icon';
-$string['social3icon'] = 'Social Link 3 Icon';
-$string['social4icon'] = 'Social Link 4 Icon';
-$string['social5icon'] = 'Social Link 5 Icon';
-$string['social6icon'] = 'Social Link 6 Icon';
-$string['social7icon'] = 'Social Link 7 Icon';
-$string['social8icon'] = 'Social Link 8 Icon';
-$string['social9icon'] = 'Social Link 9 Icon';
-$string['social10icon'] = 'Social Link 10 Icon';
-$string['social11icon'] = 'Social Link 11 Icon';
-
-
+$string['socialiconlist'] = 'Social Icon List';
+$string['socialiconlistdesc'] = 'Enter a de-limited list to setup the social icons / links you need using the format:
+url|title|icon';
 
 $string['homebk'] = 'Frontpage Background Image';
 $string['homebkdesc'] = 'Upload an image that will be a bacgkound image on the homepage.';
