@@ -89,14 +89,18 @@ if ($PAGE->theme->settings->showfooterblocks) { ?>
 </div>
 <?php
 }
-?>
 
-<?php
+if ($PAGE->theme->settings->moodledocs) {
+    $footnoteclass = 'span4';
+} else {
+    $footnoteclass = 'span6';
+}
+
 if ($PAGE->theme->settings->showfooterblocks) { ?>
     <div class="info container2 clearfix">
         <div class="container">
             <div class="row-fluid">
-                <div class="span4">
+                <div class="<?php echo $footnoteclass; ?>">
                     <?php echo $html->footnote; ?>
                 </div>
 
