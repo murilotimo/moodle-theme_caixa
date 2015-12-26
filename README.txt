@@ -4,9 +4,11 @@ HTML code for settings and block areas
 
 In this document you will find some code snippets to help you to customize the Info Box and the Marketing Blocks 
 
-You can insert any HTML tag to customize the frontpage blocks. Use a <div> as container and add the height to keep the same value in all the blocks.
+You can insert any HTML tag to customize the frontpage blocks. Use a <div> as container and add the height to keep
+the same value in all the blocks.
 
-The Font Awesome icons set is available in http://fortawesome.github.io/Font-Awesome/icons/. You can insert any of them and following the examples http://fortawesome.github.io/Font-Awesome/examples/
+The Font Awesome icons set is available in http://fortawesome.github.io/Font-Awesome/icons/. You can insert any
+of them and following the examples http://fortawesome.github.io/Font-Awesome/examples/
  
 
 
@@ -84,4 +86,3 @@ List with Chevron
     <li><a href="http://moodle.org/"><span class="icon-right-open-mini"></span><span>IT Help</span></a></li>
     <li><a href="http://moodle.org/"><span class="icon-right-open-mini"></span><span>IT Feedback</span></a></li>
 </ul>
-
