@@ -204,56 +204,6 @@
     $temp->add($setting);
 
 
-    // Info Box colors heading.
-    $name = 'theme_adaptable/settingsinfoboxcolors';
-    $heading = get_string('settingsinfoboxcolors', 'theme_adaptable');
-    $setting = new admin_setting_heading($name, $heading, '');
-    $temp->add($setting);
-
-    // Info Box background color.
-    $name = 'theme_adaptable/infoboxcolor';
-    $title = get_string('infoboxcolor', 'theme_adaptable');
-    $description = get_string('infoboxcolordesc', 'theme_adaptable');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Info Box text color.
-    $name = 'theme_adaptable/infoboxtextcolor';
-    $title = get_string('infoboxtextcolor', 'theme_adaptable');
-    $description = get_string('infoboxtextcolordesc', 'theme_adaptable');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-
-    // Info Box 2 colors heading.
-    $name = 'theme_adaptable/settingssecondinfoboxcolors';
-    $heading = get_string('settingssecondinfoboxcolors', 'theme_adaptable');
-    $setting = new admin_setting_heading($name, $heading, '');
-    $temp->add($setting);
-
-    // Info Box 2 background color.
-    $name = 'theme_adaptable/infoboxcolor2';
-    $title = get_string('infoboxcolor2', 'theme_adaptable');
-    $description = get_string('infoboxcolor2desc', 'theme_adaptable');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f3f3f3', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Info Box 2 text color.
-    $name = 'theme_adaptable/infoboxtextcolor2';
-    $title = get_string('infoboxtextcolor2', 'theme_adaptable');
-    $description = get_string('infoboxtextcolor2desc', 'theme_adaptable');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#666666', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-
     // Market blocks colors heading.
     $name = 'theme_adaptable/settingsmarketingcolors';
     $heading = get_string('settingsmarketingcolors', 'theme_adaptable');

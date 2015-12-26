@@ -1,30 +1,19 @@
 HTML code for settings and block areas
 
 
+This is a sample code used in the demo site:
+
 Front page info block:
 
-The html for this block should look like:
-
-<div class="span9">
-    <h4>Information</h4>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</div>
-
-<div class="span3">
-    <a href="#" class="submit">2013/14 Courses <i class="fa-chevron-right fa"></i></a>
+<div style="text-align:center; background: #f0f0f0;">
+    <h3 style="text-align: center;">Try out our demo site:</h3>
 </div>
 
 
-Frontpage Marketing Block HTML structure BCU
 
-<div>
-    <img src="/someimageURL.jpg" class="marketimage">
-</div>
+Frontpage Marketing Block HTML 
 
-<div class="internalmarket">
-    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h3>
-    <a href="#" class="submit">My Home</a>
-</div>
+
 
 
 Frontpage slider markup:

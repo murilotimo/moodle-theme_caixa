@@ -104,13 +104,15 @@ if ($PAGE->theme->settings->showfooterblocks) { ?>
                     <?php echo $html->footnote; ?>
                 </div>
 
-                <div class="span4 helplink">
 <?php
     if ($PAGE->theme->settings->moodledocs) {
-        echo $OUTPUT->page_doc_link();
+?>
+                <div class="span4 helplink">
+<?php echo $OUTPUT->page_doc_link(); ?>
+                </div>
+<?php
     }
 ?>
-                </div>
 
                 <div class="span4">
                     <?php echo $OUTPUT->standard_footer_html(); ?>
