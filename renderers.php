@@ -173,51 +173,50 @@ class theme_adaptable_core_renderer extends core_renderer {
         }
         return $alerticonglobal;
     }
-	
-	function get_analytics(){
-		global $PAGE;
+
+    public function get_analytics() {
+        global $PAGE;
         $analytics = '';
-        $analyticscount = get_config('theme_adaptable', 'analyticscount');		
-		if (isset($PAGE->theme->settings->enableanalytics)){
-			
-			for ($i = 1; $i <= $analyticscount; $i++) {
-	            $analyticstext = 'analyticstext' . $i;
-	            $analyticsprofilefield = 'analyticsprofilefield' . $i;
-				$analyticssession = 'analytics' . $i;
-				$access = true;            	
-				
-				if (!empty($PAGE->theme->settings->$analyticsprofilefield)){					
-					$profilevals = explode('=', $PAGE->theme->settings->$analyticsprofilefield);
-					$profilefield = $profilevals[0];
-					$profilevalue = $profilevals[1];					
-					if (!$this->check_menu_access($profilefield, $profilevalue, $analyticssession)){						
-						$access = false;
-					}			
-				}
-				
-				if (!empty($PAGE->theme->settings->$analyticstext) && $access){
-					$analyticstext = $PAGE->theme->settings->$analyticstext;
-					
-					// The closing tag of PHP heredoc does not like being indented so do not meddle with indentation of 'EOT;' below!
-					$analytics .= <<<EOT
-					
-					<script>
-					  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-					  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-					  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-					  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-					
-					  ga('create', '$analyticstext', 'auto');
-					  ga('send', 'pageview');
-					
-					</script>
-					
+        $analyticscount = get_config('theme_adaptable', 'analyticscount');
+        if (isset($PAGE->theme->settings->enableanalytics)) {
+
+            for ($i = 1; $i <= $analyticscount; $i++) {
+                $analyticstext = 'analyticstext' . $i;
+                $analyticsprofilefield = 'analyticsprofilefield' . $i;
+                $analyticssession = 'analytics' . $i;
+                $access = true;
+
+                if (!empty($PAGE->theme->settings->$analyticsprofilefield)) {
+                    $profilevals = explode('=', $PAGE->theme->settings->$analyticsprofilefield);
+                    $profilefield = $profilevals[0];
+                    $profilevalue = $profilevals[1];
+                    if (!$this->check_menu_access($profilefield, $profilevalue, $analyticssession)) {
+                        $access = false;
+                    }
+                }
+
+                if (!empty($PAGE->theme->settings->$analyticstext) && $access) {
+                    $analyticstext = $PAGE->theme->settings->$analyticstext;
+
+                    // The closing tag of PHP heredoc doesn't like being indented so do not meddle with indentation of 'EOT;' below!
+                    $analytics .= <<<EOT
+
+                    <script>
+                        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                        ga('create', '$analyticstext', 'auto');
+                        ga('send', 'pageview');
+
+                    </script>
 EOT;
-				}	            
-			}
-		}
-		return $analytics;
-	}
+                }
+            }
+        }
+        return $analytics;
+    }
 
     /**
      * Returns HTML to display a "Turn editing on/off" button in a form.
@@ -430,7 +429,7 @@ EOT;
 
         $socialiconlist = $PAGE->theme->settings->socialiconlist;
         $lines = explode("\n", $socialiconlist);
-        foreach ($lines as $line){	
+        foreach ($lines as $line) {
             $fields = explode('|', $line);
 
             $val = '<a alt="' . $fields[1];
@@ -438,7 +437,7 @@ EOT;
             $val .= '" href="' . $fields[0] . '">';
             $val .= '<i class="fa ' . $fields[2] . '"></i>';
             $val .= '</a>';
-            
+
             $retval .= $val;
         }
         $retval .= '</div>';
@@ -747,7 +746,7 @@ EOT;
 
         if ($visibility) {
             if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
-            	$topmenuscount = $PAGE->theme->settings->topmenuscount;
+                $topmenuscount = $PAGE->theme->settings->topmenuscount;
                 for ($i = 1; $i <= $topmenuscount; $i++) {
                     $menunumber = 'menu' . $i;
                     $newmenu = 'newmenu' . $i;

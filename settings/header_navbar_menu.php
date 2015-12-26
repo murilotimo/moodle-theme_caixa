@@ -1,21 +1,48 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Version details
+ *
+ * @package    theme
+ * @subpackage adaptable
+ * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ */
+
+
    // Settings for tools menus.
-  
+
     $temp = new admin_settingpage('theme_adaptable_header_navbar_menu', get_string('navbarmenusettings', 'theme_adaptable'));
-   
+
     $temp->add(new admin_setting_heading('theme_adaptable_toolsmenu', get_string('toolsmenu', 'theme_adaptable'),
-	    format_text(get_string('toolsmenustitledesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+        format_text(get_string('toolsmenustitledesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
     $temp->add(new admin_setting_heading('theme_adaptable_toolsmenu1', get_string('toolsmenuheading1', 'theme_adaptable'),
     format_text(get_string('menusdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
-	
-	$name = 'theme_adaptable/disablecustommenu';
+
+    $name = 'theme_adaptable/disablecustommenu';
     $title = get_string('disablecustommenu', 'theme_adaptable');
     $description = get_string('disablecustommenudesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, false, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
+
     $name = 'theme_adaptable/enabletoolsmenus';
     $title = get_string('enabletoolsmenus', 'theme_adaptable');
     $description = get_string('enabletoolsmenusdesc', 'theme_adaptable');
@@ -49,5 +76,5 @@
     $description = get_string('newmenufielddesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
-	
-	$ADMIN->add('theme_adaptable', $temp);
+
+    $ADMIN->add('theme_adaptable', $temp);
