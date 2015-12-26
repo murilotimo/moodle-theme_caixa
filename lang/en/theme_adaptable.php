@@ -665,8 +665,8 @@ $string['tilesshowallcontacts'] = 'Show all course contacts';
 $string['tilesshowallcontactsdesc'] = 'Show all course contacts or just one';
 
 $string['toolsmenu'] = 'Tools Menus (in main nagivation)';
-$string['toolsmenustitledesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar). 
-The format is similar to that used for Moodle custom menus but allows you to add fa icons to menu items:
+$string['toolsmenustitledesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar).
+ The format is similar to that used for Moodle custom menus but allows you to add fa icons to menu items:
 <pre>
 &lt;span class=&quot;fa fa-video-camera&quot;&gt;&lt;/span&gt; Record Screen|http://google.co.uk|Record Screen
 &lt;span class=&quot;fa fa-picture-o&quot;&gt;&lt;/span&gt; ThinkStock|http://google.co.uk|ThinkStock
@@ -852,7 +852,7 @@ $string['mobilemenubkcolordesc'] = 'Set the Main Menu background colour on mobil
 $string['mobilemenufontcolor'] = 'Mobile Menu font colour';
 $string['mobilemenufontcolordesc'] = 'Set a Main Menu font colour on mobile devices (collapsed)';
 
-// social settings
+// Social settings.
 $string['socialsettings'] = 'Header Social';
 $string['socialheading'] = 'Social Icon Settings';
 $string['socialtitledesc'] = '<pre>You can disable the sitewide search box and enable social icons / links in its place.

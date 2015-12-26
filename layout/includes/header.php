@@ -469,37 +469,37 @@ if (isloggedin()) {
     }
 ?>
 
-                            <ul class="nav pull-right">
+        <ul class="nav pull-right">
 <?php
     if (isloggedin()) {
         if ($PAGE->theme->settings->enableshowhideblocks) { ?>
            <li class="hbl">
                <a href="#" class="moodlezoom" title="<?php echo get_string('hideblocks', 'theme_adaptable') ?>">
                    <i class="fa fa-indent fa-lg"></i>
-	           <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_adaptable') ?></span>
-	       </a>
-	   </li>
-	   <li class="sbl">
+               <span class="zoomdesc"><?php echo get_string('hideblocks', 'theme_adaptable') ?></span>
+           </a>
+       </li>
+       <li class="sbl">
                <a href="#" class="moodlezoom" title="<?php echo get_string('showblocks', 'theme_adaptable') ?>">
-	           <i class="fa fa-outdent fa-lg"></i>
-	           <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_adaptable') ?></span>
-	       </a>
-	   </li>
+               <i class="fa fa-outdent fa-lg"></i>
+               <span class="zoomdesc"><?php echo get_string('showblocks', 'theme_adaptable') ?></span>
+           </a>
+       </li>
 <?php
         }
 
         if ($PAGE->theme->settings->enablezoom) { ?>
             <li class="hbll">
                 <a href="#" class="moodlewidth" title="<?php echo get_string('fullscreen', 'theme_adaptable') ?>">
-	            <i class="fa fa-expand fa-lg"></i>
-	            <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_adaptable') ?></span>
-	        </a>
-	    </li>
-	    <li class="sbll">
+                <i class="fa fa-expand fa-lg"></i>
+                <span class="zoomdesc"><?php echo get_string('fullscreen', 'theme_adaptable') ?></span>
+            </a>
+        </li>
+        <li class="sbll">
                 <a href="#" class="moodlewidth" title="<?php echo get_string('standardview', 'theme_adaptable') ?>">
                     <i class="fa fa-compress fa-lg"></i>
-	            <span class="zoomdesc"><?php echo get_string('standardview', 'theme_adaptable') ?></span>
-	        </a>
+                <span class="zoomdesc"><?php echo get_string('standardview', 'theme_adaptable') ?></span>
+            </a>
             </li>
 <?php
         }
