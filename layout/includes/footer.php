@@ -93,7 +93,7 @@ if ($PAGE->theme->settings->showfooterblocks) { ?>
 if ($PAGE->theme->settings->moodledocs) {
     $footnoteclass = 'span4';
 } else {
-    $footnoteclass = 'span6';
+    $footnoteclass = 'span8';
 }
 
 if ($PAGE->theme->settings->showfooterblocks) { ?>
@@ -113,7 +113,6 @@ if ($PAGE->theme->settings->showfooterblocks) { ?>
 <?php
     }
 ?>
-
                 <div class="span4">
                     <?php echo $OUTPUT->standard_footer_html(); ?>
                 </div>
