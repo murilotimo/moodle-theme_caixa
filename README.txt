@@ -10,6 +10,22 @@ the same value in all the blocks.
 The Font Awesome icons set is available in http://fortawesome.github.io/Font-Awesome/icons/. You can insert any
 of them and following the examples http://fortawesome.github.io/Font-Awesome/examples/
  
+Front Page Slider Styles
+------------------------
+
+There are two possible slider styles each with different markup required:
+
+<div class="span6 col-sm-6">
+<h3>Hand-crafted</h3> <h4>pixels and code for the Moodle community</h4>
+<a href="#" class="submit">Check out our custom theme pricing!</a>
+</div>
+ 	
+Frontpage Marketing Block HTML structure Coventry
+
+
+<div><img src="http://somewebsite.com/2.jpg" class="marketimage"></div>
+<h4><a href="#">International Courses</a></h4>
+<p>Some text below the link....</p>
 
 
 Front page Info Block
@@ -31,8 +47,23 @@ Simple box with solid background colour, default heading h3 and white text colou
 </div>
 
 
+Front Page Secondary Info Block Example:
+----------------------------------------
+
+You can apply additional styles to the secondary info block:
 
 
+<div class="span2 personpic">
+	<div id="person" class="spn5">
+		<img src="/urltoanimage.jpg" alt="person">
+	</div>
+</div>
+	
+<div class="span10">
+	<h4>School of Jewelry</h4>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	<a href="#" class="submit">Learn more... <i class="fa-chevron-right fa"></i></a>
+</div>
 
 Frontpage Marketing Block HTML
 ------------------------------
