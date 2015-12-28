@@ -697,13 +697,14 @@ EOT;
 			$menutitle = $menunumber . 'title';
 			$requirelogin = $menunumber . 'requirelogin';
 			$accessrules = $menunumber . 'field';
+			$access = true;
 			
 	        if (!empty($PAGE->theme->settings->$accessrules)) {
 	            $fields = explode ('=', $PAGE->theme->settings->$accessrules);
 	            $ftype = $fields[0];
-	            $setvalue = $fields[1];
+	            $setvalue = $fields[1];												
 	            if (!$this->check_menu_access($ftype, $setvalue, $menunumber)) {
-	                $access = false;
+	                $access = false;					
 	            }
 	        }
 	
