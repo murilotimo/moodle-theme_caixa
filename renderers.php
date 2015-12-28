@@ -451,8 +451,9 @@ EOT;
         if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index")
             || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
             $msg = '';
+			$tickercount = $PAGE->theme->settings->newstickercount;
 
-            for ($i = 1; $i < 3; $i++) {
+            for ($i = 1; $i <= $tickercount; $i++) {
                 $textfield = 'tickertext' . $i;
                 $profilefield = 'tickertext' . $i . 'profilefield';
                 $access = true;

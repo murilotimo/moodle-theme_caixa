@@ -738,11 +738,11 @@ $string['enabletickermydesc'] = 'Check to enable the ticker on My Home / Dashboa
 $string['enabletickerc'] = 'Enable the news ticker on internal pages?';
 $string['enabletickercdesc'] = 'Check to enable the ticker on internal pages.';
 
-$string['tickertext1'] = 'News Ticker Text';
-$string['tickertext1desc'] = 'Add news ticker text in list format. See the read me for more info.';
+$string['newstickercount'] = 'Number of News Ticker Sections';
+$string['newstickercountdesc'] = 'Define multiple news ticker sections with access rules to target different audiences';
 
-$string['tickertext2'] = 'News Ticker Text 2';
-$string['tickertext2desc'] = 'By controlling access on profile fields you can show different news ticker items to different types of user using this second text field';
+$string['tickertext'] = 'News Ticker Text';
+$string['tickertextdesc'] = 'Add news ticker text in list format. See the read me for more info.';
 
 $string['tickertextprofilefield'] = 'Custom Profile Field Name=Value (optional)';
 $string['tickertextprofilefielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
