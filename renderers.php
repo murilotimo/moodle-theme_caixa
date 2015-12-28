@@ -689,49 +689,34 @@ EOT;
         $class = "<i class='fa fa-wrench'></i><span class='menutitle'>";
         $custommenuitems = '';
         $access = true;
-
-        if (!empty($PAGE->theme->settings->toolsmenu1field)) {
-            $fields = explode ('=', $PAGE->theme->settings->toolsmenu1field);
-            $ftype = $fields[0];
-            $setvalue = $fields[1];
-            if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu1')) {
-                $access = false;
-            }
-        }
-
-        if (!empty($PAGE->theme->settings->toolsmenu) && $access == true && !$this->hideinforum()) {
-            $menu = ($PAGE->theme->settings->toolsmenu);
-            $label = get_string('toolsmenulabel', 'theme_adaptable');
-            $custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');
-        }
-
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
-    }
-
-    public function tools_menu2() {
-        global $PAGE;
-        $class = "<i class='fa fa-wrench'></i><span class='menutitle'>";
-        $custommenuitems = '';
-        $access = true;
-
-        if (!empty($PAGE->theme->settings->toolsmenu2field)) {
-            $fields = explode ('=', $PAGE->theme->settings->toolsmenu2field);
-            $ftype = $fields[0];
-            $setvalue = $fields[1];
-            if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu2')) {
-                $access = false;
-            }
-        }
-
-        if (!empty($PAGE->theme->settings->toolsmenu2) && $access == true && !$this->hideinforum()) {
-            $menu = ($PAGE->theme->settings->toolsmenu2);
-            $label = get_string('toolsmenulabel2', 'theme_adaptable');
-            $custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');
-        }
-
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
+		$retval = '';
+		
+        $toolsmenuscount = $PAGE->theme->settings->toolsmenuscount;
+        for ($i = 1; $i <= $toolsmenuscount; $i++) {
+            $menunumber = 'toolsmenu' . $i;
+			$menutitle = $menunumber . 'title';
+			$requirelogin = $menunumber . 'requirelogin';
+			$accessrules = $menunumber . 'field';
+			
+	        if (!empty($PAGE->theme->settings->$accessrules)) {
+	            $fields = explode ('=', $PAGE->theme->settings->$accessrules);
+	            $ftype = $fields[0];
+	            $setvalue = $fields[1];
+	            if (!$this->check_menu_access($ftype, $setvalue, $menunumber)) {
+	                $access = false;
+	            }
+	        }
+	
+	        if (!empty($PAGE->theme->settings->$menunumber) && $access == true && !$this->hideinforum()) {
+	            $menu = ($PAGE->theme->settings->$menunumber);
+	            $label = $PAGE->theme->settings->$menutitle;
+	            $custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');
+	        }
+	
+	        $custommenu = new custom_menu($custommenuitems);			           
+			$retval .= $this->render_custom_menu($custommenu);            
+		}
+        return $retval;
     }
 
     public function get_top_menus() {

@@ -465,7 +465,6 @@ if (isloggedin()) {
 <?php
     if ($PAGE->theme->settings->enabletoolsmenus) {
         echo $OUTPUT->tools_menu();
-        echo $OUTPUT->tools_menu2();
     }
 ?>
 

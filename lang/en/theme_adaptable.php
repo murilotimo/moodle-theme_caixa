@@ -664,14 +664,7 @@ $string['targetsamewindow'] = 'Same window';
 $string['tilesshowallcontacts'] = 'Show all course contacts';
 $string['tilesshowallcontactsdesc'] = 'Show all course contacts or just one';
 
-$string['toolsmenu'] = 'Tools Menus (in main nagivation)';
-$string['toolsmenustitledesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar).
- The format is similar to that used for Moodle custom menus but allows you to add fa icons to menu items:
-<pre>
-&lt;span class=&quot;fa fa-video-camera&quot;&gt;&lt;/span&gt; Record Screen|http://google.co.uk|Record Screen
-&lt;span class=&quot;fa fa-picture-o&quot;&gt;&lt;/span&gt; ThinkStock|http://google.co.uk|ThinkStock
-&lt;span class=&quot;fa fa-clock-o&quot;&gt;&lt;/span&gt; Exam Clock|http://google.co.uk|Exam Clock
-</pre>';
+
 
 $string['toolsmenu2'] = '2nd Tools menu';
 $string['toolsmenu2desc'] = 'You can configure links to be shown under a tools menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
@@ -826,13 +819,28 @@ $string['newmenutitledefault'] = 'Menu';
 $string['enabletoolsmenus'] = 'Enable Tools Menus';
 $string['enabletoolsmenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
 
-$string['toolsmenuheading1'] = 'Tools Menu 1';
-$string['toolsmenu1'] = 'Tools Menu Dropdown 1';
-$string['toolsmenulabel1'] = 'Tools Menu';
+$string['toolsmenuheading'] = 'Tools Menus (in main nagivation)';
+$string['toolsmenuheadingdesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar).
+ The format is similar to that used for Moodle custom menus but allows you to add fa icons to menu items:
+<pre>
+&lt;span class=&quot;fa fa-video-camera&quot;&gt;&lt;/span&gt; Record Screen|http://google.co.uk|Record Screen
+&lt;span class=&quot;fa fa-picture-o&quot;&gt;&lt;/span&gt; ThinkStock|http://google.co.uk|ThinkStock
+&lt;span class=&quot;fa fa-clock-o&quot;&gt;&lt;/span&gt; Exam Clock|http://google.co.uk|Exam Clock
+</pre><br />';
 
-$string['toolsmenuheading2'] = 'Tools Menu 2';
-$string['toolsmenu2'] = 'Tools Menu Dropdown 2';
-$string['toolsmenulabel2'] = 'Tools Menu';
+$string['toolsmenuscount'] = 'Number of tools Menus';
+$string['toolsmenuscountdesc'] = 'Set the number of tools menus you want to add to the main navigation bar';
+
+$string['toolsmenuheading'] = 'Tools Menu ';
+$string['toolsmenu'] = 'Tools Menu Dropdown';
+$string['toolsmenudesc'] = 'Add a drop down menu to the main navigation bar';
+$string['toolsmenutitle'] = 'Tools Menu Title';
+$string['toolsmenutitledefault'] = 'Tools';
+$string['toolsmenutitledesc'] = 'Add the title of the menu you would like to display in the main navigation bar';
+$string['toolsmenulabel'] = 'Tools Menu';
+
+$string['toolsmenufield'] = 'Custom Profile Field Name=Value (optional)';
+$string['toolsmenufielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
 
 $string['menubkcolor'] = 'Main Menu background colour';
 $string['menubkcolordesc'] = 'Set a Main Menu background colour';
