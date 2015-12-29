@@ -47,30 +47,34 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/tickertext1';
-    $title = get_string('tickertext1', 'theme_adaptable');
-    $description = get_string('tickertext1desc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
+	// Number of news ticker sectons.
+	$name = 'theme_adaptable/newstickercount';
+	$title = get_string('newstickercount', 'theme_adaptable');
+	$description = get_string('newstickercountdesc', 'theme_adaptable');
+	$default = THEME_ADAPTABLE_DEFAULT_TOOLSMENUSCOUNT;
+	$setting = new admin_setting_configselect($name, $title, $description, $default, $choices1to12);
+	$setting->set_updatedcallback('theme_reset_all_caches');
+	$temp->add($setting);
+	
+	// If we don't have a menuscount yet, default to the preset.
+	$newstickercount = get_config('theme_adaptable', 'newstickercount');
+	if (!$newstickercount) {
+	    $newstickercount = THEME_ADAPTABLE_DEFAULT_NEWSTICKERCOUNT;
+	}
 
-    $name = 'theme_adaptable/tickertext1profilefield';
-    $title = get_string('tickertextprofilefield', 'theme_adaptable');
-    $description = get_string('tickertextprofilefielddesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/tickertext2';
-    $title = get_string('tickertext2', 'theme_adaptable');
-    $description = get_string('tickertext2desc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/tickertext2profilefield';
-    $title = get_string('tickertextprofilefield', 'theme_adaptable');
-    $description = get_string('tickertextprofilefielddesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
-    $temp->add($setting);
+	for ($newstickerindex = 1; $newstickerindex <= $newstickercount; $newstickerindex ++) {
+	    $name = 'theme_adaptable/tickertext' . $newstickerindex;
+	    $title = get_string('tickertext', 'theme_adaptable') . ' ' . $newstickerindex;
+	    $description = get_string('tickertextdesc', 'theme_adaptable');
+	    $default = '';
+	    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+	    $temp->add($setting);
+	
+	    $name = 'theme_adaptable/tickertext' . $newstickerindex . 'profilefield';
+	    $title = get_string('tickertextprofilefield', 'theme_adaptable');
+	    $description = get_string('tickertextprofilefielddesc', 'theme_adaptable');
+	    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
+	    $temp->add($setting);	
+    }
 
     $ADMIN->add('theme_adaptable', $temp);

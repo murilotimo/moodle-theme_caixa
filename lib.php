@@ -28,6 +28,8 @@
 define('THEME_ADAPTABLE_DEFAULT_ALERTCOUNT', '1');
 define('THEME_ADAPTABLE_DEFAULT_ANALYTICSCOUNT', '1');
 define('THEME_ADAPTABLE_DEFAULT_TOPMENUSCOUNT', '1');
+define('THEME_ADAPTABLE_DEFAULT_TOOLSMENUSCOUNT', '1');
+define('THEME_ADAPTABLE_DEFAULT_NEWSTICKERCOUNT', '1');
 
 /**
  * Parses CSS before it is cached.
@@ -147,6 +149,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:fonttitlecolor]]' => '#FFFFFF',
         '[[setting:fullscreenwidth]]' => '98%',
         '[[setting:coursetitlemaxwidth]]' => '50%',
+        '[[setting:coursetitlepaddingtop]]' => '0px',
         '[[setting:hidebreadcrumbmobile]]' => '',
         '[[setting:hidepagefootermobile]]' => '',
         '[[setting:hidealertsmobile]]' => '',

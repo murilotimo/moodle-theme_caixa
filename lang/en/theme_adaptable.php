@@ -795,7 +795,13 @@ $string['alertaccess'] = 'Alert Visibility';
 $string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "' . $string['alertaccessprofile'] . '" you will need to add values for profile fields below.';
 
 
+<<<<<<< HEAD
 // Mobile **********************************************************.
+=======
+$string['coursetitlepaddingtop'] = 'Course Title Padding Top';
+$string['coursetitlepaddingtopdesc'] = 'Set padding above course title';
+
+>>>>>>> b8296f54985bbd4b830395520bc811286a80eca3
 $string['layoutmobilesettings'] = 'Mobile Settings';
 $string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
 
@@ -852,14 +858,7 @@ $string['targetnewwindow'] = 'New window';
 $string['targetsamewindow'] = 'Same window';
 
 
-$string['toolsmenu'] = 'Tools Menus (in main nagivation)';
-$string['toolsmenustitledesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar).
- The format is similar to that used for Moodle custom menus but allows you to add fa icons to menu items:
-<pre>
-&lt;span class=&quot;fa fa-video-camera&quot;&gt;&lt;/span&gt; Record Screen|http://google.co.uk|Record Screen
-&lt;span class=&quot;fa fa-picture-o&quot;&gt;&lt;/span&gt; ThinkStock|http://google.co.uk|ThinkStock
-&lt;span class=&quot;fa fa-clock-o&quot;&gt;&lt;/span&gt; Exam Clock|http://google.co.uk|Exam Clock
-</pre>';
+
 
 $string['toolsmenu2'] = '2nd Tools menu';
 $string['toolsmenu2desc'] = 'You can configure links to be shown under a tools menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
@@ -879,6 +878,68 @@ $string['mysites'] = 'My Courses';
 $string['people'] = 'People';
 $string['help'] = 'Help';
 
+<<<<<<< HEAD
+=======
+$string['dividingline'] = 'Dividing line in header';
+$string['dividinglinedesc'] = 'The colour for the dividing line found in the header';
+
+$string['dividingline2'] = 'Dividing line in footer';
+$string['dividingline2desc'] = 'The colour for the dividing line found in the footer';
+
+$string['navbarborder'] = 'Navbar bottom border colour';
+$string['navbarborderdesc'] = 'Colour for the bottom of the navbar';
+$string['navbarhover'] = 'Navbar hover colour';
+$string['navbarhoverdesc'] = 'When hovering on a navigation item, the colour of the border of the navbar.';
+$string['showfooterblocks'] = 'Show footer blocks';
+$string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';
+
+$string['footerblocksplacement'] = 'Footer blocks placement ';
+$string['footerblocksplacementdesc'] = 'Control the way that the footer blocks are displayed. Sitewide is default.';
+$string['footerblocksplacement1'] = 'Sitewide';
+$string['footerblocksplacement2'] = 'Homepage_only';
+$string['footerblocksplacement3'] = 'Never';
+
+$string['breadcrumb'] = 'Breadcrumb background colour';
+$string['breadcrumbdesc'] = 'Set the background colour of the breadcrumb.';
+
+$string['breadcrumbtextcolor'] = 'Breadcrumb text colour';
+$string['breadcrumbtextcolordesc'] = 'Set the text colour of the breadcrumb.';
+
+$string['activebreadcrumb'] = 'Active breadcrumb background colour';
+$string['activebreadcrumbdesc'] = 'Set the background colour of the active breadcrumb colour, and remainder of the breadcrumb bar.';
+
+$string['menufontsize'] = 'Font size for navigation bar';
+$string['menufontsizedesc'] = 'Set the size of the font used in the main navigation bar.';
+
+$string['usernavheading'] = 'Customize the user navigation dropdown';
+$string['usernavdesc'] = 'Allows you to control all of the elements that appear in the user navigation dropdown.';
+$string['enablehomedesc'] = 'Display a link to the frontpage.';
+
+$string['enablehomeredirect'] = 'Enable Home redirect=0';
+$string['enablehomeredirectdesc'] = 'Enable redirect=0 on home. This is for use on sites where where My Home is default homepage. It prevents users clicking the Home link from being redirected back to My Home / Dashboard';
+
+$string['enablemyhomedesc'] = 'Display a link to {$a}';
+$string['enableeventsdesc'] = 'Display a link to the calendar';
+$string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
+$string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
+
+$string['frnt-footer'] = 'Blocks in this area will only be visible to admin users.';
+
+$string['enableticker'] = 'Enable the news ticker on the homepage?';
+$string['enabletickerdesc'] = 'Check to enable the homepage ticker.';
+
+$string['enabletickermy'] = 'Enable the news ticker on the My Home / Dashboard page?';
+$string['enabletickermydesc'] = 'Check to enable the ticker on My Home / Dashboard.';
+
+$string['enabletickerc'] = 'Enable the news ticker on internal pages?';
+$string['enabletickercdesc'] = 'Check to enable the ticker on internal pages.';
+
+$string['newstickercount'] = 'Number of News Ticker Sections';
+$string['newstickercountdesc'] = 'Define multiple news ticker sections with access rules to target different audiences';
+
+$string['tickertext'] = 'News Ticker Text';
+$string['tickertextdesc'] = 'Add news ticker text in list format. See the read me for more info.';
+>>>>>>> b8296f54985bbd4b830395520bc811286a80eca3
 
 
 $string['newmenu1trigger'] = 'Top Menu Dropdown 1 trigger word';
@@ -952,13 +1013,28 @@ $string['newmenutitledefault'] = 'Menu';
 $string['enabletoolsmenus'] = 'Enable Tools Menus';
 $string['enabletoolsmenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
 
-$string['toolsmenuheading1'] = 'Tools Menu 1';
-$string['toolsmenu1'] = 'Tools Menu Dropdown 1';
-$string['toolsmenulabel1'] = 'Tools Menu';
+$string['toolsmenuheading'] = 'Tools Menus (in main nagivation)';
+$string['toolsmenuheadingdesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar).
+ The format is similar to that used for Moodle custom menus but allows you to add fa icons to menu items:
+<pre>
+&lt;span class=&quot;fa fa-video-camera&quot;&gt;&lt;/span&gt; Record Screen|http://google.co.uk|Record Screen
+&lt;span class=&quot;fa fa-picture-o&quot;&gt;&lt;/span&gt; ThinkStock|http://google.co.uk|ThinkStock
+&lt;span class=&quot;fa fa-clock-o&quot;&gt;&lt;/span&gt; Exam Clock|http://google.co.uk|Exam Clock
+</pre><br />';
 
-$string['toolsmenuheading2'] = 'Tools Menu 2';
-$string['toolsmenu2'] = 'Tools Menu Dropdown 2';
-$string['toolsmenulabel2'] = 'Tools Menu';
+$string['toolsmenuscount'] = 'Number of tools Menus';
+$string['toolsmenuscountdesc'] = 'Set the number of tools menus you want to add to the main navigation bar';
+
+$string['toolsmenuheading'] = 'Tools Menu ';
+$string['toolsmenu'] = 'Tools Menu Dropdown';
+$string['toolsmenudesc'] = 'Add a drop down menu to the main navigation bar';
+$string['toolsmenutitle'] = 'Tools Menu Title';
+$string['toolsmenutitledefault'] = 'Tools';
+$string['toolsmenutitledesc'] = 'Add the title of the menu you would like to display in the main navigation bar';
+$string['toolsmenulabel'] = 'Tools Menu';
+
+$string['toolsmenufield'] = 'Custom Profile Field Name=Value (optional)';
+$string['toolsmenufielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
 
 
 // Social settings *************************************************.
@@ -983,6 +1059,9 @@ $string['socialsetdesc'] = 'Check this box to hide the search bar and add social
 $string['socialsize'] = 'Set the font size of the social icons';
 $string['socialsizemobile'] = 'Set the font size of the social icons on Mobile';
 $string['socialpaddingtop'] = 'Adjust padding above social icons (alters vertical position)';
+
+$string['socialtarget'] = 'Social Links Open Target';
+$string['socialtargetdesc'] = 'How would you like social links to open (same or new window)';
 
 $string['socialsearchicon'] = 'Search Moodle';
 $string['socialsearchicondesc'] = 'Enable to put a search link alongside social icons (as using social disables sitewide search box)';
