@@ -883,6 +883,9 @@ $string['socialsize'] = 'Set the font size of the social icons';
 $string['socialsizemobile'] = 'Set the font size of the social icons on Mobile';
 $string['socialpaddingtop'] = 'Adjust padding above social icons (alters vertical position)';
 
+$string['socialtarget'] = 'Social Links Open Target';
+$string['socialtargetdesc'] = 'How would you like social links to open (same or new window)';
+
 $string['socialsearchicon'] = 'Search Moodle';
 $string['socialsearchicondesc'] = 'Enable to put a search link alongside social icons (as using social disables sitewide search box)';
 

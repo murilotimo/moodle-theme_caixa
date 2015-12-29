@@ -427,12 +427,15 @@ EOT;
 
         $retval = '<div class="socialbox pull-right">';
 
+		$target = $PAGE->theme->settings->socialtarget;
         $socialiconlist = $PAGE->theme->settings->socialiconlist;
         $lines = explode("\n", $socialiconlist);
+		
         foreach ($lines as $line) {
             $fields = explode('|', $line);
 
             $val = '<a alt="' . $fields[1];
+			$val .= '" target="' . $target . '"';
             $val .= '" title="' . $fields[1];
             $val .= '" href="' . $fields[0] . '">';
             $val .= '<i class="fa ' . $fields[2] . '"></i>';
