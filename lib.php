@@ -149,6 +149,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:fonttitlecolor]]' => '#FFFFFF',
         '[[setting:fullscreenwidth]]' => '98%',
         '[[setting:coursetitlemaxwidth]]' => '50%',
+        '[[setting:coursetitlepaddingtop]]' => '0px',
         '[[setting:hidebreadcrumbmobile]]' => '',
         '[[setting:hidepagefootermobile]]' => '',
         '[[setting:hidealertsmobile]]' => '',

@@ -597,6 +597,9 @@ $string['fullscreenwidthdesc'] = 'Set the max width of the theme when it is in f
 $string['coursetitlemaxwidth'] = 'Course Title Maximum Width';
 $string['coursetitlemaxwidthdesc'] = 'Set the maximum width of the course title area';
 
+$string['coursetitlepaddingtop'] = 'Course Title Padding Top';
+$string['coursetitlepaddingtopdesc'] = 'Set padding above course title';
+
 $string['layoutmobilesettings'] = 'Mobile Settings';
 $string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
 

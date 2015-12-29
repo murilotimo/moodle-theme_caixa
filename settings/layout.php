@@ -53,40 +53,21 @@
     $name = 'theme_adaptable/fullscreenwidth';
     $title = get_string('fullscreenwidth', 'theme_adaptable');
     $description = get_string('fullscreenwidthdesc', 'theme_adaptable');
-    $radchoices = array(
-        '95%' => '95%',
-        '96%' => '96%',
-        '97%' => '97%',
-        '98%' => '98%',
-        '99%' => '99%',
-        '100%' => '100%',
-    );
-    $setting = new admin_setting_configselect($name, $title, $description, '98%', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, '98%', $from95to100percent);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_adaptable/coursetitlemaxwidth';
     $title = get_string('coursetitlemaxwidth', 'theme_adaptable');
     $description = get_string('coursetitlemaxwidthdesc', 'theme_adaptable');
-    $radchoices = array(
-        '35%' => '35%',
-        '36%' => '36%',
-        '37%' => '37%',
-        '38%' => '38%',
-        '39%' => '39%',
-        '40%' => '40%',
-        '41%' => '41%',
-        '42%' => '42%',
-        '43%' => '43%',
-        '44%' => '44%',
-        '45%' => '45%',
-        '46%' => '46%',
-        '47%' => '47%',
-        '48%' => '48%',
-        '49%' => '49%',
-        '50%' => '50%',
-    );
-    $setting = new admin_setting_configselect($name, $title, $description, '50%', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, '50%', $from35to50percent);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+	
+	$name = 'theme_adaptable/coursetitlepaddingtop';
+    $title = get_string('coursetitlepaddingtop', 'theme_adaptable');
+    $description = get_string('coursetitlepaddingtopdesc', 'theme_adaptable');
+    $setting = new admin_setting_configselect($name, $title, $description, '0px', $from0to20);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
