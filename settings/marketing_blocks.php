@@ -29,13 +29,6 @@
     // Marketing blocks section.
     $temp = new admin_settingpage('theme_adaptable_frontpage_blocks', get_string('frontpageblocksettings', 'theme_adaptable'));
 
-    $name = 'theme_adaptable/homebk';
-    $title = get_string('homebk', 'theme_adaptable');
-    $description = get_string('homebkdesc', 'theme_adaptable');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'homebk');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     $name = 'theme_adaptable/infobox';
     $title = get_string('infobox', 'theme_adaptable');
     $description = get_string('infoboxdesc', 'theme_adaptable');

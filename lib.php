@@ -172,6 +172,14 @@ function theme_adaptable_process_css($css, $theme) {
             $defaults['[[setting:'.$key.']]'] = $val;
         }
     }
+	
+	$homebkg = '';
+    if (!empty($theme->settings->homebk)) {
+    	$homebkg = $theme->setting_file_url('homebk', 'homebk');
+		$homebkg = 'background-image: url("' . $homebkg . '");';
+	}	
+	$defaults['[[setting:homebkg]]'] = $homebkg;
+		
     // Replace the CSS with values from the $defaults array.
     $css = strtr($css, $defaults);
     if (empty($theme->settings->tilesshowallcontacts) || $theme->settings->tilesshowallcontacts == false) {

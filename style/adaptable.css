@@ -119,6 +119,7 @@ div.signuppanel h2 {
     margin: 0 0;
     padding: 0 0;
     max-width: inherit;
+    [[setting:homebkg]]
 }
 
 #page-header-wrapper {

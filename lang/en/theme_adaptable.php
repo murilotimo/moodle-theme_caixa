@@ -942,8 +942,8 @@ $string['social11icon'] = 'Social Link 11 Icon';
 $string['socialiconlist'] = 'Social Icon List';
 $string['socialiconlistdesc'] = 'Enter a de-limited list to setup the social icons / links you need using the format: url|title|icon';
 
-$string['homebk'] = 'Frontpage Background Image';
-$string['homebkdesc'] = 'Upload an image that will be a bacgkound image on the homepage.';
+$string['homebk'] = 'Site Background Image';
+$string['homebkdesc'] = 'Upload an image that will be a background image of your Moodle site';
 
 $string['editonbk'] = 'Editing and Customize this page button background';
 $string['editonbkdesc'] = 'Set the background colour for the editing and customize this page button';

@@ -28,7 +28,15 @@
     $temp = new admin_settingpage('theme_adaptable_layout', get_string('layoutsettings', 'theme_adaptable'));
     $temp->add(new admin_setting_heading('theme_adaptable_layout', get_string('layoutsettingsheading', 'theme_adaptable'),
         format_text(get_string('layoutdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
-
+		
+	// Background Image
+	$name = 'theme_adaptable/homebk';
+    $title = get_string('homebk', 'theme_adaptable');
+    $description = get_string('homebkdesc', 'theme_adaptable');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'homebk');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+		
     // Display block in the Left/Right side.
     $name = 'theme_adaptable/blockside';
     $title = get_string('blockside', 'theme_adaptable');
