@@ -345,8 +345,8 @@ a.usermendrop {
     margin-top: 20px;
 }
 
+
 #themessage {
-    background: [[setting:infoboxcolor2]];
     position: relative;
     margin-bottom: 20px;
 }
@@ -354,16 +354,6 @@ a.usermendrop {
 #themessage-internal {
     padding: 15px;
     padding-right: 25px;
-}
-
-#themessage h1,
-#themessage h2,
-#themessage h3,
-#themessage h4,
-#themessage h5,
-#themessage h6,
-#themessage p {
-    color: [[setting:infoboxtextcolor2]] !important;
 }
 
 .personpic {
@@ -393,22 +383,11 @@ span.fa-chevron-right.fa {
 }
 
 #theinfo {
-    background: [[setting:infoboxcolor]];
     margin-bottom: 20px;
 }
 
 #theinfo-internal {
 	padding: 15px 25px;
-}
-
-#theinfo h1,
-#theinfo h2,
-#theinfo h3,
-#theinfo h4,
-#theinfo h5,
-#theinfo h6,
-#theinfo p {
-    color: [[setting:infoboxtextcolor]] !important;
 }
 
 #theinfo .span3 {
@@ -1114,7 +1093,7 @@ a.carousel-control {
 /* Use the width of the content in modal to set size, instead of predefined sizes */
 
 .modal-backdrop {
-	z-index: 998;
+    z-index: 998;
 }
 
 .modal {
