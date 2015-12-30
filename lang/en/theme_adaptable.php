@@ -729,6 +729,9 @@ $string['frontpagerendererdefaultimagedesc'] = 'The default image to use when no
 $string['coursetitlemaxwidth'] = 'Course Title Maximum Width';
 $string['coursetitlemaxwidthdesc'] = 'Set the maximum width of the course title area';
 
+$string['coursetitlepaddingtop'] = 'Course Title Padding Top';
+$string['coursetitlepaddingtopdesc'] = 'Set padding above course title';
+
 $string['tilesshowcontacts'] = 'Show course contacts';
 $string['tilesshowcontactsdesc'] = 'Show / hide course contacts';
 
@@ -794,14 +797,7 @@ $string['alertaccessprofile'] = 'Add custom profile field restriction';
 $string['alertaccess'] = 'Alert Visibility';
 $string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "' . $string['alertaccessprofile'] . '" you will need to add values for profile fields below.';
 
-
-<<<<<<< HEAD
 // Mobile **********************************************************.
-=======
-$string['coursetitlepaddingtop'] = 'Course Title Padding Top';
-$string['coursetitlepaddingtopdesc'] = 'Set padding above course title';
-
->>>>>>> b8296f54985bbd4b830395520bc811286a80eca3
 $string['layoutmobilesettings'] = 'Mobile Settings';
 $string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
 
@@ -878,8 +874,6 @@ $string['mysites'] = 'My Courses';
 $string['people'] = 'People';
 $string['help'] = 'Help';
 
-<<<<<<< HEAD
-=======
 $string['dividingline'] = 'Dividing line in header';
 $string['dividinglinedesc'] = 'The colour for the dividing line found in the header';
 
@@ -939,8 +933,6 @@ $string['newstickercountdesc'] = 'Define multiple news ticker sections with acce
 
 $string['tickertext'] = 'News Ticker Text';
 $string['tickertextdesc'] = 'Add news ticker text in list format. See the read me for more info.';
->>>>>>> b8296f54985bbd4b830395520bc811286a80eca3
-
 
 $string['newmenu1trigger'] = 'Top Menu Dropdown 1 trigger word';
 $string['newmenu1triggerdesc'] = 'Set a Top Menu Dropdown 1 trigger word. Font awesome icons can be used';
