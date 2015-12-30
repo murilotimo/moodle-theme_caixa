@@ -1058,56 +1058,10 @@ $string['socialtargetdesc'] = 'How would you like social links to open (same or 
 $string['socialsearchicon'] = 'Search Moodle';
 $string['socialsearchicondesc'] = 'Enable to put a search link alongside social icons (as using social disables sitewide search box)';
 
-$string['social1'] = 'Facebook';
-$string['social1desc'] = 'Add URL to facebook for social icon';
-
-$string['social2'] = 'Twitter';
-$string['social2desc'] = 'Add URL for the social icon';
-
-$string['social3'] = 'Google Plus';
-$string['social3desc'] = 'Add URL for the social icon';
-
-$string['social4'] = 'Instagram';
-$string['social4desc'] = 'Add URL for the social icon';
-
-$string['social5'] = 'Tumbler';
-$string['social5desc'] = 'Add URL for the social icon';
-
-$string['social6'] = 'Linkedin';
-$string['social6desc'] = 'Add URL for the social icon';
-
-$string['social7'] = 'YouTube';
-$string['social7desc'] = 'Add URL for the social icon';
-
-$string['social8'] = 'Flickr';
-$string['social8desc'] = 'Add URL for the social icon';
-
-$string['social9'] = 'Pinterest';
-$string['social9desc'] = 'Add URL for the social icon';
-
-$string['social10'] = 'Website';
-$string['social10desc'] = 'Add URL for the website icon';
-
-$string['social11'] = 'Blog';
-$string['social11desc'] = 'Add URL for the blog icon';
-
 $string['socialicondesc'] = 'Set Font Awesome icon for example: fa-facebook';
-
-$string['social1icon'] = 'Social Link 1 Icon';
-$string['social2icon'] = 'Social Link 2 Icon';
-$string['social3icon'] = 'Social Link 3 Icon';
-$string['social4icon'] = 'Social Link 4 Icon';
-$string['social5icon'] = 'Social Link 5 Icon';
-$string['social6icon'] = 'Social Link 6 Icon';
-$string['social7icon'] = 'Social Link 7 Icon';
-$string['social8icon'] = 'Social Link 8 Icon';
-$string['social9icon'] = 'Social Link 9 Icon';
-$string['social10icon'] = 'Social Link 10 Icon';
-$string['social11icon'] = 'Social Link 11 Icon';
 
 $string['socialiconlist'] = 'Social Icon List';
 $string['socialiconlistdesc'] = 'Enter a de-limited list to setup the social icons / links you need using the format: url|title|icon';
-
 
 // Analytics.
 $string['analyticssettingsheading'] = 'Setup Google Analytics';
