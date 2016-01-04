@@ -303,6 +303,7 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 .usermendrop span {
 	font-size: [[setting:headerprofilefontsize]];
     padding-right: 5px;
+    height: 30px;
 }
 
 .dropdown-menu.usermen > li > a:hover, .dropdown-menu.usermen > li > a:active {

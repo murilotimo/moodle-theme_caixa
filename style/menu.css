@@ -70,6 +70,10 @@
     display: none;
 }
 
+.dropdown-toggle{
+    height: 30px;
+}
+
 .dropdown-menu {
     border: 1px solid #c0c0c0;
     border-radius: 0;
@@ -81,7 +85,7 @@
     display: none;
     float: right;
     list-style: outside none none;
-    margin: 2px 0 0;
+    margin: 0px 0 0;
     padding: 5px 0;
     position: absolute;
     right: 0;
@@ -130,7 +134,7 @@
         left: 0%;
         position: absolute;
         visibility: hidden;
-        margin-top: 3px;
+        margin-top: 0px;
     }
 
     .dropdown-submenu>.dropdown-menu {
@@ -177,7 +181,7 @@
 
 .newmenus .dropdown-toggle {
 	color: [[setting:headertextcolor]];
-	background: transparent !important;
+	background: transparent !important;	
 }
 
 .newmenus .dropdown-menu li a {
