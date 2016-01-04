@@ -29,16 +29,7 @@
     // Header Navbar.
     $temp = new admin_settingpage('theme_adaptable_navbar', get_string('navbarsettings', 'theme_adaptable'));
     $temp->add(new admin_setting_heading('theme_adaptable_navbar', get_string('navbarsettingsheading', 'theme_adaptable'),
-        format_text(get_string('navbardesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
-
-
-    $name = 'theme_adaptable/menufontsize';
-    $title = get_string('menufontsize', 'theme_adaptable');
-    $description = get_string('menufontsizedesc', 'theme_adaptable');
-    $radchoices = $from10to16;
-    $setting = new admin_setting_configselect($name, $title, $description, '14px', $radchoices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    format_text(get_string('navbardesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
     $name = 'theme_adaptable/enablehome';
     $title = get_string('home');
