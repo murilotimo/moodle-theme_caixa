@@ -301,7 +301,7 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 }
 
 .usermendrop span {
-	font-size: [[setting:headerprofilefontsize]];
+	font-size: [[setting:topmenufontsize]];
     padding-right: 5px;
     height: 30px;
 }

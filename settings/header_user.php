@@ -39,14 +39,6 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/headerprofilefontsize';
-    $title = get_string('headerprofilefontsize', 'theme_adaptable');
-    $description = get_string('headerprofilefontsizedesc', 'theme_adaptable');
-    $radchoices = $from10to16;
-    $setting = new admin_setting_configselect($name, $title, $description, '12px', $radchoices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     // Enable My.
     $name = 'theme_adaptable/enablemy';
     $title = get_string('enablemy', 'theme_adaptable');

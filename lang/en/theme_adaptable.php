@@ -310,9 +310,6 @@ $string['navbarsettings'] = 'Header Navbar';
 $string['navbarsettingsheading'] = 'Customize the navigation bar';
 $string['navbardesc'] = 'Allows you to control all of the elements that appear on the navigation bar.';
 
-$string['headerprofilefontsize'] = 'Header Profile Font';
-$string['headerprofilefontsizedesc'] = 'You can enlarge the font of the user profile drop down link in the header.';
-
 if ($CFG->version > 2015051100) {
     $string['enablemy'] = 'Dashboard';
     $string['enablemydesc'] = 'Display a link to the Dashboard page';
@@ -973,6 +970,9 @@ $string['newmenu2triggerdesc'] = 'Set a Top Menu Dropdown 2 trigger word. Font a
 
 $string['enablemenus'] = 'Enable Menus';
 $string['enablemenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
+
+$string['topmenufontsize'] = 'Top Menu Font Size';
+$string['topmenufontsizedesc'] = 'Adjust the font size of the top menus';
 
 $string['disablemenuscoursepages'] = 'Disable Menus on Course Pages';
 $string['disablemenuscoursepagesdesc'] = 'Turning this option on will limit the display of top menus to site pages, the homepage, and dashboard (My Home) etc. and will not show in any course pages';

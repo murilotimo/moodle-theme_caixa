@@ -53,7 +53,7 @@
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
     background-color: transparent;
     color: #fff;
-   	font-size: [[setting:headerprofilefontsize]];
+   	font-size: [[setting:topmenufontsize]];
 }
 
 .navbar .btn-navbar, .navbar .btn-navbar:hover, .navbar .btn-navbar:active {
@@ -171,7 +171,7 @@
 .newmenus {
 	position: relative;
 	margin-left: 20px;
-	font-size: 12px;
+	font-size: [[setting:topmenufontsize]];
 	height:26px;
 }
 

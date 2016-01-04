@@ -80,6 +80,25 @@
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    // Top Menu Font Size
+    $name = 'theme_adaptable/topmenufontsize';
+    $title = get_string('topmenufontsize', 'theme_adaptable');
+    $description = get_string('topmenufontsizedesc', 'theme_adaptable');
+    $radchoices = $from10to16;
+    $setting = new admin_setting_configselect($name, $title, $description, '14px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Navber Menu Font Size
+    $name = 'theme_adaptable/menufontsize';
+    $title = get_string('menufontsize', 'theme_adaptable');
+    $description = get_string('menufontsizedesc', 'theme_adaptable');
+    $radchoices = $from10to16;
+    $setting = new admin_setting_configselect($name, $title, $description, '14px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
 
     // Header Font Name.
     $name = 'theme_adaptable/fontheadername';

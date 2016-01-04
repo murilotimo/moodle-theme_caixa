@@ -152,7 +152,7 @@ div.signuppanel h2 {
 
 #above-header .headermenu .dropdown-menu a {
     font-family: [[setting:fontname]], sans-serif !important;
-    font-size: [[setting:headerprofilefontsize]];
+    font-size: [[setting:topmenufontsize]];
     color: [[setting:linkcolor]];    
 }
 
@@ -162,7 +162,7 @@ div.signuppanel h2 {
 
 #above-header .langdesc {
     color: [[setting:headertextcolor]];
-    font-size: [[setting:headerprofilefontsize]];
+    font-size: [[setting:topmenufontsize]];
 }
 
 #page-header {
@@ -282,7 +282,7 @@ div.signuppanel h2 {
 
 a.usermendrop {
     font-family: [[setting:fontname]], sans-serif !important;
-    font-size: [[setting:headerprofilefontsize]];
+    font-size: [[setting:topmenufontsize]];
 }
 
 #page-header .userimg {
@@ -295,13 +295,13 @@ a.usermendrop {
 .usermenu2.nav {
     margin-bottom: 0px;
     color: [[setting:headertextcolor]];
-    font-size: 12px;
+    font-size: [[setting:topmenufontsize]];
     padding-left: 10px;
 }
 
 .usermenu2.nav a.dropdown-toggle {
     font-family: [[setting:fontname]], sans-serif !important;
-    font-size: [[setting:headerprofilefontsize]];
+    font-size: [[setting:topmenufontsize]];
     color: [[setting:headertextcolor]];
 }
 
