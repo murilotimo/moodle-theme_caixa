@@ -524,9 +524,6 @@ $string['menubordercolordesc'] = 'Set a Main Menu border bottom colour';
 $string['menufontcolor'] = 'Main Menu font colour';
 $string['menufontcolordesc'] = 'Set a Main Menu font colour';
 
-$string['menufonthovercolor'] = 'Main Menu font colour on hover';
-$string['menufonthovercolordesc'] = 'Set a Main Menu font colour on hover';
-
 $string['mobilemenubkcolor'] = 'Mobile Menu background colour';
 $string['mobilemenubkcolordesc'] = 'Set the Main Menu background colour on mobile devices (collapsed)';
 

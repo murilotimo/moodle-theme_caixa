@@ -161,15 +161,6 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Main menu text hover color.
-    $name = 'theme_adaptable/menufonthovercolor';
-    $title = get_string('menufonthovercolor', 'theme_adaptable');
-    $description = get_string('menufonthovercolordesc', 'theme_adaptable');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#3c469c', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     // Main menu bottom border color.
     $name = 'theme_adaptable/menubordercolor';
     $title = get_string('menubordercolor', 'theme_adaptable');
