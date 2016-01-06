@@ -19,7 +19,7 @@
  *
  * @package    theme
  * @subpackage adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -30,20 +30,20 @@ $left = theme_adaptable_get_block_side();
 ?>
 
 <div class="container outercont">
-    <div id="page-content" class="row-fluid">    
-        <?php echo $OUTPUT->page_navbar(false); ?>    
+    <div id="page-content" class="row-fluid">
+        <?php echo $OUTPUT->page_navbar(false); ?>
 <?php
 if ($left == 1) {
             echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
 }
         ?>
-        <section id="region-main" class="span9 
+        <section id="region-main" class="span9
         <?php if ($left) {
             echo ' ';
 } else {
             echo 'desktop-first-column';
 } ?> ">
-        
+
             <?php
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();

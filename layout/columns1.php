@@ -19,7 +19,7 @@
  *
  * @package    theme
  * @subpackage adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -30,8 +30,8 @@ require_once(dirname(__FILE__) . '/includes/header.php');
 ?>
 
 <div class="container outercont">
-    <div id="page-content" class="row-fluid">        
-            <?php echo $OUTPUT->page_navbar(true); ?>        
+    <div id="page-content" class="row-fluid">
+            <?php echo $OUTPUT->page_navbar(true); ?>
         <section id="region-main" class="span12">
             <?php
             echo $OUTPUT->course_content_header();

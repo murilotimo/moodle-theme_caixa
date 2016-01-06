@@ -19,7 +19,7 @@
  *
  * @package    theme
  * @subpackage adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -196,7 +196,7 @@ if ($hasp1 || $hasp2 || $hasp3 || $hasp4 || $hasp5) {
 <?php
     }
 ?>
-	</ul>
+  </ul>
 </div>
 </div>
 
@@ -291,7 +291,7 @@ if (!empty($PAGE->theme->settings->frontpagemarketenabled)) {
     if ($hasmarket4) {
 ?>
     <div class="<?php echo "$marketclass";?> first">
-	   <?php echo $OUTPUT->get_setting('market4', 'format_html');?>
+     <?php echo $OUTPUT->get_setting('market4', 'format_html');?>
     </div>
 <?php
     }
@@ -334,7 +334,7 @@ if (!empty($PAGE->theme->settings->frontpagemarketenabled)) {
 <?php
         if ($hasmarket6) { ?>
             <div class="<?php echo "$marketclass";?> first">
-	               <?php echo $OUTPUT->get_setting('market6', 'format_html');?>
+                 <?php echo $OUTPUT->get_setting('market6', 'format_html');?>
             </div>
 <?php
         }
@@ -343,7 +343,7 @@ if (!empty($PAGE->theme->settings->frontpagemarketenabled)) {
 <?php
         if ($hasmarket7) { ?>
             <div class="<?php echo "$marketclass";?> first">
-	               <?php echo $OUTPUT->get_setting('market7', 'format_html');?>
+                 <?php echo $OUTPUT->get_setting('market7', 'format_html');?>
             </div>
     <?php
         }
@@ -352,7 +352,7 @@ if (!empty($PAGE->theme->settings->frontpagemarketenabled)) {
 <?php
         if ($hasmarket8) { ?>
             <div class="<?php echo "$marketclass";?> first">
-	               <?php echo $OUTPUT->get_setting('market8', 'format_html');?>
+                 <?php echo $OUTPUT->get_setting('market8', 'format_html');?>
             </div>
 <?php
         }
@@ -395,14 +395,14 @@ if (!empty($PAGE->theme->settings->frontpagemarketenabled)) {
 
         if ($hasmarket10) { ?>
             <div class="<?php echo "$marketclass";?> first">
-	               <?php echo $OUTPUT->get_setting('market10', 'format_html');?>
+                 <?php echo $OUTPUT->get_setting('market10', 'format_html');?>
             </div>
 <?php
         }
 
         if ($hasmarket11) { ?>
             <div class="<?php echo "$marketclass";?> first">
-	            <?php echo $OUTPUT->get_setting('market11', 'format_html');?>
+              <?php echo $OUTPUT->get_setting('market11', 'format_html');?>
             </div>
 <?php
         }

@@ -19,7 +19,7 @@
  *
  * @package    theme
  * @subpackage adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -910,6 +910,6 @@ $borderstyles = array(
 );
 
 $htmltarget = array(
-	'_blank' => 'New Window',
-	'_self' => 'Same Window'
+  '_blank' => 'New Window',
+  '_self' => 'Same Window'
 );

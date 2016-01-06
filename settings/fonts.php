@@ -19,7 +19,7 @@
  *
  * @package    theme
  * @subpackage adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -80,8 +80,8 @@
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#333333', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
-    // Top Menu Font Size
+
+    // Top Menu Font Size.
     $name = 'theme_adaptable/topmenufontsize';
     $title = get_string('topmenufontsize', 'theme_adaptable');
     $description = get_string('topmenufontsizedesc', 'theme_adaptable');
@@ -89,8 +89,8 @@
     $setting = new admin_setting_configselect($name, $title, $description, '14px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
-    // Navber Menu Font Size
+
+    // Navber Menu Font Size.
     $name = 'theme_adaptable/menufontsize';
     $title = get_string('menufontsize', 'theme_adaptable');
     $description = get_string('menufontsizedesc', 'theme_adaptable');
@@ -98,7 +98,7 @@
     $setting = new admin_setting_configselect($name, $title, $description, '14px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-    
+
 
     // Header Font Name.
     $name = 'theme_adaptable/fontheadername';

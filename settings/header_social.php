@@ -19,7 +19,7 @@
  *
  * @package    theme
  * @subpackage adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -60,17 +60,17 @@
     $setting = new admin_setting_configselect($name, $title, $description, '1.8%', $from0to2point5percent);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
+
     $name = 'theme_adaptable/socialtarget';
     $title = get_string('socialtarget', 'theme_adaptable');
     $description = get_string('socialtargetdesc', 'theme_adaptable');
     $setting = new admin_setting_configselect($name, $title, $description, '_self', $htmltarget);
     $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);	
+    $temp->add($setting);
 
     $name = 'theme_adaptable/socialiconlist';
     $title = get_string('socialiconlist', 'theme_adaptable');
-	$default = 'http://facebook.com/|Facebook|fa-facebook-square';
+  $default = 'http://facebook.com/|Facebook|fa-facebook-square';
     $description = get_string('socialiconlistdesc', 'theme_adaptable');
     $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW, '50', '10');
     $temp->add($setting);

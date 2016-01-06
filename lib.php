@@ -19,7 +19,7 @@
  *
  * @package    theme
  * @subpackage adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -118,7 +118,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:menufontsize]]' => '14px',
         '[[setting:topmenufontsize]]' => '14px',
         '[[setting:menubkcolor]]' => '#ffffff',
-        '[[setting:menufontcolor]]' => '#444444',        
+        '[[setting:menufontcolor]]' => '#444444',
         '[[setting:menubordercolor]]' => '#80cbc4',
         '[[setting:mobilemenubkcolor]]' => '#F9F9F9',
         '[[setting:mobilemenufontcolor]]' => '#000000',
@@ -171,14 +171,14 @@ function theme_adaptable_process_css($css, $theme) {
             $defaults['[[setting:'.$key.']]'] = $val;
         }
     }
-	
-	$homebkg = '';
+
+    $homebkg = '';
     if (!empty($theme->settings->homebk)) {
-    	$homebkg = $theme->setting_file_url('homebk', 'homebk');
-		$homebkg = 'background-image: url("' . $homebkg . '");';
-	}	
-	$defaults['[[setting:homebkg]]'] = $homebkg;
-		
+        $homebkg = $theme->setting_file_url('homebk', 'homebk');
+        $homebkg = 'background-image: url("' . $homebkg . '");';
+    }
+    $defaults['[[setting:homebkg]]'] = $homebkg;
+
     // Replace the CSS with values from the $defaults array.
     $css = strtr($css, $defaults);
     if (empty($theme->settings->tilesshowallcontacts) || $theme->settings->tilesshowallcontacts == false) {
