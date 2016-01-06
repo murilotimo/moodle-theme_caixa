@@ -32,7 +32,7 @@ defined('MOODLE_INTERNAL') || die;
 
 if (is_siteadmin()) {
     // Adaptable theme settings page.
-    $ADMIN->add('themes', new admin_category('theme_adaptable', 'adaptable'));
+    $ADMIN->add('themes', new admin_category('theme_adaptable', 'Adaptable'));
 
     include(dirname(__FILE__) . '/settings/array_definitions.php');
     include(dirname(__FILE__) . '/settings/colors.php');
