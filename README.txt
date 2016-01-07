@@ -1,6 +1,6 @@
-Adaptable is a highly customisable responsive two column theme based on the popular BCU theme adding:
+Adaptable is a highly customisable responsive two column moodle theme based on the popular BCU theme adding:
 
-* Customisable fonts
+* Customisable fonts (Google Fonts)
 * Fully customisable colors
 * Fully customisable block styles (including icons)
 * Fully customisable buttons
