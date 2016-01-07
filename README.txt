@@ -1,3 +1,29 @@
+Adaptable is a highly customisable responsive two column theme based on the popular BCU theme adding:
+
+•    Customisable fonts
+•    Fully customisable colors
+•    Fully customisable block styles (including icons)
+•    Fully customisable buttons
+•    Additional header navigation
+•    News Ticker
+•    Alternative jQuery slider
+•    Alternative front page course styles
+•    Additional marketing blocks
+•    Additional layout settings for width, slider width, padding of various elements
+•    Social icons
+•    Mobile settings (customise how theme looks on mobile devices)
+•    Dismissible bootstrap alerts (can be made persistent by specifying a “key” which is stored in user preferences)
+•    Option to add login form in header on front page
+•    Favicon uploader
+
+In addition many fields (menus, news items, alerts and help links) can be targeted using custom profile fields, thus it is possible to present different users with different nagivation items and notices.
+It is also possible for individual users to customise where they want top menu navigation to appear (disable, home pages only, sitewide) using custom profile fields.
+
+Adaptable has a lot of settings and may seem daunting at first, our advice is to simply install with the default settings and play with it afterwards.
+
+With a little time you should be able to setup an attractive Moodle site with a high degree of individuality without without knowing any CSS.
+
+
 ======================================
 HTML code for settings and block areas
 ======================================
