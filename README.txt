@@ -1,20 +1,20 @@
 Adaptable is a highly customisable responsive two column theme based on the popular BCU theme adding:
 
-•    Customisable fonts
-•    Fully customisable colors
-•    Fully customisable block styles (including icons)
-•    Fully customisable buttons
-•    Additional header navigation
-•    News Ticker
-•    Alternative jQuery slider
-•    Alternative front page course styles
-•    Additional marketing blocks
-•    Additional layout settings for width, slider width, padding of various elements
-•    Social icons
-•    Mobile settings (customise how theme looks on mobile devices)
-•    Dismissible bootstrap alerts (can be made persistent by specifying a “key” which is stored in user preferences)
-•    Option to add login form in header on front page
-•    Favicon uploader
+* Customisable fonts
+* Fully customisable colors
+* Fully customisable block styles (including icons)
+* Fully customisable buttons
+* Additional header navigation
+* News Ticker
+* Alternative jQuery slider
+* Alternative front page course styles
+* Additional marketing blocks
+* Additional layout settings for width, slider width, padding of various elements
+* Social icons
+* Mobile settings (customise how theme looks on mobile devices)
+* Dismissible bootstrap alerts (can be made persistent by specifying a “key” which is stored in user preferences)
+* Option to add login form in header on front page
+* Favicon uploader
 
 In addition many fields (menus, news items, alerts and help links) can be targeted using custom profile fields, thus it is possible to present different users with different nagivation items and notices.
 It is also possible for individual users to customise where they want top menu navigation to appear (disable, home pages only, sitewide) using custom profile fields.
@@ -28,13 +28,12 @@ With a little time you should be able to setup an attractive Moodle site with a 
 HTML code for settings and block areas
 ======================================
 
-In this document you will find some code snippets to help you to customize the Info Box and the Marketing Blocks
+Here you will find some code samples to help you to customize the Info Box and the Marketing Blocks
 
-You can insert any HTML tag to customize the frontpage blocks. Use a <div> as container and add the height to keep
-the same value in all the blocks.
+You can insert any HTML tag to customize the frontpage blocks. Use a <div> as a main container and add the height to keep the same value in all the blocks.
 
-The Font Awesome icons set is available in http://fortawesome.github.io/Font-Awesome/icons/. You can insert any
-of them and following the examples http://fortawesome.github.io/Font-Awesome/examples/
+The Font Awesome icons set is available in http://fortawesome.github.io/Font-Awesome/icons/. You can insert any of them and following the examples http://fortawesome.github.io/Font-Awesome/examples/
+
 
 Front Page Slider Styles
 ------------------------
