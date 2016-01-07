@@ -17,8 +17,7 @@
 /**
  * Version details
  *
- * @package    theme
- * @subpackage adaptable
+ * @package    theme_adaptable
  * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -87,14 +86,14 @@ $string['frontpagerendereroption4'] = 'Coventry Tiles';
 $string['tickersettings'] = 'News Ticker';
 $string['tickersettingsheading'] = 'Setup News Ticker on Front Page. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['tickerdesc'] = 'Here you can set a news ticker to run across the front page of your Moodle site.
-	It is intended as a less intrusive alternative to the slider taking up very little space.
-	To setup your ticker simply entere a bulleted list and include any hyperlinks you need to in that text.
-	Note: you must not put ul tags around our list, only li. Moodles text editor tends to add ul tags.
-	If your ticker does not load properly switch to HTML view and ensure you have only li tags:
-	<pre>
-	&lt;li&gt;News item one.....&lt;/li&gt;
-	&lt;li&gt;News item two.....&lt;/li&gt;
-	</pre>';
+  It is intended as a less intrusive alternative to the slider taking up very little space.
+  To setup your ticker simply entere a bulleted list and include any hyperlinks you need to in that text.
+  Note: you must not put ul tags around our list, only li. Moodles text editor tends to add ul tags.
+  If your ticker does not load properly switch to HTML view and ensure you have only li tags:
+  <pre>
+  &lt;li&gt;News item one.....&lt;/li&gt;
+  &lt;li&gt;News item two.....&lt;/li&gt;
+  </pre>';
 
 $string['tickerdefault'] = 'No news items to display';
 
