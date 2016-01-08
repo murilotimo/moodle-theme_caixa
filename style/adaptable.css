@@ -819,6 +819,8 @@ input[type="radio"], input[type="checkbox"] {
 
 #region-main {
   margin-top: 0px;
+  background: [[setting:backcolor]];
+  padding: 4px;
 }
 
 #region-main #coursesearch .btn {
