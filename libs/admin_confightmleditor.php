@@ -24,9 +24,16 @@
  *
  */
 
-// Special thanks to Iban Cardona i Subiela (http://icsbcn.blogspot.com.es/2015/03/use-image-repository-in-theme-settings.html)
-// This post laid the ground work for most of the code featured in this file.
-
+/**
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
+ * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * Class to configure html editor for admin settings allowing use of repositories
+ *
+ * Special thanks to Iban Cardona i Subiela (http://icsbcn.blogspot.com.es/2015/03/use-image-repository-in-theme-settings.html)
+ * This post laid the ground work for most of the code featured in this file.
+ */
 class adaptable_setting_confightmleditor extends admin_setting_configtext {
     private $rows;
     private $cols;
@@ -34,11 +41,16 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
     private $filearea;
 
     /**
+     * Constructor
+     *
      * @param string $name
      * @param string $visiblename
      * @param string $description
      * @param mixed $defaultsetting string or array
      * @param mixed $paramtype
+     * @param int $cols
+     * @param int $rows
+     * @param string $filearea
      */
     public function __construct($name, $visiblename, $description, $defaultsetting,
                                 $paramtype=PARAM_RAW, $cols='60', $rows='8',
@@ -50,6 +62,9 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
         editors_head_setup();
     }
 
+    /**
+     * get options
+     */
     private function get_options() {
         global $USER;
 
@@ -147,6 +162,11 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
         $this->description, true, '', $defaultinfo, $query);
     }
 
+    /**
+     * Handle file writes to repository
+     *
+     * @param string $data
+     */
     public function write_setting($data) {
         global $CFG;
 

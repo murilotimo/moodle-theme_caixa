@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * Version details
@@ -382,6 +382,9 @@ $string['linkhoverdesc'] = 'Set the colour of links (on hover) in the theme, use
 
 $string['backcolor'] = 'Background colour';
 $string['backcolordesc'] = 'Set the background colour.';
+
+$string['regionmaincolor'] = 'Main region colour';
+$string['regionmaincolordesc'] = 'Set the background colour for main content area.';
 
 $string['maincolor'] = 'Main colour';
 $string['maincolordesc'] = 'Main colour for blocks and footer.';

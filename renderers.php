@@ -28,6 +28,13 @@ require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot . "/course/renderer.php");
 require_once($CFG->libdir. '/coursecatlib.php');
 
+/**
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
+ * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * Core renderers for Adaptable theme based on BCU Theme
+ */
 class theme_adaptable_core_renderer extends core_renderer {
     /** @var custom_menu_item language The language menu if created */
     protected $language = null;
@@ -44,6 +51,14 @@ class theme_adaptable_core_renderer extends core_renderer {
         return parent::favicon();
     }
 
+    /**
+     * Returns settings as formatted text
+     *
+     * @param string $setting
+     * @param string $format = false
+     * @param string $theme = null
+     * @return string
+     */
     public function get_setting($setting, $format = false, $theme = null) {
         if (empty($theme)) {
             $theme = theme_config::load('adaptable');
@@ -62,12 +77,24 @@ class theme_adaptable_core_renderer extends core_renderer {
         }
     }
 
+    /**
+     * Returns the user menu
+     *
+     * @param $user = null
+     * @param $withlinks = null
+     * @return the user menu
+     */
     public function user_menu($user = null, $withlinks = null) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
         return $this->render_user_menu($usermenu);
     }
 
+    /**
+     * Returns list of alert messages for the user
+     *
+     * @return string
+     */
     public function get_alert_messages() {
         global $PAGE;
         $alerts = '';
@@ -119,6 +146,14 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $alerts;
     }
 
+    /**
+     * Returns formatted alert message for ticker
+     *
+     * @param string $text message text
+     * @param string $type alert type
+     * @param int $alertindex
+     * @param int $alertkey
+     */
     public function get_alert_message($text, $type, $alertindex, $alertkey) {
         if ($alertkey == '' || theme_adaptable_get_alertkey($alertindex) == $alertkey) {
             return '';
@@ -133,6 +168,15 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $retval;
     }
 
+    /**
+     * Checks the users access to alerts
+     * @param string $access the kind of access rule applied
+     * @param string $profilefield the custom profile filed to check
+     * @param string $profilevalue the expected value to be found in users profile
+     * @param string $alertsession a token to be used to store access in session
+     *
+     * @return boolean
+     */
     public function get_alert_access($access, $profilefield, $profilevalue, $alertsession) {
         $retval = false;
         switch ($access) {
@@ -158,6 +202,12 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $retval;
     }
 
+    /**
+     * Returns FA icon depending on the type of alert selected
+     *
+     * @param string $alertclassglobal     *
+     * @return string
+     */
     public function alert_icon($alertclassglobal) {
         switch ($alertclassglobal) {
             case "success":
@@ -173,6 +223,11 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $alerticonglobal;
     }
 
+    /**
+     * Returns Google Analytics code if analytics are enabled
+     *
+     * @return string
+     */
     public function get_analytics() {
         global $PAGE;
         $analytics = '';
@@ -224,7 +279,6 @@ EOT;
      * @return string HTML the button
      * Written by G J Barnard
      */
-
     public function edit_button(moodle_url $url) {
         $url->param('sesskey', sesskey());
         if ($this->page->user_is_editing()) {
@@ -242,6 +296,12 @@ EOT;
             html_writer::end_tag('i') . $title, array('href' => $url, 'class' => 'btn ' . $btn, 'title' => $title));
     }
 
+    /**
+     * Returns the upper user menu
+     *
+     * @param custom_menu $menu
+     * @return string
+     */
     protected function render_user_menu(custom_menu $menu) {
         global $CFG, $USER, $DB, $OUTPUT;
         $addlangmenu = true;
@@ -315,6 +375,12 @@ EOT;
         return $content.html_writer::end_tag('ul');
     }
 
+    /**
+     * Returns formats messages in the header with user profile images
+     *
+     * @param custom_menu $menu
+     * @return string
+     */
     protected function process_user_messages() {
         $messagelist = array();
         foreach ($usermessages as $message) {
@@ -334,6 +400,12 @@ EOT;
         return $messagelist;
     }
 
+    /**
+     * Get list of user messages if there are any to process
+     *
+     * @param custom_menu $menu
+     * @return array
+     */
     protected function get_user_messages() {
         global $USER, $DB;
         $messagelist = array();
@@ -368,6 +440,12 @@ EOT;
         return $messagelist;
     }
 
+    /**
+     * Process user messages
+     *
+     * @param array $message
+     * @return array
+     */
     protected function process_message($message) {
         global $DB, $USER;
         $messagecontent = new stdClass();
@@ -398,9 +476,12 @@ EOT;
         return $messagecontent;
     }
 
-    /*
+    /**
      * This renders a notification message.
      * Uses bootstrap compatible html.
+     *
+     * @param string $message
+     * @param string $classes for css
      */
     public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);
@@ -421,6 +502,11 @@ EOT;
         return "<div class=\"$type\">$message</div>";
     }
 
+    /**
+     * Returns html to render socialicons
+     *
+     * @return string
+     */
     public function socialicons() {
         global $CFG, $PAGE;
 
@@ -446,6 +532,11 @@ EOT;
         return $retval;
     }
 
+    /**
+     * Returns html to render news ticker
+     *
+     * @return string
+     */
     public function get_news_ticker() {
         global $PAGE;
         $retval = '';
@@ -488,11 +579,12 @@ EOT;
         return $retval;
     }
 
-    /*
+    /**
      * This renders the navbar.
      * Uses bootstrap compatible html.
+     *
+     * @param boolean $addbutton
      */
-
     public function page_navbar($addbutton = false) {
         global $PAGE;
         $retval = '';
@@ -510,6 +602,11 @@ EOT;
         return $retval;
     }
 
+    /**
+     * Returns html to render navigation bar
+     *
+     * @return string
+     */
     public function navbar() {
         $items = $this->page->navbar->get_items();
         $breadcrumbs = array();
@@ -523,6 +620,11 @@ EOT;
         return $title . "<ul class=\"breadcrumb\">$listitems</ul>";
     }
 
+    /**
+     * Returns html to render footer
+     *
+     * @return string
+     */
     public function footer() {
         global $CFG;
 
@@ -554,6 +656,11 @@ EOT;
         return $output . $footer;
     }
 
+    /**
+     * Returns html to render main navigation menu
+     *
+     * @return string
+     */
     public function navigation_menu() {
         global $PAGE, $COURSE, $OUTPUT, $CFG;
         $menu = new custom_menu();
@@ -687,6 +794,11 @@ EOT;
         return $this->render_custom_menu($menu);
     }
 
+    /**
+     * Returns html to render tools menu in main navigation bar
+     *
+     * @return string
+     */
     public function tools_menu() {
         global $PAGE;
         $class = "<i class='fa fa-wrench'></i><span class='menutitle'>";
@@ -723,6 +835,11 @@ EOT;
         return $retval;
     }
 
+    /**
+     * Returns html to render top menu items
+     *
+     * @return string
+     */
     public function get_top_menus() {
         global $PAGE, $COURSE;
         $menus = '';
@@ -774,6 +891,11 @@ EOT;
         return $retval;
     }
 
+    /**
+     * Checks menu visibility where setup to allow users to control via custom profile setting
+     *
+     * @return boolean
+     */
     public function check_menu_user_visibility() {
         global $PAGE, $USER, $COURSE;
         $uservalue = '';
@@ -806,6 +928,11 @@ EOT;
         return true;
     }
 
+    /**
+     * Check users menu visibility settings, will store in session to avaoid repeated loading of profile data
+     *
+     * @return boolean
+     */
     public function get_user_visibility($profilefield) {
         global $USER, $CFG;
         $uservisibility = '';
@@ -819,6 +946,14 @@ EOT;
         return $uservisibility;
     }
 
+    /**
+     * Checks menu access based on admin settings and a users custom profile fields
+     *
+     * @param string $ftype the custom profile field
+     * @param string $setvalue the expected value a user must have in their profile field
+     * @param string $menu a token to identify the menu used to store access in session
+     * @return boolean
+     */
     public function check_menu_access($ftype, $setvalue, $menu) {
         global $PAGE, $USER, $CFG;
         $usersvalue = 'default-zz'; // Just want a value that will not be matched by accident.
@@ -857,6 +992,16 @@ EOT;
         return false;
     }
 
+    /**
+     * Parses / wraps custom menus in HTML
+     *
+     * @param string $menu
+     * @param string $label
+     * @param string $class
+     * @param string $close
+     *
+     * @return string
+     */
     public function parse_custom_menu($menu, $label, $class = ' </i>', $close = '') {
         $custommenuitems = $class . $label. $close . "|#|".$label."\n";
         $arr = explode("\n", $menu);
@@ -870,6 +1015,11 @@ EOT;
         return $custommenuitems;
     }
 
+    /**
+     * Hide tools menu in forum to make room for forum search optoin
+     *
+     * @return boolean
+     */
     public function hideinforum() {
         global $PAGE;
         $hidelinks = false;
@@ -881,12 +1031,26 @@ EOT;
         return $hidelinks;
     }
 
+    /**
+     * Wrap html round custom menu
+     *
+     * @param string $custommenu
+     * @param string $classno
+     *
+     * @return string
+     */
     public function wrap_custom_menu_top($custommenu, $classno) {
         $retval = '<div class="dropdown pull-right newmenus newmenu$classno">';
         $retval .= $custommenu;
         $retval .= '</div>';
+        return $retval;
     }
 
+    /**
+     * Returns language menu
+     *
+     * @return string
+     */
     public function lang_menu() {
         global $CFG;
         $langmenu = new custom_menu();
@@ -917,6 +1081,11 @@ EOT;
         return $this->render_custom_menu($langmenu);
     }
 
+    /**
+     * Returns html for cusotm menu
+     *
+     * @return array
+     */
     public function custom_menu($custommenuitems = '') {
         global $CFG;
 
@@ -927,10 +1096,13 @@ EOT;
         return $this->render_custom_menu($custommenu);
     }
 
-    /*
-     * This renders the bootstrap top menu.
-     *
+    /**
+     * This renders the bootstrap top menu.     *
      * This renderer is needed to enable the Bootstrap style navigation.
+     *
+     * @param custom_menu $menu
+     * @param string $wrappre
+     * @param string $wrappost
      */
     protected function render_custom_menu(custom_menu $menu, $wrappre = '', $wrappost = '') {
         global $CFG;
@@ -1069,6 +1241,13 @@ EOT;
     }
 }
 
+/**
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
+ * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * Coourse renderers for Adaptable theme based on BCU Theme
+ */
 class theme_adaptable_core_course_renderer extends core_course_renderer {
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG, $OUTPUT, $PAGE;

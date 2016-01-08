@@ -356,7 +356,7 @@ if (!isloggedin() || isguestuser()) {
 ?>
 </div>
 
-<div style="float: right; position: relative; display: inline; margin-left: 15px;">
+<div style="float: right; position: relative; display: inline; margin-left: 15px; height:20px;">
 <?php
 if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu']) {
     echo $OUTPUT->lang_menu();
