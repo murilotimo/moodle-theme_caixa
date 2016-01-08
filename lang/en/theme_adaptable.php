@@ -383,6 +383,9 @@ $string['linkhoverdesc'] = 'Set the colour of links (on hover) in the theme, use
 $string['backcolor'] = 'Background colour';
 $string['backcolordesc'] = 'Set the background colour.';
 
+$string['regionmaincolor'] = 'Main region colour';
+$string['regionmaincolordesc'] = 'Set the background colour for main content area.';
+
 $string['maincolor'] = 'Main colour';
 $string['maincolordesc'] = 'Main colour for blocks and footer.';
 

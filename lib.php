@@ -56,6 +56,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:linkhover]]' => '#009688',
         '[[setting:maincolor]]' => '#009688',
         '[[setting:backcolor]]' => '#FFFFFF',
+        '[[setting:regionmaincolor]]' => '#FFFFFF',
         '[[setting:rendereroverlaycolor]]' => '#009688',
         '[[setting:rendereroverlayfontcolor]]' => '#FFFFFF',
         '[[setting:buttoncolor]]' => '#009688',

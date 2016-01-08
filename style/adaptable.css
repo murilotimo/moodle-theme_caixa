@@ -819,7 +819,7 @@ input[type="radio"], input[type="checkbox"] {
 
 #region-main {
   margin-top: 0px;
-  background: [[setting:backcolor]];
+  background: [[setting:regionmaincolor]];
   padding: 4px;
 }
 

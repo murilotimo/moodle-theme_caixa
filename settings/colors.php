@@ -55,6 +55,15 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Mian region background color.
+    $name = 'theme_adaptable/regionmaincolor';
+    $title = get_string('regionmaincolor', 'theme_adaptable');
+    $description = get_string('regionmaincolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Link color.
     $name = 'theme_adaptable/linkcolor';
     $title = get_string('linkcolor', 'theme_adaptable');
