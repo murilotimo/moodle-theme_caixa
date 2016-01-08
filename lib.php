@@ -209,6 +209,12 @@ function theme_adaptable_set_customcss($css, $customcss) {
     return $css;
 }
 
+/**
+ * Set display of course contacts on front page tiles
+ * @param string $css
+ * @param string $display
+ * @return $string
+ */
 function theme_adaptable_set_tilesshowallcontacts($css, $display) {
     $tag = '[[setting:tilesshowallcontacts]]';
     if ($display) {
@@ -220,21 +226,28 @@ function theme_adaptable_set_tilesshowallcontacts($css, $display) {
     return $css;
 }
 
-
+/**
+ * Set user prefernces for zoom (show / hide block) function
+ * @param moodle_page $page
+ * @return void
+ */
 function theme_adaptable_initialise_zoom(moodle_page $page) {
     user_preference_allow_ajax_update('theme_adaptable_zoom', PARAM_TEXT);
     $page->requires->yui_module('moodle-theme_adaptable-zoom', 'M.theme_adaptable.zoom.init', array());
 }
 
 /**
- * Get the user preference for the zoom function.
+ * Get the user preference for the zoom (show / hide block) function.
  */
 function theme_adaptable_get_zoom() {
     return get_user_preferences('theme_adaptable_zoom', '');
 }
 
-// Full width funcs.
-
+/**
+ * Set the user preference for full screen
+ * @param moodle_page $page
+ * @return void
+ */
 function theme_adaptable_initialise_full(moodle_page $page) {
     user_preference_allow_ajax_update('theme_adaptable_full', PARAM_TEXT);
     $page->requires->yui_module('moodle-theme_adaptable-full', 'M.theme_adaptable.full.init', array());
@@ -250,13 +263,17 @@ function theme_adaptable_get_full() {
 /**
  * Get the key of the last closed alert for a specific alert index.
  * This will be used in the renderer to decide whether to include the alert or not
+ * @param int $alertindex
  */
 function theme_adaptable_get_alertkey($alertindex) {
     user_preference_allow_ajax_update('theme_adaptable_alertkey' . $alertindex, PARAM_TEXT);
     return get_user_preferences('theme_adaptable_alertkey' . $alertindex, '');
 }
 
-
+/**
+ * Get user preference for side block
+ * Note: does not seem to be called / used within theme, may need to be removed
+ */
 function theme_adaptable_get_block_side() {
     static $theme;
     if (empty($theme)) {
@@ -265,6 +282,11 @@ function theme_adaptable_get_block_side() {
     return get_user_preferences('theme_adaptable_block_side', $theme->settings->blockside);
 }
 
+/**
+ * Get HTML for settings
+ * @param renderer_base $output
+ * @param moodle_page $page
+*/
 function theme_adaptable_get_html_for_settings(renderer_base $output, moodle_page $page) {
     global $CFG;
     $return = new stdClass;
@@ -288,6 +310,11 @@ function theme_adaptable_get_html_for_settings(renderer_base $output, moodle_pag
     return $return;
 }
 
+/**
+ * Get theme setting
+ * @param string $setting
+ * @param string $format = false
+*/
 function theme_adaptable_get_setting($setting, $format = false) {
     static $theme;
     if (empty($theme)) {
@@ -359,6 +386,9 @@ function theme_adaptable_pluginfile($course, $cm, $context, $filearea, $args, $f
     }
 }
 
+/**
+ * Get course activities for this course menu
+*/
 function theme_adaptable_get_course_activities() {
     GLOBAL $CFG, $PAGE, $OUTPUT;
     // A copy of block_activity_modules.
@@ -393,12 +423,20 @@ function theme_adaptable_get_course_activities() {
     return $modfullnames;
 }
 
+/**
+ * Get formatted performance info showing only page load time
+ * @param string $param
+*/
 function theme_adaptable_performance_output($param) {
     $html = html_writer::tag('span', get_string('loadtime', 'theme_adaptable').' '. round($param['realtime'], 2) . ' ' .
             get_string('seconds'), array('id' => 'load'));
     return $html;
 }
 
+/**
+ * Initialize page
+ * @param moodle_page $page
+*/
 function theme_adaptable_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
@@ -415,6 +453,10 @@ function theme_adaptable_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('adaptable', 'theme_adaptable');
 }
 
+/**
+ * Strip full site title from header
+ * @param string $heading
+*/
 function theme_adaptable_remove_site_fullname($heading) {
     global $SITE, $PAGE;
     if (strpos($PAGE->pagetype, 'course-view-') === 0) {

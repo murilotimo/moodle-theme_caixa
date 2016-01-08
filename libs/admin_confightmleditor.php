@@ -24,9 +24,11 @@
  *
  */
 
-// Special thanks to Iban Cardona i Subiela (http://icsbcn.blogspot.com.es/2015/03/use-image-repository-in-theme-settings.html)
-// This post laid the ground work for most of the code featured in this file.
-
+/**
+ * Class to configure html editor for admin settings allowing use of repositories
+ * Special thanks to Iban Cardona i Subiela (http://icsbcn.blogspot.com.es/2015/03/use-image-repository-in-theme-settings.html)
+ * This post laid the ground work for most of the code featured in this file.
+ */
 class adaptable_setting_confightmleditor extends admin_setting_configtext {
     private $rows;
     private $cols;
@@ -50,6 +52,9 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
         editors_head_setup();
     }
 
+/**
+ * get options
+ */
     private function get_options() {
         global $USER;
 
@@ -147,6 +152,9 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
         $this->description, true, '', $defaultinfo, $query);
     }
 
+    /**
+     * @param string $data
+     */
     public function write_setting($data) {
         global $CFG;
 
