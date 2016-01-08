@@ -33,11 +33,20 @@
  *
  * Special thanks to Iban Cardona i Subiela (http://icsbcn.blogspot.com.es/2015/03/use-image-repository-in-theme-settings.html)
  * This post laid the ground work for most of the code featured in this file.
+ *
  */
 class adaptable_setting_confightmleditor extends admin_setting_configtext {
+
+    /** @var int number of rows */
     private $rows;
+
+    /** @var int number of columns */
     private $cols;
+
+    /** @var string options - looks like this unused and should be removed */
     private $options;
+
+    /** @var string filearea - filearea within Moodle repository API */
     private $filearea;
 
     /**

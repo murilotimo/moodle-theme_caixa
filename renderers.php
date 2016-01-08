@@ -80,8 +80,8 @@ class theme_adaptable_core_renderer extends core_renderer {
     /**
      * Returns the user menu
      *
-     * @param $user = null
-     * @param $withlinks = null
+     * @param string $user = null
+     * @param string $withlinks = null
      * @return the user menu
      */
     public function user_menu($user = null, $withlinks = null) {
@@ -174,7 +174,6 @@ class theme_adaptable_core_renderer extends core_renderer {
      * @param string $profilefield the custom profile filed to check
      * @param string $profilevalue the expected value to be found in users profile
      * @param string $alertsession a token to be used to store access in session
-     *
      * @return boolean
      */
     public function get_alert_access($access, $profilefield, $profilevalue, $alertsession) {
@@ -378,8 +377,7 @@ EOT;
     /**
      * Returns formats messages in the header with user profile images
      *
-     * @param custom_menu $menu
-     * @return string
+     * @return array
      */
     protected function process_user_messages() {
         $messagelist = array();
@@ -403,7 +401,6 @@ EOT;
     /**
      * Get list of user messages if there are any to process
      *
-     * @param custom_menu $menu
      * @return array
      */
     protected function get_user_messages() {
@@ -930,7 +927,7 @@ EOT;
 
     /**
      * Check users menu visibility settings, will store in session to avaoid repeated loading of profile data
-     *
+     * @param string $profilefield
      * @return boolean
      */
     public function get_user_visibility($profilefield) {
@@ -1084,6 +1081,7 @@ EOT;
     /**
      * Returns html for cusotm menu
      *
+     * @param string $custommenuitems = ''
      * @return array
      */
     public function custom_menu($custommenuitems = '') {
@@ -1103,6 +1101,7 @@ EOT;
      * @param custom_menu $menu
      * @param string $wrappre
      * @param string $wrappost
+     * @return string
      */
     protected function render_custom_menu(custom_menu $menu, $wrappre = '', $wrappost = '') {
         global $CFG;
@@ -1129,11 +1128,14 @@ EOT;
         return $content;
     }
 
-    /*
-     * This code renders the custom menu items for the
-     * bootstrap dropdown menu.
+    /**
+     * This code renders the custom menu items for the bootstrap dropdown menu.
+     *
+     * @param custom_menu_item $menunode
+     * @param int $level = 0
+     * @return string
      */
-    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
+    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0) {
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
@@ -1204,7 +1206,7 @@ EOT;
      * This function is called from {@link core_renderer::render_tabtree()}
      * and also it calls itself when printing the $tabobject subtree recursively.
      *
-     * @param tabobject $tabobject
+     * @param tabobject $tab
      * @return string HTML fragment
      */
     protected function render_tabobject(tabobject $tab) {
@@ -1223,11 +1225,23 @@ EOT;
         }
     }
 
+    /**
+     * Returns empty string
+     *
+     * @return string
+     */
     protected function theme_switch_links() {
         // We're just going to return nothing and fail nicely, whats the point in bootstrap if not for responsive?
         return '';
     }
 
+    /**
+     * Render blocks
+     * @param string $region
+     * @param array $classes
+     * @param string $tag
+     * @return string
+     */
     public function adaptableblocks($region, $classes = array(), $tag = 'aside') {
         $classes = (array)$classes;
         $classes[] = 'block-region';
@@ -1246,9 +1260,17 @@ EOT;
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * Coourse renderers for Adaptable theme based on BCU Theme
+ * Course renderers for Adaptable theme based on BCU Theme
  */
 class theme_adaptable_core_course_renderer extends core_course_renderer {
+    /**
+     * REnder course category box
+     *
+     * @param coursecat_helper $chelper
+     * @param string $course
+     * @param string $additionalclasses
+     * @return string
+     */
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG, $OUTPUT, $PAGE;
         $type = theme_adaptable_get_setting('frontpagerenderer');
@@ -1346,6 +1368,12 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
+    /**
+     * Returns enrolment icons
+     *
+     * @param string $course
+     * @return string
+     */
     protected function coursecat_coursebox_enrolmenticons($course) {
         $content = '';
         if ($icons = enrol_get_course_info_icons($course)) {
@@ -1358,8 +1386,18 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
-    // Type - 1 = No Overlay.
-    // Type - 2 = Overlay.
+
+     /**
+      * Returns course box content for cattegories
+      *
+      * Type - 1 = No Overlay.
+      * Type - 2 = Overlay.
+      *
+      * @param coursecat_helper $chelper
+      * @param string $course
+      * @param int $type = 3
+      * @return string
+      */
     protected function coursecat_coursebox_content(coursecat_helper $chelper, $course, $type=3) {
         global $CFG, $OUTPUT, $PAGE;
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
@@ -1470,6 +1508,13 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
+    /**
+     * Course search form
+     *
+     * @param string $value
+     * @param string $format
+     * @return string
+     */
     public function course_search_form($value = '', $format = 'plain') {
         static $count = 0;
         $formid = 'coursesearch';
@@ -1502,6 +1547,11 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         return $output;
     }
 
+    /**
+     * Frontpage course list
+     *
+     * @return string
+     */
     public function frontpage_my_courses() {
         global $USER, $CFG, $DB;
         $output = '';
