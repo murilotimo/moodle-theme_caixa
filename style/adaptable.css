@@ -1547,12 +1547,17 @@ line-height: normal;
     text-align: right;
 }
 
-#page-footer .validators, #page-footer .purgecaches, #page-footer .performanceinfo, #page-footer #load {
-    text-align: right;
+#page-footer .validators,
+#page-footer .purgecaches,
+#page-footer .performanceinfo,
+#page-footer #load {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 #load {
-    float: right;
+/*    float: right;*/
 }
 
 .purgecaches {
