@@ -286,7 +286,7 @@ function theme_adaptable_get_block_side() {
  * Get HTML for settings
  * @param renderer_base $output
  * @param moodle_page $page
-*/
+ */
 function theme_adaptable_get_html_for_settings(renderer_base $output, moodle_page $page) {
     global $CFG;
     $return = new stdClass;
@@ -314,7 +314,7 @@ function theme_adaptable_get_html_for_settings(renderer_base $output, moodle_pag
  * Get theme setting
  * @param string $setting
  * @param string $format = false
-*/
+ */
 function theme_adaptable_get_setting($setting, $format = false) {
     static $theme;
     if (empty($theme)) {
@@ -388,7 +388,7 @@ function theme_adaptable_pluginfile($course, $cm, $context, $filearea, $args, $f
 
 /**
  * Get course activities for this course menu
-*/
+ */
 function theme_adaptable_get_course_activities() {
     GLOBAL $CFG, $PAGE, $OUTPUT;
     // A copy of block_activity_modules.
@@ -426,7 +426,7 @@ function theme_adaptable_get_course_activities() {
 /**
  * Get formatted performance info showing only page load time
  * @param string $param
-*/
+ */
 function theme_adaptable_performance_output($param) {
     $html = html_writer::tag('span', get_string('loadtime', 'theme_adaptable').' '. round($param['realtime'], 2) . ' ' .
             get_string('seconds'), array('id' => 'load'));
@@ -436,7 +436,7 @@ function theme_adaptable_performance_output($param) {
 /**
  * Initialize page
  * @param moodle_page $page
-*/
+ */
 function theme_adaptable_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
@@ -456,7 +456,7 @@ function theme_adaptable_page_init(moodle_page $page) {
 /**
  * Strip full site title from header
  * @param string $heading
-*/
+ */
 function theme_adaptable_remove_site_fullname($heading) {
     global $SITE, $PAGE;
     if (strpos($PAGE->pagetype, 'course-view-') === 0) {

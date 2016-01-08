@@ -62,9 +62,9 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
         editors_head_setup();
     }
 
-/**
- * get options
- */
+    /**
+     * get options
+     */
     private function get_options() {
         global $USER;
 

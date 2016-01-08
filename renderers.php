@@ -52,13 +52,13 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 
     /**
-    * Returns settings as formatted text
-    *
-    * @param string $setting
-    * @param string $format = false
-    * @param string $theme = null
-    * @return string
-    */
+     * Returns settings as formatted text
+     *
+     * @param string $setting
+     * @param string $format = false
+     * @param string $theme = null
+     * @return string
+     */
     public function get_setting($setting, $format = false, $theme = null) {
         if (empty($theme)) {
             $theme = theme_config::load('adaptable');
@@ -78,12 +78,12 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 
     /**
-    * Returns the user menu
-    *
-    * @param $user = null
-    * @param $withlinks = null
-    * @return the user menu
-    */
+     * Returns the user menu
+     *
+     * @param $user = null
+     * @param $withlinks = null
+     * @return the user menu
+     */
     public function user_menu($user = null, $withlinks = null) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
@@ -91,10 +91,10 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 
     /**
-    * Returns list of alert messages for the user
-    *
-    * @return string
-    */
+     * Returns list of alert messages for the user
+     *
+     * @return string
+     */
     public function get_alert_messages() {
         global $PAGE;
         $alerts = '';
@@ -946,12 +946,12 @@ EOT;
         return $uservisibility;
     }
 
-     /**
+    /**
      * Checks menu access based on admin settings and a users custom profile fields
      *
-      * @param string $ftype the custom profile field
-      * @param string $setvalue the expected value a user must have in their profile field
-      * @param string $menu a token to identify the menu used to store access in session
+     * @param string $ftype the custom profile field
+     * @param string $setvalue the expected value a user must have in their profile field
+     * @param string $menu a token to identify the menu used to store access in session
      * @return boolean
      */
     public function check_menu_access($ftype, $setvalue, $menu) {
