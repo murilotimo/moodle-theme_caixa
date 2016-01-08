@@ -214,7 +214,7 @@
     $title = get_string('marketblocksbackgroundcolor', 'theme_adaptable');
     $description = get_string('marketblocksbackgroundcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFFFFF', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, 'transparent', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
