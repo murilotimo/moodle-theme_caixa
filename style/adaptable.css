@@ -66,6 +66,23 @@ img {
     background-color: #eeff41;
 }
 
+/* Forms */
+
+fieldset {
+    min-width: 0;
+}
+
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}
+
+select {
+    width: 275px;
+}
+
+
 /* real main headings */
 #page-content {
     padding: 0 0px 20px;
