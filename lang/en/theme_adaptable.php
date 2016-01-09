@@ -121,7 +121,7 @@ $string['ticker'] = 'Announcements';
 
 // Slideshow *******************************************************.
 $string['slideshowsettings'] = 'Slideshow';
-$string['slideshowsettingsheading'] = 'Customize the carousel on the front page';
+$string['slideshowsettingsheading'] = 'Customize the carousel on the front page. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
 
 $string['p1'] = 'Picture1';
@@ -190,7 +190,7 @@ $string['slideroption2adesc'] = 'Set the slider style option 2 arrow background 
 
 // Marketing Blocks & Info Box *************************************.
 $string['marketingsettings'] = 'Marketing Blocks';
-$string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page';
+$string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['marketingdesc'] = 'You can build marketting blocks, up to 12 on the front page. For examples, please see the <a href="/adaptable/README.txt" target="_blank">README file</a> that comes with this theme.';
 
 $string['market1'] = 'Marketing Block 1';
@@ -259,7 +259,7 @@ $string['frontpagemarketoptiondesc'] = 'Set the marketing blocks to use the Cove
 
 // Footer **********************************************************.
 $string['footersettings'] = 'Footer';
-$string['footersettingsheading'] = 'Set the content that should appear in the footer. See ';
+$string['footersettingsheading'] = 'Set the content that should appear in the footer. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a> ';
 $string['footerdesc'] = 'Control the content that appears in the 4 footer sections of the page.';
 
 $string['showfooterblocks'] = 'Show footer blocks';
@@ -302,7 +302,7 @@ $string['moodledocsdesc'] = 'Display the Moodle Docs link in the footer.';
 
 // NavBar **********************************************************.
 $string['navbarmenusettings'] = 'Navbar Tools Menu';
-$string['navbarmenusettingsheading'] = 'Customize the menu in the navigation bar';
+$string['navbarmenusettingsheading'] = 'Customize the menu in the navigation bar. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['navbarmenusettingsdesc'] = 'Allows you to add a menu to the navigation bar.';
 
 $string['navbarsettings'] = 'Header Navbar';
@@ -633,7 +633,7 @@ $string['logintextbutton'] = 'Log In';
 
 // Header ***********************************************************.
 $string['headersettings'] = 'Header';
-$string['headersettingsheading'] = 'Customize the header of this theme.';
+$string['headersettingsheading'] = 'Customize the header of this theme. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
 
 $string['enableheading'] = 'Header course title';
@@ -768,7 +768,7 @@ $string['alertsettings'] = 'Alert Box {$a}';
 $string['alertcount'] = 'Alert count';
 $string['alertcountdesc'] = 'The number of alerts to show in the edit area below.';
 
-$string['alertsettingsheading'] = 'Customize top Alert Box';
+$string['alertsettingsheading'] = 'Customize top Alert Box. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';
 
 // Alerts Types.
@@ -848,9 +848,6 @@ $string['hideinforumdesc'] = 'When using fixed width and all menu options the fo
 
 $string['targetnewwindow'] = 'New window';
 $string['targetsamewindow'] = 'Same window';
-
-
-
 
 $string['toolsmenu2'] = '2nd Tools menu';
 $string['toolsmenu2desc'] = 'You can configure links to be shown under a tools menu. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. You can specify a structure using hyphens. For example:
