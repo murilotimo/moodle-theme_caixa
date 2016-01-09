@@ -38,6 +38,74 @@ $string['choosereadme'] = '
 <p>This theme is based upon the Bootstrap theme</p>
 </div></div>';
 
+
+
+
+
+
+
+
+
+
+$string['choosereadme'] = '
+<div class="clearfix">
+<div class="well">
+ <h2>Adaptable</h2>
+ <p><img class="img-polaroid" src="adaptable/pix/screenshot.png" /></p>
+</div>
+<div class="well">
+ <h2>Credits</h2>
+ <h3>About</h3>
+ <p>Adaptable is a moodle 2-columns responsive theme highly tomizable and based in the popular BCU theme.</p>
+ <p>This theme is licensed under the GPL (GNU General Public License). You can find a complete licence copy in: http://www.gnu.org/licenses/</p>
+ <p>Modify it / Improve it / Share it</p>
+ <br>
+ <p>This theme has been developed by:<br>
+ Jeremy Hopkins (Coventry University)<br>
+ Fernando Acedo (3-bits.com)<br>
+ </p>
+ <br>
+ <h2>Bugs report</h2>
+ <p>You can report bugs using the moodle forum or https://bitbucket.org/covuni/moodle-theme_adaptable/issues</p>
+ <br>
+ <h2>Documentacion</h2>
+ <p></p>
+ <br>
+ <h2>Demo</h2>
+ <p>Puedes ver una demostración del sitio y descargar un archivo de instalación en <a href="http://3-bits.com/demo/adaptable">http://3-bits.com/demo/adaptable</a></p>
+ <br>
+
+</div>
+</div>';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $string['pluginname'] = 'Adaptable';
 $string['configtitle'] = 'Adaptable';
 
