@@ -26,11 +26,12 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2016010800;
+$plugin->version   = 2016010900;
 $plugin->requires  = 2013110500;
 $plugin->component = 'theme_adaptable';
 $plugin->release = '1.0.0';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = array(
+    'theme_bootstrap'  => 2015103000,
     'block_course_overview' => ANY_VERSION
 );
