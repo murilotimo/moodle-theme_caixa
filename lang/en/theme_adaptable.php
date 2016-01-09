@@ -25,27 +25,6 @@
  */
 
 // General.
-$string['choosereadme'] = '
-<div class="clearfix">
-<div class="well">
-<h2>Adaptable Responsive</h2>
-<p><img class="img-polaroid" src="adaptable/pix/screenshot.png" /></p>
-</div>
-<div class="well">
-<h3>About</h3>
-<p>Adaptable is a modified Moodle bootstrap theme based in BCU.</p>
-<h3>Parents</h3>
-<p>This theme is based upon the Bootstrap theme</p>
-</div></div>';
-
-
-
-
-
-
-
-
-
 
 $string['choosereadme'] = '
 <div class="clearfix">
@@ -65,14 +44,14 @@ $string['choosereadme'] = '
  Fernando Acedo (3-bits.com)<br>
  </p>
  <br>
- <h2>Bugs report</h2>
+ <h3>Bugs Report</h3>
  <p>You can report bugs using the moodle forum or https://bitbucket.org/covuni/moodle-theme_adaptable/issues</p>
  <br>
- <h2>Documentacion</h2>
+ <h3>Documentation</h3>
  <p></p>
  <br>
- <h2>Demo</h2>
- <p>Puedes ver una demostración del sitio y descargar un archivo de instalación en <a href="http://3-bits.com/demo/adaptable">http://3-bits.com/demo/adaptable</a></p>
+ <h3>Demo</h3>
+ <p>You can see a demo and download a Quickinstall version in <a href="http://3-bits.com/demo/adaptable">http://3-bits.com/demo/adaptable</a></p>
  <br>
 
 </div>
