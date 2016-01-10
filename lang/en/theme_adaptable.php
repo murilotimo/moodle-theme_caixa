@@ -35,7 +35,7 @@ $string['choosereadme'] = '
 <div class="well">
  <h2>Credits</h2>
  <h3>About</h3>
- <p>Adaptable is a moodle 2-columns responsive theme highly tomizable and based in the popular BCU theme.</p>
+ <p>Adaptable is a moodle 2-columns responsive theme highly customizable and based in the popular BCU theme.</p>
  <p>This theme is licensed under the GPL (GNU General Public License). You can find a complete licence copy in: http://www.gnu.org/licenses/</p>
  <p>Modify it / Improve it / Share it</p>
  <br>
@@ -56,32 +56,6 @@ $string['choosereadme'] = '
 
 </div>
 </div>';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
