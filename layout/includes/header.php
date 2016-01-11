@@ -17,9 +17,8 @@
 /**
  * Version details
  *
- * @package    theme
- * @subpackage adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @package    theme_adaptable
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -195,7 +194,7 @@ if (!isloggedin() || isguestuser()) {
                 <span><?php echo fullname($USER) ?></span>
                 <span class="fa fa-angle-down"></span>
             </a>
-            
+
 <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
 <?php
     if (!empty($PAGE->theme->settings->enablemy)) { ?>
@@ -357,7 +356,7 @@ if (!isloggedin() || isguestuser()) {
 ?>
 </div>
 
-<div style="float: right; position: relative; display: inline; margin-left: 15px;">
+<div style="float: right; position: relative; display: inline; margin-left: 15px; height:20px;">
 <?php
 if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu']) {
     echo $OUTPUT->lang_menu();
@@ -420,12 +419,12 @@ if (empty($PAGE->theme->settings->socialset)) { ?>
             <form action="<?php p($CFG->wwwroot) ?>/course/search.php">
                 <label class="hidden" for="search-1" style="display: none;">Search iCity</label>
                 <div class="search-box grey-box bg-white clear-fix">
-                    <input placeholder="<?php echo get_string("searchcourses")?>" 
-                                        accesskey="6" 
-                                        class="search_tour bg-white no-border left search-box__input ui-autocomplete-input" 
-                                        type="text" 
-                                        name="search" 
-                                        id="search-1" 
+                    <input placeholder="<?php echo get_string("searchcourses")?>"
+                                        accesskey="6"
+                                        class="search_tour bg-white no-border left search-box__input ui-autocomplete-input"
+                                        type="text"
+                                        name="search"
+                                        id="search-1"
                                         autocomplete="off">
                     <button type="submit" class="no-border bg-white pas search-box__button">
                         <abbr class="fa fa-search"></abbr>
@@ -461,7 +460,7 @@ if (isloggedin()) {
     if (empty($PAGE->theme->settings->disablecustommenu)) {
         echo $OUTPUT->custom_menu();
     }
-?>                            
+?>
 <?php
     if ($PAGE->theme->settings->enabletoolsmenus) {
         echo $OUTPUT->tools_menu();

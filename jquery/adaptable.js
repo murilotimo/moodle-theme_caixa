@@ -8,16 +8,16 @@ jQuery(document).ready(function($) {
     //alertkey undismissable is a special case for "loginas" alert which shouldn't really
     //be permanently dismissed.
     //Justin 2015/12/05
-   $('.close').click(function(){	
+   $('.close').click(function(){
       var alertindex = $(this).data('alertindex');
       var alertkey = $(this).data('alertkey');
       if(alertkey!='undismissable'){
-         M.util.set_user_preference('theme_adaptable_alertkey' + alertindex, alertkey);	
+         M.util.set_user_preference('theme_adaptable_alertkey' + alertindex, alertkey);
       }
     });
 
 
-	$('#ticker').tickerme();
+  $('#ticker').tickerme();
     //new for every three
     if($('header').css("position") == "fixed") {
         $('.outercont').css('padding-top', $('header').height());
@@ -83,7 +83,7 @@ jQuery(document).ready(function($) {
         sync                : "",                //{NEW} Selector: Mirror the actions performed on this slider with another slider. Use with care.
         asNavFor            : "",                //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
     });
-  
+
 $(".container.slidewrap").on('transitionend', function() {
     var slider1 = $('#main-slider').data('flexslider');
     slider1.resize();
@@ -110,7 +110,7 @@ $(".container.slidewrap").on('transitionend', function() {
         event.preventDefault();
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
-    }) 
+    })
 });
 
 
@@ -149,6 +149,6 @@ var onFull = function() {
 M.theme_adaptable = M.theme_adaptable || {};
 M.theme_adaptable.full =  {
   init: function() {
-    Y.one('body').delegate('click', onFull, '.moodlewidth');    
+    Y.one('body').delegate('click', onFull, '.moodlewidth');
   }
 };

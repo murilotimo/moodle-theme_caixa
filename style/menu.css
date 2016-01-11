@@ -53,7 +53,7 @@
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
     background-color: transparent;
     color: #fff;
-   	font-size: [[setting:topmenufontsize]];
+     font-size: [[setting:topmenufontsize]];
 }
 
 .navbar .btn-navbar, .navbar .btn-navbar:hover, .navbar .btn-navbar:active {
@@ -156,23 +156,23 @@
 }
 
 .navbar .nav > li:last-child > a {
-	border-right: 0px !important;
+  border-right: 0px !important;
 }
 
 .dropdown .fa.fa-briefcase {
-	padding-right: 4px;
+  padding-right: 4px;
 }
 
 .navbar .btn, .navbar .btn-group {
-	margin-top: 3px;
+  margin-top: 3px;
 }
 
 /*new menus */
 .newmenus {
-	position: relative;
-	margin-left: 20px;
-	font-size: [[setting:topmenufontsize]];
-	height:26px;
+  position: relative;
+  margin-left: 20px;
+  font-size: [[setting:topmenufontsize]];
+  height:26px;
 }
 
 .newmenus .dropdown-menu .dropdown-menu {
@@ -180,8 +180,8 @@
 }
 
 .newmenus .dropdown-toggle {
-	color: [[setting:headertextcolor]];
-	background: transparent !important;	
+  color: [[setting:headertextcolor]];
+  background: transparent !important;
 }
 
 .newmenus .dropdown-menu li a {
@@ -192,11 +192,11 @@
 }
 
 .newmenus .dropdown-menu li:hover a {
-	background: #eee;
+  background: #eee;
 }
 
 .newmenus .dropdown-toggle:hover, .newmenus .dropdown-toggle:active, .pull-left .usermenu2.nav a:hover {
-	background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 .newmenus .dropdown-toggle::after {
@@ -208,46 +208,46 @@ color: [[setting:headertextcolor]];
 }
 
 .newmenus .dropdown-menu .dropdown-toggle::after {
-	color: transparent;
+  color: transparent;
 }
 
 @media (max-width: 979px) {
-	.hbl, .sbl, .hbll, .sbll {
+  .hbl, .sbl, .hbll, .sbll {
             display: none !important;
-	}
+  }
 
-	.nav-collapse .nav {
-		width:100%;
-		margin-left: 0px !important;
-	}
+  .nav-collapse .nav {
+    width:100%;
+    margin-left: 0px !important;
+  }
 
-	#navwrap {
+  #navwrap {
             border-bottom: 0;
-	}
+  }
 
-	#page-header a img {
+  #page-header a img {
             margin: 0 auto;
             float: none;
             display: block;
-	}
-	.nav .dropdown-menu li a {
-		color: [[setting:menufontcolor]];
-	}
+  }
+  .nav .dropdown-menu li a {
+    color: [[setting:menufontcolor]];
+  }
 
-	.nav-collapse.active{
-		background: [[setting:mobilemenubkcolor]];
-		height: auto;
-		top: 6px;
-		padding-bottom:4px;
-	}
+  .nav-collapse.active{
+    background: [[setting:mobilemenubkcolor]];
+    height: auto;
+    top: 6px;
+    padding-bottom:4px;
+  }
 
-	.nav-collapse.active > .nav > li > a, .nav-collapse.active > .nav .dropdown-menu li > a {
-		color:[[setting:mobilemenufontcolor]] !important;
-	}
+  .nav-collapse.active > .nav > li > a, .nav-collapse.active > .nav .dropdown-menu li > a {
+    color:[[setting:mobilemenufontcolor]] !important;
+  }
 
-	#edittingbutton {
-		margin-left:10px;
-	}
+  #edittingbutton {
+    margin-left:10px;
+  }
 }
 
 .container-fluid {
@@ -267,7 +267,7 @@ color: [[setting:headertextcolor]];
 }
 
 @media (max-width: 768px) {
-	.newmenu1, .newmenu2, .newmenu3, .newmenu4, .newmenu5, .newmenu6, .newmenu7, .newmenu8, .newmenu9, .newmenu10[[setting:hidepagefootermobile]][[setting:hidebreadcrumbmobile]][[setting:hidealertsmobile]][[setting:hidesocialmobile]][[setting:hideheadermobile]][[setting:hidelogomobile]][[setting:hidecoursetitlemobile]] {
-	    display: none;
-	}
+  .newmenu1, .newmenu2, .newmenu3, .newmenu4, .newmenu5, .newmenu6, .newmenu7, .newmenu8, .newmenu9, .newmenu10[[setting:hidepagefootermobile]][[setting:hidebreadcrumbmobile]][[setting:hidealertsmobile]][[setting:hidesocialmobile]][[setting:hideheadermobile]][[setting:hidelogomobile]][[setting:hidecoursetitlemobile]] {
+      display: none;
+  }
 }

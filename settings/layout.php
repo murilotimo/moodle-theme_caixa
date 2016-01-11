@@ -17,9 +17,8 @@
 /**
  * Version details
  *
- * @package    theme
- * @subpackage adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @package    theme_adaptable
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -28,15 +27,15 @@
     $temp = new admin_settingpage('theme_adaptable_layout', get_string('layoutsettings', 'theme_adaptable'));
     $temp->add(new admin_setting_heading('theme_adaptable_layout', get_string('layoutsettingsheading', 'theme_adaptable'),
         format_text(get_string('layoutdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
-		
-	// Background Image
-	$name = 'theme_adaptable/homebk';
+
+  // Background Image.
+  $name = 'theme_adaptable/homebk';
     $title = get_string('homebk', 'theme_adaptable');
     $description = get_string('homebkdesc', 'theme_adaptable');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'homebk');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-		
+
     // Display block in the Left/Right side.
     $name = 'theme_adaptable/blockside';
     $title = get_string('blockside', 'theme_adaptable');
@@ -71,8 +70,8 @@
     $setting = new admin_setting_configselect($name, $title, $description, '50%', $from35to50percent);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-	
-	$name = 'theme_adaptable/coursetitlepaddingtop';
+
+  $name = 'theme_adaptable/coursetitlepaddingtop';
     $title = get_string('coursetitlepaddingtop', 'theme_adaptable');
     $description = get_string('coursetitlepaddingtopdesc', 'theme_adaptable');
     $setting = new admin_setting_configselect($name, $title, $description, '0px', $from0to20);

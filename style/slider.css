@@ -81,7 +81,7 @@ html[xmlns] .slides {display: block;}
 }
 
 .flex-direction-nav {
-	display: none;
+  display: none;
 }
 
 
@@ -104,13 +104,13 @@ html[xmlns] .slides {display: block;}
  }
 
  .slidestyle2 .flex-caption .span6 {
- 	margin-left: 6%;
+   margin-left: 6%;
  }
 
  /*for css transitions on larger screens */
  @media screen and (min-width: 960px) {
  .slidestyle2 .flex-caption {
- 	right: -800px;
+   right: -800px;
  }
 
  .slidestyle2 .flex-active-slide .flex-caption {
@@ -123,7 +123,7 @@ html[xmlns] .slides {display: block;}
   }
 
 .slidestyle2 .flex-caption h3 {
-	background: rgba(0,0,0,.6);
+  background: rgba(0,0,0,.6);
     color: #fff;
     display: block;
     font-size: 16px;
@@ -153,17 +153,17 @@ html[xmlns] .slides {display: block;}
 }
 
 .slidestyle2 a:hover .flex-caption h4, .slidestyle2 a:hover .flex-caption h3, .slidestyle2 a:hover h4, .slidestyle2 *:hover {
-	text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 .slidestyle2 .flex-caption p {margin: 0 0 15px; color: #333;}
 
 .slidestyle2 .flex-caption a.submit {
-	display: block;
+  display: block;
     font-size: 16px;
     margin: 0px;
     margin-left: 30px;
- 	float: right;
+   float: right;
     padding: 8px 15px;
     text-transform: uppercase;
     text-align: left;
@@ -175,11 +175,11 @@ html[xmlns] .slides {display: block;}
 }
 
 .slidestyle2 .flex-direction-nav {
-	display: inherit;
+  display: inherit;
 }
 
 .slidestyle2 .flex-control-nav.flex-control-paging {
-	display: none;
+  display: none;
 }
 
 .slidestyle2 #main-slider {
@@ -187,67 +187,67 @@ html[xmlns] .slides {display: block;}
 }
 
 @media screen and (max-width: 1000px) {
-	.slidestyle2 .flex-caption h3 {
-	max-width: 970px;
-	}
+  .slidestyle2 .flex-caption h3 {
+  max-width: 970px;
+  }
 }
 
 @media screen and (max-width: 989px) {
 
-	.slidestyle2 .flex-caption br {
-		display: none;
-	}
+  .slidestyle2 .flex-caption br {
+    display: none;
+  }
 
-	.slidestyle2 .flex-caption {
-		top:25%;
-	}
+  .slidestyle2 .flex-caption {
+    top:25%;
+  }
 
-	.slidestyle2 .flex-direction-nav {
-		display: none;
-	}
+  .slidestyle2 .flex-direction-nav {
+    display: none;
+  }
 
-	.slidestyle2 .flex-caption h4 {
-		font-size: 23px;
-		line-height: 30px;
-	}
+  .slidestyle2 .flex-caption h4 {
+    font-size: 23px;
+    line-height: 30px;
+  }
 
-	.slidestyle2 .flex-caption a.submit {
-		font-size: 14px;
-		float: none;
-		white-space: normal;
-		width: auto;
-	}
+  .slidestyle2 .flex-caption a.submit {
+    font-size: 14px;
+    float: none;
+    white-space: normal;
+    width: auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
 
-	.slidestyle2 .flex-caption {
- 		position: relative;
- 		top:auto;
- 		left: 0px;
- 		background: transparent !important;
-	}
+  .slidestyle2 .flex-caption {
+     position: relative;
+     top:auto;
+     left: 0px;
+     background: transparent !important;
+  }
 
-	 .slidestyle2 .flex-caption .span6 {
- 	margin-left: 0%;
- 	}
+   .slidestyle2 .flex-caption .span6 {
+   margin-left: 0%;
+   }
 
-	.slidestyle2 .flex-caption a.submit {
-		margin: 0 0;
-		float: none;
-		width: auto;
-		text-align: center;
-	}
+  .slidestyle2 .flex-caption a.submit {
+    margin: 0 0;
+    float: none;
+    width: auto;
+    text-align: center;
+  }
 
-	.slidestyle2 .flex-caption h3 {
-		margin-left: 0px;
-		background: #000;
-		margin: 0px !Important;
-	}
+  .slidestyle2 .flex-caption h3 {
+    margin-left: 0px;
+    background: #000;
+    margin: 0px !Important;
+  }
 
-	.slidestyle2 .flex-caption h4 {
+  .slidestyle2 .flex-caption h4 {
     font-size: 18px;
     line-height: 22px;
     padding: 10px 0;
-	}
+  }
 }

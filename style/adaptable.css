@@ -66,6 +66,23 @@ img {
     background-color: #eeff41;
 }
 
+/* Forms */
+
+fieldset {
+    min-width: 0;
+}
+
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}
+
+select {
+    width: 275px;
+}
+
+
 /* real main headings */
 #page-content {
     padding: 0 0px 20px;
@@ -153,7 +170,7 @@ div.signuppanel h2 {
 #above-header .headermenu .dropdown-menu a {
     font-family: [[setting:fontname]], sans-serif !important;
     font-size: [[setting:topmenufontsize]];
-    color: [[setting:linkcolor]];    
+    color: [[setting:linkcolor]];
 }
 
 #above-header .headermenu .dropdown-menu a {
@@ -235,7 +252,7 @@ div.signuppanel h2 {
 }
 
 #coursesearch2 {
-	padding-top: 23px;
+  padding-top: 23px;
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
@@ -405,7 +422,7 @@ span.fa-chevron-right.fa {
 }
 
 #theinfo-internal {
-	padding: 15px 25px;
+  padding: 15px 25px;
 }
 
 #theinfo h1,
@@ -485,16 +502,16 @@ span.fa-chevron-right.fa {
 }
 
 #page-footer .blockplace3 {
-	display: none;
+  display: none;
 }
 
 
 #page-footer .blockplace2 {
-	display: none;
+  display: none;
 }
 
 #page-site-index #page-footer .blockplace2 {
-	display: block;
+  display: block;
 }
 
 .screen-reader-text {
@@ -504,13 +521,13 @@ span.fa-chevron-right.fa {
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 .breadcrumb {
-	background-color: transparent;
-	border-radius: 0px;
-	padding: 5px;
+  background-color: transparent;
+  border-radius: 0px;
+  padding: 5px;
 }
 
 #page-footer .logininfo {
@@ -531,7 +548,7 @@ span.fa-chevron-right.fa {
 }
 
 #page-footer .info a {
-	color: [[setting:footerlinkcolor]];
+  color: [[setting:footerlinkcolor]];
 }
 
 .copyright {
@@ -572,12 +589,12 @@ span.fa-chevron-right.fa {
 }
 
 #page-navbar {
-	background: [[setting:activebreadcrumb]];
-	margin: 10px 0px;
+  background: [[setting:activebreadcrumb]];
+  margin: 10px 0px;
 }
 
 #page-my-index #page-navbar{
-	display: inline;
+  display: inline;
 }
 
 .navbar .nav {
@@ -617,13 +634,13 @@ langmenu a:hover {
 
 
 .breadcrumb {
-	padding: 0px 0px 0px;
-	margin: 0 0;
+  padding: 0px 0px 0px;
+  margin: 0 0;
 }
 
 .breadcrumb li {
-	height: 35px;
-	background: [[setting:breadcrumb]];
+  height: 35px;
+  background: [[setting:breadcrumb]];
 }
 
 .breadcrumb li.lastli {
@@ -631,7 +648,7 @@ langmenu a:hover {
 }
 
 .breadcrumb li.lastli a span {
-	display: none !important;
+  display: none !important;
 }
 
 .breadcrumb li a, .breadcrumb li.lastli span, .breadcrumb li span.spnlink {
@@ -655,7 +672,7 @@ langmenu a:hover {
 }
 
 .breadcrumb li span.divider  {
-	display: none !important;
+  display: none !important;
 }
 
 .breadcrumb-button {
@@ -693,9 +710,9 @@ langmenu a:hover {
 }
 
 .pagelayout-redirect #content {
-	width:60%; background: #fff; margin: 20px auto; padding: 1em;
-	border: 1px solid #dadada;
-	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  width:60%; background: #fff; margin: 20px auto; padding: 1em;
+  border: 1px solid #dadada;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -744,12 +761,12 @@ div.redirectmessage {
 }
 
 #plugins-control-panel, #admindeviceselector {
-	display: block;
-	overflow: auto;
+  display: block;
+  overflow: auto;
 }
 
 #admindeviceselector .cell img {
-	max-width: 420px;
+  max-width: 420px;
 }
 
 span2.mceEditor iframe, table.mceLayout2 iframe {
@@ -776,7 +793,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 }
 
 .form-item .form-label, .mform .fitem div.fitemtitle {
-	text-align: left;
+  text-align: left;
 }
 
 .form-label label {
@@ -792,7 +809,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 }
 
 .settingsform .form-item {
-	border-bottom: 1px solid [[setting:blockbordercolor]];
+  border-bottom: 1px solid [[setting:blockbordercolor]];
     padding-bottom: 10px;
 }
 
@@ -818,11 +835,13 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 #region-main {
-	margin-top: 0px;
+  margin-top: 0px;
+  background: [[setting:regionmaincolor]];
+  padding: 4px;
 }
 
 #region-main #coursesearch .btn {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 
 @media (max-width: 990px) {
@@ -959,6 +978,22 @@ input[type="radio"], input[type="checkbox"] {
         border-radius: 0;
         padding-left: 0px !important;
     }
+
+
+
+    #page-navbar.span12 {
+        background: transparent;
+    }
+
+    a.dropdown-toggle {
+        height: 40px; !important
+    }
+
+    .userhead{
+        height:20px;
+    }
+}
+
 }
 
 @media (max-width: 520px) {
@@ -1057,7 +1092,7 @@ a.carousel-control {
 
 
 .customalert p {
-	display: inline;
+  display: inline;
 }
 
 
@@ -1065,7 +1100,7 @@ a.carousel-control {
 .navbar input,
 .navbar .singlebutton div,
 .path-mod-data .navbar form {
-	margin: 0 0;
+  margin: 0 0;
 }
 
 .navbar .singlebutton input {
@@ -1121,7 +1156,7 @@ a.carousel-control {
 /* Use the width of the content in modal to set size, instead of predefined sizes */
 
 .modal-backdrop {
-	z-index: 998;
+  z-index: 998;
 }
 
 .modal {
@@ -1130,15 +1165,15 @@ a.carousel-control {
 }
 
 #page-navbar .breadcrumb-button {
-	display: inline;
+  display: inline;
 }
 
 #gridshadebox_content ul.gtopics {
-	margin: 12px 1px 0px 1px;
+  margin: 12px 1px 0px 1px;
 }
 
 .user-enroller-panel {
-	z-index: 2;
+  z-index: 2;
 }
 
 .dropdown-menu {
@@ -1146,52 +1181,52 @@ a.carousel-control {
 }
 
 #gridshadebox_content {
-	background-color: #fff;
-	border: 1px solid #999;
-	border: 1px solid rgba(0,0,0,0.3);
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	outline: 0;
-	-webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-	-moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-	box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-	-webkit-background-clip: padding-box;
-	-moz-background-clip: padding-box;
-	background-clip: padding-box;
-	min-height: 200px;
+  background-color: #fff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0,0,0,0.3);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  min-height: 200px;
 }
 
 .sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0,0,0,0);
-	border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
 }
 
 /* Add midding bootstrap modal box classes */
 
 button.close {
-	-webkit-appearance: none;
-	padding: 0;
-	cursor: pointer;
-	background: 0 0;
-	border: 0;
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
 }
 
 .close {
-	float: right;
-	font-size: 21px;
-	font-weight: 700;
-	line-height: 1;
-	color: #000;
-	text-shadow: 0 1px 0 #fff;
-	filter: alpha(opacity=20);
-	opacity: .2;
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
 }
 
 #region-main .generaltable {
@@ -1210,71 +1245,71 @@ div.no-overflow, .yui3-datatable {
 }
 
 .path-course-view .completionprogress {
-	z-index: 2;
+  z-index: 2;
 }
 
 /* Classes for new search box */
 
 .searchbox {
-	float: right;
-	padding-top: 32px;
+  float: right;
+  padding-top: 32px;
 }
 
 .greybox {
-	border: 1px solid #ccc;
+  border: 1px solid #ccc;
 }
 
 .search-box__input {
-	width: 280px;
+  width: 280px;
 }
 
 .search-box__button {
-	width: 27px;
-	height: 27px;
-	margin: 1px !important;
-	-webkit-transition: background-color .2s ease-in-out;
-	-moz-transition: background-color .2s ease-in-out;
-	-o-transition: background-color .2s ease-in-out;
-	transition: background-color .2s ease-in-out;
+  width: 27px;
+  height: 27px;
+  margin: 1px !important;
+  -webkit-transition: background-color .2s ease-in-out;
+  -moz-transition: background-color .2s ease-in-out;
+  -o-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
 }
 
 .search-box__button:hover {
     background-color: [[setting:buttonhovercolor]];
-	color: [[setting:buttontextcolor]] !important;
+  color: [[setting:buttontextcolor]] !important;
 }
 
 .search-box {
-	float: right;
-	margin-bottom: 5px;
+  float: right;
+  margin-bottom: 5px;
 }
 
 
 
 .bg-white {
-	background: #fff;
+  background: #fff;
 }
 
 .pas {
-	padding: 5px;
+  padding: 5px;
 }
 
 .no-border {
-	border: 0 !important;
-	border-radius: 0px !important;
-	-webkit-box-shadow: 0px !important;
+  border: 0 !important;
+  border-radius: 0px !important;
+  -webkit-box-shadow: 0px !important;
 }
 
 #search-1 {
-	padding: 5px 3px !important;
-	margin: 0 !important;
-	font-size: 14px;
-	color: #444;
+  padding: 5px 3px !important;
+  margin: 0 !important;
+  font-size: 14px;
+  color: #444;
 }
 
 #search-1:focus {
-	border: none !important;
-	box-shadow: none;
-	-webkit-box-shadow: none;
+  border: none !important;
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 .icon-search {
@@ -1347,25 +1382,25 @@ div.questionbankwindow.block {
 }
 
 .nav .dropdown-menu li a i, .nav li a i {
-	padding-right: 5px;
+  padding-right: 5px;
 }
 
 .fselect #id_courses {
-	width: 100% !important;
+  width: 100% !important;
 }
 
 .moodlewidth, .moodlezoom {
-	padding-right: 2px !important;
-	padding-left: 2px !important;
+  padding-right: 2px !important;
+  padding-left: 2px !important;
 }
 
 #edittingbutton {
-	padding-right: 10px;
+  padding-right: 10px;
 }
 
 .collapsibleregioncaption {
-	text-decoration: underline;
-	cursor: pointer;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .overview .name a {
@@ -1374,88 +1409,88 @@ div.questionbankwindow.block {
 
 /* Renderer temporary changes */
 .coursebox.panel.hover .panel-heading {
-	display: none;
+  display: none;
 }
 
 .cimbox {
-	height: 175px;
-	position: relative;
-	margin-right: -1px;
-	-webkit-transition: all .5s ease-in-out;
-	-moz-transition: all .5s ease-in-out;
-	-o-transition: all .5s ease-in-out;
-	transition: all .5s ease-in-out;
+  height: 175px;
+  position: relative;
+  margin-right: -1px;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .coursebox-content {
-	padding: 5px 15px 10px;
-	text-align: center;
+  padding: 5px 15px 10px;
+  text-align: center;
 }
 
 .coursebox.hover .summary {
-	min-height: 50px;
-	overflow: auto;
-	position: absolute;
-	text-align: center;
-	color: [[setting:rendereroverlayfontcolor]] !important;
-	padding: 15px;
-	top: 0px;
-	left: 0px;
-	display: none;
+  min-height: 50px;
+  overflow: auto;
+  position: absolute;
+  text-align: center;
+  color: [[setting:rendereroverlayfontcolor]] !important;
+  padding: 15px;
+  top: 0px;
+  left: 0px;
+  display: none;
 }
 
 .coursebox.panel.hover .panel-body:hover .coursebox-content h3 a {
-	color: [[setting:rendereroverlayfontcolor]] !important;
+  color: [[setting:rendereroverlayfontcolor]] !important;
 }
 
 .coursebox.hover .teachers li a, .coursebox.hover .summary > a:link, .coursebox.hover .summary > a:visited {
-	color: [[setting:rendereroverlayfontcolor]] !important;
+  color: [[setting:rendereroverlayfontcolor]] !important;
 }
 
 .coursebox.hover .teachers {
-	text-align: left;
-	padding-top: 2px;
-	padding-left: 2px;
+  text-align: left;
+  padding-top: 2px;
+  padding-left: 2px;
 }
 
 .coursebox.hover:hover .summary {
-	height: auto;
-	width: auto;
-	min-width: 90%;
-	min-height: 50px;
-	display: block;
+  height: auto;
+  width: auto;
+  min-width: 90%;
+  min-height: 50px;
+  display: block;
 }
 
 .coursebox.panel.hover .panel-body:hover {
-	background: [[setting:rendereroverlaycolor]] !important;
-	-webkit-transition: all .5s ease-in-out;
-	-moz-transition: all .5s ease-in-out;
-	-o-transition: all .5s ease-in-out;
-	transition: all .5s ease-in-out;
+  background: [[setting:rendereroverlaycolor]] !important;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .coursebox.panel .panel-body:hover .cimbox {
-	opacity: .3;
-	-webkit-transition: all .5s ease-in-out;
-	-moz-transition: all .5s ease-in-out;
-	-o-transition: all .5s ease-in-out;
-	transition: all .5s ease-in-out;
+  opacity: .3;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 .panel.hover .coursebtn.submit.btn {
-	float: none;
-	display: block;
-	width: 90%;
-	margin: 0px auto 15px;
-	padding-left: 0px;
-	padding-right: 0px;
-	border: 1px solid #eee !important;
-	box-shadow: none;
-	font-weight: 300;
-	position: inherit;
+  float: none;
+  display: block;
+  width: 90%;
+  margin: 0px auto 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border: 1px solid #eee !important;
+  box-shadow: none;
+  font-weight: 300;
+  position: inherit;
 }
 
 .coursebox.panel.hover {
-	height: 100%;
+  height: 100%;
 }
 
 .coursebox.panel.hover .panel-body .coursebox-content h3 {
@@ -1469,12 +1504,12 @@ line-height: normal;
 }
 
 .coursebox.hover .boxfooter {
-	clear: none;
-	margin-bottom: 0;
+  clear: none;
+  margin-bottom: 0;
 }
 
 .coursebox .content .courseimage img {
-	max-width: 300px;
+  max-width: 300px;
 }
 
 .course-content ul.topics li.section .summary {
@@ -1529,12 +1564,17 @@ line-height: normal;
     text-align: right;
 }
 
-#page-footer .validators, #page-footer .purgecaches, #page-footer .performanceinfo, #page-footer #load {
-    text-align: right;
+#page-footer .validators,
+#page-footer .purgecaches,
+#page-footer .performanceinfo,
+#page-footer #load {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 #load {
-    float: right;
+/*    float: right;*/
 }
 
 .purgecaches {

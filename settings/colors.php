@@ -17,9 +17,8 @@
 /**
  * Version details
  *
- * @package    theme
- * @subpackage adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @package    theme_adaptable
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -51,6 +50,15 @@
     $name = 'theme_adaptable/backcolor';
     $title = get_string('backcolor', 'theme_adaptable');
     $description = get_string('backcolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Mian region background color.
+    $name = 'theme_adaptable/regionmaincolor';
+    $title = get_string('regionmaincolor', 'theme_adaptable');
+    $description = get_string('regionmaincolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFF', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -215,7 +223,7 @@
     $title = get_string('marketblocksbackgroundcolor', 'theme_adaptable');
     $description = get_string('marketblocksbackgroundcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#FFFFFF', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, 'transparent', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

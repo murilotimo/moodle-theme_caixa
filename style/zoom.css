@@ -1,18 +1,18 @@
 /*set fullscreen */
 .fullin .container {
-	width: [[setting:fullscreenwidth]];
+  width: [[setting:fullscreenwidth]];
 }
 
 .sbll {
-	display: none;
+  display: none;
 }
 
 .fullin .sbll {
-	display: inherit;
+  display: inherit;
 }
 
 .fullin .hbll {
-	display: none;
+  display: none;
 }
 
 .zoomin #block-region-side-post {
@@ -28,13 +28,13 @@
 }
 
 .sbl {
-	display: none;
+  display: none;
 }
 
 .zoomin .sbl {
-	display: inherit;
+  display: inherit;
 }
 
 .zoomin .hbl {
-	display: none;
+  display: none;
 }

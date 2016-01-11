@@ -17,9 +17,8 @@
 /**
  * Version details
  *
- * @package    theme
- * @subpackage adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University) 
+ * @package    theme_adaptable
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -27,11 +26,12 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2015122900;
+$plugin->version   = 2016010900;
 $plugin->requires  = 2013110500;
 $plugin->component = 'theme_adaptable';
 $plugin->release = '1.0.0';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = array(
+    'theme_bootstrapbase'  => 2015103000,
     'block_course_overview' => ANY_VERSION
 );
