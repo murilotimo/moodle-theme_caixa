@@ -163,6 +163,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:enableavailablecourses]]' => 'display',
         '[[setting:enableticker]]' => true,
         '[[setting:enabletickermy]]' => true,
+        '[[setting:tickerwidth]]' => '',
     );
 
     // Get all the defined settings for the theme and replace defaults.
