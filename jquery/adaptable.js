@@ -16,7 +16,6 @@ jQuery(document).ready(function($) {
       }
     });
 
-
   $('#ticker').tickerme();
     //new for every three
     if($('header').css("position") == "fixed") {
