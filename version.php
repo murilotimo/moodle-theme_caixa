@@ -32,6 +32,6 @@ $plugin->component = 'theme_adaptable';
 $plugin->release = '1.0.0';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = array(
-    'theme_bootstrapbase'  => 2015103000,
+    'theme_bootstrapbase'  => 2014111000,
     'block_course_overview' => ANY_VERSION
 );
