@@ -22,7 +22,6 @@
 
   "use strict"; // jshint ;_;
 
-
  /* DROPDOWN CLASS DEFINITION
   * ========================= */
 
@@ -130,7 +129,6 @@
     return $parent
   }
 
-
   /* DROPDOWN PLUGIN DEFINITION
    * ========================== */
 
@@ -147,7 +145,6 @@
 
   $.fn.dropdown.Constructor = Dropdown
 
-
  /* DROPDOWN NO CONFLICT
   * ==================== */
 
@@ -155,7 +152,6 @@
     $.fn.dropdown = old
     return this
   }
-
 
   /* APPLY TO STANDARD DROPDOWN ELEMENTS
    * =================================== */
