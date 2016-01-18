@@ -44,7 +44,19 @@ $description = get_string('enabletickermydesc', 'theme_adaptable');
 $default = true;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+$temp->add($setting);
+
+// Ticker Width (fullscreen / fixed width).
+$name = 'theme_adaptable/tickerwidth';
+$title = get_string('tickerwidth', 'theme_adaptable');
+$description = get_string('tickerwidthdesc', 'theme_adaptable');
+$options = array(
+  '' => 'Fixed Width',
+  'width: 100%;' => 'Full Screen'
+);
+$setting = new admin_setting_configselect($name, $title, $description, '', $options);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
 
   // Number of news ticker sectons.
 $name = 'theme_adaptable/newstickercount';

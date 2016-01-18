@@ -644,6 +644,7 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
   margin-top: 15px;
   background: #eee;
   line-height: 40px;
+  [[setting:tickerwidth]]
 }
 
 #page-site-index #ticker-wrap {

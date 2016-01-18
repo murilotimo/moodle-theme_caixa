@@ -127,6 +127,9 @@ $string['enabletickermydesc'] = 'Check to enable the ticker on My Home / Dashboa
 $string['enabletickerc'] = 'Enable the news ticker on internal pages?';
 $string['enabletickercdesc'] = 'Check to enable the ticker on internal pages.';
 
+$string['tickerwidth'] = 'News Ticker Width';
+$string['tickerwidthdesc'] = 'You can use this setting to fix the news ticker at 100% width.';
+
 $string['tickertext1'] = 'News Ticker Text';
 $string['tickertext1desc'] = 'Add news ticker text in list format. See the read me for more info.';
 
