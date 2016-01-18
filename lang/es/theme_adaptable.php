@@ -790,7 +790,7 @@ $string['alertaccessadmins'] = 'Visible para administradores';
 $string['alertaccessprofile'] = 'Añadir restricción por campo personalizado';
 
 $string['alertaccess'] = 'Visibilidad de la Alerta';
-$string['alertaccessdesc'] = 'Establece la visibilidad de la Alerta según su tipo. Nota: Si se usa "' . $string['alertaccessprofile'] . '" necesitrás añadir el campo personalizado de usuario.';
+$string['alertaccessdesc'] = 'Establece la visibilidad de la Alerta según su tipo. Nota: Si se usa "Añadir restricción por campo personalizado" necesitrás añadir el campo personalizado de usuario.';
 
 
 // Mobile **********************************************************.

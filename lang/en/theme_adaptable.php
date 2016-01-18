@@ -815,7 +815,7 @@ $string['alertaccessadmins'] = 'Visibile to administrators';
 $string['alertaccessprofile'] = 'Add custom profile field restriction';
 
 $string['alertaccess'] = 'Alert Visibility';
-$string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "' . $string['alertaccessprofile'] . '" you will need to add values for profile fields below.';
+$string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "Add custom profile field restriction" you will need to add values for profile fields below.';
 
 // Mobile **********************************************************.
 $string['layoutmobilesettings'] = 'Mobile Settings';
@@ -1002,7 +1002,7 @@ $string['menuuseroverridedesc'] = 'These settings can be used to give users cont
 <pre>1. Sitewide (the first item in the list will be for sitewide menu visibility)
 2. Homepages Only (the second item in the list will set visibility to only site / homepages)
 3. Hidden (the third value in the list will hide menus entirely)</pre>
-You should NOT use the "' . $string['disablemenuscoursepages'] . '" option in conjuction with profile field settings, instead use set the default value to your "Homepages Only" entry when setting up your profile field list.
+You should NOT use the "Disable Menus on Course Pages" option in conjuction with profile field settings, instead use set the default value to your "Homepages Only" entry when setting up your profile field list.
 
 Note: Users will have to log out of Moodle and back in again for this change to take effect, you may want to add a note explaining this in the custom profile field.';
 
