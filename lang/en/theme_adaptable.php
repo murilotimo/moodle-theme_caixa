@@ -105,7 +105,7 @@ $string['frontpagerendereroption4'] = 'Coventry Tiles';
 
 // Ticker **********************************************************.
 $string['tickersettings'] = 'News Ticker';
-$string['tickersettingsheading'] = 'Setup News Ticker on Front Page. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['tickersettingsheading'] = 'Setup News Ticker on Front Page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['tickerdesc'] = 'Here you can set a news ticker to run across the front page of your Moodle site.
   It is intended as a less intrusive alternative to the slider taking up very little space.
   To setup your ticker simply entere a bulleted list and include any hyperlinks you need to in that text.
@@ -145,7 +145,7 @@ $string['ticker'] = 'Announcements';
 
 // Slideshow *******************************************************.
 $string['slideshowsettings'] = 'Slideshow';
-$string['slideshowsettingsheading'] = 'Customize the carousel on the front page. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['slideshowsettingsheading'] = 'Customize the carousel on the front page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
 
 $string['p1'] = 'Picture1';
@@ -214,7 +214,7 @@ $string['slideroption2adesc'] = 'Set the slider style option 2 arrow background 
 
 // Marketing Blocks & Info Box *************************************.
 $string['marketingsettings'] = 'Marketing Blocks';
-$string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['marketingdesc'] = 'You can build marketting blocks, up to 12 on the front page. For examples, please see the <a href="/adaptable/README.txt" target="_blank">README file</a> that comes with this theme.';
 
 $string['market1'] = 'Marketing Block 1';
@@ -283,7 +283,7 @@ $string['frontpagemarketoptiondesc'] = 'Set the marketing blocks to use the Cove
 
 // Footer **********************************************************.
 $string['footersettings'] = 'Footer';
-$string['footersettingsheading'] = 'Set the content that should appear in the footer. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a> ';
+$string['footersettingsheading'] = 'Set the content that should appear in the footer. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a> ';
 $string['footerdesc'] = 'Control the content that appears in the 4 footer sections of the page.';
 
 $string['showfooterblocks'] = 'Show footer blocks';
@@ -326,7 +326,7 @@ $string['moodledocsdesc'] = 'Display the Moodle Docs link in the footer.';
 
 // NavBar **********************************************************.
 $string['navbarmenusettings'] = 'Navbar Tools Menu';
-$string['navbarmenusettingsheading'] = 'Customize the menu in the navigation bar. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['navbarmenusettingsheading'] = 'Customize the menu in the navigation bar. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['navbarmenusettingsdesc'] = 'Allows you to add a menu to the navigation bar.';
 
 $string['navbarsettings'] = 'Header Navbar';
@@ -657,7 +657,7 @@ $string['logintextbutton'] = 'Log In';
 
 // Header ***********************************************************.
 $string['headersettings'] = 'Header';
-$string['headersettingsheading'] = 'Customize the header of this theme. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['headersettingsheading'] = 'Customize the header of this theme. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
 
 $string['enableheading'] = 'Header course title';
@@ -792,7 +792,7 @@ $string['alertsettings'] = 'Alert Box {$a}';
 $string['alertcount'] = 'Alert count';
 $string['alertcountdesc'] = 'The number of alerts to show in the edit area below.';
 
-$string['alertsettingsheading'] = 'Customize top Alert Box. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['alertsettingsheading'] = 'Customize top Alert Box. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';
 
 // Alerts Types.
