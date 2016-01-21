@@ -89,6 +89,7 @@ $string['analyticssettings'] = 'Analytics';
 // Admin Menu Strings.
 $string['blocksettings'] = 'Block Settings';
 $string['frontpagealertsettings'] = 'Alert Box';
+$string['frontpageblockregionsettings'] = 'Block Region Builder';
 $string['frontpageblocksettings'] = 'Marketing Blocks';
 $string['frontpagetickersettings'] = 'Frontpage Ticker';
 $string['frontpageslidersettings'] = 'Frontpage Slider';
@@ -211,6 +212,28 @@ $string['slideroption2colordesc'] = 'Set a background colour for the text in sli
 $string['slideroption2a'] = 'Slider style option 2 arrow background colour';
 $string['slideroption2adesc'] = 'Set the slider style option 2 arrow background colour';
 
+// Block Regions ***************************************************.
+$string['blocklayoutbuilder'] = 'Frontpage Block Regions';
+$string['blocklayoutbuilderdesc'] = 'Below you can build your own layout for block regions on the front page.
+To add content these regions you will need to <strong> turn editing on on the front page of Moodle</strong>.
+Then you can begin to drag/drop blocks into the regions you create!';
+
+$string['blocklayoutlayoutcheck'] = 'Check your layout';
+$string['blocklayoutlayoutcheckdesc'] = 'Use the tool below to check the number of blocks you have used and see a representation of your new layout.';
+$string['blocklayoutlayoutcount1'] = 'You can set a maximum of ';
+$string['blocklayoutlayoutcount2'] = ' block regions. You are currently using: ';
+
+$string['blocklayoutlayoutrow'] = 'Marketing Block Row ';
+$string['blocklayoutlayoutrowdesc'] = 'Add / set layout for marketing block row on front page.';
+
+$string['frontpageblocksenabled'] = 'Enable custom block region on front page';
+$string['frontpageblocksenableddesc'] = 'You can enable / disable custom block regions on the front page.
+You can then drag and drop blocks into the regions you created';
+
+$string['layoutcheck'] = 'Check your layout';
+$string['layoutcheckdesc'] = 'Use the tool below to check the number of blocks you have used and see a representation of your new layout.';
+$string['layoutcount1'] = 'You can set a maximum of ';
+$string['layoutcount2'] = ' block regions. You are currently using: ';
 
 // Marketing Blocks & Info Box *************************************.
 $string['marketingsettings'] = 'Marketing Blocks';
@@ -457,6 +480,9 @@ $string['blockbordercolordesc'] = 'Set the block border colour.';
 
 $string['blocklinkcolor'] = 'Block link colour';
 $string['blocklinkcolordesc'] = 'Set the blocks link colour';
+
+$string['blockregionbackground'] = 'Block Region Backround Color';
+$string['blockregionbackgrounddesc'] = 'Background color of container holding custom block layouts on the front page';
 
 $string['blockheaderbordertop'] = 'Block header top border thickness';
 $string['blockheaderbordertopdesc'] = 'Set the thickness of the top border of block headers';
