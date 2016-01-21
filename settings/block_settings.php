@@ -75,6 +75,14 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    $name = 'theme_adaptable/blockregionbackgroundcolor';
+    $title = get_string('blockregionbackground', 'theme_adaptable');
+    $description = get_string('blockregionbackgrounddesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, 'transparent', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     $name = 'theme_adaptable/blockheaderbordertopstyle';
     $title = get_string('blockheaderbordertopstyle', 'theme_adaptable');
     $description = get_string('blockheaderbordertopstyledesc', 'theme_adaptable');

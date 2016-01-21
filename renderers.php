@@ -576,6 +576,51 @@ EOT;
         return $retval;
     }
 
+    public function get_block_regions($settingsname = 'blocklayoutlayoutrow'){
+        global $PAGE, $OUTPUT, $USER;
+        $fields = array();
+        $retval = '';
+        $blockcount = 0;
+        $style = '';
+        $adminediting = false;
+
+        if (is_siteadmin() && isset($USER->editing) && $USER->editing == 1){
+            $style =  '" style="display: block; background: #C1F4EF; min-height: 50px; border: 3px solid #00796B; margin-top: 5px';
+            $adminediting = true;
+        }
+
+        for ($i = 1; $i <=8; $i++){
+            $marketrow = $settingsname . $i;
+            $marketrow = $PAGE->theme->settings->$marketrow;
+            if ($marketrow != '0-0-0-0'){
+                $fields[] = $marketrow;
+            }
+        }
+
+        foreach ($fields as $field){
+            $retval .= '<div class="row" style="margin-left: 0px;">';
+            $vals = explode('-', $field);
+            foreach ($vals as $val){
+                if ($val > 0){
+                    $retval .= '<div class="span' . $val . $style . '">';
+
+                    // moodle does not seem to like numbers in region names so using letter instead
+                    $blockcount ++;
+                    $block = 'frnt-market-' .  chr(96 + $blockcount);
+
+                    if ($adminediting){
+                        $retval .= '<span style="padding-left: 10px;"> ' . $block . '</span>';
+                    }
+
+                    $retval .= $OUTPUT->blocks($block);
+                    $retval .= '</div>';
+                }
+            }
+            $retval .= '</div>';
+        }
+        return $retval;
+    }
+
     /**
      * This renders the navbar.
      * Uses bootstrap compatible html.

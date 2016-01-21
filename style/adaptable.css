@@ -335,6 +335,13 @@ a.usermendrop {
     margin-bottom: [[setting:slidermarginbottom]];
 }
 
+#frontblockregion {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    background-color: [[setting:blockregionbackgroundcolor]];
+}
+
 #marketblocks {
     margin-bottom: 20px;
     overflow: hidden;

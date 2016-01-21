@@ -413,16 +413,20 @@ if (!empty($PAGE->theme->settings->frontpagemarketenabled)) {
 <?php
         }
 ?>
-
  </div>
  <?php
     }
     // End 3rd row of blocks.
-
 }
 // End marketing blocks.
-
  ?>
+
+<?php if (!empty($PAGE->theme->settings->frontpageblocksenabled)){ ?>
+    <div id="frontblockregion" class="container">
+        <div class="row-fluid">
+            <?php echo $OUTPUT->get_block_regions(); ?>
+        </div>
+<?php } ?>
 
  </div>
 
