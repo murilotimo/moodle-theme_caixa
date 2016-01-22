@@ -24,7 +24,6 @@
  *
  */
 
-
     // Frontpage Block Regions Section.
     $temp = new admin_settingpage('theme_adaptable_frontpage_block_regions', get_string('frontpageblockregionsettings', 'theme_adaptable'));
 
@@ -38,7 +37,7 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Main Font Name.
+    // Block region builder.
     $noregions = 20; // number of block regions defined in config.php
     $totalblocks = 0;
     $imgpath = $CFG->wwwroot.'/theme/adaptable/pix/layout-builder/';
@@ -81,8 +80,5 @@
     $temp->add(new admin_setting_heading('theme_adaptable_layoutblockscount', '', $mktcountmsg));
 
     $temp->add(new admin_setting_heading('theme_adaptable_layoutbuilder', '', $imgblder));
-
-//echo $totalblocks . ' # ';
-
 
     $ADMIN->add('theme_adaptable', $temp);
