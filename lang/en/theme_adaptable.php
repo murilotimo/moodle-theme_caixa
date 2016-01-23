@@ -278,9 +278,8 @@ $string['infoboxtextcolor2desc'] = 'Set the secondary frontpage Info Box text co
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
 $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
 
-$string['frontpagemarketoption'] = 'Choose style for marketing blocks';
-$string['frontpagemarketoptiondesc'] = 'You can apply different styles to marketing blocks.
-Note: BCU style is designed to work with images at top of block.';
+$string['frontpagemarketoption'] = 'Coventry Tiles style marketing blocks';
+$string['frontpagemarketoptiondesc'] = 'Set the marketing blocks to use the Coventry Tiles style. Set the colour for this option in the colour settings.';
 
 // Footer **********************************************************.
 $string['footersettings'] = 'Footer';
