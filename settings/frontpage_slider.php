@@ -75,10 +75,11 @@
     }
 
     for ($sliderindex = 1; $sliderindex <= $slidercount; $sliderindex++) {
+        $fileid = 'sliderimage' . $sliderindex;
         $name = 'theme_adaptable/sliderimage' . $sliderindex;
         $title = get_string('sliderimage', 'theme_adaptable');
         $description = get_string('sliderimagedesc', 'theme_adaptable');
-        $setting = new admin_setting_configstoredfile($name, $title, $description, '');
+        $setting = new admin_setting_configstoredfile($name, $title, $description, $fileid);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
