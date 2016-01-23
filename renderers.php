@@ -628,10 +628,7 @@ EOT;
         $style = '';
         $adminediting = false;
 
-        $extramarketclass = " ";
-        if (!empty($PAGE->theme->settings->frontpagemarketoption)) {
-            $extramarketclass = "covtiles";
-        }
+        $extramarketclass = $PAGE->theme->settings->frontpagemarketoption;
 
         $retval = '<div id="marketblocks" class="container '. $extramarketclass .'">';
 
@@ -648,7 +645,7 @@ EOT;
             $vals = explode('-', $field);
             foreach ($vals as $val){
                 if ($val > 0){
-                    $retval .= '<div class="span' . $val . ' ' . $extramarketclass . 'first">';
+                    $retval .= '<div class="span' . $val . ' ' . $extramarketclass . ' first">';
                     $blockcount ++;
                     $fieldname = $settingname . $blockcount;
                     $retval .= $PAGE->theme->settings->$fieldname;

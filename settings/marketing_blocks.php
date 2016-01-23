@@ -62,7 +62,8 @@
     $name = 'theme_adaptable/frontpagemarketoption';
     $title = get_string('frontpagemarketoption', 'theme_adaptable');
     $description = get_string('frontpagemarketoptiondesc', 'theme_adaptable');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $choices = $marketblockstyles;
+    $setting = new admin_setting_configselect($name, $title, $description, 'covtiles', $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
