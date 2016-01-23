@@ -913,6 +913,12 @@ $htmltarget = array(
   '_self' => 'Same Window'
 );
 
+$marketblockstyles = array(
+    '' => 'No Style',
+    'internalmarket' => 'BCU Style',
+    'covtiles' => 'Coventry Style'
+);
+
 $bootstrap12 = array(
     '0-0-0-0' => 'disabled',
     '12-0-0-0' => '1 (full width)',

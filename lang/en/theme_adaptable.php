@@ -142,8 +142,6 @@ $string['tickertextprofilefielddesc'] = 'Add access rule using for custom profil
 
 $string['ticker'] = 'Announcements';
 
-
-
 // Slideshow *******************************************************.
 $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowsettingsheading'] = 'Customize the carousel on the front page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
@@ -223,8 +221,8 @@ $string['blocklayoutlayoutcheckdesc'] = 'Use the tool below to check the number 
 $string['blocklayoutlayoutcount1'] = 'You can set a maximum of ';
 $string['blocklayoutlayoutcount2'] = ' block regions. You are currently using: ';
 
-$string['blocklayoutlayoutrow'] = 'Marketing Block Row ';
-$string['blocklayoutlayoutrowdesc'] = 'Add / set layout for marketing block row on front page.';
+$string['blocklayoutlayoutrow'] = 'Block Region Row ';
+$string['blocklayoutlayoutrowdesc'] = 'Add / set layout for block region row on front page.';
 
 $string['frontpageblocksenabled'] = 'Enable custom block region on front page';
 $string['frontpageblocksenableddesc'] = 'You can enable / disable custom block regions on the front page.
@@ -238,43 +236,23 @@ $string['layoutcount2'] = ' block regions. You are currently using: ';
 // Marketing Blocks & Info Box *************************************.
 $string['marketingsettings'] = 'Marketing Blocks';
 $string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
-$string['marketingdesc'] = 'You can build marketting blocks, up to 12 on the front page. For examples, please see the <a href="/adaptable/README.txt" target="_blank">README file</a> that comes with this theme.';
+$string['marketingdesc'] = 'There are two full width info boxes wiht differing styles you can use.
+In additoin to this there is a layout builder allowing you to decide how many blocks you need and define your own layout, please see the <a href="/adaptable/README.txt" target="_blank">README file</a> that comes with this theme.';
 
-$string['market1'] = 'Marketing Block 1';
-$string['market1desc'] = 'Add html for marketing block 1 (see the readme file for additional info and hints).';
+$string['marketingbuilderheading'] = 'Marketing Block Layout Builder';
+$string['marketingbuilderdesc'] = 'Use the tool below to setup your marketing blocks.
+Once defined the block settings will appear further down the page.';
 
-$string['market2'] = 'Marketing Block 2';
-$string['market2desc'] = 'Add html for marketing block 2 (see the readme file for additional info and hints).';
+$string['marketlayoutrow'] = 'Marketing Block Row';
+$string['marketlayoutrowdesc'] = 'Add / set layout for marketing block row on front page';
 
-$string['market3'] = 'Marketing Block 3';
-$string['market3desc'] = 'Add html for marketing block 3 (see the readme file for additional info and hints).';
+$string['market'] = 'Marketing Block ';
+$string['marketdesc'] = 'Add html for marketing block (see the readme file for additional info and hints).';
 
-$string['market4'] = 'Marketing Block 4';
-$string['market4desc'] = 'Add html for marketing block 4 (see the readme file for additional info and hints).';
-
-$string['market5'] = 'Marketing Block 5';
-$string['market5desc'] = 'Add html for marketing block 5 (see the readme file for additional info and hints).';
-
-$string['market6'] = 'Marketing Block 6';
-$string['market6desc'] = 'Add html for marketing block 6 (see the readme file for additional info and hints).';
-
-$string['market7'] = 'Marketing Block 7';
-$string['market7desc'] = 'Add html for marketing block 7 (see the readme file for additional info and hints).';
-
-$string['market8'] = 'Marketing Block 8';
-$string['market8desc'] = 'Add html for marketing block 8 (see the readme file for additional info and hints).';
-
-$string['market9'] = 'Marketing Block 9';
-$string['market9desc'] = 'Add html for marketing block 9 (see the readme file for additional info and hints).';
-
-$string['market10'] = 'Marketing Block 10';
-$string['market10desc'] = 'Add html for marketing block 10 (see the readme file for additional info and hints).';
-
-$string['market11'] = 'Marketing Block 11';
-$string['market11desc'] = 'Add html for marketing block 11 (see the readme file for additional info and hints).';
-
-$string['market12'] = 'Marketing Block 12';
-$string['market12desc'] = 'Add html for marketing block 12 (see the readme file for additional info and hints).';
+$string['layoutaddcontent'] = 'Happy With Your Layout? Now Add Content to Your Blocks:';
+$string['layoutaddcontentdesc1'] = 'You have configured ';
+$string['layoutaddcontentdesc2'] = ' marketing blocks. If you are happy with this layout add content to the blocks below.
+If you are not happy use the layout builder above to make changes<br />';
 
 $string['infobox'] = 'Frontpage Info Box';
 $string['infoboxdesc'] = 'Frontpage info block HTML (see the readme file for additional info and hints).';
@@ -302,7 +280,6 @@ $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpa
 
 $string['frontpagemarketoption'] = 'Coventry Tiles style marketing blocks';
 $string['frontpagemarketoptiondesc'] = 'Set the marketing blocks to use the Coventry Tiles style. Set the colour for this option in the colour settings.';
-
 
 // Footer **********************************************************.
 $string['footersettings'] = 'Footer';
