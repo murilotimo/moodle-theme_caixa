@@ -243,8 +243,8 @@ $string['marketingbuilderheading'] = 'Marketing Block Layout Builder';
 $string['marketingbuilderdesc'] = 'Use the tool below to setup your marketing blocks.
 Once defined the block settings will appear further down the page.';
 
-$string['marketlayoutlayoutrow'] = 'Marketing Block Row';
-$string['marketlayoutlayoutrowdesc'] = 'Add / set layout for marketing block row on front page';
+$string['marketlayoutrow'] = 'Marketing Block Row';
+$string['marketlayoutrowdesc'] = 'Add / set layout for marketing block row on front page';
 
 $string['market'] = 'Marketing Block ';
 $string['marketdesc'] = 'Add html for marketing block (see the readme file for additional info and hints).';

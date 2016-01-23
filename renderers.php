@@ -621,6 +621,49 @@ EOT;
         return $retval;
     }
 
+    public function get_marketing_blocks($layoutrow = 'marketlayoutrow', $settingname = 'market'){
+        global $PAGE;
+        $fields = array();
+        $blockcount = 0;
+        $style = '';
+        $adminediting = false;
+
+        $extramarketclass = " ";
+        if (!empty($PAGE->theme->settings->frontpagemarketoption)) {
+            $extramarketclass = "covtiles";
+        }
+
+        $retval = '<div id="marketblocks" class="container '. $extramarketclass .'">';
+
+        for ($i = 1; $i <=5; $i++){
+            $marketrow = $layoutrow . $i;
+            $marketrow = $PAGE->theme->settings->$marketrow;
+            if ($marketrow != '0-0-0-0'){
+                $fields[] = $marketrow;
+            }
+        }
+
+        foreach ($fields as $field){
+            $retval .= '<div class="row-fluid marketrow">';
+            $vals = explode('-', $field);
+            foreach ($vals as $val){
+                if ($val > 0){
+                    $retval .= '<div class="span' . $val . ' ' . $extramarketclass . 'first">';
+                    $blockcount ++;
+                    $fieldname = $settingname . $blockcount;
+                    $retval .= $PAGE->theme->settings->$fieldname;
+                    $retval .= '</div>';
+                }
+            }
+            $retval .= '</div>';
+        }
+        $retval .= '</div>';
+        if ($blockcount == 1 ){
+            $retval = '';
+        }
+        return $retval;
+    }
+
     /**
      * This renders the navbar.
      * Uses bootstrap compatible html.

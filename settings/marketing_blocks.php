@@ -73,16 +73,16 @@
     $imgpath = $CFG->wwwroot.'/theme/adaptable/pix/layout-builder/';
     $imgblder = '';
     for ($i = 1; $i <= 5; $i++){
-        $name = 'theme_adaptable/marketlayoutlayoutrow' . $i;
-        $title = get_string('marketlayoutlayoutrow', 'theme_adaptable');
-        $description = get_string('marketlayoutlayoutrowdesc', 'theme_adaptable');
+        $name = 'theme_adaptable/marketlayoutrow' . $i;
+        $title = get_string('marketlayoutrow', 'theme_adaptable');
+        $description = get_string('marketlayoutrowdesc', 'theme_adaptable');
         $default = $bootstrap12defaults[$i -1];
         $choices = $bootstrap12;
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
-        $settingname = 'marketlayoutlayoutrow' . $i;
+        $settingname = 'marketlayoutrow' . $i;
 
         if ($PAGE->theme->settings->$settingname != '0-0-0-0'){
             $imgblder .= '<img src="' . $imgpath . $PAGE->theme->settings->$settingname . '.png' . '" style="padding-top: 5px">';
