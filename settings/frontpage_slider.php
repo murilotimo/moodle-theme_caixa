@@ -31,7 +31,7 @@
     $temp->add(new admin_setting_heading('theme_adaptable_slideshow', get_string('slideshowsettingsheading', 'theme_adaptable'),
         format_text(get_string('slideshowdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-     $name = 'theme_adaptable/sliderfullscreen';
+    $name = 'theme_adaptable/sliderfullscreen';
     $title = get_string('sliderfullscreen', 'theme_adaptable');
     $description = get_string('sliderfullscreendesc', 'theme_adaptable');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
