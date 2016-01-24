@@ -661,6 +661,50 @@ EOT;
         return $retval;
     }
 
+    public function get_frontpage_slider() {
+        global $PAGE, $OUTPUT;
+        $noslides = $PAGE->theme->settings->slidercount;
+        $retval = '';
+
+        if (!empty($PAGE->theme->settings->sliderfullscreen)) {
+            $reval .= '<div class="slidewrap';
+        } else {
+            $retval .= '<div class="container slidewrap';
+        }
+
+        if (!empty($PAGE->theme->settings->slideroption2)) {
+            $retval .= " slidestyle2";
+        }
+
+        $retval .= '">
+            <div id="main-slider" class="flexslider">
+            <ul class="slides">';
+
+        for ($i = 1; $i <= $noslides; $i++){
+            $sliderimage = 'sliderimage' . $i;
+            $sliderurl = 'sliderurl' . $i;
+            $slidercaption = 'slidercaption' . $i;
+            $retval .= '<li>
+                <a href="';
+
+            if (!empty($PAGE->theme->settings->$sliderurl)) {
+                $retval .= $PAGE->theme->settings->$sliderurl;
+            } else {
+                $retval .= '#';
+            }
+
+            $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage) . '" alt="' . $sliderimage . '"/>';
+
+            if (!empty($PAGE->theme->settings->$slidercaption)) {
+                $retval .= '<div class="flex-caption">';
+                $retval .= $OUTPUT->get_setting($slidercaption, 'format_html');
+                $retval .= '</div></li>';
+            }
+        }
+        $retval .= '</ul></div></div>';
+        return $retval;
+    }
+
     /**
      * This renders the navbar.
      * Uses bootstrap compatible html.

@@ -147,50 +147,14 @@ $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowsettingsheading'] = 'Customize the carousel on the front page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
 
-$string['p1'] = 'Picture1';
-$string['p1desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an image.';
+$string['sliderimage'] = 'Slider Picture';
+$string['sliderimagedesc'] = 'Add an image for your slide.';
 
-$string['p2'] = 'Picture2';
-$string['p2desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an image.';
+$string['slidercaption'] = 'Slider Caption';
+$string['slidercaptiondesc'] = 'Add a caption for your slide';
 
-$string['p3'] = 'Picture3';
-$string['p3desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an image.';
-
-$string['p4'] = 'Picture4';
-$string['p4desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an image.';
-
-$string['p5'] = 'Picture5';
-$string['p5desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an image.';
-
-$string['p1cap'] = 'Picture1 caption';
-$string['p1capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
-
-$string['p2cap'] = 'Picture2 caption';
-$string['p2capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
-
-$string['p3cap'] = 'Picture3 caption';
-$string['p3capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
-
-$string['p4cap'] = 'Picture4 caption';
-$string['p4capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
-
-$string['p5cap'] = 'Picture5 caption';
-$string['p5capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
-
-$string['p1url'] = 'Slide 1 URL';
-$string['p1urldesc'] = 'Add a URL to slide 1.';
-
-$string['p2url'] = 'Slide 2 URL';
-$string['p2urldesc'] = 'Add a URL to slide 2.';
-
-$string['p3url'] = 'Slide 3 URL';
-$string['p3urldesc'] = 'Add a URL to slide 3.';
-
-$string['p4url'] = 'Slide 4 URL';
-$string['p4urldesc'] = 'Add a URL to slide 4.';
-
-$string['p5url'] = 'Slide 5 URL';
-$string['p5urldesc'] = 'Add a URL to slide 5.';
+$string['sliderurl'] = 'Slide Link URL';
+$string['sliderurldesc'] = 'Add a URL to which your slide links to when clicked.';
 
 $string['slidermargintop'] = 'Margin above slider';
 $string['slidermargintopdesc'] = 'Set the size of the margin above the slider.';
@@ -203,6 +167,9 @@ $string['sliderfullscreendesc'] = 'Check this box to make the slider full screen
 
 $string['slideroption2'] = 'Slider style option 2';
 $string['slideroption2desc'] = 'Check this box to turn on the 2nd Slider style';
+
+$string['slidercount'] = 'Slider Count';
+$string['slidercountdesc'] = 'Select how many slides you want to add';
 
 $string['slideroption2color'] = 'Slider style option 2 colour';
 $string['slideroption2colordesc'] = 'Set a background colour for the text in slider style option 2 colour';
