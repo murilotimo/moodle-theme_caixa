@@ -75,7 +75,7 @@
     }
 
     for ($sliderindex = 1; $sliderindex <= $slidercount; $sliderindex++) {
-        $fileid = 'sliderimage' . $sliderindex;
+        $fileid = 'p' . $sliderindex;
         $name = 'theme_adaptable/sliderimage' . $sliderindex;
         $title = get_string('sliderimage', 'theme_adaptable');
         $description = get_string('sliderimagedesc', 'theme_adaptable');
@@ -83,13 +83,13 @@
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
-        $name = 'theme_adaptable/sliderurl' . $sliderindex;
+        $name = 'theme_adaptable/p' . $sliderindex . 'url';
         $title = get_string('sliderurl', 'theme_adaptable');
         $description = get_string('sliderurldesc', 'theme_adaptable');
         $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
         $temp->add($setting);
 
-        $name = 'theme_adaptable/slidercaption' . $sliderindex;
+        $name = 'theme_adaptable/p' . $sliderindex . 'cap';
         $title = get_string('slidercaption', 'theme_adaptable');
         $description = get_string('slidercaptiondesc', 'theme_adaptable');
         $default = '';
