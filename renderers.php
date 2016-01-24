@@ -662,9 +662,9 @@ EOT;
     }
 
     public function get_frontpage_slider() {
-        global $PAGE;
+        global $PAGE, $OUTPUT;
         $noslides = $PAGE->theme->settings->slidercount;
-        $reval = '';
+        $retval = '';
 
         if (!empty($PAGE->theme->settings->sliderfullscreen)) {
             $reval .= '<div class="slidewrap';
@@ -676,7 +676,7 @@ EOT;
             $retval .= " slidestyle2";
         }
 
-        $retval .= '">"
+        $retval .= '">
             <div id="main-slider" class="flexslider">
             <ul class="slides">';
 
@@ -690,32 +690,19 @@ EOT;
             if (!empty($PAGE->theme->settings->$sliderurl)) {
                 $retval .= $PAGE->theme->settings->$sliderurl;
             } else {
-                $retval .= "#";
+                $retval .= '#';
             }
 
-            $retval .= '<img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage) . '" alt="' . $sliderimage . '/>';
+            $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage) . '" alt="' . $sliderimage . '"/>';
 
             if (!empty($PAGE->theme->settings->$slidercaption)) {
                 $retval .= '<div class="flex-caption">';
                 $retval .= $OUTPUT->get_setting($slidercaption, 'format_html');
-                $retval .= '</div></a></li>';
+                $retval .= '</div></li>';
             }
         }
         $retval .= '</ul></div></div>';
         return $retval;
-    }
-
-
-
-
-
-
-
-
-
-
-
-        }
     }
 
     /**
