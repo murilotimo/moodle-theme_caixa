@@ -919,6 +919,11 @@ $marketblockstyles = array(
     'covtiles' => 'Coventry Style'
 );
 
+$sliderstyles = array(
+    'slider1' => 'Slider Style 1',
+    'slider2' => 'Slider Style 2'
+);
+
 $bootstrap12 = array(
     '0-0-0-0' => 'disabled',
     '12-0-0-0' => '1 (full width)',

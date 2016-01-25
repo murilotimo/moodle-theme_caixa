@@ -162,11 +162,20 @@ $string['slidermargintopdesc'] = 'Set the size of the margin above the slider.';
 $string['slidermarginbottom'] = 'Margin below slider';
 $string['slidermarginbottomdesc'] = 'Set the size of the margin below the slider.';
 
+$string['sliderenabled'] = 'Enable Slider';
+$string['sliderenableddesc'] = 'Enable a slider at the top of your home page';
+
 $string['sliderfullscreen'] = 'Slider full screen';
 $string['sliderfullscreendesc'] = 'Check this box to make the slider full screen (100% width)';
 
 $string['slideroption2'] = 'Slider style option 2';
 $string['slideroption2desc'] = 'Check this box to turn on the 2nd Slider style';
+$string['slideroption2snippet'] = '<p>Sample HTML for Slider Captions:</p>
+<pre>
+&#x3C;div class=&#x22;span6 col-sm-6&#x22;&#x3E;
+&#x3C;h3&#x3E;Hand-crafted&#x3C;/h3&#x3E; &#x3C;h4&#x3E;pixels and code for the Moodle community&#x3C;/h4&#x3E;
+&#x3C;a href=&#x22;#&#x22; class=&#x22;submit&#x22;&#x3E;Please favorite our theme!&#x3C;/a&#x3E;
+</pre>';
 
 $string['slidercount'] = 'Slider Count';
 $string['slidercountdesc'] = 'Select how many slides you want to add';

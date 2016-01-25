@@ -672,7 +672,7 @@ EOT;
             $retval .= '<div class="container slidewrap';
         }
 
-        if (!empty($PAGE->theme->settings->slideroption2)) {
+        if ($PAGE->theme->settings->slideroption2 == 'slider2') {
             $retval .= " slidestyle2";
         }
 
@@ -681,24 +681,26 @@ EOT;
             <ul class="slides">';
 
         for ($i = 1; $i <= $noslides; $i++){
-            $sliderimage = 'sliderimage' . $i;
-            $sliderurl = 'sliderurl' . $i;
-            $slidercaption = 'slidercaption' . $i;
-            $retval .= '<li>
-                <a href="';
+            $sliderimage = 'p' . $i;
+            $sliderurl = 'p' . $i . 'url';
+            $slidercaption = 'p' . $i .'cap';
+            if (!empty($PAGE->theme->settings->$sliderimage)) {
+                $retval .= '<li>
+                    <a href="';
 
-            if (!empty($PAGE->theme->settings->$sliderurl)) {
-                $retval .= $PAGE->theme->settings->$sliderurl;
-            } else {
-                $retval .= '#';
-            }
+                if (!empty($PAGE->theme->settings->$sliderurl)) {
+                    $retval .= $PAGE->theme->settings->$sliderurl;
+                } else {
+                    $retval .= '#';
+                }
 
-            $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage) . '" alt="' . $sliderimage . '"/>';
+                $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage) . '" alt="' . $sliderimage . '"/>';
 
-            if (!empty($PAGE->theme->settings->$slidercaption)) {
-                $retval .= '<div class="flex-caption">';
-                $retval .= $OUTPUT->get_setting($slidercaption, 'format_html');
-                $retval .= '</div></li>';
+                if (!empty($PAGE->theme->settings->$slidercaption)) {
+                    $retval .= '<div class="flex-caption">';
+                    $retval .= $OUTPUT->get_setting($slidercaption, 'format_html');
+                    $retval .= '</div></li>';
+                }
             }
         }
         $retval .= '</ul></div></div>';

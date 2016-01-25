@@ -29,7 +29,13 @@
     $temp = new admin_settingpage('theme_adaptable_frontpage_slider', get_string('frontpageslidersettings', 'theme_adaptable'));
 
     $temp->add(new admin_setting_heading('theme_adaptable_slideshow', get_string('slideshowsettingsheading', 'theme_adaptable'),
-        format_text(get_string('slideshowdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+        format_text(get_string('slideshowdesc', 'theme_adaptable') . get_string('slideroption2snippet', 'theme_adaptable'), FORMAT_MARKDOWN)));
+
+    $name = 'theme_adaptable/sliderenabled';
+    $title = get_string('sliderenabled', 'theme_adaptable');
+    $description = get_string('sliderenableddesc', 'theme_adaptable');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $temp->add($setting);
 
     $name = 'theme_adaptable/sliderfullscreen';
     $title = get_string('sliderfullscreen', 'theme_adaptable');
@@ -56,8 +62,28 @@
     $name = 'theme_adaptable/slideroption2';
     $title = get_string('slideroption2', 'theme_adaptable');
     $description = get_string('slideroption2desc', 'theme_adaptable');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $radchoices = $sliderstyles;
+    $setting = new admin_setting_configselect($name, $title, $description, 'nocaptions', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+
+    if ($PAGE->theme->settings->slideroption2 == 'slider2'){
+        $name = 'theme_adaptable/slideroption2color';
+        $title = get_string('slideroption2color', 'theme_adaptable');
+        $description = get_string('slideroption2colordesc', 'theme_adaptable');
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        $name = 'theme_adaptable/slideroption2a';
+        $title = get_string('slideroption2a', 'theme_adaptable');
+        $description = get_string('slideroption2adesc', 'theme_adaptable');
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+    }
 
     // Number of Sliders.
     $name = 'theme_adaptable/slidercount';
@@ -76,7 +102,7 @@
 
     for ($sliderindex = 1; $sliderindex <= $slidercount; $sliderindex++) {
         $fileid = 'p' . $sliderindex;
-        $name = 'theme_adaptable/sliderimage' . $sliderindex;
+        $name = 'theme_adaptable/p' . $sliderindex;
         $title = get_string('sliderimage', 'theme_adaptable');
         $description = get_string('sliderimagedesc', 'theme_adaptable');
         $setting = new admin_setting_configstoredfile($name, $title, $description, $fileid);
@@ -96,21 +122,5 @@
         $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
         $temp->add($setting);
     }
-
-    $name = 'theme_adaptable/slideroption2color';
-    $title = get_string('slideroption2color', 'theme_adaptable');
-    $description = get_string('slideroption2colordesc', 'theme_adaptable');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/slideroption2a';
-    $title = get_string('slideroption2a', 'theme_adaptable');
-    $description = get_string('slideroption2adesc', 'theme_adaptable');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
 
     $ADMIN->add('theme_adaptable', $temp);
