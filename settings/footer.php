@@ -38,12 +38,6 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/showfooterblocks';
-    $title = get_string('showfooterblocks', 'theme_adaptable');
-    $description = get_string('showfooterblocksdesc', 'theme_adaptable');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
-    $temp->add($setting);
-
     $name = 'theme_adaptable/footerblocksplacement';
     $title = get_string('footerblocksplacement', 'theme_adaptable');
     $description = get_string('footerblocksplacementdesc', 'theme_adaptable');
@@ -52,66 +46,70 @@
         2 => get_string('footerblocksplacement2', 'theme_adaptable'),
         3 => get_string('footerblocksplacement3', 'theme_adaptable'),
     );
-    $setting = new admin_setting_configselect($name, $title, $description, 2, $choices);
+    $setting = new admin_setting_configselect($name, $title, $description, 1, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-
-    $name = 'theme_adaptable/footer1header';
-    $title = get_string('footer1header', 'theme_adaptable');
-    $description = get_string('footer1desc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $name = 'theme_adaptable/showfooterblocks';
+    $title = get_string('showfooterblocks', 'theme_adaptable');
+    $description = get_string('showfooterblocksdesc', 'theme_adaptable');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $temp->add($setting);
 
-    $name = 'theme_adaptable/footer1content';
-    $title = get_string('footer1content', 'theme_adaptable');
-    $description = get_string('footer1contentdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
+    $totalblocks = 0;
+    $imgpath = $CFG->wwwroot.'/theme/adaptable/pix/layout-builder/';
+    $imgblder = '';
+    for ($i = 1; $i <= 3; $i++){
+        $name = 'theme_adaptable/footerlayoutrow' . $i;
+        $title = get_string('footerlayoutrow', 'theme_adaptable');
+        $description = get_string('footerlayoutrowdesc', 'theme_adaptable');
+        $default = $bootstrap12defaults[$i -1];
+        $choices = $bootstrap12;
+        $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
 
-    $name = 'theme_adaptable/footer2header';
-    $title = get_string('footer2header', 'theme_adaptable');
-    $description = get_string('footer2desc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
+        $settingname = 'footerlayoutrow' . $i;
 
-    $name = 'theme_adaptable/footer2content';
-    $title = get_string('footer2content', 'theme_adaptable');
-    $description = get_string('footer2contentdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
+        if ($PAGE->theme->settings->$settingname != '0-0-0-0'){
+            $imgblder .= '<img src="' . $imgpath . $PAGE->theme->settings->$settingname . '.png' . '" style="padding-top: 5px">';
+        }
 
-    $name = 'theme_adaptable/footer3header';
-    $title = get_string('footer3header', 'theme_adaptable');
-    $description = get_string('footer3desc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
+        $vals = explode('-', $PAGE->theme->settings->$settingname);
+        foreach ($vals as $val){
+            if ($val > 0){
+                $totalblocks ++;
+            }
+        }
+    }
 
-    $name = 'theme_adaptable/footer3content';
-    $title = get_string('footer3content', 'theme_adaptable');
-    $description = get_string('footer3contentdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
+    $temp->add(new admin_setting_heading('theme_adaptable_footerlayoutcheck', get_string('layoutcheck', 'theme_adaptable'),
+        format_text(get_string('layoutcheckdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    $name = 'theme_adaptable/footer4header';
-    $title = get_string('footer4header', 'theme_adaptable');
-    $description = get_string('footer4desc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $temp->add($setting);
+    $temp->add(new admin_setting_heading('theme_adaptable_footerlayoutbuilder', '', $imgblder));
 
-    $name = 'theme_adaptable/footer4content';
-    $title = get_string('footer4content', 'theme_adaptable');
-    $description = get_string('footer4contentdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
+    $blkcontmsg = get_string('layoutaddcontentdesc1', 'theme_adaptable');
+    $blkcontmsg .= $totalblocks;
+    $blkcontmsg .= get_string('layoutaddcontentdesc2', 'theme_adaptable');
+
+    $temp->add(new admin_setting_heading('theme_adaptable_footerlayoutaddcontent', get_string('layoutaddcontent', 'theme_adaptable'),
+        format_text($blkcontmsg, FORMAT_MARKDOWN)));
+
+    for ($i = 1; $i <= $totalblocks; $i++){
+        $name = 'theme_adaptable/footer' . $i . 'header';
+        $title = get_string('footerheader', 'theme_adaptable') . $i;
+        $description = get_string('footerdesc', 'theme_adaptable') . $i;
+        $default = '';
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $temp->add($setting);
+
+        $name = 'theme_adaptable/footer' . $i . 'content';
+        $title = get_string('footercontent', 'theme_adaptable') . $i;
+        $description = get_string('footercontentdesc', 'theme_adaptable') . $i;
+        $default = '';
+        $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+        $temp->add($setting);
+    }
 
     $name = 'theme_adaptable/footnote';
     $title = get_string('footnote', 'theme_adaptable');

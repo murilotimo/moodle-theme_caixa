@@ -626,7 +626,6 @@ EOT;
         $fields = array();
         $blockcount = 0;
         $style = '';
-        $adminediting = false;
 
         $extramarketclass = $PAGE->theme->settings->frontpagemarketoption;
 
@@ -659,6 +658,70 @@ EOT;
             $retval = '';
         }
         return $retval;
+    }
+
+    public function get_footer_visibility(){
+        global $PAGE, $COURSE;
+        $value = $PAGE->theme->settings->footerblocksplacement;
+
+        if ($value == 1) {
+            return true;
+        }
+
+        if ($value == 2 && $COURSE->id != 1) {
+            return false;
+        }
+
+        if ($value == 3) {
+            return false;
+        }
+        return true;
+    }
+
+    public function get_footer_blocks($layoutrow = 'footerlayoutrow'){
+        global $PAGE, $OUTPUT;
+        $fields = array();
+        $blockcount = 0;
+        $style = '';
+
+        if(!$OUTPUT->get_footer_visibility()){
+            return '';
+        }
+
+
+        $output = '<div id="course-footer">' . $OUTPUT->course_footer() . '</div>
+                <div class="container blockplace1">';
+
+        for ($i = 1; $i <=3; $i++){
+            $footerrow = $layoutrow . $i;
+            $footerrow = $PAGE->theme->settings->$footerrow;
+            if ($footerrow != '0-0-0-0'){
+                $fields[] = $footerrow;
+            }
+        }
+
+        foreach ($fields as $field){
+            $output .= '<div class="row-fluid">';
+            $vals = explode('-', $field);
+            foreach ($vals as $val){
+                if ($val > 0){
+                    $blockcount ++;
+                    $footerheader = 'footer' . $blockcount . 'header';
+                    $footercontent = 'footer' . $blockcount . 'content';
+                    if (!empty($PAGE->theme->settings->$footercontent)){
+                        $output .= '<div class="left-col span' . $val . '" id="contactdetails">';
+                        $output .=  '<h3 title="' . $OUTPUT->get_setting($footerheader, 'format_text') . '">';
+                        $output .= $OUTPUT->get_setting($footerheader, 'format_text');
+                        $output .= '</h3>';
+                        $output .= $OUTPUT->get_setting($footercontent, 'format_html');
+                        $output .= '</div>';
+                    }
+                }
+            }
+            $output .= '</div>';
+        }
+        $output .= '</div>';
+        return $output;
     }
 
     public function get_frontpage_slider() {

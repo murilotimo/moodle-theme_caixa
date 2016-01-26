@@ -263,37 +263,26 @@ $string['footersettings'] = 'Footer';
 $string['footersettingsheading'] = 'Set the content that should appear in the footer. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a> ';
 $string['footerdesc'] = 'Control the content that appears in the 4 footer sections of the page.';
 
-$string['showfooterblocks'] = 'Show footer blocks';
-$string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';
+$string['showfooterblocks'] = 'Show Footnote Block';
+$string['showfooterblocksdesc'] = 'Show / hide the lower footerblock used for footnote / moodle docs region';
 
-$string['footerblocksplacement'] = 'Footer blocks placement ';
-$string['footerblocksplacementdesc'] = 'Control the way that the footer blocks are displayed. Sitewide is default.';
+$string['footerblocksplacement'] = 'Footer Blocks Placement ';
+$string['footerblocksplacementdesc'] = 'Control where the upper footer blocks are displayed. Sitewide is default.';
 $string['footerblocksplacement1'] = 'Sitewide';
-$string['footerblocksplacement2'] = 'Homepage_only';
+$string['footerblocksplacement2'] = 'Homepage Only';
 $string['footerblocksplacement3'] = 'Never';
+
+$string['footerlayoutrow'] = 'Footer Layout Builder';
+$string['footerlayoutrowdesc'] = 'Design your layout for footer block regions.';
 
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Add text to the footer.';
 
-$string['footer1header'] = 'Footer Section 1 Title';
-$string['footer2header'] = 'Footer Section 2 Title';
-$string['footer3header'] = 'Footer Section 3 Title';
-$string['footer4header'] = 'Footer Section 4 Title';
+$string['footerheader'] = 'Footer Title Section ';
+$string['footerdesc'] = 'Add a title for footer section ';
 
-$string['footer1desc'] = 'Add a title for footer section 1';
-$string['footer2desc'] = 'Add a title for footer section 2';
-$string['footer3desc'] = 'Add a title for footer section 3';
-$string['footer4desc'] = 'Add a title for footer section 4';
-
-$string['footer1content'] = 'Footer Section 1 Content';
-$string['footer2content'] = 'Footer Section 2 Content';
-$string['footer3content'] = 'Footer Section 3 Content';
-$string['footer4content'] = 'Footer Section 4 Content';
-
-$string['footer1contentdesc'] = 'Add content to footer section 1';
-$string['footer2contentdesc'] = 'Add content to footer section 2';
-$string['footer3contentdesc'] = 'Add content to footer section 3';
-$string['footer4contentdesc'] = 'Add content to footer section 4';
+$string['footercontent'] = 'Footer Content Section ';
+$string['footercontentdesc'] = 'Add content to footer section ';
 
 
 // Moodle Docs link.
@@ -883,12 +872,6 @@ $string['navbarhover'] = 'Navbar hover colour';
 $string['navbarhoverdesc'] = 'When hovering on a navigation item, the colour of the border of the navbar.';
 $string['showfooterblocks'] = 'Show footer blocks';
 $string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';
-
-$string['footerblocksplacement'] = 'Footer blocks placement ';
-$string['footerblocksplacementdesc'] = 'Control the way that the footer blocks are displayed. Sitewide is default.';
-$string['footerblocksplacement1'] = 'Sitewide';
-$string['footerblocksplacement2'] = 'Homepage_only';
-$string['footerblocksplacement3'] = 'Never';
 
 $string['breadcrumb'] = 'Breadcrumb background colour';
 $string['breadcrumbdesc'] = 'Set the background colour of the breadcrumb.';
