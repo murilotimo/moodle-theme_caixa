@@ -31,7 +31,7 @@ $left = theme_adaptable_get_block_side();
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $haslogo = (!empty($PAGE->theme->settings->logo));
 
-if (!empty($PAGE->theme->settings->sliderenabled)){
+if (!empty($PAGE->theme->settings->sliderenabled)) {
     echo $OUTPUT->get_frontpage_slider();
 }
 
@@ -55,13 +55,15 @@ if (!empty($PAGE->theme->settings->infobox)) {
 
 <?php echo $OUTPUT->get_marketing_blocks(); ?>
 
-<?php if (!empty($PAGE->theme->settings->frontpageblocksenabled)){ ?>
+<?php if (!empty($PAGE->theme->settings->frontpageblocksenabled)) { ?>
     <div id="frontblockregion" class="container">
         <div class="row-fluid">
             <?php echo $OUTPUT->get_block_regions(); ?>
         </div>
     </div>
-<?php } ?>
+<?php
+}
+?>
 
 
 <?php

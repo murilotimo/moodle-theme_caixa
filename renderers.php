@@ -576,7 +576,7 @@ EOT;
         return $retval;
     }
 
-    public function get_block_regions($settingsname = 'blocklayoutlayoutrow'){
+    public function get_block_regions($settingsname = 'blocklayoutlayoutrow') {
         global $PAGE, $OUTPUT, $USER;
         $fields = array();
         $retval = '';
@@ -584,31 +584,31 @@ EOT;
         $style = '';
         $adminediting = false;
 
-        if (is_siteadmin() && isset($USER->editing) && $USER->editing == 1){
-            $style =  '" style="display: block; background: #EEEEEE; min-height: 50px; border: 2px dashed #BFBDBD; margin-top: 5px';
+        if (is_siteadmin() && isset($USER->editing) && $USER->editing == 1) {
+            $style = '" style="display: block; background: #EEEEEE; min-height: 50px; border: 2px dashed #BFBDBD; margin-top: 5px';
             $adminediting = true;
         }
 
-        for ($i = 1; $i <=8; $i++){
+        for ($i = 1; $i <= 8; $i++) {
             $marketrow = $settingsname . $i;
             $marketrow = $PAGE->theme->settings->$marketrow;
-            if ($marketrow != '0-0-0-0'){
+            if ($marketrow != '0-0-0-0') {
                 $fields[] = $marketrow;
             }
         }
 
-        foreach ($fields as $field){
+        foreach ($fields as $field) {
             $retval .= '<div class="row" style="margin-left: 0px;">';
             $vals = explode('-', $field);
-            foreach ($vals as $val){
-                if ($val > 0){
+            foreach ($vals as $val) {
+                if ($val > 0) {
                     $retval .= '<div class="span' . $val . $style . '">';
 
-                    // moodle does not seem to like numbers in region names so using letter instead
+                    // Moodle does not seem to like numbers in region names so using letter instead.
                     $blockcount ++;
                     $block = 'frnt-market-' .  chr(96 + $blockcount);
 
-                    if ($adminediting){
+                    if ($adminediting) {
                         $retval .= '<span style="padding-left: 10px;"> ' . '' . '</span>';
                     }
 
@@ -621,7 +621,7 @@ EOT;
         return $retval;
     }
 
-    public function get_marketing_blocks($layoutrow = 'marketlayoutrow', $settingname = 'market'){
+    public function get_marketing_blocks($layoutrow = 'marketlayoutrow', $settingname = 'market') {
         global $PAGE;
         $fields = array();
         $blockcount = 0;
@@ -631,19 +631,19 @@ EOT;
 
         $retval = '<div id="marketblocks" class="container '. $extramarketclass .'">';
 
-        for ($i = 1; $i <=5; $i++){
+        for ($i = 1; $i <= 5; $i++) {
             $marketrow = $layoutrow . $i;
             $marketrow = $PAGE->theme->settings->$marketrow;
-            if ($marketrow != '0-0-0-0'){
+            if ($marketrow != '0-0-0-0') {
                 $fields[] = $marketrow;
             }
         }
 
-        foreach ($fields as $field){
+        foreach ($fields as $field) {
             $retval .= '<div class="row-fluid marketrow">';
             $vals = explode('-', $field);
-            foreach ($vals as $val){
-                if ($val > 0){
+            foreach ($vals as $val) {
+                if ($val > 0) {
                     $retval .= '<div class="span' . $val . ' ' . $extramarketclass . ' first">';
                     $blockcount ++;
                     $fieldname = $settingname . $blockcount;
@@ -654,13 +654,13 @@ EOT;
             $retval .= '</div>';
         }
         $retval .= '</div>';
-        if ($blockcount == 1 ){
+        if ($blockcount == 1 ) {
             $retval = '';
         }
         return $retval;
     }
 
-    public function get_footer_visibility(){
+    public function get_footer_visibility() {
         global $PAGE, $COURSE;
         $value = $PAGE->theme->settings->footerblocksplacement;
 
@@ -678,39 +678,38 @@ EOT;
         return true;
     }
 
-    public function get_footer_blocks($layoutrow = 'footerlayoutrow'){
+    public function get_footer_blocks($layoutrow = 'footerlayoutrow') {
         global $PAGE, $OUTPUT;
         $fields = array();
         $blockcount = 0;
         $style = '';
 
-        if(!$OUTPUT->get_footer_visibility()){
+        if (!$OUTPUT->get_footer_visibility()) {
             return '';
         }
-
 
         $output = '<div id="course-footer">' . $OUTPUT->course_footer() . '</div>
                 <div class="container blockplace1">';
 
-        for ($i = 1; $i <=3; $i++){
+        for ($i = 1; $i <= 3; $i++) {
             $footerrow = $layoutrow . $i;
             $footerrow = $PAGE->theme->settings->$footerrow;
-            if ($footerrow != '0-0-0-0'){
+            if ($footerrow != '0-0-0-0') {
                 $fields[] = $footerrow;
             }
         }
 
-        foreach ($fields as $field){
+        foreach ($fields as $field) {
             $output .= '<div class="row-fluid">';
             $vals = explode('-', $field);
-            foreach ($vals as $val){
-                if ($val > 0){
+            foreach ($vals as $val) {
+                if ($val > 0) {
                     $blockcount ++;
                     $footerheader = 'footer' . $blockcount . 'header';
                     $footercontent = 'footer' . $blockcount . 'content';
-                    if (!empty($PAGE->theme->settings->$footercontent)){
+                    if (!empty($PAGE->theme->settings->$footercontent)) {
                         $output .= '<div class="left-col span' . $val . '" id="contactdetails">';
-                        $output .=  '<h3 title="' . $OUTPUT->get_setting($footerheader, 'format_text') . '">';
+                        $output .= '<h3 title="' . $OUTPUT->get_setting($footerheader, 'format_text') . '">';
                         $output .= $OUTPUT->get_setting($footerheader, 'format_text');
                         $output .= '</h3>';
                         $output .= $OUTPUT->get_setting($footercontent, 'format_html');
@@ -743,7 +742,7 @@ EOT;
             <div id="main-slider" class="flexslider">
             <ul class="slides">';
 
-        for ($i = 1; $i <= $noslides; $i++){
+        for ($i = 1; $i <= $noslides; $i++) {
             $sliderimage = 'p' . $i;
             $sliderurl = 'p' . $i . 'url';
             $slidercaption = 'p' . $i .'cap';
@@ -757,7 +756,8 @@ EOT;
                     $retval .= '#';
                 }
 
-                $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage) . '" alt="' . $sliderimage . '"/>';
+                $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage)
+                    . '" alt="' . $sliderimage . '"/>';
 
                 if (!empty($PAGE->theme->settings->$slidercaption)) {
                     $retval .= '<div class="flex-caption">';
