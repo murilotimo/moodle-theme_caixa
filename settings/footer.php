@@ -38,12 +38,6 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/showfooterblocks';
-    $title = get_string('showfooterblocks', 'theme_adaptable');
-    $description = get_string('showfooterblocksdesc', 'theme_adaptable');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
-    $temp->add($setting);
-
     $name = 'theme_adaptable/footerblocksplacement';
     $title = get_string('footerblocksplacement', 'theme_adaptable');
     $description = get_string('footerblocksplacementdesc', 'theme_adaptable');
@@ -52,8 +46,14 @@
         2 => get_string('footerblocksplacement2', 'theme_adaptable'),
         3 => get_string('footerblocksplacement3', 'theme_adaptable'),
     );
-    $setting = new admin_setting_configselect($name, $title, $description, 2, $choices);
+    $setting = new admin_setting_configselect($name, $title, $description, 1, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/showfooterblocks';
+    $title = get_string('showfooterblocks', 'theme_adaptable');
+    $description = get_string('showfooterblocksdesc', 'theme_adaptable');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $temp->add($setting);
 
     $totalblocks = 0;

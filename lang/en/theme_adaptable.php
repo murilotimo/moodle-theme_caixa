@@ -263,11 +263,11 @@ $string['footersettings'] = 'Footer';
 $string['footersettingsheading'] = 'Set the content that should appear in the footer. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a> ';
 $string['footerdesc'] = 'Control the content that appears in the 4 footer sections of the page.';
 
-$string['showfooterblocks'] = 'Show footer blocks';
-$string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';
+$string['showfooterblocks'] = 'Show Footnote Block';
+$string['showfooterblocksdesc'] = 'Show / hide the lower footerblock used for footnote / moodle docs region';
 
-$string['footerblocksplacement'] = 'Footer blocks placement ';
-$string['footerblocksplacementdesc'] = 'Control the way that the footer blocks are displayed. Sitewide is default.';
+$string['footerblocksplacement'] = 'Footer Blocks Placement ';
+$string['footerblocksplacementdesc'] = 'Control where the upper footer blocks are displayed. Sitewide is default.';
 $string['footerblocksplacement1'] = 'Sitewide';
 $string['footerblocksplacement2'] = 'Homepage Only';
 $string['footerblocksplacement3'] = 'Never';
@@ -872,12 +872,6 @@ $string['navbarhover'] = 'Navbar hover colour';
 $string['navbarhoverdesc'] = 'When hovering on a navigation item, the colour of the border of the navbar.';
 $string['showfooterblocks'] = 'Show footer blocks';
 $string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';
-
-$string['footerblocksplacement'] = 'Footer blocks placement ';
-$string['footerblocksplacementdesc'] = 'Control the way that the footer blocks are displayed. Sitewide is default.';
-$string['footerblocksplacement1'] = 'Sitewide';
-$string['footerblocksplacement2'] = 'Homepage_only';
-$string['footerblocksplacement3'] = 'Never';
 
 $string['breadcrumb'] = 'Breadcrumb background colour';
 $string['breadcrumbdesc'] = 'Set the background colour of the breadcrumb.';
