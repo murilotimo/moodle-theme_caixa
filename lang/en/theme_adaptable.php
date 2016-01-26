@@ -168,8 +168,8 @@ $string['sliderenableddesc'] = 'Enable a slider at the top of your home page';
 $string['sliderfullscreen'] = 'Slider full screen';
 $string['sliderfullscreendesc'] = 'Check this box to make the slider full screen (100% width)';
 
-$string['slideroption2'] = 'Slider style option 2';
-$string['slideroption2desc'] = 'Check this box to turn on the 2nd Slider style';
+$string['slideroption2'] = 'Choose Slider Type';
+$string['slideroption2desc'] = 'Choose Slider Type <strong>and then click SAVE</strong> to see color settings for your chosen slider';
 $string['slideroption2snippet'] = '<p>Sample HTML for Slider Captions:</p>
 <pre>
 &#x3C;div class=&#x22;span6 col-sm-6&#x22;&#x3E;
@@ -178,10 +178,37 @@ $string['slideroption2snippet'] = '<p>Sample HTML for Slider Captions:</p>
 </pre>';
 
 $string['slidercount'] = 'Slider Count';
-$string['slidercountdesc'] = 'Select how many slides you want to add';
+$string['slidercountdesc'] = 'Select how many slides you want to add <strong>then click SAVE</strong> to load the input fields';
 
-$string['slideroption2color'] = 'Slider style option 2 colour';
-$string['slideroption2colordesc'] = 'Set a background colour for the text in slider style option 2 colour';
+$string['sliderh3color'] = 'Slider 1 H3 Color';
+$string['sliderh3colordesc'] = 'Choose the color you want for the slider 1 H3 tag';
+
+$string['sliderh4color'] = 'Slider 1 H4 Color';
+$string['sliderh4colordesc'] = 'Choose the color you want for the slider 1 H4 tag';
+
+$string['slidersubmitcolor'] = 'Slider 1 Submit Text';
+$string['slidersubmitcolordesc'] = 'Choose the text color of the Slider 1 submit button';
+
+$string['slidersubmitbgcolor'] = 'Slider 1 Submit bg';
+$string['slidersubmitbgcolordesc'] = 'Choose the background color of the Slider 1 submit button';
+
+$string['slider2h3color'] = 'Slider 2 H3 Text Color';
+$string['slider2h3colordesc'] = 'Choose the text color you want for the slider 2 H3 tag';
+
+$string['slider2h4color'] = 'Slider 2 H4 Text Color';
+$string['slider2h4colordesc'] = 'Choose the text color you want for the slider 2 H4 tag';
+
+$string['slider2h3bgcolor'] = 'Slider 2 H3 bg Color';
+$string['slider2h3bgcolordesc'] = 'Choose the background color you want for the slider 2 H3 tag';
+
+$string['slider2h4bgcolor'] = 'Slider 2 H4 bg Color';
+$string['slider2h4bgcolordesc'] = 'Choose the background color you want for the slider 2 H4 tag';
+
+$string['slideroption2submitcolor'] = 'Slider 2 Submit Text';
+$string['slideroption2submitcolordesc'] = 'Set a background colour for the submit text in slider style option 2 colour';
+
+$string['slideroption2color'] = 'Slider 2 Submit bg';
+$string['slideroption2colordesc'] = 'Set a background colour for the submit text in slider style option';
 
 $string['slideroption2a'] = 'Slider style option 2 arrow background colour';
 $string['slideroption2adesc'] = 'Set the slider style option 2 arrow background colour';
