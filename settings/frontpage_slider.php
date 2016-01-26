@@ -67,12 +67,86 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    if ($PAGE->theme->settings->slideroption2 == 'slider1'){
+        $name = 'theme_adaptable/sliderh3color';
+        $title = get_string('sliderh3color', 'theme_adaptable');
+        $description = get_string('sliderh3colordesc', 'theme_adaptable');
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        $name = 'theme_adaptable/sliderh4color';
+        $title = get_string('sliderh4color', 'theme_adaptable');
+        $description = get_string('sliderh4colordesc', 'theme_adaptable');
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        $name = 'theme_adaptable/slidersubmitcolor';
+        $title = get_string('slidersubmitcolor', 'theme_adaptable');
+        $description = get_string('slidersubmitcolordesc', 'theme_adaptable');
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        $name = 'theme_adaptable/slidersubmitbgcolor';
+        $title = get_string('slidersubmitbgcolor', 'theme_adaptable');
+        $description = get_string('slidersubmitbgcolordesc', 'theme_adaptable');
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+    }
+
     if ($PAGE->theme->settings->slideroption2 == 'slider2'){
+        $name = 'theme_adaptable/slider2h3color';
+        $title = get_string('slider2h3color', 'theme_adaptable');
+        $description = get_string('slider2h3colordesc', 'theme_adaptable');
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        $name = 'theme_adaptable/slider2h3bgcolor';
+        $title = get_string('slider2h3bgcolor', 'theme_adaptable');
+        $description = get_string('slider2h3bgcolordesc', 'theme_adaptable');
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#000000', $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        $name = 'theme_adaptable/slider2h4color';
+        $title = get_string('slider2h4color', 'theme_adaptable');
+        $description = get_string('slider2h4colordesc', 'theme_adaptable');
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#000000', $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        $name = 'theme_adaptable/slider2h4bgcolor';
+        $title = get_string('slider2h4bgcolor', 'theme_adaptable');
+        $description = get_string('slider2h4bgcolordesc', 'theme_adaptable');
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
+        $name = 'theme_adaptable/slideroption2submitcolor';
+        $title = get_string('slideroption2submitcolor', 'theme_adaptable');
+        $description = get_string('slideroption2submitcolordesc', 'theme_adaptable');
+        $previewconfig = null;
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $temp->add($setting);
+
         $name = 'theme_adaptable/slideroption2color';
         $title = get_string('slideroption2color', 'theme_adaptable');
         $description = get_string('slideroption2colordesc', 'theme_adaptable');
         $previewconfig = null;
-        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
 
@@ -80,7 +154,7 @@
         $title = get_string('slideroption2a', 'theme_adaptable');
         $description = get_string('slideroption2adesc', 'theme_adaptable');
         $previewconfig = null;
-        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
+        $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $temp->add($setting);
     }
