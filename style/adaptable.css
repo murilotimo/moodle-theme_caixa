@@ -924,7 +924,6 @@ input[type="radio"], input[type="checkbox"] {
         font-size: 1.1em !important;
         line-height: 2em;
         margin: 0px 5px !important;
-        color: [[setting:sliderh3color]];
     }
 
     a.submit {
