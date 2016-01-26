@@ -517,7 +517,7 @@ EOT;
             $fields = explode('|', $line);
 
             $val = '<a alt="' . $fields[1];
-            $val .= '" target="' . $target . '"';
+            $val .= '" target="' . $target;
             $val .= '" title="' . $fields[1];
             $val .= '" href="' . $fields[0] . '">';
             $val .= '<i class="fa ' . $fields[2] . '"></i>';
