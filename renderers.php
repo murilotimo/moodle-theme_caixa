@@ -585,7 +585,7 @@ EOT;
         $adminediting = false;
 
         if (is_siteadmin() && isset($USER->editing) && $USER->editing == 1){
-            $style =  '" style="display: block; background: #C1F4EF; min-height: 50px; border: 3px solid #00796B; margin-top: 5px';
+            $style =  '" style="display: block; background: #EEEEEE; min-height: 50px; border: 2px dashed #BFBDBD; margin-top: 5px';
             $adminediting = true;
         }
 
@@ -609,7 +609,7 @@ EOT;
                     $block = 'frnt-market-' .  chr(96 + $blockcount);
 
                     if ($adminediting){
-                        $retval .= '<span style="padding-left: 10px;"> ' . $block . '</span>';
+                        $retval .= '<span style="padding-left: 10px;"> ' . '' . '</span>';
                     }
 
                     $retval .= $OUTPUT->blocks($block);
