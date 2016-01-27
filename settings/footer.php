@@ -71,6 +71,10 @@ for ($i = 1; $i <= 3; $i++) {
 
     $settingname = 'footerlayoutrow' . $i;
 
+    if (!isset($PAGE->theme->settings->$settingname)) {
+        $PAGE->theme->settings->$settingname = '0-0-0-0';
+    }
+
     if ($PAGE->theme->settings->$settingname != '0-0-0-0') {
         $imgblder .= '<img src="' . $imgpath . $PAGE->theme->settings->$settingname . '.png' . '" style="padding-top: 5px">';
     }
