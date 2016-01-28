@@ -796,9 +796,14 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 }
 
 #profilepic img, .userpicture {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     display: inline;
+}
+
+.page-header-image .userpicture {
+    width: 80px;
+    height: 80px;
 }
 
 .form-item .form-label, .mform .fitem div.fitemtitle {
