@@ -68,6 +68,10 @@ $setting = new admin_setting_configselect($name, $title, $description, 'nocaptio
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
+if (!isset($PAGE->theme->settings->slideroption2)) {
+    $PAGE->theme->settings->slideroption2 = 'slider1';
+}
+
 if ($PAGE->theme->settings->slideroption2 == 'slider1') {
     $name = 'theme_adaptable/sliderh3color';
     $title = get_string('sliderh3color', 'theme_adaptable');

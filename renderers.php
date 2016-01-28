@@ -647,7 +647,9 @@ EOT;
                     $retval .= '<div class="span' . $val . ' ' . $extramarketclass . ' first">';
                     $blockcount ++;
                     $fieldname = $settingname . $blockcount;
-                    $retval .= $PAGE->theme->settings->$fieldname;
+                    if (isset($PAGE->theme->settings->$fieldname)) {
+                        $retval .= $PAGE->theme->settings->$fieldname;
+                    }
                     $retval .= '</div>';
                 }
             }
