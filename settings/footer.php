@@ -63,7 +63,7 @@ for ($i = 1; $i <= 3; $i++) {
     $name = 'theme_adaptable/footerlayoutrow' . $i;
     $title = get_string('footerlayoutrow', 'theme_adaptable');
     $description = get_string('footerlayoutrowdesc', 'theme_adaptable');
-    $default = $bootstrap12defaults[$i - 1];
+    $default = $marketingfooterbuilderdefaults[$i - 1];
     $choices = $bootstrap12;
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -118,6 +118,7 @@ for ($i = 1; $i <= $totalblocks; $i++) {
 $name = 'theme_adaptable/footnote';
 $title = get_string('footnote', 'theme_adaptable');
 $description = get_string('footnotedesc', 'theme_adaptable');
+$default = '';
 $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
 $temp->add($setting);
 
