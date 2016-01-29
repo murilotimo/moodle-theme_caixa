@@ -17,20 +17,21 @@
 /**
  * Version details
  *
- * @package    theme
- * @subpackage adaptable
- * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @package    theme_adaptable
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
+ * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2015120500;
+$plugin->version   = 2016012700;
 $plugin->requires  = 2013110500;
 $plugin->component = 'theme_adaptable';
-$plugin->release = '1.0.0';
+$plugin->release = '1.1.0';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = array(
+    'theme_bootstrapbase'  => 2014111000,
     'block_course_overview' => ANY_VERSION
 );

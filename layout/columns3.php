@@ -17,9 +17,9 @@
 /**
  * Version details
  *
- * @package    theme
- * @subpackage adaptable
- * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @package    theme_adaptable
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
+ * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -31,12 +31,12 @@ $left = theme_adaptable_get_block_side();
 
     <header id="page-header" class="clearfix">
     <img src="<?php echo $OUTPUT->pix_url('nsl_logo', 'theme')?>" id="logo">
-       
+
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>
         </div>
     </header>
-    
+
     <header role="banner" class="navbar 2navbar-fixed-top<?php echo $html->navbarclass ?>">
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
@@ -56,14 +56,14 @@ $left = theme_adaptable_get_block_side();
         </div>
     </nav>
 </header>
-    
 
-    <div id="page-content" class="row-fluid">    
+
+    <div id="page-content" class="row-fluid">
         <div id="<?php echo $regionbsid ?>" class="span9">
-            <div class="row-fluid">                
-                    <?php echo $OUTPUT->page_navbar(true); ?>                
+            <div class="row-fluid">
+                    <?php echo $OUTPUT->page_navbar(true); ?>
 <?php
-if ($left == echo) {
+if ($left == 1) {
     $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
 }
 ?>

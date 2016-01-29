@@ -1,53 +1,53 @@
 .block {
-	border-top: 2px solid #ccc;
-	padding: 0 0;
-	box-shadow: none;
-	background: transparent;
-	border-radius: 0px;
-	border: 0px solid #e8eaeb;
+  border-top: 2px solid #ccc;
+  padding: 0 0;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0px;
+  border: 0px solid #e8eaeb;
 }
 
 .block .header {
-	border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]]; 
-	border-color: [[setting:blockbordercolor]];
-	border-style: [[setting:blockheaderbordertopstyle]];	
-	padding: 10px 10px;
-	padding-right: 0px;
-	background: [[setting:blockheaderbackgroundcolor]];	
-	-webkit-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]]; 
-	-moz-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
-	border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
+  border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]];
+  border-color: [[setting:blockbordercolor]];
+  border-style: [[setting:blockheaderbordertopstyle]];
+  padding: 10px 10px;
+  padding-right: 0px;
+  background: [[setting:blockheaderbackgroundcolor]];
+  -webkit-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
+  -moz-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
+  border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
 }
 
 .block.hidden .header {
-	border-bottom: 0px;
+  border-bottom: 0px;
 }
 
 /* block titles */
 .block .header .title h2 {
-	font-weight: normal;
-	margin: 0 0;
-	padding: 0 0;
-	text-transform: none;
-	font-size: 16px;
-	color: [[setting:blockheadercolor]];
-	margin: 0px 0px;
-	font-weight:bold;
-	text-shadow: none;
+  font-weight: normal;
+  margin: 0 0;
+  padding: 0 0;
+  text-transform: none;
+  font-size: 16px;
+  color: [[setting:blockheadercolor]];
+  margin: 0px 0px;
+  font-weight:bold;
+  text-shadow: none;
 }
 
 .block .content {
-	border-width: [[setting:blockmainbordertop]] [[setting:blockmainborderright]] [[setting:blockmainborderbottom]] [[setting:blockmainborderleft]];
-	border-color: [[setting:blockbordercolor]];
-	border-style: [[setting:blockmainbordertopstyle]];		
-	padding: 10px 10px;
-	font-weight: normal;
-	font-size: 90%;
-	background: [[setting:blockbackgroundcolor]];
-	color: #333;
-	-webkit-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]]; 
-	-moz-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
-	border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
+  border-width: [[setting:blockmainbordertop]] [[setting:blockmainborderright]] [[setting:blockmainborderbottom]] [[setting:blockmainborderleft]];
+  border-color: [[setting:blockbordercolor]];
+  border-style: [[setting:blockmainbordertopstyle]];
+  padding: 10px 10px;
+  font-weight: normal;
+  font-size: 90%;
+  background: [[setting:blockbackgroundcolor]];
+  color: #333;
+  -webkit-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
+  -moz-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
+  border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
 }
 
 .block .content a, .block .content li a, .block .content td a {
@@ -55,19 +55,19 @@
 }
 
 .block .header .block_action {
-	margin: 0 0;
-	margin-top: -5px;
+  margin: 0 0;
+  margin-top: -5px;
 }
 
 .block_login .c1.btn input {
-	display: block;
-	margin: 10px auto;
-	text-align: center;
-	width: 96%;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  width: 96%;
 }
 
 .block .block-hider-show, .block .block-hider-hide {
-	width: 18px;
+  width: 18px;
 }
 
 /** some specific block styles for calendar block, login block, my profile block, etc. **/
@@ -90,23 +90,23 @@
 }
 
 .questionbankwindow.block {
-	padding: 0px;
+  padding: 0px;
 }
 
 .block_tree_box hr {
-	background: transparent;
-	border: none;
-	border-top: 1px solid #eee;
+  background: transparent;
+  border: none;
+  border-top: 1px solid #eee;
 }
 
 /*quiz editing block header */
 #page-mod-quiz-edit .questionbankwindow div.header {
-	background-color: #eee;
-	color: inherit;
+  background-color: #eee;
+  color: inherit;
 }
 
 #page-mod-quiz-edit .questionbankwindow div.header a {
-	color: inherit;
+  color: inherit;
 }
 
 .block .content a.dimmed {
@@ -127,7 +127,7 @@
 }
 
 .loginbox .loginform .form-label {
-	width: 33%;
+  width: 33%;
 }
 
 .block.invisible:hover {
@@ -139,11 +139,18 @@
 }
 
 body.has_dock div#dock {
-	z-index: 3;
+  z-index: 3;
 }
 
 a.dimmed, a.dimmed:link, a.dimmed:visited, a.dimmed_text, a.dimmed_text:link, a.dimmed_text:visited, .dimmed_text, .dimmed_text a, .dimmed_text a:link, .dimmed_text a:visited, .usersuspended, .usersuspended a, .usersuspended a:link, .usersuspended a:visited, .dimmed_category, .dimmed_category a {
-	color: #999;
+  color: #999;
+}
+
+
+/* squared dot */
+.block_settings .block_tree li.item_with_icon > p img {
+    left: 3px;
+    top: 2px;
 }
 
 
@@ -252,6 +259,10 @@ font-weight: normal;
   content: "\f017";
   font-family: FontAwesome;
 }
+.showblockicons .block_rss_client .header .title h2:before {
+  content: "\f09e";
+  font-family: FontAwesome;
+}
 .showblockicons .block_search_forums .header .title h2:before {
   content: "\f0e6";
   font-family: FontAwesome;
@@ -276,8 +287,9 @@ font-weight: normal;
   content: "\f145";
   font-family: FontAwesome;
 }
-.showblockicons .block_course_badges .header .title h2:before {
-  content: "\f091";
+.showblockicons .block_course_badges .header .title h2:before,
+.showblockicons .block_badges .header .title h2:before {
+  content: "\f0a3";
   font-family: FontAwesome;
 }
 .showblockicons .block_twitter_search .header .title h2:before {

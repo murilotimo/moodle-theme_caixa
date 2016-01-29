@@ -17,9 +17,9 @@
 /**
  * Version details
  *
- * @package    theme
- * @subpackage 
- * @copyright  2014 Birmingham City University <michael.grant@bcu.ac.uk>
+ * @package    theme_adaptable
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
+ * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -28,6 +28,13 @@ require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot . "/course/renderer.php");
 require_once($CFG->libdir. '/coursecatlib.php');
 
+/**
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
+ * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * Core renderers for Adaptable theme based on BCU Theme
+ */
 class theme_adaptable_core_renderer extends core_renderer {
     /** @var custom_menu_item language The language menu if created */
     protected $language = null;
@@ -44,6 +51,14 @@ class theme_adaptable_core_renderer extends core_renderer {
         return parent::favicon();
     }
 
+    /**
+     * Returns settings as formatted text
+     *
+     * @param string $setting
+     * @param string $format = false
+     * @param string $theme = null
+     * @return string
+     */
     public function get_setting($setting, $format = false, $theme = null) {
         if (empty($theme)) {
             $theme = theme_config::load('adaptable');
@@ -62,117 +77,200 @@ class theme_adaptable_core_renderer extends core_renderer {
         }
     }
 
+    /**
+     * Returns the user menu
+     *
+     * @param string $user = null
+     * @param string $withlinks = null
+     * @return the user menu
+     */
     public function user_menu($user = null, $withlinks = null) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
         return $this->render_user_menu($usermenu);
     }
 
-    public function get_alert_messages(){
-    	global $PAGE;
-    	$alerts = '';
-    	$alertcount = get_config('theme_adaptable','alertcount');
-		
-    	for ($i=1; $i <= $alertcount; $i++) {
+    /**
+     * Returns list of alert messages for the user
+     *
+     * @return string
+     */
+    public function get_alert_messages() {
+        global $PAGE;
+        $alerts = '';
+        $alertcount = get_config('theme_adaptable', 'alertcount');
 
-    		
-    		$enablealert = 'enablealert' . $i;
-			$alerttext = 'alerttext' . $i;
-			$alertsession = 'alert' . $i;
-			
-			$enablealert = $PAGE->theme->settings->$enablealert;
-			$alerttext = $PAGE->theme->settings->$alerttext;	
-			
-			if ($enablealert && !empty($alerttext)){
+        for ($i = 1; $i <= $alertcount; $i++) {
+            $enablealert = 'enablealert' . $i;
+            $alerttext = 'alerttext' . $i;
+            $alertsession = 'alert' . $i;
 
-				$alertprofilefield = 'alertprofilefield' . $i;
-				$profilevals = array('','');
-				
-				if (!empty($PAGE->theme->settings->$alertprofilefield)){
-					$profilevals = explode('=', $PAGE->theme->settings->$alertprofilefield);
-				}
-				
-				if (!empty($PAGE->theme->settings->enablealertstriptags)){
-					$alerttext = strip_tags($alerttext);
-				}
-			
-				$alerttype = 'alerttype' . $i;
-				$alertaccess = 'alertaccess' . $i;
-				$alertkey = 'alertkey' . $i;
-				
-				$alerttype = $PAGE->theme->settings->$alerttype;
-				$alertaccess = $PAGE->theme->settings->$alertaccess;
-				$alertkey = $PAGE->theme->settings->$alertkey;
-				//$alertprofilefield = $PAGE->theme->settings->$alertprofilefield;
-				//$alertprofilevalue = $PAGE->theme->settings->$alertprofilevalue;				
-				
-				if ($this->get_alert_access($alertaccess, $profilevals[0], $profilevals[1], $alertsession)){
-					$alerts .= $this->get_alert_message($alerttext, $alerttype, $i, $alertkey);
-				}
-			}
-		}	
-		
-		if (core\session\manager::is_loggedinas()) {
-			$alertindex = $alertcount+1;
-			$alertkey="undismissable";
-			$logininfo = $this->login_info();
-			$logininfo = str_replace('<div class="logininfo">', '', $logininfo);
-			$logininfo = str_replace('</div>', '', $logininfo);
-			$alerts = $this->get_alert_message($logininfo, 'warning',$alertindex) . $alerts;
-		}
-		
-		return $alerts;
+            $enablealert = $PAGE->theme->settings->$enablealert;
+            $alerttext = $PAGE->theme->settings->$alerttext;
+
+            if ($enablealert && !empty($alerttext)) {
+                $alertprofilefield = 'alertprofilefield' . $i;
+                $profilevals = array('', '');
+
+                if (!empty($PAGE->theme->settings->$alertprofilefield)) {
+                    $profilevals = explode('=', $PAGE->theme->settings->$alertprofilefield);
+                }
+
+                if (!empty($PAGE->theme->settings->enablealertstriptags)) {
+                    $alerttext = strip_tags($alerttext);
+                }
+
+                $alerttype = 'alerttype' . $i;
+                $alertaccess = 'alertaccess' . $i;
+                $alertkey = 'alertkey' . $i;
+
+                $alerttype = $PAGE->theme->settings->$alerttype;
+                $alertaccess = $PAGE->theme->settings->$alertaccess;
+                $alertkey = $PAGE->theme->settings->$alertkey;
+
+                if ($this->get_alert_access($alertaccess, $profilevals[0], $profilevals[1], $alertsession)) {
+                    $alerts .= $this->get_alert_message($alerttext, $alerttype, $i, $alertkey);
+                }
+            }
+        }
+
+        if (core\session\manager::is_loggedinas()) {
+            $alertindex = $alertcount + 1;
+            $alertkey = "undismissable";
+            $logininfo = $this->login_info();
+            $logininfo = str_replace('<div class="logininfo">', '', $logininfo);
+            $logininfo = str_replace('</div>', '', $logininfo);
+            $alerts = $this->get_alert_message($logininfo, 'warning', $alertindex) . $alerts;
+        }
+
+        return $alerts;
     }
-	
-	public function get_alert_message($text, $type, $alertindex, $alertkey){
-		if($alertkey=='' || theme_adaptable_get_alertkey($alertindex)==$alertkey){
-			return '';
-		}
-		
-		$retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
-		$retval .= '<a href="#" class="close" data-dismiss="alert" data-alertkey="' . $alertkey . 
-			'" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
-		// $retval .= '<div class="container">';
-		$retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp';
-		$retval .= $text . ' ' . theme_adaptable_get_alertkey($alertindex);		
-        // $retval .= '</div>';
+
+    /**
+     * Returns formatted alert message for ticker
+     *
+     * @param string $text message text
+     * @param string $type alert type
+     * @param int $alertindex
+     * @param int $alertkey
+     */
+    public function get_alert_message($text, $type, $alertindex, $alertkey) {
+        if ($alertkey == '' || theme_adaptable_get_alertkey($alertindex) == $alertkey) {
+            return '';
+        }
+
+        $retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
+        $retval .= '<a href="#" class="close" data-dismiss="alert" data-alertkey="' . $alertkey .
+        '" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
+        $retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp';
+        $retval .= $text;
         $retval .= '</div>';
-		return $retval;
-	}
-	
-	public function get_alert_access($access, $profilefield, $profilevalue, $alertsession){
-		$retval = false;
-		switch ($access) {
-			case "global":
-				$retval = true;
-			break;			
-			case "user":
-				if (isloggedin()){ $retval = true; }
-			break;			
-			case "admin":
-				if (is_siteadmin()){ $retval = true; }			
-			case "profile":				
-				if ($this->check_menu_access($profilefield, $profilevalue, $alertsession)){	$retval = true; }				
-			break;					
-		}
-		return $retval;
-	}
-    
-    public function alert_icon($alertclassglobal){
-	    switch ($alertclassglobal) {
-		    case "success":
-		        $alerticonglobal = "bullhorn";
-		    break;
-		    case "info":
-		        $alerticonglobal = "info-circle";
-		    break;
-		    case "warning":
-		        $alerticonglobal = "exclamation-triangle";
-		    break;
-		}
-		return $alerticonglobal;			
+        return $retval;
     }
-    
+
+    /**
+     * Checks the users access to alerts
+     * @param string $access the kind of access rule applied
+     * @param string $profilefield the custom profile filed to check
+     * @param string $profilevalue the expected value to be found in users profile
+     * @param string $alertsession a token to be used to store access in session
+     * @return boolean
+     */
+    public function get_alert_access($access, $profilefield, $profilevalue, $alertsession) {
+        $retval = false;
+        switch ($access) {
+            case "global":
+                $retval = true;
+            break;
+            case "user":
+                if (isloggedin()) {
+                    $retval = true;
+                }
+            break;
+            case "admin":
+                if (is_siteadmin()) {
+                    $retval = true;
+                }
+            break;
+            case "profile":
+                if ($this->check_menu_access($profilefield, $profilevalue, $alertsession)) {
+                    $retval = true;
+                }
+            break;
+        }
+        return $retval;
+    }
+
+    /**
+     * Returns FA icon depending on the type of alert selected
+     *
+     * @param string $alertclassglobal     *
+     * @return string
+     */
+    public function alert_icon($alertclassglobal) {
+        switch ($alertclassglobal) {
+            case "success":
+                $alerticonglobal = "bullhorn";
+                break;
+            case "info":
+                $alerticonglobal = "info-circle";
+                break;
+            case "warning":
+                $alerticonglobal = "exclamation-triangle";
+                break;
+        }
+        return $alerticonglobal;
+    }
+
+    /**
+     * Returns Google Analytics code if analytics are enabled
+     *
+     * @return string
+     */
+    public function get_analytics() {
+        global $PAGE;
+        $analytics = '';
+        $analyticscount = get_config('theme_adaptable', 'analyticscount');
+        if (isset($PAGE->theme->settings->enableanalytics)) {
+
+            for ($i = 1; $i <= $analyticscount; $i++) {
+                $analyticstext = 'analyticstext' . $i;
+                $analyticsprofilefield = 'analyticsprofilefield' . $i;
+                $analyticssession = 'analytics' . $i;
+                $access = true;
+
+                if (!empty($PAGE->theme->settings->$analyticsprofilefield)) {
+                    $profilevals = explode('=', $PAGE->theme->settings->$analyticsprofilefield);
+                    $profilefield = $profilevals[0];
+                    $profilevalue = $profilevals[1];
+                    if (!$this->check_menu_access($profilefield, $profilevalue, $analyticssession)) {
+                        $access = false;
+                    }
+                }
+
+                if (!empty($PAGE->theme->settings->$analyticstext) && $access) {
+                    $analyticstext = $PAGE->theme->settings->$analyticstext;
+
+                    // The closing tag of PHP heredoc doesn't like being indented so do not meddle with indentation of 'EOT;' below!
+                    $analytics .= <<<EOT
+
+                    <script>
+                        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                        ga('create', '$analyticstext', 'auto');
+                        ga('send', 'pageview');
+
+                    </script>
+EOT;
+                }
+            }
+        }
+        return $analytics;
+    }
+
     /**
      * Returns HTML to display a "Turn editing on/off" button in a form.
      *
@@ -180,7 +278,6 @@ class theme_adaptable_core_renderer extends core_renderer {
      * @return string HTML the button
      * Written by G J Barnard
      */
-
     public function edit_button(moodle_url $url) {
         $url->param('sesskey', sesskey());
         if ($this->page->user_is_editing()) {
@@ -198,8 +295,14 @@ class theme_adaptable_core_renderer extends core_renderer {
             html_writer::end_tag('i') . $title, array('href' => $url, 'class' => 'btn ' . $btn, 'title' => $title));
     }
 
+    /**
+     * Returns the upper user menu
+     *
+     * @param custom_menu $menu
+     * @return string
+     */
     protected function render_user_menu(custom_menu $menu) {
-        global $CFG, $USER, $DB, $OUTPUT;        
+        global $CFG, $USER, $DB, $OUTPUT;
         $addlangmenu = true;
         $addmessagemenu = true;
 
@@ -220,16 +323,14 @@ class theme_adaptable_core_renderer extends core_renderer {
         if ($addmessagemenu) {
             $messages = $this->get_user_messages();
             $messagecount = count($messages);
-               // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
-               if ($messagecount > 0) {
-                   $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message') .' '.
-                   '<span class="badge">' . $messagecount . '</span>', new moodle_url('#'),
-                   
-                   
-                   get_string('messages', 'message'), 9999);
-               } else { $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message'), new moodle_url('/message/index.php'),
-                        get_string('messages', 'message'), 9999);
-               }
+            // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
+            if ($messagecount > 0) {
+                $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message') .' '.
+                '<span class="badge">' . $messagecount . '</span>', new moodle_url('#'), get_string('messages', 'message'), 9999);
+            } else {
+                $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message'),
+                                            new moodle_url('/message/index.php'), get_string('messages', 'message'), 9999);
+            }
 
             foreach ($messages as $message) {
                 if (!is_object($message->from)) {
@@ -273,6 +374,11 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $content.html_writer::end_tag('ul');
     }
 
+    /**
+     * Returns formats messages in the header with user profile images
+     *
+     * @return array
+     */
     protected function process_user_messages() {
         $messagelist = array();
         foreach ($usermessages as $message) {
@@ -292,6 +398,11 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $messagelist;
     }
 
+    /**
+     * Get list of user messages if there are any to process
+     *
+     * @return array
+     */
     protected function get_user_messages() {
         global $USER, $DB;
         $messagelist = array();
@@ -326,6 +437,12 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $messagelist;
     }
 
+    /**
+     * Process user messages
+     *
+     * @param array $message
+     * @return array
+     */
     protected function process_message($message) {
         global $DB, $USER;
         $messagecontent = new stdClass();
@@ -334,7 +451,8 @@ class theme_adaptable_core_renderer extends core_renderer {
             $messagecontent->type = 'notification';
             $messagecontent->url = new moodle_url($message->contexturl);
             if (empty($message->contexturl)) {
-                $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'viewing' => 'recentnotifications'));
+                $messagecontent->url = new moodle_url('/message/index.php',
+                                        array('user1' => $USER->id, 'viewing' => 'recentnotifications'));
             }
         } else {
             $messagecontent->type = 'message';
@@ -347,16 +465,20 @@ class theme_adaptable_core_renderer extends core_renderer {
                 $messagecontent->text = $message->smallmessage;
             }
             $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
-            $messagecontent->url = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->useridfrom));
+            $messagecontent->url = new moodle_url('/message/index.php',
+                                    array('user1' => $USER->id, 'user2' => $message->useridfrom));
         }
         $messagecontent->date = userdate($message->timecreated, get_string('strftimetime', 'langconfig'));
         $messagecontent->unread = empty($message->timeread);
         return $messagecontent;
     }
 
-    /*
+    /**
      * This renders a notification message.
      * Uses bootstrap compatible html.
+     *
+     * @param string $message
+     * @param string $classes for css
      */
     public function notification($message, $classes = 'notifyproblem') {
         $message = clean_text($message);
@@ -377,102 +499,308 @@ class theme_adaptable_core_renderer extends core_renderer {
         return "<div class=\"$type\">$message</div>";
     }
 
-    public function socialicons(){
-    	global $CFG, $PAGE;
-		
-    	$retval = '<div class="socialbox pull-right">';	
-			
-		if (isset($PAGE->theme->settings->socialsearchicon)) { 
-            $val = '<a alt="' . get_string('socialsearchicon', 'theme_adaptable') . '" title="' . get_string('socialsearchicon', 'theme_adaptable'); 
-            $val .= '" href="' . $CFG->wwwroot . '/course/search.php' . '">';
-            $val .= '<i class="fa fa-search"></i></a>';
-			$retval .= $val;
-		}
-		
-    	for ($i = 1; $i<12; $i++){    		
-    		$socialno = 'social' . $i;
-			$socialicon = 'social' . $i . 'icon';
-						
-			if (!empty($PAGE->theme->settings->$socialno)){						
-				$val = '<a alt="' . get_string($socialno, 'theme_adaptable');
-				$val .= '" title="' . get_string($socialno, 'theme_adaptable');
-				$val .= '" href="' . $PAGE->theme->settings->$socialno . '">';
-				$val .= '<i class="fa ' . $PAGE->theme->settings->$socialicon . '"></i>';
-				$val .= '</a>';				 
-				$retval .= $val; 
-			}
-    	}
-		$retval .= '</div>';
-		return $retval; 
+    /**
+     * Returns html to render socialicons
+     *
+     * @return string
+     */
+    public function socialicons() {
+        global $CFG, $PAGE;
+
+        $retval = '<div class="socialbox pull-right">';
+
+        $target = $PAGE->theme->settings->socialtarget;
+        $socialiconlist = $PAGE->theme->settings->socialiconlist;
+        $lines = explode("\n", $socialiconlist);
+
+        foreach ($lines as $line) {
+            $fields = explode('|', $line);
+
+            $val = '<a alt="' . $fields[1];
+            $val .= '" target="' . $target;
+            $val .= '" title="' . $fields[1];
+            $val .= '" href="' . $fields[0] . '">';
+            $val .= '<i class="fa ' . $fields[2] . '"></i>';
+            $val .= '</a>';
+
+            $retval .= $val;
+        }
+        $retval .= '</div>';
+        return $retval;
     }
 
-	public function get_news_ticker(){
-		global $PAGE;
-		$retval = '';
-		
-		if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index") || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")){
-				
-			$msg = '';			
-			
-			for ($i=1; $i<3; $i++){
-				$textfield = 'tickertext' . $i;
-				$profilefield = 'tickertext' . $i . 'profilefield';
-				$access = true;			 
-				
-								
-				if (!empty($PAGE->theme->settings->$profilefield)){
-					$profilevals = explode('=', $PAGE->theme->settings->$profilefield);					
-					if (!$this->check_menu_access($profilevals[0], $profilevals[1], $textfield)){
-						$access = false; 
-					}	
-				}								
-				
-				if ($access){
-					$msg .= $PAGE->theme->settings->$textfield;
-				}
-			}		
-			
-			if ($msg == ''){
-				$msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
-			}				
-						
-			$retval .= '<div id="ticker-wrap" class="clearfix container">';
-        	$retval .= '<div class="pull-left" id="ticker-announce">';
-            $retval.= get_string('ticker', 'theme_adaptable');
-			$retval .= '</div>';
-			$retval .= '<ul id="ticker">';
-			$retval .= $msg;			
-			$retval .= '</ul>';
-			$retval .= '</div>';
-		}
-		return $retval;
-	}
+    /**
+     * Returns html to render news ticker
+     *
+     * @return string
+     */
+    public function get_news_ticker() {
+        global $PAGE;
+        $retval = '';
 
-    /*
+        if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index")
+            || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
+            $msg = '';
+            $tickercount = $PAGE->theme->settings->newstickercount;
+
+            for ($i = 1; $i <= $tickercount; $i++) {
+                $textfield = 'tickertext' . $i;
+                $profilefield = 'tickertext' . $i . 'profilefield';
+                $access = true;
+
+                if (!empty($PAGE->theme->settings->$profilefield)) {
+                    $profilevals = explode('=', $PAGE->theme->settings->$profilefield);
+                    if (!$this->check_menu_access($profilevals[0], $profilevals[1], $textfield)) {
+                        $access = false;
+                    }
+                }
+
+                if ($access) {
+                    $msg .= $PAGE->theme->settings->$textfield;
+                }
+            }
+
+            if ($msg == '') {
+                $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
+            }
+
+            $retval .= '<div id="ticker-wrap" class="clearfix container">';
+            $retval .= '<div class="pull-left" id="ticker-announce">';
+            $retval .= get_string('ticker', 'theme_adaptable');
+            $retval .= '</div>';
+            $retval .= '<ul id="ticker">';
+            $retval .= $msg;
+            $retval .= '</ul>';
+            $retval .= '</div>';
+        }
+        return $retval;
+    }
+
+    public function get_block_regions($settingsname = 'blocklayoutlayoutrow') {
+        global $PAGE, $OUTPUT, $USER;
+        $fields = array();
+        $retval = '';
+        $blockcount = 0;
+        $style = '';
+        $adminediting = false;
+
+        if (is_siteadmin() && isset($USER->editing) && $USER->editing == 1) {
+            $style = '" style="display: block; background: #EEEEEE; min-height: 50px; border: 2px dashed #BFBDBD; margin-top: 5px';
+            $adminediting = true;
+        }
+
+        for ($i = 1; $i <= 8; $i++) {
+            $marketrow = $settingsname . $i;
+            $marketrow = $PAGE->theme->settings->$marketrow;
+            if ($marketrow != '0-0-0-0') {
+                $fields[] = $marketrow;
+            }
+        }
+
+        foreach ($fields as $field) {
+            $retval .= '<div class="row" style="margin-left: 0px;">';
+            $vals = explode('-', $field);
+            foreach ($vals as $val) {
+                if ($val > 0) {
+                    $retval .= '<div class="span' . $val . $style . '">';
+
+                    // Moodle does not seem to like numbers in region names so using letter instead.
+                    $blockcount ++;
+                    $block = 'frnt-market-' .  chr(96 + $blockcount);
+
+                    if ($adminediting) {
+                        $retval .= '<span style="padding-left: 10px;"> ' . '' . '</span>';
+                    }
+
+                    $retval .= $OUTPUT->blocks($block);
+                    $retval .= '</div>';
+                }
+            }
+            $retval .= '</div>';
+        }
+        return $retval;
+    }
+
+    public function get_marketing_blocks($layoutrow = 'marketlayoutrow', $settingname = 'market') {
+        global $PAGE;
+        $fields = array();
+        $blockcount = 0;
+        $style = '';
+
+        $extramarketclass = $PAGE->theme->settings->frontpagemarketoption;
+
+        $retval = '<div id="marketblocks" class="container '. $extramarketclass .'">';
+
+        for ($i = 1; $i <= 5; $i++) {
+            $marketrow = $layoutrow . $i;
+            $marketrow = $PAGE->theme->settings->$marketrow;
+            if ($marketrow != '0-0-0-0') {
+                $fields[] = $marketrow;
+            }
+        }
+
+        foreach ($fields as $field) {
+            $retval .= '<div class="row-fluid marketrow">';
+            $vals = explode('-', $field);
+            foreach ($vals as $val) {
+                if ($val > 0) {
+                    $retval .= '<div class="span' . $val . ' ' . $extramarketclass . ' first">';
+                    $blockcount ++;
+                    $fieldname = $settingname . $blockcount;
+                    if (isset($PAGE->theme->settings->$fieldname)) {
+                        $retval .= $PAGE->theme->settings->$fieldname;
+                    }
+                    $retval .= '</div>';
+                }
+            }
+            $retval .= '</div>';
+        }
+        $retval .= '</div>';
+        if ($blockcount == 1 ) {
+            $retval = '';
+        }
+        return $retval;
+    }
+
+    public function get_footer_visibility() {
+        global $PAGE, $COURSE;
+        $value = $PAGE->theme->settings->footerblocksplacement;
+
+        if ($value == 1) {
+            return true;
+        }
+
+        if ($value == 2 && $COURSE->id != 1) {
+            return false;
+        }
+
+        if ($value == 3) {
+            return false;
+        }
+        return true;
+    }
+
+    public function get_footer_blocks($layoutrow = 'footerlayoutrow') {
+        global $PAGE, $OUTPUT;
+        $fields = array();
+        $blockcount = 0;
+        $style = '';
+
+        if (!$OUTPUT->get_footer_visibility()) {
+            return '';
+        }
+
+        $output = '<div id="course-footer">' . $OUTPUT->course_footer() . '</div>
+                <div class="container blockplace1">';
+
+        for ($i = 1; $i <= 3; $i++) {
+            $footerrow = $layoutrow . $i;
+            $footerrow = $PAGE->theme->settings->$footerrow;
+            if ($footerrow != '0-0-0-0') {
+                $fields[] = $footerrow;
+            }
+        }
+
+        foreach ($fields as $field) {
+            $output .= '<div class="row-fluid">';
+            $vals = explode('-', $field);
+            foreach ($vals as $val) {
+                if ($val > 0) {
+                    $blockcount ++;
+                    $footerheader = 'footer' . $blockcount . 'header';
+                    $footercontent = 'footer' . $blockcount . 'content';
+                    if (!empty($PAGE->theme->settings->$footercontent)) {
+                        $output .= '<div class="left-col span' . $val . '" id="contactdetails">';
+                        $output .= '<h3 title="' . $OUTPUT->get_setting($footerheader, 'format_text') . '">';
+                        $output .= $OUTPUT->get_setting($footerheader, 'format_text');
+                        $output .= '</h3>';
+                        $output .= $OUTPUT->get_setting($footercontent, 'format_html');
+                        $output .= '</div>';
+                    }
+                }
+            }
+            $output .= '</div>';
+        }
+        $output .= '</div>';
+        return $output;
+    }
+
+    public function get_frontpage_slider() {
+        global $PAGE, $OUTPUT;
+        $noslides = $PAGE->theme->settings->slidercount;
+        $retval = '';
+
+        if (!empty($PAGE->theme->settings->sliderfullscreen)) {
+            $reval .= '<div class="slidewrap';
+        } else {
+            $retval .= '<div class="container slidewrap';
+        }
+
+        if ($PAGE->theme->settings->slideroption2 == 'slider2') {
+            $retval .= " slidestyle2";
+        }
+
+        $retval .= '">
+            <div id="main-slider" class="flexslider">
+            <ul class="slides">';
+
+        for ($i = 1; $i <= $noslides; $i++) {
+            $sliderimage = 'p' . $i;
+            $sliderurl = 'p' . $i . 'url';
+            $slidercaption = 'p' . $i .'cap';
+            if (!empty($PAGE->theme->settings->$sliderimage)) {
+                $retval .= '<li>
+                    <a href="';
+
+                if (!empty($PAGE->theme->settings->$sliderurl)) {
+                    $retval .= $PAGE->theme->settings->$sliderurl;
+                } else {
+                    $retval .= '#';
+                }
+
+                $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage)
+                    . '" alt="' . $sliderimage . '"/>';
+
+                if (!empty($PAGE->theme->settings->$slidercaption)) {
+                    $retval .= '<div class="flex-caption">';
+                    $retval .= $OUTPUT->get_setting($slidercaption, 'format_html');
+                    $retval .= '</div></li>';
+                }
+            }
+        }
+        $retval .= '</ul></div></div>';
+        return $retval;
+    }
+
+    /**
      * This renders the navbar.
      * Uses bootstrap compatible html.
+     *
+     * @param boolean $addbutton
      */
-     
-    public function page_navbar($addbutton = false){
-    	global $PAGE;	
-    	$retval = '';
-		
-		// Do not show navbar on dashboard / my home if news ticker is rendering
-		if (!($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")){
-						
-	    	$retval = '<div id="page-navbar" class="span12">';
-			
-			if ($addbutton){
-				$retval .= '<nav class="breadcrumb-button">' . $this->page_heading_button() . '</nav>';
-			}
-			
-	    	$retval .= $this->navbar();
-			$retval .= '</div>';			
-		}		
-		return $retval;
-    } 
-	
-    public function navbar() {    	
+    public function page_navbar($addbutton = false) {
+        global $PAGE;
+        $retval = '';
+
+        // Do not show navbar on dashboard / my home if news ticker is rendering.
+        if (!($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
+            $retval = '<div id="page-navbar" class="span12">';
+            if ($addbutton) {
+                $retval .= '<nav class="breadcrumb-button">' . $this->page_heading_button() . '</nav>';
+            }
+
+            $retval .= $this->navbar();
+            $retval .= '</div>';
+        }
+        return $retval;
+    }
+
+    /**
+     * Returns html to render navigation bar
+     *
+     * @return string
+     */
+    public function navbar() {
         $items = $this->page->navbar->get_items();
         $breadcrumbs = array();
         foreach ($items as $item) {
@@ -485,6 +813,11 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $title . "<ul class=\"breadcrumb\">$listitems</ul>";
     }
 
+    /**
+     * Returns html to render footer
+     *
+     * @return string
+     */
     public function footer() {
         global $CFG;
 
@@ -496,9 +829,12 @@ class theme_adaptable_core_renderer extends core_renderer {
         $performanceinfo = '';
         if (defined('MDL_PERF') || (!empty($CFG->perfdebug) and $CFG->perfdebug > 7)) {
             $perf = get_performance_info();
-            if (defined('MDL_PERFTOLOG') && !function_exists('register_shutdown_function')) {
-                error_log("PERF: " . $perf['txt']);
-            }
+
+            // Deprecated function. Display: The use of function error_log() is forbidden.
+            // if (defined('MDL_PERFTOLOG') && !function_exists('register_shutdown_function')) {.
+            // error_log("PERF: " . $perf['txt']);.
+            // }.
+
             if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
                 $performanceinfo = theme_adaptable_performance_output($perf);
             }
@@ -513,21 +849,25 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $output . $footer;
     }
 
+    /**
+     * Returns html to render main navigation menu
+     *
+     * @return string
+     */
     public function navigation_menu() {
         global $PAGE, $COURSE, $OUTPUT, $CFG;
         $menu = new custom_menu();
-		$access = true;
+        $access = true;
 
         if (isloggedin() && !isguestuser()) {
             if (!empty($PAGE->theme->settings->enablehome)) {
                 $branchtitle = get_string('home');
                 $branchlabel = '<i class="fa fa-home"></i> '.$branchtitle;
-				if (!empty($PAGE->theme->settings->enablehomeredirect)) {
-				    $branchurl   = new moodle_url('/?redirect=0');	
-				}
-				else{
-				    $branchurl   = new moodle_url('/');	
-				}                
+                if (!empty($PAGE->theme->settings->enablehomeredirect)) {
+                    $branchurl   = new moodle_url('/?redirect=0');
+                } else {
+                    $branchurl   = new moodle_url('/');
+                }
                 $branchsort  = 9998;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
@@ -539,7 +879,6 @@ class theme_adaptable_core_renderer extends core_renderer {
                 $branchsort  = 9999;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
-
 
             if (!empty($PAGE->theme->settings->enableevents)) {
                 $branchtitle = get_string('events', 'theme_adaptable');
@@ -561,7 +900,7 @@ class theme_adaptable_core_renderer extends core_renderer {
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-                                         $branch->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 40))."...", 
+                                         $branch->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 40))."...",
                                          new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }
@@ -593,11 +932,12 @@ class theme_adaptable_core_renderer extends core_renderer {
                     foreach ($data as $modname => $modfullname) {
                         if ($modname === 'resources') {
                             $icon = $OUTPUT->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
-                            $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id' => $PAGE->course->id)));
+                            $branch->add($icon.$modfullname, new moodle_url('/course/resources.php',
+                                         array('id' => $PAGE->course->id)));
                         } else {
                             $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
                             $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
-                                    array('id' => $PAGE->course->id)));
+                                         array('id' => $PAGE->course->id)));
                         }
                     }
                 }
@@ -605,258 +945,305 @@ class theme_adaptable_core_renderer extends core_renderer {
         }
 
         if (!empty($PAGE->theme->settings->enablehelp)) {
-        	$access = true;
-					
-			if (!empty($PAGE->theme->settings->helpprofilefield)){
-				$fields = explode('=', $PAGE->theme->settings->helpprofilefield);        	
-				$ftype = $fields[0];			
-				$setvalue = $fields[1];	
-				if (!$this->check_menu_access($ftype, $setvalue, 'help1')){			
-		        	$access = false;
-	            }
-			}
-			if ($access && !$this->hideinforum()){
-				$branchtitle = get_string('helptitle', 'theme_adaptable');
-	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
-	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
-	            $branchsort  = 10003;
-	            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-			}
+            $access = true;
+
+            if (!empty($PAGE->theme->settings->helpprofilefield)) {
+                $fields = explode('=', $PAGE->theme->settings->helpprofilefield);
+                $ftype = $fields[0];
+                $setvalue = $fields[1];
+                if (!$this->check_menu_access($ftype, $setvalue, 'help1')) {
+                    $access = false;
+                }
+            }
+
+            if ($access && !$this->hideinforum()) {
+                $branchtitle = get_string('helptitle', 'theme_adaptable');
+                $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
+                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
+                $branchsort  = 10003;
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+            }
         }
-		if (!empty($PAGE->theme->settings->enablehelp2 )) {
-			$access = true;          	
-			if (!empty($PAGE->theme->settings->helpprofilefield2)){
-				$fields = explode('=', $PAGE->theme->settings->helpprofilefield2);        	
-				$ftype = $fields[0];			
-				$setvalue = $fields[1];		
-				if (!$this->check_menu_access($ftype, $setvalue, 'help2')){			
-		        	$access = false;
-	            }
-			}					
-			if ($access && !$this->hideinforum()){			
-	            $branchtitle = get_string('helptitle2', 'theme_adaptable');
-	            $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
-	            $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2);
-	            $branchsort  = 10003;
-	            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+
+        if (!empty($PAGE->theme->settings->enablehelp2 )) {
+            $access = true;
+            if (!empty($PAGE->theme->settings->helpprofilefield2)) {
+                $fields = explode('=', $PAGE->theme->settings->helpprofilefield2);
+                $ftype = $fields[0];
+                $setvalue = $fields[1];
+                if (!$this->check_menu_access($ftype, $setvalue, 'help2')) {
+                    $access = false;
+                }
+            }
+
+            if ($access && !$this->hideinforum()) {
+                $branchtitle = get_string('helptitle2', 'theme_adaptable');
+                $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
+                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2);
+                $branchsort  = 10003;
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
         }
         return $this->render_custom_menu($menu);
     }
 
-    public function tools_menu() {    	
-    	global $PAGE;
-		$class = "<i class='fa fa-wrench'></i><span class='menutitle'>";		
-    	$custommenuitems = '';
-		$access = true;		
-		
-		if (!empty($PAGE->theme->settings->toolsmenu1field)){			
-			$fields = explode ('=', $PAGE->theme->settings->toolsmenu1field);						
-			$ftype = $fields[0];
-			$setvalue = $fields[1];
-			if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu1')){
-				$access = false;			
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->toolsmenu) && $access == true && !$this->hideinforum()) {        	
-        	$menu = ($PAGE->theme->settings->toolsmenu);
-			$label = get_string('toolsmenulabel', 'theme_adaptable');
-			$custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');            
+    /**
+     * Returns html to render tools menu in main navigation bar
+     *
+     * @return string
+     */
+    public function tools_menu() {
+        global $PAGE;
+        $class = "<i class='fa fa-wrench'></i><span class='menutitle'>";
+        $custommenuitems = '';
+        $access = true;
+        $retval = '';
+
+        $toolsmenuscount = $PAGE->theme->settings->toolsmenuscount;
+        for ($i = 1; $i <= $toolsmenuscount; $i++) {
+            $menunumber = 'toolsmenu' . $i;
+            $menutitle = $menunumber . 'title';
+            $requirelogin = $menunumber . 'requirelogin';
+            $accessrules = $menunumber . 'field';
+            $access = true;
+
+            if (!empty($PAGE->theme->settings->$accessrules)) {
+                $fields = explode ('=', $PAGE->theme->settings->$accessrules);
+                $ftype = $fields[0];
+                $setvalue = $fields[1];
+                if (!$this->check_menu_access($ftype, $setvalue, $menunumber)) {
+                    $access = false;
+                }
+            }
+
+            if (!empty($PAGE->theme->settings->$menunumber) && $access == true && !$this->hideinforum()) {
+                $menu = ($PAGE->theme->settings->$menunumber);
+                $label = $PAGE->theme->settings->$menutitle;
+                $custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');
+            }
+
+            $custommenu = new custom_menu($custommenuitems);
+            $retval .= $this->render_custom_menu($custommenu);
         }
-         
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
+        return $retval;
     }
 
-    public function tools_menu2() {    	
-    	global $PAGE;
-		$class = "<i class='fa fa-wrench'></i><span class='menutitle'>";
-    	$custommenuitems = '';
-		$access = true;	
-		
-		if (!empty($PAGE->theme->settings->toolsmenu2field)){
-			$fields = explode ('=', $PAGE->theme->settings->toolsmenu2field);						
-			$ftype = $fields[0];
-			$setvalue = $fields[1];			
-			if (!$this->check_menu_access($ftype, $setvalue, 'toolsmenu2')){
-				$access = false;
-			}
-		}
-			
-        if (!empty($PAGE->theme->settings->toolsmenu2) && $access == true && !$this->hideinforum()) {        	
-        	$menu = ($PAGE->theme->settings->toolsmenu2);
-			$label = get_string('toolsmenulabel2', 'theme_adaptable');
-			$custommenuitems = $this->parse_custom_menu($menu, $label, $class,'</span>');            
+    /**
+     * Returns html to render top menu items
+     *
+     * @return string
+     */
+    public function get_top_menus() {
+        global $PAGE, $COURSE;
+        $menus = '';
+        $retval = '';
+        $visibility = true;
+
+        if (!empty($PAGE->theme->settings->menuuseroverride)) {
+            $visibility = $this->check_menu_user_visibility();
         }
-         
-        $custommenu = new custom_menu($custommenuitems);
-        return $this->render_custom_menu($custommenu);
+
+        if ($visibility) {
+            if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
+                $topmenuscount = $PAGE->theme->settings->topmenuscount;
+                for ($i = 1; $i <= $topmenuscount; $i++) {
+                    $menunumber = 'menu' . $i;
+                    $newmenu = 'newmenu' . $i;
+                    $class = 'newmenu' . ($i + 4);
+                    $fieldsetting = 'newmenu' . $i . 'field';
+                    $valuesetting = 'newmenu' . $i . 'value';
+                    $newmenutitle = 'newmenu' . $i . 'title';
+                    $requirelogin = 'newmenu' . $i . 'requirelogin';
+                    $logincheck = true;
+                    $custommenuitems = '';
+                    $access = true;
+                    $pre = '<div class="dropdown pull-right newmenus ' . $class . '">';
+                    $post = '</div>';
+
+                    if (empty($PAGE->theme->settings->$requirelogin) || isloggedin()) {
+                        if (!empty($PAGE->theme->settings->$fieldsetting)) {
+                            $fields = explode('=', $PAGE->theme->settings->$fieldsetting);
+                            $ftype = $fields[0];
+                            $setvalue = $fields[1];
+                            if (!$this->check_menu_access($ftype, $setvalue, $menunumber)) {
+                                $access = false;
+                            }
+                        }
+
+                        if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
+                            $menu = ($PAGE->theme->settings->$newmenu);
+                            $title = ($PAGE->theme->settings->$newmenutitle);
+                            $custommenuitems = $this->parse_custom_menu($menu, $title);
+                            $custommenu = new custom_menu($custommenuitems);
+                            $retval .= $this->render_custom_menu($custommenu, $pre, $post);
+                        }
+                    }
+                }
+            }
+        }
+        return $retval;
     }
 
-	public function get_top_menus(){
-		global $PAGE, $COURSE;
-		$menus = '';
-		$retval = '';
-		$visibility = true;
-		
-		if (!empty($PAGE->theme->settings->menuuseroverride)){
-			$visibility = $this->check_menu_user_visibility();			
-		}
-		
-		if ($visibility){
-			if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {			
-				for ($i = 1; $i < 11; $i++){			
-					$menunumber = 'menu' . $i;
-					$newmenu = 'newmenu' . $i;
-					$class = 'newmenu' . ($i + 4);
-					$fieldsetting = 'newmenu' . $i . 'field';
-					$valuesetting = 'newmenu' . $i . 'value';
-					$newmenulabel = 'newmenu' . $i . 'label';
-					$requirelogin = 'newmenu' . $i . 'requirelogin';
-					$logincheck = true;
-					$custommenuitems = '';
-					$access = true;
-					$pre = '<div class="dropdown pull-right newmenus ' . $class . '">';
-					$post = '</div>';
-					
-					if (empty($PAGE->theme->settings->$requirelogin) || isloggedin()){	
-						if (!empty($PAGE->theme->settings->$fieldsetting)){
-							$fields = explode ('=', $PAGE->theme->settings->$fieldsetting);
-							$ftype = $fields[0];
-							$setvalue = $fields[1];
-							if (!$this->check_menu_access($ftype, $setvalue, $menunumber)){
-								$access = false;
-							}
-						}
-							
-				        if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
-				        	$menu = ($PAGE->theme->settings->$newmenu);
-							$label = get_string($newmenulabel, 'theme_adaptable');
-							$custommenuitems = $this->parse_custom_menu($menu, $label);
-							$custommenu = new custom_menu($custommenuitems);
-				        	$retval .= $this->render_custom_menu($custommenu, $pre, $post);            
-				        }				        
-					}			
-				}			
-			}			
-		}				
-		return $retval;
-	}
+    /**
+     * Checks menu visibility where setup to allow users to control via custom profile setting
+     *
+     * @return boolean
+     */
+    public function check_menu_user_visibility() {
+        global $PAGE, $USER, $COURSE;
+        $uservalue = '';
 
-	public function check_menu_user_visibility(){
-		global $PAGE, $USER, $COURSE;
-		$uservalue = '';			
-		
-		if (empty($PAGE->theme->settings->menuuseroverride)){
-			return true;
-		}
-		
-		if (isset($USER->theme_adaptable_menus['menuvisibility'])){
-			$uservalue = $USER->theme_adaptable_menus['menuvisibility'];
-		} 
-		else {
-			$profilefield = $PAGE->theme->settings->menuoverrideprofilefield;
-			$profilefield = 'profile_field_' . $profilefield;
-			$uservalue = $this->get_user_visibility($profilefield);
-		}		
-		
-		if ($uservalue == 0){			
-			return true;
-		}
-		
-		if ($uservalue == 1 && $COURSE->id != 1){			
-			return false;
-		}
-		
-		if ($uservalue == 2){		
-			return false;
-		}		
-		return true; // default to true means we dont have to evaluate sitewide setting and guarantees return value		
-	}
-	
-	public function get_user_visibility($profilefield){
-		global $USER, $CFG;		
-		$uservisibility = '';
-		
-		require_once($CFG->dirroot.'/user/profile/lib.php');
-		require_once($CFG->dirroot.'/user/lib.php');
-		profile_load_data($USER);
-		
-		$uservisibility = $USER->$profilefield;
-		$USER->theme_adaptable_menus['menuvisibility'] = $uservisibility;
-		return $uservisibility;
-	}
-    
-	public function check_menu_access($ftype, $setvalue, $menu){
-		global $PAGE, $USER, $CFG;			
-		$usersvalue = 'default-zz'; // just want a value that will not be matched by accident
-		$sessttl = (time() + ($PAGE->theme->settings->menusessionttl * 60));		
-		$menuttl = $menu . 'ttl';			
-		
-		if ($PAGE->theme->settings->menusession){			
-			if (isset($USER->theme_adaptable_menus[$menu])){				
-				
-				if ($USER->theme_adaptable_menus[$menuttl] >= time()){										
-					if ($USER->theme_adaptable_menus[$menu] == true){					
-						return true;
-					}
-					else if ($USER->theme_adaptable_menus[$menu] == false){
-						return false;
-					}
-				}
-			}
-		}
-                	
-		require_once($CFG->dirroot.'/user/profile/lib.php');
-		require_once($CFG->dirroot.'/user/lib.php');
-		profile_load_data($USER);		
-		$ftype ="profile_field_$ftype";						
-		if (isset($USER->$ftype)){						
-			$usersvalue = $USER->$ftype;											
-		}			
-		
-		if ($usersvalue == $setvalue){						
-			$USER->theme_adaptable_menus[$menu] = true;
-			$USER->theme_adaptable_menus[$menuttl] = $sessttl;				
-			return true;
-		}			
-			
-		$USER->theme_adaptable_menus[$menu] = false;
-		$USER->theme_adaptable_menus[$menuttl] = $sessttl;
-		return false;				
-	}
-	
-	public function parse_custom_menu($menu, $label, $class = ' </i>', $close = ''){
-		$custommenuitems =  $class . $label. $close . "|#|".$label."\n";
+        if (empty($PAGE->theme->settings->menuuseroverride)) {
+            return true;
+        }
+
+        if (isset($USER->theme_adaptable_menus['menuvisibility'])) {
+            $uservalue = $USER->theme_adaptable_menus['menuvisibility'];
+        } else {
+            $profilefield = $PAGE->theme->settings->menuoverrideprofilefield;
+            $profilefield = 'profile_field_' . $profilefield;
+            $uservalue = $this->get_user_visibility($profilefield);
+        }
+
+        if ($uservalue == 0) {
+            return true;
+        }
+
+        if ($uservalue == 1 && $COURSE->id != 1) {
+            return false;
+        }
+
+        if ($uservalue == 2) {
+            return false;
+        }
+
+        // Default to true means we dont have to evaluate sitewide setting and guarantees return value.
+        return true;
+    }
+
+    /**
+     * Check users menu visibility settings, will store in session to avaoid repeated loading of profile data
+     * @param string $profilefield
+     * @return boolean
+     */
+    public function get_user_visibility($profilefield) {
+        global $USER, $CFG;
+        $uservisibility = '';
+
+        require_once($CFG->dirroot.'/user/profile/lib.php');
+        require_once($CFG->dirroot.'/user/lib.php');
+        profile_load_data($USER);
+
+        $uservisibility = $USER->$profilefield;
+        $USER->theme_adaptable_menus['menuvisibility'] = $uservisibility;
+        return $uservisibility;
+    }
+
+    /**
+     * Checks menu access based on admin settings and a users custom profile fields
+     *
+     * @param string $ftype the custom profile field
+     * @param string $setvalue the expected value a user must have in their profile field
+     * @param string $menu a token to identify the menu used to store access in session
+     * @return boolean
+     */
+    public function check_menu_access($ftype, $setvalue, $menu) {
+        global $PAGE, $USER, $CFG;
+        $usersvalue = 'default-zz'; // Just want a value that will not be matched by accident.
+        $sessttl = (time() + ($PAGE->theme->settings->menusessionttl * 60));
+        $menuttl = $menu . 'ttl';
+
+        if ($PAGE->theme->settings->menusession) {
+            if (isset($USER->theme_adaptable_menus[$menu])) {
+
+                if ($USER->theme_adaptable_menus[$menuttl] >= time()) {
+                    if ($USER->theme_adaptable_menus[$menu] == true) {
+                        return true;
+                    } else if ($USER->theme_adaptable_menus[$menu] == false) {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        require_once($CFG->dirroot.'/user/profile/lib.php');
+        require_once($CFG->dirroot.'/user/lib.php');
+        profile_load_data($USER);
+        $ftype = "profile_field_$ftype";
+        if (isset($USER->$ftype)) {
+            $usersvalue = $USER->$ftype;
+        }
+
+        if ($usersvalue == $setvalue) {
+            $USER->theme_adaptable_menus[$menu] = true;
+            $USER->theme_adaptable_menus[$menuttl] = $sessttl;
+            return true;
+        }
+
+        $USER->theme_adaptable_menus[$menu] = false;
+        $USER->theme_adaptable_menus[$menuttl] = $sessttl;
+        return false;
+    }
+
+    /**
+     * Parses / wraps custom menus in HTML
+     *
+     * @param string $menu
+     * @param string $label
+     * @param string $class
+     * @param string $close
+     *
+     * @return string
+     */
+    public function parse_custom_menu($menu, $label, $class = ' </i>', $close = '') {
+        $custommenuitems = $class . $label. $close . "|#|".$label."\n";
         $arr = explode("\n", $menu);
-        
+
         // We want to force everything inputted under this menu.
         foreach ($arr as $key => $value) {
             $arr[$key] = '-' . $arr[$key];
         }
-        
+
         $custommenuitems .= implode("\n", $arr);
-		return $custommenuitems;
-	}
-	
-	public function hideinforum() {
-		global $PAGE;
-		$hidelinks = false;		
-		if (!empty($PAGE->theme->settings->hideinforum)) {					
-			if (strstr($_SERVER['REQUEST_URI'], '/mod/forum/')) {				
-				$hidelinks = true;
-			}
-		}		
-		return $hidelinks;
-	}
-	
-	public function wrap_custom_menu_top($custommenu, $classno){
-		$retval = '<div class="dropdown pull-right newmenus newmenu$classno">';
-		$retval .= $custommenu;
-		$retval .= '</div>';
-	}
-	
+        return $custommenuitems;
+    }
+
+    /**
+     * Hide tools menu in forum to make room for forum search optoin
+     *
+     * @return boolean
+     */
+    public function hideinforum() {
+        global $PAGE;
+        $hidelinks = false;
+        if (!empty($PAGE->theme->settings->hideinforum)) {
+            if (strstr($_SERVER['REQUEST_URI'], '/mod/forum/')) {
+                $hidelinks = true;
+            }
+        }
+        return $hidelinks;
+    }
+
+    /**
+     * Wrap html round custom menu
+     *
+     * @param string $custommenu
+     * @param string $classno
+     *
+     * @return string
+     */
+    public function wrap_custom_menu_top($custommenu, $classno) {
+        $retval = '<div class="dropdown pull-right newmenus newmenu$classno">';
+        $retval .= $custommenu;
+        $retval .= '</div>';
+        return $retval;
+    }
+
+    /**
+     * Returns language menu
+     *
+     * @return string
+     */
     public function lang_menu() {
         global $CFG;
         $langmenu = new custom_menu();
@@ -887,6 +1274,12 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $this->render_custom_menu($langmenu);
     }
 
+    /**
+     * Returns html for cusotm menu
+     *
+     * @param string $custommenuitems = ''
+     * @return array
+     */
     public function custom_menu($custommenuitems = '') {
         global $CFG;
 
@@ -897,10 +1290,14 @@ class theme_adaptable_core_renderer extends core_renderer {
         return $this->render_custom_menu($custommenu);
     }
 
-    /*
-     * This renders the bootstrap top menu.
-     *
+    /**
+     * This renders the bootstrap top menu.     *
      * This renderer is needed to enable the Bootstrap style navigation.
+     *
+     * @param custom_menu $menu
+     * @param string $wrappre
+     * @param string $wrappost
+     * @return string
      */
     protected function render_custom_menu(custom_menu $menu, $wrappre = '', $wrappost = '') {
         global $CFG;
@@ -923,15 +1320,18 @@ class theme_adaptable_core_renderer extends core_renderer {
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
-		$content = $wrappre . $content . $wrappost . '</ul>';
+        $content = $wrappre . $content . $wrappost . '</ul>';
         return $content;
     }
 
-    /*
-     * This code renders the custom menu items for the
-     * bootstrap dropdown menu.
+    /**
+     * This code renders the custom menu items for the bootstrap dropdown menu.
+     *
+     * @param custom_menu_item $menunode
+     * @param int $level = 0
+     * @return string
      */
-    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
+    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0) {
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
@@ -1002,7 +1402,7 @@ class theme_adaptable_core_renderer extends core_renderer {
      * This function is called from {@link core_renderer::render_tabtree()}
      * and also it calls itself when printing the $tabobject subtree recursively.
      *
-     * @param tabobject $tabobject
+     * @param tabobject $tab
      * @return string HTML fragment
      */
     protected function render_tabobject(tabobject $tab) {
@@ -1021,11 +1421,23 @@ class theme_adaptable_core_renderer extends core_renderer {
         }
     }
 
+    /**
+     * Returns empty string
+     *
+     * @return string
+     */
     protected function theme_switch_links() {
         // We're just going to return nothing and fail nicely, whats the point in bootstrap if not for responsive?
         return '';
     }
 
+    /**
+     * Render blocks
+     * @param string $region
+     * @param array $classes
+     * @param string $tag
+     * @return string
+     */
     public function adaptableblocks($region, $classes = array(), $tag = 'aside') {
         $classes = (array)$classes;
         $classes[] = 'block-region';
@@ -1039,7 +1451,22 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 }
 
+/**
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
+ * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * Course renderers for Adaptable theme based on BCU Theme
+ */
 class theme_adaptable_core_course_renderer extends core_course_renderer {
+    /**
+     * REnder course category box
+     *
+     * @param coursecat_helper $chelper
+     * @param string $course
+     * @param string $additionalclasses
+     * @return string
+     */
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG, $OUTPUT, $PAGE;
         $type = theme_adaptable_get_setting('frontpagerenderer');
@@ -1056,9 +1483,8 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $type = 2;
             $covhidebutton = "true";
         } else {
-        	$covhidebutton = "false";
+            $covhidebutton = "false";
         }
-
 
         if (!isset($this->strings->summary)) {
             $this->strings->summary = get_string('summary');
@@ -1076,9 +1502,10 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $classes .= ' collapsed';
         }
-		//new to show blocks John
-		$spanclass = "span4";
-        $content .= html_writer::start_tag('div', array('class' => ' '.$spanclass.' panel panel-default coursebox '.$additionalcss));
+        // New to show blocks John.
+        $spanclass = "span4";
+        $content .= html_writer::start_tag('div',
+                                            array('class' => ' '.$spanclass.' panel panel-default coursebox '.$additionalcss));
         $urlb = new moodle_url('/course/view.php', array('id' => $course->id));
         $content .= "<a href='$urlb'>";
         $coursename = $chelper->get_course_formatted_name($course);
@@ -1121,8 +1548,8 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $arrow = html_writer::tag('span', '', array('class' => 'fa fa-chevron-'.$icondirection));
             $btn = html_writer::tag('span', get_string('course') . ' ' . $arrow, array('class' => 'coursequicklink'));
 
-           if (empty($PAGE->theme->settings->covhidebutton)) {
-            $content .= html_writer::link(new moodle_url('/course/view.php',
+            if (empty($PAGE->theme->settings->covhidebutton)) {
+                $content .= html_writer::link(new moodle_url('/course/view.php',
                 array('id' => $course->id)), $btn, array('class' => " coursebtn submit btn btn-info btn-sm pull-right"));
             }
         }
@@ -1137,6 +1564,12 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
+    /**
+     * Returns enrolment icons
+     *
+     * @param string $course
+     * @return string
+     */
     protected function coursecat_coursebox_enrolmenticons($course) {
         $content = '';
         if ($icons = enrol_get_course_info_icons($course)) {
@@ -1149,8 +1582,18 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
-    // Type - 1 = No Overlay.
-    // Type - 2 = Overlay.
+
+     /**
+      * Returns course box content for cattegories
+      *
+      * Type - 1 = No Overlay.
+      * Type - 2 = Overlay.
+      *
+      * @param coursecat_helper $chelper
+      * @param string $course
+      * @param int $type = 3
+      * @return string
+      */
     protected function coursecat_coursebox_content(coursecat_helper $chelper, $course, $type=3) {
         global $CFG, $OUTPUT, $PAGE;
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
@@ -1180,7 +1623,8 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
                     $contentimages .= html_writer::link($link, html_writer::empty_tag('img', array('src' => $url)));
                     $contentimages .= html_writer::end_tag('div');
                 } else {
-                    $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";
+                    $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
+                                                                  background-size: contain;'></div>";
                 }
             } else {
                 $image = $this->output->pix_icon(file_file_icon($file, 24), $file->get_filename(), 'moodle');
@@ -1194,7 +1638,8 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         if (strlen($contentimages) == 0 && $type == 2) {
             // Default image.
             $url = $PAGE->theme->setting_file_url('frontpagerendererdefaultimage', 'frontpagerendererdefaultimage');
-            $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center; background-size: contain;'></div>";
+            $contentimages .= "<div class='cimbox' style='background: #FFF url($url) no-repeat center center;
+                                                          background-size: contain;'></div>";
         }
         $content .= $contentimages. $contentfiles;
 
@@ -1252,13 +1697,20 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         }
         if ($type == 2) {
             $content .= html_writer::end_tag('div');
-            //end course-content
+            // End course-content.
         }
         $content .= html_writer::tag('div', '', array('class' => 'boxfooter')); // Coursecat.
 
         return $content;
     }
 
+    /**
+     * Course search form
+     *
+     * @param string $value
+     * @param string $format
+     * @return string
+     */
     public function course_search_form($value = '', $format = 'plain') {
         static $count = 0;
         $formid = 'coursesearch';
@@ -1291,6 +1743,11 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         return $output;
     }
 
+    /**
+     * Frontpage course list
+     *
+     * @return string
+     */
     public function frontpage_my_courses() {
         global $USER, $CFG, $DB;
         $output = '';

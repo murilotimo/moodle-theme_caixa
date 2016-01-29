@@ -17,14 +17,19 @@
 /**
  * Version details
  *
- * @package    theme
- * @subpackage adaptable
- * @copyright  2014 Birmingham City University 
+ * @package    theme_adaptable
+ * @copyright 2015 Jeremy Hopkins (Coventry University)
+ * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
 
 define('THEME_ADAPTABLE_DEFAULT_ALERTCOUNT', '1');
+define('THEME_ADAPTABLE_DEFAULT_ANALYTICSCOUNT', '1');
+define('THEME_ADAPTABLE_DEFAULT_TOPMENUSCOUNT', '1');
+define('THEME_ADAPTABLE_DEFAULT_TOOLSMENUSCOUNT', '1');
+define('THEME_ADAPTABLE_DEFAULT_NEWSTICKERCOUNT', '1');
+define('THEME_ADAPTABLE_DEFAULT_SLIDERCOUNT', '3');
 
 /**
  * Parses CSS before it is cached.
@@ -52,6 +57,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:linkhover]]' => '#009688',
         '[[setting:maincolor]]' => '#009688',
         '[[setting:backcolor]]' => '#FFFFFF',
+        '[[setting:regionmaincolor]]' => '#FFFFFF',
         '[[setting:rendereroverlaycolor]]' => '#009688',
         '[[setting:rendereroverlayfontcolor]]' => '#FFFFFF',
         '[[setting:buttoncolor]]' => '#009688',
@@ -59,13 +65,13 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:buttonhovercolor]]' => '#00695c',
         '[[setting:buttonlogincolor]]' => '#ef5350',
         '[[setting:buttonloginhovercolor]]' => '#e53935',
-        '[[setting:buttonlogintextcolor]]' => '#0084c2',		
+        '[[setting:buttonlogintextcolor]]' => '#0084c2',
         '[[setting:buttonloginpadding]]' => '0px',
-        '[[setting:buttonloginheight]]' => '24px',		
-        '[[setting:buttonloginmargintop]]' => '2px',		
-        '[[setting:buttonradius]]' => '5px',        
+        '[[setting:buttonloginheight]]' => '24px',
+        '[[setting:buttonloginmargintop]]' => '2px',
+        '[[setting:buttonradius]]' => '5px',
         '[[setting:dividingline]]' => '#ffffff',
-        '[[setting:dividingline2]]' => '#ffffff',        
+        '[[setting:dividingline2]]' => '#ffffff',
         '[[setting:navbarborder]]' => '#B7B3EF',
         '[[setting:navbarhover]]' => '#3C469C',
         '[[setting:breadcrumb]]' => '#b4bbbf',
@@ -78,18 +84,18 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:footerlinkcolor]]' => '#ffffff',
         '[[setting:headerbkcolor]]' => '#00796B',
         '[[setting:headerbkcolor2]]' => '#009688',
-        '[[setting:headerprofilefontsize]]' => '12px',
         '[[setting:headertextcolor]]' => '#ffffff',
         '[[setting:headertextcolor2]]' => '#ffffff',
         '[[setting:blockheadercolor]]' => '#009688',
-        '[[setting:blockbackgroundcolor]]' => '#FFFFFF',    
-        '[[setting:blockheaderbackgroundcolor]]' => '#FFFFFF',        
+        '[[setting:blockbackgroundcolor]]' => '#FFFFFF',
+        '[[setting:blockheaderbackgroundcolor]]' => '#FFFFFF',
         '[[setting:blockbordercolor]]' => '#59585D',
+        '[[setting:blockregionbackgroundcolor]]' => 'transparent',
         '[[setting:marketblockbordercolor]]' => '#e8eaeb',
-        '[[setting:marketblocksbackgroundcolor]]' => '#FFFFFF',
+        '[[setting:marketblocksbackgroundcolor]]' => 'transparent',
         '[[setting:blocklinkcolor]]' => '#009688',
         '[[setting:blockheaderbordertop]]' => '1px',
-        '[[setting:blockheaderborderleft]]' => '0px',        
+        '[[setting:blockheaderborderleft]]' => '0px',
         '[[setting:blockheaderborderright]]' => '0px',
         '[[setting:blockheaderborderbottom]]' => '0px',
         '[[setting:blockmainbordertop]]' => '0px',
@@ -101,20 +107,20 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:blockheadertopradius]]' => '0px',
         '[[setting:blockheaderbottomradius]]' => '0px',
         '[[setting:blockmaintopradius]]' => '0px',
-        '[[setting:blockmainbottomradius]]' => '0px',		
+        '[[setting:blockmainbottomradius]]' => '0px',
         '[[setting:tilesbordercolor]]' => '#009688',
         '[[setting:infoboxcolor]]' => '#333333',
         '[[setting:infoboxcolor2]]' => '#f3f3f3',
-        '[[setting:slidermargintop]]' => '20px',		
+        '[[setting:slidermargintop]]' => '20px',
         '[[setting:slidermarginbottom]]' => '20px',
         '[[setting:currentcolor]]' => '#d9edf7',
         '[[setting:sectionheadingcolor]]' => '#5f588a',
         '[[setting:infoboxtextcolor]]' => '#ffffff',
         '[[setting:infoboxtextcolor2]]' => '#666666',
         '[[setting:menufontsize]]' => '14px',
+        '[[setting:topmenufontsize]]' => '14px',
         '[[setting:menubkcolor]]' => '#ffffff',
-        '[[setting:menufontcolor]]' => '#444444',        
-        '[[setting:menufonthovercolor]]' => '#3c469c',
+        '[[setting:menufontcolor]]' => '#444444',
         '[[setting:menubordercolor]]' => '#80cbc4',
         '[[setting:mobilemenubkcolor]]' => '#F9F9F9',
         '[[setting:mobilemenufontcolor]]' => '#000000',
@@ -123,27 +129,37 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:editonbk]]' => '#4caf50',
         '[[setting:editoffbk]]' => '#f44336',
         '[[setting:editverticalpadding]]' => '',
-		'[[setting:edithorizontalpadding]]' => '',
-		'[[setting:edittopmargin]]' => '',
+        '[[setting:edithorizontalpadding]]' => '',
+        '[[setting:edittopmargin]]' => '',
         '[[setting:editfont]]' => '#ffffff',
+        '[[setting:sliderh3color]]' => '#ffffff',
+        '[[setting:sliderh4color]]' => '#ffffff',
+        '[[setting:slidersubmitbgcolor]]' => '#009688',
+        '[[setting:slidersubmitcolor]]' => '#ffffff',
+        '[[setting:slider2h3color]]' => '#000000',
+        '[[setting:slider2h4color]]' => '#000000',
+        '[[setting:slider2h3bgcolor]]' => '#000000',
+        '[[setting:slider2h4bgcolor]]' => '#ffffff',
         '[[setting:slideroption2color]]' => '#0066cc',
+        '[[setting:slideroption2submitcolor]]' => '#ffffff',
         '[[setting:slideroption2a]]' => '#0066cc',
         '[[setting:socialsize]]' => '32',
-        '[[setting:socialsizemobile]]' => '22',        
+        '[[setting:socialsizemobile]]' => '22',
         '[[setting:mobile]]' => '22',
-        '[[setting:socialpaddingtop]]' => '1.8%',        
+        '[[setting:socialpaddingtop]]' => '1.8%',
         '[[setting:fontname]]' => 'Open Sans',
         '[[setting:fontheadername]]' => 'Roboto Slab',
         '[[setting:fontcolor]]' => '#333333',
         '[[setting:fontheadercolor]]' => '#333333',
         '[[setting:fontweight]]' => '400',
-        '[[setting:fontheaderweight]]' => '400',  
+        '[[setting:fontheaderweight]]' => '400',
         '[[setting:fonttitlename]]' => 'Audiowide',
         '[[setting:fonttitleweight]]' => '400',
         '[[setting:fonttitlesize]]' => '48px',
         '[[setting:fonttitlecolor]]' => '#FFFFFF',
         '[[setting:fullscreenwidth]]' => '98%',
         '[[setting:coursetitlemaxwidth]]' => '50%',
+        '[[setting:coursetitlepaddingtop]]' => '0px',
         '[[setting:hidebreadcrumbmobile]]' => '',
         '[[setting:hidepagefootermobile]]' => '',
         '[[setting:hidealertsmobile]]' => '',
@@ -157,7 +173,8 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:breadcrumbtitle]]' => 'shortname',
         '[[setting:enableavailablecourses]]' => 'display',
         '[[setting:enableticker]]' => true,
-        '[[setting:enabletickermy]]' => true,           
+        '[[setting:enabletickermy]]' => true,
+        '[[setting:tickerwidth]]' => '',
     );
 
     // Get all the defined settings for the theme and replace defaults.
@@ -166,6 +183,14 @@ function theme_adaptable_process_css($css, $theme) {
             $defaults['[[setting:'.$key.']]'] = $val;
         }
     }
+
+    $homebkg = '';
+    if (!empty($theme->settings->homebk)) {
+        $homebkg = $theme->setting_file_url('homebk', 'homebk');
+        $homebkg = 'background-image: url("' . $homebkg . '");';
+    }
+    $defaults['[[setting:homebkg]]'] = $homebkg;
+
     // Replace the CSS with values from the $defaults array.
     $css = strtr($css, $defaults);
     if (empty($theme->settings->tilesshowallcontacts) || $theme->settings->tilesshowallcontacts == false) {
@@ -196,6 +221,12 @@ function theme_adaptable_set_customcss($css, $customcss) {
     return $css;
 }
 
+/**
+ * Set display of course contacts on front page tiles
+ * @param string $css
+ * @param string $display
+ * @return $string
+ */
 function theme_adaptable_set_tilesshowallcontacts($css, $display) {
     $tag = '[[setting:tilesshowallcontacts]]';
     if ($display) {
@@ -207,21 +238,28 @@ function theme_adaptable_set_tilesshowallcontacts($css, $display) {
     return $css;
 }
 
-
+/**
+ * Set user prefernces for zoom (show / hide block) function
+ * @param moodle_page $page
+ * @return void
+ */
 function theme_adaptable_initialise_zoom(moodle_page $page) {
     user_preference_allow_ajax_update('theme_adaptable_zoom', PARAM_TEXT);
     $page->requires->yui_module('moodle-theme_adaptable-zoom', 'M.theme_adaptable.zoom.init', array());
 }
 
 /**
- * Get the user preference for the zoom function.
+ * Get the user preference for the zoom (show / hide block) function.
  */
 function theme_adaptable_get_zoom() {
     return get_user_preferences('theme_adaptable_zoom', '');
 }
 
-// Full width funcs.
-
+/**
+ * Set the user preference for full screen
+ * @param moodle_page $page
+ * @return void
+ */
 function theme_adaptable_initialise_full(moodle_page $page) {
     user_preference_allow_ajax_update('theme_adaptable_full', PARAM_TEXT);
     $page->requires->yui_module('moodle-theme_adaptable-full', 'M.theme_adaptable.full.init', array());
@@ -237,13 +275,17 @@ function theme_adaptable_get_full() {
 /**
  * Get the key of the last closed alert for a specific alert index.
  * This will be used in the renderer to decide whether to include the alert or not
+ * @param int $alertindex
  */
 function theme_adaptable_get_alertkey($alertindex) {
-	user_preference_allow_ajax_update('theme_adaptable_alertkey' . $alertindex, PARAM_TEXT);
+    user_preference_allow_ajax_update('theme_adaptable_alertkey' . $alertindex, PARAM_TEXT);
     return get_user_preferences('theme_adaptable_alertkey' . $alertindex, '');
 }
 
-
+/**
+ * Get user preference for side block
+ * Note: does not seem to be called / used within theme, may need to be removed
+ */
 function theme_adaptable_get_block_side() {
     static $theme;
     if (empty($theme)) {
@@ -252,6 +294,11 @@ function theme_adaptable_get_block_side() {
     return get_user_preferences('theme_adaptable_block_side', $theme->settings->blockside);
 }
 
+/**
+ * Get HTML for settings
+ * @param renderer_base $output
+ * @param moodle_page $page
+ */
 function theme_adaptable_get_html_for_settings(renderer_base $output, moodle_page $page) {
     global $CFG;
     $return = new stdClass;
@@ -275,6 +322,11 @@ function theme_adaptable_get_html_for_settings(renderer_base $output, moodle_pag
     return $return;
 }
 
+/**
+ * Get theme setting
+ * @param string $setting
+ * @param string $format = false
+ */
 function theme_adaptable_get_setting($setting, $format = false) {
     static $theme;
     if (empty($theme)) {
@@ -316,11 +368,9 @@ function theme_adaptable_pluginfile($course, $cm, $context, $filearea, $args, $f
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'style') {
             theme_essential_serve_css($args[1]);
-        }
-        else if ($filearea === 'homebk') {
+        } else if ($filearea === 'homebk') {
             return $theme->setting_file_serve('homebk', $args, $forcedownload, $options);
-        }
-        else if ($filearea === 'pagebackground') {
+        } else if ($filearea === 'pagebackground') {
             return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
         } else if (preg_match("/p[1-9][0-9]/", $filearea) !== false) {
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
@@ -348,6 +398,9 @@ function theme_adaptable_pluginfile($course, $cm, $context, $filearea, $args, $f
     }
 }
 
+/**
+ * Get course activities for this course menu
+ */
 function theme_adaptable_get_course_activities() {
     GLOBAL $CFG, $PAGE, $OUTPUT;
     // A copy of block_activity_modules.
@@ -382,20 +435,29 @@ function theme_adaptable_get_course_activities() {
     return $modfullnames;
 }
 
+/**
+ * Get formatted performance info showing only page load time
+ * @param string $param
+ */
 function theme_adaptable_performance_output($param) {
     $html = html_writer::tag('span', get_string('loadtime', 'theme_adaptable').' '. round($param['realtime'], 2) . ' ' .
             get_string('seconds'), array('id' => 'load'));
     return $html;
 }
 
+/**
+ * Initialize page
+ * @param moodle_page $page
+ */
 function theme_adaptable_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
-    //  REMOVED: Deprecated function    error_log($CFG->version);
-    if($CFG->version < 2015051100) {
-      $page->requires->jquery_plugin('bootstrap', 'theme_adaptable');
-	  $page->requires->jquery_plugin('dropdown', 'theme_adaptable');	
+    // REMOVED: Deprecated function    error_log($CFG->version); ???
+    if ($CFG->version < 2015051100) {
+        $page->requires->jquery_plugin('bootstrap', 'theme_adaptable');
+        $page->requires->jquery_plugin('dropdown', 'theme_adaptable');
     }
+
     $page->requires->jquery_plugin('pace', 'theme_adaptable');
     $page->requires->jquery_plugin('flexslider', 'theme_adaptable');
     $page->requires->jquery_plugin('ticker', 'theme_adaptable');
@@ -403,6 +465,10 @@ function theme_adaptable_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('adaptable', 'theme_adaptable');
 }
 
+/**
+ * Strip full site title from header
+ * @param string $heading
+ */
 function theme_adaptable_remove_site_fullname($heading) {
     global $SITE, $PAGE;
     if (strpos($PAGE->pagetype, 'course-view-') === 0) {
