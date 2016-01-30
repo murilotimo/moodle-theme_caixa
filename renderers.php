@@ -901,7 +901,9 @@ EOT;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
 
-            if (!empty($PAGE->theme->settings->enablemysites)) {
+            $mysitesvisibility = $PAGE->theme->settings->enablemysites;
+            if ($mysitesvisibility != 'disabled') {
+
                 $branchtitle = get_string('mysites', 'theme_adaptable');
                 $branchlabel = '<i class="fa fa-briefcase"></i><span class="menutitle">'.$branchtitle.'</span>';
                 $branchurl   = new moodle_url('/my/index.php');
@@ -910,10 +912,23 @@ EOT;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
                 list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
 
+                $icon = '';
+                if ($mysitesvisibility == 'includehidden'){
+                    $icon = '<span class="fa fa-eye"></span> ';
+                }
+
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-                                         $branch->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 40))."...",
+                                         $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 40)) . '...',
+                                         new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                        }
+                    }
+
+                    $icon = '<span class="fa fa-eye-slash"></span> ';
+                    foreach ($sortedcourses as $course) {
+                        if (!$course->visible && $mysitesvisibility == 'includehidden') {
+                                         $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 40)) . '...',
                                          new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }
