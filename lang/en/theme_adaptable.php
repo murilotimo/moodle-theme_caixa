@@ -924,6 +924,10 @@ $string['enableeventsdesc'] = 'Display a link to the calendar';
 $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
 $string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
 
+$string['mysitesexclude'] = 'Enable excluding hidden courses';
+$string['mysitesinclude'] = 'Enable including hidden courses';
+$string['mysitesdisabled'] = 'Disable';
+
 $string['frnt-footer'] = 'Blocks in this area will only be visible to admin users.';
 
 $string['enableticker'] = 'Enable the news ticker on the homepage?';

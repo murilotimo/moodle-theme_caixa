@@ -65,9 +65,12 @@ $temp->add($setting);
 $name = 'theme_adaptable/enablemysites';
 $title = get_string('mysites', 'theme_adaptable');
 $description = get_string('enablemysitesdesc', 'theme_adaptable');
-$default = true;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
-$setting->set_updatedcallback('theme_reset_all_caches');
+$choices = array(
+    'excludehidden' => get_string('mysitesexclude', 'theme_adaptable'),
+    'includehidden' => get_string('mysitesinclude', 'theme_adaptable'),
+    'disabled' => get_string('mysitesdisabled', 'theme_adaptable'),
+);
+$setting = new admin_setting_configselect($name, $title, $description, 'excludehidden', $choices);
 $temp->add($setting);
 
 $name = 'theme_adaptable/enablethiscourse';
