@@ -73,7 +73,9 @@ fieldset {
 }
 
 select {
-    width: 275px;
+/*    width: 275px; #308 */
+width: auto;
+
 }
 
 
