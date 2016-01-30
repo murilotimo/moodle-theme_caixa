@@ -92,6 +92,13 @@ ul.teachers {
     }
 }
 
+/* Lesson */
+.path-mod-lesson .answeroption .fcheckbox label, .path-mod-lesson .answeroption .fradio label {
+    float: left;
+    padding-left: 35px;
+}
+
+
 /* forum */
 .forumpost .maincontent .left {
     padding: 0 10px 0 10px;
