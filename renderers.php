@@ -40,11 +40,11 @@ class theme_adaptable_core_renderer extends core_renderer {
     protected $language = null;
 
     /**
-    * Internal implementation of user image rendering.
-    *
-    * @param user_picture $userpicture
-    * @return string
-    */
+     * Internal implementation of user image rendering.
+     *
+     * @param user_picture $userpicture
+     * @return string
+     */
     protected function render_user_picture(\user_picture $userpicture) {
         if ($this->page->pagetype == 'mod-forum-discuss') {
             $userpicture->size = 1;

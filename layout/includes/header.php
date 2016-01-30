@@ -398,7 +398,7 @@ switch($enableheadingtitle) {
                 echo $PAGE->heading;
                 break;
     case "shortname" :
-                echo $PAGE->heading;
+                echo $PAGE->shortname;
                 break;
     case "off" :
                 echo "";
