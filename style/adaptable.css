@@ -72,6 +72,12 @@ fieldset {
     min-width: 0;
 }
 
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}
+
 select {
 /*    width: 275px; #308 */
 width: auto;
