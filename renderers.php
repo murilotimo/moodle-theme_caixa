@@ -744,7 +744,7 @@ EOT;
         $retval = '';
 
         if (!empty($PAGE->theme->settings->sliderfullscreen)) {
-            $reval .= '<div class="slidewrap';
+            $retval .= '<div class="slidewrap';
         } else {
             $retval .= '<div class="container slidewrap';
         }
