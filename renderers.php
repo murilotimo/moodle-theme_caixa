@@ -917,7 +917,7 @@ EOT;
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-                                         $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 33)) . '...',
+                                         $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 30)) . '...',
                                          new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }
@@ -925,7 +925,7 @@ EOT;
                     $icon = '<span class="fa fa-eye-slash"></span> ';
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
-                                         $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 31)) . '...',
+                                         $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 28)) . '...',
                                          new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }
