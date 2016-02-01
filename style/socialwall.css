@@ -1,0 +1,257 @@
+/*Social Wall*/
+.format-socialwall .course-content ul.topics li.section {
+border-bottom: 0px solid #ccc;
+margin-top: 0;
+}
+.format-socialwall #section-0 .content {
+  display:none;
+  visibility: hidden;
+}
+.format-socialwall #section-2 .content {
+background-color: [[setting:swaddpost]];
+padding: 10px;
+margin: 0px;
+border: 3px solid #d4d4d4;
+border-radius: 4px;
+margin-top:15px;
+margin-bottom: 15px;
+-moz-box-shadow: 0px 0px 25px #000;
+-webkit-box-shadow: 0 0 25px #000;
+box-shadow: 0px 0px 25px #000;
+}
+
+.format-socialwall .tl-post {
+margin: 30px 0px 50px 0px;
+padding:15px;
+}
+
+.format-socialwall .tl-posttext {
+background-color: [[setting:swmessage]];
+padding: 10px 10px 20px 10px;
+border-radius: 10px 10px 0px 0px;
+border: 1px solid #ccc;
+margin-top: 10px;
+}
+
+.format-socialwall ul.section.tl-postattachment {
+background-color: [[setting:swattach]];
+padding: 5px 5px 5px 50px;
+border-left: 1px solid #ccc;
+border-right: 1px solid #ccc;
+margin:0px;
+}
+
+/* Socialwall Language Strings based on popular languages.  These are only visible when you use the Socialwall Course format plugin. */
+/*.lang-en.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Attachments"; }
+.lang-en.format-socialwall .tl-comments:before { content: "\f0e6  Comments"; }
+.lang-en.format-socialwall .tl-posttext:before{ content: "\f0e5  Message"; }
+.lang-en.format-socialwall .tl-post:before{ content: "\f086  Post" }
+.lang-en_us.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Attachments"; }
+.lang-en_us.format-socialwall .tl-comments:before { content: "\f0e6  Comments"; }
+.lang-en_us.format-socialwall .tl-posttext:before{ content: "\f0e5  Message"; }
+.lang-en_us.format-socialwall .tl-post:before{ content: "\f086  Post" }
+.lang-es.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Anexos"; }
+.lang-es.format-socialwall .tl-comments:before { content: "\f0e6  Comentarios"; }
+.lang-es.format-socialwall .tl-posttext:before{ content: "\f0e5  Mensaje"; }
+.lang-es.format-socialwall .tl-post:before{ content: "\f086  Publicación" }
+.lang-de.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Zubehör"; }
+.lang-de.format-socialwall .tl-comments:before { content: "\f0e6  Comments"; }
+.lang-de.format-socialwall .tl-posttext:before{ content: "\f0e5  Nachricht"; }
+.lang-de.format-socialwall .tl-post:before{ content: "\f086  Post" }
+.lang-es_mx.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Anexos"; }
+.lang-es_mx.format-socialwall .tl-comments:before { content: "\f0e6  Comentarios"; }
+.lang-es_mx.format-socialwall .tl-posttext:before{ content: "\f0e5  Mensaje"; }
+.lang-es_mx.format-socialwall .tl-post:before{ content: "\f086  Publicación" }
+.lang-fr.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Pièces jointes"; }
+.lang-fr.format-socialwall .tl-comments:before { content: "\f0e6  Commentaires"; }
+.lang-fr.format-socialwall .tl-posttext:before{ content: "\f0e5  Message"; }
+.lang-fr.format-socialwall .tl-post:before{ content: "\f086  Poste" }
+.lang-it.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Allegati"; }
+.lang-it.format-socialwall .tl-comments:before { content: "\f0e6  Commenti"; }
+.lang-it.format-socialwall .tl-posttext:before{ content: "\f0e5  Messaggio"; }
+.lang-it.format-socialwall .tl-post:before{ content: "\f086  Posta" }
+*/
+
+[[setting:swmultilangcss]]
+
+.format-socialwall ul.section.tl-postattachment:before { content: "[[setting:swlabelattachment]]"; }
+.format-socialwall .tl-comments:before { content: "[[setting:swlabelcomment]]"; }
+.format-socialwall .tl-posttext:before{ content: "[[setting:swlabelmessage]]"; }
+.format-socialwall .tl-post:before{ content: "[[setting:swlabelpost]]"; }
+
+.format-socialwall ul.section.tl-postattachment:before {
+  color:[[setting:swicontext]];
+  line-height: 20px;
+  display: inline-block;
+  font: 16px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  margin-bottom: 7px;
+  margin-left:-15px;
+  padding-bottom: 4px;
+  border-bottom:2px solid #ccc;
+}
+.format-socialwall .tl-comments:before {
+  color:[[setting:swicontext]];
+  line-height: 20px;
+  display: inline-block;
+  font: 16px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  margin-bottom: 7px;
+  padding-bottom: 4px;
+  width:100%;
+  text-align: center;
+}
+.format-socialwall .tl-posttext:before{
+  color:[[setting:swicontext]];
+  line-height: 20px;
+  display: inline-block;
+  font: 16px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  margin-bottom: 7px;
+  padding-bottom: 4px;
+  border-bottom:2px solid #ccc;
+  width:100%;
+  text-align: center;
+}
+.format-socialwall .tl-post:before{
+  color:[[setting:swicontext]];
+  line-height: 20px;
+  display: inline-block;
+  font: 18px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  padding-bottom: 4px;
+  padding-left:15px;
+  text-align: center;
+}
+/*  End CSS :before Text strings for socialwall */
+
+
+.format-socialwall .tl-text {
+margin-left: 40px;
+padding:10px;
+border: 2px solid #efefef;
+-moz-box-shadow: 0px 0px 25px #000;
+-webkit-box-shadow: 0 0 25px #000;
+box-shadow: 0px 0px 25px #000;
+border-radius: 4px 4px 4px 4px;
+background-color: [[setting:swpost]];
+}
+
+.format-socialwall .tl-comments {
+padding:15px;
+margin:0px;
+}
+
+.format-socialwall .tl-comments .tl-text {
+  border: 2px solid #ccc;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: [[setting:swcomment]];
+}
+
+.format-socialwall .tl-comment {
+padding-left:25px;
+padding-top: 0px;
+padding-bottom: 0px;
+}
+
+.format-socialwall .tl-post-actionarea {
+border: 1px solid #ccc;
+padding: 4px 4px 10px 4px;
+background: [[setting:swmessage]];
+border-radius: 0px 0px 5px 5px;
+}
+
+.format-socialwall .tl-timeago, .tl-counts {
+font-size: 12px;
+color: #666;
+line-height: 15px;
+padding-bottom: 5px;
+}
+
+.format-socialwall .like {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 5px 5px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+
+.format-socialwall .like:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+
+.format-socialwall .like:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
+.format-socialwall .likenomore {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 5px 5px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.format-socialwall .likenomore:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.format-socialwall .likenomore:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
+.format-socialwall form.tl-commentform {
+padding-top: 10px;
+}
+
+.format-socialwall #postform .fitem .felement #id_submitbutton {
+margin:0px;
+}
