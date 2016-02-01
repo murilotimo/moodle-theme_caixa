@@ -78,7 +78,7 @@ $string['settingsinfoboxcolors'] = 'Info Box Colours';
 $string['settingssecondinfoboxcolors'] = 'Second Info Box Colours';
 $string['settingsmarketingcolors'] = 'Marketing Block Colours';
 $string['settingsoverlaycolors'] = 'Overlay Tiles Colours';
-$string['settingsnavbarcolors'] = 'Marketing Block Colours';
+$string['settingsnavbarcolors'] = 'Navigation Bar (navbar) Colours';
 $string['settingsalertbox'] = 'Alert Box';
 $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
 $string['settingsfootercolors'] = 'Footer Colours';
@@ -239,8 +239,8 @@ $string['layoutcount2'] = ' block regions. You are currently using: ';
 // Marketing Blocks & Info Box *************************************.
 $string['marketingsettings'] = 'Marketing Blocks';
 $string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
-$string['marketingdesc'] = 'There are two full width info boxes wiht differing styles you can use.
-In additoin to this there is a layout builder allowing you to decide how many blocks you need and define your own layout, please see the <a href="/adaptable/README.txt" target="_blank">README file</a> that comes with this theme.';
+$string['marketingdesc'] = 'There are two full width info boxes witht differing styles you can use.
+In addition to this there is a layout builder allowing you to decide how many blocks you need and define your own layout, please see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file that comes with this theme.';
 
 $string['marketingbuilderheading'] = 'Marketing Block Layout Builder';
 $string['marketingbuilderdesc'] = 'Use the tool below to setup your marketing blocks.
@@ -250,7 +250,7 @@ $string['marketlayoutrow'] = 'Marketing Block Row';
 $string['marketlayoutrowdesc'] = 'Add / set layout for marketing block row on front page';
 
 $string['market'] = 'Marketing Block ';
-$string['marketdesc'] = 'Add html for marketing block (see the readme file for additional info and hints).';
+$string['marketdesc'] = 'Add html for marketing block (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
 
 $string['layoutaddcontent'] = 'Happy With Your Layout? Now Add Content to Your Blocks:';
 $string['layoutaddcontentdesc1'] = 'You have configured ';
@@ -258,7 +258,7 @@ $string['layoutaddcontentdesc2'] = ' marketing blocks. If you are happy with thi
 If you are not happy use the layout builder above to make changes<br />';
 
 $string['infobox'] = 'Frontpage Info Box';
-$string['infoboxdesc'] = 'Frontpage info block HTML (see the readme file for additional info and hints).';
+$string['infoboxdesc'] = 'Frontpage info block HTML (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
 
 $string['infoboxfullscreen'] = 'Make infobox full screen';
 $string['infoboxfullscreendesc'] = 'Turning this option on will make the infobox full screen.';
@@ -270,7 +270,7 @@ $string['infoboxtextcolor'] = 'Frontpage Info Box text colour';
 $string['infoboxtextcolordesc'] = 'Set the frontpage Info Box text colour';
 
 $string['infobox2'] = 'Frontpage Secondary Info Box';
-$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the readme file for additional info and hints).';
+$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
 
 $string['infoboxcolor2'] = 'Secondary frontpage Info Box background colour';
 $string['infoboxcolor2desc'] = 'Set the secondary frontpage Info Box background colour';
@@ -923,6 +923,10 @@ $string['enablemyhomedesc'] = 'Display a link to {$a}';
 $string['enableeventsdesc'] = 'Display a link to the calendar';
 $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
 $string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
+
+$string['mysitesexclude'] = 'Enable excluding hidden courses';
+$string['mysitesinclude'] = 'Enable including hidden courses';
+$string['mysitesdisabled'] = 'Disable';
 
 $string['frnt-footer'] = 'Blocks in this area will only be visible to admin users.';
 

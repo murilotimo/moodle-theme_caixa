@@ -42,6 +42,16 @@ $haslogo = (!empty($PAGE->theme->settings->logo));
 $hastitle = (!empty($PAGE->theme->settings->sitetitletext));
 $enableheadingtitle = $PAGE->theme->settings->enableheading;
 
+if ($COURSE->id != 1){
+    switch($enableheadingtitle) {
+        case "shortname" :
+                    $PAGE->set_heading($COURSE->shortname);
+                    break;
+        case "off" :
+                    $PAGE->set_heading('');
+                    break;
+    }
+}
 
 // Get the fonts.
 $fontname = str_replace(" ", "+", $PAGE->theme->settings->fontname);
@@ -393,17 +403,7 @@ if (isset($PAGE) && !$PAGE->theme->settings->sitetitle) {
 
 <div id="coursetitle" class="pull-left">
 <?php
-switch($enableheadingtitle) {
-    case "fullname" :
-                echo $PAGE->heading;
-                break;
-    case "shortname" :
-                echo $PAGE->heading;
-                break;
-    case "off" :
-                echo "";
-                break;
-}
+    echo $PAGE->heading;
 ?>
     </div>
 
