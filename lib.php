@@ -29,6 +29,7 @@ define('THEME_ADAPTABLE_DEFAULT_ANALYTICSCOUNT', '1');
 define('THEME_ADAPTABLE_DEFAULT_TOPMENUSCOUNT', '1');
 define('THEME_ADAPTABLE_DEFAULT_TOOLSMENUSCOUNT', '1');
 define('THEME_ADAPTABLE_DEFAULT_NEWSTICKERCOUNT', '1');
+define('THEME_ADAPTABLE_DEFAULT_SLIDERCOUNT', '3');
 
 /**
  * Parses CSS before it is cached.
@@ -89,6 +90,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:blockbackgroundcolor]]' => '#FFFFFF',
         '[[setting:blockheaderbackgroundcolor]]' => '#FFFFFF',
         '[[setting:blockbordercolor]]' => '#59585D',
+        '[[setting:blockregionbackgroundcolor]]' => 'transparent',
         '[[setting:marketblockbordercolor]]' => '#e8eaeb',
         '[[setting:marketblocksbackgroundcolor]]' => 'transparent',
         '[[setting:blocklinkcolor]]' => '#009688',
@@ -130,7 +132,16 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:edithorizontalpadding]]' => '',
         '[[setting:edittopmargin]]' => '',
         '[[setting:editfont]]' => '#ffffff',
+        '[[setting:sliderh3color]]' => '#ffffff',
+        '[[setting:sliderh4color]]' => '#ffffff',
+        '[[setting:slidersubmitbgcolor]]' => '#009688',
+        '[[setting:slidersubmitcolor]]' => '#ffffff',
+        '[[setting:slider2h3color]]' => '#000000',
+        '[[setting:slider2h4color]]' => '#000000',
+        '[[setting:slider2h3bgcolor]]' => '#000000',
+        '[[setting:slider2h4bgcolor]]' => '#ffffff',
         '[[setting:slideroption2color]]' => '#0066cc',
+        '[[setting:slideroption2submitcolor]]' => '#ffffff',
         '[[setting:slideroption2a]]' => '#0066cc',
         '[[setting:socialsize]]' => '32',
         '[[setting:socialsizemobile]]' => '22',

@@ -790,7 +790,7 @@ $string['alertaccessadmins'] = 'Visible para administradores';
 $string['alertaccessprofile'] = 'Añadir restricción por campo personalizado';
 
 $string['alertaccess'] = 'Visibilidad de la Alerta';
-$string['alertaccessdesc'] = 'Establece la visibilidad de la Alerta según su tipo. Nota: Si se usa "' . $string['alertaccessprofile'] . '" necesitrás añadir el campo personalizado de usuario.';
+$string['alertaccessdesc'] = 'Establece la visibilidad de la Alerta según su tipo. Nota: Si se usa "Añadir restricción por campo personalizado" necesitrás añadir el campo personalizado de usuario.';
 
 
 // Mobile **********************************************************.
@@ -925,38 +925,38 @@ $string['menusessionttldesc'] = 'Número de minutos antes de reiniciar la sesió
 $string['newmenudesc'] = 'Configurar los enlaces mostrados bajo el menú de la cabecera superior.';
 $string['newmenufield'] = 'Custom Profile Field Name=Value (optional)';
 $string['newmenufielddesc'] = 'Añade una regla de acceso usando un campo de perfil personalizado. Ejemplo: "usertype=student"';
-$string['newmenurequirelogin'] = 'Require login';
-$string['newmenurequirelogindesc'] = 'If enabled this menu will only be visible to logged in users';
+$string['newmenurequirelogin'] = 'Require Entrar';
+$string['newmenurequirelogindesc'] = 'Si está activado este menú será visible a los usuarios que autenticados';
 
 $string['menusdesc'] = '';
 
 $string['newmenu2trigger'] = 'Palabra clave para el Menú desplegable superior';
-$string['newmenu2triggerdesc'] = 'Set a Top Menu Dropdown 2 trigger word. Font awesome icons can be used';
+$string['newmenu2triggerdesc'] = 'Establece la palabra clave para el Menú desplegable superior Set a Top Menu Dropdown 2 trigger word.';
 
 $string['enablemenus'] = 'Activar Menús';
-$string['enablemenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
+$string['enablemenusdesc'] = 'Por motivos de rendimiendo, se recomienda no activarlo si no se utilizan los menús.';
 
 $string['disablemenuscoursepages'] = 'Desactivar menús en las páginas de los cursos';
-$string['disablemenuscoursepagesdesc'] = 'Turning this option on will limit the display of top menus to site pages, the homepage, and dashboard (My Home) etc. and will not show in any course pages';
+$string['disablemenuscoursepagesdesc'] = 'Activando esta opción los menús solo se mostrarán en las páginas del sitio, la página inicial, el Área Personal, etc. y no se mostrará en las páginas de los cursos.';
 
-$string['menuuseroverride'] = 'Allow user override';
-$string['menuuseroverridedesc'] = 'These settings can be used to give users control over where menus appear via a custom profile field. To use this option you will need to create a custom profile field in the "list" format with values in the corresponding order:
-<pre>1. Sitewide (the first item in the list will be for sitewide menu visibility)
-2. Homepages Only (the second item in the list will set visibility to only site / homepages)
-3. Hidden (the third value in the list will hide menus entirely)</pre>
-You should NOT use the "' . $string['disablemenuscoursepages'] . '" option in conjuction with profile field settings, instead use set the default value to your "Homepages Only" entry when setting up your profile field list.
+$string['menuuseroverride'] = 'Permitir la anulación por usuario';
+$string['menuuseroverridedesc'] = 'Esta configuración controla el uso de los menus a través del perfíl de usuario. Para usar esta función, se ha de crear un campo personalizado de usuario tipo lista con los siguientes valores:
+<pre>1. Sitewide (mostrará el menú en todo el sitio)
+2. Homepages Only (mostrará el menú solo en la página principal)
+3. Hidden (no se mostrarán los menús)</pre>
+NO debes utilizar la opción "Desactivar menús en las páginas de los cursos" junto a los campos de perfíl. En su lugar, selecciona  "Homepages Only".
 
-Note: Users will have to log out of Moodle and back in again for this change to take effect, you may want to add a note explaining this in the custom profile field.';
+Nota: Los usuarios deberán salir de moodle y volver a entrar para que los cambios hagan efecto. Puede indicarse una nota al crear el campo personalizado.';
 
 $string['menuoverrideprofilefield'] = 'Nombre del campo personalizado';
-$string['menuoverrideprofilefielddesc'] = 'The name of the custom profile "list" field used for user override';
+$string['menuoverrideprofilefielddesc'] = 'El nombre del campo de perfíl "list" usado por la anulacion por usuario.';
 $string['menuoverrideprofilefielddefault'] = 'topmenusettings';
 
 $string['topmenuscount'] = 'Número de menús superiores';
-$string['topmenuscountdesc'] = 'Set the number of top menus you want to add to the theme header';
+$string['topmenuscountdesc'] = 'Establece el número de menús superiores que quieres añadir en la cabecera.';
 
 $string['menusheadingvisibility'] = 'Configuración para la visibilidad del menú superior';
-$string['menusheadingvisibilitydesc'] = 'The following settings allow you to control where menus appear and optionally allow users to customise their settings';
+$string['menusheadingvisibilitydesc'] = 'La siguiente configuración permite controlar donde mostrar los menús y opcionalmente permitir a los usuarios su personalización.';
 
 $string['newmenuheading'] = 'Menu superior';
 $string['newmenu'] = 'Menú superior desplegable';
@@ -965,11 +965,11 @@ $string['newmenutitledesc'] = 'El título del menú aparecerá en la cabecera de
 $string['newmenutitledefault'] = 'Menú';
 
 $string['enabletoolsmenus'] = 'Activar menús de herramientas';
-$string['enabletoolsmenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
+$string['enabletoolsmenusdesc'] = 'Por razones de rendimiento se recomienda dejarlo desactivado si no se utilizan.';
 
 $string['toolsmenuheading'] = 'Menús herramientas (en la barra de navegación)';
-$string['toolsmenuheadingdesc'] = 'You can configure links to be shown under a tools menu (in main navigation bar).
- The format is similar to that used for Moodle custom menus but allows you to add fa icons to menu items:
+$string['toolsmenuheadingdesc'] = 'Puedes configurar los enlaces a mostrar en el menú de herramientas (en la barra de navegación).
+ este formato es similar al usado por los menús personalizados de moodle pero permite añadir los iconos Font Awesome:
 <pre>
 &lt;span class=&quot;fa fa-video-camera&quot;&gt;&lt;/span&gt; Record Screen|http://google.co.uk|Record Screen
 &lt;span class=&quot;fa fa-picture-o&quot;&gt;&lt;/span&gt; ThinkStock|http://google.co.uk|ThinkStock
@@ -977,14 +977,14 @@ $string['toolsmenuheadingdesc'] = 'You can configure links to be shown under a t
 </pre><br />';
 
 $string['toolsmenuscount'] = 'Número de menús de herramientas';
-$string['toolsmenuscountdesc'] = 'Set the number of tools menus you want to add to the main navigation bar';
+$string['toolsmenuscountdesc'] = 'Establece el número de menús de herramientas que quieres a la barra de navegación.';
 
 $string['toolsmenu'] = 'Menú de herramientas desplegable';
-$string['toolsmenudesc'] = 'Add a drop down menu to the main navigation bar';
+$string['toolsmenudesc'] = 'Añade un menú desplegable en la barra de navegación.';
 
 $string['toolsmenutitle'] = 'Título menú de herramientas';
 $string['toolsmenutitledefault'] = 'Herramientas';
-$string['toolsmenutitledesc'] = 'Add the title of the menu you would like to display in the main navigation bar';
+$string['toolsmenutitledesc'] = 'Añade el título a mostrar en la barra de navegación.';
 
 $string['toolsmenulabel'] = 'Menu Herramientas';
 

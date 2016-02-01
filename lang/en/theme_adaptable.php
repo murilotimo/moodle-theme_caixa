@@ -78,7 +78,7 @@ $string['settingsinfoboxcolors'] = 'Info Box Colours';
 $string['settingssecondinfoboxcolors'] = 'Second Info Box Colours';
 $string['settingsmarketingcolors'] = 'Marketing Block Colours';
 $string['settingsoverlaycolors'] = 'Overlay Tiles Colours';
-$string['settingsnavbarcolors'] = 'Marketing Block Colours';
+$string['settingsnavbarcolors'] = 'Navigation Bar (navbar) Colours';
 $string['settingsalertbox'] = 'Alert Box';
 $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
 $string['settingsfootercolors'] = 'Footer Colours';
@@ -89,6 +89,7 @@ $string['analyticssettings'] = 'Analytics';
 // Admin Menu Strings.
 $string['blocksettings'] = 'Block Settings';
 $string['frontpagealertsettings'] = 'Alert Box';
+$string['frontpageblockregionsettings'] = 'Block Region Builder';
 $string['frontpageblocksettings'] = 'Marketing Blocks';
 $string['frontpagetickersettings'] = 'Frontpage Ticker';
 $string['frontpageslidersettings'] = 'Frontpage Slider';
@@ -105,7 +106,7 @@ $string['frontpagerendereroption4'] = 'Coventry Tiles';
 
 // Ticker **********************************************************.
 $string['tickersettings'] = 'News Ticker';
-$string['tickersettingsheading'] = 'Setup News Ticker on Front Page. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['tickersettingsheading'] = 'Setup News Ticker on Front Page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['tickerdesc'] = 'Here you can set a news ticker to run across the front page of your Moodle site.
   It is intended as a less intrusive alternative to the slider taking up very little space.
   To setup your ticker simply entere a bulleted list and include any hyperlinks you need to in that text.
@@ -141,57 +142,19 @@ $string['tickertextprofilefielddesc'] = 'Add access rule using for custom profil
 
 $string['ticker'] = 'Announcements';
 
-
-
 // Slideshow *******************************************************.
 $string['slideshowsettings'] = 'Slideshow';
-$string['slideshowsettingsheading'] = 'Customize the carousel on the front page. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['slideshowsettingsheading'] = 'Customize the carousel on the front page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
 
-$string['p1'] = 'Picture1';
-$string['p1desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an image.';
+$string['sliderimage'] = 'Slider Picture';
+$string['sliderimagedesc'] = 'Add an image for your slide.';
 
-$string['p2'] = 'Picture2';
-$string['p2desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an image.';
+$string['slidercaption'] = 'Slider Caption';
+$string['slidercaptiondesc'] = 'Add a caption for your slide';
 
-$string['p3'] = 'Picture3';
-$string['p3desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an image.';
-
-$string['p4'] = 'Picture4';
-$string['p4desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an image.';
-
-$string['p5'] = 'Picture5';
-$string['p5desc'] = 'Add picture to the frontpage slideshow. Type in a URL to an image.';
-
-$string['p1cap'] = 'Picture1 caption';
-$string['p1capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
-
-$string['p2cap'] = 'Picture2 caption';
-$string['p2capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
-
-$string['p3cap'] = 'Picture3 caption';
-$string['p3capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
-
-$string['p4cap'] = 'Picture4 caption';
-$string['p4capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
-
-$string['p5cap'] = 'Picture5 caption';
-$string['p5capdesc'] = 'Add a caption to the frontpage image. Use an H3 for the caption Title';
-
-$string['p1url'] = 'Slide 1 URL';
-$string['p1urldesc'] = 'Add a URL to slide 1.';
-
-$string['p2url'] = 'Slide 2 URL';
-$string['p2urldesc'] = 'Add a URL to slide 2.';
-
-$string['p3url'] = 'Slide 3 URL';
-$string['p3urldesc'] = 'Add a URL to slide 3.';
-
-$string['p4url'] = 'Slide 4 URL';
-$string['p4urldesc'] = 'Add a URL to slide 4.';
-
-$string['p5url'] = 'Slide 5 URL';
-$string['p5urldesc'] = 'Add a URL to slide 5.';
+$string['sliderurl'] = 'Slide Link URL';
+$string['sliderurldesc'] = 'Add a URL to which your slide links to when clicked.';
 
 $string['slidermargintop'] = 'Margin above slider';
 $string['slidermargintopdesc'] = 'Set the size of the margin above the slider.';
@@ -199,62 +162,103 @@ $string['slidermargintopdesc'] = 'Set the size of the margin above the slider.';
 $string['slidermarginbottom'] = 'Margin below slider';
 $string['slidermarginbottomdesc'] = 'Set the size of the margin below the slider.';
 
+$string['sliderenabled'] = 'Enable Slider';
+$string['sliderenableddesc'] = 'Enable a slider at the top of your home page';
+
 $string['sliderfullscreen'] = 'Slider full screen';
 $string['sliderfullscreendesc'] = 'Check this box to make the slider full screen (100% width)';
 
-$string['slideroption2'] = 'Slider style option 2';
-$string['slideroption2desc'] = 'Check this box to turn on the 2nd Slider style';
+$string['slideroption2'] = 'Choose Slider Type';
+$string['slideroption2desc'] = 'Choose Slider Type <strong>and then click SAVE</strong> to see color settings for your chosen slider';
+$string['slideroption2snippet'] = '<p>Sample HTML for Slider Captions:</p>
+<pre>
+&#x3C;div class=&#x22;span6 col-sm-6&#x22;&#x3E;
+&#x3C;h3&#x3E;Hand-crafted&#x3C;/h3&#x3E; &#x3C;h4&#x3E;pixels and code for the Moodle community&#x3C;/h4&#x3E;
+&#x3C;a href=&#x22;#&#x22; class=&#x22;submit&#x22;&#x3E;Please favorite our theme!&#x3C;/a&#x3E;
+</pre>';
 
-$string['slideroption2color'] = 'Slider style option 2 colour';
-$string['slideroption2colordesc'] = 'Set a background colour for the text in slider style option 2 colour';
+$string['slidercount'] = 'Slider Count';
+$string['slidercountdesc'] = 'Select how many slides you want to add <strong>then click SAVE</strong> to load the input fields';
+
+$string['sliderh3color'] = 'Slider 1 H3 Color';
+$string['sliderh3colordesc'] = 'Choose the color you want for the slider 1 H3 tag';
+
+$string['sliderh4color'] = 'Slider 1 H4 Color';
+$string['sliderh4colordesc'] = 'Choose the color you want for the slider 1 H4 tag';
+
+$string['slidersubmitcolor'] = 'Slider 1 Submit Text';
+$string['slidersubmitcolordesc'] = 'Choose the text color of the Slider 1 submit button';
+
+$string['slidersubmitbgcolor'] = 'Slider 1 Submit bg';
+$string['slidersubmitbgcolordesc'] = 'Choose the background color of the Slider 1 submit button';
+
+$string['slider2h3color'] = 'Slider 2 H3 Text Color';
+$string['slider2h3colordesc'] = 'Choose the text color you want for the slider 2 H3 tag';
+
+$string['slider2h4color'] = 'Slider 2 H4 Text Color';
+$string['slider2h4colordesc'] = 'Choose the text color you want for the slider 2 H4 tag';
+
+$string['slider2h3bgcolor'] = 'Slider 2 H3 bg Color';
+$string['slider2h3bgcolordesc'] = 'Choose the background color you want for the slider 2 H3 tag';
+
+$string['slider2h4bgcolor'] = 'Slider 2 H4 bg Color';
+$string['slider2h4bgcolordesc'] = 'Choose the background color you want for the slider 2 H4 tag';
+
+$string['slideroption2submitcolor'] = 'Slider 2 Submit Text';
+$string['slideroption2submitcolordesc'] = 'Set a background colour for the submit text in slider style option 2 colour';
+
+$string['slideroption2color'] = 'Slider 2 Submit bg';
+$string['slideroption2colordesc'] = 'Set a background colour for the submit text in slider style option';
 
 $string['slideroption2a'] = 'Slider style option 2 arrow background colour';
 $string['slideroption2adesc'] = 'Set the slider style option 2 arrow background colour';
 
+// Block Regions ***************************************************.
+$string['blocklayoutbuilder'] = 'Frontpage Block Regions';
+$string['blocklayoutbuilderdesc'] = 'Below you can build your own layout for block regions on the front page.
+To add content these regions you will need to <strong> turn editing on on the front page of Moodle</strong>.
+Then you can begin to drag/drop blocks into the regions you create!';
+
+$string['blocklayoutlayoutcheck'] = 'Check your layout';
+$string['blocklayoutlayoutcheckdesc'] = 'Use the tool below to check the number of blocks you have used and see a representation of your new layout.';
+$string['blocklayoutlayoutcount1'] = 'You can set a maximum of ';
+$string['blocklayoutlayoutcount2'] = ' block regions. You are currently using: ';
+
+$string['blocklayoutlayoutrow'] = 'Block Region Row ';
+$string['blocklayoutlayoutrowdesc'] = 'Add / set layout for block region row on front page.';
+
+$string['frontpageblocksenabled'] = 'Enable custom block region on front page';
+$string['frontpageblocksenableddesc'] = 'You can enable / disable custom block regions on the front page.
+You can then drag and drop blocks into the regions you created';
+
+$string['layoutcheck'] = 'Check your layout';
+$string['layoutcheckdesc'] = 'Use the tool below to check the number of blocks you have used and see a representation of your new layout.';
+$string['layoutcount1'] = 'You can set a maximum of ';
+$string['layoutcount2'] = ' block regions. You are currently using: ';
 
 // Marketing Blocks & Info Box *************************************.
 $string['marketingsettings'] = 'Marketing Blocks';
-$string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
-$string['marketingdesc'] = 'You can build marketting blocks, up to 12 on the front page. For examples, please see the <a href="/adaptable/README.txt" target="_blank">README file</a> that comes with this theme.';
+$string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['marketingdesc'] = 'There are two full width info boxes witht differing styles you can use.
+In addition to this there is a layout builder allowing you to decide how many blocks you need and define your own layout, please see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file that comes with this theme.';
 
-$string['market1'] = 'Marketing Block 1';
-$string['market1desc'] = 'Add html for marketing block 1 (see the readme file for additional info and hints).';
+$string['marketingbuilderheading'] = 'Marketing Block Layout Builder';
+$string['marketingbuilderdesc'] = 'Use the tool below to setup your marketing blocks.
+Once defined the block settings will appear further down the page.';
 
-$string['market2'] = 'Marketing Block 2';
-$string['market2desc'] = 'Add html for marketing block 2 (see the readme file for additional info and hints).';
+$string['marketlayoutrow'] = 'Marketing Block Row';
+$string['marketlayoutrowdesc'] = 'Add / set layout for marketing block row on front page';
 
-$string['market3'] = 'Marketing Block 3';
-$string['market3desc'] = 'Add html for marketing block 3 (see the readme file for additional info and hints).';
+$string['market'] = 'Marketing Block ';
+$string['marketdesc'] = 'Add html for marketing block (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
 
-$string['market4'] = 'Marketing Block 4';
-$string['market4desc'] = 'Add html for marketing block 4 (see the readme file for additional info and hints).';
-
-$string['market5'] = 'Marketing Block 5';
-$string['market5desc'] = 'Add html for marketing block 5 (see the readme file for additional info and hints).';
-
-$string['market6'] = 'Marketing Block 6';
-$string['market6desc'] = 'Add html for marketing block 6 (see the readme file for additional info and hints).';
-
-$string['market7'] = 'Marketing Block 7';
-$string['market7desc'] = 'Add html for marketing block 7 (see the readme file for additional info and hints).';
-
-$string['market8'] = 'Marketing Block 8';
-$string['market8desc'] = 'Add html for marketing block 8 (see the readme file for additional info and hints).';
-
-$string['market9'] = 'Marketing Block 9';
-$string['market9desc'] = 'Add html for marketing block 9 (see the readme file for additional info and hints).';
-
-$string['market10'] = 'Marketing Block 10';
-$string['market10desc'] = 'Add html for marketing block 10 (see the readme file for additional info and hints).';
-
-$string['market11'] = 'Marketing Block 11';
-$string['market11desc'] = 'Add html for marketing block 11 (see the readme file for additional info and hints).';
-
-$string['market12'] = 'Marketing Block 12';
-$string['market12desc'] = 'Add html for marketing block 12 (see the readme file for additional info and hints).';
+$string['layoutaddcontent'] = 'Happy With Your Layout? Now Add Content to Your Blocks:';
+$string['layoutaddcontentdesc1'] = 'You have configured ';
+$string['layoutaddcontentdesc2'] = ' marketing blocks. If you are happy with this layout add content to the blocks below.
+If you are not happy use the layout builder above to make changes<br />';
 
 $string['infobox'] = 'Frontpage Info Box';
-$string['infoboxdesc'] = 'Frontpage info block HTML (see the readme file for additional info and hints).';
+$string['infoboxdesc'] = 'Frontpage info block HTML (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
 
 $string['infoboxfullscreen'] = 'Make infobox full screen';
 $string['infoboxfullscreendesc'] = 'Turning this option on will make the infobox full screen.';
@@ -266,7 +270,7 @@ $string['infoboxtextcolor'] = 'Frontpage Info Box text colour';
 $string['infoboxtextcolordesc'] = 'Set the frontpage Info Box text colour';
 
 $string['infobox2'] = 'Frontpage Secondary Info Box';
-$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the readme file for additional info and hints).';
+$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
 
 $string['infoboxcolor2'] = 'Secondary frontpage Info Box background colour';
 $string['infoboxcolor2desc'] = 'Set the secondary frontpage Info Box background colour';
@@ -277,46 +281,35 @@ $string['infoboxtextcolor2desc'] = 'Set the secondary frontpage Info Box text co
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
 $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
 
-$string['frontpagemarketoption'] = 'Coventry Tiles style marketing blocks';
-$string['frontpagemarketoptiondesc'] = 'Set the marketing blocks to use the Coventry Tiles style. Set the colour for this option in the colour settings.';
-
+$string['frontpagemarketoption'] = 'Choose style for marketing blocks';
+$string['frontpagemarketoptiondesc'] = 'You can apply different styles to marketing blocks.
+Note: BCU style is designed to work with images at top of block.';
 
 // Footer **********************************************************.
 $string['footersettings'] = 'Footer';
-$string['footersettingsheading'] = 'Set the content that should appear in the footer. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a> ';
+$string['footersettingsheading'] = 'Set the content that should appear in the footer. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a> ';
 $string['footerdesc'] = 'Control the content that appears in the 4 footer sections of the page.';
 
-$string['showfooterblocks'] = 'Show footer blocks';
-$string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';
+$string['showfooterblocks'] = 'Show Footnote Block';
+$string['showfooterblocksdesc'] = 'Show / hide the lower footerblock used for footnote / moodle docs region';
 
-$string['footerblocksplacement'] = 'Footer blocks placement ';
-$string['footerblocksplacementdesc'] = 'Control the way that the footer blocks are displayed. Sitewide is default.';
+$string['footerblocksplacement'] = 'Footer Blocks Placement ';
+$string['footerblocksplacementdesc'] = 'Control where the upper footer blocks are displayed. Sitewide is default.';
 $string['footerblocksplacement1'] = 'Sitewide';
-$string['footerblocksplacement2'] = 'Homepage_only';
+$string['footerblocksplacement2'] = 'Homepage Only';
 $string['footerblocksplacement3'] = 'Never';
+
+$string['footerlayoutrow'] = 'Footer Layout Builder';
+$string['footerlayoutrowdesc'] = 'Design your layout for footer block regions.';
 
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Add text to the footer.';
 
-$string['footer1header'] = 'Footer Section 1 Title';
-$string['footer2header'] = 'Footer Section 2 Title';
-$string['footer3header'] = 'Footer Section 3 Title';
-$string['footer4header'] = 'Footer Section 4 Title';
+$string['footerheader'] = 'Footer Title Section ';
+$string['footerdesc'] = 'Add a title for footer section ';
 
-$string['footer1desc'] = 'Add a title for footer section 1';
-$string['footer2desc'] = 'Add a title for footer section 2';
-$string['footer3desc'] = 'Add a title for footer section 3';
-$string['footer4desc'] = 'Add a title for footer section 4';
-
-$string['footer1content'] = 'Footer Section 1 Content';
-$string['footer2content'] = 'Footer Section 2 Content';
-$string['footer3content'] = 'Footer Section 3 Content';
-$string['footer4content'] = 'Footer Section 4 Content';
-
-$string['footer1contentdesc'] = 'Add content to footer section 1';
-$string['footer2contentdesc'] = 'Add content to footer section 2';
-$string['footer3contentdesc'] = 'Add content to footer section 3';
-$string['footer4contentdesc'] = 'Add content to footer section 4';
+$string['footercontent'] = 'Footer Content Section ';
+$string['footercontentdesc'] = 'Add content to footer section ';
 
 
 // Moodle Docs link.
@@ -326,7 +319,7 @@ $string['moodledocsdesc'] = 'Display the Moodle Docs link in the footer.';
 
 // NavBar **********************************************************.
 $string['navbarmenusettings'] = 'Navbar Tools Menu';
-$string['navbarmenusettingsheading'] = 'Customize the menu in the navigation bar. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['navbarmenusettingsheading'] = 'Customize the menu in the navigation bar. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['navbarmenusettingsdesc'] = 'Allows you to add a menu to the navigation bar.';
 
 $string['navbarsettings'] = 'Header Navbar';
@@ -457,6 +450,9 @@ $string['blockbordercolordesc'] = 'Set the block border colour.';
 
 $string['blocklinkcolor'] = 'Block link colour';
 $string['blocklinkcolordesc'] = 'Set the blocks link colour';
+
+$string['blockregionbackground'] = 'Block Region Backround Color';
+$string['blockregionbackgrounddesc'] = 'Background color of container holding custom block layouts on the front page';
 
 $string['blockheaderbordertop'] = 'Block header top border thickness';
 $string['blockheaderbordertopdesc'] = 'Set the thickness of the top border of block headers';
@@ -657,7 +653,7 @@ $string['logintextbutton'] = 'Log In';
 
 // Header ***********************************************************.
 $string['headersettings'] = 'Header';
-$string['headersettingsheading'] = 'Customize the header of this theme. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['headersettingsheading'] = 'Customize the header of this theme. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['headerdesc'] = 'Display alert boxes to warn users of actions, or provide notices to all users. Control the navbars that appear on the site.';
 
 $string['enableheading'] = 'Header course title';
@@ -792,7 +788,7 @@ $string['alertsettings'] = 'Alert Box {$a}';
 $string['alertcount'] = 'Alert count';
 $string['alertcountdesc'] = 'The number of alerts to show in the edit area below.';
 
-$string['alertsettingsheading'] = 'Customize top Alert Box. See the layout <a href="./adaptable/pix/layout.png" target="_blank"> here</a>';
+$string['alertsettingsheading'] = 'Customize top Alert Box. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';
 
 // Alerts Types.
@@ -815,7 +811,7 @@ $string['alertaccessadmins'] = 'Visibile to administrators';
 $string['alertaccessprofile'] = 'Add custom profile field restriction';
 
 $string['alertaccess'] = 'Alert Visibility';
-$string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "' . $string['alertaccessprofile'] . '" you will need to add values for profile fields below.';
+$string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "Add custom profile field restriction" you will need to add values for profile fields below.';
 
 // Mobile **********************************************************.
 $string['layoutmobilesettings'] = 'Mobile Settings';
@@ -904,12 +900,6 @@ $string['navbarhoverdesc'] = 'When hovering on a navigation item, the colour of 
 $string['showfooterblocks'] = 'Show footer blocks';
 $string['showfooterblocksdesc'] = 'Show / hide the four configurable footer blocks';
 
-$string['footerblocksplacement'] = 'Footer blocks placement ';
-$string['footerblocksplacementdesc'] = 'Control the way that the footer blocks are displayed. Sitewide is default.';
-$string['footerblocksplacement1'] = 'Sitewide';
-$string['footerblocksplacement2'] = 'Homepage_only';
-$string['footerblocksplacement3'] = 'Never';
-
 $string['breadcrumb'] = 'Breadcrumb background colour';
 $string['breadcrumbdesc'] = 'Set the background colour of the breadcrumb.';
 
@@ -933,6 +923,10 @@ $string['enablemyhomedesc'] = 'Display a link to {$a}';
 $string['enableeventsdesc'] = 'Display a link to the calendar';
 $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
 $string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
+
+$string['mysitesexclude'] = 'Enable excluding hidden courses';
+$string['mysitesinclude'] = 'Enable including hidden courses';
+$string['mysitesdisabled'] = 'Disable';
 
 $string['frnt-footer'] = 'Blocks in this area will only be visible to admin users.';
 
@@ -1002,7 +996,7 @@ $string['menuuseroverridedesc'] = 'These settings can be used to give users cont
 <pre>1. Sitewide (the first item in the list will be for sitewide menu visibility)
 2. Homepages Only (the second item in the list will set visibility to only site / homepages)
 3. Hidden (the third value in the list will hide menus entirely)</pre>
-You should NOT use the "' . $string['disablemenuscoursepages'] . '" option in conjuction with profile field settings, instead use set the default value to your "Homepages Only" entry when setting up your profile field list.
+You should NOT use the "Disable Menus on Course Pages" option in conjuction with profile field settings, instead use set the default value to your "Homepages Only" entry when setting up your profile field list.
 
 Note: Users will have to log out of Moodle and back in again for this change to take effect, you may want to add a note explaining this in the custom profile field.';
 

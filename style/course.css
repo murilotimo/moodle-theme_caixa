@@ -1,4 +1,5 @@
-.courses .coursebox.even, .courses .coursebox {
+.courses .coursebox.even,
+.courses .coursebox {
   background: #fafafa !important;
   border-radius: 6px;
 }
@@ -12,7 +13,8 @@
   font-size: 80%;
 }
 
-.coursebox > .info > h3.name, .course_category_tree .category > .info .name {
+.coursebox > .info > h3.name,
+.course_category_tree .category > .info .name {
     font-size: 120%;
     font-weight: normal;
     margin: 0;
@@ -75,17 +77,28 @@
   display: inherit;
 }
 
-.course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+.course-content ul.topics li.section .content,
+.course-content ul.weeks li.section .content {
   margin: 0 0;
 }
 
-.editing .course-content ul.topics li.section .content, .editing .course-content ul.weeks li.section .content {
-  margin: 0px 20px;
+.editing .course-content ul.topics li.section .content,
+.editing .course-content ul.weeks li.section .content {
+  margin: 0;
+}
+
+.section-handle {
+    margin: 0px;
+}
+
+.course-content ul.topics li.section .left {
+    padding-top: 2px;
+    text-align: right;
 }
 
 .course-content ul li.section.main {
-  margin: 0 0;
-  padding-top: 12px;
+    margin: 0;
+/*  padding-top: 12px;*/
 }
 
 h3.sectionname {

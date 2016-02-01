@@ -27,7 +27,10 @@ html[xmlns] .slides {display: block;}
 /* FlexSlider Default Theme
 *********************************/
 .flexslider {margin: 0; background: #fff; position: relative; zoom: 1;}
+
 .flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
+.dir-rtl .flex-viewport {direction: ltr; max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;} 
+
 .loading .flex-viewport {max-height: 300px;}
 .flexslider .slides {zoom: 1;}
 
@@ -65,8 +68,10 @@ html[xmlns] .slides {display: block;}
 /* IE rgba() hack */
 .flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
 .flex-caption { bottom: 0px; background-color: rgba(0, 0, 0, 0.5); color: #fff; margin: 0; padding: 25px 25px 25px 30px; position: absolute; right: 0; width: 50%;}
-.flex-caption h3 {color: #fff; letter-spacing: 1px; margin-bottom: 0px; text-transform: uppercase; font-size: 1.5em;}
+.flex-caption h3 {color: [[setting:sliderh3color]]; letter-spacing: 1px; margin-bottom: 0px; text-transform: uppercase; font-size: 1.5em;}
+.flex-caption h4 {color: [[setting:sliderh4color]]; letter-spacing: 1px; margin-bottom: 20px; font-size: 1em;}
 .flex-caption p {margin: 0 0 15px;}
+.flex-caption .submit {margin-right: 10px; float:right; color: [[setting:slidersubmitcolor]] !important; background: [[setting:slidersubmitbgcolor]]}
 
 #main-slider {
     margin: 0px 0px 10px;
@@ -123,8 +128,8 @@ html[xmlns] .slides {display: block;}
   }
 
 .slidestyle2 .flex-caption h3 {
-  background: rgba(0,0,0,.6);
-    color: #fff;
+    background: [[setting:slider2h3bgcolor]];
+    color: [[setting:slider2h3color]];
     display: block;
     font-size: 16px;
     font-weight: 800;
@@ -139,15 +144,14 @@ html[xmlns] .slides {display: block;}
 }
 
 .slidestyle2 .flex-caption h4 {
-    color: inherit;
     font-size: 22px;
     line-height: 32px;
-    background: #fff;
+    background: [[setting:slider2h4bgcolor]];
     clear: both;
     padding: 15px;
     text-align: left;
     margin-bottom: 0px;
-    color: #333;
+    color: [[setting:slider2h4color]];
     font-weight: normal;
     text-decoration: none !important;
 }
@@ -159,17 +163,17 @@ html[xmlns] .slides {display: block;}
 .slidestyle2 .flex-caption p {margin: 0 0 15px; color: #333;}
 
 .slidestyle2 .flex-caption a.submit {
-  display: block;
+    display: block;
     font-size: 16px;
     margin: 0px;
     margin-left: 30px;
-   float: right;
+    float: right;
     padding: 8px 15px;
     text-transform: uppercase;
     text-align: left;
     border: 0px solid #ab3423;
     background: [[setting:slideroption2color]] !important;
-    color: #fff;
+    color: [[setting:slideroption2submitcolor]] !important;
     border-radius: 0px;
     box-shadow: none;
 }

@@ -25,145 +25,133 @@
  */
 
 
-    // Frontpage Slider.
-    $temp = new admin_settingpage('theme_adaptable_frontpage_slider', get_string('frontpageslidersettings', 'theme_adaptable'));
+// Frontpage Slider.
+$temp = new admin_settingpage('theme_adaptable_frontpage_slider', get_string('frontpageslidersettings', 'theme_adaptable'));
 
-    $temp->add(new admin_setting_heading('theme_adaptable_slideshow', get_string('slideshowsettingsheading', 'theme_adaptable'),
-        format_text(get_string('slideshowdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+$temp->add(new admin_setting_heading('theme_adaptable_slideshow', get_string('slideshowsettingsheading', 'theme_adaptable'),
+    format_text(get_string('slideshowdesc', 'theme_adaptable') .
+        get_string('slideroption2snippet', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-     $name = 'theme_adaptable/sliderfullscreen';
-    $title = get_string('sliderfullscreen', 'theme_adaptable');
-    $description = get_string('sliderfullscreendesc', 'theme_adaptable');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    $temp->add($setting);
+$name = 'theme_adaptable/sliderenabled';
+$title = get_string('sliderenabled', 'theme_adaptable');
+$description = get_string('sliderenableddesc', 'theme_adaptable');
+$setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+$temp->add($setting);
 
-    $name = 'theme_adaptable/slidermargintop';
-    $title = get_string('slidermargintop', 'theme_adaptable');
-    $description = get_string('slidermargintopdesc', 'theme_adaptable');
-    $radchoices = $from0to20;
-    $setting = new admin_setting_configselect($name, $title, $description, '20px', $radchoices);
+$name = 'theme_adaptable/sliderfullscreen';
+$title = get_string('sliderfullscreen', 'theme_adaptable');
+$description = get_string('sliderfullscreendesc', 'theme_adaptable');
+$setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+$temp->add($setting);
+
+$name = 'theme_adaptable/slidermargintop';
+$title = get_string('slidermargintop', 'theme_adaptable');
+$description = get_string('slidermargintopdesc', 'theme_adaptable');
+$radchoices = $from0to20;
+$setting = new admin_setting_configselect($name, $title, $description, '20px', $radchoices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/slidermarginbottom';
+$title = get_string('slidermarginbottom', 'theme_adaptable');
+$description = get_string('slidermarginbottomdesc', 'theme_adaptable');
+$radchoices = $from0to20;
+$setting = new admin_setting_configselect($name, $title, $description, '20px', $radchoices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/slideroption2';
+$title = get_string('slideroption2', 'theme_adaptable');
+$description = get_string('slideroption2desc', 'theme_adaptable');
+$radchoices = $sliderstyles;
+$setting = new admin_setting_configselect($name, $title, $description, 'nocaptions', $radchoices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+if (!isset($PAGE->theme->settings->slideroption2)) {
+    $PAGE->theme->settings->slideroption2 = 'slider1';
+}
+
+if ($PAGE->theme->settings->slideroption2 == 'slider1') {
+    $name = 'theme_adaptable/sliderh3color';
+    $title = get_string('sliderh3color', 'theme_adaptable');
+    $description = get_string('sliderh3colordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/slidermarginbottom';
-    $title = get_string('slidermarginbottom', 'theme_adaptable');
-    $description = get_string('slidermarginbottomdesc', 'theme_adaptable');
-    $radchoices = $from0to20;
-    $setting = new admin_setting_configselect($name, $title, $description, '20px', $radchoices);
+    $name = 'theme_adaptable/sliderh4color';
+    $title = get_string('sliderh4color', 'theme_adaptable');
+    $description = get_string('sliderh4colordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/slideroption2';
-    $title = get_string('slideroption2', 'theme_adaptable');
-    $description = get_string('slideroption2desc', 'theme_adaptable');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/p1';
-    $title = get_string('p1', 'theme_adaptable');
-    $description = get_string('p1desc', 'theme_adaptable');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p1');
+    $name = 'theme_adaptable/slidersubmitcolor';
+    $title = get_string('slidersubmitcolor', 'theme_adaptable');
+    $description = get_string('slidersubmitcolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/p1url';
-    $title = get_string('p1url', 'theme_adaptable');
-    $description = get_string('p1urldesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $name = 'theme_adaptable/slidersubmitbgcolor';
+    $title = get_string('slidersubmitbgcolor', 'theme_adaptable');
+    $description = get_string('slidersubmitbgcolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+}
 
-    $name = 'theme_adaptable/p1cap';
-    $title = get_string('p1cap', 'theme_adaptable');
-    $description = get_string('p1capdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/p2';
-    $title = get_string('p2', 'theme_adaptable');
-    $description = get_string('p2desc', 'theme_adaptable');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p2');
+if ($PAGE->theme->settings->slideroption2 == 'slider2') {
+    $name = 'theme_adaptable/slider2h3color';
+    $title = get_string('slider2h3color', 'theme_adaptable');
+    $description = get_string('slider2h3colordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/p2url';
-    $title = get_string('p2url', 'theme_adaptable');
-    $description = get_string('p2urldesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/p2cap';
-    $title = get_string('p2cap', 'theme_adaptable');
-    $description = get_string('p2capdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/p3';
-    $title = get_string('p3', 'theme_adaptable');
-    $description = get_string('p3desc', 'theme_adaptable');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p3');
+    $name = 'theme_adaptable/slider2h3bgcolor';
+    $title = get_string('slider2h3bgcolor', 'theme_adaptable');
+    $description = get_string('slider2h3bgcolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#000000', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/p3url';
-    $title = get_string('p3url', 'theme_adaptable');
-    $description = get_string('p3urldesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/p3cap';
-    $title = get_string('p3cap', 'theme_adaptable');
-    $description = get_string('p3capdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/p4';
-    $title = get_string('p4', 'theme_adaptable');
-    $description = get_string('p4desc', 'theme_adaptable');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p4');
+    $name = 'theme_adaptable/slider2h4color';
+    $title = get_string('slider2h4color', 'theme_adaptable');
+    $description = get_string('slider2h4colordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#000000', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/p4url';
-    $title = get_string('p4url', 'theme_adaptable');
-    $description = get_string('p4urldesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/p4cap';
-    $title = get_string('p4cap', 'theme_adaptable');
-    $description = get_string('p4capdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/p5';
-    $title = get_string('p5', 'theme_adaptable');
-    $description = get_string('p5desc', 'theme_adaptable');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'p5');
+    $name = 'theme_adaptable/slider2h4bgcolor';
+    $title = get_string('slider2h4bgcolor', 'theme_adaptable');
+    $description = get_string('slider2h4bgcolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/p5url';
-    $title = get_string('p5url', 'theme_adaptable');
-    $description = get_string('p5urldesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
-    $temp->add($setting);
-
-    $name = 'theme_adaptable/p5cap';
-    $title = get_string('p5cap', 'theme_adaptable');
-    $description = get_string('p5capdesc', 'theme_adaptable');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $name = 'theme_adaptable/slideroption2submitcolor';
+    $title = get_string('slideroption2submitcolor', 'theme_adaptable');
+    $description = get_string('slideroption2submitcolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_adaptable/slideroption2color';
     $title = get_string('slideroption2color', 'theme_adaptable');
     $description = get_string('slideroption2colordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -171,8 +159,47 @@
     $title = get_string('slideroption2a', 'theme_adaptable');
     $description = get_string('slideroption2adesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0066cc', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+}
+
+// Number of Sliders.
+$name = 'theme_adaptable/slidercount';
+$title = get_string('slidercount', 'theme_adaptable');
+$description = get_string('slidercountdesc', 'theme_adaptable');
+$default = THEME_ADAPTABLE_DEFAULT_SLIDERCOUNT;
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices1to12);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+// If we don't have an an alertcount yet, default to the preset.
+$slidercount = get_config('theme_adaptable', 'slidercount');
+if (!$slidercount) {
+    $slidercount = THEME_ADAPTABLE_DEFAULT_SLIDERCOUNT;
+}
+
+for ($sliderindex = 1; $sliderindex <= $slidercount; $sliderindex++) {
+    $fileid = 'p' . $sliderindex;
+    $name = 'theme_adaptable/p' . $sliderindex;
+    $title = get_string('sliderimage', 'theme_adaptable');
+    $description = get_string('sliderimagedesc', 'theme_adaptable');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, $fileid);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_adaptable', $temp);
+    $name = 'theme_adaptable/p' . $sliderindex . 'url';
+    $title = get_string('sliderurl', 'theme_adaptable');
+    $description = get_string('sliderurldesc', 'theme_adaptable');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+    $temp->add($setting);
+
+    $name = 'theme_adaptable/p' . $sliderindex . 'cap';
+    $title = get_string('slidercaption', 'theme_adaptable');
+    $description = get_string('slidercaptiondesc', 'theme_adaptable');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $temp->add($setting);
+}
+
+$ADMIN->add('theme_adaptable', $temp);

@@ -31,6 +31,7 @@ defined('MOODLE_INTERNAL') || die;
 
 if (is_siteadmin()) {
     // Adaptable theme settings page.
+    global $PAGE;
     $ADMIN->add('themes', new admin_category('theme_adaptable', 'Adaptable'));
 
     include(dirname(__FILE__) . '/settings/array_definitions.php');
@@ -44,6 +45,7 @@ if (is_siteadmin()) {
     include(dirname(__FILE__) . '/settings/header_navbar.php');
     include(dirname(__FILE__) . '/settings/header_navbar_menu.php');
     include(dirname(__FILE__) . '/settings/block_settings.php');
+    include(dirname(__FILE__) . '/settings/block_regions.php');
     include(dirname(__FILE__) . '/settings/marketing_blocks.php');
     include(dirname(__FILE__) . '/settings/frontpage_courses.php');
     include(dirname(__FILE__) . '/settings/frontpage_ticker.php');

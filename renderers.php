@@ -40,6 +40,19 @@ class theme_adaptable_core_renderer extends core_renderer {
     protected $language = null;
 
     /**
+     * Internal implementation of user image rendering.
+     *
+     * @param user_picture $userpicture
+     * @return string
+     */
+    protected function render_user_picture(\user_picture $userpicture) {
+        if ($this->page->pagetype == 'mod-forum-discuss') {
+            $userpicture->size = 1;
+        }
+        return parent::render_user_picture($userpicture);
+    }
+
+    /**
      * Returns the URL for the favicon.
      *
      * @return string The favicon URL
@@ -517,7 +530,7 @@ EOT;
             $fields = explode('|', $line);
 
             $val = '<a alt="' . $fields[1];
-            $val .= '" target="' . $target . '"';
+            $val .= '" target="' . $target;
             $val .= '" title="' . $fields[1];
             $val .= '" href="' . $fields[0] . '">';
             $val .= '<i class="fa ' . $fields[2] . '"></i>';
@@ -573,6 +586,202 @@ EOT;
             $retval .= '</ul>';
             $retval .= '</div>';
         }
+        return $retval;
+    }
+
+    public function get_block_regions($settingsname = 'blocklayoutlayoutrow') {
+        global $PAGE, $OUTPUT, $USER;
+        $fields = array();
+        $retval = '';
+        $blockcount = 0;
+        $style = '';
+        $adminediting = false;
+
+        if (is_siteadmin() && isset($USER->editing) && $USER->editing == 1) {
+            $style = '" style="display: block; background: #EEEEEE; min-height: 50px; border: 2px dashed #BFBDBD; margin-top: 5px';
+            $adminediting = true;
+        }
+
+        for ($i = 1; $i <= 8; $i++) {
+            $marketrow = $settingsname . $i;
+            $marketrow = $PAGE->theme->settings->$marketrow;
+            if ($marketrow != '0-0-0-0') {
+                $fields[] = $marketrow;
+            }
+        }
+
+        foreach ($fields as $field) {
+            $retval .= '<div class="row" style="margin-left: 0px;">';
+            $vals = explode('-', $field);
+            foreach ($vals as $val) {
+                if ($val > 0) {
+                    $retval .= '<div class="span' . $val . $style . '">';
+
+                    // Moodle does not seem to like numbers in region names so using letter instead.
+                    $blockcount ++;
+                    $block = 'frnt-market-' .  chr(96 + $blockcount);
+
+                    if ($adminediting) {
+                        $retval .= '<span style="padding-left: 10px;"> ' . '' . '</span>';
+                    }
+
+                    $retval .= $OUTPUT->blocks($block);
+                    $retval .= '</div>';
+                }
+            }
+            $retval .= '</div>';
+        }
+        return $retval;
+    }
+
+    public function get_marketing_blocks($layoutrow = 'marketlayoutrow', $settingname = 'market') {
+        global $PAGE;
+        $fields = array();
+        $blockcount = 0;
+        $style = '';
+
+        $extramarketclass = $PAGE->theme->settings->frontpagemarketoption;
+
+        $retval = '<div id="marketblocks" class="container '. $extramarketclass .'">';
+
+        for ($i = 1; $i <= 5; $i++) {
+            $marketrow = $layoutrow . $i;
+            $marketrow = $PAGE->theme->settings->$marketrow;
+            if ($marketrow != '0-0-0-0') {
+                $fields[] = $marketrow;
+            }
+        }
+
+        foreach ($fields as $field) {
+            $retval .= '<div class="row-fluid marketrow">';
+            $vals = explode('-', $field);
+            foreach ($vals as $val) {
+                if ($val > 0) {
+                    $retval .= '<div class="span' . $val . ' ' . $extramarketclass . ' first">';
+                    $blockcount ++;
+                    $fieldname = $settingname . $blockcount;
+                    if (isset($PAGE->theme->settings->$fieldname)) {
+                        $retval .= $PAGE->theme->settings->$fieldname;
+                    }
+                    $retval .= '</div>';
+                }
+            }
+            $retval .= '</div>';
+        }
+        $retval .= '</div>';
+        if ($blockcount == 1 ) {
+            $retval = '';
+        }
+        return $retval;
+    }
+
+    public function get_footer_visibility() {
+        global $PAGE, $COURSE;
+        $value = $PAGE->theme->settings->footerblocksplacement;
+
+        if ($value == 1) {
+            return true;
+        }
+
+        if ($value == 2 && $COURSE->id != 1) {
+            return false;
+        }
+
+        if ($value == 3) {
+            return false;
+        }
+        return true;
+    }
+
+    public function get_footer_blocks($layoutrow = 'footerlayoutrow') {
+        global $PAGE, $OUTPUT;
+        $fields = array();
+        $blockcount = 0;
+        $style = '';
+
+        if (!$OUTPUT->get_footer_visibility()) {
+            return '';
+        }
+
+        $output = '<div id="course-footer">' . $OUTPUT->course_footer() . '</div>
+                <div class="container blockplace1">';
+
+        for ($i = 1; $i <= 3; $i++) {
+            $footerrow = $layoutrow . $i;
+            $footerrow = $PAGE->theme->settings->$footerrow;
+            if ($footerrow != '0-0-0-0') {
+                $fields[] = $footerrow;
+            }
+        }
+
+        foreach ($fields as $field) {
+            $output .= '<div class="row-fluid">';
+            $vals = explode('-', $field);
+            foreach ($vals as $val) {
+                if ($val > 0) {
+                    $blockcount ++;
+                    $footerheader = 'footer' . $blockcount . 'header';
+                    $footercontent = 'footer' . $blockcount . 'content';
+                    if (!empty($PAGE->theme->settings->$footercontent)) {
+                        $output .= '<div class="left-col span' . $val . '" id="contactdetails">';
+                        $output .= '<h3 title="' . $OUTPUT->get_setting($footerheader, 'format_text') . '">';
+                        $output .= $OUTPUT->get_setting($footerheader, 'format_text');
+                        $output .= '</h3>';
+                        $output .= $OUTPUT->get_setting($footercontent, 'format_html');
+                        $output .= '</div>';
+                    }
+                }
+            }
+            $output .= '</div>';
+        }
+        $output .= '</div>';
+        return $output;
+    }
+
+    public function get_frontpage_slider() {
+        global $PAGE, $OUTPUT;
+        $noslides = $PAGE->theme->settings->slidercount;
+        $retval = '';
+
+        if (!empty($PAGE->theme->settings->sliderfullscreen)) {
+            $retval .= '<div class="slidewrap';
+        } else {
+            $retval .= '<div class="container slidewrap';
+        }
+
+        if ($PAGE->theme->settings->slideroption2 == 'slider2') {
+            $retval .= " slidestyle2";
+        }
+
+        $retval .= '">
+            <div id="main-slider" class="flexslider">
+            <ul class="slides">';
+
+        for ($i = 1; $i <= $noslides; $i++) {
+            $sliderimage = 'p' . $i;
+            $sliderurl = 'p' . $i . 'url';
+            $slidercaption = 'p' . $i .'cap';
+            if (!empty($PAGE->theme->settings->$sliderimage)) {
+                $retval .= '<li>
+                    <a href="';
+
+                if (!empty($PAGE->theme->settings->$sliderurl)) {
+                    $retval .= $PAGE->theme->settings->$sliderurl;
+                } else {
+                    $retval .= '#';
+                }
+
+                $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage)
+                    . '" alt="' . $sliderimage . '"/>';
+
+                if (!empty($PAGE->theme->settings->$slidercaption)) {
+                    $retval .= '<div class="flex-caption">';
+                    $retval .= $OUTPUT->get_setting($slidercaption, 'format_html');
+                    $retval .= '</div></li>';
+                }
+            }
+        }
+        $retval .= '</ul></div></div>';
         return $retval;
     }
 
@@ -692,7 +901,9 @@ EOT;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
             }
 
-            if (!empty($PAGE->theme->settings->enablemysites)) {
+            $mysitesvisibility = $PAGE->theme->settings->enablemysites;
+            if ($mysitesvisibility != 'disabled') {
+
                 $branchtitle = get_string('mysites', 'theme_adaptable');
                 $branchlabel = '<i class="fa fa-briefcase"></i><span class="menutitle">'.$branchtitle.'</span>';
                 $branchurl   = new moodle_url('/my/index.php');
@@ -701,10 +912,20 @@ EOT;
                 $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
                 list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
 
+                $icon = '';
+
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-                                         $branch->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 40))."...",
+                                         $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 30)) . '...',
+                                         new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                        }
+                    }
+
+                    $icon = '<span class="fa fa-eye-slash"></span> ';
+                    foreach ($sortedcourses as $course) {
+                        if (!$course->visible && $mysitesvisibility == 'includehidden') {
+                                         $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 28)) . '...',
                                          new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }

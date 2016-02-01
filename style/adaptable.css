@@ -79,7 +79,9 @@ fieldset {
 }
 
 select {
-    width: 275px;
+/*    width: 275px; #308 */
+width: auto;
+
 }
 
 
@@ -104,10 +106,10 @@ select {
     font-family: [[setting:fontheadername]], sans-serif !important;
     font-weight: [[setting:fontheaderweight]] !important;
     color: [[setting:fontheadercolor]];
-  font-size: 24px;
-  border-bottom: 0px solid #eee;
-  font-weight: bold;
-  margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 0px solid #eee;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .jsenabled .block_settings .block_tree .tree_item.branch,
@@ -117,7 +119,8 @@ select {
 
 
 #nologo, #nologo a,
-.generalbox h2, h3.sectionname,
+.generalbox h2,
+h3.sectionname,
 div.tabtree li.selected a span,
 .forumpost .subject,
 .blog_entry div.subject a,
@@ -128,7 +131,7 @@ h2.main a,
 h3.main a,
 div.loginpanel h2,
 div.signuppanel h2 {
-   font-weight: bold;
+    font-weight: bold;
 }
 
 #page {
@@ -335,6 +338,13 @@ a.usermendrop {
     margin-bottom: [[setting:slidermarginbottom]];
 }
 
+#frontblockregion {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    background-color: [[setting:blockregionbackgroundcolor]];
+}
+
 #marketblocks {
     margin-bottom: 20px;
     overflow: hidden;
@@ -452,10 +462,12 @@ span.fa-chevron-right.fa {
     color: [[setting:footertextcolor]] !important;
     border-top: 0px;
     font-size: 110%;
+    word-wrap: break-word;
 }
 
 #page-footer h3 {
     color: [[setting:footertextcolor]] !important;
+    word-wrap: break-word;
 }
 
 #page-footer a {
@@ -787,9 +799,14 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 }
 
 #profilepic img, .userpicture {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     display: inline;
+}
+
+.page-header-image .userpicture {
+    width: 80px;
+    height: 80px;
 }
 
 .form-item .form-label, .mform .fitem div.fitemtitle {

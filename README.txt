@@ -46,6 +46,23 @@ Front Page Slider Styles
 
 There are two possible slider styles each with different markup required:
 
+Original BCU Slider Markup:
+
+
+<div class="span9">
+  <h4>Information</h4>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  </div>
+
+  <div class="span3">
+  <a href="#" class="submit">2013/14 Courses <i class="fa-chevron-right fa"></i></a>
+</div>
+
+Coventry Style Slider Markup:
+
+
 <div class="span6 col-sm-6">
 <h3>Hand-crafted</h3> <h4>pixels and code for the Moodle community</h4>
 <a href="#" class="submit">Check out our custom theme pricing!</a>

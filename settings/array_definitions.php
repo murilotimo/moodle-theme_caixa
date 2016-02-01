@@ -912,3 +912,35 @@ $htmltarget = array(
   '_blank' => 'New Window',
   '_self' => 'Same Window'
 );
+
+$marketblockstyles = array(
+    '' => 'No Style',
+    'internalmarket' => 'BCU Style',
+    'covtiles' => 'Coventry Style'
+);
+
+$sliderstyles = array(
+    'slider1' => 'Slider Style 1',
+    'slider2' => 'Slider Style 2'
+);
+
+$bootstrap12 = array(
+    '0-0-0-0' => 'disabled',
+    '12-0-0-0' => '1 (full width)',
+    '6-6-0-0' => '6 + 6',
+    '4-4-4-0' => '4 + 4 + 4',
+    '3-3-3-3' => '3 + 3 + 3 + 3',
+    '6-3-3-0' => '6 + 3 + 3',
+    '3-3-6-0' => '3 + 3 + 6',
+    '3-6-3-0' => '3 + 6 + 3',
+    '4-8-0-0' => '4 + 8',
+    '8-4-0-0' => '8 + 4',
+    '3-9-0-0' => '3 + 9',
+    '9-3-0-0' => '9 + 3',
+);
+
+$bootstrap12defaults = array ('3-3-3-3', '4-4-4-0', '3-3-3-3', '0-0-0-0', '0-0-0-0',
+    '0-0-0-0', '0-0-0-0', '0-0-0-0', '0-0-0-0', '0-0-0-0');
+
+$marketingfooterbuilderdefaults = array ('3-3-3-3', '0-0-0-0', '0-0-0-0', '0-0-0-0', '0-0-0-0',
+    '0-0-0-0', '0-0-0-0', '0-0-0-0', '0-0-0-0', '0-0-0-0');
