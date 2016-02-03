@@ -353,10 +353,10 @@ EOT;
             }
 
             foreach ($messages as $message) {
-                if (!isset($message->from) || !isset($message->from->id) || !isset($message->from->firstname)){
+                if (!isset($message->from) || !isset($message->from->id) || !isset($message->from->firstname)) {
                     continue;
                 }
-                // following if to be removed once we are happy with check above correctly limits messages
+                // Following if to be removed once we are happy with check above correctly limits messages.
                 if (!isset($message->from)) {
                     $url = $OUTPUT->pix_url('u/f2');
                     $attributes = array(
@@ -607,6 +607,11 @@ EOT;
         return $retval;
     }
 
+    /**
+     * Renders block regions on front page
+     *
+     * @param string $settingsname
+     */
     public function get_block_regions($settingsname = 'blocklayoutlayoutrow') {
         global $PAGE, $OUTPUT, $USER;
         $fields = array();
@@ -652,6 +657,12 @@ EOT;
         return $retval;
     }
 
+    /**
+     * Renders marketing blocks on front page     *
+     *
+     * @param string $layoutrow
+     * @param string $settingname
+     */
     public function get_marketing_blocks($layoutrow = 'marketlayoutrow', $settingname = 'market') {
         global $PAGE;
         $fields = array();
@@ -693,6 +704,10 @@ EOT;
         return $retval;
     }
 
+    /**
+     * Returns footer visibility setting
+     *
+     */
     public function get_footer_visibility() {
         global $PAGE, $COURSE;
         $value = $PAGE->theme->settings->footerblocksplacement;
@@ -711,6 +726,11 @@ EOT;
         return true;
     }
 
+    /**
+     * Renders footer blocks     *
+     *
+     * @param string $layoutrow
+     */
     public function get_footer_blocks($layoutrow = 'footerlayoutrow') {
         global $PAGE, $OUTPUT;
         $fields = array();
@@ -756,6 +776,10 @@ EOT;
         return $output;
     }
 
+    /**
+     * Renders frontpage slider
+     *
+     */
     public function get_frontpage_slider() {
         global $PAGE, $OUTPUT;
         $noslides = $PAGE->theme->settings->slidercount;
@@ -935,16 +959,16 @@ EOT;
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-                                         $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 30)) . '...',
-                                         new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                            $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 30)) . '...',
+                                new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }
 
                     $icon = '<span class="fa fa-eye-slash"></span> ';
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
-                                         $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 28)) . '...',
-                                         new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                            $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 28)) . '...',
+                                new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }
                 } else {
