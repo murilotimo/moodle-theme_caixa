@@ -118,8 +118,15 @@ class theme_adaptable_core_renderer extends core_renderer {
             $alerttext = 'alerttext' . $i;
             $alertsession = 'alert' . $i;
 
-            $enablealert = $PAGE->theme->settings->$enablealert;
-            $alerttext = $PAGE->theme->settings->$alerttext;
+            $enablealert = false;
+            if (isset($PAGE->theme->settings->$enablealert)) {
+                $enablealert = $PAGE->theme->settings->$enablealert;
+            }
+
+            $alerttext = '';
+            if (isset($PAGE->theme->settings->$alerttext)) {
+                $alerttext = $PAGE->theme->settings->$alerttext;
+            }
 
             if ($enablealert && !empty($alerttext)) {
                 $alertprofilefield = 'alertprofilefield' . $i;
@@ -346,7 +353,7 @@ EOT;
             }
 
             foreach ($messages as $message) {
-                if (!is_object($message->from)) {
+                if (!isset($message->from)) {
                     $url = $OUTPUT->pix_url('u/f2');
                     $attributes = array(
                         'src' => $url
@@ -462,11 +469,14 @@ EOT;
         if ($message->notification || $message->useridfrom < 1) {
             $messagecontent->text = $message->smallmessage;
             $messagecontent->type = 'notification';
-            $messagecontent->url = new moodle_url($message->contexturl);
+
             if (empty($message->contexturl)) {
                 $messagecontent->url = new moodle_url('/message/index.php',
                                         array('user1' => $USER->id, 'viewing' => 'recentnotifications'));
+            } else {
+                $messagecontent->url = new moodle_url($message->contexturl);
             }
+
         } else {
             $messagecontent->type = 'message';
             if ($message->fullmessageformat == FORMAT_HTML) {

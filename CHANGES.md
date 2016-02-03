@@ -1,3 +1,8 @@
+- Fix #316 Increase font size range for Top Menu & Navigation bar
+- Fix #184 Topic title header width changes when editing On
+- Fix #285 Slideshow is not working in RTL sites
+- Fix #311 Undefined variable: /theme/adaptable/renderers.php on line 747
+- Fix #277 There are 2 marketing blocks settings separated from the sub-section
 - Fix #304 Reduce length of course titles in my course dropdown list to avoid spill
 - Fix #309 Add option to show hidden courses with icons in my course dropdown list
 - Fix #308 Fix styling issue in gapselect question type
