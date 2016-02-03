@@ -160,7 +160,7 @@ class theme_adaptable_core_renderer extends core_renderer {
             $logininfo = $this->login_info();
             $logininfo = str_replace('<div class="logininfo">', '', $logininfo);
             $logininfo = str_replace('</div>', '', $logininfo);
-            $alerts = $this->get_alert_message($logininfo, 'warning', $alertindex) . $alerts;
+            $alerts = $this->get_alert_message($logininfo, 'warning', $alertindex, 'logedinas') . $alerts;
         }
 
         return $alerts;
