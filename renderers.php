@@ -353,6 +353,10 @@ EOT;
             }
 
             foreach ($messages as $message) {
+                if (!isset($message->from) || !isset($message->from->id) || !isset($message->from->firstname)){
+                    continue;
+                }
+                // following if to be removed once we are happy with check above correctly limits messages
                 if (!isset($message->from)) {
                     $url = $OUTPUT->pix_url('u/f2');
                     $attributes = array(
