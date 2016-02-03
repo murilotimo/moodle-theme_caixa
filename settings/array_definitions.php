@@ -810,6 +810,20 @@ $from10to16 = array(
     '16px' => "16px",
 );
 
+$from10to20px = array(
+    '10px' => "10px",
+    '11px' => "11px",
+    '12px' => "12px",
+    '13px' => "13px",
+    '14px' => "14px",
+    '15px' => "15px",
+    '16px' => "16px",
+    '16px' => "17px",
+    '16px' => "18px",
+    '16px' => "19px",
+    '16px' => "20px"
+);
+
 $from0to20 = array(
     '0px' => "0px",
     '5px' => "5px",
