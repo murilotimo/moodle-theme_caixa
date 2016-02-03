@@ -1042,6 +1042,7 @@ input[type="radio"], input[type="checkbox"] {
 
 .pull-left .usermenu2 .dropdown-menu {
     margin: 0 0;
+    width: 350px;
 }
 
 .pull-left .usermenu2.nav {
