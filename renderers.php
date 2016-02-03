@@ -434,7 +434,8 @@ EOT;
         $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
                             FROM {message}
                            WHERE useridto = :userid
-                           AND useridfrom <> 2";
+                           AND useridfrom > 2
+                           AND notification <> 1";
 
         $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
 
@@ -449,7 +450,8 @@ EOT;
             $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
                                  FROM {message_read}
                                 WHERE useridto = :userid
-                                AND useridfrom <> 2
+                                AND useridfrom > 2
+                                AND notification <> 1
                              ORDER BY timecreated DESC
                                 LIMIT $maxmessages";
 
