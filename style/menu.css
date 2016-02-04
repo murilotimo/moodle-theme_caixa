@@ -89,11 +89,11 @@
     display: none;
     float: right;
     list-style: outside none none;
-    margin: 0px 0 0;
+    margin: 2px 0 0;
     padding: 5px 0;
     position: absolute;
     right: 0;
-    width: 240px;
+    min-width: 250px;
     top: 100%;
     z-index: 1000;
 }
@@ -103,7 +103,7 @@
     color: #687074;
     font-size: 13px;
     font-weight: 400;
-    padding: 6px 15px;
+    padding: 6px 10px;
     border-bottom-width: 1px !important;
 }
 
