@@ -924,7 +924,7 @@ EOT;
                     $branchurl   = new moodle_url('/');
                 }
                 $branchsort  = 9998;
-                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+                $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
 
             if (!empty($PAGE->theme->settings->enablemyhome)) {
@@ -932,7 +932,7 @@ EOT;
                 $branchlabel = '<i class="fa fa-dashboard"></i> '.$branchtitle;
                 $branchurl   = new moodle_url('/my/index.php');
                 $branchsort  = 9999;
-                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+                $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
 
             if (!empty($PAGE->theme->settings->enableevents)) {
@@ -940,7 +940,7 @@ EOT;
                 $branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
                 $branchurl   = new moodle_url('/calendar/view.php');
                 $branchsort  = 10000;
-                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+                $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
 
             $mysitesvisibility = $PAGE->theme->settings->enablemysites;
@@ -951,7 +951,7 @@ EOT;
                 $branchurl   = new moodle_url('/my/index.php');
                 $branchsort  = 10001;
 
-                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+                $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
                 list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
 
                 $icon = '';
@@ -960,7 +960,7 @@ EOT;
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
                             $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 30)) . '...',
-                                new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                                new moodle_url('/course/view.php?id='.$course->id), '');
                         }
                     }
 
@@ -982,17 +982,17 @@ EOT;
                     $branchtitle = get_string('thiscourse', 'theme_adaptable');
                     $branchlabel = '<i class="fa fa-sitemap"></i><span class="menutitle">'.$branchtitle.'</span>';
                     $branchurl = new moodle_url('#');
-                    $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
+                    $branch = $menu->add($branchlabel, $branchurl, '', 10002);
 
                     $branchtitle = "People";
                     $branchlabel = '<i class="fa fa-users"></i>'.$branchtitle;
                     $branchurl = new moodle_url('/user/index.php', array('id' => $PAGE->course->id));
-                    $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
+                    $branch->add($branchlabel, $branchurl, '', 100003);
 
                     $branchtitle = get_string('grades');
                     $branchlabel = $OUTPUT->pix_icon('i/grades', '', '', array('class' => 'icon')).$branchtitle;
                     $branchurl = new moodle_url('/grade/report/index.php', array('id' => $PAGE->course->id));
-                    $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
+                    $branch->add($branchlabel, $branchurl, '', 100004);
 
                     $data = theme_adaptable_get_course_activities();
 
@@ -1028,7 +1028,7 @@ EOT;
                 $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
                 $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
                 $branchsort  = 10003;
-                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+                $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
         }
 
@@ -1048,7 +1048,7 @@ EOT;
                 $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
                 $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2);
                 $branchsort  = 10003;
-                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+                $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
         }
         return $this->render_custom_menu($menu);
