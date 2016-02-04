@@ -1,3 +1,5 @@
+NOTE: After upgrading go to the "Header Navbar" settings and save to update the "enablemysites" field with new values
+
 - Fix #304 Improve css and add setting to control length of text displayed in my courses dropdown
 - Fix #326 Title using double line overlap text
 - Fix #313 Delete Block Button Color Incorrect
