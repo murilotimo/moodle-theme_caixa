@@ -98,6 +98,11 @@
     z-index: 1000;
 }
 
+.nav .dropdown-menu .icon-time{
+    margin-left: 4px;
+    background-position: -48px -24px;
+}
+
 .nav .dropdown-menu li a {
     border-bottom: 1px solid #EEEEEE;
     color: #687074;

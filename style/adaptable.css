@@ -803,6 +803,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     width: 30px;
     height: 30px;
     display: inline;
+    margin-right: 4px;
 }
 
 .page-header-image .userpicture {
