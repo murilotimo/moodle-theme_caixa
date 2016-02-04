@@ -53,7 +53,7 @@ if (!empty($PAGE->theme->settings->infobox)) {
 }
 ?>
 
-<?php if (!empty($PAGE->theme->settings-> frontpagemarketenabled)) {
+<?php if (!empty($PAGE->theme->settings->frontpagemarketenabled)) {
     echo $OUTPUT->get_marketing_blocks();
 } ?>
 
