@@ -818,7 +818,9 @@ EOT;
                 if (!empty($PAGE->theme->settings->$slidercaption)) {
                     $retval .= '<div class="flex-caption">';
                     $retval .= $OUTPUT->get_setting($slidercaption, 'format_html');
-                    $retval .= '</div></li>';
+                    $retval .= '</div></a></li>';
+                } else {
+                    $retval .= '</a></li>';
                 }
             }
         }
