@@ -109,12 +109,21 @@ input.form-submit:hover, input#id_submitbutton:hover, input#id_submitbutton2:hov
 .editing #edittingbutton input[type="submit"],
 .editing #edittingbutton a:hover,
 .purgecaches a {
-  color: [[setting:editfont]];
-  background-color: [[setting:editoffbk]];
-  margin-top: [[setting:edittopmargin]];
-  padding: [[setting:editverticalpadding]] [[setting:edithorizontalpadding]];
+    color: [[setting:editfont]];
+    background-color: [[setting:editoffbk]];
+    margin-top: [[setting:edittopmargin]];
+    padding: [[setting:editverticalpadding]] [[setting:edithorizontalpadding]];
     text-decoration: none;
 }
+
+
+#notice .singlebutton + .singlebutton input,
+.submit.buttons input[name="cancel"] {
+    color: [[setting:editfont]] !important;
+    background-color: [[setting:editoffbk]] !important;
+    text-shadow: none;
+}
+
 
 .btn-login {
     background: [[setting:buttonlogincolor]];

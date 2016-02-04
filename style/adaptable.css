@@ -214,6 +214,7 @@ div.signuppanel h2 {
     font-weight: [[setting:fonttitleweight]] !important;
     color: [[setting:fonttitlecolor]] !important;
     padding-top: 10px;
+    line-height: 100%;
 }
 
 #titlecontainer a:hover {

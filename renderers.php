@@ -804,8 +804,7 @@ EOT;
             $sliderurl = 'p' . $i . 'url';
             $slidercaption = 'p' . $i .'cap';
             if (!empty($PAGE->theme->settings->$sliderimage)) {
-                $retval .= '<li>
-                    <a href="';
+                $retval .= '<li><a href="';
 
                 if (!empty($PAGE->theme->settings->$sliderurl)) {
                     $retval .= $PAGE->theme->settings->$sliderurl;
@@ -814,7 +813,7 @@ EOT;
                 }
 
                 $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage)
-                    . '" alt="' . $sliderimage . '"/>';
+                    . '" alt="' . $sliderimage . '"/></a></li>';
 
                 if (!empty($PAGE->theme->settings->$slidercaption)) {
                     $retval .= '<div class="flex-caption">';
