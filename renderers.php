@@ -944,6 +944,9 @@ EOT;
             }
 
             $mysitesvisibility = $PAGE->theme->settings->enablemysites;
+            $mysitesmaxlength = $PAGE->theme->settings->mysitesmaxlength;
+            $mysitesmaxlengthhidden = $mysitesmaxlength - 3;
+
             if ($mysitesvisibility != 'disabled') {
 
                 $branchtitle = get_string('mysites', 'theme_adaptable');
@@ -959,7 +962,7 @@ EOT;
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-                            $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 30)) . '...',
+                            $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, $mysitesmaxlength)) . '...',
                                 new moodle_url('/course/view.php?id='.$course->id), '');
                         }
                     }
@@ -967,7 +970,7 @@ EOT;
                     $icon = '<span class="fa fa-eye-slash"></span> ';
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
-                            $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, 28)) . '...',
+                            $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, $mysitesmaxlengthhidden)) . '...',
                                 new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }

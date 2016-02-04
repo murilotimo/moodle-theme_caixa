@@ -1,3 +1,10 @@
+- Fix #326 Title using double line overlap text
+- Fix #313 Delete Block Button Color Incorrect
+- Fix #317 Wrong ul in flexslider
+- Fix #280 Partial fix removing some title attributes from navigation and improving alignment of navbar dropdown menus
+- Fix #249 Increaes messages dropdown size to avoid spill, also corrected issue with left align
+- Fix #320 Remove notifications from messages, this needs to be put back as an option in admin settings
+- Fix #318 Catch notices from renderer caused by undefined variables
 - Fix #316 Increase font size range for Top Menu & Navigation bar
 - Fix #184 Topic title header width changes when editing On
 - Fix #285 Slideshow is not working in RTL sites
