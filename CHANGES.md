@@ -1,3 +1,11 @@
+Changes in version 1.1.1
+-------------------------------------
+
+- Fix #327 Fix show / hide front page marketing blocks
+
+Changes in version 1.1.1 (2016020400)
+-------------------------------------
+
 NOTE: After upgrading go to the "Header Navbar" settings and save to update the "enablemysites" field with new values
 
 - Fix #304 Improve css and add setting to control length of text displayed in my courses dropdown

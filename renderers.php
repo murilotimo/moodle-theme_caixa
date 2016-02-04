@@ -813,7 +813,7 @@ EOT;
                 }
 
                 $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage)
-                    . '" alt="' . $sliderimage . '"/></a></li>';
+                    . '" alt="' . $sliderimage . '"/>';
 
                 if (!empty($PAGE->theme->settings->$slidercaption)) {
                     $retval .= '<div class="flex-caption">';
