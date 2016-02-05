@@ -53,7 +53,9 @@ if (!empty($PAGE->theme->settings->infobox)) {
 }
 ?>
 
-<?php echo $OUTPUT->get_marketing_blocks(); ?>
+<?php if (!empty($PAGE->theme->settings->frontpagemarketenabled)) {
+    echo $OUTPUT->get_marketing_blocks();
+} ?>
 
 <?php if (!empty($PAGE->theme->settings->frontpageblocksenabled)) { ?>
     <div id="frontblockregion" class="container">

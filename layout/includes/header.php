@@ -42,7 +42,7 @@ $haslogo = (!empty($PAGE->theme->settings->logo));
 $hastitle = (!empty($PAGE->theme->settings->sitetitletext));
 $enableheadingtitle = $PAGE->theme->settings->enableheading;
 
-if ($COURSE->id != 1){
+if ($COURSE->id != 1) {
     switch($enableheadingtitle) {
         case "shortname" :
                     $PAGE->set_heading($COURSE->shortname);

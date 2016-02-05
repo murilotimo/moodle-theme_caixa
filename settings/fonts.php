@@ -84,7 +84,7 @@
     $name = 'theme_adaptable/topmenufontsize';
     $title = get_string('topmenufontsize', 'theme_adaptable');
     $description = get_string('topmenufontsizedesc', 'theme_adaptable');
-    $radchoices = $from10to16;
+    $radchoices = $from10to20px;
     $setting = new admin_setting_configselect($name, $title, $description, '14px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -93,7 +93,7 @@
     $name = 'theme_adaptable/menufontsize';
     $title = get_string('menufontsize', 'theme_adaptable');
     $description = get_string('menufontsizedesc', 'theme_adaptable');
-    $radchoices = $from10to16;
+    $radchoices = $from10to20px;
     $setting = new admin_setting_configselect($name, $title, $description, '14px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);

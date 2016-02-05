@@ -70,7 +70,15 @@ $choices = array(
     'includehidden' => get_string('mysitesinclude', 'theme_adaptable'),
     'disabled' => get_string('mysitesdisabled', 'theme_adaptable'),
 );
+$setting->set_updatedcallback('theme_reset_all_caches');
 $setting = new admin_setting_configselect($name, $title, $description, 'excludehidden', $choices);
+$temp->add($setting);
+
+$name = 'theme_adaptable/mysitesmaxlength';
+$title = get_string('mysitesmaxlength', 'theme_adaptable');
+$description = get_string('mysitesmaxlengthdesc', 'theme_adaptable');
+$setting = new admin_setting_configselect($name, $title, $description, '30', $from20to40);
+$setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
 $name = 'theme_adaptable/enablethiscourse';

@@ -214,6 +214,7 @@ div.signuppanel h2 {
     font-weight: [[setting:fonttitleweight]] !important;
     color: [[setting:fonttitlecolor]] !important;
     padding-top: 10px;
+    line-height: 100%;
 }
 
 #titlecontainer a:hover {
@@ -802,6 +803,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     width: 30px;
     height: 30px;
     display: inline;
+    margin-right: 4px;
 }
 
 .page-header-image .userpicture {
@@ -1042,6 +1044,7 @@ input[type="radio"], input[type="checkbox"] {
 
 .pull-left .usermenu2 .dropdown-menu {
     margin: 0 0;
+    width: 350px;
 }
 
 .pull-left .usermenu2.nav {
