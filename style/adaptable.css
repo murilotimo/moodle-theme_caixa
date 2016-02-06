@@ -1060,10 +1060,6 @@ input[type="radio"], input[type="checkbox"] {
     color: #333;
 }
 
-#contactdetails a {
-    color: #fff !important;
-}
-
 .submit {
     white-space: nowrap;
 }

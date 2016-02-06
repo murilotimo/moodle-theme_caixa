@@ -761,7 +761,7 @@ EOT;
                     $footerheader = 'footer' . $blockcount . 'header';
                     $footercontent = 'footer' . $blockcount . 'content';
                     if (!empty($PAGE->theme->settings->$footercontent)) {
-                        $output .= '<div class="left-col span' . $val . '" id="contactdetails">';
+                        $output .= '<div class="left-col span' . $val . '">';
                         $output .= '<h3 title="' . $OUTPUT->get_setting($footerheader, 'format_text') . '">';
                         $output .= $OUTPUT->get_setting($footerheader, 'format_text');
                         $output .= '</h3>';

@@ -113,7 +113,7 @@ echo $OUTPUT->doctype();
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
     <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
+    <link rel="icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <?php
@@ -148,7 +148,6 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 
 <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(array('two-column', $setzoom)); ?>>
