@@ -76,10 +76,18 @@ fieldset {
     fieldset {
         display: table-cell;
     }
+
 }
 
-textarea[cols], input[size] {
-    width: 100%;
+
+@-moz-document url-prefix() {
+    textarea {
+        box-sizing: border-box
+    }
+
+    textarea[cols] {
+        width: 100%;
+    }
 }
 
 select {
@@ -87,6 +95,8 @@ select {
 width: auto;
 
 }
+
+
 
 
 /* real main headings */
