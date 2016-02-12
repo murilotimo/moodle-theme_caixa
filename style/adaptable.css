@@ -78,6 +78,10 @@ fieldset {
     }
 }
 
+textarea[cols], input[size] {
+    width: 100%;
+}
+
 select {
 /*    width: 275px; #308 */
 width: auto;
