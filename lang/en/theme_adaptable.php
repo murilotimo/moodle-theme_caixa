@@ -561,9 +561,6 @@ $string['fontsettings'] = 'Fonts';
 $string['fontsettingsheading'] = 'Modify the fonts used throughout the theme.';
 $string['fontdesc'] = 'You can select the <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> that you would like to use throughout the theme. Select the subset needed (latin is always included) and enter the right font weight or the font will not displayed.';
 
-$string['fsize'] = 'Global Font Size';
-$string['fsizedesc'] = 'Adjust the global font size (in percent, use a number only, default is 85).';
-
 $string['fontname'] = 'Main font';
 $string['fontnamedesc'] = 'Select the default font or <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> used in site.';
 

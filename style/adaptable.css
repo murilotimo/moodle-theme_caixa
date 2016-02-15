@@ -76,6 +76,18 @@ fieldset {
     fieldset {
         display: table-cell;
     }
+
+}
+
+
+@-moz-document url-prefix() {
+    textarea {
+        box-sizing: border-box
+    }
+
+    textarea[cols] {
+        width: 100%;
+    }
 }
 
 select {
@@ -83,6 +95,8 @@ select {
 width: auto;
 
 }
+
+
 
 
 /* real main headings */
@@ -1058,10 +1072,6 @@ input[type="radio"], input[type="checkbox"] {
 
 .pull-left .usermenu2.nav .dropdown-menu a {
     color: #333;
-}
-
-#contactdetails a {
-    color: #fff !important;
 }
 
 .submit {

@@ -761,7 +761,7 @@ EOT;
                     $footerheader = 'footer' . $blockcount . 'header';
                     $footercontent = 'footer' . $blockcount . 'content';
                     if (!empty($PAGE->theme->settings->$footercontent)) {
-                        $output .= '<div class="left-col span' . $val . '" id="contactdetails">';
+                        $output .= '<div class="left-col span' . $val . '">';
                         $output .= '<h3 title="' . $OUTPUT->get_setting($footerheader, 'format_text') . '">';
                         $output .= $OUTPUT->get_setting($footerheader, 'format_text');
                         $output .= '</h3>';
@@ -963,7 +963,11 @@ EOT;
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-                            $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, $mysitesmaxlength)) . '...',
+
+//                          mb_strimwidth(string, 0, length, "...", 'utf-8');
+
+
+                            $branch->add($icon . mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
                                 new moodle_url('/course/view.php?id='.$course->id), '');
                         }
                     }
@@ -1733,7 +1737,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $summs = $chelper->get_course_formatted_summary($course, array('overflowdiv' => false, 'noclean' => true,
                     'para' => false));
             $summs = strip_tags($summs);
-            $truncsum = mb_strimwidth($summs, 0, 70, "...");
+            $truncsum = mb_strimwidth($summs, 0, 70, "...", 'utf-8');
             $content .= html_writer::tag('span', $truncsum, array('title' => $summs));
         }
         $coursecontacts = theme_adaptable_get_setting('tilesshowcontacts');
