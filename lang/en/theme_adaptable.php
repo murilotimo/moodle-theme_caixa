@@ -885,6 +885,7 @@ $string['toolsmenulabel2'] = 'Tools 2';
 $string['events'] = 'Events';
 $string['mysites'] = 'My Courses';
 $string['hiddencourses'] = 'Hidden Courses';
+$string['pastcourses'] = 'Past Courses';
 $string['people'] = 'People';
 $string['help'] = 'Help';
 
@@ -1004,6 +1005,11 @@ Note: Users will have to log out of Moodle and back in again for this change to 
 $string['menuoverrideprofilefield'] = 'Custom profile field name';
 $string['menuoverrideprofilefielddesc'] = 'The name of the custom profile "list" field used for user override';
 $string['menuoverrideprofilefielddefault'] = 'topmenusettings';
+
+$string['menusortoverride'] = 'Enable My Courses Custom Sort';
+$string['menusortoverridedesc'] = 'Use custom profile fields to collapse innactive courses in sub menu';
+$string['menusortoverridefield'] = 'Custom Profile Field(s)';
+$string['menusortoverridefielddesc'] = 'Comma delimited list of profile fields to check for course short codes';
 
 $string['topmenuscount'] = 'Number of top Menus';
 $string['topmenuscountdesc'] = 'Set the number of top menus you want to add to the theme header';

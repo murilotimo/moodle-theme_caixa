@@ -932,6 +932,11 @@ EOT;
         global $PAGE, $COURSE, $OUTPUT, $CFG;
         $menu = new custom_menu();
         $access = true;
+        $overridelist = false;
+
+        $mysitesvisibility = $PAGE->theme->settings->enablemysites;
+        $mysitesmaxlength = $PAGE->theme->settings->mysitesmaxlength;
+        $mysitesmaxlengthhidden = $mysitesmaxlength - 3;
 
         if (isloggedin() && !isguestuser()) {
             if (!empty($PAGE->theme->settings->enablehome)) {
@@ -962,9 +967,10 @@ EOT;
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
 
-            $mysitesvisibility = $PAGE->theme->settings->enablemysites;
-            $mysitesmaxlength = $PAGE->theme->settings->mysitesmaxlength;
-            $mysitesmaxlengthhidden = $mysitesmaxlength - 3;
+            if (isset($PAGE->theme->settings->menusortoverride) && isset($PAGE->theme->settings->menusortoverridefield)){
+                $overridelist = $PAGE->theme->settings->menusortoverridefield;
+                $overridelist = $this->get_profile_field_contents($overridelist);
+            }
 
             if ($mysitesvisibility != 'disabled') {
 
@@ -981,21 +987,35 @@ EOT;
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-
-//                          mb_strimwidth(string, 0, length, "...", 'utf-8');
-
-
-                            $branch->add($icon . mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
-                                new moodle_url('/course/view.php?id='.$course->id), '');
+                            if (!$overridelist){ // feature not in use, add to menu as normal
+                                $branch->add(mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
+                                    new moodle_url('/course/view.php?id='.$course->id), '');
+                            }  else { // we want to check against array from profile field
+                                if (in_array($course->shortname, $overridelist)){
+                                    $icon = '';
+                                    $branch->add($icon . mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
+                                        new moodle_url('/course/view.php?id='.$course->id), '', 100);
+                                } else { // if not in array add to sub menu item
+                                    // add to sub menu
+                                    if (!isset($parent)){
+                                        $icon = '<span class="fa fa-history"></span> ';
+                                        $parent = $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string(get_string('pastcourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
+                                            new moodle_url('#'), '', 1000);
+                                    }
+                                    $parent->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, $mysitesmaxlengthhidden)) . '...',
+                                        new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                                }
+                            }
                         }
                     }
 
                     $icon = '<span class="fa fa-eye-slash"></span> ';
+                    $parent = null;
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
-                            if (!isset($parent)){
+                            if (empty($parent)){
                                 $parent = $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
-                                    new moodle_url('#'), '');
+                                    new moodle_url('#'), '', 2000);
                             }
                             $parent->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, $mysitesmaxlengthhidden)) . '...',
                                 new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
@@ -1284,6 +1304,46 @@ EOT;
         $USER->theme_adaptable_menus[$menu] = false;
         $USER->theme_adaptable_menus[$menuttl] = $sessttl;
         return false;
+    }
+
+    public function get_profile_field_contents($profilefields) {
+        global $PAGE, $USER, $CFG;
+        $timestamp = 'currentcoursestime';
+        $list = 'currentcourseslist';
+
+        if (isset($USER->theme_adaptable_menus[$timestamp])) {
+            if ($USER->theme_adaptable_menus[$timestamp] >= time()) {
+                if (isset($USER->theme_adaptable_menus[$list])) {
+                    return $USER->theme_adaptable_menus[$list];
+                }
+            }
+        }
+
+        $sessttl = 1000 * 60 * 3;
+        $sessttl = 0;
+        $sessttl = time() + $sessttl;
+        $retval = array();
+
+        require_once($CFG->dirroot.'/user/profile/lib.php');
+        require_once($CFG->dirroot.'/user/lib.php');
+        profile_load_data($USER);
+
+        $fields = explode(',', $profilefields);
+
+        foreach ($fields as $field) {
+            $field = trim($field);
+            $field = "profile_field_$field";
+            if (isset($USER->$field)) {
+                $vals = explode(',',$USER->$field);
+                foreach ($vals as $value){
+                    $retval[] = trim($value);
+                }
+            }
+        }
+
+        $USER->theme_adaptable_menus[$list] = $retval;
+        $USER->theme_adaptable_menus[$timestamp] = $sessttl;
+        return $retval;
     }
 
     /**

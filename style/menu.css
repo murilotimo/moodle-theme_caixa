@@ -49,7 +49,7 @@
 }
 
 .navbar .dropdown-toggle{
-    height: 38px;
+    height: 18px;
 }
 
 .navbar .nav li.dropdown.open > .dropdown-toggle,
@@ -223,6 +223,11 @@ color: [[setting:headertextcolor]];
   .hbl, .sbl, .hbll, .sbll {
             display: none !important;
   }
+
+  .navbar .dropdown-toggle{
+    height: 38px;
+  }
+
 
   .nav-collapse .nav {
     width:100%;
