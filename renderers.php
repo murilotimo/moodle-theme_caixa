@@ -118,14 +118,17 @@ class theme_adaptable_core_renderer extends core_renderer {
             $alerttext = 'alerttext' . $i;
             $alertsession = 'alert' . $i;
 
-            $enablealert = false;
+
             if (isset($PAGE->theme->settings->$enablealert)) {
                 $enablealert = $PAGE->theme->settings->$enablealert;
+            } else {
+                $enablealert = false;
             }
 
-            $alerttext = '';
             if (isset($PAGE->theme->settings->$alerttext)) {
                 $alerttext = $PAGE->theme->settings->$alerttext;
+            } else {
+                $alerttext = '';
             }
 
             if ($enablealert && !empty($alerttext)) {
@@ -538,9 +541,16 @@ EOT;
     public function socialicons() {
         global $CFG, $PAGE;
 
-        $retval = '<div class="socialbox pull-right">';
+        if (!isset($PAGE->theme->settings->socialiconlist)){
+            return '';
+        }
 
-        $target = $PAGE->theme->settings->socialtarget;
+        $target = '_blank';
+        if (isset($PAGE->theme->settings->socialtarget)){
+            $target = $PAGE->theme->settings->socialtarget;
+        }
+
+        $retval = '<div class="socialbox pull-right">';
         $socialiconlist = $PAGE->theme->settings->socialiconlist;
         $lines = explode("\n", $socialiconlist);
 
@@ -568,6 +578,10 @@ EOT;
     public function get_news_ticker() {
         global $PAGE;
         $retval = '';
+
+        if (!isset($PAGE->theme->settings->enabletickermy)){
+            $PAGE->theme->settings->enabletickermy = 0;
+        }
 
         if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index")
             || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
@@ -838,6 +852,10 @@ EOT;
         global $PAGE;
         $retval = '';
 
+        if (!isset($PAGE->theme->settings->enabletickermy)){
+            $PAGE->theme->settings->enabletickermy = 0;
+        }
+
         // Do not show navbar on dashboard / my home if news ticker is rendering.
         if (!($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
             $retval = '<div id="page-navbar" class="span12">';
@@ -1074,7 +1092,11 @@ EOT;
         $access = true;
         $retval = '';
 
+        if (!isset($PAGE->theme->settings->toolsmenuscount)){
+            return '';
+        }
         $toolsmenuscount = $PAGE->theme->settings->toolsmenuscount;
+
         for ($i = 1; $i <= $toolsmenuscount; $i++) {
             $menunumber = 'toolsmenu' . $i;
             $menutitle = $menunumber . 'title';
