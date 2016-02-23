@@ -967,8 +967,8 @@ EOT;
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
 
-            if (!empty($PAGE->theme->settings->menusortoverride) && !empty($PAGE->theme->settings->menusortoverridefield)){
-                $overridelist = $PAGE->theme->settings->menusortoverridefield;
+            if (!empty($PAGE->theme->settings->mysitessortoverride) && !empty($PAGE->theme->settings->mysitessortoverridefield)){
+                $overridelist = $PAGE->theme->settings->mysitessortoverridefield;
                 $overridelist = $this->get_profile_field_contents($overridelist);
             }
 
