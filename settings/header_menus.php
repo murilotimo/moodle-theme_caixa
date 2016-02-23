@@ -76,6 +76,21 @@ $default = get_string('menuoverrideprofilefielddefault', 'theme_adaptable');
 $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_RAW);
 $temp->add($setting);
 
+$name = 'theme_adaptable/menusortoverride';
+$title = get_string('menusortoverride', 'theme_adaptable');
+$description = get_string('menusortoverridedesc', 'theme_adaptable');
+$default = false;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/menusortoverridefield';
+$title = get_string('menusortoverridefield', 'theme_adaptable');
+$description = get_string('menusortoverridefielddesc', 'theme_adaptable');
+$default = '';
+$setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_RAW);
+$temp->add($setting);
+
 // Number of menus.
 $name = 'theme_adaptable/topmenuscount';
 $title = get_string('topmenuscount', 'theme_adaptable');
