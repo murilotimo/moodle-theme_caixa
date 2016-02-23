@@ -884,6 +884,7 @@ $string['toolsmenulabel'] = 'Tools';
 $string['toolsmenulabel2'] = 'Tools 2';
 $string['events'] = 'Events';
 $string['mysites'] = 'My Courses';
+$string['hiddencourses'] = 'Hidden Courses';
 $string['people'] = 'People';
 $string['help'] = 'Help';
 
