@@ -604,7 +604,7 @@ EOT;
                     $msg .= $PAGE->theme->settings->$textfield;
                 }
             }
-
+            $msg = preg_replace('#\<[\/]{0,1}(p|ul|div|pre|blockquote)\>#', '', $msg);
             if ($msg == '') {
                 $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
             }
