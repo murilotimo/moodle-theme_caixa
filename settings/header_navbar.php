@@ -81,6 +81,21 @@ $setting = new admin_setting_configselect($name, $title, $description, '30', $fr
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
+$name = 'theme_adaptable/mysitessortoverride';
+$title = get_string('mysitessortoverride', 'theme_adaptable');
+$description = get_string('mysitessortoverridedesc', 'theme_adaptable');
+$default = false;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/mysitessortoverridefield';
+$title = get_string('mysitessortoverridefield', 'theme_adaptable');
+$description = get_string('mysitessortoverridefielddesc', 'theme_adaptable');
+$default = '';
+$setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_RAW);
+$temp->add($setting);
+
 $name = 'theme_adaptable/enablethiscourse';
 $title = get_string('thiscourse', 'theme_adaptable');
 $description = get_string('enablethiscoursedesc', 'theme_adaptable');

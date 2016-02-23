@@ -379,6 +379,11 @@ $string['enableeventsdesc'] = 'Display a link to the calendar';
 $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
 $string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
 
+$string['mysitessortoverride'] = 'Enable My Courses Custom Sort';
+$string['mysitessortoverridedesc'] = 'Use custom profile fields to collapse innactive courses in sub menu';
+$string['mysitessortoverridefield'] = 'My Courses Custom Profile Field(s)';
+$string['mysitessortoverridefielddesc'] = 'Comma delimited list of profile fields to check for course short codes';
+
 $string['mysitesmaxlength'] = 'My Courses Max Length';
 $string['mysitesmaxlengthdesc'] = 'Adjust the max length of coursenames in the My Courses dropdown to optimise for your font.';
 
@@ -1005,11 +1010,6 @@ Note: Users will have to log out of Moodle and back in again for this change to 
 $string['menuoverrideprofilefield'] = 'Custom profile field name';
 $string['menuoverrideprofilefielddesc'] = 'The name of the custom profile "list" field used for user override';
 $string['menuoverrideprofilefielddefault'] = 'topmenusettings';
-
-$string['menusortoverride'] = 'Enable My Courses Custom Sort';
-$string['menusortoverridedesc'] = 'Use custom profile fields to collapse innactive courses in sub menu';
-$string['menusortoverridefield'] = 'Custom Profile Field(s)';
-$string['menusortoverridefielddesc'] = 'Comma delimited list of profile fields to check for course short codes';
 
 $string['topmenuscount'] = 'Number of top Menus';
 $string['topmenuscountdesc'] = 'Set the number of top menus you want to add to the theme header';
