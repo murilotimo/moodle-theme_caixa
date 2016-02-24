@@ -69,7 +69,7 @@
 
     $name = 'theme_adaptable/socialiconlist';
     $title = get_string('socialiconlist', 'theme_adaptable');
-  $default = 'http://facebook.com/|Facebook|fa-facebook-square';
+    $default = '';
     $description = get_string('socialiconlistdesc', 'theme_adaptable');
     $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW, '50', '10');
     $temp->add($setting);

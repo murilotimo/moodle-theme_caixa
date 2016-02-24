@@ -545,9 +545,6 @@ $string['fontsettings'] = 'Fuentes';
 $string['fontsettingsheading'] = 'Establece las fuentes utilizadas por la plantilla.';
 $string['fontdesc'] = 'Selecciona la fuente de <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> para el texto, los encabezamientos y el título. Selecciona también el juego de caracteres a usar (latin está incluido por defecto) e introduce el valor correcto para el grueso de fuente utilizado o no se mostrará.';
 
-$string['fsize'] = 'Tamaño de fuente';
-$string['fsizedesc'] = 'Establece el valor global del tamaño de fuente (en porcentaje. Usar solo valores númericos sin %. Por defecto es 85).';
-
 // Fuente principal.
 $string['fontname'] = 'Fuente principal';
 $string['fontnamedesc'] = 'Establece la fuente principal. Selecciona defecto o una fuente de <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a>.';
