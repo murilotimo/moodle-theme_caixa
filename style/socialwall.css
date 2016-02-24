@@ -1,257 +1,150 @@
 /*Social Wall*/
-.format-socialwall .course-content ul.topics li.section {
-border-bottom: 0px solid #ccc;
-margin-top: 0;
-}
-.format-socialwall #section-0 .content {
-  display:none;
-  visibility: hidden;
-}
-.format-socialwall #section-2 .content {
-background-color: [[setting:swaddpost]];
-padding: 10px;
-margin: 0px;
-border: 3px solid #d4d4d4;
-border-radius: 4px;
-margin-top:15px;
-margin-bottom: 15px;
--moz-box-shadow: 0px 0px 25px #000;
--webkit-box-shadow: 0 0 25px #000;
-box-shadow: 0px 0px 25px #000;
+
+/*All sections-------------------------------------------------------------------*/
+
+/*Background to the page*/
+.format-socialwall .topics{	
+	padding: 1em;
+	background:[[setting:buttoncolor]];
+	}
+
+/*For each section*/
+.format-socialwall .section.main.clearfix#section-2,
+.format-socialwall #region-main > div > div > ul > form, 
+.format-socialwall #counttotalpost,
+.format-socialwall .tl-actionlink a,
+.format-socialwall .tl-post,
+.format-socialwall #section-0 > div.content > div.visibleifjs.addresourcemodchooser > div, 
+.format-socialwall #section-0 > div.content > h3,
+.format-socialwall .tl-post .tl-post-actionarea{
+  padding: 1em;
+  background: #fff;
+  border: .1em solid [[setting:fontcolor]];
+  -webkit-border-radius: [[setting:buttonradius]];
+  -moz-border-radius: [[setting:buttonradius]];
+  border-radius: [[setting:buttonradius]];
 }
 
-.format-socialwall .tl-post {
-margin: 30px 0px 50px 0px;
-padding:15px;
+/*Combine section 2, search, and post count*/
+
+.format-socialwall .section.main.clearfix#section-2{
+	border-top:0px;
+	border-bottom:0px;
+	margin-bottom:0px;
+}
+.format-socialwall #region-main > div > div > ul > form{
+	border-top:0px;
+	border-bottom:0px;
+}
+.format-socialwall #counttotalpost{
+	border-top:0px;
 }
 
-.format-socialwall .tl-posttext {
-background-color: [[setting:swmessage]];
-padding: 10px 10px 20px 10px;
-border-radius: 10px 10px 0px 0px;
-border: 1px solid #ccc;
-margin-top: 10px;
+/*Section 0------------------------------------------------------------------------------*/
+
+/*Remove border*/
+.format-socialwall .section.main.clearfix#section-0 {
+  border: none;
 }
 
+/*Section 2-------------------------------------------------------------------------------*/
+
+
+/*Add activity/resource link*/
+
+.format-socialwall #postform input#sw-addactivitylink{
+	 pointer-events: none;
+	
+}
+
+/*Post-----------------------------------------------------------------------*/
+
+/*Post text*/
+.format-socialwall .tl-posttext .text_to_html{
+	padding: 2em 0em 1.5em;
+}
+
+/*Post comment----------------------------------------------------------------*/
+/*Comment author*/
+.format-socialwall .tl-text .tl-authorname{
+	padding: 0em 0em 2em;
+}
+
+
+
+/*Post attachment------------------------------------------------------------*/
 .format-socialwall ul.section.tl-postattachment {
-background-color: [[setting:swattach]];
-padding: 5px 5px 5px 50px;
-border-left: 1px solid #ccc;
-border-right: 1px solid #ccc;
-margin:0px;
+    padding: 2em 0em 2.5em;
+    margin:0em;
+
+}
+/*Attached files horizontally*/
+.format-socialwall ul.section.tl-postattachment div{
+	float:left;
 }
 
-/* Socialwall Language Strings based on popular languages.  These are only visible when you use the Socialwall Course format plugin. */
-/*.lang-en.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Attachments"; }
-.lang-en.format-socialwall .tl-comments:before { content: "\f0e6  Comments"; }
-.lang-en.format-socialwall .tl-posttext:before{ content: "\f0e5  Message"; }
-.lang-en.format-socialwall .tl-post:before{ content: "\f086  Post" }
-.lang-en_us.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Attachments"; }
-.lang-en_us.format-socialwall .tl-comments:before { content: "\f0e6  Comments"; }
-.lang-en_us.format-socialwall .tl-posttext:before{ content: "\f0e5  Message"; }
-.lang-en_us.format-socialwall .tl-post:before{ content: "\f086  Post" }
-.lang-es.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Anexos"; }
-.lang-es.format-socialwall .tl-comments:before { content: "\f0e6  Comentarios"; }
-.lang-es.format-socialwall .tl-posttext:before{ content: "\f0e5  Mensaje"; }
-.lang-es.format-socialwall .tl-post:before{ content: "\f086  Publicación" }
-.lang-de.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Zubehör"; }
-.lang-de.format-socialwall .tl-comments:before { content: "\f0e6  Comments"; }
-.lang-de.format-socialwall .tl-posttext:before{ content: "\f0e5  Nachricht"; }
-.lang-de.format-socialwall .tl-post:before{ content: "\f086  Post" }
-.lang-es_mx.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Anexos"; }
-.lang-es_mx.format-socialwall .tl-comments:before { content: "\f0e6  Comentarios"; }
-.lang-es_mx.format-socialwall .tl-posttext:before{ content: "\f0e5  Mensaje"; }
-.lang-es_mx.format-socialwall .tl-post:before{ content: "\f086  Publicación" }
-.lang-fr.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Pièces jointes"; }
-.lang-fr.format-socialwall .tl-comments:before { content: "\f0e6  Commentaires"; }
-.lang-fr.format-socialwall .tl-posttext:before{ content: "\f0e5  Message"; }
-.lang-fr.format-socialwall .tl-post:before{ content: "\f086  Poste" }
-.lang-it.format-socialwall ul.section.tl-postattachment:before { content: "\f0c6  Allegati"; }
-.lang-it.format-socialwall .tl-comments:before { content: "\f0e6  Commenti"; }
-.lang-it.format-socialwall .tl-posttext:before{ content: "\f0e5  Messaggio"; }
-.lang-it.format-socialwall .tl-post:before{ content: "\f086  Posta" }
-*/
+/*Post like count*/
+.format-socialwall .tl-counts,.format-socialwall .tl-timeago{
+	font-size:0.8em;
+	padding: 1em 0em 1.5em;
 
-[[setting:swmultilangcss]]
-
-.format-socialwall ul.section.tl-postattachment:before { content: "[[setting:swlabelattachment]]"; }
-.format-socialwall .tl-comments:before { content: "[[setting:swlabelcomment]]"; }
-.format-socialwall .tl-posttext:before{ content: "[[setting:swlabelmessage]]"; }
-.format-socialwall .tl-post:before{ content: "[[setting:swlabelpost]]"; }
-
-.format-socialwall ul.section.tl-postattachment:before {
-  color:[[setting:swicontext]];
-  line-height: 20px;
-  display: inline-block;
-  font: 16px/1 FontAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-  margin-bottom: 7px;
-  margin-left:-15px;
-  padding-bottom: 4px;
-  border-bottom:2px solid #ccc;
-}
-.format-socialwall .tl-comments:before {
-  color:[[setting:swicontext]];
-  line-height: 20px;
-  display: inline-block;
-  font: 16px/1 FontAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-  margin-bottom: 7px;
-  padding-bottom: 4px;
-  width:100%;
-  text-align: center;
-}
-.format-socialwall .tl-posttext:before{
-  color:[[setting:swicontext]];
-  line-height: 20px;
-  display: inline-block;
-  font: 16px/1 FontAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-  margin-bottom: 7px;
-  padding-bottom: 4px;
-  border-bottom:2px solid #ccc;
-  width:100%;
-  text-align: center;
-}
-.format-socialwall .tl-post:before{
-  color:[[setting:swicontext]];
-  line-height: 20px;
-  display: inline-block;
-  font: 18px/1 FontAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-  padding-bottom: 4px;
-  padding-left:15px;
-  text-align: center;
-}
-/*  End CSS :before Text strings for socialwall */
-
-
-.format-socialwall .tl-text {
-margin-left: 40px;
-padding:10px;
-border: 2px solid #efefef;
--moz-box-shadow: 0px 0px 25px #000;
--webkit-box-shadow: 0 0 25px #000;
-box-shadow: 0px 0px 25px #000;
-border-radius: 4px 4px 4px 4px;
-background-color: [[setting:swpost]];
 }
 
-.format-socialwall .tl-comments {
-padding:15px;
-margin:0px;
+/*Post action area*/
+.format-socialwall .tl-post .tl-post-actionarea{
+	padding: 0em 0em 2em;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	
 }
 
-.format-socialwall .tl-comments .tl-text {
-  border: 2px solid #ccc;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  background-color: [[setting:swcomment]];
+
+
+/*Action links under a post--------------------------------------------------------------*/
+
+/*Each action link in a post*/
+.format-socialwall .tl-actionlink a{
+	font-family:  [[setting:fontname]];
+    font-size: [[setting: topmenufontsize]];
+    background: [[setting:buttoncolor]];
+    text-shadow: none;
+    box-shadow: 0 -.1em 0 0 rgba(0, 0, 0, 0.5) inset;
+    border: none;
+    background-size: 100% 200%;
+    color: [[setting:buttontextcolor]];
+    cursor: pointer;
+    padding: .4em .6em .4em;
+    -webkit-transition: background .2s ease-out;
+    -moz-transition: background .2s ease-out;
+    -ie-transition: background .2s ease-out;
+    -o-transition: background .2s ease-out;
+    transition: background .2s ease-out;
+    text-decoration:none;
 }
 
-.format-socialwall .tl-comment {
-padding-left:25px;
-padding-top: 0px;
-padding-bottom: 0px;
+/*Hover over each action link under a post*/
+.format-socialwall .tl-actionlink a:hover{ 
+background:[[setting:buttonhovercolor]];
 }
 
-.format-socialwall .tl-post-actionarea {
-border: 1px solid #ccc;
-padding: 4px 4px 10px 4px;
-background: [[setting:swmessage]];
-border-radius: 0px 0px 5px 5px;
+
+/*Before the like action link*/
+.format-socialwall .like:before{
+	font-family: FontAwesome;
+	content: "\f164";
+	position: relative;
+}
+.format-socialwall .likenomore:before{
+	font-family: FontAwesome;
+	content: "\f087";
+	position: relative;
 }
 
-.format-socialwall .tl-timeago, .tl-counts {
-font-size: 12px;
-color: #666;
-line-height: 15px;
-padding-bottom: 5px;
-}
-
-.format-socialwall .like {
-   border-top: 1px solid #96d1f8;
-   background: #65a9d7;
-   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
-   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
-   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
-   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
-   background: -o-linear-gradient(top, #3e779d, #65a9d7);
-   padding: 5px 5px;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   border-radius: 8px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 14px;
-   font-family: Georgia, serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-
-.format-socialwall .like:hover {
-   border-top-color: #28597a;
-   background: #28597a;
-   color: #ccc;
-   }
-
-.format-socialwall .like:active {
-   border-top-color: #1b435e;
-   background: #1b435e;
-   }
-
-.format-socialwall .likenomore {
-   border-top: 1px solid #96d1f8;
-   background: #65a9d7;
-   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
-   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
-   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
-   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
-   background: -o-linear-gradient(top, #3e779d, #65a9d7);
-   padding: 5px 5px;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   border-radius: 8px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 14px;
-   font-family: Georgia, serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-.format-socialwall .likenomore:hover {
-   border-top-color: #28597a;
-   background: #28597a;
-   color: #ccc;
-   }
-.format-socialwall .likenomore:active {
-   border-top-color: #1b435e;
-   background: #1b435e;
-   }
-
-.format-socialwall form.tl-commentform {
-padding-top: 10px;
-}
-
-.format-socialwall #postform .fitem .felement #id_submitbutton {
-margin:0px;
+/*Post edited ago*/
+.format-socialwall .tl-edited-wrapper{
+	font-size:.8em;
+	color:[[setting:fontcolor]];
+	background:#fff;
+	
 }
