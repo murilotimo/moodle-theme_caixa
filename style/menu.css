@@ -49,6 +49,10 @@
 }
 
 .navbar .dropdown-toggle{
+    height: 38px;
+}
+
+.navbar .dropdown-submenu .dropdown-toggle{
     height: 18px;
 }
 
