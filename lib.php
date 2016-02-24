@@ -52,7 +52,6 @@ function theme_adaptable_process_css($css, $theme) {
 
     // Define the default settings for the theme incase they've not been set.
     $defaults = array(
-        '[[setting:fsize]]' => '90',
         '[[setting:linkcolor]]' => '#009688',
         '[[setting:linkhover]]' => '#009688',
         '[[setting:maincolor]]' => '#009688',
@@ -175,6 +174,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:enableticker]]' => true,
         '[[setting:enabletickermy]]' => true,
         '[[setting:tickerwidth]]' => '',
+        '[[mysitesmaxlength]]' => '30',
     );
 
     // Get all the defined settings for the theme and replace defaults.
