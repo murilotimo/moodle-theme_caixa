@@ -1,6 +1,7 @@
 Changes in version 1.1.1
 -------------------------------------
 
+- Fix #360 Remove es language files
 - Fix #361 Make My Course list settings more generic
 - Fix #353 Add feature for custom sorting of My Courses
 - Fix #349 End slash in the social icon url error
