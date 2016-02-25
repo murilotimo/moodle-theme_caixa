@@ -824,6 +824,13 @@ $string['socialwall'] = 'Social Wall';
 $string['socialwallheading'] = 'Social Wall Settings';
 $string['socialwalldesc'] = 'Customise the appearance of the Social Wall course format (if in use on your site)';
 
+$string['swbackgroundcolor'] = 'Background color';
+$string['swbackgroundcolordesc'] = 'The background color of a Socialwall course.';
+
+$string['swsectionradius'] = 'Section border radius';
+$string['swsectionradiusdesc'] = 'The border radius of Social Wall sections.';
+
+
 // Mobile **********************************************************.
 $string['layoutmobilesettings'] = 'Mobile Settings';
 $string['layoutmobilesettingsdesc'] = 'Alter settings for mobile devices';
@@ -1117,3 +1124,7 @@ $string['genericsettingsdescription'] = 'Here you can find various settings to a
 
 $string['jssection'] = 'Javascript Section';
 $string['jssectiondesc'] = 'Add javascript code to the site.';
+
+
+
+
