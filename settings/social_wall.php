@@ -31,4 +31,22 @@
         format_text(get_string('socialwalldesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
         
     $ADMIN->add('theme_adaptable', $temp);
+    
+    // Socialwall background color.
+    $name = 'theme_adaptable/swbackgroundcolor';
+    $title = get_string('swbackgroundcolor', 'theme_adaptable');
+    $description = get_string('swbackgroundcolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Social Wall section radius
+    $name = 'theme_adaptable/swsectionradius';
+    $title = get_string('swsectionradius', 'theme_adaptable');
+    $description = get_string('swsectionradiusdesc', 'theme_adaptable');
+    $radchoices = $from0to6;
+    $setting = new admin_setting_configselect($name, $title, $description, '5px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
         
