@@ -379,6 +379,11 @@ $string['enableeventsdesc'] = 'Display a link to the calendar';
 $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
 $string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
 
+$string['mysitessortoverride'] = 'Enable My Courses Custom Sort';
+$string['mysitessortoverridedesc'] = 'Use custom profile fields to collapse innactive courses in sub menu';
+$string['mysitessortoverridefield'] = 'My Courses Custom Profile Field(s)';
+$string['mysitessortoverridefielddesc'] = 'Comma delimited list of profile fields to check for course short codes';
+
 $string['mysitesmaxlength'] = 'My Courses Max Length';
 $string['mysitesmaxlengthdesc'] = 'Adjust the max length of coursenames in the My Courses dropdown to optimise for your font.';
 
@@ -884,6 +889,8 @@ $string['toolsmenulabel'] = 'Tools';
 $string['toolsmenulabel2'] = 'Tools 2';
 $string['events'] = 'Events';
 $string['mysites'] = 'My Courses';
+$string['hiddencourses'] = 'Hidden Courses';
+$string['pastcourses'] = 'Past Courses';
 $string['people'] = 'People';
 $string['help'] = 'Help';
 
