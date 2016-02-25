@@ -1,6 +1,7 @@
 Changes in version 1.1.1
 -------------------------------------
 
+- Fix #345 One full width marketing block not displayed
 - Fix #360 Remove es language files
 - Fix #361 Make My Course list settings more generic
 - Fix #353 Add feature for custom sorting of My Courses
