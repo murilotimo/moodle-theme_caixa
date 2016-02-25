@@ -6,6 +6,7 @@
 .format-socialwall .topics{	
 	padding: 1em;
 	background:[[setting:buttoncolor]];
+	word-wrap: break-word;
 	}
 
 /*For each section*/
@@ -26,7 +27,6 @@
 }
 
 /*Combine section 2, search, and post count*/
-
 .format-socialwall .section.main.clearfix#section-2{
 	border-top:0px;
 	border-bottom:0px;
@@ -59,16 +59,27 @@
 
 /*Post-----------------------------------------------------------------------*/
 
-/*Post text*/
+/*Add space between post text and author, and post text and attached files*/
 .format-socialwall .tl-posttext .text_to_html{
 	padding: 2em 0em 1.5em;
 }
 
-/*Post comment----------------------------------------------------------------*/
-/*Comment author*/
+/*Remove border between post author picture and post*/
+.format-socialwall .tl-text{
+	border-left:0px;
+}
+
+/*Comment-------------------------------------------------------------------*/
+
+/*Add spave between comment author name and comment text*/
 .format-socialwall .tl-text .tl-authorname{
 	padding: 0em 0em 2em;
 }
+/*Add spave between comment text and time ago*/
+.format-socialwall .tl-comment .tl-text div:nth-child(2){
+	padding: 0em 0em 2em;
+}
+
 
 
 
@@ -76,7 +87,6 @@
 .format-socialwall ul.section.tl-postattachment {
     padding: 2em 0em 2.5em;
     margin:0em;
-
 }
 /*Attached files horizontally*/
 .format-socialwall ul.section.tl-postattachment div{
@@ -96,9 +106,7 @@
 	border-left:none;
 	border-right:none;
 	border-bottom:none;
-	
 }
-
 
 
 /*Action links under a post--------------------------------------------------------------*/
