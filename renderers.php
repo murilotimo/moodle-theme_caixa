@@ -714,7 +714,7 @@ EOT;
             $retval .= '</div>';
         }
         $retval .= '</div>';
-        if ($blockcount == 1 ) {
+        if ($blockcount == 0 ) {
             $retval = '';
         }
         return $retval;
