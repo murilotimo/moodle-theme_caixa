@@ -84,8 +84,12 @@ $temp->add($setting);
 $name = 'theme_adaptable/mysitessortoverride';
 $title = get_string('mysitessortoverride', 'theme_adaptable');
 $description = get_string('mysitessortoverridedesc', 'theme_adaptable');
-$default = false;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+$choices = array(
+    'off' => get_string('mysitessortoverrideoff', 'theme_adaptable'),
+    'strings' => get_string('mysitessortoverridestrings', 'theme_adaptable'),
+    'profilefields' => get_string('mysitessortoverrideprofilefields', 'theme_adaptable'),
+);
+$setting = new admin_setting_configselect($name, $title, $description, '_blank', $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 

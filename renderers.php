@@ -935,6 +935,8 @@ EOT;
         $menu = new custom_menu();
         $access = true;
         $overridelist = false;
+        $overridestrings = false;
+        $overridetype = 'off';
 
         $mysitesvisibility = $PAGE->theme->settings->enablemysites;
         $mysitesmaxlength = $PAGE->theme->settings->mysitesmaxlength;
@@ -969,9 +971,15 @@ EOT;
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
 
-            if (!empty($PAGE->theme->settings->mysitessortoverride) && !empty($PAGE->theme->settings->mysitessortoverridefield)) {
+            if ($PAGE->theme->settings->mysitessortoverride != 'off' && !empty($PAGE->theme->settings->mysitessortoverridefield)) {
+                $overridetype = $PAGE->theme->settings->mysitessortoverride;
                 $overridelist = $PAGE->theme->settings->mysitessortoverridefield;
-                $overridelist = $this->get_profile_field_contents($overridelist);
+                if ($PAGE->theme->settings->mysitessortoverride == 'profilefields') {
+                    $overridelist = $this->get_profile_field_contents($overridelist);
+                }
+                if ($PAGE->theme->settings->mysitessortoverride == 'strings') {
+                    $overridelist = explode(',', $overridelist);
+                }
             }
 
             if ($mysitesvisibility != 'disabled') {
@@ -993,15 +1001,17 @@ EOT;
                                 $branch->add(mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
                                     new moodle_url('/course/view.php?id='.$course->id), '');
                             } else { // We want to check against array from profile field.
-                                if (in_array($course->shortname, $overridelist)) {
+                                if (($overridetype == 'profilefields' && in_array($course->shortname, $overridelist))
+                                    || ($overridetype == 'strings' && $this->check_if_in_array_string($overridelist, $course->shortname))) {
                                     $icon = '';
                                     $branch->add($icon . mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
                                         new moodle_url('/course/view.php?id='.$course->id), '', 100);
                                 } else { // If not in array add to sub menu item.
                                     if (!isset($parent)) {
                                         $icon = '<span class="fa fa-history"></span> ';
-                                        $parent = $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string(get_string('pastcourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
-                                            new moodle_url('#'), '', 1000);
+                                        $parent = $branch->add($icon . $trunc =
+                                            rtrim(mb_strimwidth(format_string(get_string('pastcourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
+                                                new moodle_url('#'), '', 1000);
                                     }
                                     $parent->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, $mysitesmaxlengthhidden)) . '...',
                                         new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
@@ -1015,8 +1025,9 @@ EOT;
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
                             if (empty($parent)) {
-                                $parent = $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
-                                    new moodle_url('#'), '', 2000);
+                                $parent = $branch->add($icon . $trunc =
+                                    rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
+                                        new moodle_url('#'), '', 2000);
                             }
                             $parent->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, $mysitesmaxlengthhidden)) . '...',
                                 new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
@@ -1103,6 +1114,22 @@ EOT;
             }
         }
         return $this->render_custom_menu($menu);
+    }
+
+    /**
+     * Returns true if needs from array found in haystack
+     * @param array $needles a list of strings to check
+     * @param string $haystack value which may contain string
+     * @return boolean
+     */
+    public function check_if_in_array_string($needles, $haystack) {
+        foreach ($needles as $needle) {
+            $needle = trim($needle);
+            if (strstr($haystack, $needle)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
