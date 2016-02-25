@@ -1,4 +1,4 @@
-Changes in version 1.1.1
+Changes in version 1.1.2 (2016022502)
 -------------------------------------
 
 - Fix #345 One full width marketing block not displayed
