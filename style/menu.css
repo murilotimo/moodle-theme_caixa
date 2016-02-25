@@ -234,10 +234,6 @@ color: [[setting:headertextcolor]];
     height: 38px;
   }
 
-.navbar .dropdown-submenu .dropdown-toggle{
-    display: none;
-}
-
   .nav-collapse .nav {
     width:100%;
     margin-left: 0px !important;
