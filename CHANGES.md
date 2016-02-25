@@ -1,6 +1,20 @@
-Changes in version 1.1.1
+Changes in version 1.1.2 (2016022502)
 -------------------------------------
 
+- Fix #345 One full width marketing block not displayed
+- Fix #360 Remove es language files
+- Fix #361 Make My Course list settings more generic
+- Fix #353 Add feature for custom sorting of My Courses
+- Fix #349 End slash in the social icon url error
+- Fix #348 Remove default facebook social icon
+- Fix #353 Add feature for custom sorting of My Courses
+- Fix #352 Move hidden courses into sub menu
+- Fix #273 PHP errors after install
+- Fix #334 Include Font Awesome in the theme
+- Fix #336 Remove Global Font Size from settings
+- Fix #268 Quiz settings spill out of the main region
+- Fix #247 Mail settings spill on blocks
+- Fix #331 Remove lecacy contact details style
 - Fix #327 Fix show / hide front page marketing blocks
 
 Changes in version 1.1.1 (2016020400)
