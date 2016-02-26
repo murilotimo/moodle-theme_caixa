@@ -98,6 +98,14 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Navber Menu Padding.
+    $name = 'theme_adaptable/menufontpadding';
+    $title = get_string('menufontpadding', 'theme_adaptable');
+    $description = get_string('menufontpaddingdesc', 'theme_adaptable');
+    $radchoices = $from10to30px;
+    $setting = new admin_setting_configselect($name, $title, $description, '20px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
 
     // Header Font Name.
     $name = 'theme_adaptable/fontheadername';

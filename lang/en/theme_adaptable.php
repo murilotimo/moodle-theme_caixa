@@ -609,6 +609,8 @@ $string['fontsubsetdesc'] = 'Select other character subset than latin to be appl
 $string['menufontsize'] = 'Font size for navigation bar';
 $string['menufontsizedesc'] = 'Set the size of the font used in the main navigation bar.';
 
+$string['menufontpadding'] = 'Padding for Navigation Items';
+$string['menufontpaddingdesc'] = 'Set the padding of the items in the main navigation bar.';
 
 // Buttons *********************************************************.
 $string['buttonsettings'] = 'Buttons';
