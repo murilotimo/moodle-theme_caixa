@@ -618,6 +618,8 @@ $string['fontsubsetdesc'] = 'Select other character subset than latin to be appl
 $string['menufontsize'] = 'Font size for navigation bar';
 $string['menufontsizedesc'] = 'Set the size of the font used in the main navigation bar.';
 
+$string['menufontpadding'] = 'Padding for Navigation Items';
+$string['menufontpaddingdesc'] = 'Set the padding of the items in the main navigation bar.';
 
 // Buttons *********************************************************.
 $string['buttonsettings'] = 'Buttons';
@@ -833,6 +835,27 @@ $string['alertaccessprofile'] = 'Add custom profile field restriction';
 
 $string['alertaccess'] = 'Alert Visibility';
 $string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "Add custom profile field restriction" you will need to add values for profile fields below.';
+
+// Social Wall Settings ********************************************.
+
+$string['socialwall'] = 'Social Wall';
+$string['socialwallheading'] = 'Social Wall Settings';
+$string['socialwalldesc'] = 'Customise the appearance of the Social Wall course format (if in use on your site)';
+
+$string['socialwallbackgroundcolor'] = 'Background color';
+$string['socialwallbackgroundcolordesc'] = 'The background color of a Socialwall course.';
+
+$string['socialwallsectionradius'] = 'Border radius';
+$string['socialwallsectionradiusdesc'] = 'The border radius of Social Wall sections.';
+
+$string['socialwallbordertopstyle'] = 'Border style';
+$string['socialwallbordertopstyledesc'] = 'The border style of Social Wall sections.';
+
+$string['socialwallborderwidth'] = 'Border width';
+$string['socialwallborderwidthdesc'] = 'The border width of Social Wall sections.';
+
+
+
 
 // Mobile **********************************************************.
 $string['layoutmobilesettings'] = 'Mobile Settings';
@@ -1129,3 +1152,7 @@ $string['genericsettingsdescription'] = 'Here you can find various settings to a
 
 $string['jssection'] = 'Javascript Section';
 $string['jssectiondesc'] = 'Add javascript code to the site.';
+
+
+
+

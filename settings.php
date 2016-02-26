@@ -54,6 +54,7 @@ if (is_siteadmin()) {
     include(dirname(__FILE__) . '/settings/layout.php');
     include(dirname(__FILE__) . '/settings/footer.php');
     include(dirname(__FILE__) . '/settings/mobile_settings.php');
+    include(dirname(__FILE__) . '/settings/social_wall.php');
     include(dirname(__FILE__) . '/settings/custom_css.php');
     include(dirname(__FILE__) . '/settings/analytics.php');
 }
