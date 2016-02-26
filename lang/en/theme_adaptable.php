@@ -846,8 +846,11 @@ $string['socialwallborderwidthdesc'] = 'The border width of Social Wall sections
 $string['socialwallbordercolor'] = 'Border color';
 $string['socialwallbordercolordesc'] = 'The border color of Social Wall sections.';
 
+$string['socialwallactionlinkcolor'] = 'Action link color';
+$string['socialwallactionlinkcolordesc'] = 'The color of action links in Social Wall.';
 
-
+$string['socialwallactionlinkhovercolor'] = 'Action link hover color';
+$string['socialwallactionlinkhovercolordesc'] = 'The color of action links when hovered in Social Wall.';
 
 
 // Mobile **********************************************************.
