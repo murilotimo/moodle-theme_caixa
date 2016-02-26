@@ -782,6 +782,9 @@ $string['alerttypedesc'] = 'Select the type of alert: info (blue), warning (yell
 $string['alerttext'] = 'Alert text';
 $string['alerttextdesc'] = 'Enter the text to display in the Alert box';
 
+$string['enablealerts'] = 'Enable / Disable Alerts';
+$string['enablealertsdesc'] = 'Enable / disable alerts on your site';
+
 $string['enablealertcoursepages'] = 'Enable Alert Box on Course Pages';
 $string['enablealertcoursepagesdesc'] = 'Turning this option on will display the top alert box in the courses pages';
 

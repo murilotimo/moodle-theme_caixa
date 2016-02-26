@@ -118,6 +118,10 @@ class theme_adaptable_core_renderer extends core_renderer {
             $alerttext = 'alerttext' . $i;
             $alertsession = 'alert' . $i;
 
+            if (empty($PAGE->theme->settings->enablealerts)) {
+                return '';
+            }
+
             if (isset($PAGE->theme->settings->$enablealert)) {
                 $enablealert = $PAGE->theme->settings->$enablealert;
             } else {
@@ -585,7 +589,7 @@ EOT;
             $PAGE->theme->settings->enabletickermy = 0;
         }
 
-        if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index")
+        if ((!empty($PAGE->theme->settings->enableticker) && $PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index")
             || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
             $msg = '';
             $tickercount = $PAGE->theme->settings->newstickercount;
@@ -753,7 +757,7 @@ EOT;
         $blockcount = 0;
         $style = '';
 
-        if (!$OUTPUT->get_footer_visibility()) {
+        if (!$this->get_footer_visibility()) {
             return '';
         }
 
@@ -938,8 +942,16 @@ EOT;
         $overridestrings = false;
         $overridetype = 'off';
 
-        $mysitesvisibility = $PAGE->theme->settings->enablemysites;
-        $mysitesmaxlength = $PAGE->theme->settings->mysitesmaxlength;
+        $mysitesvisibility = 'excludehidden';
+        if (!empty($PAGE->theme->settings->enablemysites)) {
+            $mysitesvisibility = $PAGE->theme->settings->enablemysites;
+        }
+
+        $mysitesmaxlength = '30';
+        if (!empty($PAGE->theme->settings->mysitesmaxlength)) {
+            $mysitesmaxlength = $PAGE->theme->settings->mysitesmaxlength;
+        }
+
         $mysitesmaxlengthhidden = $mysitesmaxlength - 3;
 
         if (isloggedin() && !isguestuser()) {
@@ -971,7 +983,9 @@ EOT;
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
 
-            if ($PAGE->theme->settings->mysitessortoverride != 'off' && !empty($PAGE->theme->settings->mysitessortoverridefield)) {
+            if (!empty($PAGE->theme->settings->mysitessortoverride) && $PAGE->theme->settings->mysitessortoverride != 'off'
+                && !empty($PAGE->theme->settings->mysitessortoverridefield)) {
+
                 $overridetype = $PAGE->theme->settings->mysitessortoverride;
                 $overridelist = $PAGE->theme->settings->mysitessortoverridefield;
                 if ($PAGE->theme->settings->mysitessortoverride == 'profilefields') {
@@ -1193,7 +1207,9 @@ EOT;
         }
 
         if ($visibility) {
-            if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
+            if (!empty($PAGE->theme->settings->topmenuscount) && !empty($PAGE->theme->settings->enablemenus)
+                && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
+
                 $topmenuscount = $PAGE->theme->settings->topmenuscount;
                 for ($i = 1; $i <= $topmenuscount; $i++) {
                     $menunumber = 'menu' . $i;
