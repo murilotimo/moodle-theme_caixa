@@ -33,20 +33,38 @@
     $ADMIN->add('theme_adaptable', $temp);
     
     // Socialwall background color.
-    $name = 'theme_adaptable/swbackgroundcolor';
-    $title = get_string('swbackgroundcolor', 'theme_adaptable');
-    $description = get_string('swbackgroundcolordesc', 'theme_adaptable');
+    $name = 'theme_adaptable/socialwallbackgroundcolor';
+    $title = get_string('socialwallbackgroundcolor', 'theme_adaptable');
+    $description = get_string('socialwallbackgroundcolordesc', 'theme_adaptable');
     $previewconfig = null;
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
     
-    // Social Wall section radius
-    $name = 'theme_adaptable/swsectionradius';
-    $title = get_string('swsectionradius', 'theme_adaptable');
-    $description = get_string('swsectionradiusdesc', 'theme_adaptable');
-    $radchoices = $from0to6;
-    $setting = new admin_setting_configselect($name, $title, $description, '5px', $radchoices);
+    // Social Wall section border radius
+    $name = 'theme_adaptable/socialwallsectionradius';
+    $title = get_string('socialwallsectionradius', 'theme_adaptable');
+    $description = get_string('socialwallsectionradiusdesc', 'theme_adaptable');
+    $radchoices = $from0to12;
+    $setting = new admin_setting_configselect($name, $title, $description, '6px', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Social Wall section border style
+    $name = 'theme_adaptable/socialwallbordertopstyle';
+    $title = get_string('socialwallbordertopstyle', 'theme_adaptable');
+    $description = get_string('socialwallbordertopstyledesc', 'theme_adaptable');
+    $radchoices = $borderstyles;
+    $setting = new admin_setting_configselect($name, $title, $description, 'solid', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
+    // Social Wall section border width
+    $name = 'theme_adaptable/socialwallborderwidth';
+    $title = get_string('socialwallborderwidth', 'theme_adaptable');
+    $description = get_string('socialwallborderwidthdesc', 'theme_adaptable');
+    $radchoices = $from0to12;
+    $setting = new admin_setting_configselect($name, $title, $description, '2px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
         
