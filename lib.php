@@ -117,6 +117,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:infoboxtextcolor]]' => '#ffffff',
         '[[setting:infoboxtextcolor2]]' => '#666666',
         '[[setting:menufontsize]]' => '14px',
+        '[[setting:menufontpadding]]' => '20px',
         '[[setting:topmenufontsize]]' => '14px',
         '[[setting:menubkcolor]]' => '#ffffff',
         '[[setting:menufontcolor]]' => '#444444',

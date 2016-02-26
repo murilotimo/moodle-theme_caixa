@@ -24,6 +24,11 @@
  *
  */
 
+// Cache definitions.
+
+$string['cachedef_userdata'] = 'A session cache used to store user specific data.';
+
+
 // General.
 
 $string['choosereadme'] = '
@@ -318,6 +323,10 @@ $string['moodledocsdesc'] = 'Display the Moodle Docs link in the footer.';
 
 
 // NavBar **********************************************************.
+
+$string['navbarcachetime'] = 'Navbar Cache Time';
+$string['navbarcachetimedesc'] = 'The number of minutes the navigation bar is cached for.';
+
 $string['navbarmenusettings'] = 'Navbar Tools Menu';
 $string['navbarmenusettingsheading'] = 'Customize the menu in the navigation bar. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['navbarmenusettingsdesc'] = 'Allows you to add a menu to the navigation bar.';
@@ -609,6 +618,8 @@ $string['fontsubsetdesc'] = 'Select other character subset than latin to be appl
 $string['menufontsize'] = 'Font size for navigation bar';
 $string['menufontsizedesc'] = 'Set the size of the font used in the main navigation bar.';
 
+$string['menufontpadding'] = 'Padding for Navigation Items';
+$string['menufontpaddingdesc'] = 'Set the padding of the items in the main navigation bar.';
 
 // Buttons *********************************************************.
 $string['buttonsettings'] = 'Buttons';

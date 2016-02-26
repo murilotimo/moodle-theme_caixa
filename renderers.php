@@ -46,7 +46,7 @@ class theme_adaptable_core_renderer extends core_renderer {
      * @return string
      */
     protected function render_user_picture(\user_picture $userpicture) {
-        if ($this->page->pagetype == 'mod-forum-discuss') {
+        if ($this->page->pagetype == 'mod-forum-discuss' || $this->page->pagetype == 'course-view-socialwall') {
             $userpicture->size = 1;
         }
         return parent::render_user_picture($userpicture);
@@ -941,6 +941,17 @@ EOT;
         $overridelist = false;
         $overridestrings = false;
         $overridetype = 'off';
+        $sessttl = 0;
+
+        if (!empty($PAGE->theme->settings->navbarcachetime) && $PAGE->theme->settings->navbarcachetime > 0) {
+            $sessttl = (time() + ($PAGE->theme->settings->navbarcachetime * 3600));
+        }
+
+        $cache = cache::make('theme_adaptable', 'userdata');
+
+        if ($sessttl > 0 && time() <= $cache->get('usernavbarttl')) {
+            return $cache->get('usernavbar');
+        }
 
         $mysitesvisibility = 'excludehidden';
         if (!empty($PAGE->theme->settings->enablemysites)) {
@@ -1127,6 +1138,12 @@ EOT;
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
         }
+
+        if ($sessttl > 0) {
+            $cache->set('usernavbarttl', $sessttl);
+            $cache->set('usernavbar', $this->render_custom_menu($menu));
+        }
+
         return $this->render_custom_menu($menu);
     }
 
