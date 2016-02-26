@@ -840,7 +840,7 @@ $string['alertaccessdesc'] = 'Set access restriction type for alert box visibili
 
 $string['socialwall'] = 'Social Wall';
 $string['socialwallheading'] = 'Social Wall Settings';
-$string['socialwalldesc'] = 'Customise the appearance of the Social Wall course format (if in use on your site)';
+$string['socialwalldesc'] = 'Customise the appearance of the <a href="https://moodle.org/plugins/format_socialwall">Social Wall Course Format</a> (if in use on your site)';
 
 $string['socialwallbackgroundcolor'] = 'Background color';
 $string['socialwallbackgroundcolordesc'] = 'The background color of a Socialwall course.';

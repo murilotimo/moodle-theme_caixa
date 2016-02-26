@@ -1,6 +1,9 @@
-Changes in version 1.1.2 (2016022502)
+Changes in version 1.1.3 (2016022601)
 -------------------------------------
 
+- Fix #60 Add support for Social Wall courese format
+- Fix #363 Add padding setting for main navigation items
+- Fix #362 Add caching for main navigation bar
 - Fix #355 Add link to font awesome icon list in social settings
 - Fix #315 Resolve bugs on theme select
 
