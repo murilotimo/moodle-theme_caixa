@@ -175,6 +175,8 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:enabletickermy]]' => true,
         '[[setting:tickerwidth]]' => '',
         '[[mysitesmaxlength]]' => '30',
+        '[[setting:swbackgroundcolor]]' => '#FFFFFF',
+        '[[setting:swsectionradius]]' => '5px',
     );
 
     // Get all the defined settings for the theme and replace defaults.
