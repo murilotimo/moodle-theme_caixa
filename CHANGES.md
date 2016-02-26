@@ -1,6 +1,12 @@
 Changes in version 1.1.2 (2016022502)
 -------------------------------------
 
+- Fix #355 Add link to font awesome icon list in social settings
+- Fix #315 Resolve bugs on theme select
+
+Changes in version 1.1.2 (2016022502)
+-------------------------------------
+
 - Fix #345 One full width marketing block not displayed
 - Fix #360 Remove es language files
 - Fix #361 Make My Course list settings more generic

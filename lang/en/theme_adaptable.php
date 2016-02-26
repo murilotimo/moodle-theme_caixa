@@ -1071,7 +1071,9 @@ For example:
 http://localhost/moodle/course/search.php|Search Moodle|fa-search
 http://facebook.com/|Facebook|fa-facebook-square
 http://twitter.com/|Twitter|fa-twitter-square
-http://instagram.com|Instagram|fa-instagram </pre>';
+http://instagram.com|Instagram|fa-instagram
+
+For reference you can find the full list of <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icons Here</a></pre>';
 
 $string['socialset'] = 'Add social icons and hide search bar';
 $string['socialsetdesc'] = 'Check this box to hide the search bar and add social icons in the same location instead.';
