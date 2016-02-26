@@ -380,9 +380,13 @@ $string['enablemysitesdesc'] = 'Display a dropdown with a users courses';
 $string['enablethiscoursedesc'] = 'Display a dropdown with activities from the current course';
 
 $string['mysitessortoverride'] = 'Enable My Courses Custom Sort';
-$string['mysitessortoverridedesc'] = 'Use custom profile fields to collapse innactive courses in sub menu';
-$string['mysitessortoverridefield'] = 'My Courses Custom Profile Field(s)';
-$string['mysitessortoverridefielddesc'] = 'Comma delimited list of profile fields to check for course short codes';
+$string['mysitessortoverridedesc'] = 'Use custom profile fields or generic strings (year etc) to collapse past courses in sub menu';
+$string['mysitessortoverridefield'] = 'My Courses Custom Profile Field(s) or Strings';
+$string['mysitessortoverridefielddesc'] = 'Comma delimited list of profile fields or strings to check for in course short codes';
+
+$string['mysitessortoverrideoff'] = 'Display all enrolled courses in single flat list';
+$string['mysitessortoverridestrings'] = 'Display enrolled containing strings in first list, others in sub menu';
+$string['mysitessortoverrideprofilefields'] = 'Display courses found in profile fileds in first list, others in sub menu';
 
 $string['mysitesmaxlength'] = 'My Courses Max Length';
 $string['mysitesmaxlengthdesc'] = 'Adjust the max length of coursenames in the My Courses dropdown to optimise for your font.';
@@ -778,6 +782,9 @@ $string['alerttypedesc'] = 'Select the type of alert: info (blue), warning (yell
 $string['alerttext'] = 'Alert text';
 $string['alerttextdesc'] = 'Enter the text to display in the Alert box';
 
+$string['enablealerts'] = 'Enable / Disable Alerts';
+$string['enablealertsdesc'] = 'Enable / disable alerts on your site';
+
 $string['enablealertcoursepages'] = 'Enable Alert Box on Course Pages';
 $string['enablealertcoursepagesdesc'] = 'Turning this option on will display the top alert box in the courses pages';
 
@@ -1077,7 +1084,9 @@ For example:
 http://localhost/moodle/course/search.php|Search Moodle|fa-search
 http://facebook.com/|Facebook|fa-facebook-square
 http://twitter.com/|Twitter|fa-twitter-square
-http://instagram.com|Instagram|fa-instagram </pre>';
+http://instagram.com|Instagram|fa-instagram
+
+For reference you can find the full list of <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icons Here</a></pre>';
 
 $string['socialset'] = 'Add social icons and hide search bar';
 $string['socialsetdesc'] = 'Check this box to hide the search bar and add social icons in the same location instead.';

@@ -118,6 +118,9 @@ class theme_adaptable_core_renderer extends core_renderer {
             $alerttext = 'alerttext' . $i;
             $alertsession = 'alert' . $i;
 
+            if (empty($PAGE->theme->settings->enablealerts)) {
+                return '';
+            }
 
             if (isset($PAGE->theme->settings->$enablealert)) {
                 $enablealert = $PAGE->theme->settings->$enablealert;
@@ -541,12 +544,12 @@ EOT;
     public function socialicons() {
         global $CFG, $PAGE;
 
-        if (!isset($PAGE->theme->settings->socialiconlist)){
+        if (!isset($PAGE->theme->settings->socialiconlist)) {
             return '';
         }
 
         $target = '_blank';
-        if (isset($PAGE->theme->settings->socialtarget)){
+        if (isset($PAGE->theme->settings->socialtarget)) {
             $target = $PAGE->theme->settings->socialtarget;
         }
 
@@ -555,7 +558,7 @@ EOT;
         $lines = explode("\n", $socialiconlist);
 
         foreach ($lines as $line) {
-            if (strstr($line, '|')){
+            if (strstr($line, '|')) {
                 $fields = explode('|', $line);
 
                 $val = '<a alt="' . $fields[1];
@@ -582,11 +585,11 @@ EOT;
         global $PAGE;
         $retval = '';
 
-        if (!isset($PAGE->theme->settings->enabletickermy)){
+        if (!isset($PAGE->theme->settings->enabletickermy)) {
             $PAGE->theme->settings->enabletickermy = 0;
         }
 
-        if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index")
+        if ((!empty($PAGE->theme->settings->enableticker) && $PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index")
             || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
             $msg = '';
             $tickercount = $PAGE->theme->settings->newstickercount;
@@ -715,7 +718,7 @@ EOT;
             $retval .= '</div>';
         }
         $retval .= '</div>';
-        if ($blockcount == 1 ) {
+        if ($blockcount == 0 ) {
             $retval = '';
         }
         return $retval;
@@ -754,7 +757,7 @@ EOT;
         $blockcount = 0;
         $style = '';
 
-        if (!$OUTPUT->get_footer_visibility()) {
+        if (!$this->get_footer_visibility()) {
             return '';
         }
 
@@ -855,7 +858,7 @@ EOT;
         global $PAGE;
         $retval = '';
 
-        if (!isset($PAGE->theme->settings->enabletickermy)){
+        if (!isset($PAGE->theme->settings->enabletickermy)) {
             $PAGE->theme->settings->enabletickermy = 0;
         }
 
@@ -936,9 +939,19 @@ EOT;
         $menu = new custom_menu();
         $access = true;
         $overridelist = false;
+        $overridestrings = false;
+        $overridetype = 'off';
 
-        $mysitesvisibility = $PAGE->theme->settings->enablemysites;
-        $mysitesmaxlength = $PAGE->theme->settings->mysitesmaxlength;
+        $mysitesvisibility = 'excludehidden';
+        if (!empty($PAGE->theme->settings->enablemysites)) {
+            $mysitesvisibility = $PAGE->theme->settings->enablemysites;
+        }
+
+        $mysitesmaxlength = '30';
+        if (!empty($PAGE->theme->settings->mysitesmaxlength)) {
+            $mysitesmaxlength = $PAGE->theme->settings->mysitesmaxlength;
+        }
+
         $mysitesmaxlengthhidden = $mysitesmaxlength - 3;
 
         if (isloggedin() && !isguestuser()) {
@@ -970,9 +983,17 @@ EOT;
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
 
-            if (!empty($PAGE->theme->settings->mysitessortoverride) && !empty($PAGE->theme->settings->mysitessortoverridefield)){
+            if (!empty($PAGE->theme->settings->mysitessortoverride) && $PAGE->theme->settings->mysitessortoverride != 'off'
+                && !empty($PAGE->theme->settings->mysitessortoverridefield)) {
+
+                $overridetype = $PAGE->theme->settings->mysitessortoverride;
                 $overridelist = $PAGE->theme->settings->mysitessortoverridefield;
-                $overridelist = $this->get_profile_field_contents($overridelist);
+                if ($PAGE->theme->settings->mysitessortoverride == 'profilefields') {
+                    $overridelist = $this->get_profile_field_contents($overridelist);
+                }
+                if ($PAGE->theme->settings->mysitessortoverride == 'strings') {
+                    $overridelist = explode(',', $overridelist);
+                }
             }
 
             if ($mysitesvisibility != 'disabled') {
@@ -990,20 +1011,21 @@ EOT;
                 if ($sortedcourses) {
                     foreach ($sortedcourses as $course) {
                         if ($course->visible) {
-                            if (!$overridelist){ // feature not in use, add to menu as normal
+                            if (!$overridelist) { // Feature not in use, add to menu as normal.
                                 $branch->add(mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
                                     new moodle_url('/course/view.php?id='.$course->id), '');
-                            }  else { // we want to check against array from profile field
-                                if (in_array($course->shortname, $overridelist)){
+                            } else { // We want to check against array from profile field.
+                                if (($overridetype == 'profilefields' && in_array($course->shortname, $overridelist))
+                                    || ($overridetype == 'strings' && $this->check_if_in_array_string($overridelist, $course->shortname))) {
                                     $icon = '';
                                     $branch->add($icon . mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
                                         new moodle_url('/course/view.php?id='.$course->id), '', 100);
-                                } else { // if not in array add to sub menu item
-                                    // add to sub menu
-                                    if (!isset($parent)){
+                                } else { // If not in array add to sub menu item.
+                                    if (!isset($parent)) {
                                         $icon = '<span class="fa fa-history"></span> ';
-                                        $parent = $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string(get_string('pastcourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
-                                            new moodle_url('#'), '', 1000);
+                                        $parent = $branch->add($icon . $trunc =
+                                            rtrim(mb_strimwidth(format_string(get_string('pastcourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
+                                                new moodle_url('#'), '', 1000);
                                     }
                                     $parent->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, $mysitesmaxlengthhidden)) . '...',
                                         new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
@@ -1016,9 +1038,10 @@ EOT;
                     $parent = null;
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
-                            if (empty($parent)){
-                                $parent = $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
-                                    new moodle_url('#'), '', 2000);
+                            if (empty($parent)) {
+                                $parent = $branch->add($icon . $trunc =
+                                    rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
+                                        new moodle_url('#'), '', 2000);
                             }
                             $parent->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, $mysitesmaxlengthhidden)) . '...',
                                 new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
@@ -1108,6 +1131,22 @@ EOT;
     }
 
     /**
+     * Returns true if needs from array found in haystack
+     * @param array $needles a list of strings to check
+     * @param string $haystack value which may contain string
+     * @return boolean
+     */
+    public function check_if_in_array_string($needles, $haystack) {
+        foreach ($needles as $needle) {
+            $needle = trim($needle);
+            if (strstr($haystack, $needle)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * Returns html to render tools menu in main navigation bar
      *
      * @return string
@@ -1119,7 +1158,7 @@ EOT;
         $access = true;
         $retval = '';
 
-        if (!isset($PAGE->theme->settings->toolsmenuscount)){
+        if (!isset($PAGE->theme->settings->toolsmenuscount)) {
             return '';
         }
         $toolsmenuscount = $PAGE->theme->settings->toolsmenuscount;
@@ -1168,7 +1207,9 @@ EOT;
         }
 
         if ($visibility) {
-            if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
+            if (!empty($PAGE->theme->settings->topmenuscount) && !empty($PAGE->theme->settings->enablemenus)
+                && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
+
                 $topmenuscount = $PAGE->theme->settings->topmenuscount;
                 for ($i = 1; $i <= $topmenuscount; $i++) {
                     $menunumber = 'menu' . $i;
@@ -1309,6 +1350,12 @@ EOT;
         return false;
     }
 
+    /**
+     * Returns contents of multiple comma delimited custom profile fields
+     *
+     * @param string $profilefields delimited list of fields
+     * @return array
+     */
     public function get_profile_field_contents($profilefields) {
         global $PAGE, $USER, $CFG;
         $timestamp = 'currentcoursestime';
@@ -1337,8 +1384,8 @@ EOT;
             $field = trim($field);
             $field = "profile_field_$field";
             if (isset($USER->$field)) {
-                $vals = explode(',',$USER->$field);
-                foreach ($vals as $value){
+                $vals = explode(',', $USER->$field);
+                foreach ($vals as $value) {
                     $retval[] = trim($value);
                 }
             }
