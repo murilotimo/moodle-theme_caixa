@@ -5,8 +5,9 @@
 /*Add padding, background, and word-wrap on all sections*/
 .format-socialwall .topics {
 	padding:2em;
-	border-radius: [[setting:swsectionradius]];
-	background: [[setting:swbackgroundcolor]];
+	-webkit-border-radius:[[setting:socialwallsectionradius]];
+	border-radius: [[setting:socialwallsectionradius]];
+	background: [[setting:socialwallbackgroundcolor]];
 	word-wrap: break-word;
 	font-family: [[setting:fontname]];
 }
@@ -20,10 +21,9 @@
 .format-socialwall .tl-post .tl-post-actionarea{
 	padding: 1em;
 	background: #ffffff;
-	border: .1em solid [[setting:fontcolor]];
-	-webkit-border-radius: [[setting:swsectionradius]];
-	-moz-border-radius: [[setting:swsectionradius]];
-	border-radius: [[setting:swsectionradius]];
+	border: [[setting:socialwallborderwidth]] [[setting:socialwallbordertopstyle]] [[setting:fontcolor]];
+	-webkit-border-radius: [[setting:socialwallsectionradius]];
+	border-radius: [[setting:socialwallsectionradius]];
 }
 
 /*Section 0-------------------------------------------------------------------------------*/
