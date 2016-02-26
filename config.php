@@ -27,7 +27,7 @@
 $THEME->name = 'adaptable';
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('adaptable', 'blocks', 'menu', 'course', 'slider', 'extras', 'zoom', 'button', 'custom','socialwall');
+$THEME->sheets = array('adaptable', 'blocks', 'menu', 'course', 'slider', 'extras', 'zoom', 'button', 'custom', 'socialwall');
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
 
