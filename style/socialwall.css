@@ -21,7 +21,7 @@
 .format-socialwall .tl-post .tl-post-actionarea{
 	padding: 1em;
 	background: #ffffff;
-	border: [[setting:socialwallborderwidth]] [[setting:socialwallbordertopstyle]] [[setting:fontcolor]];
+	border: [[setting:socialwallborderwidth]] [[setting:socialwallbordertopstyle]] [[setting:socialwallbordercolor]];
 	-webkit-border-radius: [[setting:socialwallsectionradius]];
 	border-radius: [[setting:socialwallsectionradius]];
 }

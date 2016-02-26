@@ -179,6 +179,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:socialwallsectionradius]]' => '6px',
         '[[setting:socialwallbordertopstyle]]' => 'solid',
         '[[setting:socialwallborderwidth]]' => '2px',
+        '[[setting:socialwallbordercolor]]' => '#009688',
     );
 
     // Get all the defined settings for the theme and replace defaults.

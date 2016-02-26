@@ -67,4 +67,14 @@
     $setting = new admin_setting_configselect($name, $title, $description, '2px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+    
+    // Social Wall section border color
+    $name = 'theme_adaptable/socialwallbordercolor';
+    $title = get_string('socialwallbordercolor', 'theme_adaptable');
+    $description = get_string('socialwallbordercolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+    
         

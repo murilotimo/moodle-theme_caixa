@@ -843,6 +843,10 @@ $string['socialwallbordertopstyledesc'] = 'The border style of Social Wall secti
 $string['socialwallborderwidth'] = 'Border width';
 $string['socialwallborderwidthdesc'] = 'The border width of Social Wall sections.';
 
+$string['socialwallbordercolor'] = 'Border color';
+$string['socialwallbordercolordesc'] = 'The border color of Social Wall sections.';
+
+
 
 
 
