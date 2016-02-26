@@ -176,7 +176,6 @@ div.fdescription.required{
 /*Make the color of action link grey*/
 .format-socialwall .tl-actionlink a {
 	color: rgb(127,127,127);
-	
 }
 
 /*Add space after like*/
@@ -184,16 +183,25 @@ div.fdescription.required{
 	padding-right: 3em;
 
 }
+
 /*Add space after likenomore and change color to light blue*/
 .format-socialwall .tl-actionlink a.likenomore{
 	padding-right: 3em;
 	color: rgb(88,144,255);
 }
 
-/*Underline actionlinks on hover over*/
+/*Change color on hover over to all action link from grey to light blue*/
 .format-socialwall .tl-actionlink a:hover {
-		text-decoration: underline;
+	color: rgb(88,144,255);
+	text-decoration:none;
 }
+
+/*Change color on hover over to like no more from light blue to grey*/
+.format-socialwall .tl-actionlink a.likenomore:hover{
+	color: rgb(127,127,127);
+	text-decoration:none;
+}
+
 
 /*Before the like action link-----------------------------------------------------*/
 
