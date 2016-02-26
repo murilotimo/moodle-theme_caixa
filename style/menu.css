@@ -49,6 +49,10 @@
 }
 
 .navbar .dropdown-toggle{
+    height: 38px;
+}
+
+.navbar .dropdown-submenu .dropdown-toggle{
     height: 18px;
 }
 
@@ -96,6 +100,7 @@
     min-width: 250px;
     top: 100%;
     z-index: 1000;
+    border-radius: 6px;
 }
 
 .nav .dropdown-menu .icon-time{
@@ -126,6 +131,7 @@
     left: 100%;
     margin-top: -6px;
     margin-left: -1px;
+    border-radius: 6px; !important
 }
 
 @media only screen and (min-width : 1068px) {
@@ -227,7 +233,6 @@ color: [[setting:headertextcolor]];
   .navbar .dropdown-toggle{
     height: 38px;
   }
-
 
   .nav-collapse .nav {
     width:100%;
