@@ -472,6 +472,9 @@ $string['blockbordercolordesc'] = 'Set the block border colour.';
 $string['blocklinkcolor'] = 'Block link colour';
 $string['blocklinkcolordesc'] = 'Set the blocks link colour';
 
+$string['blocklinkhovercolor'] = 'Block link hover colour';
+$string['blocklinkhovercolordesc'] = 'Set the blocks link hover colour';
+
 $string['blockregionbackground'] = 'Block Region Backround Color';
 $string['blockregionbackgrounddesc'] = 'Background color of container holding custom block layouts on the front page';
 

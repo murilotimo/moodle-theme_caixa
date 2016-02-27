@@ -54,6 +54,11 @@
     color: [[setting:blocklinkcolor]];
 }
 
+.block .content a, .block .content li a, .block .content td a {
+    color: [[setting:blocklinkhovercolor]];
+    text-decoration: none;
+}
+
 .block .header .block_action {
   margin: 0 0;
   margin-top: -5px;
