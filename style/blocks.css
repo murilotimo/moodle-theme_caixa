@@ -1,16 +1,14 @@
 .block {
-  border-top: 2px solid #ccc;
+  border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]];
+  border-color: [[setting:blockbordercolor]];
+  border-style: [[setting:blockheaderbordertopstyle]];
   padding: 0 0;
   box-shadow: none;
   background: transparent;
   border-radius: 0px;
-  border: 0px solid #e8eaeb;
 }
 
 .block .header {
-  border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]];
-  border-color: [[setting:blockbordercolor]];
-  border-style: [[setting:blockheaderbordertopstyle]];
   padding: 10px 10px;
   padding-right: 0px;
   background: [[setting:blockheaderbackgroundcolor]];
