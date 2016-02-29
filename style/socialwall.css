@@ -127,6 +127,7 @@
   padding-bottom: 0em;
 }
 
+/*Moves the required text to the right*/
 div.fdescription.required{
   float:right;
 }
