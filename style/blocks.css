@@ -17,9 +17,18 @@
   border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
 }
 
+.block-region-front .block {
+border: none;
+}
+
+.block-region-front .block .header {
+    border: none;
+}
+
 .block.hidden .header {
   border-bottom: 0px;
 }
+
 
 /* block titles */
 .block .header .title h2 {

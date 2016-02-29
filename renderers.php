@@ -668,7 +668,7 @@ EOT;
                         $retval .= '<span style="padding-left: 10px;"> ' . '' . '</span>';
                     }
 
-                    $retval .= $OUTPUT->blocks($block);
+                    $retval .= $OUTPUT->blocks($block, 'block-region-front');
                     $retval .= '</div>';
                 }
             }
