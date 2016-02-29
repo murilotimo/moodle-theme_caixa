@@ -40,12 +40,12 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, '#f
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-// Social Wall section border radius.
-$name = 'theme_adaptable/socialwallsectionradius';
-$title = get_string('socialwallsectionradius', 'theme_adaptable');
-$description = get_string('socialwallsectionradiusdesc', 'theme_adaptable');
-$radchoices = $from0to12;
-$setting = new admin_setting_configselect($name, $title, $description, '6px', $radchoices);
+// Social Wall section border color.
+$name = 'theme_adaptable/socialwallbordercolor';
+$title = get_string('socialwallbordercolor', 'theme_adaptable');
+$description = get_string('socialwallbordercolordesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
@@ -67,12 +67,12 @@ $setting = new admin_setting_configselect($name, $title, $description, '2px', $r
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-// Social Wall section border color.
-$name = 'theme_adaptable/socialwallbordercolor';
-$title = get_string('socialwallbordercolor', 'theme_adaptable');
-$description = get_string('socialwallbordercolordesc', 'theme_adaptable');
-$previewconfig = null;
-$setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
+// Social Wall section border radius.
+$name = 'theme_adaptable/socialwallsectionradius';
+$title = get_string('socialwallsectionradius', 'theme_adaptable');
+$description = get_string('socialwallsectionradiusdesc', 'theme_adaptable');
+$radchoices = $from0to12;
+$setting = new admin_setting_configselect($name, $title, $description, '6px', $radchoices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
