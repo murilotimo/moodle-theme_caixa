@@ -231,3 +231,12 @@ div.fdescription.required{
   position: relative;
   padding-right: .15em;
 }
+
+/*Profile picture------------------------------------------------------------------*/
+
+/*Make the profile picture circular*/
+.format-socialwall img.userpicture.defaultuserpic{
+    border: 0.25em solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0.05em 0.05em rgba(0,0,0,0.05);
+}
