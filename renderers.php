@@ -46,7 +46,7 @@ class theme_adaptable_core_renderer extends core_renderer {
      * @return string
      */
     protected function render_user_picture(\user_picture $userpicture) {
-        if ($this->page->pagetype == 'mod-forum-discuss' || $this->page->pagetype == 'course-view-socialwall') {
+        if ($this->page->pagetype == 'mod-forum-discuss' || $this->page->pagetype == 'course-view-socialwall' || $this->page->pagetype == 'site-index') {
             $userpicture->size = 1;
         }
         return parent::render_user_picture($userpicture);
