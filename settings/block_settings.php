@@ -151,7 +151,7 @@
     $title = get_string('blockmainbordertopstyle', 'theme_adaptable');
     $description = get_string('blockmainbordertopstyledesc', 'theme_adaptable');
     $radchoices = $borderstyles;
-    $setting = new admin_setting_configselect($name, $title, $description, 'solid', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, 'none', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

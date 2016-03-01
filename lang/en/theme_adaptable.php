@@ -526,8 +526,8 @@ $string['blockmainborderbottomdesc'] = 'Set the thickness of the bottom border o
 $string['blockheaderbordertopstyle'] = 'Block header border style';
 $string['blockheaderbordertopstyledesc'] = 'Set the style of the border of block headers';
 
-$string['blockmainbordertopstyle'] = 'Block header border style';
-$string['blockmainbordertopstyledesc'] = 'Set the style of the border of block headers';
+$string['blockmainbordertopstyle'] = 'Block Main border style';
+$string['blockmainbordertopstyledesc'] = 'Set the style of the border of block content area';
 
 $string['blockheadertopradius'] = 'Block header top radius';
 $string['blockheadertopradiusdesc'] = 'Set the radius of top header block to achieve a curved / rounded effect';

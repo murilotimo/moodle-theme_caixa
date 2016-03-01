@@ -991,13 +991,12 @@ $from100to900  = array(
     '900' => '900'
 );
 
-
-
 $borderstyles = array(
+    'none' => 'none',
     'solid' => 'solid',
     'dashed' => 'dashed',
     'dotted' => 'dotted',
-    'double' => 'double',
+    'double' => 'double'
 );
 
 $htmltarget = array(
