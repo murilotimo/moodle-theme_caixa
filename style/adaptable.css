@@ -811,6 +811,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 .form-item .form-setting, .form-item .form-description, .mform .fitem .felement, #page-mod-forum-search .c1, .mform .fdescription.required, .userprofile dl.list dd, .form-horizontal .controls {
 /*    margin-left: 0;*/
     margin-left: 260px;
+    word-break:break-all;
 }
 
 #profilepic img, .userpicture {
@@ -1366,6 +1367,7 @@ div.no-overflow, .yui3-datatable {
 
     .userprofile dl.list dd {
         margin-left: 120px !important;
+        word-break:break-all;
     }
 }
 
@@ -1588,6 +1590,11 @@ line-height: normal;
 
 .gradingform_guide.editor .addcomment, .gradingform_guide.editor .addcriterion {
     margin-top: 10px;
+}
+
+.gradingform_guide .criterion .description {
+    width: 100%;
+    padding: 10px 5px 10px 5px;
 }
 
 .footer-inner .pull-right {

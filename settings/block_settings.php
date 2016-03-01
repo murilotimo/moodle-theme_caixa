@@ -75,6 +75,14 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    $name = 'theme_adaptable/blocklinkhovercolor';
+    $title = get_string('blocklinkhovercolor', 'theme_adaptable');
+    $description = get_string('blocklinkhovercolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     $name = 'theme_adaptable/blockregionbackgroundcolor';
     $title = get_string('blockregionbackground', 'theme_adaptable');
     $description = get_string('blockregionbackgrounddesc', 'theme_adaptable');

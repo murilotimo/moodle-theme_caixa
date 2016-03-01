@@ -355,7 +355,7 @@ if (!isloggedin() || isguestuser()) {
         <li>
         <a href="<?php echo $CFG->wwwroot.'/login/logout.php?sesskey='.sesskey(); ?>"
             title="<?php echo get_string('logout') ?>">
-                <i class="fa fa-lock"></i>
+                <i class="fa fa-sign-out"></i>
                 <?php echo get_string('logout') ?>
         </a>
         </li>

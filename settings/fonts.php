@@ -67,7 +67,7 @@
     $name = 'theme_adaptable/fontweight';
     $title = get_string('fontweight', 'theme_adaptable');
     $description = get_string('fontweightdesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '400');
+    $setting = new admin_setting_configselect($name, $title, $description, 400, $from100to900);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -120,7 +120,7 @@
     $name = 'theme_adaptable/fontheaderweight';
     $title = get_string('fontheaderweight', 'theme_adaptable');
     $description = get_string('fontheaderweightdesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '400');
+    $setting = new admin_setting_configselect($name, $title, $description, 400, $from100to900);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -155,7 +155,7 @@
     $name = 'theme_adaptable/fonttitleweight';
     $title = get_string('fonttitleweight', 'theme_adaptable');
     $description = get_string('fonttitleweightdesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '400');
+    $setting = new admin_setting_configselect($name, $title, $description, 400, $from100to900);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

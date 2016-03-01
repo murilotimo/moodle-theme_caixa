@@ -1,16 +1,14 @@
 .block {
-  border-top: 2px solid #ccc;
+  border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]];
+  border-color: [[setting:blockbordercolor]];
+  border-style: [[setting:blockheaderbordertopstyle]];
   padding: 0 0;
   box-shadow: none;
   background: transparent;
   border-radius: 0px;
-  border: 0px solid #e8eaeb;
 }
 
 .block .header {
-  border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]];
-  border-color: [[setting:blockbordercolor]];
-  border-style: [[setting:blockheaderbordertopstyle]];
   padding: 10px 10px;
   padding-right: 0px;
   background: [[setting:blockheaderbackgroundcolor]];
@@ -19,9 +17,18 @@
   border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
 }
 
+.block-region-front .block {
+border: none;
+}
+
+.block-region-front .block .header {
+    border: none;
+}
+
 .block.hidden .header {
   border-bottom: 0px;
 }
+
 
 /* block titles */
 .block .header .title h2 {
@@ -52,6 +59,11 @@
 
 .block .content a, .block .content li a, .block .content td a {
     color: [[setting:blocklinkcolor]];
+}
+
+.block .content a, .block .content li a, .block .content td a {
+    color: [[setting:blocklinkhovercolor]];
+    text-decoration: none;
 }
 
 .block .header .block_action {

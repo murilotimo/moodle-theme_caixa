@@ -93,6 +93,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:marketblockbordercolor]]' => '#e8eaeb',
         '[[setting:marketblocksbackgroundcolor]]' => 'transparent',
         '[[setting:blocklinkcolor]]' => '#009688',
+        '[[setting:blocklinkhovercolor]]' => '#009688',
         '[[setting:blockheaderbordertop]]' => '1px',
         '[[setting:blockheaderborderleft]]' => '0px',
         '[[setting:blockheaderborderright]]' => '0px',
