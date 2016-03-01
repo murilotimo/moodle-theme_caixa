@@ -867,7 +867,7 @@ $string['socialwallheading'] = 'Social Wall Settings';
 $string['socialwalldesc'] = 'Customise the appearance of the <a href="https://moodle.org/plugins/format_socialwall">Social Wall Course Format</a> (if in use on your site)';
 
 $string['socialwallbackgroundcolor'] = 'Background color';
-$string['socialwallbackgroundcolordesc'] = 'The background color of a Socialwall course.';
+$string['socialwallbackgroundcolordesc'] = 'The background color of a Social Wall course.';
 
 $string['socialwallsectionradius'] = 'Border radius';
 $string['socialwallsectionradiusdesc'] = 'The border radius of Social Wall sections.';

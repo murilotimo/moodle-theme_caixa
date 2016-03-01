@@ -127,6 +127,7 @@
   padding-bottom: 0em;
 }
 
+/*Moves the required text to the right*/
 div.fdescription.required{
   float:right;
 }
@@ -197,12 +198,6 @@ div.fdescription.required{
   text-decoration:none;
 }
 
-/*Change color on hover over to like no more from light blue to grey*/
-.format-socialwall .tl-actionlink a.likenomore:hover{
-  text-decoration:none;
-}
-
-
 /*Before the like action link-----------------------------------------------------*/
 
 /*Add a hollow thumbs up icon before like*/
@@ -230,4 +225,13 @@ div.fdescription.required{
   content: "\f0e5";
   position: relative;
   padding-right: .15em;
+}
+
+/*Profile picture------------------------------------------------------------------*/
+
+/*Make the profile picture circular*/
+.format-socialwall img.userpicture {
+    border: 0.25em solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0.05em 0.05em rgba(0,0,0,0.05);
 }
