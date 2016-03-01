@@ -127,6 +127,7 @@
   padding-bottom: 0em;
 }
 
+/*Moves the required text to the right*/
 div.fdescription.required{
   float:right;
 }
@@ -196,12 +197,6 @@ div.fdescription.required{
   color:[[setting:socialwallactionlinkhovercolor]];
   text-decoration:none;
 }
-
-/*Change color on hover over to like no more from light blue to grey*/
-.format-socialwall .tl-actionlink a.likenomore:hover{
-  text-decoration:none;
-}
-
 
 /*Before the like action link-----------------------------------------------------*/
 
