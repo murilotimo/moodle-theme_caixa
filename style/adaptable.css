@@ -1592,6 +1592,11 @@ line-height: normal;
     margin-top: 10px;
 }
 
+.gradingform_guide .criterion .description {
+    width: 100%;
+    padding: 10px 5px 10px 5px;
+}
+
 .footer-inner .pull-right {
     text-align: right;
 }
