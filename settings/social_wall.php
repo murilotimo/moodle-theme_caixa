@@ -29,8 +29,6 @@ $temp = new admin_settingpage('theme_adaptable_socialwall', get_string('socialwa
 $temp->add(new admin_setting_heading('theme_adaptable_socialwall', get_string('socialwallheading', 'theme_adaptable'),
     format_text(get_string('socialwalldesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-$ADMIN->add('theme_adaptable', $temp);
-
 // Socialwall background color.
 $name = 'theme_adaptable/socialwallbackgroundcolor';
 $title = get_string('socialwallbackgroundcolor', 'theme_adaptable');
@@ -45,20 +43,7 @@ $name = 'theme_adaptable/socialwallbordercolor';
 $title = get_string('socialwallbordercolor', 'theme_adaptable');
 $description = get_string('socialwallbordercolordesc', 'theme_adaptable');
 $previewconfig = null;
-<<<<<<< HEAD
-$setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
-=======
 $setting = new admin_setting_configcolourpicker($name, $title, $description, '#B9B9B9', $previewconfig);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$temp->add($setting);
-
-// Social Wall section border radius.
-$name = 'theme_adaptable/socialwallsectionradius';
-$title = get_string('socialwallsectionradius', 'theme_adaptable');
-$description = get_string('socialwallsectionradiusdesc', 'theme_adaptable');
-$radchoices = $from0to12;
-$setting = new admin_setting_configselect($name, $title, $description, '6px', $radchoices);
->>>>>>> master
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
@@ -80,7 +65,6 @@ $setting = new admin_setting_configselect($name, $title, $description, '2px', $r
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-<<<<<<< HEAD
 // Social Wall section border radius.
 $name = 'theme_adaptable/socialwallsectionradius';
 $title = get_string('socialwallsectionradius', 'theme_adaptable');
@@ -90,8 +74,6 @@ $setting = new admin_setting_configselect($name, $title, $description, '6px', $r
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-=======
->>>>>>> master
 // Social Wall action link color.
 $name = 'theme_adaptable/socialwallactionlinkcolor';
 $title = get_string('socialwallactionlinkcolor', 'theme_adaptable');
@@ -101,7 +83,7 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, '#0
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-// Social Wall action link color.
+// Social Wall hover link color.
 $name = 'theme_adaptable/socialwallactionlinkhovercolor';
 $title = get_string('socialwallactionlinkhovercolor', 'theme_adaptable');
 $description = get_string('socialwallactionlinkhovercolordesc', 'theme_adaptable');
@@ -109,3 +91,5 @@ $previewconfig = null;
 $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
+
+$ADMIN->add('theme_adaptable', $temp);
