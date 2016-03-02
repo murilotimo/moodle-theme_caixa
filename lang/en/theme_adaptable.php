@@ -416,7 +416,8 @@ $string['mysitessortoverridefielddesc'] = 'Comma delimited list of profile field
 
 $string['mysitessortoverrideoff'] = 'Display all enrolled courses in single flat list';
 $string['mysitessortoverridestrings'] = 'Display enrolled containing strings in first list, others in sub menu';
-$string['mysitessortoverrideprofilefields'] = 'Display courses found in profile fileds in first list, others in sub menu';
+$string['mysitessortoverrideprofilefields'] = 'Display courses found in profile fields in first list, others in sub menu';
+$string['mysitessortoverrideprofilefieldscohort'] = 'Display courses found in profile fields + cohorts in first list, others in sub menu';
 
 $string['mysitesmaxlength'] = 'My Courses Max Length';
 $string['mysitesmaxlengthdesc'] = 'Adjust the max length of coursenames in the My Courses dropdown to optimise for your font.';

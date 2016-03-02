@@ -999,9 +999,15 @@ EOT;
 
                 $overridetype = $PAGE->theme->settings->mysitessortoverride;
                 $overridelist = $PAGE->theme->settings->mysitessortoverridefield;
-                if ($PAGE->theme->settings->mysitessortoverride == 'profilefields') {
+
+                if ($overridetype == 'profilefields' || $overridetype == 'profilefieldscohort') {
                     $overridelist = $this->get_profile_field_contents($overridelist);
+
+                    if ($overridetype == 'profilefieldscohort') {
+                        $overridelist = array_merge($this->get_cohort_enrollments(), $overridelist);
+                    }
                 }
+
                 if ($PAGE->theme->settings->mysitessortoverride == 'strings') {
                     $overridelist = explode(',', $overridelist);
                 }
@@ -1026,7 +1032,7 @@ EOT;
                                 $branch->add(mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
                                     new moodle_url('/course/view.php?id='.$course->id), '');
                             } else { // We want to check against array from profile field.
-                                if (($overridetype == 'profilefields' && in_array($course->shortname, $overridelist))
+                                if ((($overridetype == 'profilefields' || $overridetype == 'profilefieldscohort') && in_array($course->shortname, $overridelist))
                                     || ($overridetype == 'strings' && $this->check_if_in_array_string($overridelist, $course->shortname))) {
                                     $icon = '';
                                     $branch->add($icon . mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
@@ -1365,6 +1371,30 @@ EOT;
         $USER->theme_adaptable_menus[$menu] = false;
         $USER->theme_adaptable_menus[$menuttl] = $sessttl;
         return false;
+    }
+
+    /**
+     * Returns list of cohort enrollments
+     *
+     * @return array
+     */
+    public function get_cohort_enrollments() {
+        global $DB, $USER;
+        $userscohorts = $DB->get_records('cohort_members', array('userid' => $USER->id));
+        $courses = array();
+        if ($userscohorts) {
+            $cohortedcourseslist = $DB->get_records_sql('select '
+                    . 'courseid '
+                    . 'from {enrol} '
+                    . 'where enrol = "cohort" '
+                    . 'and customint1 in (?)', array_keys($userscohorts));
+            $cohortedcourses = $DB->get_records_list('course', 'id', array_keys($cohortedcourseslist), null, 'shortname');
+            foreach ($cohortedcourses as $course) {
+                $courses[] = $course->shortname;
+            }
+            return($courses);
+        }
+
     }
 
     /**

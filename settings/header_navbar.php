@@ -95,6 +95,7 @@ $choices = array(
     'off' => get_string('mysitessortoverrideoff', 'theme_adaptable'),
     'strings' => get_string('mysitessortoverridestrings', 'theme_adaptable'),
     'profilefields' => get_string('mysitessortoverrideprofilefields', 'theme_adaptable'),
+    'profilefieldscohort' => get_string('mysitessortoverrideprofilefieldscohort', 'theme_adaptable')
 );
 $setting = new admin_setting_configselect($name, $title, $description, 'off', $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
