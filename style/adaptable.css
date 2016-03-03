@@ -297,7 +297,7 @@ div.signuppanel h2 {
 
 .socialbox a {
     color: [[setting:headertextcolor2]];
-    font-size: [[setting:socialsize]]px;
+    font-size: [[setting:socialsize]];
     padding-left: 10px;
 }
 
@@ -1001,9 +1001,9 @@ input[type="radio"], input[type="checkbox"] {
         width: auto;
     }
 
-    .socialbox a {
+    .socialbox, .socialbox a {
         color: [[setting:headertextcolor2]];
-        font-size: [[setting:socialsizemobile]]px;
+        font-size: [[setting:socialsizemobile]];
         padding-left: 10px;
     }
 

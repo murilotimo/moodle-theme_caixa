@@ -80,15 +80,14 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-
     $name = 'theme_adaptable/hidecoursetitlemobile';
     $title = get_string('hidecoursetitlemobile', 'theme_adaptable');
     $description = get_string('hidecoursetitlemobiledesc', 'theme_adaptable');
     $radchoices = array(
-        ', #coursetitle' => get_string('hide'),
+        ', #coursetitle, #titlecontainer' => get_string('hide'),
         '' => get_string('show'),
     );
-    $setting = new admin_setting_configselect($name, $title, $description, ', #coursetitle', $radchoices);
+    $setting = new admin_setting_configselect($name, $title, $description, ', #coursetitle, #titlecontainer', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

@@ -34,14 +34,14 @@
     $name = 'theme_adaptable/socialsize';
     $title = get_string('socialsize', 'theme_adaptable');
     $description = get_string('socialsize', 'theme_adaptable');
-    $setting = new admin_setting_configselect($name, $title, $description, 32, $from14to42px);
+    $setting = new admin_setting_configselect($name, $title, $description, '32px', $from14to42px);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     $name = 'theme_adaptable/socialsizemobile';
     $title = get_string('socialsizemobile', 'theme_adaptable');
     $description = get_string('socialsizemobile', 'theme_adaptable');
-    $setting = new admin_setting_configselect($name, $title, $description, '14', $from14to42px);
+    $setting = new admin_setting_configselect($name, $title, $description, '22px', $from14to42px);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

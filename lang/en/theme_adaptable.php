@@ -945,7 +945,7 @@ $string['hidealertsmobiledesc'] = 'Hide will remove alerts on mobile devices';
 $string['hidesocialmobile'] = 'Hide Social Icons (if in use) on mobile';
 $string['hidesocialmobiledesc'] = 'Hide will remove social icons on mobile devices';
 
-$string['hidecoursetitlemobile'] = 'Hide Course Title on mobile';
+$string['hidecoursetitlemobile'] = 'Hide Course / Site Title on mobile';
 $string['hidecoursetitlemobiledesc'] = 'Hide the course title AND site title on mobile devices';
 
 $string['socialboxpaddingtopmobile'] = 'Set top padding of social container on mobile';
