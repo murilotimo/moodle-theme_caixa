@@ -533,7 +533,7 @@ EOT;
         if ($classes == 'redirectmessage') {
             $type = 'alert alert-block alert-info';
         }
-        return "<div class=\"$type\">$message</div>";
+        return '<div class="' . $type . '">' . $message . '</div>';
     }
 
     /**
