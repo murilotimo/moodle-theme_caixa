@@ -379,7 +379,7 @@ echo $OUTPUT->get_top_menus();
 </div>
 <div id="page-header" class="clearfix container">
 
-<?php echo $OUTPUT-> get_logo_title(); ?>
+<?php echo $OUTPUT->get_logo_title(); ?>
 
 <?php
 if ($PAGE->theme->settings->socialorsearch == 'social') {

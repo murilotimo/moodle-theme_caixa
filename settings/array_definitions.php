@@ -842,7 +842,7 @@ for ($i = 35; $i < 51; $i++) {
 }
 
 $from0to60inc5 = array();
-for ($i = 0; $i < 61; $i+= 5) {
+for ($i = 0; $i < 61; $i += 5) {
     $from0to60inc5[$i] = $i;
 }
 

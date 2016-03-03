@@ -1231,7 +1231,7 @@ EOT;
 
         if ($display == 'custom') {
             $header = theme_adaptable_remove_site_fullname($PAGE->heading);
-            if (empty($header)){
+            if (empty($header)) {
                 $header = $PAGE->theme->settings->sitetitletext;
             }
             $PAGE->set_heading($header);
