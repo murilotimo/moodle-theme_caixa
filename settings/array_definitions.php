@@ -784,12 +784,12 @@ for ($i = 10; $i < 17; $i++) {
 
 $from0to20px = array();
 for ($i = 0; $i < 21; $i += 5) {
-    $from0to20[$i . 'px'] = $i . 'px';
+    $from0to20px[$i . 'px'] = $i . 'px';
 }
 
 $from10to20px = array();
 for ($i = 10; $i < 21; $i += 5) {
-    $from10to20[$i . 'px'] = $i . 'px';
+    $from10to20px[$i . 'px'] = $i . 'px';
 }
 
 $from10to30px = array();
