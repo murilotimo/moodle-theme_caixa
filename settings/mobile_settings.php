@@ -75,7 +75,7 @@
     $name = 'theme_adaptable/socialboxpaddingbottommobile';
     $title = get_string('socialboxpaddingbottommobile', 'theme_adaptable');
     $description = get_string('socialboxpaddingbottommobile', 'theme_adaptable');
-    $choices = $from0to12;
+    $choices = $from0to12px;
     $setting = new admin_setting_configselect($name, $title, $description, '10px', $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);

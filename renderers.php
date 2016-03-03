@@ -1215,6 +1215,44 @@ EOT;
     }
 
     /**
+     * Returns html to render logo / title area
+     *
+     * @return string
+     */
+    public function get_logo_title() {
+        global $PAGE, $COURSE, $CFG;
+        $retval = '';
+        $display = $PAGE->theme->settings->sitetitle;
+
+        $div = '<div id="titlecontainer" class="pull-left">';
+        if ($COURSE->id > 1) {
+            $div = '<div id="coursetitle" class="pull-left">';
+        }
+
+        if ($display == 'custom') {
+            $header = theme_adaptable_remove_site_fullname($PAGE->heading);
+            if (empty($header)){
+                $header = $PAGE->theme->settings->sitetitletext;
+            }
+            $PAGE->set_heading($header);
+        }
+
+        if (!empty($PAGE->theme->settings->logo)) {
+            $retval .= '<div id="logocontainer">';
+            $retval .= "<a href='$CFG->wwwroot'>";
+            $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
+            $retval .= '</a></div>';
+        }
+
+        if ($display != 'disabled') {
+            $retval .= $div;
+            $retval .= '<span>' . $PAGE->heading . '</span>';
+            $retval .= '</div>';
+        }
+        return $retval;
+    }
+
+    /**
      * Returns html to render top menu items
      *
      * @return string
