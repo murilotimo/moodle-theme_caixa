@@ -89,7 +89,9 @@
 }
 
 .section-handle {
-    margin: 0px;
+    margin: 0;
+    position: relative;
+    top: 12px;
 }
 
 .course-content ul.topics li.section .left {
