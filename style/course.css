@@ -113,6 +113,15 @@ h3.sectionname {
     padding-left: 23px;
 }
 
+/* Alter nav on single-section for better onetopic course format support */
+.single-section .nav {
+    margin-bottom: 0px;
+}
+
+.single-section .nav-tabs {
+    border-bottom: none;
+}
+
 .path-course-view .completionprogress {
     color: #666;
     float: none;

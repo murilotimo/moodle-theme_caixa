@@ -1194,14 +1194,6 @@ a.carousel-control {
   cursor: default;
 }
 
-/* Alter nav on single-section for better onetopic course format support */
-.single-section .nav {
-    margin-bottom: 0px;
-}
-
-.single-section .nav-tabs {
-    border-bottom: none;
-}
 /* Use the width of the content in modal to set size, instead of predefined sizes */
 
 .modal-backdrop {
