@@ -345,14 +345,6 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/sectionheadingcolor';
-    $title = get_string('sectionheadingcolor', 'theme_adaptable');
-    $description = get_string('sectionheadingcolordesc', 'theme_adaptable');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#5f588a', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     // Footer colors heading.
     $name = 'theme_adaptable/settingsfootercolors';
     $heading = get_string('settingsfootercolors', 'theme_adaptable');

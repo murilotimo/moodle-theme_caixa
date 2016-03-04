@@ -109,6 +109,15 @@ h3.sectionname {
     margin-bottom: 20px;
     padding: 3px 10px;
     border-bottom: [[setting:coursesectionheaderborderstyle]] [[setting:coursesectionheaderbordercolor]] [[setting:coursesectionheaderborderwidth]];
+    -webkit-border-radius: [[setting:coursesectionheaderborderradiustop]];
+    -webkit-border-bottom-right-radius: [[setting:coursesectionheaderborderradiusbottom]];
+    -webkit-border-bottom-left-radius: [[setting:coursesectionheaderborderradiusbottom]];
+    -moz-border-radius: [[setting:coursesectionheaderborderradiustop]];
+    -moz-border-radius-bottomright: [[setting:coursesectionheaderborderradiusbottom]];
+    -moz-border-radius-bottomleft: [[setting:coursesectionheaderborderradiusbottom]];
+    border-radius: [[setting:coursesectionheaderborderradiustop]];
+    border-bottom-right-radius: [[setting:coursesectionheaderborderradiusbottom]];
+    border-bottom-left-radius: [[setting:coursesectionheaderborderradiusbottom]];
 }
 
 .section .activity .mod-indent-outer {
@@ -131,10 +140,14 @@ h3.sectionname {
     padding: 0 0 10px;
 }
 
+.path-course-view .section .summary {
+    padding: 10px 0px 0px 20px;
+}
+
 #gridshadebox_content .content .summary, #gridshadebox_content .content ul.section {padding: 0 20px;}
 
 .course-content .current  .content .sectionname {
-  background: [[setting:currentcolor]];
+    background: [[setting:currentcolor]];
 }
 
 #page .covtiles.panel {
