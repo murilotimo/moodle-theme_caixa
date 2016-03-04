@@ -46,6 +46,7 @@ if (is_siteadmin()) {
     include(dirname(__FILE__) . '/settings/header_navbar_menu.php');
     include(dirname(__FILE__) . '/settings/block_settings.php');
     include(dirname(__FILE__) . '/settings/block_regions.php');
+    include(dirname(__FILE__) . '/settings/course.php');
     include(dirname(__FILE__) . '/settings/marketing_blocks.php');
     include(dirname(__FILE__) . '/settings/frontpage_courses.php');
     include(dirname(__FILE__) . '/settings/frontpage_ticker.php');

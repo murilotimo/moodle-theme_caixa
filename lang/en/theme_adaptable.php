@@ -548,9 +548,6 @@ $string['marketblockbordercolordesc'] = 'Set the marketing block border line col
 $string['marketblocksbackgroundcolor'] = 'Marketing blocks region background colour';
 $string['marketblocksbackgroundcolordesc'] = 'Set the Marketing blocks region background colour.';
 
-$string['currentcolor'] = 'Current Section Highlight colour';
-$string['currentcolordesc'] = 'Set the colour for the Current Section Highlight';
-
 $string['sectionheadingcolor'] = 'Section Heading Text Colour';
 $string['sectionheadingcolordesc'] = 'Set the colour for section headings text';
 
@@ -598,6 +595,46 @@ $string['mobilemenubkcolordesc'] = 'Set the Main Menu background colour on mobil
 $string['mobilemenufontcolor'] = 'Mobile Menu font colour';
 $string['mobilemenufontcolordesc'] = 'Set a Main Menu font colour on mobile devices (collapsed)';
 
+// Course *********************************************************.
+$string['coursesettings'] = 'Course Sections';
+$string['coursesettingsheading'] = 'Course Section Settings';
+$string['coursedesc'] = 'Alter settings for display of course sections such as section header background colors and borders.';
+
+$string['coursesectionheaderbg'] = 'Course Section Header Background';
+$string['coursesectionheaderbgdesc'] = 'Set the background color of the course section headers';
+
+$string['currentcolor'] = 'Current Course Section Highlight Colour';
+$string['currentcolordesc'] = 'Set the colour for the current course section highlight';
+
+$string['coursesectionheaderborderstyle'] = 'Course Section Header Border Style';
+$string['coursesectionheaderborderstyledesc'] = 'Set the style of the course section header border
+    (only bottom border is used as outer container also has border)';
+
+$string['coursesectionheaderbordercolor'] = 'Course Section Header Border Color';
+$string['coursesectionheaderbordercolordesc'] = 'Set the color of the course section header border
+    (only bottom border is used as outer container also has border)';
+
+$string['coursesectionheaderborderwidth'] = 'Course Section Header Border Width';
+$string['coursesectionheaderborderwidthdesc'] = 'Set the width of the course section header border
+    (only bottom border is used as outer container also has border)';
+
+$string['coursesectionheaderborderradiustop'] = 'Course Header Section Border Radius Top';
+$string['coursesectionheaderborderradiustopdesc'] = 'Set the top radius of course section header borders (rounded corners)';
+
+$string['coursesectionheaderborderradiusbottom'] = 'Course Header Section Border Radius Bottom';
+$string['coursesectionheaderborderradiusbottomdesc'] = 'Set the bottom radius of course section header borders (rounded corners)';
+
+$string['coursesectionborderstyle'] = 'Course section border style';
+$string['coursesectionborderstyledesc'] = 'Set the border style of course sections';
+
+$string['coursesectionborderwidth'] = 'Course Section Border Width';
+$string['coursesectionborderwidthdesc'] = 'Set the width of course section borders';
+
+$string['coursesectionbordercolor'] = 'Course Section Border Color';
+$string['coursesectionbordercolordesc'] = 'Set the border color of course sections';
+
+$string['coursesectionborderradius'] = 'Course Section Border Radius';
+$string['coursesectionborderradiusdesc'] = 'Set the radius of course section borders (rounded corners)';
 
 // Fonts ***********************************************************.
 $string['fontsettings'] = 'Fonts';

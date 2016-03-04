@@ -31,7 +31,8 @@
 }
 
 #page .course-content ul li.section.main {
-  border: 1px solid #e8eaeb;
+  border: [[setting:coursesectionborderwidth]] [[setting:coursesectionborderstyle]] [[setting:coursesectionbordercolor]];
+  border-radius: [[setting:coursesectionborderradius]];
   margin-bottom: 20px;
 }
 
@@ -102,11 +103,12 @@
 }
 
 h3.sectionname {
-    background: #f3f3f3;
+    background: [[setting:coursesectionheaderbg]];
     color: [[setting:sectionheadingcolor]];
     font-size: 20px;
     margin-bottom: 20px;
     padding: 3px 10px;
+    border-bottom: [[setting:coursesectionheaderborderstyle]] [[setting:coursesectionheaderbordercolor]] [[setting:coursesectionheaderborderwidth]];
 }
 
 .section .activity .mod-indent-outer {
