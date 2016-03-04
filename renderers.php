@@ -823,25 +823,24 @@ EOT;
             $sliderimage = 'p' . $i;
             $sliderurl = 'p' . $i . 'url';
             $slidercaption = 'p' . $i .'cap';
+            $closelink = '';
             if (!empty($PAGE->theme->settings->$sliderimage)) {
-                $retval .= '<li><a href="';
+                $retval .= '<li>';
 
                 if (!empty($PAGE->theme->settings->$sliderurl)) {
-                    $retval .= $PAGE->theme->settings->$sliderurl;
-                } else {
-                    $retval .= '#';
+                    $retval .= '<a href="' . $PAGE->theme->settings->$sliderurl . '">';
+                    $closelink = '</a>';
                 }
 
-                $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage)
+                $retval .= '<img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage)
                     . '" alt="' . $sliderimage . '"/>';
 
                 if (!empty($PAGE->theme->settings->$slidercaption)) {
                     $retval .= '<div class="flex-caption">';
                     $retval .= $OUTPUT->get_setting($slidercaption, 'format_html');
-                    $retval .= '</div></a></li>';
-                } else {
-                    $retval .= '</a></li>';
+                    $retval .= '</div>';
                 }
+                $retval .= $closelink . '</li>';
             }
         }
         $retval .= '</ul></div></div>';
