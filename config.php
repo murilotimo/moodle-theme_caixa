@@ -37,7 +37,7 @@ if ($PAGE->pagetype == 'site-index') {
 $THEME->name = 'adaptable';
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('adaptable', 'blocks', 'menu', 'course', 'slider', 'extras', 'zoom', 'button', 'custom', 'socialwall');
+$THEME->sheets = array('adaptable', 'blocks', 'menu', 'course', 'slider', 'extras', 'zoom', 'button', 'socialwall',  'custom');
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
 
