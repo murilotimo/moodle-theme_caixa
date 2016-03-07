@@ -1798,11 +1798,15 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $classes .= ' collapsed';
         }
         // New to show blocks John.
+
+
         $spanclass = "span4";
         $content .= html_writer::start_tag('div',
                                             array('class' => ' '.$spanclass.' panel panel-default coursebox '.$additionalcss));
         $urlb = new moodle_url('/course/view.php', array('id' => $course->id));
+
         $content .= "<a href='$urlb'>";
+
         $coursename = $chelper->get_course_formatted_name($course);
         $content .= html_writer::start_tag('div', array('class' => 'panel-heading'));
         if ($type == 1) {
@@ -1824,6 +1828,10 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         }
 
         $content .= html_writer::end_tag('div'); // End .panel-heading.
+
+        $content .= html_writer::end_tag('a'); // End a
+
+
 
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $content .= html_writer::start_tag('div', array('id' => 'coursecollapse' . $course->id,
@@ -1855,10 +1863,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $content .= html_writer::end_tag('div'); // End .collapse.
         }
 
-        $content .= '</a>'; // End a
-
         $content .= html_writer::end_tag('div'); // End .panel.
-
 
         return $content;
     }
@@ -1950,7 +1955,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $content .= html_writer::start_tag('div', array('class' => 'coursebox-content'));
             $coursename = $chelper->get_course_formatted_name($course);
             $content .= html_writer::tag('h3', html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
-                    $coursename, array('class' => $course->visible ? 'visible' : 'dimmed')));
+                    $coursename, array('class' => $course->visible ? '' : 'dimmed')));
         }
         $content .= html_writer::start_tag('div', array('class' => 'summary'));
         if (ISSET($coursename)) {
