@@ -24,6 +24,10 @@ a.back-to-top {
     margin-bottom: 20px;
 }
 
+.gradereport-grader-table img {
+    max-width: none;
+}
+
 .singleselect {
     display: inline-block;
     max-width: 100%;
