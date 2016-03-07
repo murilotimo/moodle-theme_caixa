@@ -783,12 +783,12 @@ for ($i = 10; $i < 17; $i++) {
 }
 
 $from0to20px = array();
-for ($i = 0; $i < 21; $i += 5) {
+for ($i = 0; $i < 21; $i ++) {
     $from0to20px[$i . 'px'] = $i . 'px';
 }
 
 $from10to20px = array();
-for ($i = 10; $i < 21; $i += 5) {
+for ($i = 10; $i < 21; $i++) {
     $from10to20px[$i . 'px'] = $i . 'px';
 }
 
@@ -836,9 +836,9 @@ $from95to100percent = array(
     '100%' => '100%',
 );
 
-$from35to50percent = array();
-for ($i = 35; $i < 51; $i++) {
-    $from35to50percent[$i . '%'] = $i . '%';
+$from35to80percent = array();
+for ($i = 35; $i < 81; $i++) {
+    $from35to80percent[$i . '%'] = $i . '%';
 }
 
 $from0to60inc5 = array();

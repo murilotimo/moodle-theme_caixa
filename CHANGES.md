@@ -1,3 +1,30 @@
+Changes in version 1.2.0 (2016030700)
+-------------------------------------
+
+- Fix #390 Header menu font-size increment is too rough
+- Fix #375 Prevent Frontpage Block Regions appearing in block settings sitewide
+- Fix #354 Grader Report: Icons in webkit overlapping.
+- Fix #381 Prevent slider being wrapped in <a tag where no slider URL is given
+- Fix #384 Add settings page for course layout
+- Fix #184 Topic title header width changes when editing On
+- Fix #383 Correct display of section headings in courses
+- Fix #382 Improve support for onetopic course format
+- Fix #281 Correct width of forum display dropdown select
+- Fix #287 Remove duplicate check on logo
+- Fix #376 Multiple changes to improve site titles and header settings.
+- Fix #377 Add options for display of cohort enrolments in list of my courses
+- Fix #375 Prevent Frontpage Block Regions appearing in block settings sitewide
+- Fix #373 Help link target not being applied
+- Fix #340 Correct / improve block style settings
+- Fix #372 Improve styling of saved comments in marking guide
+- Fix #367 Change logout icon to fa-sign-out making consistent with core Moodle.
+- Fix #298 Use larger profile image on front page to improve view of forum posts.
+- Fix #368 Adding class for frontpage blocks which can bow be targeted independently of the side blocks
+- Fix #366 Missed region-frnt-market-a string when editing an HTML block
+- Fix #365 Add dropdown to Font Weight
+- Fix #343 Link hover colour in blocks
+- Fix #358 Set enable custom block region on front page to off by default
+
 Changes in version 1.1.3 (2016022601)
 -------------------------------------
 
