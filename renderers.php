@@ -1490,7 +1490,7 @@ EOT;
      *
      * @return string
      */
-    public function parse_custom_menu($menu, $label, $class = ' </i>', $close = '') {
+    public function parse_custom_menu($menu, $label, $class = '', $close = '') {
         $custommenuitems = $class . $label. $close . "|#|".$label."\n";
         $arr = explode("\n", $menu);
 
