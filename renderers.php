@@ -1855,7 +1855,11 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $content .= html_writer::end_tag('div'); // End .collapse.
         }
 
+        $content .= '</a>'; // End a
+
         $content .= html_writer::end_tag('div'); // End .panel.
+
+
         return $content;
     }
 
@@ -1946,7 +1950,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $content .= html_writer::start_tag('div', array('class' => 'coursebox-content'));
             $coursename = $chelper->get_course_formatted_name($course);
             $content .= html_writer::tag('h3', html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
-                    $coursename, array('class' => $course->visible ? '' : 'dimmed', 'title' => $coursename)));
+                    $coursename, array('class' => $course->visible ? 'visible' : 'dimmed')));
         }
         $content .= html_writer::start_tag('div', array('class' => 'summary'));
         if (ISSET($coursename)) {

@@ -158,6 +158,7 @@ $THEME->layouts = array(
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
     ),
+
     // The pagelayout used for safebrowser and securewindow.
     'secure' => array(
         'file' => 'secure.php',
