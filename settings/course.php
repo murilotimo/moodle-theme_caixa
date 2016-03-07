@@ -37,7 +37,7 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Course section heading text color
+    // Course section heading text color.
     $name = 'theme_adaptable/sectionheadingcolor';
     $title = get_string('sectionheadingcolor', 'theme_adaptable');
     $description = get_string('sectionheadingcolordesc', 'theme_adaptable');
