@@ -58,13 +58,17 @@ border: none;
   border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
 }
 
-.block .content a, .block .content li a, .block .content td a {
+.block .content a,
+.block .content li a,
+.block .content td a {
     color: [[setting:blocklinkcolor]];
 }
 
-.block .content a, .block .content li a, .block .content td a {
+.block .content a:hover,
+.block .content li a:hover,
+.block .content td a:hover {
     color: [[setting:blocklinkhovercolor]];
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .block .header .block_action {

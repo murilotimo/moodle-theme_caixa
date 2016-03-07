@@ -354,9 +354,6 @@ a.usermendrop {
     padding-right: 3px;
 }
 
-.badge {
-    background-color: #ff0000;
-}
 
 .slidewrap {
     margin-top: [[setting:slidermargintop]];
@@ -881,7 +878,7 @@ input[type="radio"], input[type="checkbox"] {
 #region-main {
   margin-top: 0px;
   background: [[setting:regionmaincolor]];
-  padding: 4px;
+  padding: 0px;
 }
 
 #region-main #coursesearch .btn {
@@ -1469,6 +1466,7 @@ div.questionbankwindow.block {
   text-align: center;
 }
 
+.coursebox.hover .summary b,
 .coursebox.hover .summary {
   min-height: 50px;
   overflow: auto;
