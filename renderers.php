@@ -1797,8 +1797,6 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $classes .= ' collapsed';
         }
-        // New to show blocks John.
-
 
         $spanclass = "span4";
         $content .= html_writer::start_tag('div',
@@ -1828,10 +1826,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         }
 
         $content .= html_writer::end_tag('div'); // End .panel-heading.
-
-        $content .= html_writer::end_tag('a'); // End a
-
-
+        $content .= html_writer::end_tag('a'); // End a.
 
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $content .= html_writer::start_tag('div', array('id' => 'coursecollapse' . $course->id,
