@@ -1,6 +1,9 @@
 Changes in version 1.2.0 (2016030700)
 -------------------------------------
 
+- Fix #393 Fix HTML Validation errors on closing menu div
+- Fix #392 Remove unwanted </i> tag from top menus
+- Fix #389 Coursebox non closed <a> tag breaks HTML validation
 - Fix #390 Header menu font-size increment is too rough
 - Fix #375 Prevent Frontpage Block Regions appearing in block settings sitewide
 - Fix #354 Grader Report: Icons in webkit overlapping.

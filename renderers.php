@@ -1615,7 +1615,7 @@ EOT;
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
-        $content = $wrappre . $content . $wrappost . '</ul>';
+        $content = $wrappre . $content . '</ul>' . $wrappost;
         return $content;
     }
 
