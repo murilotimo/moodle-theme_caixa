@@ -763,6 +763,9 @@ $string['sitetitlepaddingtopdesc'] = 'Set padding above site title to adjust pos
 $string['sitetitlepaddingleft'] = 'Site Title Padding Left';
 $string['sitetitlepaddingleftdesc'] = 'Set padding left of site title to adjust position';
 
+$string['sitetitlemaxwidth'] = 'Site Title Maximum Width';
+$string['sitetitlemaxwidthdesc'] = 'Set the maximum width of the site title area';
+
 $string['coursetitlepaddingtop'] = 'Course Title Padding Top';
 $string['coursetitlepaddingtopdesc'] = 'Set padding above course title to adjust position';
 

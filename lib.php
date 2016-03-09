@@ -180,6 +180,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:pageheaderheight]]' => '72px',
         '[[setting:fullscreenwidth]]' => '98%',
         '[[setting:coursetitlemaxwidth]]' => '50%',
+        '[[setting:sitetitlemaxwidth]]' => '50%',
         '[[setting:coursetitlepaddingtop]]' => '0px',
         '[[setting:hidebreadcrumbmobile]]' => '',
         '[[setting:hidepagefootermobile]]' => '',

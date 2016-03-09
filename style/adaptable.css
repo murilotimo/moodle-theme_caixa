@@ -231,6 +231,11 @@ div.signuppanel h2 {
     padding-top: [[setting:sitetitlepaddingtop]];
     padding-left: [[setting:sitetitlepaddingleft]];
     line-height: 100%;
+    width: [[setting:sitetitlemaxwidth]];
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 
 #titlecontent {
