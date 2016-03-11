@@ -48,7 +48,7 @@ $temp->add($setting);
 $name = 'theme_adaptable/enablehomeredirect';
 $title = get_string('enablehomeredirect', 'theme_adaptable');
 $description = get_string('enablehomeredirectdesc', 'theme_adaptable');
-$default = false;
+$default = true;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
