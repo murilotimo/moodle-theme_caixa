@@ -345,6 +345,9 @@ $string['moodledocsdesc'] = 'Display the Moodle Docs link in the footer.';
 
 // NavBar **********************************************************.
 
+$string['stickynavbar'] = 'Sticky Navbar at the top';
+$string['stickynavbardesc'] = 'Stick the Navbar at the top of the screen when scrolling down.';
+
 $string['navbarcachetime'] = 'Navbar Cache Time';
 $string['navbarcachetimedesc'] = 'The number of minutes the navigation bar is cached for.';
 

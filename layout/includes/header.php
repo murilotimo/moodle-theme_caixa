@@ -24,10 +24,8 @@
  *
  */
 
-// Fixed header is determined by the individual layouts.
-if (!ISSET($fixedheader)) {
-    $fixedheader = false;
-}
+
+
 theme_adaptable_initialise_zoom($PAGE);
 $setzoom = theme_adaptable_get_zoom();
 
@@ -39,6 +37,9 @@ $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-firs
 $hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $enableheadingtitle = $PAGE->theme->settings->enableheading;
+
+// Fixed header.
+$fixedheader = $PAGE->theme->settings->stickynavbar;
 
 if ($COURSE->id != 1) {
     switch($enableheadingtitle) {
@@ -155,19 +156,20 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 <div id="page" class="container-fluid <?php echo "$setfull $showiconsclass"; ?>">
 
 <?php
-
 echo $OUTPUT->get_alert_messages();
-
 ?>
 
 <header id="page-header-wrapper"
+
 <?php
+// Fixed header. 
 if ($fixedheader) {
 ?>
-style="position: fixed;"
+ style="position: fixed;"
 <?php
 }
-?> >
+?>>
+
     <div id="above-header">
         <div class="clearfix container userhead">
             <div class="pull-left">
