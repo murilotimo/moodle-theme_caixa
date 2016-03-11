@@ -41,7 +41,6 @@ if (!empty($PAGE->theme->settings->infobox)) {
         echo '<div id="theinfo" class="container">';
     }
 ?>
-
         <div id="theinfo-internal">
             <div class="row-fluid">
                 <?php echo $OUTPUT->get_setting('infobox', 'format_html'); ?>
@@ -66,7 +65,6 @@ if (!empty($PAGE->theme->settings->infobox)) {
 }
 ?>
 
-
 <?php
 if (!empty($PAGE->theme->settings->infobox2)) {
     if (!empty($PAGE->theme->settings->infoboxfullscreen)) {
@@ -85,7 +83,6 @@ if (!empty($PAGE->theme->settings->infobox2)) {
 <?php
 }
 ?>
-
 
 <div class="container outercont">
     <div id="page-content" class="row-fluid">
