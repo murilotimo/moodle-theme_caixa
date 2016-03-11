@@ -69,11 +69,18 @@ if (!empty($PAGE->theme->settings->infobox)) {
 
 <?php
 if (!empty($PAGE->theme->settings->infobox2)) {
+    if (!empty($PAGE->theme->settings->infoboxfullscreen)) {
+        echo '<div id="themessage">';
+    } else {
+        echo '<div id="themessage" class="container">';
+    }
 ?>
-<div id="themessage" class="container">
-    <div id="themessage-internal"><div class="row-fluid">
-        <?php echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
-    </div></div>
+    
+    <div id="themessage-internal">
+        <div class="row-fluid">
+<?php echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
+        </div>
+    </div>
 </div>
 <?php
 }
