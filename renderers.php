@@ -1954,7 +1954,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         }
         $content .= html_writer::start_tag('div', array('class' => 'summary'));
         if (ISSET($coursename)) {
-            $content .= html_writer::tag('p', html_writer::tag('b', $coursename));
+            $content .= html_writer::tag('p', html_writer::tag('strong', $coursename));
         }
         // Display course summary.
         if ($course->has_summary()) {
