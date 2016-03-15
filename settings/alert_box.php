@@ -128,7 +128,7 @@ for ($alertindex = 1; $alertindex <= $alertcount; $alertindex++) {
     $default = 'global';
     $choices = array(
     'global' => get_string('alertaccessglobal', 'theme_adaptable'),
-    'users' => get_string('alertaccessusers', 'theme_adaptable'),
+    'user' => get_string('alertaccessusers', 'theme_adaptable'),
     'admin' => get_string('alertaccessadmins', 'theme_adaptable'),
     'profile' => get_string('alertaccessprofile', 'theme_adaptable'));
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
