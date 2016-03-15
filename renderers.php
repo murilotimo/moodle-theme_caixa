@@ -943,7 +943,7 @@ EOT;
         $sessttl = 0;
 
         if (!empty($PAGE->theme->settings->navbarcachetime) && $PAGE->theme->settings->navbarcachetime > 0) {
-            $sessttl = (time() + ($PAGE->theme->settings->navbarcachetime * 3600));
+            $sessttl = (time() + ($PAGE->theme->settings->navbarcachetime * 60));
         }
 
         $cache = cache::make('theme_adaptable', 'userdata');
