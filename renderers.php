@@ -1015,7 +1015,7 @@ EOT;
             if ($mysitesvisibility != 'disabled') {
 
                 $branchtitle = get_string('mysites', 'theme_adaptable');
-                $branchlabel = '<i class="fa fa-briefcase"></i><span class="menutitle">'.$branchtitle.'</span>';
+                $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
                 $branchurl   = new moodle_url('/my/index.php');
                 $branchsort  = 10001;
 
@@ -1038,7 +1038,7 @@ EOT;
                                         new moodle_url('/course/view.php?id='.$course->id), '', 100);
                                 } else { // If not in array add to sub menu item.
                                     if (!isset($parent)) {
-                                        $icon = '<span class="fa fa-history"></span> ';
+                                        $icon = '<i class="fa fa-history"></i> ';
                                         $parent = $branch->add($icon . $trunc =
                                             rtrim(mb_strimwidth(format_string(get_string('pastcourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
                                                 new moodle_url('#'), '', 1000);
@@ -1050,7 +1050,7 @@ EOT;
                         }
                     }
 
-                    $icon = '<span class="fa fa-eye-slash"></span> ';
+                    $icon = '<i class="fa fa-eye-slash"></i> ';
                     $parent = null;
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
