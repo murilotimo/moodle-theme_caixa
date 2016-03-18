@@ -1,4 +1,4 @@
-Changes in version 1.2.0 (2016030700)
+Changes in version 1.2.1 (2016031800)
 -------------------------------------
 
 - Fix #409 Bug rendering sub menus on mobile
