@@ -277,7 +277,7 @@ if (!isloggedin() || isguestuser()) {
 ?>
 
 <?php
-    if ($CFG->version > 2015051100) { ?>
+    if ($CFG->version > 2015051100 && !empty($PAGE->theme->settings->enablepref)) { ?>
         <li>
         <a href="<?php p($CFG->wwwroot) ?>/user/preferences.php"
             title="<?php echo get_string('preferences') ?>">
