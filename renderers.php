@@ -1428,9 +1428,8 @@ EOT;
             foreach ($cohortedcourses as $course) {
                 $courses[] = $course->shortname;
             }
-            return($courses);
         }
-
+        return($courses);
     }
 
     /**
