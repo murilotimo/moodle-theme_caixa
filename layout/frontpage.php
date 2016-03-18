@@ -73,7 +73,7 @@ if (!empty($PAGE->theme->settings->infobox2)) {
         echo '<div id="themessage" class="container">';
     }
 ?>
-    
+
     <div id="themessage-internal">
         <div class="row-fluid">
 <?php echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>

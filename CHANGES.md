@@ -1,6 +1,24 @@
 Changes in version 1.2.0 (2016030700)
 -------------------------------------
 
+- Fix #409 Bug rendering sub menus on mobile
+- Fix #416 Bug rendering My Courses with cohort option selected
+- Fix #411 Multiple tools menus added to menu
+- Fix #406 User Preference setting doesn't apply
+- Fix #414 Correct URL for My Feedback Report
+- Fix #415 Analytics not rendering script tag properly
+- Fix #413 Add setting for messages "badge" in header
+- Fix #407 Fix time calculation on navbar cache ttl
+- Fix #404 Alerts not displaying if set to display to logged in users
+- Fix #398 Second infobox has not full screen
+- Fix #278 Navbar sticky at the top
+- Fix #394 Set Enable Home redirect=0 to On by default
+- Fix #397 Replace <b> with <strong>
+- Fix #395 Set site title to truncate and add width setting making consistent with course title
+
+Changes in version 1.2.0 (2016030700)
+-------------------------------------
+
 - Fix #393 Fix HTML Validation errors on closing menu div
 - Fix #392 Remove unwanted </i> tag from top menus
 - Fix #389 Coursebox non closed <a> tag breaks HTML validation
