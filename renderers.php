@@ -1205,10 +1205,9 @@ EOT;
                 $menu = ($PAGE->theme->settings->$menunumber);
                 $label = $PAGE->theme->settings->$menutitle;
                 $custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');
+                $custommenu = new custom_menu($custommenuitems);
+                $retval .= $this->render_custom_menu($custommenu);
             }
-
-            $custommenu = new custom_menu($custommenuitems);
-            $retval .= $this->render_custom_menu($custommenu);
         }
         return $retval;
     }
