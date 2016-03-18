@@ -394,10 +394,10 @@ $string['enableprefdesc'] = 'Display a link to the user preferences page';
 $string['enablenote'] = 'My Notifications';
 $string['enablenotedesc'] = 'Display a link to the user notifications page';
 
-$string['enableblog'] = 'My blogs';
+$string['enableblog'] = 'My Blogs';
 $string['enableblogdesc'] = 'Display a link to the users blogs page';
 
-$string['enableposts'] = 'My posts';
+$string['enableposts'] = 'My Posts';
 $string['enablepostsdesc'] = 'Display a link to the my posts page';
 
 $string['enablefeed'] = 'My Feedback';

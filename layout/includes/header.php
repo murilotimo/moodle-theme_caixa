@@ -162,7 +162,7 @@ echo $OUTPUT->get_alert_messages();
 <header id="page-header-wrapper"
 
 <?php
-// Fixed header. 
+// Fixed header.
 if ($fixedheader) {
 ?>
  style="position: fixed;"
@@ -305,9 +305,9 @@ if (!isloggedin() || isguestuser()) {
     if (!empty($PAGE->theme->settings->enableblog)) { ?>
         <li>
         <a href="<?php p($CFG->wwwroot) ?>/blog/index.php?userid=<?php echo "$userid"; ?>"
-            title="<?php echo get_string('myblogs', 'theme_adaptable') ?>">
+            title="<?php echo get_string('enableblog', 'theme_adaptable') ?>">
                 <i class="fa fa-rss"></i>
-                <?php echo get_string('myblogs', 'theme_adaptable') ?>
+                <?php echo get_string('enableblog', 'theme_adaptable') ?>
         </a>
         </li>
 <?php
@@ -318,9 +318,9 @@ if (!isloggedin() || isguestuser()) {
     if (!empty($PAGE->theme->settings->enableposts)) { ?>
         <li>
         <a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>"
-            title="<?php echo get_string('posts') ?>">
+            title="<?php echo get_string('enableposts', 'theme_adaptable') ?>">
                 <i class="fa fa-commenting"></i>
-                <?php echo get_string('posts') ?>
+                <?php echo get_string('enableposts', 'theme_adaptable') ?>
         </a>
         </li>
 <?php
@@ -330,10 +330,10 @@ if (!isloggedin() || isguestuser()) {
 <?php
     if (!empty($PAGE->theme->settings->enablefeed)) { ?>
         <li>
-        <a href="<?php p($CFG->wwwroot) ?>/report/myfeedback/index.php?userid=<?php echo "$userid"; ?>"
-            title="<?php echo get_string('feedback') ?>">
+        <a href="<?php p($CFG->wwwroot) ?>/report/myfeedback/index.php"
+            title="<?php echo get_string('enablefeed', 'theme_adaptable') ?>">
                 <i class="fa fa-bullhorn"></i>
-                <?php echo get_string('feedback') ?>
+                <?php echo get_string('enablefeed', 'theme_adaptable') ?>
         </a>
         </li>
 <?php
