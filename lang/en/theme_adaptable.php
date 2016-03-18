@@ -473,6 +473,9 @@ $string['footerlinkcolordesc'] = 'Footer blocks link colour.';
 $string['headerbkcolor'] = 'Top header background colour';
 $string['headerbkcolordesc'] = 'Set the top header background colour.';
 
+$string['msgbadgecolor'] = 'Message badge background color.';
+$string['msgbadgecolordesc'] = 'Set the background color for the messages badge / bubble in the header (displays number of unread messages)';
+
 $string['headerbkcolor2'] = 'Lower header background colour';
 $string['headerbkcolor2desc'] = 'Set the lower header background colour.';
 

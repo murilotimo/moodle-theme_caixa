@@ -85,6 +85,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:headerbkcolor2]]' => '#009688',
         '[[setting:headertextcolor]]' => '#ffffff',
         '[[setting:headertextcolor2]]' => '#ffffff',
+        '[[setting:msgbadgecolor]]' => '#E53935',
         '[[setting:blockheadercolor]]' => '#009688',
         '[[setting:blockbackgroundcolor]]' => '#FFFFFF',
         '[[setting:blockheaderbackgroundcolor]]' => '#FFFFFF',
