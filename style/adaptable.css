@@ -199,6 +199,10 @@ div.signuppanel h2 {
     font-size: [[setting:topmenufontsize]];
 }
 
+#above-header .badge {
+    background-color: [[setting:msgbadgecolor]];
+}
+
 #page-header {
     border-bottom: 0px solid [[setting:maincolor]];
     clear: both;

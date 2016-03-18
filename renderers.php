@@ -280,7 +280,7 @@ class theme_adaptable_core_renderer extends core_renderer {
                     // The closing tag of PHP heredoc doesn't like being indented so do not meddle with indentation of 'EOT;' below!
                     $analytics .= <<<EOT
 
-                    <script>
+                    <script type="text/javascript">
                         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -1015,7 +1015,7 @@ EOT;
             if ($mysitesvisibility != 'disabled') {
 
                 $branchtitle = get_string('mysites', 'theme_adaptable');
-                $branchlabel = '<i class="fa fa-briefcase"></i><span class="menutitle">'.$branchtitle.'</span>';
+                $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
                 $branchurl   = new moodle_url('/my/index.php');
                 $branchsort  = 10001;
 
@@ -1038,7 +1038,7 @@ EOT;
                                         new moodle_url('/course/view.php?id='.$course->id), '', 100);
                                 } else { // If not in array add to sub menu item.
                                     if (!isset($parent)) {
-                                        $icon = '<span class="fa fa-history"></span> ';
+                                        $icon = '<i class="fa fa-history"></i> ';
                                         $parent = $branch->add($icon . $trunc =
                                             rtrim(mb_strimwidth(format_string(get_string('pastcourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
                                                 new moodle_url('#'), '', 1000);
@@ -1050,7 +1050,7 @@ EOT;
                         }
                     }
 
-                    $icon = '<span class="fa fa-eye-slash"></span> ';
+                    $icon = '<i class="fa fa-eye-slash"></i> ';
                     $parent = null;
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
@@ -1205,10 +1205,9 @@ EOT;
                 $menu = ($PAGE->theme->settings->$menunumber);
                 $label = $PAGE->theme->settings->$menutitle;
                 $custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');
+                $custommenu = new custom_menu($custommenuitems);
+                $retval .= $this->render_custom_menu($custommenu);
             }
-
-            $custommenu = new custom_menu($custommenuitems);
-            $retval .= $this->render_custom_menu($custommenu);
         }
         return $retval;
     }
