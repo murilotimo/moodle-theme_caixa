@@ -75,7 +75,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:navbarhover]]' => '#3C469C',
         '[[setting:breadcrumb]]' => '#b4bbbf',
         '[[setting:breadcrumbtextcolor]]' => '#444444',
-        '[[setting:activebreadcrumb]]' => '#e8eaeb',
+        '[[setting:activebreadcrumb]]' => '#f5f5f5',
         '[[setting:breadcrumbseparator]]' => 'chevron-right',
         '[[setting:loadingcolor]]' => '#f44336',
         '[[setting:footerbkcolor]]' => '#424242',
