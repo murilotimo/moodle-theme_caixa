@@ -874,23 +874,33 @@ EOT;
         return $retval;
     }
 
-    /**
-     * Returns html to render navigation bar
-     *
-     * @return string
+    /*
+     * Render navbar for theme styling
+     * @param array $items
+     * @param string $breadcrumbs
+     * return string
      */
     public function navbar() {
         $items = $this->page->navbar->get_items();
-        $breadcrumbs = array();
-        foreach ($items as $item) {
-            $item->hideicon = true;
-            $breadcrumbs[] = $this->render($item);
+        $breadcrumbs = '';
+
+        if (empty($items)) {
+            return '';
         }
-        $divider = '<span class="divider">/</span>';
-        $listitems = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
-        $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
-        return $title . "<ul class=\"breadcrumb\">$listitems</ul>";
+//        $breadcrumbs = '<i class="fa fa-home fa-lg"></i>';
+
+        $i = 0;
+        foreach ($items as $item) {
+            if ($i++ == 0) {continue;}
+
+            $item->hideicon = true;
+
+            $breadcrumbs .= '<span class="separator"></span><li>'.$this->render($item).'</li>'; 
+        }
+        return '<ul class="breadcrumb">'.$breadcrumbs.'</ul>';
     }
+
+
 
     /**
      * Returns html to render footer
