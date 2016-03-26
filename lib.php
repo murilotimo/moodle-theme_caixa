@@ -76,6 +76,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:breadcrumb]]' => '#b4bbbf',
         '[[setting:breadcrumbtextcolor]]' => '#444444',
         '[[setting:activebreadcrumb]]' => '#e8eaeb',
+        '[[setting:breadcrumbseparator]]' => 'chevron-right',
         '[[setting:loadingcolor]]' => '#f44336',
         '[[setting:footerbkcolor]]' => '#424242',
         '[[setting:footertextcolor]]' => '#ffffff',

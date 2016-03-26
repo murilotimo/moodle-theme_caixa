@@ -18,8 +18,8 @@
  * Version details
  *
  * @package    theme_adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University)
- * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @copyright  2015 Jeremy Hopkins (Coventry University)
+ * @copyright  2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -142,6 +142,14 @@
     $title = get_string('pageheaderheight', 'theme_adaptable');
     $description = get_string('pageheaderheightdesc', 'theme_adaptable');
     $setting = new admin_setting_configtext($name, $title, $description, '72px');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Breadcrumb separator.
+    $name = 'theme_adaptable/breadcrumbseparator';
+    $title = get_string('breadcrumbseparator', 'theme_adaptable');
+    $description = get_string('breadcrumbseparatordesc', 'theme_adaptable');
+    $setting = new admin_setting_configtext($name, $title, $description, 'chevron-right');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

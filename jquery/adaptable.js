@@ -34,13 +34,12 @@ jQuery(document).ready(function($) {
             $pArr.filter(':eq('+i+'),:lt('+(i+pPerDiv)+'):gt('+i+')').wrapAll('<div class="row-fluid clearfix" />');
     }
 
-// Breadcrumb *****-*********************************
+// Breadcrumb ***************************************
 
     $(".breadcrumb li:not(:last-child) span").not('.separator').addClass('');
     $(".breadcrumb li a" );
     $(".breadcrumb li:last-child").addClass("lastli");
-//    $(".breadcrumb li:first-child a").empty().append("<i class='fa fa-home fa-lg'></i>").addClass("firstli");
-
+    $(".breadcrumb li:first-child a").empty().append("<i class='fa fa-home fa-lg'></i>").addClass("firstli");
 
 // Slider *******************************************
 

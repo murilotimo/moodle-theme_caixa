@@ -440,7 +440,7 @@ EOT;
         $messagelist = array();
 
         $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-                            FROM {message}
+                           FROM {message}
                            WHERE useridto = :userid
                            AND useridfrom > 2
                            AND notification <> 1";
@@ -891,7 +891,7 @@ EOT;
         if (empty($items)) {
             return '';
         }
-//        $breadcrumbs = '<i class="fa fa-home fa-lg"></i>';
+        $breadcrumbs = '<i class="fa fa-home fa-lg"></i>';
 
         $i = 0;
         foreach ($items as $item) {
@@ -901,7 +901,8 @@ EOT;
 
             $item->hideicon = true;
 
-            $breadcrumbs .= '<span class="separator"></span><li>'.$this->render($item).'</li>';
+            $breadcrumbseparator = get_config('theme_adaptable', 'breadcrumbseparator');
+            $breadcrumbs .= '<span class="separator"><i class="fa-'.$breadcrumbseparator.' fa"></i></span><li>'.$this->render($item).'</li>';
         }
         return '<ul class="breadcrumb">'.$breadcrumbs.'</ul>';
     }

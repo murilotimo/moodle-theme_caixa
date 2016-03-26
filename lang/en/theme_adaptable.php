@@ -1079,6 +1079,9 @@ $string['breadcrumbtextcolordesc'] = 'Set the text colour of the breadcrumb.';
 $string['activebreadcrumb'] = 'Active breadcrumb background colour';
 $string['activebreadcrumbdesc'] = 'Set the background colour of the active breadcrumb colour, and remainder of the breadcrumb bar.';
 
+$string['breadcrumbseparator'] = 'Breadcrumb separator';
+$string['breadcrumbseparatordesc'] = 'Set the <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icon</a> to be used as item separator in the breadcrumb. enter the icon name without the fa- prefix.';
+
 $string['menufontsize'] = 'Font size for navigation bar';
 $string['menufontsizedesc'] = 'Set the size of the font used in the main navigation bar.';
 

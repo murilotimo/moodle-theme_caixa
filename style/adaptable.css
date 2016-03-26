@@ -678,14 +678,11 @@ langmenu a:hover {
 }
 
 .breadcrumb li {
-    height: 25px;
     text-shadow: none;
     margin: 5px 0;
 }
 
-.separator:before {
-    content: "\f054";
-    font-family: FontAwesome;
+.separator {
     margin: 0 5px;
 }
 

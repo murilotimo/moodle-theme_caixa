@@ -329,6 +329,7 @@
     $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
+    // Breadcrumb background color.
     $name = 'theme_adaptable/breadcrumb';
     $title = get_string('breadcrumb', 'theme_adaptable');
     $description = get_string('breadcrumbdesc', 'theme_adaptable');
@@ -346,6 +347,7 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+/*
     $name = 'theme_adaptable/activebreadcrumb';
     $title = get_string('activebreadcrumb', 'theme_adaptable');
     $description = get_string('activebreadcrumbdesc', 'theme_adaptable');
@@ -353,6 +355,7 @@
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '#e8eaeb', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+*/
 
     // Footer colors heading.
     $name = 'theme_adaptable/settingsfootercolors';
