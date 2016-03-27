@@ -350,8 +350,6 @@ a.usermendrop {
 
 .slidewrap {
     margin-top: [[setting:slidermargintop]];
-    margin-top: 90px;
-
     margin-bottom: [[setting:slidermarginbottom]];
 }
 
@@ -445,7 +443,7 @@ span.fa-chevron-right.fa {
 
 #theinfo {
     background: [[setting:infoboxcolor]];
-    margin-bottom: 20px;
+/*    margin-bottom: 20px;*/
 }
 
 #theinfo-internal {

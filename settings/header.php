@@ -145,6 +145,18 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Breadcrumb home.
+    $name = 'theme_adaptable/breadcrumbhome';
+    $title = get_string('breadcrumbhome', 'theme_adaptable');
+    $description = get_string('breadcrumbhomedesc', 'theme_adaptable');
+    $radchoices = array(
+        'text' => get_string('breadcrumbhometext', 'theme_adaptable'),
+        'icon' => get_string('breadcrumbhomeicon', 'theme_adaptable')
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, 'icon', $radchoices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Breadcrumb separator.
     $name = 'theme_adaptable/breadcrumbseparator';
     $title = get_string('breadcrumbseparator', 'theme_adaptable');

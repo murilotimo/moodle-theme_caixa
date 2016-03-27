@@ -852,10 +852,8 @@ EOT;
     }
 
     /**
-     * This renders the navbar.
-     * Uses bootstrap compatible html.
+     * Renders the breadcrumb navbar.
      *
-     * @param boolean $addbutton
      */
     public function page_navbar($addbutton = false) {
         global $PAGE;
@@ -879,31 +877,40 @@ EOT;
     }
 
     /*
-     * Render navbar for theme styling
+     * Render the breadcrumb
      * @param array $items
      * @param string $breadcrumbs
+     *
      * return string
      */
     public function navbar() {
         $items = $this->page->navbar->get_items();
-        $breadcrumbs = '';
+        $breadcrumbseparator = get_config('theme_adaptable', 'breadcrumbseparator');
+        $breadcrumbs = "";
 
         if (empty($items)) {
             return '';
         }
-        $breadcrumbs = '<i class="fa fa-home fa-lg"></i>';
 
         $i = 0;
+
         foreach ($items as $item) {
+            $item->hideicon = true;
+
             if ($i++ == 0) {
+                if (get_config('theme_adaptable', 'breadcrumbhome') == 'icon') {
+                    $breadcrumbs = html_writer::link(new moodle_url('/'),
+                                   html_writer::tag('i', '', array('class' => 'fa fa-home fa-lg')));
+                } else {
+                    $breadcrumbs = html_writer::link(new moodle_url('/'), get_string('home'));
+                }
                 continue;
             }
 
-            $item->hideicon = true;
-
-            $breadcrumbseparator = get_config('theme_adaptable', 'breadcrumbseparator');
-            $breadcrumbs .= '<span class="separator"><i class="fa-'.$breadcrumbseparator.' fa"></i></span><li>'.$this->render($item).'</li>';
+            $breadcrumbs .= '<span class="separator"><i class="fa-'.$breadcrumbseparator.' fa"></i>
+                             </span><li>'.$this->render($item).'</li>';
         }
+
         return '<ul class="breadcrumb">'.$breadcrumbs.'</ul>';
     }
 

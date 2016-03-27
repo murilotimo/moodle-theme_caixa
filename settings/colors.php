@@ -347,16 +347,6 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-/*
-    $name = 'theme_adaptable/activebreadcrumb';
-    $title = get_string('activebreadcrumb', 'theme_adaptable');
-    $description = get_string('activebreadcrumbdesc', 'theme_adaptable');
-    $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#e8eaeb', $previewconfig);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-*/
-
     // Footer colors heading.
     $name = 'theme_adaptable/settingsfootercolors';
     $heading = get_string('settingsfootercolors', 'theme_adaptable');
