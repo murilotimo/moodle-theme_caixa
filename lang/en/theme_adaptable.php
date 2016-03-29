@@ -945,9 +945,9 @@ $string['alertprofilefield'] = 'Custom Profile Field Name=Value (optional)';
 $string['alertprofilefielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
 
 // Alert Access - Visibility.
-$string['alertaccessglobal'] = 'Visibile to everyone';
-$string['alertaccessusers'] = 'Visibile to logged in users';
-$string['alertaccessadmins'] = 'Visibile to administrators';
+$string['alertaccessglobal'] = 'Visible to everyone';
+$string['alertaccessusers'] = 'Visible to logged in users';
+$string['alertaccessadmins'] = 'Visible to administrators';
 $string['alertaccessprofile'] = 'Add custom profile field restriction';
 
 $string['alertaccess'] = 'Alert Visibility';
