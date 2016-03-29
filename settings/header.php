@@ -161,7 +161,7 @@
     $name = 'theme_adaptable/breadcrumbseparator';
     $title = get_string('breadcrumbseparator', 'theme_adaptable');
     $description = get_string('breadcrumbseparatordesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, 'chevron-right');
+    $setting = new admin_setting_configtext($name, $title, $description, 'angle-right');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
