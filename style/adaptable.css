@@ -684,6 +684,10 @@ langmenu a:hover {
     margin: 0 5px;
 }
 
+.separator i {
+    margin-left: 5px;
+}
+
 .breadcrumb li.lastli a span {
   display: none !important;
 }
