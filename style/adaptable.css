@@ -1679,3 +1679,9 @@ line-height: normal;
 .hidden-blocks .block-region .block .header {
   border-top: 0px;
 }
+
+/* Fix glossary print option */
+#page-mod-glossary-view .glossarycontrol {
+    margin: -40px 5px;
+}
+
