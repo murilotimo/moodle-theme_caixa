@@ -455,9 +455,6 @@ $string['maincolordesc'] = 'Main colour for blocks and footer.';
 $string['footertextcolor'] = 'Footer text colour';
 $string['footertextcolordesc'] = 'The colour of the text in the footer, use html hex code.';
 
-$string['footerbackgroundcolor'] = 'Footer background colour';
-$string['footerbackgroundcolordesc'] = 'The background colour of the footer, use html hex code.';
-
 $string['footerbkcolor'] = 'Footer background colour';
 $string['footerbkcolordesc'] = 'Set the footer background colour.';
 
