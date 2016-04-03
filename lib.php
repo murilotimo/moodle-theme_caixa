@@ -121,8 +121,6 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:coursesectionbordercolor]]' => '#e8eaeb',
         '[[setting:coursesectionborderradius]]' => '',
         '[[setting:tilesbordercolor]]' => '#009688',
-        '[[setting:infoboxcolor]]' => '#333333',
-        '[[setting:infoboxcolor2]]' => '#f3f3f3',
         '[[setting:slidermargintop]]' => '20px',
         '[[setting:slidermarginbottom]]' => '20px',
         '[[setting:currentcolor]]' => '#d9edf7',
