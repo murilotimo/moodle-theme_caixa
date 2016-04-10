@@ -1474,6 +1474,12 @@ div.questionbankwindow.block {
   display: none;
 }
 
+.coursebox.hover .summary p {
+  color: [[setting:rendereroverlayfontcolor]] !important;
+}
+
+
+
 .coursebox.panel.hover .panel-body:hover .coursebox-content h3 a {
   color: [[setting:rendereroverlayfontcolor]] !important;
 }
