@@ -284,11 +284,11 @@ div.signuppanel h2 {
 .socialbox {
     padding-top: [[setting:socialpaddingtop]];
     padding-bottom: 5px;
+    font-size: [[setting:socialsize]];
 }
 
 .socialbox a {
     color: [[setting:headertextcolor2]];
-    font-size: [[setting:socialsize]]px;
     padding-left: 10px;
 }
 
