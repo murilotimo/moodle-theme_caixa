@@ -221,8 +221,9 @@ div.signuppanel h2 {
     padding-top: 10px;
 }
 
+#titlecontainer,
 #titlecontainer a,
-#titlecontainer a p {
+#titlecontainer p {
     font-family: [[setting:fonttitlename]], sans-serif !important;
     font-size: [[setting:fonttitlesize]] !important;
     font-weight: [[setting:fonttitleweight]] !important;
