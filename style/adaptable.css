@@ -1478,8 +1478,6 @@ div.questionbankwindow.block {
   color: [[setting:rendereroverlayfontcolor]] !important;
 }
 
-
-
 .coursebox.panel.hover .panel-body:hover .coursebox-content h3 a {
   color: [[setting:rendereroverlayfontcolor]] !important;
 }
@@ -1489,9 +1487,10 @@ div.questionbankwindow.block {
 }
 
 .coursebox.hover .teachers {
-  text-align: left;
-  padding-top: 2px;
-  padding-left: 2px;
+    text-align: left;
+    padding-top: 2px;
+    padding-left: 2px;
+    color: [[setting:rendereroverlayfontcolor]] !important;
 }
 
 .coursebox.hover:hover .summary {
