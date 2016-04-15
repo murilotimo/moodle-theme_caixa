@@ -1,10 +1,9 @@
 .block {
-  border-top: 2px solid #ccc;
+  border-style: [[setting:blockmainbordertopstyle]];
   padding: 0 0;
   box-shadow: none;
   background: transparent;
   border-radius: 0px;
-  border: 0px solid #e8eaeb;
 }
 
 .block .header {
@@ -19,9 +18,18 @@
   border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
 }
 
+.block-region-front .block {
+border: none;
+}
+
+.block-region-front .block .header {
+    border: none;
+}
+
 .block.hidden .header {
   border-bottom: 0px;
 }
+
 
 /* block titles */
 .block .header .title h2 {
@@ -50,8 +58,17 @@
   border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
 }
 
-.block .content a, .block .content li a, .block .content td a {
+.block .content a,
+.block .content li a,
+.block .content td a {
     color: [[setting:blocklinkcolor]];
+}
+
+.block .content a:hover,
+.block .content li a:hover,
+.block .content td a:hover {
+    color: [[setting:blocklinkhovercolor]];
+    text-decoration: none !important;
 }
 
 .block .header .block_action {

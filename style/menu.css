@@ -32,7 +32,7 @@
     color: [[setting:menufontcolor]] !important;
     line-height: 40px;
     float: none;
-    padding: 0px 20px 0px 20px;
+    padding: 0px [[setting:menufontpadding]] 0px [[setting:menufontpadding]];
     text-decoration: none;
     text-shadow: none;
     font-weight: 400;
@@ -61,7 +61,7 @@
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
     background-color: transparent;
     color: #fff;
-     font-size: [[setting:topmenufontsize]];
+     font-size: [[setting:menufontsize]];
 }
 
 .navbar .btn-navbar, .navbar .btn-navbar:hover, .navbar .btn-navbar:active {
@@ -285,7 +285,7 @@ color: [[setting:headertextcolor]];
 }
 
 @media (max-width: 768px) {
-  .newmenu1, .newmenu2, .newmenu3, .newmenu4, .newmenu5, .newmenu6, .newmenu7, .newmenu8, .newmenu9, .newmenu10[[setting:hidepagefootermobile]][[setting:hidebreadcrumbmobile]][[setting:hidealertsmobile]][[setting:hidesocialmobile]][[setting:hideheadermobile]][[setting:hidelogomobile]][[setting:hidecoursetitlemobile]] {
+  .newmenu1, .newmenu2, .newmenu3, .newmenu4, .newmenu5, .newmenu6, .newmenu7, .newmenu8, .newmenu9, .newmenu10, .newmenu11, .newmenu12, .newmenu13, .newmenu14, .newmenu15, .newmenu16[[setting:hidepagefootermobile]][[setting:hidebreadcrumbmobile]][[setting:hidealertsmobile]][[setting:hidesocialmobile]][[setting:hideheadermobile]][[setting:hidelogomobile]][[setting:hidecoursetitlemobile]] {
       display: none;
   }
 }

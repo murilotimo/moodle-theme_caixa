@@ -46,7 +46,9 @@ class theme_adaptable_core_renderer extends core_renderer {
      * @return string
      */
     protected function render_user_picture(\user_picture $userpicture) {
-        if ($this->page->pagetype == 'mod-forum-discuss') {
+        if ($this->page->pagetype == 'mod-forum-discuss' ||
+        $this->page->pagetype == 'course-view-socialwall' ||
+        $this->page->pagetype == 'site-index') {
             $userpicture->size = 1;
         }
         return parent::render_user_picture($userpicture);
@@ -117,6 +119,10 @@ class theme_adaptable_core_renderer extends core_renderer {
             $enablealert = 'enablealert' . $i;
             $alerttext = 'alerttext' . $i;
             $alertsession = 'alert' . $i;
+
+            if (empty($PAGE->theme->settings->enablealerts)) {
+                return '';
+            }
 
             if (isset($PAGE->theme->settings->$enablealert)) {
                 $enablealert = $PAGE->theme->settings->$enablealert;
@@ -276,7 +282,7 @@ class theme_adaptable_core_renderer extends core_renderer {
                     // The closing tag of PHP heredoc doesn't like being indented so do not meddle with indentation of 'EOT;' below!
                     $analytics .= <<<EOT
 
-                    <script>
+                    <script type="text/javascript">
                         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -434,7 +440,7 @@ EOT;
         $messagelist = array();
 
         $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-                            FROM {message}
+                           FROM {message}
                            WHERE useridto = :userid
                            AND useridfrom > 2
                            AND notification <> 1";
@@ -529,7 +535,7 @@ EOT;
         if ($classes == 'redirectmessage') {
             $type = 'alert alert-block alert-info';
         }
-        return "<div class=\"$type\">$message</div>";
+        return '<div class="' . $type . '">' . $message . '</div>';
     }
 
     /**
@@ -585,8 +591,10 @@ EOT;
             $PAGE->theme->settings->enabletickermy = 0;
         }
 
-        if (($PAGE->theme->settings->enableticker && $PAGE->bodyid == "page-site-index")
-            || ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
+        if ((!empty($PAGE->theme->settings->enableticker) &&
+        $PAGE->theme->settings->enableticker &&
+        $PAGE->bodyid == "page-site-index") ||
+        ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
             $msg = '';
             $tickercount = $PAGE->theme->settings->newstickercount;
 
@@ -664,7 +672,7 @@ EOT;
                         $retval .= '<span style="padding-left: 10px;"> ' . '' . '</span>';
                     }
 
-                    $retval .= $OUTPUT->blocks($block);
+                    $retval .= $OUTPUT->blocks($block, 'block-region-front');
                     $retval .= '</div>';
                 }
             }
@@ -753,7 +761,7 @@ EOT;
         $blockcount = 0;
         $style = '';
 
-        if (!$OUTPUT->get_footer_visibility()) {
+        if (!$this->get_footer_visibility()) {
             return '';
         }
 
@@ -819,25 +827,24 @@ EOT;
             $sliderimage = 'p' . $i;
             $sliderurl = 'p' . $i . 'url';
             $slidercaption = 'p' . $i .'cap';
+            $closelink = '';
             if (!empty($PAGE->theme->settings->$sliderimage)) {
-                $retval .= '<li><a href="';
+                $retval .= '<li>';
 
                 if (!empty($PAGE->theme->settings->$sliderurl)) {
-                    $retval .= $PAGE->theme->settings->$sliderurl;
-                } else {
-                    $retval .= '#';
+                    $retval .= '<a href="' . $PAGE->theme->settings->$sliderurl . '">';
+                    $closelink = '</a>';
                 }
 
-                $retval .= '"><img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage)
+                $retval .= '<img src="' . $PAGE->theme->setting_file_url($sliderimage, $sliderimage)
                     . '" alt="' . $sliderimage . '"/>';
 
                 if (!empty($PAGE->theme->settings->$slidercaption)) {
                     $retval .= '<div class="flex-caption">';
                     $retval .= $OUTPUT->get_setting($slidercaption, 'format_html');
-                    $retval .= '</div></a></li>';
-                } else {
-                    $retval .= '</a></li>';
+                    $retval .= '</div>';
                 }
+                $retval .= $closelink . '</li>';
             }
         }
         $retval .= '</ul></div></div>';
@@ -845,10 +852,8 @@ EOT;
     }
 
     /**
-     * This renders the navbar.
-     * Uses bootstrap compatible html.
+     * Renders the breadcrumb navbar.
      *
-     * @param boolean $addbutton
      */
     public function page_navbar($addbutton = false) {
         global $PAGE;
@@ -871,23 +876,45 @@ EOT;
         return $retval;
     }
 
-    /**
-     * Returns html to render navigation bar
+    /*
+     * Render the breadcrumb
+     * @param array $items
+     * @param string $breadcrumbs
      *
-     * @return string
+     * return string
      */
     public function navbar() {
         $items = $this->page->navbar->get_items();
-        $breadcrumbs = array();
+        $breadcrumbseparator = get_config('theme_adaptable', 'breadcrumbseparator');
+        $breadcrumbs = "";
+
+        if (empty($items)) {
+            return '';
+        }
+
+        $i = 0;
+
         foreach ($items as $item) {
             $item->hideicon = true;
-            $breadcrumbs[] = $this->render($item);
+
+            if ($i++ == 0) {
+                if (get_config('theme_adaptable', 'breadcrumbhome') == 'icon') {
+                    $breadcrumbs = html_writer::link(new moodle_url('/'),
+                                   html_writer::tag('i', '', array('class' => 'fa fa-home fa-lg')));
+                } else {
+                    $breadcrumbs = html_writer::link(new moodle_url('/'), get_string('home'));
+                }
+                continue;
+            }
+
+            $breadcrumbs .= '<span class="separator"><i class="fa-'.$breadcrumbseparator.' fa"></i>
+                             </span><li>'.$this->render($item).'</li>';
         }
-        $divider = '<span class="divider">/</span>';
-        $listitems = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
-        $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
-        return $title . "<ul class=\"breadcrumb\">$listitems</ul>";
+
+        return '<ul class="breadcrumb">'.$breadcrumbs.'</ul>';
     }
+
+
 
     /**
      * Returns html to render footer
@@ -937,9 +964,28 @@ EOT;
         $overridelist = false;
         $overridestrings = false;
         $overridetype = 'off';
+        $sessttl = 0;
 
-        $mysitesvisibility = $PAGE->theme->settings->enablemysites;
-        $mysitesmaxlength = $PAGE->theme->settings->mysitesmaxlength;
+        if (!empty($PAGE->theme->settings->navbarcachetime) && $PAGE->theme->settings->navbarcachetime > 0) {
+            $sessttl = (time() + ($PAGE->theme->settings->navbarcachetime * 60));
+        }
+
+        $cache = cache::make('theme_adaptable', 'userdata');
+
+        if ($sessttl > 0 && time() <= $cache->get('usernavbarttl')) {
+            return $cache->get('usernavbar');
+        }
+
+        $mysitesvisibility = 'excludehidden';
+        if (!empty($PAGE->theme->settings->enablemysites)) {
+            $mysitesvisibility = $PAGE->theme->settings->enablemysites;
+        }
+
+        $mysitesmaxlength = '30';
+        if (!empty($PAGE->theme->settings->mysitesmaxlength)) {
+            $mysitesmaxlength = $PAGE->theme->settings->mysitesmaxlength;
+        }
+
         $mysitesmaxlengthhidden = $mysitesmaxlength - 3;
 
         if (isloggedin() && !isguestuser()) {
@@ -971,12 +1017,20 @@ EOT;
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
 
-            if ($PAGE->theme->settings->mysitessortoverride != 'off' && !empty($PAGE->theme->settings->mysitessortoverridefield)) {
+            if (!empty($PAGE->theme->settings->mysitessortoverride) && $PAGE->theme->settings->mysitessortoverride != 'off'
+                && !empty($PAGE->theme->settings->mysitessortoverridefield)) {
+
                 $overridetype = $PAGE->theme->settings->mysitessortoverride;
                 $overridelist = $PAGE->theme->settings->mysitessortoverridefield;
-                if ($PAGE->theme->settings->mysitessortoverride == 'profilefields') {
+
+                if ($overridetype == 'profilefields' || $overridetype == 'profilefieldscohort') {
                     $overridelist = $this->get_profile_field_contents($overridelist);
+
+                    if ($overridetype == 'profilefieldscohort') {
+                        $overridelist = array_merge($this->get_cohort_enrollments(), $overridelist);
+                    }
                 }
+
                 if ($PAGE->theme->settings->mysitessortoverride == 'strings') {
                     $overridelist = explode(',', $overridelist);
                 }
@@ -985,7 +1039,7 @@ EOT;
             if ($mysitesvisibility != 'disabled') {
 
                 $branchtitle = get_string('mysites', 'theme_adaptable');
-                $branchlabel = '<i class="fa fa-briefcase"></i><span class="menutitle">'.$branchtitle.'</span>';
+                $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
                 $branchurl   = new moodle_url('/my/index.php');
                 $branchsort  = 10001;
 
@@ -1001,35 +1055,43 @@ EOT;
                                 $branch->add(mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
                                     new moodle_url('/course/view.php?id='.$course->id), '');
                             } else { // We want to check against array from profile field.
-                                if (($overridetype == 'profilefields' && in_array($course->shortname, $overridelist))
-                                    || ($overridetype == 'strings' && $this->check_if_in_array_string($overridelist, $course->shortname))) {
-                                    $icon = '';
-                                    $branch->add($icon . mb_strimwidth(format_string($course->fullname), 0,  $mysitesmaxlength, '...', 'utf-8'),
-                                        new moodle_url('/course/view.php?id='.$course->id), '', 100);
+                                if ((($overridetype == 'profilefields' ||
+                                    $overridetype == 'profilefieldscohort') &&
+                                    in_array($course->shortname, $overridelist)) ||
+                                    ($overridetype == 'strings' &&
+                                    $this->check_if_in_array_string($overridelist, $course->shortname))) {
+                                        $icon = '';
+                                        $branch->add($icon . mb_strimwidth(format_string($course->fullname),
+                                                     0, $mysitesmaxlength, '...', 'utf-8'),
+                                                     new moodle_url('/course/view.php?id='.$course->id), '', 100);
                                 } else { // If not in array add to sub menu item.
                                     if (!isset($parent)) {
-                                        $icon = '<span class="fa fa-history"></span> ';
+                                        $icon = '<i class="fa fa-history"></i> ';
                                         $parent = $branch->add($icon . $trunc =
-                                            rtrim(mb_strimwidth(format_string(get_string('pastcourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
-                                                new moodle_url('#'), '', 1000);
+                                            rtrim(mb_strimwidth(format_string(get_string('pastcourses', 'theme_adaptable')),
+                                            0, $mysitesmaxlengthhidden)) . '...', new moodle_url('#'), '', 1000);
                                     }
-                                    $parent->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, $mysitesmaxlengthhidden)) . '...',
-                                        new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                                    $parent->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname),
+                                                 0, $mysitesmaxlengthhidden)) . '...',
+                                                 new moodle_url('/course/view.php?id='.$course->id),
+                                                format_string($course->shortname));
                                 }
                             }
                         }
                     }
 
-                    $icon = '<span class="fa fa-eye-slash"></span> ';
+                    $icon = '<i class="fa fa-eye-slash"></i> ';
                     $parent = null;
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
                             if (empty($parent)) {
                                 $parent = $branch->add($icon . $trunc =
-                                    rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_adaptable')), 0, $mysitesmaxlengthhidden)) . '...',
+                                    rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_adaptable')),
+                                        0, $mysitesmaxlengthhidden)) . '...',
                                         new moodle_url('#'), '', 2000);
                             }
-                            $parent->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname), 0, $mysitesmaxlengthhidden)) . '...',
+                            $parent->add($icon . $trunc = rtrim(mb_strimwidth(format_string($course->fullname),
+                                0, $mysitesmaxlengthhidden)) . '...',
                                 new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
                         }
                     }
@@ -1088,7 +1150,7 @@ EOT;
             if ($access && !$this->hideinforum()) {
                 $branchtitle = get_string('helptitle', 'theme_adaptable');
                 $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
-                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp);
+                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp.'" target="'.$PAGE->theme->settings->helptarget);
                 $branchsort  = 10003;
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
@@ -1108,11 +1170,17 @@ EOT;
             if ($access && !$this->hideinforum()) {
                 $branchtitle = get_string('helptitle2', 'theme_adaptable');
                 $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
-                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2);
+                $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2.'" target="'.$PAGE->theme->settings->helptarget);
                 $branchsort  = 10003;
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
             }
         }
+
+        if ($sessttl > 0) {
+            $cache->set('usernavbarttl', $sessttl);
+            $cache->set('usernavbar', $this->render_custom_menu($menu));
+        }
+
         return $this->render_custom_menu($menu);
     }
 
@@ -1169,10 +1237,48 @@ EOT;
                 $menu = ($PAGE->theme->settings->$menunumber);
                 $label = $PAGE->theme->settings->$menutitle;
                 $custommenuitems = $this->parse_custom_menu($menu, $label, $class, '</span>');
+                $custommenu = new custom_menu($custommenuitems);
+                $retval .= $this->render_custom_menu($custommenu);
             }
+        }
+        return $retval;
+    }
 
-            $custommenu = new custom_menu($custommenuitems);
-            $retval .= $this->render_custom_menu($custommenu);
+    /**
+     * Returns html to render logo / title area
+     *
+     * @return string
+     */
+    public function get_logo_title() {
+        global $PAGE, $COURSE, $CFG;
+        $retval = '';
+        $display = $PAGE->theme->settings->sitetitle;
+
+        $div = '<div id="titlecontainer" class="pull-left">';
+        if ($COURSE->id > 1) {
+            $div = '<div id="coursetitle" class="pull-left">';
+        }
+
+        if ($display == 'custom') {
+            $header = theme_adaptable_remove_site_fullname($PAGE->heading);
+
+            if (!empty($header)) {
+                $header = $PAGE->theme->settings->sitetitletext;
+            }
+            $PAGE->set_heading($header);
+        }
+
+        if (!empty($PAGE->theme->settings->logo)) {
+            $retval .= '<div id="logocontainer">';
+            $retval .= "<a href='$CFG->wwwroot'>";
+            $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
+            $retval .= '</a></div>';
+        }
+
+        if ($display != 'disabled') {
+            $retval .= $div;
+            $retval .= '<span>' . $PAGE->theme->settings->sitetitletext . '</span>';
+            $retval .= '</div>';
         }
         return $retval;
     }
@@ -1193,7 +1299,9 @@ EOT;
         }
 
         if ($visibility) {
-            if (($PAGE->theme->settings->enablemenus) && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
+            if (!empty($PAGE->theme->settings->topmenuscount) && !empty($PAGE->theme->settings->enablemenus)
+                && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
+
                 $topmenuscount = $PAGE->theme->settings->topmenuscount;
                 for ($i = 1; $i <= $topmenuscount; $i++) {
                     $menunumber = 'menu' . $i;
@@ -1335,6 +1443,29 @@ EOT;
     }
 
     /**
+     * Returns list of cohort enrollments
+     *
+     * @return array
+     */
+    public function get_cohort_enrollments() {
+        global $DB, $USER;
+        $userscohorts = $DB->get_records('cohort_members', array('userid' => $USER->id));
+        $courses = array();
+        if ($userscohorts) {
+            $cohortedcourseslist = $DB->get_records_sql('select '
+                    . 'courseid '
+                    . 'from {enrol} '
+                    . 'where enrol = "cohort" '
+                    . 'and customint1 in (?)', array_keys($userscohorts));
+            $cohortedcourses = $DB->get_records_list('course', 'id', array_keys($cohortedcourseslist), null, 'shortname');
+            foreach ($cohortedcourses as $course) {
+                $courses[] = $course->shortname;
+            }
+        }
+        return($courses);
+    }
+
+    /**
      * Returns contents of multiple comma delimited custom profile fields
      *
      * @param string $profilefields delimited list of fields
@@ -1390,7 +1521,7 @@ EOT;
      *
      * @return string
      */
-    public function parse_custom_menu($menu, $label, $class = ' </i>', $close = '') {
+    public function parse_custom_menu($menu, $label, $class = '', $close = '') {
         $custommenuitems = $class . $label. $close . "|#|".$label."\n";
         $arr = explode("\n", $menu);
 
@@ -1515,7 +1646,7 @@ EOT;
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
-        $content = $wrappre . $content . $wrappost . '</ul>';
+        $content = $wrappre . $content . '</ul>' . $wrappost;
         return $content;
     }
 
@@ -1697,12 +1828,14 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $classes .= ' collapsed';
         }
-        // New to show blocks John.
+
         $spanclass = "span4";
         $content .= html_writer::start_tag('div',
                                             array('class' => ' '.$spanclass.' panel panel-default coursebox '.$additionalcss));
         $urlb = new moodle_url('/course/view.php', array('id' => $course->id));
+
         $content .= "<a href='$urlb'>";
+
         $coursename = $chelper->get_course_formatted_name($course);
         $content .= html_writer::start_tag('div', array('class' => 'panel-heading'));
         if ($type == 1) {
@@ -1724,6 +1857,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         }
 
         $content .= html_writer::end_tag('div'); // End .panel-heading.
+        $content .= html_writer::end_tag('a'); // End a.
 
         if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
             $content .= html_writer::start_tag('div', array('id' => 'coursecollapse' . $course->id,
@@ -1756,6 +1890,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         }
 
         $content .= html_writer::end_tag('div'); // End .panel.
+
         return $content;
     }
 
@@ -1846,11 +1981,11 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $content .= html_writer::start_tag('div', array('class' => 'coursebox-content'));
             $coursename = $chelper->get_course_formatted_name($course);
             $content .= html_writer::tag('h3', html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
-                    $coursename, array('class' => $course->visible ? '' : 'dimmed', 'title' => $coursename)));
+                    $coursename, array('class' => $course->visible ? '' : 'dimmed')));
         }
         $content .= html_writer::start_tag('div', array('class' => 'summary'));
         if (ISSET($coursename)) {
-            $content .= html_writer::tag('p', html_writer::tag('b', $coursename));
+            $content .= html_writer::tag('p', html_writer::tag('strong', $coursename));
         }
         // Display course summary.
         if ($course->has_summary()) {
