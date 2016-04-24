@@ -37,7 +37,7 @@ $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 $enableheadingtitle = $PAGE->theme->settings->enableheading;
 
 // Fixed header.
-// $fixedheader = $PAGE->theme->settings->stickynavbar;
+//$fixedheader = $PAGE->theme->settings->stickynavbar;
 $fixedheader = false;
 
 if ($COURSE->id != 1) {

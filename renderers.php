@@ -187,6 +187,8 @@ class theme_adaptable_core_renderer extends core_renderer {
             return '';
         }
 
+        global $PAGE;
+
         $retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
         $retval .= '<a href="#" class="close" data-dismiss="alert" data-alertkey="' . $alertkey .
         '" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
@@ -1108,7 +1110,7 @@ EOT;
                     $branchurl = new moodle_url('#');
                     $branch = $menu->add($branchlabel, $branchurl, '', 10002);
 
-                    $branchtitle = "People";
+                    $branchtitle = get_string('people', 'theme_adaptable');
                     $branchlabel = '<i class="fa fa-users"></i>'.$branchtitle;
                     $branchurl = new moodle_url('/user/index.php', array('id' => $PAGE->course->id));
                     $branch->add($branchlabel, $branchurl, '', 100003);
@@ -1914,7 +1916,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
 
 
      /**
-      * Returns course box content for cattegories
+      * Returns course box content for categories
       *
       * Type - 1 = No Overlay.
       * Type - 2 = Overlay.
