@@ -81,8 +81,8 @@
     $title = get_string('enableheading', 'theme_adaptable');
     $description = get_string('enableheadingdesc', 'theme_adaptable');
     $radchoices = array(
-        'fullname' => "Course Full Name",
-        'shortname' => "Course Short Name",
+        'fullname' => get_string('breadcrumbtitlefullname', 'theme_adaptable'),
+        'shortname' => get_string('zbreadcrumbtitleshortname', 'theme_adaptable'),
         'off' => get_string('hide'),
     );
     $setting = new admin_setting_configselect($name, $title, $description, 'fullname', $radchoices);

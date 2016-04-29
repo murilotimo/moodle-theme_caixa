@@ -690,7 +690,7 @@ EOT;
      * @param string $settingname
      */
     public function get_marketing_blocks($layoutrow = 'marketlayoutrow', $settingname = 'market') {
-        global $PAGE;
+        global $PAGE, $OUTPUT;
         $fields = array();
         $blockcount = 0;
         $style = '';
@@ -716,7 +716,8 @@ EOT;
                     $blockcount ++;
                     $fieldname = $settingname . $blockcount;
                     if (isset($PAGE->theme->settings->$fieldname)) {
-                        $retval .= $PAGE->theme->settings->$fieldname;
+//                        $retval .= $PAGE->theme->settings->$fieldname;
+                        $retval .= $OUTPUT->get_setting($fieldname, 'format_html');
                     }
                     $retval .= '</div>';
                 }
@@ -886,6 +887,8 @@ EOT;
      * return string
      */
     public function navbar() {
+        global $COURSE;
+
         $items = $this->page->navbar->get_items();
         $breadcrumbseparator = get_config('theme_adaptable', 'breadcrumbseparator');
         $breadcrumbs = "";
@@ -899,6 +902,7 @@ EOT;
         foreach ($items as $item) {
             $item->hideicon = true;
 
+            // Text / Icon home.
             if ($i++ == 0) {
                 if (get_config('theme_adaptable', 'breadcrumbhome') == 'icon') {
                     $breadcrumbs = html_writer::link(new moodle_url('/'),
@@ -909,9 +913,20 @@ EOT;
                 continue;
             }
 
+            // Short/Long course title.
+            if ($i++ == 1) {
+                if (get_config('theme_adaptable', 'breadcrumbtitle') == 'shortname') {
+                    $breadcrumbs = html_writer::link(new moodle_url('/'), $COURSE->shortname);
+                } else {
+                    $breadcrumbs = html_writer::link(new moodle_url('/'), $COURSE->fullname);
+                }
+                continue;
+            }
+
             $breadcrumbs .= '<span class="separator"><i class="fa-'.$breadcrumbseparator.' fa"></i>
                              </span><li>'.$this->render($item).'</li>';
-        }
+
+        } // End loop.
 
         return '<ul class="breadcrumb">'.$breadcrumbs.'</ul>';
     }
