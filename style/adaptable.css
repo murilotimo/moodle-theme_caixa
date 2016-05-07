@@ -225,7 +225,7 @@ div.signuppanel h2 {
 #titlecontainer a,
 #titlecontainer p {
     font-family: [[setting:fonttitlename]], sans-serif !important;
-    font-size: [[setting:fonttitlesize]] !important;
+    font-size: [[setting:fonttitlesize]];
     font-weight: [[setting:fonttitleweight]] !important;
     color: [[setting:fonttitlecolor]] !important;
     padding-top: 10px;
@@ -1690,4 +1690,3 @@ line-height: normal;
 #page-mod-glossary-view .glossarycontrol {
     margin: -40px 5px;
 }
-

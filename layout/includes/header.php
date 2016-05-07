@@ -36,10 +36,11 @@ $hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 
 // Fixed header.
-//$fixedheader = $PAGE->theme->settings->stickynavbar;
+// $fixedheader = $PAGE->theme->settings->stickynavbar;.
+
 $fixedheader = false;
 
-/**
+/*
 $enableheadingtitle = $PAGE->theme->settings->enableheading;
 
 if ($COURSE->id != 1) {
@@ -52,7 +53,7 @@ if ($COURSE->id != 1) {
                     break;
     }
 }
-**/
+*/
 
 // Get the fonts name.
 $fontname = str_replace(" ", "+", $PAGE->theme->settings->fontname);
