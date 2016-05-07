@@ -76,7 +76,6 @@
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-/**
 
     // Display Course title in the header.
     $name = 'theme_adaptable/enableheading';
@@ -90,7 +89,7 @@
     $setting = new admin_setting_configselect($name, $title, $description, 'fullname', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-**/
+
 
     // Site Title Padding Top.
     $name = 'theme_adaptable/sitetitlepaddingtop';
@@ -170,6 +169,8 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+/**
+
     // Display Course title in the breadcrumb.
     $name = 'theme_adaptable/breadcrumbtitle';
     $title = get_string('breadcrumbtitle', 'theme_adaptable');
@@ -181,6 +182,7 @@
     $setting = new admin_setting_configselect($name, $title, $description, 'shortname', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+**/
 
     // Choose to display search box or social icons.
     $name = 'theme_adaptable/socialorsearch';
