@@ -82,7 +82,7 @@
     $description = get_string('enableheadingdesc', 'theme_adaptable');
     $radchoices = array(
         'fullname' => get_string('breadcrumbtitlefullname', 'theme_adaptable'),
-        'shortname' => get_string('zbreadcrumbtitleshortname', 'theme_adaptable'),
+        'shortname' => get_string('breadcrumbtitleshortname', 'theme_adaptable'),
         'off' => get_string('hide'),
     );
     $setting = new admin_setting_configselect($name, $title, $description, 'fullname', $radchoices);
@@ -137,6 +137,8 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+/**
+
     // Page Header Height.
     $name = 'theme_adaptable/pageheaderheight';
     $title = get_string('pageheaderheight', 'theme_adaptable');
@@ -144,6 +146,7 @@
     $setting = new admin_setting_configtext($name, $title, $description, '72px');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+**/
 
     // Breadcrumb home.
     $name = 'theme_adaptable/breadcrumbhome';
@@ -171,7 +174,7 @@
     $description = get_string('breadcrumbtitledesc', 'theme_adaptable');
     $radchoices = array(
         'fullname' => get_string('breadcrumbtitlefullname', 'theme_adaptable'),
-        'shortname' => get_string('breadcrumbtitlefullname', 'theme_adaptable')
+        'shortname' => get_string('breadcrumbtitleshortname', 'theme_adaptable')
     );
     $setting = new admin_setting_configselect($name, $title, $description, 'shortname', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
