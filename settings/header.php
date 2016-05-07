@@ -76,6 +76,8 @@
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
+/**
+
     // Display Course title in the header.
     $name = 'theme_adaptable/enableheading';
     $title = get_string('enableheading', 'theme_adaptable');
@@ -88,6 +90,7 @@
     $setting = new admin_setting_configselect($name, $title, $description, 'fullname', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+**/
 
     // Site Title Padding Top.
     $name = 'theme_adaptable/sitetitlepaddingtop';
@@ -138,7 +141,6 @@
     $temp->add($setting);
 
 /**
-
     // Page Header Height.
     $name = 'theme_adaptable/pageheaderheight';
     $title = get_string('pageheaderheight', 'theme_adaptable');

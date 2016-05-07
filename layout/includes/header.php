@@ -34,11 +34,13 @@ $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-firs
 
 $hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
-$enableheadingtitle = $PAGE->theme->settings->enableheading;
 
 // Fixed header.
 //$fixedheader = $PAGE->theme->settings->stickynavbar;
 $fixedheader = false;
+
+/**
+$enableheadingtitle = $PAGE->theme->settings->enableheading;
 
 if ($COURSE->id != 1) {
     switch($enableheadingtitle) {
@@ -50,6 +52,7 @@ if ($COURSE->id != 1) {
                     break;
     }
 }
+**/
 
 // Get the fonts name.
 $fontname = str_replace(" ", "+", $PAGE->theme->settings->fontname);
