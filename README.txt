@@ -190,7 +190,7 @@ IMPORTANT! Verify you only enter the <li> tags. For example:
 Acknowledgment
 --------------------------------------
 Big thanks to all the volunteers that are testing Adaptable continously. 
-We really appreciate your help and daily effort to develope the most adaptable theme for moodle.
+We really appreciate your help and support to develope the most adaptable theme for moodle.
 
 
 
