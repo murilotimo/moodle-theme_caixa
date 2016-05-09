@@ -79,8 +79,11 @@ Frontpage Marketing Block HTML structure Coventry:
 <p>Some text below the link....</p>
 
 
-Front page Info and Marketing Blocks 
-------------------------------------
+
+
+
+Front page Info Box and Marketing Blocks 
+----------------------------------------
 There are two Info blocks in the frontpage located above and below the Marketing Blocks. These are just for compatibility with the old BCU. 
 
 It is recommended to use the new marketing blocks builder that allows you to create your own layout and add much more blocks. 
