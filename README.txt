@@ -168,6 +168,11 @@ List with Chevron
 </ul>
 
 
+Copyright
+-------------------------------------
+<p>&copy; 0000 - 9999 Adaptable - Made with <i class="fa fa-heart" style="color: #ff0000;"></i></p>
+
+
 News Ticker
 -------------------------------------
 To add news to the ticker you need to create an unordered list using the Atto editor.
@@ -182,17 +187,17 @@ IMPORTANT! Verify you only enter the <li> tags. For example:
 
 
 
+Acknowledgment
+--------------------------------------
+Big thanks to all the volunteers that are testing Adaptable continously. 
+We really appreciate your help and daily effort to develope the most adaptable theme for moodle.
 
 
 
 
 
-
-
-
-
-
-
+Adaptable is licensed under the GPL (GNU General Public License). 
+You can find a complete licence copy in: http://www.gnu.org/licenses
 
 
 
