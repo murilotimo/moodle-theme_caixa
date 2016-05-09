@@ -33,16 +33,16 @@ individuality without without knowing any CSS.
 
 
 ==========================================================================================================
-HTML sample code for settings and block areas
+HTML/CSS sample code for block areas
 ==========================================================================================================
 
-Here you will find some code samples to help you to customize the Info Box and the Marketing Blocks
+Here you will find some code samples to help you to customize the Info Box and the Marketing Blocks.
 
 You can insert any HTML tag to customize the frontpage blocks. Use a <div> as a main container and add the
 height to keep the same value in all the blocks.
 
 The Font Awesome icons set is available in http://fortawesome.github.io/Font-Awesome/icons/.
-You can insert any of them and following the examples http://fortawesome.github.io/Font-Awesome/examples/
+You can insert any of them following the examples http://fortawesome.github.io/Font-Awesome/examples/
 
 
 Front Page Slider Styles
@@ -77,8 +77,6 @@ Frontpage Marketing Block HTML structure Coventry:
 <div><img src="http://somewebsite.com/2.jpg" class="marketimage"></div>
 <h4><a href="#">International Courses</a></h4>
 <p>Some text below the link....</p>
-
-
 
 
 
@@ -161,13 +159,42 @@ Contact information
 
 List with Chevron
 
-<ul class="block-list white">
-    <li><a href="http://moodle.org/"><span class="icon-right-open-mini"></span><span>Accessibility</span></a></li>
-    <li><a href="http://moodle.org/"><span class="icon-right-open-mini"></span><span>Moodle Help</span></a></li>
-    <li><a href="http://moodle.org/"><span class="icon-right-open-mini"></span><span>Moodle Feedback</span></a></li>
-    <li><a href="http://moodle.org/"><span class="icon-right-open-mini"></span><span>IT Help</span></a></li>
-    <li><a href="http://moodle.org/"><span class="icon-right-open-mini"></span><span>IT Feedback</span></a></li>
+<ul class="block-list">
+    <li><a href="http://moodle.org/"><span class="fa fa-chevron-right"></span><span>Accessibility</span></a></li>
+    <li><a href="http://moodle.org/"><span class="fa fa-chevron-right"></span><span>Moodle Help</span></a></li>
+    <li><a href="http://moodle.org/"><span class="fa fa-chevron-right"></span><span>Moodle Feedback</span></a></li>
+    <li><a href="http://moodle.org/"><span class="fa fa-chevron-right"></span><span>IT Help</span></a></li>
+    <li><a href="http://moodle.org/"><span class="fa fa-chevron-right"></span><span>IT Feedback</span></a></li>
 </ul>
+
+
+News Ticker
+-------------------------------------
+To add news to the ticker you need to create an unordered list using the Atto editor.
+
+IMPORTANT! Verify you only enter the <li> tags. For example:
+
+<li>Configure all the theme colours</li>
+<li>Use any Google Font for the content, headings and site title</li>
+<li>Display a logo or a configurable title site</li>
+<li>Configurable Slideshow</li>
+<li>Display up to 12 marketing blocks in the front page</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
