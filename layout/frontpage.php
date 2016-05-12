@@ -45,7 +45,7 @@ if (!empty($PAGE->theme->settings->infobox)) {
                 <?php echo $OUTPUT->get_setting('infobox', 'format_html'); ?>
             </div>
         </div>
-    </div>
+ 
 <?php
 }
 ?>
