@@ -283,21 +283,6 @@ $string['infoboxdesc'] = 'Frontpage info block HTML (see the <a href="./../theme
 $string['infoboxfullscreen'] = 'Make infobox full screen';
 $string['infoboxfullscreendesc'] = 'Turning this option on will make the infobox full screen.';
 
-$string['infoboxcolor'] = 'Frontpage Info Box background colour';
-$string['infoboxcolordesc'] = 'Set the frontpage Info Box background colour';
-
-$string['infoboxtextcolor'] = 'Frontpage Info Box text colour';
-$string['infoboxtextcolordesc'] = 'Set the frontpage Info Box text colour';
-
-$string['infobox2'] = 'Frontpage Secondary Info Box';
-$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
-
-$string['infoboxcolor2'] = 'Secondary frontpage Info Box background colour';
-$string['infoboxcolor2desc'] = 'Set the secondary frontpage Info Box background colour';
-
-$string['infoboxtextcolor2'] = 'Secondary frontpage Info Box text colour';
-$string['infoboxtextcolor2desc'] = 'Set the secondary frontpage Info Box text colour';
-
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
 $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
 
