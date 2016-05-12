@@ -41,7 +41,6 @@ if (!empty($PAGE->theme->settings->infobox)) {
         echo '<div id="theinfo" class="container">';
     }
 ?>
-        <div id="theinfo-internal">
             <div class="row-fluid">
                 <?php echo $OUTPUT->get_setting('infobox', 'format_html'); ?>
             </div>
