@@ -125,8 +125,6 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:slidermarginbottom]]' => '20px',
         '[[setting:currentcolor]]' => '#d9edf7',
         '[[setting:sectionheadingcolor]]' => '#5f588a',
-        '[[setting:infoboxtextcolor]]' => '#ffffff',
-        '[[setting:infoboxtextcolor2]]' => '#666666',
         '[[setting:menufontsize]]' => '14px',
         '[[setting:menufontpadding]]' => '20px',
         '[[setting:topmenufontsize]]' => '14px',
