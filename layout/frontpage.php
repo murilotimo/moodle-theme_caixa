@@ -93,13 +93,14 @@ if (!empty($PAGE->theme->settings->infobox2)) {
 if ($left == 1) {
     echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
 }
-?>
-<section id="region-main" class="span9 <?php
-if ($left) {
-    echo ' ';
+
+// Control span to display course tiles.
+if (!isloggedin()) {
+    echo '<section id="region-main" class="span12">';
 } else {
-    echo 'desktop-first-column';
-} ?> ">
+    echo '<section id="region-main" class="span9 desktop-first-column">';
+} ?>
+
 
 <?php
 echo $OUTPUT->course_content_header();

@@ -684,7 +684,7 @@ EOT;
     }
 
     /**
-     * Renders marketing blocks on front page     *
+     * Renders marketing blocks on front page
      *
      * @param string $layoutrow
      * @param string $settingname
@@ -716,7 +716,7 @@ EOT;
                     $blockcount ++;
                     $fieldname = $settingname . $blockcount;
                     if (isset($PAGE->theme->settings->$fieldname)) {
-                        $retval .= $OUTPUT->get_setting($fieldname, 'format_html');
+                         $retval .= $OUTPUT->get_setting($fieldname, 'format_html');
                     }
                     $retval .= '</div>';
                 }
@@ -753,7 +753,7 @@ EOT;
     }
 
     /**
-     * Renders footer blocks     *
+     * Renders footer blocks
      *
      * @param string $layoutrow
      */
@@ -912,16 +912,6 @@ EOT;
                 continue;
             }
 
-            // Short/Long course title.
-            if ($i++ == 1) {
-                if (get_config('theme_adaptable', 'breadcrumbtitle') == 'shortname') {
-                    $breadcrumbs = html_writer::link(new moodle_url('/'), $COURSE->shortname);
-                } else {
-                    $breadcrumbs = html_writer::link(new moodle_url('/'), $COURSE->fullname);
-                }
-                continue;
-            }
-
             $breadcrumbs .= '<span class="separator"><i class="fa-'.$breadcrumbseparator.' fa"></i>
                              </span><li>'.$this->render($item).'</li>';
 
@@ -989,10 +979,10 @@ EOT;
         $cache = cache::make('theme_adaptable', 'userdata');
 
         if ($sessttl > 0 && time() <= $cache->get('usernavbarttl')) {
-            return $cache->get('usernavbar');
+            return $cache->get('mysitesvisibility');
         }
 
-        $mysitesvisibility = 'excludehidden';
+        $usernavbar = 'excludehidden';
         if (!empty($PAGE->theme->settings->enablemysites)) {
             $mysitesvisibility = $PAGE->theme->settings->enablemysites;
         }
@@ -1053,7 +1043,6 @@ EOT;
             }
 
             if ($mysitesvisibility != 'disabled') {
-
                 $branchtitle = get_string('mysites', 'theme_adaptable');
                 $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
                 $branchurl   = new moodle_url('/my/index.php');
@@ -1266,36 +1255,41 @@ EOT;
      * @return string
      */
     public function get_logo_title() {
-        global $PAGE, $COURSE, $CFG;
+        global $PAGE, $COURSE, $CFG, $SITE;
         $retval = '';
         $display = $PAGE->theme->settings->sitetitle;
 
-        $div = '<div id="titlecontainer" class="pull-left">';
         if ($COURSE->id > 1) {
             $div = '<div id="coursetitle" class="pull-left">';
+        } else {
+            $div = '<div id="titlecontainer" class="pull-left">';
         }
 
-        if ($display == 'custom') {
+        $retval .= $div;
+
+        if ($display == 'default') {
+        // Default moodle title.
+            if (!empty($PAGE->theme->settings->logo)) {
+                $retval .= '<div id="logocontainer">';
+                $retval .= "<a href='$CFG->wwwroot'>";
+                $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
+                $retval .= '</a></div></div>';
+            } else {
+                $retval .= '<span id="sitetitle">' . $SITE->shortname . '</span></div>';
+            }
+        } else {
+        // Custom title.
             $header = theme_adaptable_remove_site_fullname($PAGE->heading);
 
             if (!empty($header)) {
                 $header = $PAGE->theme->settings->sitetitletext;
             }
+
             $PAGE->set_heading($header);
+
+            $retval .= '<span>' . $PAGE->theme->settings->sitetitletext . '</span></div>';
         }
 
-        if (!empty($PAGE->theme->settings->logo)) {
-            $retval .= '<div id="logocontainer">';
-            $retval .= "<a href='$CFG->wwwroot'>";
-            $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
-            $retval .= '</a></div>';
-        }
-
-        if ($display != 'disabled') {
-            $retval .= $div;
-            $retval .= '<span>' . $PAGE->theme->settings->sitetitletext . '</span>';
-            $retval .= '</div>';
-        }
         return $retval;
     }
 
@@ -1617,7 +1611,7 @@ EOT;
     }
 
     /**
-     * Returns html for cusotm menu
+     * Returns html for custom menu
      *
      * @param string $custommenuitems = ''
      * @return array
@@ -1845,7 +1839,14 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $classes .= ' collapsed';
         }
 
-        $spanclass = "span4";
+
+// Control span to display course tiles.
+        if (!isloggedin() || isguestuser()) {
+            $spanclass = "span4";
+        } else {
+            $spanclass = "span4";
+        }
+
         $content .= html_writer::start_tag('div',
                                             array('class' => ' '.$spanclass.' panel panel-default coursebox '.$additionalcss));
         $urlb = new moodle_url('/course/view.php', array('id' => $course->id));
