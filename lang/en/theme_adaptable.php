@@ -715,6 +715,9 @@ $string['buttonloginheightdesc'] = 'Only effective if using a login form in the 
 $string['buttonloginmargintop'] = 'Set Top Margin for Login Button';
 $string['buttonloginmargintopdesc'] = 'Allows spacing / position of login button to be altered';
 
+$string['loginplaceholder'] = 'Username';
+$string['passwordplaceholder'] = 'Password';
+
 
 // Header ***********************************************************.
 $string['headersettings'] = 'Header';
