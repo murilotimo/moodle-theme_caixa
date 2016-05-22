@@ -40,21 +40,6 @@ $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 
 $fixedheader = false;
 
-/*
-$enableheadingtitle = $PAGE->theme->settings->enableheading;
-
-if ($COURSE->id != 1) {
-    switch($enableheadingtitle) {
-        case "shortname" :
-                    $PAGE->set_heading($COURSE->shortname);
-                    break;
-        case "off" :
-                    $PAGE->set_heading('');
-                    break;
-    }
-}
-*/
-
 // Get the fonts name.
 $fontname = str_replace(" ", "+", $PAGE->theme->settings->fontname);
 $fontheadername = str_replace(" ", "+", $PAGE->theme->settings->fontheadername);
@@ -393,15 +378,22 @@ echo $OUTPUT->get_top_menus();
 </div>
 <div id="page-header" class="clearfix container">
 
-<?php echo $OUTPUT->get_logo_title(); ?>
+
+<?php 
+// Site title or logo.
+echo $OUTPUT->get_logo_title();
+?>
+
 
 <?php
+// Social icons.
 if ($PAGE->theme->settings->socialorsearch == 'social') {
     echo $OUTPUT->socialicons();
 }
 ?>
 
 <?php
+// Search box.
 if ($PAGE->theme->settings->socialorsearch == 'search') { ?>
         <div class="searchbox">
             <form action="<?php p($CFG->wwwroot) ?>/course/search.php">
