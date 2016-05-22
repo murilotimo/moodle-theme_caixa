@@ -41,12 +41,11 @@ if (!empty($PAGE->theme->settings->infobox)) {
         echo '<div id="theinfo" class="container">';
     }
 ?>
-        <div id="theinfo-internal">
             <div class="row-fluid">
                 <?php echo $OUTPUT->get_setting('infobox', 'format_html'); ?>
             </div>
         </div>
-    </div>
+ 
 <?php
 }
 ?>
@@ -94,13 +93,14 @@ if (!empty($PAGE->theme->settings->infobox2)) {
 if ($left == 1) {
     echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
 }
-?>
-<section id="region-main" class="span9 <?php
-if ($left) {
-    echo ' ';
+
+// Control span to display course tiles.
+if (!isloggedin()) {
+    echo '<section id="region-main">';
 } else {
-    echo 'desktop-first-column';
-} ?> ">
+    echo '<section id="region-main" class="span9 desktop-first-column">';
+} ?>
+
 
 <?php
 echo $OUTPUT->course_content_header();

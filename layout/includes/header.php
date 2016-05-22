@@ -34,22 +34,11 @@ $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-firs
 
 $hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
-$enableheadingtitle = $PAGE->theme->settings->enableheading;
 
 // Fixed header.
-// $fixedheader = $PAGE->theme->settings->stickynavbar;
-$fixedheader = false;
+// $fixedheader = $PAGE->theme->settings->stickynavbar;.
 
-if ($COURSE->id != 1) {
-    switch($enableheadingtitle) {
-        case "shortname" :
-                    $PAGE->set_heading($COURSE->shortname);
-                    break;
-        case "off" :
-                    $PAGE->set_heading('');
-                    break;
-    }
-}
+$fixedheader = false;
 
 // Get the fonts name.
 $fontname = str_replace(" ", "+", $PAGE->theme->settings->fontname);
@@ -176,7 +165,6 @@ if ($fixedheader) {
 <?php
 }
 ?>
-
     <div id="above-header">
         <div class="clearfix container userhead">
             <div class="pull-left">
@@ -190,8 +178,8 @@ if (!isloggedin() || isguestuser()) {
     echo $OUTPUT->page_heading_menu();
     if (!empty($PAGE->theme->settings->frontpagelogin)) { ?>
         <form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
-            <input style="height: 12px; padding-bottom: 4px;" type="text" name="username" placeholder="Username" size="10">
-            <input style="height: 12px; padding-bottom: 4px;" type="password" name="password" placeholder="Password"  size="10">
+            <input style="height: 12px; padding-bottom: 4px;" type="text" name="username" placeholder="<?php echo get_string('loginplaceholder', 'theme_adaptable'); ?>" size="10">
+            <input style="height: 12px; padding-bottom: 4px;" type="password" name="password" placeholder="<?php echo get_string('passwordplaceholder', 'theme_adaptable'); ?>"  size="10">
             <button class="btn-login" type="submit"><?php echo get_string('logintextbutton', 'theme_adaptable'); ?></button>
         </form>
 <?php
@@ -390,15 +378,22 @@ echo $OUTPUT->get_top_menus();
 </div>
 <div id="page-header" class="clearfix container">
 
-<?php echo $OUTPUT->get_logo_title(); ?>
+
+<?php 
+// Site title or logo.
+echo $OUTPUT->get_logo_title();
+?>
+
 
 <?php
+// Social icons.
 if ($PAGE->theme->settings->socialorsearch == 'social') {
     echo $OUTPUT->socialicons();
 }
 ?>
 
 <?php
+// Search box.
 if ($PAGE->theme->settings->socialorsearch == 'search') { ?>
         <div class="searchbox">
             <form action="<?php p($CFG->wwwroot) ?>/course/search.php">

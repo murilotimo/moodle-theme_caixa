@@ -225,7 +225,7 @@ div.signuppanel h2 {
 #titlecontainer a,
 #titlecontainer p {
     font-family: [[setting:fonttitlename]], sans-serif !important;
-    font-size: [[setting:fonttitlesize]] !important;
+    font-size: [[setting:fonttitlesize]];
     font-weight: [[setting:fonttitleweight]] !important;
     color: [[setting:fonttitlecolor]] !important;
     padding-top: 10px;
@@ -362,8 +362,8 @@ a.usermendrop {
 }
 
 #marketblocks {
-    margin-bottom: 20px;
     overflow: hidden;
+    padding: 0 10px 10px 0;
     background-color: [[setting:marketblocksbackgroundcolor]];
 }
 
@@ -396,7 +396,6 @@ a.usermendrop {
 }
 
 #themessage {
-    background: [[setting:infoboxcolor2]];
     position: relative;
     margin-bottom: 20px;
 }
@@ -404,16 +403,6 @@ a.usermendrop {
 #themessage-internal {
     padding: 15px;
     padding-right: 25px;
-}
-
-#themessage h1,
-#themessage h2,
-#themessage h3,
-#themessage h4,
-#themessage h5,
-#themessage h6,
-#themessage p {
-    color: [[setting:infoboxtextcolor2]] !important;
 }
 
 .personpic {
@@ -442,23 +431,8 @@ span.fa-chevron-right.fa {
     margin: 10px 0 0;
 }
 
-#theinfo {
-    background: [[setting:infoboxcolor]];
-/*    margin-bottom: 20px;*/
-}
-
 #theinfo-internal {
   padding: 15px 25px;
-}
-
-#theinfo h1,
-#theinfo h2,
-#theinfo h3,
-#theinfo h4,
-#theinfo h5,
-#theinfo h6,
-#theinfo p {
-    color: [[setting:infoboxtextcolor]] !important;
 }
 
 #theinfo .span3 {
@@ -1690,4 +1664,3 @@ line-height: normal;
 #page-mod-glossary-view .glossarycontrol {
     margin: -40px 5px;
 }
-

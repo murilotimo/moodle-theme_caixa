@@ -157,7 +157,7 @@ $string['tickertext2'] = 'News Ticker Text 2';
 $string['tickertext2desc'] = 'By controlling access on profile fields you can show different news ticker items to different types of user using this second text field';
 
 $string['tickertextprofilefield'] = 'Custom Profile Field Name=Value (optional)';
-$string['tickertextprofilefielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
+$string['tickertextprofilefielddesc'] = 'Add access rule using for custom profile field eg: usertype=student';
 
 $string['ticker'] = 'Announcements';
 
@@ -282,21 +282,6 @@ $string['infoboxdesc'] = 'Frontpage info block HTML (see the <a href="./../theme
 
 $string['infoboxfullscreen'] = 'Make infobox full screen';
 $string['infoboxfullscreendesc'] = 'Turning this option on will make the infobox full screen.';
-
-$string['infoboxcolor'] = 'Frontpage Info Box background colour';
-$string['infoboxcolordesc'] = 'Set the frontpage Info Box background colour';
-
-$string['infoboxtextcolor'] = 'Frontpage Info Box text colour';
-$string['infoboxtextcolordesc'] = 'Set the frontpage Info Box text colour';
-
-$string['infobox2'] = 'Frontpage Secondary Info Box';
-$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
-
-$string['infoboxcolor2'] = 'Secondary frontpage Info Box background colour';
-$string['infoboxcolor2desc'] = 'Set the secondary frontpage Info Box background colour';
-
-$string['infoboxtextcolor2'] = 'Secondary frontpage Info Box text colour';
-$string['infoboxtextcolor2desc'] = 'Set the secondary frontpage Info Box text colour';
 
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
 $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
@@ -730,6 +715,9 @@ $string['buttonloginheightdesc'] = 'Only effective if using a login form in the 
 $string['buttonloginmargintop'] = 'Set Top Margin for Login Button';
 $string['buttonloginmargintopdesc'] = 'Allows spacing / position of login button to be altered';
 
+$string['loginplaceholder'] = 'Username';
+$string['passwordplaceholder'] = 'Password';
+
 
 // Header ***********************************************************.
 $string['headersettings'] = 'Header';
@@ -841,7 +829,7 @@ $string['helptitle'] = 'Help';
 $string['helptitle2'] = 'Second Help link';
 
 $string['helpprofilefield'] = 'Help custom profile field (optional)';
-$string['helpprofilefielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
+$string['helpprofilefielddesc'] = 'Add access rule using for custom profile field eg: usertype=student';
 
 
 // Courses Overlay *************************************************.
@@ -920,7 +908,7 @@ $string['alertannounce'] = 'Announcement';
 $string['alertinfodesc'] = 'Display an announcement in the Alert Box';
 
 $string['alertprofilefield'] = 'Custom Profile Field Name=Value (optional)';
-$string['alertprofilefielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
+$string['alertprofilefielddesc'] = 'Add access rule using for custom profile field eg: usertype=student';
 
 // Alert Access - Visibility.
 $string['alertaccessglobal'] = 'Visible to everyone';
@@ -1121,7 +1109,7 @@ $string['menusessionttldesc'] = 'Number of minutes after which menu access rules
 // Tool menus ******************************************************.
 $string['newmenudesc'] = 'Configure links to be shown under a top header menu.';
 $string['newmenufield'] = 'Custom Profile Field Name=Value (optional)';
-$string['newmenufielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
+$string['newmenufielddesc'] = 'Add access rule using for custom profile field eg: usertype=student';
 $string['newmenurequirelogin'] = 'Require login';
 $string['newmenurequirelogindesc'] = 'If enabled this menu will only be visible to logged in users';
 
@@ -1189,7 +1177,7 @@ $string['toolsmenutitledesc'] = 'Add the title of the menu you would like to dis
 $string['toolsmenulabel'] = 'Tools Menu';
 
 $string['toolsmenufield'] = 'Custom Profile Field Name=Value (optional)';
-$string['toolsmenufielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
+$string['toolsmenufielddesc'] = 'Add access rule using for custom profile field eg: usertype=student';
 
 
 // Social settings *************************************************.
@@ -1240,7 +1228,7 @@ $string['analyticscount'] = 'Analytics count';
 $string['analyticscountdesc'] = 'The number of analytics fields to show in the edit area below.';
 
 $string ['analyticsprofilefield'] = 'Custom Profile Field Name=Value (optional)';
-$string ['analyticsprofilefielddesc'] = 'Add access rule using for custom profile field eg: "usertype=student"';
+$string ['analyticsprofilefielddesc'] = 'Add access rule using for custom profile field eg: usertype=student';
 
 // Custom CSS.
 $string['customcss'] = 'Custom CSS';
