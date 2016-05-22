@@ -96,7 +96,7 @@ if ($left == 1) {
 
 // Control span to display course tiles.
 if (!isloggedin()) {
-    echo '<section id="region-main" class="span12">';
+    echo '<section id="region-main">';
 } else {
     echo '<section id="region-main" class="span9 desktop-first-column">';
 } ?>
