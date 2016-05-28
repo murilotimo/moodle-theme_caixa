@@ -225,11 +225,16 @@ div.signuppanel h2 {
 #titlecontainer a,
 #titlecontainer p {
     font-family: [[setting:fonttitlename]], sans-serif !important;
-    font-size: [[setting:fonttitlesize]];
-    font-weight: [[setting:fonttitleweight]] !important;
     color: [[setting:fonttitlecolor]] !important;
-    padding-top: 10px;
+    font-size: [[setting:fonttitlesize]] !important;
     line-height: 100%;
+    font-weight: [[setting:fonttitleweight]];
+    padding-left: 15px;
+    padding-top: [[setting:coursetitlepaddingtop]];
+    max-width: [[setting:coursetitlemaxwidth]];
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #titlecontainer a:hover {
@@ -247,11 +252,11 @@ div.signuppanel h2 {
     margin-left: 0px;
 }
 
-#coursetitle {
+#coursetitle p {
     font-family: [[setting:fonttitlename]], sans-serif !important;
     color: [[setting:fonttitlecolor]] !important;
     font-size: [[setting:fonttitlesize]] !important;
-    line-height: normal;
+    line-height: 100%;
     font-weight: [[setting:fonttitleweight]];
     padding-left: 15px;
     padding-top: [[setting:coursetitlepaddingtop]];
@@ -401,8 +406,10 @@ a.usermendrop {
 }
 
 #themessage-internal {
+/*
     padding: 15px;
     padding-right: 25px;
+*/
 }
 
 .personpic {
