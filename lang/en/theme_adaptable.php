@@ -283,6 +283,9 @@ $string['infoboxdesc'] = 'Frontpage info block HTML (see the <a href="./../theme
 $string['infoboxfullscreen'] = 'Make infobox full screen';
 $string['infoboxfullscreendesc'] = 'Turning this option on will make the infobox full screen.';
 
+$string['infobox2'] = 'Frontpage Secondary Info Box';
+$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
+
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
 $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
 
