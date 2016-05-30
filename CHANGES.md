@@ -1,3 +1,22 @@
+Changes in version 1.2.3 (2016052900)
+-------------------------------------
+- #469: Infobox2 strings missed
+- #468: Lower Header blocks text and link Colour: not working
+- #467: Override .block settings
+- #444: Neither site title nor course title in the header
+
+
+Changes in version 1.2.2 (2016050900)
+-------------------------------------
+- #449: 'People' item in 'This course' menu is not displayed in local language 
+- #446: Failed to control 'Course Full Name' / 'Course Short Name' setting for the breadcrumb 
+- #445: Header height has a 'hidden' limit 
+- #444: Neither site title nor course title in the header 
+- #441: Multi-lang content not displayed in the marketing blocks 
+- #440: Preferences menu item enable by default 
+- #429: Teacher Style front Page Tiles 
+
+
 Changes in version 1.2.1 (2016031800)
 -------------------------------------
 

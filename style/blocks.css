@@ -1,9 +1,22 @@
+.block-region-front .block {
+border: none;
+}
+
+.block-region-front .block .header {
+    border: none;
+}
+
+.block.hidden .header {
+  border-bottom: 0px;
+}
+
+/* reset border values */
 .block {
-  border-style: [[setting:blockmainbordertopstyle]];
-  padding: 0 0;
-  box-shadow: none;
-  background: transparent;
-  border-radius: 0px;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-radius: important !0;
 }
 
 .block .header {
@@ -17,19 +30,6 @@
   -moz-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
   border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
 }
-
-.block-region-front .block {
-border: none;
-}
-
-.block-region-front .block .header {
-    border: none;
-}
-
-.block.hidden .header {
-  border-bottom: 0px;
-}
-
 
 /* block titles */
 .block .header .title h2 {
@@ -52,7 +52,7 @@ border: none;
   font-weight: normal;
   font-size: 90%;
   background: [[setting:blockbackgroundcolor]];
-  color: #333;
+ /* color: #333;*/
   -webkit-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
   -moz-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
   border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];

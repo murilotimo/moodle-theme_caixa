@@ -60,7 +60,7 @@
     $title = get_string('sitetitle', 'theme_adaptable');
     $description = get_string('sitetitledesc', 'theme_adaptable');
     $radchoices = array(
-        'disabled' => get_string('sitetitleoff', 'theme_adaptable'),
+// Removed        'disabled' => get_string('sitetitleoff', 'theme_adaptable'),.
         'default' => get_string('sitetitledefault', 'theme_adaptable'),
         'custom' => get_string('sitetitlecustom', 'theme_adaptable')
     );
@@ -139,16 +139,6 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-/*
-*    // Page Header Height.
-*    $name = 'theme_adaptable/pageheaderheight';
-*    $title = get_string('pageheaderheight', 'theme_adaptable');
-*    $description = get_string('pageheaderheightdesc', 'theme_adaptable');
-*    $setting = new admin_setting_configtext($name, $title, $description, '72px');
-*    $setting->set_updatedcallback('theme_reset_all_caches');
-*    $temp->add($setting);
-*/
-
     // Breadcrumb home.
     $name = 'theme_adaptable/breadcrumbhome';
     $title = get_string('breadcrumbhome', 'theme_adaptable');
@@ -168,20 +158,6 @@
     $setting = new admin_setting_configtext($name, $title, $description, 'angle-right');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
-
-/*
-*    // Display Course title in the breadcrumb.
-*    $name = 'theme_adaptable/breadcrumbtitle';
-*    $title = get_string('breadcrumbtitle', 'theme_adaptable');
-*    $description = get_string('breadcrumbtitledesc', 'theme_adaptable');
-*    $radchoices = array(
-*       'fullname' => get_string('breadcrumbtitlefullname', 'theme_adaptable'),
-*       'shortname' => get_string('breadcrumbtitleshortname', 'theme_adaptable')
-*   );
-*   $setting = new admin_setting_configselect($name, $title, $description, 'shortname', $radchoices);
-*    $setting->set_updatedcallback('theme_reset_all_caches');
-*    $temp->add($setting);
-*/
 
     // Choose to display search box or social icons.
     $name = 'theme_adaptable/socialorsearch';

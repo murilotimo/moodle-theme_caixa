@@ -35,7 +35,7 @@ $string['choosereadme'] = '
 <div class="well">
  <h2>Credits</h2>
  <h3>About</h3>
- <p>Adaptable is a moodle 2-columns responsive theme highly customizable and based in the popular BCU theme.</p>
+ <p>Adaptable is a Moodle 2-columns responsive theme highly customizable and based in the popular BCU theme.</p>
  <p>This theme is licensed under the GPL (GNU General Public License). You can find a complete licence copy in: http://www.gnu.org/licenses/</p>
  <p>Modify it / Improve it / Share it</p>
  <br>
@@ -45,7 +45,7 @@ $string['choosereadme'] = '
  </p>
  <br>
  <h3>Bugs Report</h3>
- <p>You can report bugs using the moodle forum or https://bitbucket.org/covuni/moodle-theme_adaptable/issues</p>
+ <p>You can report bugs using the Moodle forum or https://bitbucket.org/covuni/moodle-theme_adaptable/issues</p>
  <br>
  <h3>Documentation</h3>
  <p></p>
@@ -129,7 +129,7 @@ $string['tickersettingsheading'] = 'Setup News Ticker on Front Page. See the lay
 $string['tickerdesc'] = 'Here you can set a news ticker to run across the front page of your Moodle site.
   It is intended as a less intrusive alternative to the slider taking up very little space.
   To setup your ticker simply entere a bulleted list and include any hyperlinks you need to in that text.
-  Note: you must not put ul tags around our list, only li. Moodles text editor tends to add ul tags.
+  Note: you must not put ul tags around our list, only li. Moodle text editor tends to add ul tags.
   If your ticker does not load properly switch to HTML view and ensure you have only li tags:
   <pre>
   &lt;li&gt;News item one.....&lt;/li&gt;
@@ -283,6 +283,9 @@ $string['infoboxdesc'] = 'Frontpage info block HTML (see the <a href="./../theme
 $string['infoboxfullscreen'] = 'Make infobox full screen';
 $string['infoboxfullscreendesc'] = 'Turning this option on will make the infobox full screen.';
 
+$string['infobox2'] = 'Frontpage Secondary Info Box';
+$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
+
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
 $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
 
@@ -297,7 +300,7 @@ $string['footersettingsheading'] = 'Set the content that should appear in the fo
 $string['footerdesc'] = 'Control the content that appears in the 4 footer sections of the page.';
 
 $string['showfooterblocks'] = 'Show Footnote Block';
-$string['showfooterblocksdesc'] = 'Show / hide the lower footerblock used for footnote / moodle docs region';
+$string['showfooterblocksdesc'] = 'Show / hide the lower footerblock used for footnote / Moodle docs region';
 
 $string['footerblocksplacement'] = 'Footer Blocks Placement ';
 $string['footerblocksplacementdesc'] = 'Control where the upper footer blocks are displayed. Sitewide is default.';
@@ -726,7 +729,7 @@ $string['headerdesc'] = 'Upload your favicon, logo, set login form in header, ad
     <strong>You can set font size and styles for titles in the "fonts" settings page.</strong>';
 
 $string['enableheading'] = 'Header course title';
-$string['enableheadingdesc'] = 'Set the mode to display the course title in the header.';
+$string['enableheadingdesc'] = 'Set the mode to display the course title in the header when the default Moodle site title is enabled.';
 
 $string['sitetitlecoursesdisabled'] = 'Disabled - only show course titles in course pages';
 $string['sitetitlecoursesenabled'] = 'Enabled - show site title and course titles in course pages';
@@ -775,7 +778,7 @@ $string['menusettings'] = 'Header Menus';
 $string['menusettingsheading'] = 'Customize menus in the upper header the header of this theme.';
 
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Upload a logo for use on your site,';
+$string['logodesc'] = 'Upload a logo for use on your site.';
 
 $string['favicon'] = 'Favicon';
 $string['favicondesc'] = 'Upload a favicon for use on your site,';
@@ -791,14 +794,14 @@ $string['loadingcolor'] = 'Loading colour';
 $string['loadingcolordesc'] = 'The loading bar colour in the top of the page';
 
 $string['sitetitle'] = 'Display site title';
-$string['sitetitledesc'] = 'Show / Hide site title';
+$string['sitetitledesc'] = 'Display the default Moodle site title from <a href="./../admin/settings.php?section=frontpagesettings" target="_blank">Front Page Settings</a> or enter a custom site title in the text box below. If you add a logo image then the title is not displayed.';
 
 $string['sitetitleoff'] = 'Disable site title';
 $string['sitetitledefault'] = 'Use Moodle site title (site name)';
-$string['sitetitlecustom'] = 'Use custom site title (enter in text field below)';
+$string['sitetitlecustom'] = 'Use custom site title (enter in text box below)';
 
 $string['sitetitletext'] = 'Site title';
-$string['sitetitletextdesc'] = 'Site title displayed in the header';
+$string['sitetitletextdesc'] = 'Site title displayed in the header. You can use any HTML tag and apply inline styles.';
 
 $string['frontpagelogin'] = 'Front Page Login';
 $string['frontpagelogindesc'] = 'Enable login form in header (will show button if turned off)';

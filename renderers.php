@@ -1260,7 +1260,8 @@ EOT;
         $display = $PAGE->theme->settings->sitetitle;
 
         if ($COURSE->id > 1) {
-            $div = '<div id="coursetitle" class="pull-left">';
+            $div = '<div id="titlecontainer" class="pull-left">';
+//            $div = '<div id="coursetitle" class="pull-left">';
         } else {
             $div = '<div id="titlecontainer" class="pull-left">';
         }
@@ -1270,12 +1271,37 @@ EOT;
         if ($display == 'default') {
         // Default moodle title.
             if (!empty($PAGE->theme->settings->logo)) {
+                // Logo.
                 $retval .= '<div id="logocontainer">';
                 $retval .= "<a href='$CFG->wwwroot'>";
                 $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
                 $retval .= '</a></div></div>';
             } else {
-                $retval .= '<span id="sitetitle">' . $SITE->shortname . '</span></div>';
+                if ($COURSE->id > 1) {
+                    // Course Title.
+
+                    switch ($PAGE->theme->settings->enableheading) {
+                        case 'fullname':
+                        // Full Name.
+                        $retval .= '<span id="sitetitle">' . $COURSE->fullname . '</span></div>';
+                        break;
+
+                        case 'shortname':
+                        // Short Name.
+                        $retval .= '<span id="sitetitle">' . $COURSE->shortname . '</span></div>';
+                        break;
+
+                        default: 
+                        // None.
+                        $retval .= '<span id="sitetitle"></span></div>';
+                        break;
+                    }
+
+
+                } else {
+                    // Site Title.
+                    $retval .= '<span id="sitetitle">' . $SITE->shortname . '</span></div>';
+                }
             }
         } else {
         // Custom title.
@@ -1287,7 +1313,9 @@ EOT;
 
             $PAGE->set_heading($header);
 
-            $retval .= '<span>' . $PAGE->theme->settings->sitetitletext . '</span></div>';
+            $retval .= "<a href='$CFG->wwwroot'>";
+            $retval .= '<span>' . $PAGE->theme->settings->sitetitletext . '</span>';
+            $retval .= '</a></div>';
         }
 
         return $retval;
