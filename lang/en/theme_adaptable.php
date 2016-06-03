@@ -866,6 +866,8 @@ $string['tilescontactstitledesc'] = 'Show / hide the role of a course contact. I
 $string['tilesshowallcontacts'] = 'Show all course contacts';
 $string['tilesshowallcontactsdesc'] = 'Show all course contacts or just one';
 
+$string['course'] = 'Course';
+
 
 // Alerts **********************************************************.
 // Alert Box Enable.
@@ -905,10 +907,10 @@ $string['alertinfo'] = 'Info';
 $string['alertinfodesc'] = 'Display information in the Alert Box';
 
 $string['alertwarning'] = 'Warning';
-$string['alertinfodesc'] = 'Display a warning in the Alert Box';
+$string['alertwarningdesc'] = 'Display a warning in the Alert Box';
 
 $string['alertannounce'] = 'Announcement';
-$string['alertinfodesc'] = 'Display an announcement in the Alert Box';
+$string['alertannouncedesc'] = 'Display an announcement in the Alert Box';
 
 $string['alertprofilefield'] = 'Custom Profile Field Name=Value (optional)';
 $string['alertprofilefielddesc'] = 'Add access rule using for custom profile field eg: usertype=student';

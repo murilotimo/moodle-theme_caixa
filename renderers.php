@@ -1910,7 +1910,9 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
                 $icondirection = 'right';
             }
             $arrow = html_writer::tag('span', '', array('class' => 'fa fa-chevron-'.$icondirection));
-            $btn = html_writer::tag('span', get_string('course') . ' ' . $arrow, array('class' => 'coursequicklink'));
+            $btn = html_writer::tag('span', get_string('course', 'theme_adaptable') . ' ' . $arrow, array('class' => 'get_stringlink'));
+
+
 
             if (empty($PAGE->theme->settings->covhidebutton)) {
                 $content .= html_writer::link(new moodle_url('/course/view.php',
