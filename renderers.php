@@ -1259,17 +1259,10 @@ EOT;
         $retval = '';
         $display = $PAGE->theme->settings->sitetitle;
 
-        if ($COURSE->id > 1) {
-            $div = '<div id="titlecontainer" class="pull-left">';
-//            $div = '<div id="coursetitle" class="pull-left">';
-        } else {
-            $div = '<div id="titlecontainer" class="pull-left">';
-        }
-
-        $retval .= $div;
+        $retval .= '<div id="titlecontainer" class="pull-left">';
 
         if ($display == 'default') {
-        // Default moodle title.
+            // Default moodle title.
             if (!empty($PAGE->theme->settings->logo)) {
                 // Logo.
                 $retval .= '<div id="logocontainer">';
@@ -1282,29 +1275,27 @@ EOT;
 
                     switch ($PAGE->theme->settings->enableheading) {
                         case 'fullname':
-                        // Full Name.
-                        $retval .= '<span id="sitetitle">' . $COURSE->fullname . '</span></div>';
-                        break;
+                            // Full Name.
+                            $retval .= '<span id="sitetitle">' . $COURSE->fullname . '</span></div>';
+                            break;
 
                         case 'shortname':
-                        // Short Name.
-                        $retval .= '<span id="sitetitle">' . $COURSE->shortname . '</span></div>';
-                        break;
+                            // Short Name.
+                            $retval .= '<span id="sitetitle">' . $COURSE->shortname . '</span></div>';
+                            break;
 
-                        default: 
-                        // None.
-                        $retval .= '<span id="sitetitle"></span></div>';
-                        break;
+                        default:
+                            // None.
+                            $retval .= '<span id="sitetitle"></span></div>';
+                            break;
                     }
-
-
                 } else {
                     // Site Title.
                     $retval .= '<span id="sitetitle">' . $SITE->shortname . '</span></div>';
                 }
             }
         } else {
-        // Custom title.
+            // Custom title.
             $header = theme_adaptable_remove_site_fullname($PAGE->heading);
 
             if (!empty($header)) {
@@ -1867,8 +1858,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $classes .= ' collapsed';
         }
 
-
-// Control span to display course tiles.
+        // Control span to display course tiles.
         if (!isloggedin() || isguestuser()) {
             $spanclass = "span4";
         } else {
@@ -1920,7 +1910,9 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
                 $icondirection = 'right';
             }
             $arrow = html_writer::tag('span', '', array('class' => 'fa fa-chevron-'.$icondirection));
-            $btn = html_writer::tag('span', get_string('course') . ' ' . $arrow, array('class' => 'coursequicklink'));
+            $btn = html_writer::tag('span', get_string('course', 'theme_adaptable') . ' ' . $arrow, array('class' => 'get_stringlink'));
+
+
 
             if (empty($PAGE->theme->settings->covhidebutton)) {
                 $content .= html_writer::link(new moodle_url('/course/view.php',
