@@ -73,7 +73,9 @@
     $title = get_string('sitetitletext', 'theme_adaptable');
     $description = get_string('sitetitletextdesc', 'theme_adaptable');
     $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
+
+
     $temp->add($setting);
 
 

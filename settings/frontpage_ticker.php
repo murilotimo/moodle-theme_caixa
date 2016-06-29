@@ -78,7 +78,7 @@ for ($newstickerindex = 1; $newstickerindex <= $newstickercount; $newstickerinde
     $title = get_string('tickertext', 'theme_adaptable') . ' ' . $newstickerindex;
     $description = get_string('tickertextdesc', 'theme_adaptable');
     $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
     $name = 'theme_adaptable/tickertext' . $newstickerindex . 'profilefield';

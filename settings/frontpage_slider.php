@@ -198,7 +198,7 @@ for ($sliderindex = 1; $sliderindex <= $slidercount; $sliderindex++) {
     $title = get_string('slidercaption', 'theme_adaptable');
     $description = get_string('slidercaptiondesc', 'theme_adaptable');
     $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 }
 

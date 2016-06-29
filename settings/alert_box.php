@@ -105,7 +105,7 @@ for ($alertindex = 1; $alertindex <= $alertcount; $alertindex++) {
     $title = get_string('alerttext', 'theme_adaptable');
     $description = get_string('alerttextdesc', 'theme_adaptable');
     $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
     // Alert Type 1.
