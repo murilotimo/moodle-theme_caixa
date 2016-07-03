@@ -1268,30 +1268,28 @@ EOT;
                 $retval .= '<div id="logocontainer">';
                 $retval .= "<a href='$CFG->wwwroot'>";
                 $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
-                $retval .= '</a></div></div>';
-            } else {
+                $retval .= '</a></div>';
                 if ($COURSE->id > 1) {
                     // Course Title.
-
                     switch ($PAGE->theme->settings->enableheading) {
                         case 'fullname':
                             // Full Name.
-                            $retval .= '<span id="sitetitle">' . $COURSE->fullname . '</span></div>';
+                            $retval .= '<span id="sitetitle">' . $COURSE->fullname . '</span>';
                             break;
 
                         case 'shortname':
                             // Short Name.
-                            $retval .= '<span id="sitetitle">' . $COURSE->shortname . '</span></div>';
+                            $retval .= '<span id="sitetitle">' . $COURSE->shortname . '</span>';
                             break;
 
                         default:
                             // None.
-                            $retval .= '<span id="sitetitle"></span></div>';
+                            $retval .= '<span id="sitetitle"></span>';
                             break;
                     }
                 } else {
                     // Site Title.
-                    $retval .= '<span id="sitetitle">' . $SITE->shortname . '</span></div>';
+                    $retval .= '<span id="sitetitle">' . $SITE->shortname . '</span>';
                 }
             }
         } else {
@@ -1308,6 +1306,8 @@ EOT;
             $retval .= '<span>' . $PAGE->theme->settings->sitetitletext . '</span>';
             $retval .= '</a></div>';
         }
+
+        $retval .= "</div>";
 
         return $retval;
     }
