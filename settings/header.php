@@ -137,7 +137,7 @@
     $name = 'theme_adaptable/coursetitlemaxwidth';
     $title = get_string('coursetitlemaxwidth', 'theme_adaptable');
     $description = get_string('coursetitlemaxwidthdesc', 'theme_adaptable');
-    $setting = new admin_setting_configselect($name, $title, $description, '50%', $from35to80percent);
+    $setting = new admin_setting_configselect($name, $title, $description, '50%', $from35to100percent);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
