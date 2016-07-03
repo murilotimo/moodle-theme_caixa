@@ -19,16 +19,19 @@ border: none;
     border-radius: important !0;
 }
 
-.block .header {
+.block .header, #dockeditempanel .dockeditempanel_hd {
   border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]];
   border-color: [[setting:blockbordercolor]];
   border-style: [[setting:blockheaderbordertopstyle]];
   padding: 10px 10px;
-  padding-right: 0px;
   background: [[setting:blockheaderbackgroundcolor]];
   -webkit-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
   -moz-border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
   border-radius: [[setting:blockheadertopradius]] [[setting:blockheadertopradius]] [[setting:blockheaderbottomradius]] [[setting:blockheaderbottomradius]];
+}
+
+.block .header {
+  padding-right: 0px;
 }
 
 /* block titles */
@@ -44,7 +47,7 @@ border: none;
   text-shadow: none;
 }
 
-.block .content {
+.block > .content , #dockeditempanel .dockeditempanel_bd {
   border-width: [[setting:blockmainbordertop]] [[setting:blockmainborderright]] [[setting:blockmainborderbottom]] [[setting:blockmainborderleft]];
   border-color: [[setting:blockbordercolor]];
   border-style: [[setting:blockmainbordertopstyle]];
