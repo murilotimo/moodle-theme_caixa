@@ -843,7 +843,7 @@ for ($i = 35; $i < 81; $i++) {
 
 $from35to100percent = array();
 for ($i = 35; $i < 101; $i++) {
-    $from35to80percent[$i . '%'] = $i . '%';
+    $from35to100percent[$i . '%'] = $i . '%';
 }
 
 $from0to60inc5 = array();
