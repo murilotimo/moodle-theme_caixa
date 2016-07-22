@@ -103,6 +103,7 @@ $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
 $string['settingsfootercolors'] = 'Footer Colours';
 $string['settingsfonts'] = 'Fonts';
 $string['analyticssettings'] = 'Analytics';
+$string['piwiksettings'] = 'Piwik';
 
 
 // Admin Menu Strings.
@@ -1245,6 +1246,25 @@ $string['genericsettingsdescription'] = 'Here you can find various settings to a
 
 $string['jssection'] = 'Javascript Section';
 $string['jssectiondesc'] = 'Add javascript code to the site.';
+
+// Piwik.
+$string['piwiksettingsheading'] = 'Setup Piwik';
+$string['piwiksettingsdesc'] = 'Generate clean URL for in advanced tracking.';
+
+$string['piwikenabled'] = 'Enabled';
+$string['piwikenableddesc'] = 'Enable Piwik tracking for Moodle.';
+
+$string['piwiksiteid'] = 'Site ID';
+$string['piwiksiteiddesc'] = 'Enter your Site ID.';
+
+$string['piwikimagetrack'] = 'Image Tracking';
+$string['piwikimagetrackdesc'] = 'Enable Image Tracking for Moodle for browsers with JavaScript disabled.';
+
+$string['piwiksiteurl'] = 'Piwik URL';
+$string['piwiksiteurldesc'] = 'Enter your Piwik Analytics URL without http(s) or a trailing slash';
+
+$string['piwiktrackadmin'] = 'Tracking Admins';
+$string['piwiktrackadmindesc'] = 'Enable tracking of Admin users (not recommended)';
 
 // Cache definitions.
 $string['cachedef_userdata'] = 'A session cache used to store user specific data.';
