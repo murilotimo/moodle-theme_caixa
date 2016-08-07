@@ -89,16 +89,22 @@ if (!empty($PAGE->theme->settings->infobox2)) {
             <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
             <?php echo $OUTPUT->navbar(); ?>
     </div>
+
 <?php
-if ($left == 1) {
+
+if (($left == 1) && isloggedin()) {
     echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
+//    echo $OUTPUT->blocks('side-post', 'span3 pull-left');
+} else {
+    echo $OUTPUT->blocks('side-post', 'span3');
 }
+
 
 // Control span to display course tiles.
 if (!isloggedin()) {
-    echo '<section id="region-main">';
+    echo '<section id="region-main" class="span9 pull-right">';
 } else {
-    echo '<section id="region-main" class="span9 desktop-first-column">';
+    echo '<section id="region-main" class="span9 desktop-first-column"">';
 } ?>
 
 
@@ -107,13 +113,18 @@ echo $OUTPUT->course_content_header();
 echo $OUTPUT->main_content();
 echo $OUTPUT->course_content_footer();
 ?>
+
 </section>
 
 <?php
-if ($left == 0) {
-    echo $OUTPUT->blocks('side-post', 'span3');
+if (($left == 0) && isloggedin()) {
+    echo $OUTPUT->blocks('side-pre', 'span3');
+//    echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
+} else {
+    echo $OUTPUT->blocks('side-pre', 'span3');
 }
 ?>
+
 </div>
 
 <?php

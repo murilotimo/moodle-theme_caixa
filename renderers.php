@@ -1261,37 +1261,41 @@ EOT;
 
         $retval .= '<div id="titlecontainer" class="pull-left">';
 
+        if (!empty($PAGE->theme->settings->logo)) {
+            // Logo.
+            $retval .= '<div id="logocontainer">';
+            $retval .= "<a href='$CFG->wwwroot'>";
+            $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
+        }
+
         if ($display == 'default') {
             // Default moodle title.
-            if (!empty($PAGE->theme->settings->logo)) {
-                // Logo.
-                $retval .= '<div id="logocontainer">';
-                $retval .= "<a href='$CFG->wwwroot'>";
-                $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
-                $retval .= '</a></div>';
                 if ($COURSE->id > 1) {
                     // Course Title.
+                    $retval .= '<span id="sitetitle">';
+
                     switch ($PAGE->theme->settings->enableheading) {
                         case 'fullname':
                             // Full Name.
-                            $retval .= '<span id="sitetitle">' . $COURSE->fullname . '</span>';
+                            $retval .= $COURSE->fullname;
                             break;
 
                         case 'shortname':
                             // Short Name.
-                            $retval .= '<span id="sitetitle">' . $COURSE->shortname . '</span>';
+                            $retval .= $COURSE->shortname;
                             break;
 
                         default:
                             // None.
-                            $retval .= '<span id="sitetitle"></span>';
                             break;
                     }
                 } else {
                     // Site Title.
-                    $retval .= '<span id="sitetitle">' . $SITE->shortname . '</span>';
+                    $retval .= '<span id="sitetitle">' . $SITE->shortname;
                 }
-            }
+
+                $retval .= '</span>';
+
         } else {
             // Custom title.
             $header = theme_adaptable_remove_site_fullname($PAGE->heading);
@@ -1299,15 +1303,13 @@ EOT;
             if (!empty($header)) {
                 $header = $PAGE->theme->settings->sitetitletext;
             }
-
             $PAGE->set_heading($header);
 
             $retval .= "<a href='$CFG->wwwroot'>";
             $retval .= '<span>' . $PAGE->theme->settings->sitetitletext . '</span>';
             $retval .= '</a></div>';
+            $retval .= "</div>";
         }
-
-        $retval .= "</div>";
 
         return $retval;
     }

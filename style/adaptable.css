@@ -231,7 +231,9 @@ div.signuppanel h2 {
     font-weight: [[setting:fonttitleweight]];
     padding-left: 15px;
     padding-top: [[setting:coursetitlepaddingtop]];
-    max-width: [[setting:coursetitlemaxwidth]];
+/*    max-width: [[setting:coursetitlemaxwidth]];*/
+
+width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
