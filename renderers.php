@@ -1274,12 +1274,12 @@ EOT;
                     switch ($PAGE->theme->settings->enableheading) {
                         case 'fullname':
                             // Full Name.
-                            $retval .= '<span id="sitetitle">' . $COURSE->fullname . '</span>';
+                            $retval .= '<span id="sitetitle">' . format_string($COURSE->fullname) . '</span>';
                             break;
 
                         case 'shortname':
                             // Short Name.
-                            $retval .= '<span id="sitetitle">' . $COURSE->shortname . '</span>';
+                            $retval .= '<span id="sitetitle">' . format_string($COURSE->shortname) . '</span>';
                             break;
 
                         default:
@@ -1289,7 +1289,7 @@ EOT;
                     }
                 } else {
                     // Site Title.
-                    $retval .= '<span id="sitetitle">' . $SITE->shortname . '</span>';
+                    $retval .= '<span id="sitetitle">' . format_string($SITE->fullname) . '</span>';
                 }
             }
         } else {
@@ -1297,13 +1297,13 @@ EOT;
             $header = theme_adaptable_remove_site_fullname($PAGE->heading);
 
             if (!empty($header)) {
-                $header = $PAGE->theme->settings->sitetitletext;
+                $header = format_string($PAGE->theme->settings->sitetitletext);
             }
 
             $PAGE->set_heading($header);
 
             $retval .= "<a href='$CFG->wwwroot'>";
-            $retval .= '<span>' . $PAGE->theme->settings->sitetitletext . '</span>';
+            $retval .= '<span>' . format_string($PAGE->theme->settings->sitetitletext) . '</span>';
             $retval .= '</a></div>';
         }
 
