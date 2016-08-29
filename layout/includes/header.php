@@ -96,6 +96,12 @@ if ($defaultview == 1 && $setfull == "") {
     $setfull = "fullin";
 }
 
+if (empty($CFG->loginhttps)) {
+    $wwwroot = $CFG->wwwroot;
+} else {
+    $wwwroot = str_replace("http://", "https://", $CFG->wwwroot);
+}
+
 // HTML header.
 echo $OUTPUT->doctype();
 ?>
@@ -104,7 +110,7 @@ echo $OUTPUT->doctype();
     <title><?php echo $OUTPUT->page_title(); ?></title>
     <link rel="icon" href="<?php echo $OUTPUT->favicon(); ?>" />
 
-    <link rel="stylesheet" href="<?php p($CFG->wwwroot) ?>/theme/adaptable/style/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php p($CFG->httpswwwroot) ?>/theme/adaptable/style/font-awesome.min.css">
 
 <?php
 
@@ -177,7 +183,7 @@ if ($fixedheader) {
 if (!isloggedin() || isguestuser()) {
     echo $OUTPUT->page_heading_menu();
     if (!empty($PAGE->theme->settings->frontpagelogin)) { ?>
-        <form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
+        <form action="<?php p($wwwroot) ?>/login/index.php" method="post">
             <input style="height: 12px; padding-bottom: 4px;" type="text" name="username" placeholder="<?php echo get_string('loginplaceholder', 'theme_adaptable'); ?>" size="10">
             <input style="height: 12px; padding-bottom: 4px;" type="password" name="password" placeholder="<?php echo get_string('passwordplaceholder', 'theme_adaptable'); ?>"  size="10">
             <button class="btn-login" type="submit"><?php echo get_string('logintextbutton', 'theme_adaptable'); ?></button>
@@ -186,7 +192,7 @@ if (!isloggedin() || isguestuser()) {
     } else {
         // Login button.
 ?>
-        <form action="<?php p($CFG->wwwroot) ?>/login/index.php" method="post">
+        <form action="<?php p($wwwroot) ?>/login/index.php" method="post">
             <button class="btn-login" type="submit">
                 <?php echo get_string('logintextbutton', 'theme_adaptable'); ?>
             </button>
@@ -350,7 +356,7 @@ if (!isloggedin() || isguestuser()) {
     }
 ?>
         <li>
-        <a href="<?php echo $CFG->wwwroot.'/login/logout.php?sesskey='.sesskey(); ?>"
+        <a href="<?php echo $wwwroot.'/login/logout.php?sesskey='.sesskey(); ?>"
             title="<?php echo get_string('logout') ?>">
                 <i class="fa fa-sign-out"></i>
                 <?php echo get_string('logout') ?>
