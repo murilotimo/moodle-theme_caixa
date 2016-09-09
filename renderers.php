@@ -302,6 +302,88 @@ EOT;
     }
 
     /**
+     * Returns Piwik code if enabled
+     *
+     * @return string
+     */
+    public function get_piwik() {
+        global $CFG, $DB, $PAGE, $COURSE, $SITE;
+        $enabled = get_config('theme_adaptable', 'piwikenabled');
+        $imagetrack = get_config('theme_adaptable', 'piwikimagetrack');
+        $siteurl = get_config('theme_adaptable', 'piwiksiteurl');
+        $siteid = get_config('theme_adaptable', 'piwiksiteid');
+        $trackadmin = get_config('theme_adaptable', 'piwiktrackadmin');
+        $analytics = '';
+        if ($enabled && !empty($siteurl) && !empty($siteid) && (!is_siteadmin() || $trackadmin)) {
+            if ($imagetrack) {
+                $addition = '<noscript><p><img src="//'.$siteurl.'/piwik.php?idsite='.$siteid.' style="border:0;" alt="" /></p></noscript>';
+            } else {
+                $addition = '';
+            }
+            // cleanurl
+            $pageinfo = get_context_info_array($PAGE->context->id);
+            $trackurl = '';
+            // Adds course category name.
+            if (isset($pageinfo[1]->category)) {
+                if ($category = $DB->get_record('course_categories', array('id'=>$pageinfo[1]->category))) {
+                    $cats=explode("/",$category->path);
+                    foreach(array_filter($cats) as $cat) {
+                        if ($categorydepth = $DB->get_record("course_categories", array("id" => $cat))) {;
+                            $trackurl .= $categorydepth->name.'/';
+                        }
+                    }
+                }
+            }
+            // Adds course full name.
+            if (isset($pageinfo[1]->fullname)) {
+                if (isset($pageinfo[2]->name)) {
+                    $trackurl .= $pageinfo[1]->fullname.'/';
+                } else if ($PAGE->user_is_editing()) {
+                    $trackurl .= $pageinfo[1]->fullname.'/'.get_string('edit', 'local_analytics');
+                } else {
+                    $trackurl .= $pageinfo[1]->fullname.'/'.get_string('view', 'local_analytics');
+                }
+            }
+            // Adds activity name.
+            if (isset($pageinfo[2]->name)) {
+                $trackurl .= $pageinfo[2]->modname.'/'.$pageinfo[2]->name;
+            }
+            $trackurl = '"'.str_replace('"', '\"', $trackurl).'"';
+            // Here we go
+            $analytics .= 
+                '<!-- Start Piwik Code -->'."\n".
+                '<script type="text/javascript">'."\n".
+                '    var _paq = _paq || [];'."\n".
+                '    _paq.push(["setDocumentTitle", '.$trackurl.']);'."\n".
+                '    _paq.push(["trackPageView"]);'."\n".
+                '    _paq.push(["enableLinkTracking"]);'."\n".
+                '    (function() {'."\n".
+                '      var u="//'.$siteurl.'/";'."\n".
+                '      _paq.push(["setTrackerUrl", u+"piwik.php"]);'."\n".
+                '      _paq.push(["setSiteId", '.$siteid.']);'."\n".
+                '      var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0];'."\n".
+                '    g.type="text/javascript"; g.async=true; g.defer=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);'."\n".
+                '    })();'."\n".
+                '</script>'.$addition."\n".
+                '<!-- End Piwik Code -->'."\n".
+            '';
+        }
+        return $analytics;
+    }
+
+    /**
+     * Returns all tracking methods (Analytics and Piwik)
+     *
+     * @return string
+     */
+    public function get_all_tracking_methods() {
+        $analytics = '';
+        $analytics .= $this->get_analytics();
+        $analytics .= $this->get_piwik();
+        return $analytics;
+    }
+
+    /**
      * Returns HTML to display a "Turn editing on/off" button in a form.
      *
      * @param moodle_url $url The URL + params to send through when clicking the button
@@ -339,7 +421,7 @@ EOT;
         if (!isloggedin() || isguestuser()) {
             $addmessagemenu = false;
         }
-        if (!$CFG->messaging) {
+        if (!$CFG->messaging || !get_config('theme_adaptable', 'enablemessagemenu')) {
             $addmessagemenu = false;
         } else {
             // Check whether or not the "popup" message output is enabled
@@ -1277,12 +1359,20 @@ EOT;
                     switch ($PAGE->theme->settings->enableheading) {
                         case 'fullname':
                             // Full Name.
+<<<<<<< HEAD
                             $retval .= $COURSE->fullname;
+=======
+                            $retval .= '<span id="sitetitle">' . format_string($COURSE->fullname) . '</span>';
+>>>>>>> 2af00fec9393ad408eba22ddcd35a4eb77b16383
                             break;
 
                         case 'shortname':
                             // Short Name.
+<<<<<<< HEAD
                             $retval .= $COURSE->shortname;
+=======
+                            $retval .= '<span id="sitetitle">' . format_string($COURSE->shortname) . '</span>';
+>>>>>>> 2af00fec9393ad408eba22ddcd35a4eb77b16383
                             break;
 
                         default:
@@ -1291,7 +1381,11 @@ EOT;
                     }
                 } else {
                     // Site Title.
+<<<<<<< HEAD
                     $retval .= '<span id="sitetitle">' . $SITE->shortname;
+=======
+                    $retval .= '<span id="sitetitle">' . format_string($SITE->fullname) . '</span>';
+>>>>>>> 2af00fec9393ad408eba22ddcd35a4eb77b16383
                 }
 
                 $retval .= '</span>';
@@ -1301,12 +1395,12 @@ EOT;
             $header = theme_adaptable_remove_site_fullname($PAGE->heading);
 
             if (!empty($header)) {
-                $header = $PAGE->theme->settings->sitetitletext;
+                $header = format_string($PAGE->theme->settings->sitetitletext);
             }
             $PAGE->set_heading($header);
 
             $retval .= "<a href='$CFG->wwwroot'>";
-            $retval .= '<span>' . $PAGE->theme->settings->sitetitletext . '</span>';
+            $retval .= '<span>' . format_string($PAGE->theme->settings->sitetitletext) . '</span>';
             $retval .= '</a></div>';
             $retval .= "</div>";
         }

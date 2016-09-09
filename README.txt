@@ -189,8 +189,15 @@ IMPORTANT! Verify you only enter the <li> tags. For example:
 
 Acknowledgment
 --------------------------------------
-Big thanks to all the volunteers that are testing Adaptable continously. 
+Big thanks to all the volunteers that are collaborating and testing Adaptable continously. 
 We really appreciate your help and support to develope the most adaptable theme for moodle.
+
+
+Development:
+Leonid Chernyavskiy 
+COMETE (Paris Ouest University)
+marina Glancy
+
 
 
 

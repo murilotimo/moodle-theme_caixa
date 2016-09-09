@@ -39,6 +39,15 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Enable messaging menu in header.
+    $name = 'theme_adaptable/enablemessagemenu';
+    $title = get_string('enablemessagemenu', 'theme_adaptable');
+    $description = get_string('enablemessagemenudesc', 'theme_adaptable');
+    $default = true;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Logo.
     $name = 'theme_adaptable/logo';
     $title = get_string('logo', 'theme_adaptable');
