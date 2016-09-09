@@ -339,7 +339,7 @@ EOT;
         if (!isloggedin() || isguestuser()) {
             $addmessagemenu = false;
         }
-        if (!$CFG->messaging) {
+        if (!$CFG->messaging || !get_config('theme_adaptable', 'enablemessagemenu')) {
             $addmessagemenu = false;
         } else {
             // Check whether or not the "popup" message output is enabled

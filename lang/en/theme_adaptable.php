@@ -806,6 +806,9 @@ $string['sitetitletextdesc'] = 'Site title displayed in the header. You can use 
 $string['frontpagelogin'] = 'Front Page Login';
 $string['frontpagelogindesc'] = 'Enable login form in header (will show button if turned off)';
 
+$string['enablemessagemenu'] = 'Message menu';
+$string['enablemessagemenudesc'] = 'Enable Message menu in header (moot if messaging is globally turned off)';
+
 $string['hideblocks'] = 'Hide blocks';
 $string['showblocks'] = 'Show blocks';
 $string['fullscreen'] = 'Full screen';
