@@ -57,13 +57,13 @@ img {
 
 /* Selection **************************/
 ::selection  {
-    color: #000000;
-    background-color: #eeff41;
+    color: [[setting:selectiontext]];
+    background-color: [[setting:selectionbackground]];
 }
 
 ::-moz-selection  {
-    color: #000000;
-    background-color: #eeff41;
+    color: [[setting:selectiontext]];
+    background-color: [[setting:selectionbackground]];
 }
 
 /* Forms */
@@ -125,6 +125,7 @@ width: auto;
     font-weight: bold;
     margin-bottom: 20px;
 }
+
 
 .jsenabled .block_settings .block_tree .tree_item.branch,
 .block_navigation .block_tree .tree_item.branch {
@@ -205,43 +206,55 @@ div.signuppanel h2 {
     margin-bottom: 0px;
     background: transparent;
     padding-top: 0px;
-    min-height: 82px;
+    min-height: 95px;
     color: [[setting:headertextcolor2]];
 }
 
+/* Header ***********************/
+
+#titlecontainer,
+#titlecontainer a,
+#titlecontainer p {
+    width: 100%;
+}
+
+#titlecontainer a:hover {
+    color: [[setting:linkhovercolor]];
+    text-decoration: none;
+}
+
 #logo {
-    float: left;
     margin-bottom: 2px;
     margin-left: 0px;
     margin-top: 0px;
     max-width: 250px;
 }
 
-#titlecontainer {
-    padding-top: 10px;
+#logocontainer {
+    float: left;
+    height: auto;
+    margin: 5px 15px 5px 0 ;
 }
 
-#titlecontainer,
-#titlecontainer a,
-#titlecontainer p {
+#sitetitle {
+    display: inline;
+    position: absolute;
+    padding-left: [[setting:sitetitlepaddingleft]];
+    margin-top: [[setting:sitetitlepaddingtop]];
+    max-width: [[setting:sitetitlemaxwidth]];
+
+    font-size: [[setting:fonttitlesize]];
+
+
+
     font-family: [[setting:fonttitlename]], sans-serif !important;
     color: [[setting:fonttitlecolor]] !important;
-    font-size: [[setting:fonttitlesize]] !important;
-    line-height: 100%;
-    font-weight: [[setting:fonttitleweight]];
-    padding-left: 15px;
-    padding-top: [[setting:coursetitlepaddingtop]];
-/*    max-width: [[setting:coursetitlemaxwidth]];*/
+    font-weight: [[setting:fonttitleweight]] !important;
 
-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-#titlecontainer a:hover {
-    color: [[setting:linkhovercolor]];
-    text-decoration: none;
+    line-height: 100%;
 }
 
 #moodlelogo {
@@ -252,20 +265,6 @@ width: 100%;
     display: block;
     margin-bottom: 6px;
     margin-left: 0px;
-}
-
-#coursetitle p {
-    font-family: [[setting:fonttitlename]], sans-serif !important;
-    color: [[setting:fonttitlecolor]] !important;
-    font-size: [[setting:fonttitlesize]] !important;
-    line-height: 100%;
-    font-weight: [[setting:fonttitleweight]];
-    padding-left: 15px;
-    padding-top: [[setting:coursetitlepaddingtop]];
-    max-width: [[setting:coursetitlemaxwidth]];
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 #coursesearchbox2 {
@@ -412,6 +411,11 @@ a.usermendrop {
     padding: 15px;
     padding-right: 25px;
 */
+}
+
+img.emoticon {
+    height: [[setting:emoticonsize]];
+    width: [[setting:emoticonsize]];
 }
 
 .personpic {
@@ -738,6 +742,10 @@ div.redirectmessage {
     font-size: 13px;
     background: #fff url([[pix:theme|ajax-loader]]) no-repeat 50% 95%;
     padding: 20px 20px 40px;
+}
+
+.singleselect {
+    width: inherit;
 }
 
 #forummenu select {

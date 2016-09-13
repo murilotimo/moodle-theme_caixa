@@ -89,13 +89,14 @@ if ($showicons == 1) {
     $showiconsclass = " ";
 }
 
-// Setting for default screen view. does not override user's preference.
+// Setting for default screen view. Does not override user's preference.
 $defaultview = "";
 $defaultview = $PAGE->theme->settings->viewselect;
 if ($defaultview == 1 && $setfull == "") {
     $setfull = "fullin";
 }
 
+// Set HTTPS if needed.
 if (empty($CFG->loginhttps)) {
     $wwwroot = $CFG->wwwroot;
 } else {
@@ -184,8 +185,10 @@ if (!isloggedin() || isguestuser()) {
     echo $OUTPUT->page_heading_menu();
     if (!empty($PAGE->theme->settings->frontpagelogin)) { ?>
         <form action="<?php p($wwwroot) ?>/login/index.php" method="post">
-            <input style="height: 12px; padding-bottom: 4px;" type="text" name="username" placeholder="<?php echo get_string('loginplaceholder', 'theme_adaptable'); ?>" size="10">
-            <input style="height: 12px; padding-bottom: 4px;" type="password" name="password" placeholder="<?php echo get_string('passwordplaceholder', 'theme_adaptable'); ?>"  size="10">
+            <input style="height: 12px; padding-bottom: 4px;" type="text" name="username" 
+                    placeholder="<?php echo get_string('loginplaceholder', 'theme_adaptable'); ?>" size="10">
+            <input style="height: 12px; padding-bottom: 4px;" type="password" name="password" 
+                    placeholder="<?php echo get_string('passwordplaceholder', 'theme_adaptable'); ?>"  size="10">
             <button class="btn-login" type="submit"><?php echo get_string('logintextbutton', 'theme_adaptable'); ?></button>
         </form>
 <?php
@@ -208,7 +211,7 @@ if (!isloggedin() || isguestuser()) {
                 <span class="fa fa-angle-down"></span>
             </a>
 
-<ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
+    <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
 <?php
     if (!empty($PAGE->theme->settings->enablemy)) { ?>
         <li>
@@ -294,7 +297,7 @@ if (!isloggedin() || isguestuser()) {
 <?php
     if (!empty($PAGE->theme->settings->enablenote)) { ?>
         <li>
-        <a href="<?php p($CFG->wwwroot) ?>/message/edit.php?id=<?php echo "$userid"; ?>"
+        <a href="<?php p($CFG->wwwroot) ?>/message/edit.php"
             title="<?php echo get_string('notifications') ?>">
                 <i class="fa fa-paper-plane"></i>
                 <?php echo get_string('notifications') ?>
@@ -307,7 +310,7 @@ if (!isloggedin() || isguestuser()) {
 <?php
     if (!empty($PAGE->theme->settings->enableblog)) { ?>
         <li>
-        <a href="<?php p($CFG->wwwroot) ?>/blog/index.php?userid=<?php echo "$userid"; ?>"
+        <a href="<?php p($CFG->wwwroot) ?>/blog/index.php"
             title="<?php echo get_string('enableblog', 'theme_adaptable') ?>">
                 <i class="fa fa-rss"></i>
                 <?php echo get_string('enableblog', 'theme_adaptable') ?>
@@ -320,7 +323,7 @@ if (!isloggedin() || isguestuser()) {
 <?php
     if (!empty($PAGE->theme->settings->enableposts)) { ?>
         <li>
-        <a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php?id=<?php echo "$userid"; ?>"
+        <a href="<?php p($CFG->wwwroot) ?>/mod/forum/user.php"
             title="<?php echo get_string('enableposts', 'theme_adaptable') ?>">
                 <i class="fa fa-commenting"></i>
                 <?php echo get_string('enableposts', 'theme_adaptable') ?>
