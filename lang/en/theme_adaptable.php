@@ -18,8 +18,8 @@
  * Version details
  *
  * @package    theme_adaptable
- * @copyright  2015 Jeremy Hopkins (Coventry University)
- * @copyright  2015 Fernando Acedo (3-bits.com)
+ * @copyright  2015-2016 Jeremy Hopkins (Coventry University)
+ * @copyright  2015-2016 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -102,7 +102,7 @@ $string['settingsalertbox'] = 'Alert Box';
 $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
 $string['settingsfootercolors'] = 'Footer Colours';
 $string['settingsfonts'] = 'Fonts';
-$string['analyticssettings'] = 'Analytics';
+$string['analyticssettings'] = 'Google Analytics';
 $string['piwiksettings'] = 'Piwik';
 
 
@@ -234,6 +234,10 @@ $string['slideroption2colordesc'] = 'Set a background colour for the submit text
 $string['slideroption2a'] = 'Slider style option 2 arrow background colour';
 $string['slideroption2adesc'] = 'Set the slider style option 2 arrow background colour';
 
+$string['sliderstyle1'] = 'Slider style 1';
+$string['sliderstyle2'] = 'Slider style 2';
+
+
 // Block Regions ***************************************************.
 $string['blocklayoutbuilder'] = 'Frontpage Block Regions';
 $string['blocklayoutbuilderdesc'] = 'Below you can build your own layout for block regions on the front page.
@@ -293,6 +297,13 @@ $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpa
 $string['frontpagemarketoption'] = 'Choose style for marketing blocks';
 $string['frontpagemarketoptiondesc'] = 'You can apply different styles to marketing blocks.
 Note: BCU style is designed to work with images at top of block.';
+
+$string['bcustyle'] = 'BCU style';
+$string['coventrystyle'] = 'Coventry style';
+$string['nostyle'] = 'No style';
+
+
+
 
 // Footer **********************************************************.
 $string['footersettings'] = 'Footer';
@@ -578,6 +589,13 @@ $string['mobilemenubkcolordesc'] = 'Set the Main Menu background colour on mobil
 
 $string['mobilemenufontcolor'] = 'Mobile Menu font colour';
 $string['mobilemenufontcolordesc'] = 'Set a Main Menu font colour on mobile devices (collapsed)';
+
+$string['selectiontext'] = 'Selection text colour';
+$string['selectiontextdesc'] = 'Set the text colour when a text in the screen is selected.';
+
+$string['selectionbackground'] = 'Selection background colour';
+$string['selectionbackgrounddesc'] = 'Set the background colour when a text in the screen is selected.';
+
 
 // Course *********************************************************.
 $string['coursesettings'] = 'Course Sections';
@@ -998,8 +1016,11 @@ $string['blocksidedesc'] = 'Control whether blocks appear on the left or right o
 $string['blockicons'] = 'Block Icons';
 $string['blockiconsdesc'] = 'Set this to show block icons in the block header area.';
 
-$string['leftblocks'] = 'Left';
-$string['rightblocks'] = 'Right';
+$string['blockicons'] = 'Block Icons';
+$string['blockiconsdesc'] = 'Set this to show block icons in the block header area.';
+
+$string['emoticonsize'] = 'Emoticons size';
+$string['emoticonsizedesc'] = 'Set the height and width of the moodle emoticons.';
 
 $string['helptarget'] = 'Help target';
 $string['helptargetdesc'] = 'Do you want the help link to open in a new window?';
@@ -1223,7 +1244,7 @@ $string['socialicondesc'] = 'Set Font Awesome icon for example: fa-facebook';
 $string['socialiconlist'] = 'Social Icon List';
 $string['socialiconlistdesc'] = 'Enter a de-limited list to setup the social icons / links you need using the format: url|title|icon';
 
-// Analytics.
+// Google Analytics.
 $string['analyticssettingsheading'] = 'Setup Google Analytics';
 $string['analyticssettingsdesc'] = 'You can setup multiple codes for Google Analytics and targed them to user profile fields.';
 
