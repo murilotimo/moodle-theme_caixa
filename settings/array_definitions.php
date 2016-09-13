@@ -18,16 +18,15 @@
  * Version details
  *
  * @package   theme_adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University)
- * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @copyright 2015-2016 Jeremy Hopkins (Coventry University)
+ * @copyright 2015-2016 Fernando Acedo (3-bits.com)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
 
 // Google Fonts.
-
 $fontlist = array(
- 'default' => "default",
+ 'default' => 'default',
  'ABeeZee' =>  'ABeeZee',
  'Abel' =>  'Abel',
  'Abhayalibre' =>  'Abhayalibre',
@@ -961,24 +960,24 @@ $borderstyles = array(
 );
 
 $htmltarget = array(
-  '_blank' => 'New Window',
-  '_self' => 'Same Window'
+  '_blank' =>  get_string('targetnewwindow', 'theme_adaptable'),
+  '_self' => get_string('targetsamewindow', 'theme_adaptable')
 );
 
 $marketblockstyles = array(
-    '' => 'No Style',
-    'internalmarket' => 'BCU Style',
-    'covtiles' => 'Coventry Style'
+    '' => get_string('nostyle', 'theme_adaptable'),
+    'internalmarket' => get_string('bcustyle', 'theme_adaptable'),
+    'covtiles' => get_string('coventrystyle', 'theme_adaptable')
 );
 
 $sliderstyles = array(
-    'slider1' => 'Slider Style 1',
-    'slider2' => 'Slider Style 2'
+    'slider1' => get_string('sliderstyle1', 'theme_adaptable'),
+    'slider2' => get_string('sliderstyle2', 'theme_adaptable')
 );
 
 $bootstrap12 = array(
     '0-0-0-0' => 'disabled',
-    '12-0-0-0' => '1 (full width)',
+    '12-0-0-0' => '1',
     '6-6-0-0' => '6 + 6',
     '4-4-4-0' => '4 + 4 + 4',
     '3-3-3-3' => '3 + 3 + 3 + 3',
