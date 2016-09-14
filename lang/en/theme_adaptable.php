@@ -66,26 +66,26 @@ $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 $string['frnt-footer'] = 'Blocks in this area will only be visible to admin users.';
 
-$string['region-frnt-market-a'] = 'Market';
-$string['region-frnt-market-b'] = 'Market';
-$string['region-frnt-market-c'] = 'Market';
-$string['region-frnt-market-d'] = 'Market';
-$string['region-frnt-market-e'] = 'Market';
-$string['region-frnt-market-f'] = 'Market';
-$string['region-frnt-market-g'] = 'Market';
-$string['region-frnt-market-h'] = 'Market';
-$string['region-frnt-market-i'] = 'Market';
-$string['region-frnt-market-j'] = 'Market';
-$string['region-frnt-market-k'] = 'Market';
-$string['region-frnt-market-l'] = 'Market';
-$string['region-frnt-market-m'] = 'Market';
-$string['region-frnt-market-n'] = 'Market';
-$string['region-frnt-market-o'] = 'Market';
-$string['region-frnt-market-p'] = 'Market';
-$string['region-frnt-market-q'] = 'Market';
-$string['region-frnt-market-r'] = 'Market';
-$string['region-frnt-market-s'] = 'Market';
-$string['region-frnt-market-t'] = 'Market';
+$string['region-frnt-market-a'] = 'Market-a';
+$string['region-frnt-market-b'] = 'Market-b';
+$string['region-frnt-market-c'] = 'Market-c';
+$string['region-frnt-market-d'] = 'Market-d';
+$string['region-frnt-market-e'] = 'Market-e';
+$string['region-frnt-market-f'] = 'Market-f';
+$string['region-frnt-market-g'] = 'Market-g';
+$string['region-frnt-market-h'] = 'Market-h';
+$string['region-frnt-market-i'] = 'Market-i';
+$string['region-frnt-market-j'] = 'Market-i';
+$string['region-frnt-market-k'] = 'Market-k';
+$string['region-frnt-market-l'] = 'Market-l';
+$string['region-frnt-market-m'] = 'Market-m';
+$string['region-frnt-market-n'] = 'Market-n';
+$string['region-frnt-market-o'] = 'Market-o';
+$string['region-frnt-market-p'] = 'Market-p';
+$string['region-frnt-market-q'] = 'Market-q';
+$string['region-frnt-market-r'] = 'Market-r';
+$string['region-frnt-market-s'] = 'Market-s';
+$string['region-frnt-market-t'] = 'Market-';
 
 
 // Settings page headings ******************************************.
@@ -1021,8 +1021,8 @@ $string['layoutsettingsheading'] = 'Control aspects of the site\'s layout';
 $string['blockside'] = 'Location of the blocks';
 $string['blocksidedesc'] = 'Control whether blocks appear on the left or right of the page';
 
-$string['blockicons'] = 'Block Icons';
-$string['blockiconsdesc'] = 'Set this to show block icons in the block header area.';
+$string['rightblocks'] = 'Right side';
+$string['leftblocks'] = 'Left side';
 
 $string['blockicons'] = 'Block Icons';
 $string['blockiconsdesc'] = 'Set this to show block icons in the block header area.';
