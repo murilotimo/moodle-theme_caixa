@@ -242,11 +242,7 @@ div.signuppanel h2 {
     padding-left: [[setting:sitetitlepaddingleft]];
     margin-top: [[setting:sitetitlepaddingtop]];
     max-width: [[setting:sitetitlemaxwidth]];
-
     font-size: [[setting:fonttitlesize]];
-
-
-
     font-family: [[setting:fonttitlename]], sans-serif !important;
     color: [[setting:fonttitlecolor]] !important;
     font-weight: [[setting:fonttitleweight]] !important;
@@ -254,7 +250,7 @@ div.signuppanel h2 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 100%;
+    line-height: 120%;
 }
 
 #moodlelogo {
@@ -794,6 +790,10 @@ div.redirectmessage {
 
 span2.mceEditor iframe, table.mceLayout2 iframe {
     max-width:500px !important;
+}
+
+.editor_atto_menu .open ul.dropdown-menu {
+    min-width: 3.5em;
 }
 
 .form-item .form-label, .mform .fitem div.fitemtitle, .userprofile dl.list dt, .form-horizontal .control-label {
