@@ -85,7 +85,7 @@ $string['region-frnt-market-p'] = 'Market-p';
 $string['region-frnt-market-q'] = 'Market-q';
 $string['region-frnt-market-r'] = 'Market-r';
 $string['region-frnt-market-s'] = 'Market-s';
-$string['region-frnt-market-t'] = 'Market-';
+$string['region-frnt-market-t'] = 'Market-t';
 
 
 // Settings page headings ******************************************.
@@ -103,7 +103,7 @@ $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
 $string['settingsfootercolors'] = 'Footer Colours';
 $string['settingsfonts'] = 'Fonts';
 $string['analyticssettings'] = 'Google Analytics';
-$string['piwiksettings'] = 'Piwik';
+$string['piwiksettings'] = 'Piwik Analytics';
 
 
 // Admin Menu Strings.
@@ -301,8 +301,6 @@ Note: BCU style is designed to work with images at top of block.';
 $string['bcustyle'] = 'BCU style';
 $string['coventrystyle'] = 'Coventry style';
 $string['nostyle'] = 'No style';
-
-
 
 
 // Footer **********************************************************.
@@ -583,6 +581,9 @@ $string['menubordercolordesc'] = 'Set a Main Menu border bottom colour';
 
 $string['menufontcolor'] = 'Main Menu font colour';
 $string['menufontcolordesc'] = 'Set a Main Menu font colour';
+
+$string['menuhovercolor'] = 'Main Menu hover colour';
+$string['menuhovercolordesc'] = 'Set a Main Menu hover colour';
 
 $string['mobilemenubkcolor'] = 'Mobile Menu background colour';
 $string['mobilemenubkcolordesc'] = 'Set the Main Menu background colour on mobile devices (collapsed)';
