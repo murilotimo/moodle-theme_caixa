@@ -18,8 +18,8 @@
  * Version details
  *
  * @package    theme_adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University)
- * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @copyright  2015-2016 Jeremy Hopkins (Coventry University)
+ * @copyright  2015-2016 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -88,27 +88,26 @@ if (!empty($PAGE->theme->settings->infobox2)) {
      <div id="page-navbar" class="span12">
             <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
             <?php echo $OUTPUT->navbar(); ?>
+
     </div>
 
 <?php
 
-if (($left == 1) && isloggedin()) {
+// Left sidebar.
+if (($left == 1) && $PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
     echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
-//    echo $OUTPUT->blocks('side-post', 'span3 pull-left');
-} else {
-    echo $OUTPUT->blocks('side-post', 'span3');
 }
 
 
-// Control span to display course tiles.
-if (!isloggedin()) {
-    echo '<section id="region-main" class="span9 pull-right">';
-} else {
-    echo '<section id="region-main" class="span9 desktop-first-column"">';
-} ?>
+// Main Region.
+if ($PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
+    if ($left == 1) {
+        echo '<section id="region-main" class="span9" style="margin-left: 30px ;">';
+    } else {
+        echo '<section id="region-main" class="span9" style="margin: 0;">';
+    }
+}
 
-
-<?php
 echo $OUTPUT->course_content_header();
 echo $OUTPUT->main_content();
 echo $OUTPUT->course_content_footer();
@@ -117,11 +116,10 @@ echo $OUTPUT->course_content_footer();
 </section>
 
 <?php
-if (($left == 0) && isloggedin()) {
-    echo $OUTPUT->blocks('side-pre', 'span3');
-//    echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
-} else {
-    echo $OUTPUT->blocks('side-pre', 'span3');
+
+// Right Sidebar.
+if (($left == 0) && $PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
+    echo $OUTPUT->blocks('side-post', 'span3');
 }
 ?>
 
@@ -134,7 +132,7 @@ if (is_siteadmin()) {
         <div class="row-fluid">
           <h4><?php echo get_string('frnt-footer', 'theme_adaptable') ?></h4>
           <?php
-            echo $OUTPUT->blocks('frnt-footer');
+            echo $OUTPUT->blocks('frnt-footer', 'span10');
           ?>
         </div>
       </div>
