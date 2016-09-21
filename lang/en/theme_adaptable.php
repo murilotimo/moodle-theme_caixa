@@ -51,7 +51,7 @@ $string['choosereadme'] = '
  <p></p>
  <br>
  <h3>Demo</h3>
- <p>You can see a demo and download a Quickinstall version in <a href="http://3-bits.com/demo/adaptable">http://3-bits.com/demo/adaptable</a></p>
+ <p>You can see a demo version in <a href="http://3-bits.com/demo/adaptable">http://3-bits.com/demo/adaptable</a></p>
  <br>
 
 </div>
@@ -60,8 +60,8 @@ $string['choosereadme'] = '
 $string['pluginname'] = 'Adaptable';
 $string['configtitle'] = 'Adaptable';
 
-$string['region-middle'] = 'middle';
-$string['region-frnt-footer'] = 'footer';
+$string['region-middle'] = 'Middle';
+$string['region-frnt-footer'] = 'Footer';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 $string['frnt-footer'] = 'Blocks in this area will only be visible to admin users.';
@@ -75,7 +75,7 @@ $string['region-frnt-market-f'] = 'Market-f';
 $string['region-frnt-market-g'] = 'Market-g';
 $string['region-frnt-market-h'] = 'Market-h';
 $string['region-frnt-market-i'] = 'Market-i';
-$string['region-frnt-market-j'] = 'Market-i';
+$string['region-frnt-market-j'] = 'Market-j';
 $string['region-frnt-market-k'] = 'Market-k';
 $string['region-frnt-market-l'] = 'Market-l';
 $string['region-frnt-market-m'] = 'Market-m';
@@ -102,8 +102,7 @@ $string['settingsalertbox'] = 'Alert Box';
 $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
 $string['settingsfootercolors'] = 'Footer Colours';
 $string['settingsfonts'] = 'Fonts';
-$string['analyticssettings'] = 'Google Analytics';
-$string['piwiksettings'] = 'Piwik Analytics';
+$string['settingsanalytics'] = 'Analytics';
 
 
 // Admin Menu Strings.
@@ -1251,11 +1250,17 @@ $string['socialsearchicondesc'] = 'Enable to put a search link alongside social 
 $string['socialicondesc'] = 'Set Font Awesome icon for example: fa-facebook';
 
 $string['socialiconlist'] = 'Social Icon List';
-$string['socialiconlistdesc'] = 'Enter a de-limited list to setup the social icons / links you need using the format: url|title|icon';
+$string['socialiconlistdesc'] = 'Enter a delimited list to setup the social icons / links you need using the format: url|title|icon';
 
-// Google Analytics.
-$string['analyticssettingsheading'] = 'Setup Google Analytics';
-$string['analyticssettingsdesc'] = 'You can setup multiple codes for Google Analytics and targed them to user profile fields.';
+// Analytics *********************************.
+$string['analyticssettings'] = 'Analytics';
+$string['analyticssettingsheading'] = 'Setup Google Analytics and/or Piwik';
+$string['analyticssettingsdesc'] = 'You can setup multiple codes for Google Analytics and targed them to user profile fields. Or you can use Piwik, the open source analytics.';
+
+// GA.
+$string['googleanalyticssettings'] = 'Google Analytics';
+$string['googleanalyticssettingsheading'] = 'Setup Google Analytics for your site';
+$string['googleanalyticssettingsdesc'] = 'You can setup multiple codes for Google Analytics and targed them to user profile fields.';
 
 $string ['enableanalytics'] = 'Enable Google Analytics';
 $string ['enableanalyticsdesc'] = 'Enable Google Analytics settings on your Moodle site';
@@ -1269,18 +1274,8 @@ $string['analyticscountdesc'] = 'The number of analytics fields to show in the e
 $string ['analyticsprofilefield'] = 'Custom Profile Field Name=Value (optional)';
 $string ['analyticsprofilefielddesc'] = 'Add access rule using for custom profile field eg: usertype=student';
 
-// Custom CSS.
-$string['customcss'] = 'Custom CSS';
-$string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
-
-$string['customcssjssettings'] = 'Custom CSS & JS';
-$string['genericsettingsheading'] = 'Apply your own modifications';
-$string['genericsettingsdescription'] = 'Here you can find various settings to add your own CSS and JavaScript code to the theme.';
-
-$string['jssection'] = 'Javascript Section';
-$string['jssectiondesc'] = 'Add javascript code to the site.';
-
 // Piwik.
+$string['piwiksettings'] = 'Piwik Analytics';
 $string['piwiksettingsheading'] = 'Setup Piwik';
 $string['piwiksettingsdesc'] = 'Generate clean URL for in advanced tracking.';
 
@@ -1298,6 +1293,17 @@ $string['piwiksiteurldesc'] = 'Enter your Piwik Analytics URL without http(s) or
 
 $string['piwiktrackadmin'] = 'Tracking Admins';
 $string['piwiktrackadmindesc'] = 'Enable tracking of Admin users (not recommended)';
+
+// Custom CSS ********************************.
+$string['customcss'] = 'Custom CSS';
+$string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
+
+$string['customcssjssettings'] = 'Custom CSS & JS';
+$string['genericsettingsheading'] = 'Apply your own modifications';
+$string['genericsettingsdescription'] = 'Here you can find various settings to add your own CSS and JavaScript code to the theme.';
+
+$string['jssection'] = 'Javascript Section';
+$string['jssectiondesc'] = 'Add javascript code to the site.';
 
 // Cache definitions.
 $string['cachedef_userdata'] = 'A session cache used to store user specific data.';
