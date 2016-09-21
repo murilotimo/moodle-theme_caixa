@@ -195,7 +195,7 @@ class theme_adaptable_core_renderer extends core_renderer {
         $retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
         $retval .= '<a href="#" class="close" data-dismiss="alert" data-alertkey="' . $alertkey .
         '" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
-        $retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp';
+        $retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp;';
         $retval .= $text;
         $retval .= '</div>';
         return $retval;
@@ -983,9 +983,7 @@ EOT;
         global $COURSE, $PAGE;
 
         $items = $this->page->navbar->get_items();
-        $breadcrumbseparator = get_config('theme_adaptable', 'breadcrumbseparator');
-
-$breadcrumbseparator = $PAGE->theme->settings->breadcrumbseparator;
+        $breadcrumbseparator = $PAGE->theme->settings->breadcrumbseparator;
 
         $breadcrumbs = "";
 
@@ -1000,7 +998,7 @@ $breadcrumbseparator = $PAGE->theme->settings->breadcrumbseparator;
 
             // Text / Icon home.
             if ($i++ == 0) {
-                if (get_config('theme_adaptable', 'breadcrumbhome') == 'icon') {
+                if ($PAGE->theme->settings->breadcrumbhome == 'icon') {
                     $breadcrumbs = html_writer::link(new moodle_url('/'),
                                    html_writer::tag('i', '', array('class' => 'fa fa-home fa-lg')));
                 } else {
@@ -1383,11 +1381,11 @@ $breadcrumbseparator = $PAGE->theme->settings->breadcrumbseparator;
                         // None.
                         $retval .= '<div id="sitetitle"></div>';
                         break;
-                    }
-                } else {
-                    // Site Title.
-                    $retval .= '<div id="sitetitle">' . $SITE->shortname . '</div>';
-                    }
+                }
+            } else {
+                // Site Title.
+                $retval .= '<div id="sitetitle">' . $SITE->shortname . '</div>';
+            }
         } else {
             // Custom title.
             $header = theme_adaptable_remove_site_fullname($PAGE->heading);

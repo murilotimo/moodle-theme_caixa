@@ -68,7 +68,8 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
 // If we don't have a menuscount yet, default to the preset.
-$newstickercount = get_config('theme_adaptable', 'newstickercount');
+$newstickercount = $PAGE->theme->settings->newstickercount;
+
 if (!$newstickercount) {
     $newstickercount = THEME_ADAPTABLE_DEFAULT_NEWSTICKERCOUNT;
 }

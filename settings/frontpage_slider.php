@@ -173,8 +173,9 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-// If we don't have an an alertcount yet, default to the preset.
-$slidercount = get_config('theme_adaptable', 'slidercount');
+// If we don't have an slide yet, default to the preset.
+$slidercount = $PAGE->theme->settings->slidercount;
+
 if (!$slidercount) {
     $slidercount = THEME_ADAPTABLE_DEFAULT_SLIDERCOUNT;
 }

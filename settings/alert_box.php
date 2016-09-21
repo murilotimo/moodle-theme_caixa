@@ -17,9 +17,9 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
- * @copyright 2015 Jeremy Hopkins (Coventry University)
- * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @package   theme_adaptable
+ * @copyright 2015-2016 Jeremy Hopkins (Coventry University)
+ * @copyright 2015-2016 Fernando Acedo (3-bits.com)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -71,8 +71,8 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
+$alertcount = $PAGE->theme->settings->alertcount;
 // If we don't have an an alertcount yet, default to the preset.
-$alertcount = get_config('theme_adaptable', 'alertcount');
 if (!$alertcount) {
     $alertcount = THEME_ADAPTABLE_DEFAULT_ALERTCOUNT;
 }

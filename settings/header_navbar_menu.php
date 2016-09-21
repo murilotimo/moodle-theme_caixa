@@ -58,7 +58,8 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
 // If we don't have a menuscount yet, default to the preset.
-$toolsmenuscount = get_config('theme_adaptable', 'toolsmenuscount');
+$toolsmenuscount = $PAGE->theme->settings->toolsmenuscount;
+
 if (!$toolsmenuscount) {
     $toolsmenuscount = THEME_ADAPTABLE_DEFAULT_TOOLSMENUSCOUNT;
 }
