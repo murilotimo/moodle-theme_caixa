@@ -1,11 +1,12 @@
-Changes in version 1.2.4 (2016091400)
+Changes in version 1.2.4 (2016092200)
 -------------------------------------
+Warning: This is the last release compatible with moodle 2.9
+
 New features:
 - Updated Google Fonts list
 - Setting: Text selection colours
 - Setting: Emoticons size 
 - Setting: Piwik Analytics - Thanks to COMETE (Paris Ouest University)
-
 
 Fixed issues:
 - #508: Integrate Analytics in one page 
@@ -36,25 +37,6 @@ Fixed issues:
 - #473: Add logo to default site title 
 - #472: Site Title Maximum Width values up to 100% 
 - #471: Docking blocks with transparent background 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Last release compatible with moodle 2.9
 
 
 Changes in version 1.2.3 (2016052900)
