@@ -1,3 +1,62 @@
+Changes in version 1.2.4 (2016091400)
+-------------------------------------
+New features:
+- Updated Google Fonts list
+- Setting: Text selection colours
+- Setting: Emoticons size 
+- Setting: Piwik Analytics - Thanks to COMETE (Paris Ouest University)
+
+
+Fixed issues:
+- #508: Integrate Analytics in one page 
+- #507: Emoticon size 
+- #504: Remove hardcoded strings in settings 
+- #501: Fail to embed a video into marketing blocks 
+- #500: Cannot get beyond New settings - Header on fresh install of moodle 3.1 with Adaptable in the theme directory 
+- #499: User menu error in user ID in "My Blog" item 
+- #497: Categories list on Front Page 
+- #494: Definition of from35to100percent broken 
+- #493: Inheriting from Adaptable: Hardcoded settings 
+- #492: Textbox for email digest type in forums is too narrow 
+- #491: Extraneous </div> in frontpage 
+- #490: Heading / logo alignment 
+- #489: Default titling does nothing without image 
+- #487: Full login field label doesn't fit into its box and is cut from the end 
+- #486: Logo is not responsive 
+- #485: Option to have Search bar and Social Icons? 
+- #484: Username placeholder uses not localized string for hint 
+- #482: Untidy layout of the login screen 
+- #481: Editor can't upload images in some settings sections 
+- #480: Disable login button 
+- #479: Mess with the front page layout when blocks are on the LEFT side 
+- #478: Distorted front page layout before login 
+- #476: Block region builder settings doesn't appear 
+- #475: Navbar disappears when moving away from first page after login 
+- #474: Convert 'course' string to theme string 
+- #473: Add logo to default site title 
+- #472: Site Title Maximum Width values up to 100% 
+- #471: Docking blocks with transparent background 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Last release compatible with moodle 2.9
+
+
 Changes in version 1.2.3 (2016052900)
 -------------------------------------
 - #469: Infobox2 strings missed
