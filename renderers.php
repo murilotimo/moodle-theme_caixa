@@ -1061,11 +1061,6 @@ EOT;
         $overridestrings = false;
         $overridetype = 'off';
         $sessttl = 0;
-
-//        if (!empty($PAGE->theme->settings->navbarcachetime) && $PAGE->theme->settings->navbarcachetime > 0) {
-//            $sessttl = (time() + ($PAGE->theme->settings->navbarcachetime * 60));
-//        }
-
         $cache = cache::make('theme_adaptable', 'userdata');
 
         if ($sessttl > 0 && time() <= $cache->get('usernavbarttl')) {
@@ -1396,9 +1391,7 @@ EOT;
 
             $PAGE->set_heading($header);
 
-//            $retval .= "<a href='$CFG->wwwroot'>";
             $retval .= '<span>' . $PAGE->theme->settings->sitetitletext . '</span>';
-//            $retval .= '</a>';
         }
 
         $retval .= '</div>';
