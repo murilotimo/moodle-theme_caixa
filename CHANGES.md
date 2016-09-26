@@ -38,6 +38,7 @@ Fixed issues:
 - #473: Add logo to default site title 
 - #472: Site Title Maximum Width values up to 100% 
 - #471: Docking blocks with transparent background 
+- #419: Navbar caching "this course" list at site level
 
 
 Changes in version 1.2.3 (2016052900)
