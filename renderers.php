@@ -1340,7 +1340,7 @@ EOT;
      * @return string
      */
     public function get_logo_title() {
-        global $PAGE, $COURSE, $CFG, $SITE;
+        global $PAGE, $COURSE, $CFG, $SITE, $OUTPUT;
         $retval = '';
         $display = $PAGE->theme->settings->sitetitle;
 
@@ -1382,16 +1382,15 @@ EOT;
                 $retval .= '<div id="sitetitle">' . $SITE->shortname . '</div>';
             }
         } else {
-            // Custom title.
-            $header = theme_adaptable_remove_site_fullname($PAGE->heading);
+            if ($display == 'custom') {
+                // Custom title.
+                if (!empty($PAGE->theme->settings->sitetitletext)) {
+                    $header = theme_adaptable_remove_site_fullname($PAGE->theme->settings->sitetitletext);
+                    $PAGE->set_heading($header);
 
-            if (!empty($header)) {
-                $header = $PAGE->theme->settings->sitetitletext;
+                    $retval .= '<div id="sitetitle">' . $PAGE->theme->settings->sitetitletext . '</div>';
+                }
             }
-
-            $PAGE->set_heading($header);
-
-            $retval .= '<span>' . $PAGE->theme->settings->sitetitletext . '</span>';
         }
 
         $retval .= '</div>';
