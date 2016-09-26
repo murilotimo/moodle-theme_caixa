@@ -206,7 +206,7 @@ div.signuppanel h2 {
     margin-bottom: 0px;
     background: transparent;
     padding-top: 0px;
-    min-height: 95px;
+    min-height: 125px;
     color: [[setting:headertextcolor2]];
 }
 
@@ -232,16 +232,16 @@ div.signuppanel h2 {
 
 #logocontainer {
     float: left;
-    height: auto;
+    height: 110px;
     margin: 5px 15px 5px 0 ;
 }
 
-#sitetitle {
+#titlecontainer,
+#titlecontainer a,
+#titlecontainer p {
+/*    width: 100%; */
     display: inline;
     position: absolute;
-    padding-left: [[setting:sitetitlepaddingleft]];
-    margin-top: [[setting:sitetitlepaddingtop]];
-    max-width: [[setting:sitetitlemaxwidth]];
     font-size: [[setting:fonttitlesize]];
     font-family: [[setting:fonttitlename]], sans-serif !important;
     color: [[setting:fonttitlecolor]] !important;
@@ -251,6 +251,19 @@ div.signuppanel h2 {
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 120%;
+}
+
+#sitetitle {
+    padding-left: [[setting:sitetitlepaddingleft]];
+    margin-top: [[setting:sitetitlepaddingtop]];
+    max-width: [[setting:sitetitlemaxwidth]];
+
+    display: inline;
+    float: left;
+    left: 200px;
+    max-width: 75%;
+    position: relative;
+
 }
 
 #moodlelogo {
@@ -287,6 +300,8 @@ div.signuppanel h2 {
     padding-top: [[setting:socialpaddingtop]];
     padding-bottom: 5px;
     font-size: [[setting:socialsize]];
+    display: block;
+clear: left;
 }
 
 .socialbox a {
@@ -300,7 +315,17 @@ div.signuppanel h2 {
         padding-bottom: 10px;
         padding-top: 20px;
         text-align: center;
+        display: block;
     }
+
+#logocontainer {
+    float: left;
+    height: 110px;
+    margin: 5px 15px 5px 0 ;
+    clear: both;
+}
+
+
 }
 
 .headermenu {
@@ -400,13 +425,6 @@ a.usermendrop {
 #themessage {
     position: relative;
     margin-bottom: 20px;
-}
-
-#themessage-internal {
-/*
-    padding: 15px;
-    padding-right: 25px;
-*/
 }
 
 img.emoticon {
@@ -849,8 +867,6 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 #adminsettings h3 {
-/*	border-bottom: 1px solid [[setting:blockbordercolor]];*/
-/*    background-color: #e8eaeb;*/
     font-family: [[setting:fontheadername]], sans-serif !important;
     font-weight: [[setting:fontheaderweight]] !important;
     color: [[setting:fontheadercolor]];
@@ -866,7 +882,7 @@ input[type="radio"], input[type="checkbox"] {
 #region-main {
   margin-top: 0px;
   background: [[setting:regionmaincolor]];
-  padding: 4px;
+  padding: 0 10px;
 }
 
 #region-main #coursesearch .btn {
