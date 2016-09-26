@@ -7,6 +7,7 @@ New features:
 - Setting: Text selection colours
 - Setting: Emoticons size 
 - Setting: Piwik Analytics - Thanks to COMETE (Paris Ouest University)
+- Setting: Navbar Menu hover colour
 
 Fixed issues:
 - #508: Integrate Analytics in one page 

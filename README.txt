@@ -31,6 +31,10 @@ settings and play with it afterwards.
 With a little time you should be able to setup an attractive Moodle site with a high degree of
 individuality without without knowing any CSS.
 
+This theme has been developed by:
+Jeremy Hopkins (Coventry University)
+Fernando Acedo (3-bits.com)
+
 
 ==========================================================================================================
 HTML/CSS sample code for block areas
@@ -187,7 +191,7 @@ IMPORTANT! Verify you only enter the <li> tags. For example:
 
 
 
-Acknowledgment
+Acknowledgments
 --------------------------------------
 Big thanks to all the volunteers that are collaborating and testing Adaptable continously. 
 We really appreciate your help and support to develope the most adaptable theme for moodle.
