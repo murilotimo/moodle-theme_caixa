@@ -212,15 +212,8 @@ div.signuppanel h2 {
 
 /* Header ***********************/
 
-#titlecontainer,
-#titlecontainer a,
-#titlecontainer p {
+#titlecontainer {
     width: [[setting:sitetitlemaxwidth]];
-}
-
-#titlecontainer a:hover {
-    color: [[setting:linkhovercolor]];
-    text-decoration: none;
 }
 
 #logo {
