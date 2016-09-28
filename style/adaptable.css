@@ -215,7 +215,7 @@ div.signuppanel h2 {
 #titlecontainer,
 #titlecontainer a,
 #titlecontainer p {
-    width: 100%;
+    width: [[setting:sitetitlemaxwidth]];
 }
 
 #titlecontainer a:hover {
@@ -233,6 +233,7 @@ div.signuppanel h2 {
 #logocontainer {
     float: left;
     height: 110px;
+    width: 250px;
     margin: 5px 15px 5px 0 ;
 }
 
