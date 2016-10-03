@@ -1,6 +1,15 @@
+Changes in version 1.2.4.1 (2016100300)
+-------------------------------------
+Warning: This is the last minor release compatible with moodle 2.9
+
+Fixed issues:
+- #512: Header social bug
+- #511: Persisting horizontal scrollbar
+- #509: Site title is not displayed without logo image
+
 Changes in version 1.2.4 (2016092200)
 -------------------------------------
-Warning: This is the last release compatible with moodle 2.9
+Warning: This is the last minor release compatible with moodle 2.9
 
 New features:
 - Updated Google Fonts list
