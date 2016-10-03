@@ -802,8 +802,8 @@ $string['logodesc'] = 'Upload a logo for use on your site.';
 $string['favicon'] = 'Favicon';
 $string['favicondesc'] = 'Upload a favicon for use on your site,';
 
-$string['enableavailablecourses'] = 'Display Available Courses';
-$string['enableavailablecoursesdesc'] = 'Display Available Courses label in the frontpage';
+$string['enableavailablecourses'] = 'Display "Available Courses"';
+$string['enableavailablecoursesdesc'] = 'Display "Available Courses" label in the frontpage';
 
 $string['thiscourse'] = 'This course';
 
