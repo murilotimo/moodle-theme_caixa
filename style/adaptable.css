@@ -826,8 +826,8 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 }
 
 #profilepic img, .userpicture {
-    width: 30px;
-    height: 30px;
+    width: 30px !important;
+    height: 30px !important;
     display: inline;
     margin-right: 4px;
 }
