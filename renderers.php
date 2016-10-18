@@ -922,7 +922,11 @@ EOT;
         for ($i = 1; $i <= $noslides; $i++) {
             $sliderimage = 'p' . $i;
             $sliderurl = 'p' . $i . 'url';
-            $slidercaption = 'p' . $i .'cap';
+
+            if (!empty($PAGE->theme->settings->$sliderimage)) {
+                $slidercaption = 'p' . $i .'cap';
+            }
+
             $closelink = '';
             if (!empty($PAGE->theme->settings->$sliderimage)) {
                 $retval .= '<li>';
