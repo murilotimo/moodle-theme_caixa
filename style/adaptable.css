@@ -1,17 +1,27 @@
+/*
 html,body {
     margin: 0;
     padding: 0;
     background: [[setting:backcolor]];
     background-size: 100% auto;
-    font-size: 95%;
+    font-size: [[setting:fontsize]];
     color: [[setting:fontcolor]];
     font-family: [[setting:fontname]], sans-serif !important;
     font-weight: [[setting:fontweight]] !important;
 }
+*/
 
 html, body, p, ul, ol, dl, input, textarea, select {
     font-family: [[setting:fontname]], sans-serif !important;
     color: [[setting:fontcolor]];
+    margin: 0;
+    padding: 0;
+    background: [[setting:backcolor]];
+    background-size: 100% auto;
+    font-size: [[setting:fontsize]];
+    color: [[setting:fontcolor]];
+    font-family: [[setting:fontname]], sans-serif !important;
+    font-weight: [[setting:fontweight]] !important;
 }
 
 h1, h2, h3, h4, h5, h6 {

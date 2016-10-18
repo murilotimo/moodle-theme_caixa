@@ -160,6 +160,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:mobile]]' => '22',
         '[[setting:socialpaddingtop]]' => '1.8%',
         '[[setting:fontname]]' => 'Open Sans',
+        '[[setting:fontsize]]' => '95%',
         '[[setting:fontheadername]]' => 'Roboto Slab',
         '[[setting:fontcolor]]' => '#333333',
         '[[setting:fontheadercolor]]' => '#333333',

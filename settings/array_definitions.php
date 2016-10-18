@@ -948,6 +948,13 @@ for ($i = 35; $i < 101; $i++) {
     $from35to100percent[$i . '%'] = $i . '%';
 }
 
+$from85to110percent = array();
+for ($i = 75; $i < 111; $i += 5) {
+    $from75to130percent[$i . '%'] = $i . '%';
+
+}
+
+
 // Texts.
 $borderstyles = array(
     'none' => 'none',
