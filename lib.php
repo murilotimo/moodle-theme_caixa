@@ -199,7 +199,6 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:enableticker]]' => true,
         '[[setting:enabletickermy]]' => true,
         '[[setting:tickerwidth]]' => '',
-        '[[mysitesmaxlength]]' => '30',
         '[[setting:socialwallbackgroundcolor]]' => '#FFFFFF',
         '[[setting:socialwallsectionradius]]' => '6px',
         '[[setting:socialwallbordertopstyle]]' => 'solid',
@@ -484,7 +483,7 @@ function theme_adaptable_performance_output($param) {
 function theme_adaptable_page_init(moodle_page $page) {
     global $CFG;
     $page->requires->jquery();
-    // REMOVED: Deprecated function    error_log($CFG->version); ???
+    // REMOVED: Deprecated function ->   error_log($CFG->version); ???
     if ($CFG->version < 2015051100) {
         $page->requires->jquery_plugin('bootstrap', 'theme_adaptable');
         $page->requires->jquery_plugin('dropdown', 'theme_adaptable');

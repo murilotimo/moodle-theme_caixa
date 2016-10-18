@@ -174,7 +174,7 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
 // If we don't have an slide yet, default to the preset.
-$slidercount = $PAGE->theme->settings->slidercount;
+$slidercount = get_config('theme_adaptable', 'slidercount');
 
 if (!$slidercount) {
     $slidercount = THEME_ADAPTABLE_DEFAULT_SLIDERCOUNT;

@@ -71,7 +71,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-$alertcount = $PAGE->theme->settings->alertcount;
+$alertcount = get_config('theme_adaptable', 'alertcount');
 // If we don't have an an alertcount yet, default to the preset.
 if (!$alertcount) {
     $alertcount = THEME_ADAPTABLE_DEFAULT_ALERTCOUNT;

@@ -93,7 +93,7 @@ if (!empty($PAGE->theme->settings->infobox2)) {
 
 <?php
 
-// Left sidebar.
+// Left Sidebar.
 if (($left == 1) && $PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
     echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
 }
@@ -102,7 +102,7 @@ if (($left == 1) && $PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
 // Main Region.
 if ($PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
     if ($left == 1) {
-        echo '<section id="region-main" class="span9" style="margin-left: 30px ;">';
+        echo '<section id="region-main" class="span9" style="margin-left: 30px;">';
     } else {
         echo '<section id="region-main" class="span9" style="margin: 0;">';
     }

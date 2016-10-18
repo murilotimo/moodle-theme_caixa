@@ -24,6 +24,8 @@
  *
  */
 
+global $PAGE;
+
 $temp = new admin_settingpage('theme_adaptable_menus', get_string('menusettings', 'theme_adaptable'));
 
 $temp->add(new admin_setting_heading('theme_adaptable_menus', get_string('menusheading', 'theme_adaptable'),
@@ -86,7 +88,7 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
 // If we don't have a menuscount yet, default to the preset.
-$topmenuscount = $PAGE->theme->settings->topmenuscount;
+$topmenuscount = get_config('theme_adaptable', 'topmenuscount');
 if (!$topmenuscount) {
     $topmenuscount = THEME_ADAPTABLE_DEFAULT_TOPMENUSCOUNT;
 }

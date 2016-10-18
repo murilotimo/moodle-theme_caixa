@@ -59,7 +59,7 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
 // If we don't have an analyticscount yet, default to the preset.
-$analyticscount = $PAGE->theme->settings->analyticscount;
+$analyticscount = get_config('theme_adaptable', 'analyticscount');
 if (!$analyticscount) {
     $alertcount = THEME_ADAPTABLE_DEFAULT_ANALYTICSCOUNT;
 }

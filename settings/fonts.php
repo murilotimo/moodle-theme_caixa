@@ -84,7 +84,7 @@
     $name = 'theme_adaptable/topmenufontsize';
     $title = get_string('topmenufontsize', 'theme_adaptable');
     $description = get_string('topmenufontsizedesc', 'theme_adaptable');
-    $radchoices = $from10to20px;
+    $radchoices = $standardfontsize;
     $setting = new admin_setting_configselect($name, $title, $description, '14px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
@@ -93,12 +93,12 @@
     $name = 'theme_adaptable/menufontsize';
     $title = get_string('menufontsize', 'theme_adaptable');
     $description = get_string('menufontsizedesc', 'theme_adaptable');
-    $radchoices = $from10to20px;
+    $radchoices = $standardfontsize;
     $setting = new admin_setting_configselect($name, $title, $description, '14px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Navber Menu Padding.
+    // Navbar Menu Padding.
     $name = 'theme_adaptable/menufontpadding';
     $title = get_string('menufontpadding', 'theme_adaptable');
     $description = get_string('menufontpaddingdesc', 'theme_adaptable');
@@ -147,7 +147,9 @@
     $name = 'theme_adaptable/fonttitlesize';
     $title = get_string('fonttitlesize', 'theme_adaptable');
     $description = get_string('fonttitlesizedesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '48px');
+    $default = '48px';
+    $choices = $standardfontsize;
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -182,15 +184,9 @@
     $name = 'theme_adaptable/fonttitlesizecourse';
     $title = get_string('fonttitlesizecourse', 'theme_adaptable');
     $description = get_string('fonttitlesizecoursedesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '48px');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
-    // Course Title Font size.
-    $name = 'theme_adaptable/fonttitlesizecourse';
-    $title = get_string('fonttitlesizecourse', 'theme_adaptable');
-    $description = get_string('fonttitlesizecoursedesc', 'theme_adaptable');
-    $setting = new admin_setting_configtext($name, $title, $description, '48px');
+    $default = '48px';
+    $choices = $standardfontsize;
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
