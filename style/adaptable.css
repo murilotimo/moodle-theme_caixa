@@ -564,7 +564,6 @@ span.fa-chevron-right.fa {
   padding: 5px;
 }
 
-
 .breadcrumb li span.divider {
     display: none !important;
 }
@@ -883,13 +882,13 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 #region-main {
-  margin-top: 0px;
-  background: [[setting:regionmaincolor]];
-
+    margin-top: 0px;
+    background: [[setting:regionmaincolor]];
+    padding: 0 10px;
 }
 
 #region-main #coursesearch .btn {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 @media (max-width: 990px) {
