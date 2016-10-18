@@ -972,6 +972,7 @@ EOT;
         return $retval;
     }
 
+
     /*
      * Render the breadcrumb
      * @param array $items
@@ -980,7 +981,7 @@ EOT;
      * return string
      */
     public function navbar() {
-        global $COURSE, $PAGE;
+        global $PAGE;
 
         $items = $this->page->navbar->get_items();
         $breadcrumbseparator = $PAGE->theme->settings->breadcrumbseparator;
@@ -988,7 +989,7 @@ EOT;
         $breadcrumbs = "";
 
         if (empty($items)) {
-            return '';
+           return '';
         }
 
         $i = 0;
@@ -1014,7 +1015,6 @@ EOT;
 
         return '<ul class="breadcrumb">'.$breadcrumbs.'</ul>';
     }
-
 
 
     /**

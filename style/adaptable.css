@@ -695,10 +695,6 @@ langmenu a:hover {
     margin-left: 5px;
 }
 
-.breadcrumb li.lastli a span {
-  display: none !important;
-}
-
 .breadcrumb li.lastli a,
 .breadcrumb li.lastli span {
     color: [[setting:breadcrumbtextcolor]];
