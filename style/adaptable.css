@@ -932,6 +932,10 @@ input[type="radio"], input[type="checkbox"] {
         min-height: 0px;
     }
 
+    .row-fluid .span3 {
+        width: 100%;
+    }
+
     .socialbox{
         display: block;
         clear: both;
@@ -974,7 +978,7 @@ input[type="radio"], input[type="checkbox"] {
     }
 
     .block .header {
-        margin: 0px 10px !important;
+        margin: 0px !important;
     }
 
     #page-footer {
