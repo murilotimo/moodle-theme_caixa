@@ -13,7 +13,7 @@ html,body {
 p, ul, ol, dl, input, textarea, select {
     font-family: [[setting:fontname]], sans-serif !important;
     color: [[setting:fontcolor]];
-    font-size: [[setting:fontsize]];
+/*    font-size: [[setting:fontsize]];*/
     font-weight: [[setting:fontweight]] !important;
 }
 
