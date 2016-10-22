@@ -13,6 +13,7 @@ html,body {
 p, ul, ol, dl, input, textarea, select {
     font-family: [[setting:fontname]], sans-serif !important;
     color: [[setting:fontcolor]];
+    font-size: [[setting:fontsize]];
     font-weight: [[setting:fontweight]] !important;
 }
 
@@ -928,7 +929,7 @@ input[type="radio"], input[type="checkbox"] {
     }
 
     #page-header {
-        min-height: 0px;
+        min-height: 125px;
     }
 
     .row-fluid .span3 {
@@ -944,6 +945,14 @@ input[type="radio"], input[type="checkbox"] {
 
     #logo {
         margin-bottom: 10px;
+    }
+
+    #sitetitle {
+        font-size: 24px;
+        left: 10px;
+        margin-top: 0;
+        max-width: 100%;
+        width: auto;
     }
 
     .headermenu2 {
@@ -1704,3 +1713,4 @@ line-height: normal;
 #page-mod-glossary-view .glossarycontrol {
     margin: -40px 5px;
 }
+
