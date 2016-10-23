@@ -1,11 +1,28 @@
+Changes in version 1.2.4.2 (2016102300)
+---------------------------------------
+Warning: This is the last minor release compatible with moodle 2.9
+
+Fixed issues:
+- #527: Reset course and login blocks width 
+- #526: Left padding in main-region 
+- #521: Breadcrumbs do not display last item 
+- #517: Student pictures narrowed in some listings using adaptable theme 
+- #516: Notice: Undefined property: stdClass: 
+- #515: Slider type 1 display caption background when empty 
+
+Also includes some improvements in the mobile header but still working to fix some issues
+
+
+
 Changes in version 1.2.4.1 (2016100300)
--------------------------------------
+---------------------------------------
 Warning: This is the last minor release compatible with moodle 2.9
 
 Fixed issues:
 - #512: Header social bug
 - #511: Persisting horizontal scrollbar
 - #509: Site title is not displayed without logo image
+
 
 Changes in version 1.2.4 (2016092200)
 -------------------------------------
