@@ -20,7 +20,7 @@
 }
 
 /* block titles */
-.block .header, 
+.block .header,
 #dockeditempanel .dockeditempanel_hd {
     border-width: [[setting:blockheaderbordertop]] [[setting:blockheaderborderright]] [[setting:blockheaderborderbottom]] [[setting:blockheaderborderleft]];
     border-color: [[setting:blockbordercolor]];

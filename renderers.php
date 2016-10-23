@@ -993,7 +993,7 @@ EOT;
         $breadcrumbs = "";
 
         if (empty($items)) {
-           return '';
+            return '';
         }
 
         $i = 0;
