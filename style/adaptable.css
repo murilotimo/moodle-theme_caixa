@@ -236,7 +236,6 @@ div.signuppanel h2 {
 #titlecontainer,
 #titlecontainer a,
 #titlecontainer p {
-/*    width: 100%; */
     display: inline;
     position: absolute;
     font-size: [[setting:fonttitlesize]];
