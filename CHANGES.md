@@ -6,7 +6,7 @@ Fixed issues:
 - #527: Reset course and login blocks width 
 - #526: Left padding in main-region 
 - #521: Breadcrumbs do not display last item 
-- #517: Student pictures narrowed in some listings using adaptable theme 
+- #517: Student pictures narrowed in some listings
 - #516: Notice: Undefined property: stdClass: 
 - #515: Slider type 1 display caption background when empty 
 
