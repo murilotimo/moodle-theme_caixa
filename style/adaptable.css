@@ -1,3 +1,31 @@
+/*
+* This file is part of Moodle - http://moodle.org/
+*
+* Moodle is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* Moodle is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+*
+*
+* Adaptable Main Style sheet 
+*
+* Version details
+* 
+* @package    theme_adaptable
+* @copyright  2015 Jeremy Hopkins (Coventry University)
+* @copyright  2015 Fernando Acedo (3-bits.com)
+* @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*
+*/
+
 html, body {
     margin: 0;
     padding: 0;
@@ -10,15 +38,6 @@ html, body {
     line-height: normal;
 }
 
-/*
-p, ul, ol, dl, input, textarea, select {
-    font-family: [[setting:fontname]], sans-serif !important;
-    color: [[setting:fontcolor]];
-    font-size: [[setting:fontsize]];
-    font-weight: [[setting:fontweight]] !important;
-}
-*/
-
 h1, h2, h3, h4, h5, h6 {
     margin: 0px 0px 10px;
     font-family: [[setting:fontheadername]], sans-serif !important;
@@ -26,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
     color: [[setting:fontheadercolor]];
 }
 
-/*link colors */
+/* Link colors */
 a:link,
 a:visited, .tabtree .tabrow0 li a, .dropdown-menu.usermen > li > a  {
     color: [[setting:linkcolor]];
@@ -60,7 +79,7 @@ img {
     background-image: none;
 }
 
-/* Selection **************************/
+/* Selection */
 ::selection  {
     color: [[setting:selectiontext]];
     background-color: [[setting:selectionbackground]];
@@ -72,7 +91,6 @@ img {
 }
 
 /* Forms */
-
 fieldset {
     min-width: 0;
 }
@@ -83,7 +101,6 @@ fieldset {
     }
 
 }
-
 
 @-moz-document url-prefix() {
     textarea {
@@ -96,12 +113,8 @@ fieldset {
 }
 
 select {
-/*    width: 275px; #308 */
-width: auto;
-
+    width: auto;
 }
-
-
 
 
 /* real main headings */
@@ -154,6 +167,8 @@ div.signuppanel h2 {
     font-weight: bold;
 }
 
+
+/* Page */
 #page {
     clear: both;
     margin: 0 0;
@@ -215,8 +230,7 @@ div.signuppanel h2 {
     color: [[setting:headertextcolor2]];
 }
 
-/* Header ***********************/
-
+/* Header */
 #titlecontainer {
     width: [[setting:sitetitlemaxwidth]];
 }
@@ -272,9 +286,6 @@ div.signuppanel h2 {
     min-width: 50%;
 }
 
-
-}
-
 #moodlelogo {
     padding-top: 20px;
 }
@@ -310,7 +321,7 @@ div.signuppanel h2 {
     padding-bottom: 5px;
     font-size: [[setting:socialsize]];
     display: block;
-clear: left;
+    clear: left;
 }
 
 .socialbox a {
@@ -595,9 +606,6 @@ span.fa-chevron-right.fa {
   color: [[setting:footerlinkcolor]];
 }
 
-.copyright {
-}
-
 .info nav ul li {
     border: medium none;
     display: inline-block;
@@ -639,11 +647,6 @@ span.fa-chevron-right.fa {
 
 #page-my-index #page-navbar{
   display: inline;
-}
-
-.navbar .nav {
-/*    margin: 0 10px 0 20px !important;*/
-
 }
 
 .navbar .nav-collapse.in {
@@ -746,9 +749,12 @@ langmenu a:hover {
 }
 
 .pagelayout-redirect #content {
-  width:60%; background: #fff; margin: 20px auto; padding: 1em;
-  border: 1px solid #dadada;
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    width:60%;
+    background: #fff;
+    margin: 20px auto;
+    padding: 1em;
+    border: 1px solid #dadada;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -825,11 +831,18 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     float: left;
 }
 
-.form-item .form-setting, .form-item .form-description, .mform .fitem .felement, #page-mod-forum-search .c1, .mform .fdescription.required, .userprofile dl.list dd, .form-horizontal .controls {
+.form-item .form-setting,
+.form-item .form-description,
+.mform .fitem .felement,
+#page-mod-forum-search .c1,
+.mform .fdescription.required,
+.userprofile dl.list dd,
+.form-horizontal .controls {
     margin-left: 260px;
 }
 
-#profilepic img, .userpicture {
+#profilepic img,
+.userpicture {
     width: 25px !important;
     height: 25px !important;
     display: inline;
@@ -1120,8 +1133,7 @@ a.carousel-control {
     background-color: none;
 }
 
-/*alert message */
-
+/* alert messages */
 .alert {
     margin-bottom: 0;
     border-radius: 0;
@@ -1209,7 +1221,6 @@ a.carousel-control {
 }
 
 /* Use the width of the content in modal to set size, instead of predefined sizes */
-
 .modal-backdrop {
   z-index: 998;
 }
@@ -1338,8 +1349,6 @@ div.no-overflow, .yui3-datatable {
   margin-bottom: 5px;
 }
 
-
-
 .bg-white {
   background: #fff;
 }
@@ -1419,8 +1428,6 @@ div.questionbankwindow.block {
     border-color: #bce8f1;
     color: [[setting:fontcolor]];
 }
-
-/* End classes for search box */
 
 #region-main, .container {
     -webkit-transition: width .5s ease-in-out;
@@ -1554,13 +1561,13 @@ div.questionbankwindow.block {
 }
 
 .coursebox.panel.hover .panel-body .coursebox-content h3 {
-font-weight: normal;
-font-size: 20px;
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-max-width: 100%;
-line-height: normal;
+    font-weight: normal;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    line-height: normal;
 }
 
 .coursebox.hover .boxfooter {
@@ -1590,10 +1597,33 @@ line-height: normal;
 }
 
 .gradingform_guide.editor .addcriterion input,
-.gradingform_guide.editor .addcomment input {background: #00aeef; display:block;font-weight:bold;text-decoration:none;}
-.gradingform_guide.editor .criterion .controls .delete input {width:20px;height:16px;background: transparent url([[pix:t/delete]]) no-repeat center top;margin-top:4px;}
-.gradingform_guide.editor .moveup input {width:20px;height:15px;background: transparent url([[pix:t/up]]) no-repeat center top;margin-top:4px;}
-.gradingform_guide.editor .movedown input {width:20px;height:15px;background: transparent url([[pix:t/down]]) no-repeat center top;margin-top:4px;}
+.gradingform_guide.editor .addcomment input {
+    background: #00aeef;
+    display:block;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.gradingform_guide.editor .criterion .controls .delete input {
+    width:20px;
+    height:16px;
+    background: transparent url([[pix:t/delete]]) no-repeat center top;
+    margin-top:4px;
+}
+
+.gradingform_guide.editor .moveup input {
+    width:20px;
+    height:15px;
+    background: transparent url([[pix:t/up]]) no-repeat center top;
+    margin-top:4px;
+}
+
+.gradingform_guide.editor .movedown input {
+    width:20px;
+    height:15px;
+    background: transparent url([[pix:t/down]]) no-repeat center top;
+    margin-top:4px;
+}
 
 .gradingform_guide.editor .moveup input:hover {
     background: #00aeef url([[pix:t/up]]) no-repeat center top;
@@ -1631,10 +1661,6 @@ line-height: normal;
     display: block;
     margin-bottom: 20px;
     text-align: center;
-}
-
-#load {
-/*    float: right;*/
 }
 
 .purgecaches {
@@ -1681,7 +1707,6 @@ line-height: normal;
   height: 3px;
 }
 
-/* End pace settings */
 
 .hidden-blocks .block {
   float: right;
@@ -1709,12 +1734,4 @@ line-height: normal;
 /* Fix glossary print option */
 #page-mod-glossary-view .glossarycontrol {
     margin: -40px 5px;
-}
-
-
-
-
-.affix {
-  top: 0px;
-
 }
