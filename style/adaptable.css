@@ -829,15 +829,14 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 }
 
 #profilepic img, .userpicture {
-    width: 30px !important;
-    height: 30px !important;
+    width: 28px !important;
+    height: 28px !important;
     display: inline;
-    margin-right: 4px;
-}
+    margin: -2px 4px 0 0;
 
-.page-header-image .userpicture {
-    width: 80px;
-    height: 80px;
+    background-color: #ffffff;
+    border-radius: 50%;
+
 }
 
 .form-item .form-label, .mform .fitem div.fitemtitle {
