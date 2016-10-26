@@ -1,3 +1,18 @@
+Changes in version 1.2.5 (2016)
+---------------------------------------
+New features:
+- Avatar beside user name in the navbar
+
+
+
+Fixed issues:
+
+
+
+
+
+
+
 Changes in version 1.2.4.2 (2016102300)
 ---------------------------------------
 Warning: This is the last minor release compatible with moodle 2.9
