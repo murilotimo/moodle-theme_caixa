@@ -833,10 +833,8 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     height: 25px !important;
     display: inline;
     margin: 0px 4px 0 0;
-
     background-color: #ffffff;
     border-radius: 50%;
-
 }
 
 .form-item .form-label, .mform .fitem div.fitemtitle {
