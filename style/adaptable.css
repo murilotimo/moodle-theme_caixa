@@ -9,13 +9,14 @@ html,body {
     font-weight: [[setting:fontweight]] !important;
 }
 
-
+/*
 p, ul, ol, dl, input, textarea, select {
     font-family: [[setting:fontname]], sans-serif !important;
     color: [[setting:fontcolor]];
     font-size: [[setting:fontsize]];
     font-weight: [[setting:fontweight]] !important;
 }
+*/
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0px 0px 10px;
@@ -828,10 +829,10 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 }
 
 #profilepic img, .userpicture {
-    width: 28px !important;
-    height: 28px !important;
+    width: 25px !important;
+    height: 25px !important;
     display: inline;
-    margin: -2px 4px 0 0;
+    margin: 0px 4px 0 0;
 
     background-color: #ffffff;
     border-radius: 50%;
@@ -1709,4 +1710,12 @@ line-height: normal;
 /* Fix glossary print option */
 #page-mod-glossary-view .glossarycontrol {
     margin: -40px 5px;
+}
+
+
+
+
+.affix {
+  top: 0px;
+
 }
