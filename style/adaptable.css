@@ -824,7 +824,6 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
 }
 
 .form-item .form-setting, .form-item .form-description, .mform .fitem .felement, #page-mod-forum-search .c1, .mform .fdescription.required, .userprofile dl.list dd, .form-horizontal .controls {
-/*    margin-left: 0;*/
     margin-left: 260px;
 }
 
