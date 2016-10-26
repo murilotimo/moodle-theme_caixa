@@ -61,7 +61,7 @@
   border-style: [[setting:blockmainbordertopstyle]];
   padding: 10px 10px;
   font-weight: normal;
-/*  font-size: 90%;*/
+
   background: [[setting:blockbackgroundcolor]];
   -webkit-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
   -moz-border-radius: [[setting:blockmaintopradius]] [[setting:blockmaintopradius]] [[setting:blockmainbottomradius]] [[setting:blockmainbottomradius]];
