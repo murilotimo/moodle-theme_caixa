@@ -552,12 +552,12 @@ EOT;
         if ($showoldmessages) {
             $maxmessages = 5;
             $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-                                 FROM {message_read}
-                                WHERE useridto = :userid
-                                AND useridfrom > 2
-                                AND notification <> 1
-                             ORDER BY timecreated DESC
-                                LIMIT $maxmessages";
+                               FROM {message_read}
+                               WHERE useridto = :userid
+                               AND useridfrom > 2
+                               AND notification <> 1
+                               ORDER BY timecreated DESC
+                               LIMIT $maxmessages";
 
             $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
 

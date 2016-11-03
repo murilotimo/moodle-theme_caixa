@@ -308,16 +308,6 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
   padding-right: 5px;
 }
 
-.usermendrop {
-/*	font-size: 115%; */
-}
-
-.usermendrop span {
-  font-size: [[setting:topmenufontsize]];
-    padding-right: 5px;
-    height: 30px;
-}
-
 .dropdown-menu.usermen > li > a:hover, .dropdown-menu.usermen > li > a:active {
   background: #eee;
   background-color: #eee;

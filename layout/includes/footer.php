@@ -36,12 +36,17 @@ if ($PAGE->theme->settings->moodledocs) {
     $footnoteclass = 'span8';
 }
 
-if ($PAGE->theme->settings->showfooterblocks) { ?>
+
+if ($PAGE->theme->settings->showfooterblocks) {
+?>
     <div class="info container2 clearfix">
         <div class="container">
             <div class="row-fluid">
                 <div class="<?php echo $footnoteclass; ?>">
-                    <?php echo $html->footnote; ?>
+
+                         <?php echo $OUTPUT->get_setting(footnote, 'format_html'); ?>
+
+                    <?php // echo $html->footnote; ?>
                 </div>
 
 <?php

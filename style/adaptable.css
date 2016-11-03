@@ -365,6 +365,14 @@ a.usermendrop {
     font-size: [[setting:topmenufontsize]];
 }
 
+
+.usermendrop span {
+  font-size: [[setting:topmenufontsize]];
+    padding-right: 5px;
+    height: 30px;
+}
+
+
 #page-header .userimg {
     float: right;
     margin-bottom: 20px;
@@ -700,9 +708,15 @@ langmenu a:hover {
     margin-left: 5px;
 }
 
-.breadcrumb li.lastli a,
+.breadcrumb li span a {
+    text-decoration: none;
+}
+
+
+.breadcrumb ul i,
 .breadcrumb li.lastli span {
     color: [[setting:breadcrumbtextcolor]];
+    text-decoration: none;
 }
 
 .breadcrumb li a.firstli {
@@ -894,7 +908,6 @@ input[type="radio"], input[type="checkbox"] {
 #region-main {
     margin-top: 0px;
     background: [[setting:regionmaincolor]];
-    padding: 0 10px;
 }
 
 #region-main #coursesearch .btn {
