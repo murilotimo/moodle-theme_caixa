@@ -43,17 +43,17 @@ if ($PAGE->theme->settings->showfooterblocks) {
         <div class="container">
             <div class="row-fluid">
                 <div class="<?php echo $footnoteclass; ?>">
-
-                         <?php echo $OUTPUT->get_setting(footnote, 'format_html'); ?>
-
-                    <?php // echo $html->footnote; ?>
+<?php echo
+    $OUTPUT->get_setting('footnote', 'format_html');
+?>
                 </div>
 
 <?php
     if ($PAGE->theme->settings->moodledocs) {
 ?>
                 <div class="span4 helplink">
-<?php echo $OUTPUT->page_doc_link(); ?>
+<?php
+    echo $OUTPUT->page_doc_link(); ?>
                 </div>
 <?php
     }

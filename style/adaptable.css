@@ -199,6 +199,9 @@ div.signuppanel h2 {
 #above-header .headermenu,
 #above-header .headermenu a {
     color: [[setting:headertextcolor]];
+    font-size: [[setting:topmenufontsize]];
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #above-header .headermenu .dropdown-menu {
@@ -360,9 +363,13 @@ div.signuppanel h2 {
     padding-left: 5px;
 }
 
-a.usermendrop {
+.headermenu .usermendrop a {
     font-family: [[setting:fontname]], sans-serif !important;
     font-size: [[setting:topmenufontsize]];
+}
+
+.headermenu .usermendrop a:hover {
+text-decoration: none !important;
 }
 
 
