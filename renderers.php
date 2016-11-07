@@ -178,7 +178,7 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 
     /**
-     * Returns formatted alert message for ticker
+     * Returns formatted alert message
      *
      * @param string $text message text
      * @param string $type alert type
@@ -680,7 +680,7 @@ EOT;
      * @return string
      */
     public function get_news_ticker() {
-        global $PAGE;
+        global $PAGE, $OUTPUT;
         $retval = '';
 
         if (!isset($PAGE->theme->settings->enabletickermy)) {
@@ -697,6 +697,12 @@ EOT;
             for ($i = 1; $i <= $tickercount; $i++) {
                 $textfield = 'tickertext' . $i;
                 $profilefield = 'tickertext' . $i . 'profilefield';
+
+// Add.
+                format_text($textfield, FORMAT_HTML);
+//            return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true));
+
+
                 $access = true;
 
                 if (!empty($PAGE->theme->settings->$profilefield)) {
@@ -710,6 +716,7 @@ EOT;
                     $msg .= $PAGE->theme->settings->$textfield;
                 }
             }
+
             $msg = preg_replace('#\<[\/]{0,1}(p|ul|div|pre|blockquote)\>#', '', $msg);
             if ($msg == '') {
                 $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
@@ -723,11 +730,14 @@ EOT;
             $retval .= $msg;
             $retval .= '</ul>';
             $retval .= '</div>';
+
         }
-        return $retval;
+
+     return $retval;
     }
 
-    /**
+
+     /**
      * Renders block regions on front page
      *
      * @param string $settingsname
@@ -1696,10 +1706,10 @@ EOT;
         $addlangmenu = true;
         $langs = get_string_manager()->get_list_of_translations();
         if (count($langs) < 2
-            or empty($CFG->langmenu)
-            or ($this->page->course != SITEID and !empty($this->page->course->lang))
-        ) {
-            $addlangmenu = false;
+            || empty($CFG->langmenu)
+            || ($this->page->course != SITEID 
+            && !empty($this->page->course->lang))) {
+                $addlangmenu = false;
         }
 
         if ($addlangmenu) {

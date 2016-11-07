@@ -208,15 +208,17 @@ Alexander Goryntsev
 
 
 
-Licensing
+Licenses
 -------------------------------------
-Adaptable is licensed under the GPL v3 (GNU General Public License). 
-You can find a complete licence copy in: http://www.gnu.org/licenses
+Adaptable is licensed under the GPL v3 (GNU General Public License) - http://www.gnu.org/licenses
 
 Google Fonts released under:
 - SIL Open Font License v1.1 - http://scripts.sil.org/OFL
 - Apache 2 license - https://www.apache.org/licenses/LICENSE-2.0
 - The Ubuntu fonts use the Ubuntu Font License v1.0  - http://font.ubuntu.com/ufl/ubuntu-font-licence-1.0.txt
+
+The Font Awesome font (by Dave Gandy - http://fontawesome.io) is licensed under the SIL OFL 1.1 - http://scripts.sil.org/OFL
+Font Awesome CSS, LESS, and Sass files are licensed under the MIT License - https://opensource.org/licenses/mit-license.html
 
 Emojione (http://emojione.com) released under Creative Commons Attribution 4.0 International
 You can find a complete licence copy in: https://creativecommons.org/licenses/by/4.0/
