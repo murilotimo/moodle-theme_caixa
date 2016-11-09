@@ -228,7 +228,7 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
 }
 
 .forumpost {
-  background-color: transparent;
+    /*background-color: transparent;*/
 }
 
 #page-mod-forum-discuss .forumpost .row .left.picture img, #page-site-index .forumpost .row .left.picture img {
