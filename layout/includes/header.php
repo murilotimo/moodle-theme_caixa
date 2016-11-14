@@ -208,7 +208,10 @@ if (!isloggedin() || isguestuser()) {
         <div class="dropdown secondone">
             <a class="dropdown-toggle usermendrop" data-toggle="dropdown" href="#">
 <?php
-//		echo $OUTPUT->user_picture($USER, array('size' => 80, 'class' => 'userpicture'));
+
+//		echo 
+$userpic = $OUTPUT->user_picture($USER, array('size' => 80, 'class' => 'userpicture'));
+echo $userpic;
         echo $USER->firstname;
 ?>
                 <span class="fa fa-angle-down"></span>

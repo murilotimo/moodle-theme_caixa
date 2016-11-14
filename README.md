@@ -245,3 +245,6 @@ Emojione (http://emojione.com) released under Creative Commons Attribution 4.0 I
 
 Twitter: https://twitter.com/adaptable_theme
 Facebook: https://www.facebook.com/adaptable.theme
+
+
+### Modify it! - Improve it! - Share it!
