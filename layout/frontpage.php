@@ -27,7 +27,6 @@
 require_once(dirname(__FILE__) . '/includes/header.php');
 
 $left = theme_adaptable_get_block_side();
-
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 
 if (!empty($PAGE->theme->settings->sliderenabled)) {
@@ -38,11 +37,13 @@ if (!empty($PAGE->theme->settings->infobox)) {
     if (!empty($PAGE->theme->settings->infoboxfullscreen)) {
         echo '<div id="theinfo">';
     } else {
-        echo '<div id="theinfo" class="container">';
+        echo '<div id="theinfo">';
     }
 ?>
             <div class="row-fluid">
-                <?php echo $OUTPUT->get_setting('infobox', 'format_html'); ?>
+<?php 
+    echo $OUTPUT->get_setting('infobox', 'HTML_FORMAT'); 
+?>
             </div>
         </div>
  
@@ -75,7 +76,9 @@ if (!empty($PAGE->theme->settings->infobox2)) {
 
     <div id="themessage-internal">
         <div class="row-fluid">
-<?php echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
+<?php // echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
+                <?php // echo $OUTPUT->get_setting($infobox2, 'format_html'); ?>
+
         </div>
     </div>
 </div>
@@ -102,7 +105,7 @@ if (($left == 1) && $PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
 // Main Region.
 if ($PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
     if ($left == 1) {
-        echo '<section id="region-main" class="span9" style="margin-left: 30px;">';
+        echo '<section id="region-main" class="span9">';
     } else {
         echo '<section id="region-main" class="span9" style="margin: 0;">';
     }

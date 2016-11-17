@@ -47,6 +47,7 @@
     border-radius: important !0;
 }
 
+
 /* block titles */
 .block .header,
 #dockeditempanel .dockeditempanel_hd {
@@ -110,7 +111,8 @@
 }
 
 
-.block .block-hider-show, .block .block-hider-hide {
+.block .block-hider-show,
+.block .block-hider-hide {
   width: 18px;
 }
 
@@ -122,9 +124,13 @@
     max-width: 100%;
 }
 
+.block_adminblock .content {
+    margin: 0 auto;
+}
+
 .block_login .c1.btn input {
   display: block;
-  margin: 10px auto;
+/*  margin: 10px 100%;*/
   text-align: center;
   width: 96%;
 }
@@ -219,16 +225,16 @@ a.dimmed, a.dimmed:link, a.dimmed:visited, a.dimmed_text, a.dimmed_text:link, a.
     top: 2px;
 }
 
-
 /* add or hide block icons */
 .showblockicons .block .header .title h2:before{
-font-family:FontAwesome;
-font-size:1.25em;
-margin-right:.3em;
-content:"\f0c9";
-font-weight: normal;
+    font-family:FontAwesome;
+    font-size:1.25em;
+    margin-right:.3em;
+    content:"\f0c9";
+    font-weight: normal;
 }
 
+/* Block Icons */
 .showblockicons .block_news_items .header .title h2:before {
   content: "\f0a1";
   font-family: FontAwesome;

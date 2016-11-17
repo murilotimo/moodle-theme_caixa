@@ -274,7 +274,6 @@ div.signuppanel h2 {
     max-width: [[setting:sitetitlemaxwidth]];
 
     display: inline;
-    float: left;
     height: 110px;
     left: 200px;
     margin-top: 0;
@@ -915,6 +914,7 @@ input[type="radio"], input[type="checkbox"] {
 #region-main {
     margin-top: 0px;
     background: [[setting:regionmaincolor]];
+    margin-left: 38px;
 }
 
 #region-main #coursesearch .btn {
@@ -1726,7 +1726,6 @@ div.questionbankwindow.block {
   width: 100%;
   height: 3px;
 }
-
 
 .hidden-blocks .block {
   float: right;
