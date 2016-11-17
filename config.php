@@ -58,7 +58,7 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(
-        'file' => 'columns1.php',
+        'file' => 'columns2.php',
         'regions' => array(),
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
