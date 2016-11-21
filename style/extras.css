@@ -102,6 +102,82 @@ ul.teachers {
     padding-left: 35px;
 }
 
+/* Messages */
+.messaging-area-container .messaging-area .contacts-area .contacts .contact.selected {
+    background-color: [[setting:maincolor]];
+}
+
+.messaging-area-container .messaging-area .contacts-area .tabs .tab.selected {
+    color: [[setting:maincolor]];
+}
+
+.messaging-area-container .messaging-area .messages-area .messages-header .name-container .status {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 16px;
+}
+
+.messaging-area-container .messaging-area .messages-area .messages-header .btn {
+    height: 25px;
+    line-height: 25px;
+    padding: 0 5px;
+    width: auto;
+    color: [[setting:linkcolor]] !important;
+    background: none !important;
+    border: 0;
+    box-shadow: none;
+}
+
+.messaging-area-container .messaging-area .messages-area .messages-header .btn .messages-delete,
+.messaging-area-container .messaging-area .messages-area .messages-header .btn .cancel-messages-delete {
+    height: 25px;
+    line-height: 25px;
+    padding: 0 5px;
+    width: auto;
+}
+
+.messaging-area-container .messaging-area .messages-area .response {
+    border-top: none;
+}
+
+.messaging-area-container .messaging-area .messages-area .messages .blocktime {
+    color: [[setting:maincolor]];
+    font-weight: bold;
+}
+
+.messaging-area-container .messaging-area .contacts-area .tabs .tab {
+    color: [[setting:linkcolor]];
+}
+
+.messaging-area-container .messaging-area .contacts-area .tabs .tab:hover {
+    color: [[setting:linkhover]];
+}
+
+
+
+
+.messaging-area-container .messaging-area .messages-area .messages-header .actions {
+    font-weight: normal;
+    padding-right: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.messaging-area-container .messaging-area .messages-area .messages-header .actions {
+    font-weight: normal;
+    padding-right: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+
+
+
+
+
+
 
 /* forum */
 .forumpost .maincontent .left {
