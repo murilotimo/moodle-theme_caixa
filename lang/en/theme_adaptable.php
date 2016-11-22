@@ -757,7 +757,7 @@ $string['passwordplaceholder'] = 'Password';
 $string['headersettings'] = 'Header';
 $string['headersettingsheading'] = 'Customize the header of this theme. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['headerdesc'] = 'Upload your favicon, logo, set login form in header, adjust titles in header.<br />
-    <strong>You can set font size and styles for titles in the "fonts" settings page.</strong>';
+You can set font size and styles for titles in the <a href="./../admin/settings.php?section=theme_adaptable_font">fonts</a> settings page.';
 
 $string['enableheading'] = 'Header course title';
 $string['enableheadingdesc'] = 'Set the mode to display the course title in the header when the default Moodle site title is enabled.';
@@ -794,14 +794,14 @@ $string['breadcrumbtitleshortname'] = 'Course Short Name / Code';
 
 $string['socialorsearch'] = 'Use Search Box or Social Icons';
 $string['socialorsearchdesc'] = 'You can set the theme to either display social icons or a search box in the header. <br />
-    <strong>You can set social icons under the "header social" settings page</strong>.';
+You can set social icons under the <a href="./../admin/settings.php?section=theme_adaptable_social">Header Social</a> settings page</strong>.';
 
 $string['socialorsearchsocial'] = 'Display social icons in header';
 $string['socialorsearchsearch'] = 'Display search box in header';
 
 $string['searchboxpaddingtop'] = 'Search box padding top';
 $string['searchboxpaddingtopdesc'] = 'Set padding above search box (if being used instead of social icons) <br />
-    <strong>Note: padding for social icons can be set in the "Header Social" settings page</strong>.';
+You can set social icons under the <a href="./../admin/settings.php?section=theme_adaptable_social">Header Social</a> settings page</strong>.';
 
 $string['usernav'] = 'Header User';
 
@@ -843,7 +843,6 @@ $string['displaylogindesc'] = 'Select how to display the login in the screen (wh
 $string['displayloginbutton'] = 'Button';
 $string['displayloginbox'] = 'Login Box';
 $string['displayloginno'] = 'No Login';
-
 
 $string['enablemessagemenu'] = 'Message menu';
 $string['enablemessagemenudesc'] = 'Enable Message menu in header (moot if messaging is globally turned off)';
