@@ -152,6 +152,22 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 <body <?php echo $OUTPUT->body_attributes(array('two-column', $setzoom)); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
+
+<?php
+$beta = true;
+// Non-stable version message.
+if (get_config('theme_adaptable', 'version') < 2016112800) {
+    $beta = true;
+} else {
+    $beta = false;
+} 
+
+if ($beta) { ?>
+<div id="beta" class="row-fluid">
+<center><h3>Beta Version. DO NOT USE IN PRODUCTION SITES <?php echo get_config('theme_adaptable', 'maturity'); ?></h3>
+</div>
+<?php } ?>
+
 <div id="page" class="container-fluid <?php echo "$setfull $showiconsclass"; ?>">
 
 <?php
@@ -513,6 +529,13 @@ if (isloggedin()) {
 }
 ?>
 </header>
+
+<?php
+if ($beta) { ?>
+<div id="beta" class="row-fluid">
+<center><h3>Beta Version. DO NOT USE IN PRODUCTION SITES</h3>
+</div>
+<?php } ?>
 
 <?php
     echo $OUTPUT->get_news_ticker();

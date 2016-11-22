@@ -1189,6 +1189,18 @@ a.carousel-control {
   display: inline;
 }
 
+#beta {
+    height: 48px;
+    background-color: #FF5835;
+}
+
+#beta h3 {
+    line-height: 48px;
+    color: #ffffff !important;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
 
 .navbar .singlebutton,
 .navbar input,

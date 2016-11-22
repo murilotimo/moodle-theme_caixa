@@ -727,7 +727,9 @@ EOT;
             $retval .= get_string('ticker', 'theme_adaptable');
             $retval .= '</div>';
             $retval .= '<ul id="ticker">';
-            $retval .= $msg;
+//            $retval .= $msg;
+            $retval .= $OUTPUT->get_setting($msg, 'format_html');
+
             $retval .= '</ul>';
             $retval .= '</div>';
 
