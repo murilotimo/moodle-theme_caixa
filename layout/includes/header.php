@@ -155,7 +155,7 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 
 <?php
 // Display dev alert.
-echo $OUTPUT->get_dev_alert()
+echo $OUTPUT->get_dev_alert();
 ?>
 
 <div id="page" class="container-fluid <?php echo "$setfull $showiconsclass"; ?>">
@@ -164,7 +164,6 @@ echo $OUTPUT->get_dev_alert()
 // Display alerts.
 echo $OUTPUT->get_alert_messages();
 ?>
-
 
 <?php
 // Fixed header.
@@ -383,6 +382,9 @@ if (!isloggedin() || isguestuser()) {
 </div>
 
 <div style="float: right; position: relative; display: inline; margin-left: 15px; height:20px;">
+
+
+
 <?php
 if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu']) {
     echo $OUTPUT->lang_menu();

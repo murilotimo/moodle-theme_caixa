@@ -30,13 +30,14 @@ require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot .'/course/renderer.php');
 require_once($CFG->libdir. '/coursecatlib.php');
 
-/**
+/******************************************************************************************
  * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * Core renderers for Adaptable theme based on BCU Theme
+ * Core renderers for Adaptable theme
  */
+
 class theme_adaptable_core_renderer extends core_renderer {
     /** @var custom_menu_item language The language menu if created */
     protected $language = null;
@@ -266,8 +267,12 @@ class theme_adaptable_core_renderer extends core_renderer {
                 $output .= '<div id="beta"><center><h3>';
                 $output .= get_string('beta', 'theme_adaptable');
                 $output .= '</h3></center></div>';
-        } else {
-            $output = '';
+        }
+
+        if ($CFG->version < 2015111600) {
+                $output .= '<div id="beta"><center><h3>';
+                $output .= get_string('deprecated', 'theme_adaptable');
+                $output .= '</h3></center></div>';
         } 
 
         return $output;
@@ -730,7 +735,6 @@ EOT;
 
                 if ($access) {
                     $msg .= $PAGE->theme->settings->$textfield;
-
             }
 
             $msg = preg_replace('#\<[\/]{0,1}(p|ul|div|pre|blockquote)\>#', '', $msg);
@@ -1923,12 +1927,12 @@ EOT;
     }
 }
 
-/**
+/******************************************************************************************
  * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * Course renderers for Adaptable theme based on BCU Theme
+ * Core Course Renderers for Adaptable theme 
  */
 class theme_adaptable_core_course_renderer extends core_course_renderer {
     /**

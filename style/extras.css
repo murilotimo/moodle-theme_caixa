@@ -153,16 +153,6 @@ ul.teachers {
     color: [[setting:linkhover]];
 }
 
-
-
-
-.messaging-area-container .messaging-area .messages-area .messages-header .actions {
-    font-weight: normal;
-    padding-right: 15px;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
 .messaging-area-container .messaging-area .messages-area .messages-header .actions {
     font-weight: normal;
     padding-right: 15px;
@@ -171,13 +161,13 @@ ul.teachers {
     top: 0;
 }
 
+.messaging-area-container .status .online-text {
+    color: #009688;
+}
 
-
-
-
-
-
-
+.messages-area .actions a:hover {
+    text-decoration: none;
+}
 
 /* forum */
 .forumpost .maincontent .left {

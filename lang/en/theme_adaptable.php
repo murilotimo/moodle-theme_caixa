@@ -965,6 +965,10 @@ $string['alertaccessprofile'] = 'Add custom profile field restriction';
 $string['alertaccess'] = 'Alert Visibility';
 $string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "Add custom profile field restriction" you will need to add values for profile fields below.';
 
+// Moodle/Adaptable version alert messages
+$string['beta'] = 'DEVELOPMENT VERSION. DO NOT USE IN PRODUCTION SITES';
+$string['deprecated'] = 'MOODLE DEPRECATED VERSION. DO NOT USE ADAPTABLE IN THIS SITE';
+
 // Social Wall Settings ********************************************.
 $string['socialwall'] = 'Social Wall';
 $string['socialwallheading'] = 'Social Wall Settings';
@@ -1318,6 +1322,3 @@ $string['jssectiondesc'] = 'Add javascript code to the site.';
 
 // Cache definitions.
 $string['cachedef_userdata'] = 'A session cache used to store user specific data.';
-
-// Non-Stable version
-$string['beta'] = 'Development Version. DO NOT USE IN PRODUCTION SITES';
