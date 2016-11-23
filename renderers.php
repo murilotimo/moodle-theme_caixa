@@ -256,6 +256,24 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 
     /**
+     * Returns html to render Development version alert message in the header
+     *
+     * @return string
+     */
+    public function get_dev_alert() {
+        $output = '';
+        if (get_config('theme_adaptable', 'version') < 2016120500) {
+                $output .= '<div id="beta"><center><h3>';
+                $output .= get_string('beta', 'theme_adaptable');
+                $output .= '</h3></center></div>';
+        } else {
+            $output = '';
+        } 
+
+        return $output;
+    }
+
+    /**
      * Returns Google Analytics code if analytics are enabled
      *
      * @return string
@@ -2345,4 +2363,6 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         }
         return $content;
     }
+
+// End.
 }

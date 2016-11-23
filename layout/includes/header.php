@@ -154,17 +154,9 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <?php
-$beta = false;
-// Non-stable version message.
-if (get_config('theme_adaptable', 'version') < 2016120500) {
-    $beta = true;
-} 
-
-if ($beta) { ?>
-<div id="beta" class="row-fluid">
-<center><h3>Beta Version. DO NOT USE IN PRODUCTION SITES <?php echo get_config('theme_adaptable', 'maturity'); ?></h3>
-</div>
-<?php } ?>
+// Display dev alert.
+echo $OUTPUT->get_dev_alert()
+?>
 
 <div id="page" class="container-fluid <?php echo "$setfull $showiconsclass"; ?>">
 
@@ -529,11 +521,8 @@ if (isloggedin()) {
 </header>
 
 <?php
-if ($beta) { ?>
-<div id="beta" class="row-fluid">
-<center><h3>Beta Version. DO NOT USE IN PRODUCTION SITES</h3>
-</div>
-<?php } ?>
+// Display dev alert.
+echo $OUTPUT->get_dev_alert();
 
-<?php
-    echo $OUTPUT->get_news_ticker();
+// Display News Ticker.
+echo $OUTPUT->get_news_ticker();

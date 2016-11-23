@@ -1318,3 +1318,6 @@ $string['jssectiondesc'] = 'Add javascript code to the site.';
 
 // Cache definitions.
 $string['cachedef_userdata'] = 'A session cache used to store user specific data.';
+
+// Non-Stable version
+$string['beta'] = 'Development Version. DO NOT USE IN PRODUCTION SITES';
