@@ -154,12 +154,10 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <?php
-$beta = true;
+$beta = false;
 // Non-stable version message.
-if (get_config('theme_adaptable', 'version') < 2016112800) {
+if (get_config('theme_adaptable', 'version') < 2016120500) {
     $beta = true;
-} else {
-    $beta = false;
 } 
 
 if ($beta) { ?>
