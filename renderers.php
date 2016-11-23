@@ -770,7 +770,7 @@ EOT;
 
                     // Moodle does not seem to like numbers in region names so using letter instead.
                     $blockcount ++;
-                    $block = 'frnt-market-' .  chr(96 + $blockcount);
+                    $block = 'frnt-market-' . chr(96 + $blockcount);
 
                     if ($adminediting) {
                         $retval .= '<span style="padding-left: 10px;"> ' . '' . '</span>';
@@ -818,7 +818,8 @@ EOT;
                     $blockcount ++;
                     $fieldname = $settingname . $blockcount;
                     if (isset($PAGE->theme->settings->$fieldname)) {
-                         $retval .= $OUTPUT->get_setting($fieldname, 'format_html');
+                        // Add HTML format.
+                        $retval .= $OUTPUT->get_setting($fieldname, 'format_html');
                     }
                     $retval .= '</div>';
                 }
