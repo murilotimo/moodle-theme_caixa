@@ -687,6 +687,7 @@ EOT;
             $PAGE->theme->settings->enabletickermy = 0;
         }
 
+        // Display ticker if possible.
         if ((!empty($PAGE->theme->settings->enableticker) &&
         $PAGE->theme->settings->enableticker &&
         $PAGE->bodyid == "page-site-index") ||
@@ -698,10 +699,7 @@ EOT;
                 $textfield = 'tickertext' . $i;
                 $profilefield = 'tickertext' . $i . 'profilefield';
 
-// Add.
                 format_text($textfield, FORMAT_HTML);
-//            return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true));
-
 
                 $access = true;
 
@@ -714,7 +712,7 @@ EOT;
 
                 if ($access) {
                     $msg .= $PAGE->theme->settings->$textfield;
-                }
+
             }
 
             $msg = preg_replace('#\<[\/]{0,1}(p|ul|div|pre|blockquote)\>#', '', $msg);
@@ -727,12 +725,10 @@ EOT;
             $retval .= get_string('ticker', 'theme_adaptable');
             $retval .= '</div>';
             $retval .= '<ul id="ticker">';
-//            $retval .= $msg;
+            $retval .= format_text($PAGE->theme->settings->$textfield, FORMAT_HTML, array('trusted' => true));                }
             $retval .= $OUTPUT->get_setting($msg, 'format_html');
-
             $retval .= '</ul>';
             $retval .= '</div>';
-
         }
 
      return $retval;
