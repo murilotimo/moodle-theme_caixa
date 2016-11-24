@@ -460,11 +460,6 @@ text-decoration: none !important;
     margin-top: 20px;
 }
 
-#themessage {
-    position: relative;
-    margin-bottom: 20px;
-}
-
 img.emoticon {
     height: [[setting:emoticonsize]];
     width: [[setting:emoticonsize]];
@@ -487,13 +482,6 @@ img.emoticon {
 
 span.fa-chevron-right.fa {
     font-size: 10px;
-}
-
-#themessage .submit {
-    clear: both;
-    display: block;
-    float: right;
-    margin: 10px 0 0;
 }
 
 #theinfo-internal {
@@ -808,6 +796,18 @@ div.redirectmessage {
     overflow: auto;
     width: 100%;
 }
+
+
+.path-grade-report-grader .gradeparent {
+    overflow: auto;
+}
+
+
+.gradingform_guide .criterion .description {
+    width: 100%;
+    padding: 10px 5px 10px 5px;
+}
+
 
 #notice,
 .redirectmessage2 {
