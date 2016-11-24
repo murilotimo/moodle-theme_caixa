@@ -37,16 +37,15 @@ if (!empty($PAGE->theme->settings->infobox)) {
     if (!empty($PAGE->theme->settings->infoboxfullscreen)) {
         echo '<div id="theinfo">';
     } else {
-        echo '<div id="theinfo">';
+        echo '<div id="theinfo" class="container">';
     }
 ?>
             <div class="row-fluid">
 <?php 
-    echo $OUTPUT->get_setting('infobox', 'HTML_FORMAT'); 
+    echo $OUTPUT->get_setting('infobox', 'html_format'); 
 ?>
             </div>
         </div>
- 
 <?php
 }
 ?>
@@ -68,19 +67,16 @@ if (!empty($PAGE->theme->settings->infobox)) {
 <?php
 if (!empty($PAGE->theme->settings->infobox2)) {
     if (!empty($PAGE->theme->settings->infoboxfullscreen)) {
-        echo '<div id="themessage">';
+        echo '<div id="theinfo">';
     } else {
-        echo '<div id="themessage" class="container">';
+        echo '<div id="theinfo" class="container">';
     }
 ?>
-
-    <div id="themessage-internal">
         <div class="row-fluid">
-<?php // echo $OUTPUT->get_setting('infobox2', 'format_html');; ?>
-                <?php // echo $OUTPUT->get_setting($infobox2, 'format_html'); ?>
-
+<?php 
+            echo $OUTPUT->get_setting('infobox2', 'format_html');
+?>
         </div>
-    </div>
 </div>
 <?php
 }
