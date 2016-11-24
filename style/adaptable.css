@@ -1214,8 +1214,25 @@ a.carousel-control {
 }
 
 .adminerror div {
-font-size: 1.1rem;
+/*font-size: 1.1rem;*/
 }
+
+.notifytiny {
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
+    border-radius: 0.25rem;
+    margin: 1rem;
+    font-size: 14px;
+    font-family: monospace;
+    padding: 0.75rem 1.25rem;
+}
+/*
+.notifytiny li{
+    font-size: 12px;
+}
+*/
+
 
 .navbar .singlebutton,
 .navbar input,
