@@ -159,14 +159,12 @@ input#id_submitbutton2[disabled],
     text-decoration: none;
 }
 
-
 #notice .singlebutton + .singlebutton input,
 .submit.buttons input[name="cancel"] {
     color: [[setting:editfont]] !important;
     background-color: [[setting:editoffbk]] !important;
     text-shadow: none;
 }
-
 
 .btn-login {
     background: [[setting:buttonlogincolor]];
@@ -189,4 +187,8 @@ input#id_submitbutton2[disabled],
     background: [[setting:buttonloginhovercolor]];
     color: [[setting:buttonlogintextcolor]];
     text-decoration: none;
+}
+
+.continuebutton {
+    margin: 10px 0;
 }
