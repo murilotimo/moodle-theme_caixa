@@ -1419,12 +1419,13 @@ EOT;
             }
         } else {
             if ($display == 'custom') {
-                // Custom title.
+                // Custom title using html output to allow multi-lang.
                 if (!empty($PAGE->theme->settings->sitetitletext)) {
                     $header = theme_adaptable_remove_site_fullname($PAGE->theme->settings->sitetitletext);
+                    $sitetitlehtml = $PAGE->theme->settings->sitetitletext;
                     $PAGE->set_heading($header);
 
-                    $retval .= '<div id="sitetitle">' . $PAGE->theme->settings->sitetitletext . '</div>';
+                    $retval .= '<div id="sitetitle">' . format_text($sitetitlehtml, FORMAT_HTML) . '</div>';
                 }
             }
         }
