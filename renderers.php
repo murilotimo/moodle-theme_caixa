@@ -262,6 +262,7 @@ class theme_adaptable_core_renderer extends core_renderer {
      * @return string
      */
     public function get_dev_alert() {
+        global $CFG;
         $output = '';
         if (get_config('theme_adaptable', 'version') < 2016120500) {
                 $output .= '<div id="beta"><center><h3>';
