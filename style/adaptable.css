@@ -1213,6 +1213,10 @@ a.carousel-control {
     padding: 0.75rem 1.25rem;
 }
 
+.adminerror div {
+font-size: 1.1rem;
+}
+
 .navbar .singlebutton,
 .navbar input,
 .navbar .singlebutton div,
