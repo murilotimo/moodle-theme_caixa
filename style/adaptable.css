@@ -1199,6 +1199,7 @@ a.carousel-control {
     color: #ffffff !important;
     font-size: 24px;
     font-weight: bolder;
+    text-align: center;
 }
 
 /* admin errors */

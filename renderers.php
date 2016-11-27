@@ -265,9 +265,9 @@ class theme_adaptable_core_renderer extends core_renderer {
         global $CFG;
         $output = '';
         if (get_config('theme_adaptable', 'version') < 2016120500) {
-                $output .= '<div id="beta"><center><h3>';
+                $output .= '<div id="beta"><h3>';
                 $output .= get_string('beta', 'theme_adaptable');
-                $output .= '</h3></center></div>';
+                $output .= '</h3></div>';
         }
 
         if ($CFG->version < 2015111600) {
@@ -1738,19 +1738,21 @@ EOT;
         if ($addlangmenu) {
             $strlang = get_string('language');
             $currentlang = current_language();
+
             if (isset($langs[$currentlang])) {
                 $currentlang = $langs[$currentlang];
             } else {
                 $currentlang = $strlang;
             }
             $this->language = $langmenu->add('<i class="fa fa-globe fa-lg"></i><span class="langdesc">'.$currentlang.'</span>',
-                    new moodle_url('#'), $strlang, 100);
+                    new moodle_url('#'), $strlang, 10000);
             foreach ($langs as $langtype => $langname) {
                 $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
             }
         }
         return $this->render_custom_menu($langmenu);
     }
+
 
     /**
      * Returns html for custom menu
