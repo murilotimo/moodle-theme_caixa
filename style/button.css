@@ -20,7 +20,7 @@ td.submit input {
     -moz-border-radius: [[setting:buttonradius]];
     border-radius: [[setting:buttonradius]];
     background-size: 100% 200%;
-    color: [[setting:buttontextcolor]] !important;
+    color: [[setting:buttontextcolor]];
     cursor: pointer;
     padding: 8px 15px 8px;
     -webkit-transition: background .2s ease-out;
