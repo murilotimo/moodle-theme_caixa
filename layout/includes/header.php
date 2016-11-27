@@ -446,7 +446,7 @@ if ($PAGE->theme->settings->socialorsearch == 'search') { ?>
 
 // Navbar Menu.
 
-if (isloggedin()) {
+if (isloggedin() && !isguestuser()) {
 ?>
     <div id="navwrap">
         <div class="container">
