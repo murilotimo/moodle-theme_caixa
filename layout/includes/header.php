@@ -382,9 +382,6 @@ if (!isloggedin() || isguestuser()) {
 </div>
 
 <div style="float: right; position: relative; display: inline; margin-left: 15px; height:20px;">
-
-
-
 <?php
 if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu']) {
     echo $OUTPUT->lang_menu();
@@ -523,8 +520,6 @@ if (isloggedin()) {
 </header>
 
 <?php
-// Display dev alert.
-echo $OUTPUT->get_dev_alert();
 
 // Display News Ticker.
 echo $OUTPUT->get_news_ticker();
