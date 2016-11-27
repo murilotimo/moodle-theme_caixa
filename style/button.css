@@ -1,4 +1,35 @@
-/*buttons */
+/*
+* This file is part of Moodle - http://moodle.org/
+*
+* Moodle is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* Moodle is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+*
+*
+* Adaptable Buttons Style sheet 
+*
+* Version details
+* 
+* @package    theme_adaptable
+* @copyright  2015 Jeremy Hopkins (Coventry University)
+* @copyright  2015 Fernando Acedo (3-bits.com)
+* @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*
+*/
+
+
+
+[data-role="next"],
+[data-role="previous"],
 input[type="submit"],
 input[type="button"],
 #searchform_button,
@@ -12,7 +43,8 @@ input#id_submitbutton2,
 .path-admin .buttons input[type="submit"],
 td.submit input {
     font-family: [[setting:fontname]], sans-serif !important;
-    background: [[setting:buttoncolor]];
+    background: none;
+    background-color: [[setting:buttoncolor]];
     text-shadow: none;
     box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
     border: 0px;
@@ -20,7 +52,7 @@ td.submit input {
     -moz-border-radius: [[setting:buttonradius]];
     border-radius: [[setting:buttonradius]];
     background-size: 100% 200%;
-    color: [[setting:buttontextcolor]];
+    color: [[setting:buttontextcolor]] !important;
     cursor: pointer;
     padding: 8px 15px 8px;
     -webkit-transition: background .2s ease-out;
@@ -36,7 +68,7 @@ td.submit input {
     margin-bottom: 0;
     font-size: 14px;
     line-height: 20px;
-    color: #FFF;
+    color: #ffffff;
     text-align: center;
     text-shadow: none;
     vertical-align: middle;
@@ -57,8 +89,8 @@ td.submit input {
 
 #notice .singlebutton + .singlebutton input,
 .submit.buttons input[name="cancel"] {
-  background: #0084C2 !important;
-  text-shadow: none;
+    background-color: [[setting:editoffbk]]; !important;
+    text-shadow: none;
 }
 
 input[type="submit"]:hover,
@@ -72,7 +104,7 @@ a.submit:hover,
 .btn:active {
     background-position: 0 -100%;
     text-decoration: none !important;
-    color: #fff;
+    color: #ffffff;
     background-color: [[setting:buttonhovercolor]];
 }
 
@@ -85,7 +117,7 @@ a.submit:focus, #notice .singlebutton + .singlebutton input:focus,
 .btn:focus {
     background-position: 0 -100%;
     text-decoration: none !important;
-    color: #fff;
+    color: #ffffff;
     background-color: [[setting:buttonhovercolor]];
 }
 
@@ -128,7 +160,8 @@ td.submit input.disabled,
 input.form-submit[disabled],
 input#id_submitbutton[disabled],
 input#id_submitbutton2[disabled],
-.path-admin .buttons input[type="submit"][disabled], td.submit input[disabled] {
+.path-admin .buttons input[type="submit"][disabled],
+td.submit input[disabled] {
     background-color: [[setting:buttonhovercolor]];
     color: [[setting:buttontextcolor]] !important;
 }
@@ -159,6 +192,30 @@ input#id_submitbutton2[disabled],
     text-decoration: none;
 }
 
+[data-role="end"],
+[data-role="cancel"],
+.purgecaches a {
+    color: [[setting:editfont]];
+    background-color: [[setting:editoffbk]];
+    margin-top: [[setting:edittopmargin]];
+    text-decoration: none;
+    padding: 8px 15px;
+}
+
+[data-role="end"]:hover,
+[data-role="cancel"]:hover {
+    background-color: [[setting:editonbk]];
+    color: [[setting:editfont]] !important;
+    text-decoration: none;
+}
+
+
+.btn-primary.disabled,
+.btn-primary[disabled] {
+    background-color: #d5d5d5;
+    color: #ffffff;
+}
+
 #notice .singlebutton + .singlebutton input,
 .submit.buttons input[name="cancel"] {
     color: [[setting:editfont]] !important;
@@ -167,7 +224,7 @@ input#id_submitbutton2[disabled],
 }
 
 .btn-login {
-    background: [[setting:buttonlogincolor]];
+    background-color: [[setting:buttonlogincolor]];
     border: 0 none;
     -webkit-border-radius: [[setting:buttonradius]];
     -moz-border-radius: [[setting:buttonradius]];
@@ -184,7 +241,7 @@ input#id_submitbutton2[disabled],
 }
 
 .btn-login:hover {
-    background: [[setting:buttonloginhovercolor]];
+    background-color: [[setting:buttonloginhovercolor]];
     color: [[setting:buttonlogintextcolor]];
     text-decoration: none;
 }
