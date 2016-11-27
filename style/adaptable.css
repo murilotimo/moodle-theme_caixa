@@ -1213,10 +1213,6 @@ a.carousel-control {
     padding: 0.75rem 1.25rem;
 }
 
-.adminerror div {
-/*font-size: 1.1rem;*/
-}
-
 .notifytiny {
     background-color: #f2dede;
     border-color: #ebcccc;
@@ -1227,12 +1223,6 @@ a.carousel-control {
     font-family: monospace;
     padding: 0.75rem 1.25rem;
 }
-/*
-.notifytiny li{
-    font-size: 12px;
-}
-*/
-
 
 .navbar .singlebutton,
 .navbar input,
@@ -1512,7 +1502,7 @@ div.no-overflow, .yui3-datatable {
   z-index: 2;
 }
 
-/* Classes for new search box */
+/* search box */
 
 .searchbox {
   float: right;
@@ -1927,6 +1917,84 @@ div.questionbankwindow.block {
 
 .hidden-blocks .block-region .block .header {
   border-top: 0px;
+}
+
+/* Quiz navigation. */
+/* Published by Tim Hunt in the moodle forum */
+
+.que .formulation {
+    background-color: #F5F5F5;
+    border-color: [[setting:maincolor]];
+    color: #333333;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qn_buttons {
+    margin-right: -14px;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton {
+    font-size: 14px;
+    line-height: 25px !important;
+    font-weight: normal;
+    background-color: #fff;
+    background-image: none;
+    height: 45px;
+    width: 35px;
+    border-radius: 4px;
+    border: 0;
+    margin: 0 5px 5px 0;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton .thispageholder {
+    border: 1px solid #999999;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton.thispage .thispageholder {
+    border: 3px solid #1F536B;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton.flagged .thispageholder {
+    background: transparent url([[pix:theme|flag-on]]) 20px 0px no-repeat;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton .trafficlight {
+    border: 0;
+    background: #fff none center 4px / 10px no-repeat scroll;
+    height: 20px;
+    margin-top: 25px;
+    border-radius: 0 0 4px 4px;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton.notyetanswered .trafficlight,
+.path-mod-quiz #mod_quiz_navblock .qnbutton.invalidanswer .trafficlight {
+    background-color: #fff;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton.correct .trafficlight {
+    background-image: url([[pix:theme|checkmark]]);
+    background-color: #468847;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton.blocked .trafficlight {
+    background-image: url([[pix:core|t/locked]]);
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton.notanswered .trafficlight,
+.path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect .trafficlight {
+    background-color: #b94a48;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton.partiallycorrect .trafficlight {
+    background-image: url([[pix:theme|whitecircle]]);
+    background-color: #c09853;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton.complete .trafficlight,
+.path-mod-quiz #mod_quiz_navblock .qnbutton.answersaved .trafficlight,
+.path-mod-quiz #mod_quiz_navblock .qnbutton.requiresgrading .trafficlight {
+    background-color: #999;
 }
 
 
