@@ -1037,11 +1037,15 @@ EOT;
 
             // Text / Icon home.
             if ($i++ == 0) {
+                $breadcrumbs .= '<li>';
+
                 if ($PAGE->theme->settings->breadcrumbhome == 'icon') {
-                    $breadcrumbs = html_writer::link(new moodle_url('/'),
+                    $breadcrumbs .= html_writer::link(new moodle_url('/'),
                                    html_writer::tag('i', '', array('class' => 'fa fa-home fa-lg')));
+                    $breadcrumbs .= '</li>';
                 } else {
-                    $breadcrumbs = html_writer::link(new moodle_url('/'), get_string('home'));
+                    $breadcrumbs .= html_writer::link(new moodle_url('/'), get_string('home'));
+                    $breadcrumbs .= '</li>';
                 }
                 continue;
             }
