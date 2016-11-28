@@ -479,14 +479,14 @@ $string['headertextcolordesc'] = 'Establece el color de texto y enlaces de la pa
 $string['headertextcolor2'] = 'Color del texto y enlaces de la parte inferior de la cabecera';
 $string['headertextcolor2desc'] = 'Establece el color de texto y enlaces de la parte inferior de la cabecera.';
 
-$string['blockheadercolor'] = 'Color de fondo de la cabecera de los bloques';
-$string['blockheadercolordesc'] = 'Establece el color de fondo de la cabecera de los bloques.';
+$string['blockheadercolor'] = 'Color del texto de la cabecera de los bloques';
+$string['blockheadercolordesc'] = 'Establece el color del texto de la cabecera de los bloques.';
 
 $string['blockbackgroundcolor'] = 'Color de fondo de los bloques';
 $string['blockbackgroundcolordesc'] = 'Establece el color de fondo de los bloques.';
 
-$string['blockheaderbackgroundcolor'] = 'Color del texto de los encabezados de los bloques';
-$string['blockheaderbackgroundcolordesc'] = 'Establece el color del texto de los encabezados de los bloques.';
+$string['blockheaderbackgroundcolor'] = 'Color de fondo de los encabezados de los bloques';
+$string['blockheaderbackgroundcolordesc'] = 'Establece el color de fondo de los encabezados de los bloques.';
 
 $string['blockbordercolor'] = 'Color del borde de los bloques';
 $string['blockbordercolordesc'] = 'Establece el color del borde de los bloques.';
