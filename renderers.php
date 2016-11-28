@@ -914,7 +914,7 @@ EOT;
                     $footercontent = 'footer' . $blockcount . 'content';
                     if (!empty($PAGE->theme->settings->$footercontent)) {
                         $output .= '<div class="left-col span' . $val . '">';
-                        $output .= '<h3 title="' . $OUTPUT->get_setting($footerheader, 'format_text') . '">';
+                        $output .= '<h3>';
                         $output .= $OUTPUT->get_setting($footerheader, 'format_text');
                         $output .= '</h3>';
                         $output .= $OUTPUT->get_setting($footercontent, 'format_html');
@@ -1744,8 +1744,10 @@ EOT;
             } else {
                 $currentlang = $strlang;
             }
+
             $this->language = $langmenu->add('<i class="fa fa-globe fa-lg"></i><span class="langdesc">'.$currentlang.'</span>',
-                    new moodle_url('#'), $strlang, 10000);
+                                             new moodle_url('#'), $strlang, 10000);
+
             foreach ($langs as $langtype => $langname) {
                 $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
             }
@@ -1796,7 +1798,7 @@ EOT;
             return '';
         }
 
-        $content = '<ul class="nav">';
+        $content = '<ul class="nav navbar-nav">';
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item, 1);
         }
