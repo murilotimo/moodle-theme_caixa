@@ -742,16 +742,18 @@ EOT;
                 if ($msg == '') {
                     $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
                 }
-    
+
                 $retval .= '<div id="ticker-wrap" class="clearfix container">';
                 $retval .= '<div class="pull-left" id="ticker-announce">';
                 $retval .= get_string('ticker', 'theme_adaptable');
                 $retval .= '</div>';
                 $retval .= '<ul id="ticker">';
-                $retval .= format_text($PAGE->theme->settings->$textfield, FORMAT_HTML, array('trusted' => true));                }
-                $retval .= $OUTPUT->get_setting($msg, 'format_html');
-                $retval .= '</ul>';
-                $retval .= '</div>';
+                $retval .= format_text($PAGE->theme->settings->$textfield, FORMAT_HTML, array('trusted' => true));
+            }
+
+            $retval .= $OUTPUT->get_setting($msg, 'format_html');
+            $retval .= '</ul>';
+            $retval .= '</div>';
         }
 
         return $retval;
@@ -759,10 +761,10 @@ EOT;
 
 
     /**
-    * Renders block regions on front page
-    *
-    * @param string $settingsname
-    */
+     * Renders block regions on front page
+     *
+     * @param string $settingsname
+     */
     public function get_block_regions($settingsname = 'blocklayoutlayoutrow') {
         global $PAGE, $OUTPUT, $USER;
         $fields = array();
@@ -1211,8 +1213,7 @@ EOT;
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
                             if (empty($parent)) {
-                                $parent = $branch->add($icon . $trunc = 
-                                    rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_adaptable')),
+                                $parent = $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_adaptable')),
                                         0, $mysitesmaxlengthhidden)) . '...',
                                         new moodle_url('#'), '', 2000);
                             }
