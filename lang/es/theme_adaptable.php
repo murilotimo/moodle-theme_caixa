@@ -18,8 +18,9 @@
  * Version details
  *
  * @package    theme adaptable
- * @copyright  2015 Fernando Acedo (3-bits.com)
+ * @copyright  2015-2016 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
  *
  */
 
@@ -27,39 +28,39 @@
 $string['choosereadme'] = '
 <div class="clearfix">
 <div class="well">
- <h2>Adaptable</h2>
- <p><img class="img-polaroid" src="adaptable/pix/screenshot.png" /></p>
+<h2>Adaptable</h2>
+<p><img class="img-polaroid" src="adaptable/pix/screenshot.png" /></p>
 </div>
 <div class="well">
- <h2>Créditos</h2>
- <h3>Acerca de...</h3>
- <p>Adaptable es una plantilla para Moodle, de dos columnas y tipo responsive, altamente personalizable y basada en la popular plantilla BCU.</p>
- <p>Esta plantilla está bajo licencia GPL (GNU General Public License). Puedes encontrar la licencia completa en: <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses</a></p>
- <p>Modifícala / Mejórala / Compártela</p>
- <br>
- <p>Este tema ha sido creada por:<br>
- Jeremy Hopkins (Coventry University)<br>
- Fernando Acedo (<a href="http://3-bits.com" target="_blank">3-bits.com</a>)</p>
- <br>
- <p>y otros desarrolladores, probadores, traductores y voluntarios (Ver <a href="adaptable/README.txt" target="_blank">README.txt</a>)</p>
- <br>
- <h3>Informar de errores</h3>
- <p>Puedes informar de errores encontrados en este tema (y por favor, sólo errores) a través de nuestro <a href="https://bitbucket.org/covuni/moodle-theme_adaptable/issues" target="_blank">repositorio en Bitbucket</a></p>
- <br>
- <h3>Soporte Técnico</h3>
- <p>Puedes preguntar tus dudas y cuestiones a través de los foros oficiales en moodle.org:</p>
- <ul>
- <li>Inglés: <a href="https://moodle.org/mod/forum/discuss.php?d=340404" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340404</a>
- <li>Español: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
- <li>Català: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
- </ul>
- <br>
- <h3>Documentación</h3>
- <p>Próximamente</p>
- <br>
- <h3>Demo</h3>
- <p>Puedes ver una demostración del sitio y descargar un archivo de instalación en <a href="http://3-bits.com/demo/adaptable">http://3-bits.com/demo/adaptable</a></p>
- <br>
+<h2>Créditos</h2>
+<h3>Acerca de...</h3>
+<p>Adaptable es una plantilla para Moodle, de dos columnas y tipo responsive, altamente personalizable y basada en la popular plantilla BCU.</p>
+<p>Esta plantilla está bajo licencia GPL (GNU General Public License). Puedes encontrar la licencia completa en: <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses</a></p>
+<p>Modifícala / Mejórala / Compártela</p>
+<br>
+<p>Este tema ha sido creada por:<br>
+Jeremy Hopkins (Coventry University)<br>
+Fernando Acedo (<a href="http://3-bits.com" target="_blank">3-bits.com</a>)</p>
+<br>
+<p>y otros desarrolladores, probadores, traductores y voluntarios (Ver <a href="adaptable/README.txt" target="_blank">README.txt</a>)</p>
+<br>
+<h3>Informar de errores</h3>
+<p>Puedes informar de errores encontrados en este tema (y por favor, sólo errores) a través de nuestro <a href="https://bitbucket.org/covuni/moodle-theme_adaptable/issues" target="_blank">repositorio en Bitbucket</a></p>
+<br>
+<h3>Soporte Técnico</h3>
+<p>Puedes preguntar tus dudas y cuestiones a través de los foros oficiales en moodle.org:</p>
+<ul>
+<li>Inglés: <a href="https://moodle.org/mod/forum/discuss.php?d=340404" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340404</a>
+<li>Español: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
+<li>Català: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
+</ul>
+<br>
+<h3>Documentación</h3>
+<p>Próximamente</p>
+<br>
+<h3>Demo</h3>
+<p>Puedes ver una demostración del sitio y descargar un archivo de instalación en <a href="http://3-bits.com/demo/adaptable">http://3-bits.com/demo/adaptable</a></p>
+<br>
 <p>Traducción es-ES: Fernando Acedo (3-bits.com)</p>
 <p>Traducción es-MX: Germán Valero (UNAM)</p>
 <p>Traducció ca-ES: Fernando Acedo (3-bits.com)</p>
@@ -796,7 +797,7 @@ $string['socialorsearch'] = 'Mostrar cuadro de búsqueda o iconos sociales';
 $string['socialorsearchdesc'] = 'Puedes mostrar los iconos sociales o el cuadro de búsqueda en la cabecera. <br />
     <strong>Puedes configurar los iconos sociales en la sección "Redes sociales"</strong>.';
 
-$string['socialorsearchsocial'] = 'Nostrar iconos de redes sociales';
+$string['socialorsearchsocial'] = 'Mostrar iconos de redes sociales';
 $string['socialorsearchsearch'] = 'Mostrar cuadro de búsqueda';
 
 $string['searchboxpaddingtop'] = 'Separación superior del cuadro de búsqueda';
@@ -964,6 +965,10 @@ $string['alertaccessprofile'] = 'Añadir restricción por campo personalizado';
 
 $string['alertaccess'] = 'Visibilidad de la Alerta';
 $string['alertaccessdesc'] = 'Establece la visibilidad de la Alerta según su tipo. Nota: Si se usa "Añadir restricción por campo personalizado" necesitrás añadir el campo personalizado de usuario.';
+
+// Moodle/Adaptable version alert messages
+$string['beta'] = 'VERSION EN DESARROLLO. NO USAR EN SITIOS EN PRODUCCIÓN';
+$string['deprecated'] = 'VERSIÓN DE MOODLE OBSOLETA. NO USAR ADAPTABLE EN ESTE SITIO';
 
 // Social Wall Settings ********************************************.
 $string['socialwall'] = 'Formato Social Wall';
