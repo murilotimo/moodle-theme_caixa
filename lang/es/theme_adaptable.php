@@ -966,7 +966,7 @@ $string['alertaccessprofile'] = 'Añadir restricción por campo personalizado';
 $string['alertaccess'] = 'Visibilidad de la Alerta';
 $string['alertaccessdesc'] = 'Establece la visibilidad de la Alerta según su tipo. Nota: Si se usa "Añadir restricción por campo personalizado" necesitrás añadir el campo personalizado de usuario.';
 
-// Moodle/Adaptable version alert messages
+// Moodle/Adaptable version alert messages.
 $string['beta'] = 'VERSION EN DESARROLLO. NO USAR EN SITIOS EN PRODUCCIÓN';
 $string['deprecated'] = 'VERSIÓN DE MOODLE OBSOLETA. NO USAR ADAPTABLE EN ESTE SITIO';
 

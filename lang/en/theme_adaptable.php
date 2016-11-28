@@ -24,47 +24,48 @@
  *
  */
 
-
 // General.
 $string['choosereadme'] = '
 <div class="clearfix">
 <div class="well">
- <h2>Adaptable</h2>
- <p><img class="img-polaroid" src="adaptable/pix/screenshot.png" /></p>
+<h2>Adaptable</h2>
+<p><img class="img-polaroid" src="adaptable/pix/screenshot.png" /></p>
 </div>
 <div class="well">
- <h2>Credits</h2>
- <h3>About</h3>
- <p>Adaptable is a Moodle 2-columns responsive theme highly customizable and based in the popular BCU theme.</p>
- <p>The theme is licensed under the GPL (GNU General Public License). You can find a complete licence copy <a href="http://www.gnu.org/licenses/" target="_HERE">blank</a></p>
- <h4>Modify it! - Improve it! - Share it!</h4>
- <br>
- <p>This theme has been developed by:<br>
- Jeremy Hopkins (Coventry University)<br>
- Fernando Acedo (<a href="http://3-bits.com" target="_blank">3-bits.com</a>)</p>
- <br>
- <p>and many other developers, testers, translators and volunteers (See <a href="adaptable/README.txt" target="_blank">README.txt</a>)</p>
- <br>
- <h3>Bugs Report</h3>
- <p>You can report bugs (and please, <b>ONLY</b> bugs) in our <a href="https://bitbucket.org/covuni/moodle-theme_adaptable/issues" target="_blank">Bitbucket repository</a></p>
- <br>
- <h3>Technical Support</h3>
- <p>You can ask your questions, doubts and share your tips in the moodle forum:</p>
- <ul>
- <li>English: <a href="https://moodle.org/mod/forum/discuss.php?d=340404" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340404</a>
- <li>Español: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
- <li>Català: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
- </ul>
- <br>
- <h3>Documentation</h3>
- <p>Coming soon</p>
- <br>
- <h3>Demo</h3>
- <p>You can see a demo version <a href="http://3-bits.com/demo/adaptable" target="_blank">HERE</a></p>
- <br>
-
+<h2>Credits</h2>
+<h3>About</h3>
+<p>Adaptable is a Moodle 2-columns responsive theme highly customizable and based in the popular BCU theme.</p>
+<p>The theme is licensed under the GPL (GNU General Public License). You can find a complete licence copy <a href="http://www.gnu.org/licenses/" target="_HERE">blank</a></p>
+<h4>Modify it! - Improve it! - Share it!</h4>
+<br>
+<p>This theme has been developed by:<br>
+Jeremy Hopkins (Coventry University)<br>
+Fernando Acedo (<a href="http://3-bits.com" target="_blank">3-bits.com</a>)</p>
+<br>
+<p>and many other developers, testers, translators and volunteers (See <a href="adaptable/README.txt" target="_blank">README.txt</a>)</p>
+<br>
+<h3>Bugs Report</h3>
+<p>You can report bugs (and please, <b>ONLY</b> bugs) in our <a href="https://bitbucket.org/covuni/moodle-theme_adaptable/issues" target="_blank">Bitbucket repository</a></p>
+<br>
+<h3>Technical Support</h3>
+<p>You can ask your questions, doubts and share your tips in the moodle forum:</p>
+<ul>
+<li>English: <a href="https://moodle.org/mod/forum/discuss.php?d=340404" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340404</a>
+<li>Español: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
+<li>Català: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
+</ul>
+<br>
+<h3>Documentation</h3>
+<p>Coming soon</p>
+<br>
+<h3>Demo</h3>
+<p>You can see a demo version <a href="http://3-bits.com/demo/adaptable" target="_blank">HERE</a></p>
+<br>
 </div>
 </div>';
+
+
+
 
 $string['pluginname'] = 'Adaptable';
 $string['configtitle'] = 'Adaptable';
@@ -965,7 +966,7 @@ $string['alertaccessprofile'] = 'Add custom profile field restriction';
 $string['alertaccess'] = 'Alert Visibility';
 $string['alertaccessdesc'] = 'Set access restriction type for alert box visibility. Note: if using "Add custom profile field restriction" you will need to add values for profile fields below.';
 
-// Moodle/Adaptable version alert messages
+// Moodle/Adaptable version alert messages.
 $string['beta'] = 'DEVELOPMENT VERSION. DO NOT USE IN PRODUCTION SITES';
 $string['deprecated'] = 'MOODLE DEPRECATED VERSION. DO NOT USE ADAPTABLE IN THIS SITE';
 
@@ -1308,6 +1309,7 @@ $string['piwiksiteurldesc'] = 'Enter your Piwik Analytics URL without http(s) or
 
 $string['piwiktrackadmin'] = 'Tracking Admins';
 $string['piwiktrackadmindesc'] = 'Enable tracking of Admin users (not recommended)';
+
 
 // Custom CSS ********************************.
 $string['customcss'] = 'Custom CSS';

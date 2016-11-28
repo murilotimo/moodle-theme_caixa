@@ -293,10 +293,6 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
   float: left;
 }
 
-.forumpost {
-    /*background-color: transparent;*/
-}
-
 #page-mod-forum-discuss .forumpost .row .left.picture img, #page-site-index .forumpost .row .left.picture img {
     border: 5px solid #FFFFFF;
     border-radius: 270px;
@@ -700,7 +696,7 @@ textarea#page-mod-forum-discuss .discussioncontrols .discussioncontrol.movediscu
     font-size: 105%;
 }
 
-/*new ticker */
+/* news ticker */
 #ticker, #ticker_container {
   font-size: 16px;
 }

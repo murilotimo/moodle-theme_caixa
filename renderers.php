@@ -274,7 +274,7 @@ class theme_adaptable_core_renderer extends core_renderer {
                 $output .= '<div id="beta"><center><h3>';
                 $output .= get_string('deprecated', 'theme_adaptable');
                 $output .= '</h3></center></div>';
-        } 
+        }
 
         return $output;
     }
@@ -736,33 +736,33 @@ EOT;
 
                 if ($access) {
                     $msg .= $PAGE->theme->settings->$textfield;
-            }
+                }
 
-            $msg = preg_replace('#\<[\/]{0,1}(p|ul|div|pre|blockquote)\>#', '', $msg);
-            if ($msg == '') {
-                $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
-            }
-
-            $retval .= '<div id="ticker-wrap" class="clearfix container">';
-            $retval .= '<div class="pull-left" id="ticker-announce">';
-            $retval .= get_string('ticker', 'theme_adaptable');
-            $retval .= '</div>';
-            $retval .= '<ul id="ticker">';
-            $retval .= format_text($PAGE->theme->settings->$textfield, FORMAT_HTML, array('trusted' => true));                }
-            $retval .= $OUTPUT->get_setting($msg, 'format_html');
-            $retval .= '</ul>';
-            $retval .= '</div>';
+                $msg = preg_replace('#\<[\/]{0,1}(p|ul|div|pre|blockquote)\>#', '', $msg);
+                if ($msg == '') {
+                    $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
+                }
+    
+                $retval .= '<div id="ticker-wrap" class="clearfix container">';
+                $retval .= '<div class="pull-left" id="ticker-announce">';
+                $retval .= get_string('ticker', 'theme_adaptable');
+                $retval .= '</div>';
+                $retval .= '<ul id="ticker">';
+                $retval .= format_text($PAGE->theme->settings->$textfield, FORMAT_HTML, array('trusted' => true));                }
+                $retval .= $OUTPUT->get_setting($msg, 'format_html');
+                $retval .= '</ul>';
+                $retval .= '</div>';
         }
 
-     return $retval;
+        return $retval;
     }
 
 
-     /**
-     * Renders block regions on front page
-     *
-     * @param string $settingsname
-     */
+    /**
+    * Renders block regions on front page
+    *
+    * @param string $settingsname
+    */
     public function get_block_regions($settingsname = 'blocklayoutlayoutrow') {
         global $PAGE, $OUTPUT, $USER;
         $fields = array();
@@ -1211,7 +1211,7 @@ EOT;
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
                             if (empty($parent)) {
-                                $parent = $branch->add($icon . $trunc =
+                                $parent = $branch->add($icon . $trunc = 
                                     rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_adaptable')),
                                         0, $mysitesmaxlengthhidden)) . '...',
                                         new moodle_url('#'), '', 2000);
@@ -1730,7 +1730,7 @@ EOT;
         $langs = get_string_manager()->get_list_of_translations();
         if (count($langs) < 2
             || empty($CFG->langmenu)
-            || ($this->page->course != SITEID 
+            || ($this->page->course != SITEID
             && !empty($this->page->course->lang))) {
                 $addlangmenu = false;
         }
@@ -1938,7 +1938,7 @@ EOT;
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * Core Course Renderers for Adaptable theme 
+ * Core Course Renderers for Adaptable theme
  */
 class theme_adaptable_core_course_renderer extends core_course_renderer {
     /**
@@ -2374,5 +2374,5 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
-// End.
+    // End.
 }

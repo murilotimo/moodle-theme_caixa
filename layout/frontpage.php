@@ -41,8 +41,8 @@ if (!empty($PAGE->theme->settings->infobox)) {
     }
 ?>
             <div class="row-fluid">
-<?php 
-    echo $OUTPUT->get_setting('infobox', 'html_format'); 
+<?php
+    echo $OUTPUT->get_setting('infobox', 'html_format');
 ?>
             </div>
         </div>
@@ -73,7 +73,7 @@ if (!empty($PAGE->theme->settings->infobox2)) {
     }
 ?>
         <div class="row-fluid">
-<?php 
+<?php
             echo $OUTPUT->get_setting('infobox2', 'format_html');
 ?>
         </div>
@@ -130,9 +130,9 @@ if (is_siteadmin()) {
       <div class="hidden-blocks">
         <div class="row-fluid">
           <h4><?php echo get_string('frnt-footer', 'theme_adaptable') ?></h4>
-          <?php
+            <?php
             echo $OUTPUT->blocks('frnt-footer', 'span10');
-          ?>
+            ?>
         </div>
       </div>
     <?php

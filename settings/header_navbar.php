@@ -30,8 +30,9 @@ $temp = new admin_settingpage('theme_adaptable_navbar', get_string('navbarsettin
 $temp->add(new admin_setting_heading('theme_adaptable_navbar', get_string('navbarsettingsheading', 'theme_adaptable'),
 format_text(get_string('navbardesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-// Sticky Navbar at the top.
-/****
+/**
+* Sticky Navbar at the top.
+
 $name = 'theme_adaptable/stickynavbar';
 $title = get_string('stickynavbar', 'theme_adaptable');
 $description = get_string('stickynavbardesc', 'theme_adaptable');
