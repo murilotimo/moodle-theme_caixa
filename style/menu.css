@@ -99,8 +99,8 @@
     padding: 5px 0;
     position: absolute;
     right: 0;
-    min-width: 250px;
-    top: 100%;
+    min-width: 200px;
+    top: 26px;
     z-index: 1000;
     border-radius: 6px;
 }
