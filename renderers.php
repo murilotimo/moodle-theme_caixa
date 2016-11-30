@@ -916,9 +916,11 @@ EOT;
                     $footercontent = 'footer' . $blockcount . 'content';
                     if (!empty($PAGE->theme->settings->$footercontent)) {
                         $output .= '<div class="left-col span' . $val . '">';
-                        $output .= '<h3>';
-                        $output .= $OUTPUT->get_setting($footerheader, 'format_text');
-                        $output .= '</h3>';
+                        if (!empty($PAGE->theme->settings->$footerheader)) {
+                            $output .= '<h3>';
+                            $output .= $OUTPUT->get_setting($footerheader, 'format_text');
+                            $output .= '</h3>';
+                        }
                         $output .= $OUTPUT->get_setting($footercontent, 'format_html');
                         $output .= '</div>';
                     }
