@@ -881,8 +881,9 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     border-radius: 50%;
 }
 
-.form-item .form-label, .mform .fitem div.fitemtitle {
-  text-align: left;
+.form-item .form-label,
+.mform .fitem div.fitemtitle {
+  text-align: right;
 }
 
 .form-label label {
