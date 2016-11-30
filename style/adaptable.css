@@ -176,6 +176,9 @@ div.signuppanel h2 {
     font-weight: bold;
 }
 
+.well h4 {
+    margin-left: 30px;
+}
 
 /* Page */
 #page {
@@ -2002,4 +2005,10 @@ div.questionbankwindow.block {
 /* Fix glossary print option */
 #page-mod-glossary-view .glossarycontrol {
     margin: -40px 5px;
+}
+
+/* Backup / restore */
+
+.path-backup .mform .grouped_settings.section_level {
+    padding: 10px 0 0 10px;
 }
