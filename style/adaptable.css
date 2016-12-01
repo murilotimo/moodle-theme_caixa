@@ -1194,7 +1194,7 @@ a.carousel-control {
 }
 
 #beta {
-    height: 48px;
+    min-height: 50px;
     background-color: #CC0000;
 }
 
