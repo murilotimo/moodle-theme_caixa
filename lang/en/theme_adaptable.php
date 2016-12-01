@@ -177,7 +177,7 @@ $string['slideshowsettingsheading'] = 'Customize the carousel on the front page.
 $string['slideshowdesc'] = 'Upload the images, add the links and description for the carousel on the front page.';
 
 $string['sliderimage'] = 'Slider Picture';
-$string['sliderimagedesc'] = 'Add an image for your slide.';
+$string['sliderimagedesc'] = 'Add an image for your slide. Recommended size is 1600px x 400px or higher.';
 
 $string['slidercaption'] = 'Slider Caption';
 $string['slidercaptiondesc'] = 'Add a caption for your slide';
@@ -666,10 +666,10 @@ $string['fontheadercolor'] = 'Headers font colour';
 $string['fontheadercolordesc'] = 'Set the colour of the headers font in the theme, use html hex code.';
 
 $string['fontweight'] = 'Main font weight';
-$string['fontweightdesc'] = 'Font weight used in site. Enter a value from 100 to 900 depending the font selected.';
+$string['fontweightdesc'] = 'Font weight used in site. Select a value from 100 to 900 depending the font selected.';
 
 $string['fontheaderweight'] = 'Headers font weight';
-$string['fontheaderweightdesc'] = 'Headers font weight used in the site. Enter a value from 100 to 900 depending the font selected.';
+$string['fontheaderweightdesc'] = 'Headers font weight used in the site. Select a value from 100 to 900 depending the font selected.';
 
 $string['fonttitlename'] = 'Site title font';
 $string['fonttitlenamedesc'] = 'Select the default font or <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> used in title site.';
@@ -678,10 +678,10 @@ $string['fonttitlecolor'] = 'Site title font colour';
 $string['fonttitlecolordesc'] = 'Set the colour of the site title font in the theme, use html hex code.';
 
 $string['fonttitleweight'] = 'Site title font weight';
-$string['fonttitleweightdesc'] = 'Set the font weight used in the title site. Enter a value from 100 to 900 depending the font selected.';
+$string['fonttitleweightdesc'] = 'Set the font weight used in the title site. Select a value from 100 to 900 depending the font selected.';
 
 $string['fonttitlesize'] = 'Site title font size';
-$string['fonttitlesizedesc'] = 'Site title font size used in site. Enter a decimal value in pixels: 24px';
+$string['fonttitlesizedesc'] = 'Site title font size used in site. Select a value fron the list.';
 
 $string['fonttitlenamecourse'] = 'Course title font';
 $string['fonttitlenamecoursedesc'] = 'Select the default font or <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> used in course titles.';
@@ -693,7 +693,7 @@ $string['fonttitleweightcourse'] = 'Course title font weight';
 $string['fonttitleweightcoursedesc'] = 'Set the font weight used in the site title. Enter a value from 100 to 900 depending the font selected.';
 
 $string['fonttitlesizecourse'] = 'Course title font size';
-$string['fonttitlesizecoursedesc'] = 'Course title font size used in site. Enter a decimal value in pixels: 24px';
+$string['fonttitlesizecoursedesc'] = 'Course title font size used in site. Select a value fron the list.';
 
 $string['fontsubset'] = 'Google Fonts subset';
 $string['fontsubsetdesc'] = 'Select other character subset than latin to be applied to all the fonts. Latin subset is already included by default.';
@@ -810,13 +810,13 @@ $string['menusettings'] = 'Header Menus';
 $string['menusettingsheading'] = 'Customize menus in the upper header the header of this theme.';
 
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Upload a logo for use on your site.';
+$string['logodesc'] = 'Upload a logo for use on your site. Recommended size is 200px x 80px';
 
 $string['favicon'] = 'Favicon';
 $string['favicondesc'] = 'Upload a favicon for use on your site,';
 
 $string['enableavailablecourses'] = 'Display "Available Courses"';
-$string['enableavailablecoursesdesc'] = 'Display "Available Courses" label in the frontpage';
+$string['enableavailablecoursesdesc'] = 'Display "Available Courses" text in the frontpage';
 
 $string['thiscourse'] = 'This course';
 
