@@ -26,6 +26,7 @@
 *
 */
 
+/* Main colours */
 html, body {
     margin: 0;
     padding: 0;
@@ -38,6 +39,7 @@ html, body {
     line-height: normal;
 }
 
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
     margin: 0px 0px 10px;
     font-family: [[setting:fontheadername]], sans-serif !important;
@@ -758,6 +760,12 @@ langmenu a:hover {
     right: -18px;
     top: 0;
     width: 0;
+}
+
+/* messages popup */
+#newmessageoverlay #newmessagetext {
+    background-color: [[setting:messagepopupbackground]];
+    color: [[setting:messagepopupcolor]];
 }
 
 #notice,

@@ -110,6 +110,7 @@ $string['settingsoverlaycolors'] = 'Overlay Tiles Colours';
 $string['settingsnavbarcolors'] = 'Navigation Bar (navbar) Colours';
 $string['settingsalertbox'] = 'Alert Box';
 $string['settingsbreadcrumbcolors'] = 'Breadcrumb Colours';
+$string['settingsmessagescolors'] = 'Messages Pop-Up Colours';
 $string['settingsfootercolors'] = 'Footer Colours';
 $string['settingsfonts'] = 'Fonts';
 $string['settingsanalytics'] = 'Analytics';
@@ -581,6 +582,12 @@ $string['breadcrumbtextcolordesc'] = 'Set the text colour of the breadcrumb.';
 
 $string['activebreadcrumb'] = 'Active breadcrumb background colour';
 $string['activebreadcrumbdesc'] = 'Set the background colour of the active breadcrumb colour, and remainder of the breadcrumb bar.';
+
+$string['messagepopupbackground'] = 'Messages pop-up background colour';
+$string['messagepopupbackgrounddesc'] = 'Set the background colour of messages pop-up header.';
+
+$string['messagepopupcolor'] = 'Messages pop-up text colour';
+$string['messagepopupcolordesc'] = 'Set the text colour of messages pop-up header.';
 
 $string['menubkcolor'] = 'Main Menu background colour';
 $string['menubkcolordesc'] = 'Set a Main Menu background colour';
