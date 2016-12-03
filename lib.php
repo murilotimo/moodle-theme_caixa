@@ -78,8 +78,8 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:activebreadcrumb]]' => '#f5f5f5',
         '[[setting:breadcrumbseparator]]' => 'angle-right',
         '[[setting:loadingcolor]]' => '#f44336',
-'[[setting:messagepopupbackground]]' => '#fff000',
-'[[setting:messagepopupcolor]]' => '#333333',
+        '[[setting:messagepopupbackground]]' => '#fff000',
+        '[[setting:messagepopupcolor]]' => '#333333',
         '[[setting:footerbkcolor]]' => '#424242',
         '[[setting:footertextcolor]]' => '#ffffff',
         '[[setting:footertextcolor2]]' => '#ffffff',
@@ -209,6 +209,9 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:socialwallbordercolor]]' => '#009688',
         '[[setting:socialwallactionlinkcolor]]' => '#009688',
         '[[setting:socialwallactionlinkhovercolor]]' => '#009688',
+        '[[setting:fontblockheaderweight]]' => '400',
+        '[[setting:fontblockheadersize]]' => '28px',
+        '[[setting:fontblockheadercolor]]' => '#009688',
     );
 
     // Get all the defined settings for the theme and replace defaults.

@@ -711,6 +711,15 @@ $string['menufontsizedesc'] = 'Set the size of the font used in the main navigat
 $string['menufontpadding'] = 'Padding for Navigation Items';
 $string['menufontpaddingdesc'] = 'Set the padding of the items in the main navigation bar.';
 
+$string['fontblockheadercolor'] = 'Blocks header font colour';
+$string['fontblockheadercolordesc'] = 'Set the colour of the header font moodle blocks, use html hex code.';
+
+$string['fontblockheaderweight'] = 'Blocks header font weight';
+$string['fontblockheaderweightdesc'] = 'Set the font weight used in the moodle blocks header. Select a value from 100 to 900 depending the font selected.';
+
+$string['fontblockheadersize'] = 'Blocks header font size';
+$string['fontblockheadersizedesc'] = 'Set the font size used in the moodle blocks header. Select a value fron the list.';
+
 // Buttons *********************************************************.
 $string['buttonsettings'] = 'Buttons';
 $string['buttonsettingsheading'] = 'Customize the buttons of this theme.';
