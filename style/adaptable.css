@@ -159,7 +159,7 @@ select {
 
 .jsenabled .block_settings .block_tree .tree_item.branch,
 .block_navigation .block_tree .tree_item.branch {
-    color: [[setting:linkcolor]];
+    color: [[setting:linkcolor]] !important;
 }
 
 
@@ -211,9 +211,12 @@ div.signuppanel h2 {
     position: relative;
 }
 
+
 #above-header .headermenu,
-#above-header .headermenu a {
-    color: [[setting:headertextcolor]];
+/*#above-header a,*/
+#above-header .headermenu a
+ {
+    color: [[setting:headertextcolor]] !important;
     font-size: [[setting:topmenufontsize]];
     text-decoration: none;
     cursor: pointer;
@@ -223,10 +226,12 @@ div.signuppanel h2 {
     margin-top: 5px;
 }
 
-#above-header .headermenu .dropdown-menu a {
+
+#above-header .headermenu .dropdown-menu a,
+#above-header .headermenu .dropdown-toggle a {
     font-family: [[setting:fontname]], sans-serif !important;
     font-size: [[setting:topmenufontsize]];
-    color: [[setting:linkcolor]];
+    color: [[setting:linkcolor]] !important;
 }
 
 #above-header .headermenu .dropdown-menu a {
@@ -520,7 +525,7 @@ span.fa-chevron-right.fa {
 }
 
 #page-footer a {
-    color: [[setting:footerlinkcolor]];
+    color: [[setting:footerlinkcolor]] !important;
 }
 
 #page-footer .block-list > li {
@@ -618,7 +623,7 @@ span.fa-chevron-right.fa {
 }
 
 #page-footer .info a {
-  color: [[setting:footerlinkcolor]];
+  color: [[setting:footerlinkcolor]] !important;
 }
 
 .info nav ul li {
@@ -1145,7 +1150,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .pull-left .usermenu2.nav a {
-    color: [[setting:headertextcolor]];
+    color: [[setting:headertextcolor]] !important;
 }
 
 .pull-left .usermenu2.nav .dropdown-menu a {
