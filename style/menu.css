@@ -68,7 +68,7 @@
 .navbar .btn-navbar:hover,
 .navbar .btn-navbar:active {
     background-color: #001e3c;
-    background: #001e3c !Important;
+    background: #001e3c !important;
 }
 
 .navbar .pull-right a {
@@ -111,17 +111,18 @@
 }
 
 .nav .dropdown-menu li a {
-    border-bottom: 1px solid #EEEEEE;
-    color: #687074;
+    border-bottom: none; 
+    color: [[setting:linkcolor]] !important;
     font-size: 13px;
     font-weight: 400;
     padding: 6px 10px;
     border-bottom-width: 1px !important;
 }
 
-.nav .dropdown-menu li a:hover, .navbar .nav > li > a:hover {
+.nav .dropdown-menu li a:hover,
+.navbar .nav > li > a:hover {
     background: rgba(255,255,255,.1);
-    color: #333;
+    color: #333333;
 }
 
 .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
@@ -196,7 +197,7 @@
 }
 
 .newmenus .dropdown-toggle {
-  color: [[setting:headertextcolor]];
+  color: [[setting:headertextcolor]] !important;
   background: transparent !important;
 }
 

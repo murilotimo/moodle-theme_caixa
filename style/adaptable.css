@@ -786,6 +786,21 @@ langmenu a:hover {
     color: #ffffff;
 }
 
+.msg-title,
+.msg-sender,
+.msg-time {
+    color: [[setting:fontcolor]];
+}    
+
+.msg-time {
+    float: right;
+    font-size: 1em;
+}    
+
+.nav .dropdown-menu li a {
+    border-bottom-color: none !important;
+}
+
 .pagelayout-redirect #content {
     width:60%;
     background: #fff;
