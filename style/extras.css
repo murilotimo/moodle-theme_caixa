@@ -104,12 +104,80 @@ ul.teachers {
 
 /* Messages */
 .messaging-area-container .messaging-area .contacts-area .contacts .contact.selected {
-    background-color: [[setting:maincolor]];
+    background-color: #E9EBEB;
+    color: #333333;
+}
+
+.messaging-area-container .messaging-area .contacts-area .contacts .contact.selected .information .lastmessage {
+    color: #333333;
+}
+
+
+
+.messaging-area-container .messaging-area .contacts-area .contacts .contact:hover .information .lastmessage {
+    color: #333333;
 }
 
 .messaging-area-container .messaging-area .contacts-area .tabs .tab.selected {
     color: [[setting:maincolor]];
 }
+
+.messaging-area-container .messaging-area .contacts-area .tabs .tab {
+    background-color: transparent;
+}
+
+.messaging-area-container .messaging-area .messages-area .messages .message .content.right {
+    background-color: #dcf8c6;
+}
+
+.messaging-area-container .messaging-area .messages-area .messages .message .content.left {
+    background-color: #ffffff;
+}
+
+.messaging-area-container .messaging-area .contacts-area .contacts .contact:hover {
+    background-color: #E9EBEB;
+    color: #333333;
+}
+
+.messaging-area-container .messaging-area .messages-area .messages .message .content .text p {
+    font-size: 1.1em;
+}
+
+.messaging-area-container .messaging-area .messages-area .messages .message .content .timesent {
+    color: #808080;
+    float: right;
+    font-size: 1em;
+}
+
+.messaging-area-container .messaging-area .messages-area .messages {
+    background-color: #ECE5DD;
+}
+
+.messaging-area-container .messaging-area .messages-area .response {
+    padding: 0 10px 9px;
+}
+
+.information .lastmessage,
+.information .lastmessage:hover {
+    color: #E9EBEB;
+}
+
+.msg-title,
+.msg-sender,
+.msg-time {
+    color: [[setting:fontcolor]];
+}    
+
+.msg-time {
+    float: right;
+    font-size: 1em;
+}    
+
+
+
+
+/****************************/
+
 
 .messaging-area-container .messaging-area .messages-area .messages-header .name-container .status {
     font-size: 12px;

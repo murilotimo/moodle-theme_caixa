@@ -47,6 +47,14 @@ h1, h2, h3, h4, h5, h6 {
     color: [[setting:fontheadercolor]];
 }
 
+/* Other text tags */
+input, button, select, textarea {
+    font-size: [[setting:fontsize]];
+    color: [[setting:fontcolor]];
+    font-family: [[setting:fontname]], sans-serif !important;
+    font-weight: [[setting:fontweight]] !important;
+}
+
 /* Link colors */
 a,
 a:link,
@@ -780,22 +788,6 @@ langmenu a:hover {
     padding: 5px;
 }
 
-
-.messaging-area-container .messaging-area .contacts-area .contacts .contact:hover {
-    background-color: [[setting:maincolor]];
-    color: #ffffff;
-}
-
-.msg-title,
-.msg-sender,
-.msg-time {
-    color: [[setting:fontcolor]];
-}    
-
-.msg-time {
-    float: right;
-    font-size: 1em;
-}    
 
 .nav .dropdown-menu li a {
     border-bottom-color: none !important;

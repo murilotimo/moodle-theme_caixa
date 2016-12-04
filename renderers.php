@@ -264,6 +264,7 @@ class theme_adaptable_core_renderer extends core_renderer {
     public function get_dev_alert() {
         global $CFG;
         $output = '';
+
         if (get_config('theme_adaptable', 'version') < 2016120500) {
                 $output .= '<div id="beta"><h3>';
                 $output .= get_string('beta', 'theme_adaptable');
@@ -461,7 +462,7 @@ EOT;
         if (!$CFG->messaging || !$PAGE->theme->settings->enablemessagemenu) {
             $addmessagemenu = false;
         } else {
-            // Check whether or not the "popup" message output is enabled
+            // Check whether or not the "popup" message output is enabled.
             // This is after we check if messaging is enabled to possibly save a DB query.
             $popup = $DB->get_record('message_processors', array('name' => 'popup'));
             if (!$popup) {
@@ -474,9 +475,11 @@ EOT;
             $messagecount = count($messages);
             // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
             if ($messagecount > 0) {
+                // If got some message then add the badge with the pending messages number and no link to the messages page.
                 $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message') .' '.
                 '<span class="badge">' . $messagecount . '</span>', new moodle_url('#'), get_string('messages', 'message'), 9999);
             } else {
+                // We add only a link to the messages page in the menu.
                 $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message'),
                                             new moodle_url('/message/index.php'), get_string('messages', 'message'), 9999);
             }
@@ -498,6 +501,7 @@ EOT;
                     $senderpicture = $this->render($senderpicture);
                 }
 
+                // Let's go to create the message to show in the screen.
                 $messagecontent = $senderpicture;
                 $messagecontent .= html_writer::start_tag('span', array('class' => 'msg-body'));
                 $messagecontent .= html_writer::start_tag('span', array('class' => 'msg-title'));
@@ -514,6 +518,7 @@ EOT;
             }
         }
 
+        // Let's go to create the lang menu if available.
         $langs = get_string_manager()->get_list_of_translations();
         if (count($langs) < 2 || empty($CFG->langmenu) || ($this->page->course != SITEID and !empty($this->page->course->lang))) {
             $addlangmenu = false;
