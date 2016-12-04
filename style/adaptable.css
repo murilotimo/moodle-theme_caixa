@@ -738,7 +738,7 @@ langmenu a:hover {
 
 .breadcrumb li span.divider {
   display: none !important;
-}
+}    border-bottom: 0px solid [[setting:maincolor]];
 
 .breadcrumb-button {
     margin-top: 4px;
@@ -778,6 +778,12 @@ langmenu a:hover {
     text-align: center;
     border-color: #e5e5e5;
     padding: 5px;
+}
+
+
+.messaging-area-container .messaging-area .contacts-area .contacts .contact:hover {
+    background-color: [[setting:maincolor]];
+    color: #ffffff;
 }
 
 .pagelayout-redirect #content {
