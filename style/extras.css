@@ -166,18 +166,12 @@ ul.teachers {
 .msg-sender,
 .msg-time {
     color: [[setting:fontcolor]];
-}    
+}
 
 .msg-time {
     float: right;
     font-size: 1em;
-}    
-
-
-
-
-/****************************/
-
+}
 
 .messaging-area-container .messaging-area .messages-area .messages-header .name-container .status {
     font-size: 12px;

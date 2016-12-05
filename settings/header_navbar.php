@@ -33,7 +33,7 @@ format_text(get_string('navbardesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
 // Sticky Navbar at the top. See issue #278.
 
-/**
+/*******************
  * $name = 'theme_adaptable/stickynavbar';
  * $title = get_string('stickynavbar', 'theme_adaptable');
  * $description = get_string('stickynavbardesc', 'theme_adaptable');

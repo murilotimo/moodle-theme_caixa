@@ -111,7 +111,7 @@
 }
 
 .nav .dropdown-menu li a {
-    border-bottom: none; 
+    border-bottom: none;
     color: [[setting:linkcolor]] !important;
     font-size: 13px;
     font-weight: 400;

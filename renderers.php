@@ -459,6 +459,7 @@ EOT;
         if (!isloggedin() || isguestuser()) {
             $addmessagemenu = false;
         }
+
         if (!$CFG->messaging || !$PAGE->theme->settings->enablemessagemenu) {
             $addmessagemenu = false;
         } else {
@@ -475,11 +476,11 @@ EOT;
             $messagecount = count($messages);
             // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
             if ($messagecount > 0) {
-                // If got some message then add the badge with the pending messages number and no link to the messages page.
+                // If got some message then we add the badge with the pending messages number and no link to the messages page.
                 $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message') .' '.
                 '<span class="badge">' . $messagecount . '</span>', new moodle_url('#'), get_string('messages', 'message'), 9999);
             } else {
-                // We add only a link to the messages page in the menu.
+                // if no pensing messages we add only a link to the messages page in the menu.
                 $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message'),
                                             new moodle_url('/message/index.php'), get_string('messages', 'message'), 9999);
             }
