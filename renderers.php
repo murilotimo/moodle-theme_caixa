@@ -265,7 +265,7 @@ class theme_adaptable_core_renderer extends core_renderer {
         global $CFG;
         $output = '';
 
-        if (get_config('theme_adaptable', 'version') < 2016120500) {
+        if (get_config('theme_adaptable', 'version') < 2016121200) {
                 $output .= '<div id="beta"><h3>';
                 $output .= get_string('beta', 'theme_adaptable');
                 $output .= '</h3></div>';
