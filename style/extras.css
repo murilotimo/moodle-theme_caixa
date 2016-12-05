@@ -112,8 +112,6 @@ ul.teachers {
     color: #333333;
 }
 
-
-
 .messaging-area-container .messaging-area .contacts-area .contacts .contact:hover .information .lastmessage {
     color: #333333;
 }
@@ -128,19 +126,25 @@ ul.teachers {
 
 .messaging-area-container .messaging-area .messages-area .messages .message .content.right {
     background-color: #dcf8c6;
+    border-radius: 5px;
+    border: 1px solid #c0c0c0;
+    box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.2);
 }
 
 .messaging-area-container .messaging-area .messages-area .messages .message .content.left {
     background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #c0c0c0;
+    box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.2);
 }
 
 .messaging-area-container .messaging-area .contacts-area .contacts .contact:hover {
-    background-color: #E9EBEB;
+    background-color: #e9ebeb;
     color: #333333;
 }
 
 .messaging-area-container .messaging-area .messages-area .messages .message .content .text p {
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 .messaging-area-container .messaging-area .messages-area .messages .message .content .timesent {
@@ -150,7 +154,7 @@ ul.teachers {
 }
 
 .messaging-area-container .messaging-area .messages-area .messages {
-    background-color: #ECE5DD;
+    background-color: #ece5dd;
 }
 
 .messaging-area-container .messaging-area .messages-area .response {
@@ -159,7 +163,7 @@ ul.teachers {
 
 .information .lastmessage,
 .information .lastmessage:hover {
-    color: #E9EBEB;
+    color: #e9ebeb;
 }
 
 .msg-title,
@@ -188,6 +192,7 @@ ul.teachers {
     background: none !important;
     border: 0;
     box-shadow: none;
+font-size: 18px;
 }
 
 .messaging-area-container .messaging-area .messages-area .messages-header .btn .messages-delete,
@@ -196,6 +201,7 @@ ul.teachers {
     line-height: 25px;
     padding: 0 5px;
     width: auto;
+    font-size: 14px;
 }
 
 .messaging-area-container .messaging-area .messages-area .response {
@@ -205,6 +211,9 @@ ul.teachers {
 .messaging-area-container .messaging-area .messages-area .messages .blocktime {
     color: [[setting:maincolor]];
     font-weight: bold;
+    font-size: 16px;
+    background-color:rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
 }
 
 .messaging-area-container .messaging-area .contacts-area .tabs .tab {
