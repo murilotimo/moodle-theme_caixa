@@ -221,7 +221,6 @@ div.signuppanel h2 {
 
 
 #above-header .headermenu,
-/*#above-header a,*/
 #above-header .headermenu a
  {
     color: [[setting:headertextcolor]] !important;
@@ -249,6 +248,10 @@ div.signuppanel h2 {
 #above-header .langdesc {
     color: [[setting:headertextcolor]];
     font-size: [[setting:topmenufontsize]];
+}
+
+#above-header .langmenu a i {
+    color: [[setting:headertextcolor]];
 }
 
 #page-header {
@@ -1665,8 +1668,13 @@ div.questionbankwindow.block {
 }
 
 .nav .dropdown-menu li a i, .nav li a i {
-  padding-right: 5px;
+    padding-right: 5px;
 }
+
+.nav .dropdown-menu li a moodlezoom  i, .nav li a i {
+    padding-right: 5px;
+}
+
 
 .fselect #id_courses {
   width: 100% !important;
