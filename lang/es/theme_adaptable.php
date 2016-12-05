@@ -110,6 +110,7 @@ $string['settingsoverlaycolors'] = 'Colores bloques cursos';
 $string['settingsnavbarcolors'] = 'Colores de la barra de navegación';
 $string['settingsalertbox'] = 'Alertas';
 $string['settingsbreadcrumbcolors'] = 'Colores de la ruta de navegación';
+$string['settingsmessagescolors'] = 'Colores de los mensajes emergentes';
 $string['settingsfootercolors'] = 'Colores del pie de página';
 $string['settingsfonts'] = 'Fuentes';
 $string['analyticssettings'] = 'Analítica Web';
@@ -582,6 +583,12 @@ $string['breadcrumbtextcolordesc'] = 'Establece el color de texto de la guía de
 $string['activebreadcrumb'] = 'Color de fondo de la guía de exploración activa';
 $string['activebreadcrumbdesc'] = 'Establece el color de fondo de la guía de exploración activa.';
 
+$string['messagepopupbackground'] = 'Color de fondo de los mensajes emergentes';
+$string['messagepopupbackgrounddesc'] = 'Establece el color de fondo de la cabecera de los mensajes emergentes.';
+
+$string['messagepopupcolor'] = 'Color de texto de los mensajes emergentes';
+$string['messagepopupcolordesc'] = ' Establece el color de texto de la cabecera de los mensajes emergentes.';
+
 $string['menubkcolor'] = 'Color de fondo del menú principal';
 $string['menubkcolordesc'] = 'Establece el color de fondo del menú principal.';
 
@@ -703,6 +710,15 @@ $string['menufontsizedesc'] = 'Establece el tamaño de la fuente utilizada en la
 
 $string['menufontpadding'] = 'Separación entre los ítems de la barra de navegación';
 $string['menufontpaddingdesc'] = 'Establece la separación entre los ítems de la barra de navegación.';
+
+$string['fontblockheadercolor'] = 'Color de la fuente de la cabecera de los bloques';
+$string['fontblockheadercolordesc'] = 'Establece el color de la fuente de la cabecera de los bloques de moodle.';
+
+$string['fontblockheaderweight'] = 'Grueso de la fuente de la cabecera de los bloques de moodle';
+$string['fontblockheaderweightdesc'] = 'Establece grueso de la fuente de la cabecera de los bloques de moodle. Seleccionar un valor entre 100 y 900 dependiendo de la fuente seleccionada.';
+
+$string['fontblockheadersize'] = 'Tamaño de la fuente de la cabecera de la cabecera de los bloques de moodle';
+$string['fontblockheadersizedesc'] = 'Establece el tamaño de la fuente utilizada en la cabecera de los bloques de moodle. Seleccionar un valor de la lista.';
 
 // Buttons *********************************************************.
 $string['buttonsettings'] = 'Botones';
