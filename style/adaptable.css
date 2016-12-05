@@ -782,6 +782,11 @@ langmenu a:hover {
 #newmessageoverlay #newmessagetext {
     background-color: [[setting:messagepopupbackground]];
     color: [[setting:messagepopupcolor]];
+    border-radius: 5px 5px 0 0;
+}
+
+#newmessageoverlay {
+    border: 3px solid [[setting:messagepopupbackground]];
 }
 
 #notice,
