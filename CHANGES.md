@@ -1,16 +1,27 @@
-Changes in version 1.2.5 (2016)
+Changes in version 1.2.5 (2016120500)
 ---------------------------------------
 New features:
 - Avatar beside user name in the navbar
-
-
+- Settings to modify the messages pop-up 
+- Settings for moodle block header 
+- Spanish translation will be included in the theme from now
+- Add new Quiz style 
+- Improve error message output 
+- Top message for not stable versions 
 
 Fixed issues:
-
-
-
-
-
+- #561: Text alignment restoring course 
+- #560: Left padding in backup / restore course page 
+- #559: Remove empty h3 tags in footer blocks 
+- #558: Breadcrumb syntax error 
+- #557: Remove title from footer headings 
+- #555: Fix disabled button text colour 
+- #552: Lang menu hide dropdown when hover the cursor 
+- #450: Layout with left-positioned blocks is not aligned 
+- #422: Infoblock and ticker are hid behind the header 
+- #356: blockheaderbackgroundcolor and blockheadercolor wrong spanish translation 
+- #289: Marketing Block layout tool preview not working 
+- #35: Smoother show / hide blocks with left align blocks 
 
 
 Changes in version 1.2.4.2 (2016102300)
@@ -26,7 +37,6 @@ Fixed issues:
 - #515: Slider type 1 display caption background when empty 
 
 Also includes some improvements in the mobile header but still working to fix some issues
-
 
 
 Changes in version 1.2.4.1 (2016100300)
