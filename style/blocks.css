@@ -74,7 +74,7 @@
     color: [[setting:fontblockheadercolor]];
     font-weight: [[setting:fontblockheaderweight]];
     text-shadow: none;
-line-height: 40px;
+    line-height: 40px;
 }
 
 .block .header .block_action {
