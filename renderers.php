@@ -563,14 +563,17 @@ EOT;
      * @return array
      */
     protected function get_user_messages() {
-        global $USER, $DB;
+        global $PAGE, $USER, $DB;
         $messagelist = array();
 
         $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
                            FROM {message}
                            WHERE useridto = :userid
-                           AND useridfrom > 2
                            AND notification <> 1";
+
+        if ($PAGE->theme->settings->filteradminmessages) {
+            $newmessagesql .= " AND useridfrom > 2";
+        }
 
         $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
 

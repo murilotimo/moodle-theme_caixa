@@ -864,6 +864,9 @@ $string['displayloginno'] = 'No Login';
 $string['enablemessagemenu'] = 'Message menu';
 $string['enablemessagemenudesc'] = 'Enable Message menu in header (moot if messaging is globally turned off)';
 
+$string['filteradminmessages'] = 'Filter Admin Messages';
+$string['filteradminmessagesdesc'] = 'Enable to remove messages from admin user, this can reduce system type messages appearing for students';
+
 $string['hideblocks'] = 'Hide blocks';
 $string['showblocks'] = 'Show blocks';
 $string['fullscreen'] = 'Full screen';
