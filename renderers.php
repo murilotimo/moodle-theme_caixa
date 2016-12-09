@@ -1050,7 +1050,9 @@ EOT;
             if ($i++ == 0) {
                 $breadcrumbs .= '<li>';
 
-                if ($PAGE->theme->settings->breadcrumbhome == 'icon') {
+                if (get_config('theme_adaptable', 'enablehome') && get_config('theme_adaptable', 'enablemyhome')) {
+                    $breadcrumbs = html_writer::tag('i', '', array('class' => 'fa fa-folder-open-o fa-lg'));
+                } else if (get_config('theme_adaptable', 'breadcrumbhome') == 'icon') {
                     $breadcrumbs .= html_writer::link(new moodle_url('/'),
                                    html_writer::tag('i', '', array('class' => 'fa fa-home fa-lg')));
                     $breadcrumbs .= '</li>';
