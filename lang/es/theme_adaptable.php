@@ -864,6 +864,9 @@ $string['displayloginno'] = 'Sin entrada';
 $string['enablemessagemenu'] = 'Mostrar Menú Mensajes';
 $string['enablemessagemenudesc'] = 'Muestra el menú mensajes en la cabecera.';
 
+$string['filteradminmessages'] = 'Filtrar mensajes del administradorer Admin Messages';
+$string['filteradminmessagesdesc'] = 'Activar para eliminar los mensajes del administrador. Esto puede reducir los mensajes del sistema recibidos por los alumnos y profesores.';
+
 $string['hideblocks'] = 'Ocultar bloques';
 $string['showblocks'] = 'Mostrar bloques';
 $string['fullscreen'] = 'Pantalla completa';
