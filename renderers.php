@@ -265,7 +265,7 @@ class theme_adaptable_core_renderer extends core_renderer {
         global $CFG;
         $output = '';
 
-        if (get_config('theme_adaptable', 'version') < 2016121200) {
+        if (get_config('theme_adaptable', 'version') < '2016121200') {
                 $output .= '<div id="beta"><h3>';
                 $output .= get_string('beta', 'theme_adaptable');
                 $output .= '</h3></div>';
@@ -563,42 +563,58 @@ EOT;
      * @return array
      */
     protected function get_user_messages() {
-        global $PAGE, $USER, $DB;
+        global $PAGE, $USER, $DB, $CFG;
+
         $messagelist = array();
+        $newmessages = 0;
 
-        $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-                           FROM {message}
-                           WHERE useridto = :userid
-                           AND notification <> 1";
+        if ($CFG->version < 2016120500) {
+            // Moodle 3.1 or older.
+            // Use the former query.
 
-        if ($PAGE->theme->settings->filteradminmessages) {
-            $newmessagesql .= " AND useridfrom > 2";
+            $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
+                              FROM {message}
+                              WHERE useridto = :userid
+                              AND notification <> 1";
+
+            if ($PAGE->theme->settings->filteradminmessages) {
+               $newmessagesql .= " AND useridfrom > 2";
+
+               $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
+            }
+        } else {
+            // Moodle 3.2 or newer.
+            // Query from the Messages API
+
+            $newmessages = $DB->count_records_select('message', 
+                                                     'useridto = ? AND timeusertodeleted = 0 AND notification = 0',  
+                                                     [$USER->id],
+                                                     "COUNT(DISTINCT(useridfrom))");
         }
 
-        $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
-
-        foreach ($newmessages as $message) {
-            $messagelist[] = $this->process_message($message);
-        }
-
-        $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? 0 : $this->page->theme->settings->showoldmessages;
-        if ($showoldmessages) {
-            $maxmessages = 5;
-            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
-                               FROM {message_read}
-                               WHERE useridto = :userid
-                               AND useridfrom > 2
-                               AND notification <> 1
-                               ORDER BY timecreated DESC
-                               LIMIT $maxmessages";
-
-            $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
-
-            foreach ($readmessages as $message) {
+        if ($newmessages <> 0) {
+            foreach ($messagelist as $newmessages) {
                 $messagelist[] = $this->process_message($message);
             }
-        }
 
+            $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? 0 : $this->page->theme->settings->showoldmessages;
+            if ($showoldmessages) {
+                $maxmessages = 5;
+                $readmessagesql = "SELECT id, subject, useridfrom, useridto, timecreated, fullmessageformat, notification
+                                   FROM {message}
+                                   WHERE useridto = :userid
+                                   AND useridfrom > 2
+                                   AND notification <> 1
+                                   ORDER BY timecreated DESC
+                                   LIMIT $maxmessages";
+
+                $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
+
+                foreach ($readmessages as $message) {
+                    $messagelist[] = $this->process_message($message);
+                }
+            }
+        }
         return $messagelist;
     }
 
@@ -610,6 +626,7 @@ EOT;
      */
     protected function process_message($message) {
         global $DB, $USER;
+
         $messagecontent = new stdClass();
         if ($message->notification || $message->useridfrom < 1) {
             $messagecontent->text = $message->smallmessage;
