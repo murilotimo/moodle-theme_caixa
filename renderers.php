@@ -30,6 +30,9 @@ require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot .'/course/renderer.php');
 require_once($CFG->libdir. '/coursecatlib.php');
 
+require_once($CFG->dirroot.'/message/lib.php');
+
+
 /******************************************************************************************
  * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
@@ -456,6 +459,9 @@ EOT;
         $addlangmenu = true;
         $addmessagemenu = true;
 
+        $messagecount = 0;
+
+
         if (!isloggedin() || isguestuser()) {
             $addmessagemenu = false;
         }
@@ -472,19 +478,28 @@ EOT;
         }
 
         if ($addmessagemenu) {
-            $messages = $this->get_user_messages();
-            $messagecount = count($messages);
+            if  ($CFG->version < 2016120500) {
+                // 3.1
+                $messages = $this->get_user_messages();
+                $messagecount = count($messages);
+            } else {
+                // 3.2
+                $messagecount = message_count_unread_messages();
+            }
+
+
             // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
             if ($messagecount > 0) {
                 // If got some message then we add the badge with the pending messages number and no link to the messages page.
                 $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message') .' '.
-                '<span class="badge">' . $messagecount . '</span>', new moodle_url('#'), get_string('messages', 'message'), 9999);
+                '<span class="badge">' . $messagecount . '</span>', new moodle_url('/message/index.php'), get_string('messages', 'message'), 9999);
             } else {
                 // if no pensing messages we add only a link to the messages page in the menu.
                 $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message'),
                                             new moodle_url('/message/index.php'), get_string('messages', 'message'), 9999);
             }
 
+        if  ($CFG->version < 2016120500) {
             foreach ($messages as $message) {
                 if (!isset($message->from) || !isset($message->from->id) || !isset($message->from->firstname)) {
                     continue;
@@ -518,7 +533,7 @@ EOT;
                         'user2' => $message->from->id)));
             }
         }
-
+    }
         // Let's go to create the lang menu if available.
         $langs = get_string_manager()->get_list_of_translations();
         if (count($langs) < 2 || empty($CFG->langmenu) || ($this->page->course != SITEID and !empty($this->page->course->lang))) {
@@ -570,8 +585,6 @@ EOT;
 
         if ($CFG->version < 2016120500) {
             // Moodle 3.1 or older.
-            // Use the former query.
-
             $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
                               FROM {message}
                               WHERE useridto = :userid
@@ -582,40 +595,16 @@ EOT;
 
                $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
             }
+        return $messagelist;
+
         } else {
             // Moodle 3.2 or newer.
-            // Query from the Messages API
-
             $newmessages = $DB->count_records_select('message', 
-                                                     'useridto = ? AND timeusertodeleted = 0 AND notification = 0',  
+                                                     'useridto = [$USER->id] AND timeusertodeleted = 0 AND notification = 0',  
                                                      [$USER->id],
                                                      "COUNT(DISTINCT(useridfrom))");
+            return $newmessages;
         }
-
-        if ($newmessages <> 0) {
-            foreach ($messagelist as $newmessages) {
-                $messagelist[] = $this->process_message($message);
-            }
-
-            $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? 0 : $this->page->theme->settings->showoldmessages;
-            if ($showoldmessages) {
-                $maxmessages = 5;
-                $readmessagesql = "SELECT id, subject, useridfrom, useridto, timecreated, fullmessageformat, notification
-                                   FROM {message}
-                                   WHERE useridto = :userid
-                                   AND useridfrom > 2
-                                   AND notification <> 1
-                                   ORDER BY timecreated DESC
-                                   LIMIT $maxmessages";
-
-                $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
-
-                foreach ($readmessages as $message) {
-                    $messagelist[] = $this->process_message($message);
-                }
-            }
-        }
-        return $messagelist;
     }
 
     /**
