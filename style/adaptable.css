@@ -1304,22 +1304,26 @@ a.carousel-control {
     padding-bottom: 8px;
     border: 1px solid #ddd;
     border-radius: 4px 4px 0 0;
+    color: [[setting:maincolor]];
+}
+
+.nav > li > a:hover {
+    background-color: [[setting:maincolor]] !important;
+    color: #ffffff !important;
+    text-decoration: none;
 }
 
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
-    color: #ffffff;
+    color: #ffffff !important;
     background-color: [[setting:maincolor]];
     border-bottom-color: transparent;
     cursor: pointer;
 }
 
-.nav-tabs > li > a:hover {
-    color: [[setting:fontcolor]];
-    background-color: [[setting:maincolor]];
-    border-bottom-color: transparent;
-    cursor: pointer;
+.nav-tabs > .active > a:focus {
+    color: [[setting:fontcolor]] !important;
 }
 
 /* Show modal pop-up */
