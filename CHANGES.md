@@ -1,20 +1,24 @@
-Changes in version 1.2.5 (2016120500)
+Changes in version 1.2.5 (2016121300)
 ---------------------------------------
 New features:
 - Avatar beside user name in the navbar
-- Settings to modify the messages pop-up 
+- Settings to modify the messages pop-up (version 3.1 or lower)
 - Settings for moodle block header 
 - Spanish translation will be included in the theme from now
 - Add new Quiz style 
 - Improve error message output 
-- Top message for not stable versions 
+- Top message for Adaptable non-stable versions or outdated moodle versions (2.9 or older)
+
 
 Fixed issues:
+- #572: Fix navbar tabs color and background-color
+- #567: Fix line-height in block header
+- #562: Unread messages are not displayed in front page and the messages page is empty
 - #561: Text alignment restoring course 
 - #560: Left padding in backup / restore course page 
 - #559: Remove empty h3 tags in footer blocks 
 - #558: Breadcrumb syntax error 
-- #557: Remove title from footer headings 
+- #557: Remove title attribute from footer h3 headings 
 - #555: Fix disabled button text colour 
 - #552: Lang menu hide dropdown when hover the cursor 
 - #450: Layout with left-positioned blocks is not aligned 
