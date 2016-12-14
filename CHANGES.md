@@ -1,4 +1,4 @@
-Changes in version 1.2.5 (2016121300)
+Changes in version 1.3 (2016121300)
 ---------------------------------------
 New features:
 - Avatar beside user name in the navbar
