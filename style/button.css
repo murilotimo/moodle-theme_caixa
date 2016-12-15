@@ -74,6 +74,7 @@ td.submit input {
     vertical-align: middle;
     cursor: pointer;
     background-color: [[setting:buttoncolor]];
+    background-image: none;
     border: 1px solid #ccc;
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
     border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
@@ -106,6 +107,7 @@ a.submit:hover,
     text-decoration: none !important;
     color: #ffffff;
     background-color: [[setting:buttonhovercolor]];
+    background-image: none;
 }
 
 input[type="submit"]:focus,
@@ -164,12 +166,14 @@ input#id_submitbutton2[disabled],
 td.submit input[disabled] {
     background-color: [[setting:buttonhovercolor]];
     color: [[setting:buttontextcolor]] !important;
+    background-image: none;
 }
 
 #edittingbutton .btn,
 #edittingbutton input[type="submit"],
 #edittingbutton a,
 .purgecaches a:hover {
+    background-image: none;
     background-color: [[setting:editonbk]];
     color: [[setting:editfont]] !important;
     margin-top: [[setting:edittopmargin]];
@@ -186,6 +190,7 @@ td.submit input[disabled] {
 .editing #edittingbutton a:hover,
 .purgecaches a {
     color: [[setting:editfont]];
+    background-image: none;
     background-color: [[setting:editoffbk]];
     margin-top: [[setting:edittopmargin]];
     padding: [[setting:editverticalpadding]] [[setting:edithorizontalpadding]];
@@ -196,6 +201,7 @@ td.submit input[disabled] {
 [data-role="cancel"],
 .purgecaches a {
     color: [[setting:editfont]];
+    background-image: none;
     background-color: [[setting:editoffbk]];
     margin-top: [[setting:edittopmargin]];
     text-decoration: none;
@@ -204,6 +210,7 @@ td.submit input[disabled] {
 
 [data-role="end"]:hover,
 [data-role="cancel"]:hover {
+    background-image: none;
     background-color: [[setting:editonbk]];
     color: [[setting:editfont]] !important;
     text-decoration: none;
@@ -212,6 +219,7 @@ td.submit input[disabled] {
 
 .btn-primary.disabled,
 .btn-primary[disabled] {
+    background-image: none;
     background-color: #d5d5d5;
     color: #ffffff;
 }
@@ -219,12 +227,14 @@ td.submit input[disabled] {
 #notice .singlebutton + .singlebutton input,
 .submit.buttons input[name="cancel"] {
     color: [[setting:editfont]] !important;
+    background-image: none;
     background-color: [[setting:editoffbk]] !important;
     text-shadow: none;
 }
 
 .btn-login {
     background-color: [[setting:buttonlogincolor]];
+    background-image: none;
     border: 0 none;
     -webkit-border-radius: [[setting:buttonradius]];
     -moz-border-radius: [[setting:buttonradius]];
@@ -241,6 +251,7 @@ td.submit input[disabled] {
 }
 
 .btn-login:hover {
+    background-image: none;
     background-color: [[setting:buttonloginhovercolor]];
     color: [[setting:buttonlogintextcolor]];
     text-decoration: none;
