@@ -358,7 +358,7 @@ div.signuppanel h2 {
 }
 
 .socialbox a {
-    color: [[setting:headertextcolor2]];
+    color: [[setting:headertextcolor2]] !important;
     padding-left: 10px;
 }
 
