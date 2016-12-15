@@ -294,7 +294,7 @@ div.signuppanel h2 {
     font-weight: [[setting:fonttitleweight]] !important;
 
     white-space: nowrap;
-    overflow: hidden;
+    overflow: visible;
     text-overflow: ellipsis;
     line-height: 120%;
 }
