@@ -89,7 +89,6 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:headertextcolor]]' => '#ffffff',
         '[[setting:headertextcolor2]]' => '#ffffff',
         '[[setting:msgbadgecolor]]' => '#E53935',
-        '[[setting:blockheadercolor]]' => '#009688',
         '[[setting:blockbackgroundcolor]]' => '#FFFFFF',
         '[[setting:blockheaderbackgroundcolor]]' => '#FFFFFF',
         '[[setting:blockbordercolor]]' => '#59585D',
@@ -276,7 +275,7 @@ function theme_adaptable_set_tilesshowallcontacts($css, $display) {
 }
 
 /**
- * Set user prefernces for zoom (show / hide block) function
+ * Set user preferences for zoom (show / hide block) function
  * @param moodle_page $page
  * @return void
  */
