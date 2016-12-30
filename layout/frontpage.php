@@ -33,6 +33,7 @@ if (!empty($PAGE->theme->settings->sliderenabled)) {
     echo $OUTPUT->get_frontpage_slider();
 }
 
+// Infobox 1.
 if (!empty($PAGE->theme->settings->infobox)) {
     if (!empty($PAGE->theme->settings->infoboxfullscreen)) {
         echo '<div id="theinfo">';
@@ -42,7 +43,7 @@ if (!empty($PAGE->theme->settings->infobox)) {
 ?>
             <div class="row-fluid">
 <?php
-    echo $OUTPUT->get_setting('infobox', 'html_format');
+    echo $OUTPUT->get_setting('infobox', 'format_html');
 ?>
             </div>
         </div>
@@ -52,9 +53,9 @@ if (!empty($PAGE->theme->settings->infobox)) {
 
 <?php if (!empty($PAGE->theme->settings->frontpagemarketenabled)) {
     echo $OUTPUT->get_marketing_blocks();
-} ?>
+}
 
-<?php if (!empty($PAGE->theme->settings->frontpageblocksenabled)) { ?>
+if (!empty($PAGE->theme->settings->frontpageblocksenabled)) { ?>
     <div id="frontblockregion" class="container">
         <div class="row-fluid">
             <?php echo $OUTPUT->get_block_regions(); ?>
@@ -62,9 +63,8 @@ if (!empty($PAGE->theme->settings->infobox)) {
     </div>
 <?php
 }
-?>
 
-<?php
+// Infobox 2.
 if (!empty($PAGE->theme->settings->infobox2)) {
     if (!empty($PAGE->theme->settings->infoboxfullscreen)) {
         echo '<div id="theinfo">';
