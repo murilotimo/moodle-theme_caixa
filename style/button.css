@@ -35,7 +35,6 @@ input[type="button"],
 a.submit,
 #notice .singlebutton + .singlebutton input,
 #page-login-index2 .forgetpass a,
-.btn,
 input.form-submit,
 input#id_submitbutton,
 input#id_submitbutton2,
@@ -86,6 +85,10 @@ td.submit input {
     -moz-box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
     box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
     padding: 8px 15px 8px;
+}
+
+.btn:first-child {
+    color: [[setting:buttontextcolor]] !important;
 }
 
 #notice .singlebutton + .singlebutton input,
