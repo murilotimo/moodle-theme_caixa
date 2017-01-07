@@ -139,12 +139,11 @@ $string['tickersettings'] = 'News Ticker';
 $string['tickersettingsheading'] = 'Setup News Ticker on Front Page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['tickerdesc'] = 'Here you can set a news ticker to run across the front page of your Moodle site.
   It is intended as a less intrusive alternative to the slider taking up very little space.
-  To setup your ticker simply entere a bulleted list and include any hyperlinks you need to in that text.
-  Note: you must not put ul tags around our list, only li. Moodle text editor tends to add ul tags.
-  If your ticker does not load properly switch to HTML view and ensure you have only li tags:
+  To setup your ticker simply enter a paragraph list and include any hyperlinks you need to in that text.
+  <strong>Note:</strong> If your ticker does not load properly switch to HTML view and ensure you have only p tags:
   <pre>
-  &lt;li&gt;News item one.....&lt;/li&gt;
-  &lt;li&gt;News item two.....&lt;/li&gt;
+  &lt;p&gt;News item one.....&lt;/p&gt;
+  &lt;p&gt;News item two.....&lt;/p&gt;
   </pre>';
 
 $string['tickerdefault'] = 'No news items to display';
