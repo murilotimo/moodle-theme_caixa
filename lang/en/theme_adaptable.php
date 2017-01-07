@@ -40,7 +40,7 @@ $string['choosereadme'] = '
 <br>
 <p>This theme has been developed by:<br>
 Jeremy Hopkins (Coventry University)<br>
-Fernando Acedo (<a href="http://3-bits.com" target="_blank">3-bits.com</a>)</p>
+Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <br>
 <p>and many other developers, testers, translators and volunteers (See <a href="adaptable/README.txt" target="_blank">README.txt</a>)</p>
 <br>
@@ -59,7 +59,7 @@ Fernando Acedo (<a href="http://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <p>Coming soon</p>
 <br>
 <h3>Demo</h3>
-<p>You can see a demo version <a href="http://3-bits.com/demo/adaptable" target="_blank">HERE</a></p>
+<p>You can see a demo version <a href="https://3-bits.com/demo/adaptable" target="_blank">HERE</a></p>
 <br>
 </div>
 </div>';
@@ -1264,12 +1264,12 @@ url|title|icon
 For example:
 
 http://localhost/moodle/course/search.php|Search Moodle|fa-search
-http://facebook.com/|Facebook|fa-facebook-square
-http://twitter.com/|Twitter|fa-twitter-square
-http://instagram.com|Instagram|fa-instagram
+https://facebook.com/|Facebook|fa-facebook-square
+https://twitter.com/|Twitter|fa-twitter-square
+https://instagram.com|Instagram|fa-instagram
 http://example.com|Mi Web|fa-globe
 
-For reference you can find the full list of <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icons Here</a></pre>';
+For reference you can find the full list of <a href="https://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icons Here</a></pre>';
 
 $string['socialsize'] = 'Set the font size of the social icons';
 $string['socialsizemobile'] = 'Set the font size of the social icons on Mobile';

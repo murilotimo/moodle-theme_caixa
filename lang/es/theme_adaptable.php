@@ -40,7 +40,7 @@ $string['choosereadme'] = '
 <br>
 <p>Este tema ha sido creada por:<br>
 Jeremy Hopkins (Coventry University)<br>
-Fernando Acedo (<a href="http://3-bits.com" target="_blank">3-bits.com</a>)</p>
+Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <br>
 <p>y otros desarrolladores, probadores, traductores y voluntarios (Ver <a href="adaptable/README.txt" target="_blank">README.txt</a>)</p>
 <br>
@@ -59,7 +59,7 @@ Fernando Acedo (<a href="http://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <p>Próximamente</p>
 <br>
 <h3>Demo</h3>
-<p>Puedes ver una demostración del sitio y descargar un archivo de instalación en <a href="http://3-bits.com/demo/adaptable">http://3-bits.com/demo/adaptable</a></p>
+<p>Puedes ver una demostración del sitio y descargar un archivo de instalación en <a href="https://3-bits.com/demo/adaptable">https://3-bits.com/demo/adaptable</a></p>
 <br>
 <p>Traducción es-ES: Fernando Acedo (3-bits.com)</p>
 <p>Traducción es-MX: Germán Valero (UNAM)</p>
@@ -1119,7 +1119,7 @@ $string['activebreadcrumb'] = 'Color de fondo de la ruta de navegación activa';
 $string['activebreadcrumbdesc'] = 'Establece el color de fondo de la ruta de navegación activa.';
 
 $string['breadcrumbseparator'] = 'Separador de la ruta de navegación';
-$string['breadcrumbseparatordesc'] = 'Establece el icono de <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome</a>  usado como separador entre los ítems de la ruta de navegación. Introducir el nombre del icono SIN el prefijo fa-';
+$string['breadcrumbseparatordesc'] = 'Establece el icono de <a href="https://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome</a>  usado como separador entre los ítems de la ruta de navegación. Introducir el nombre del icono SIN el prefijo fa-';
 
 $string['breadcrumbhome'] = 'Inicio de la ruta de navegación';
 $string['breadcrumbhomedesc'] = 'Muestra el inicio de la ruta de navegación como icono o texto.';
@@ -1265,9 +1265,9 @@ url|titulo|icono
 Ejemplo:
 
 http://localhost/moodle/course/search.php|Buscar en Moodle|fa-search
-http://facebook.com/|Facebook|fa-facebook-square
-http://twitter.com/|Twitter|fa-twitter-square
-http://instagram.com|Instagram|fa-instagram
+https://facebook.com/|Facebook|fa-facebook-square
+https://twitter.com/|Twitter|fa-twitter-square
+https://instagram.com|Instagram|fa-instagram
 http://example.com|Mi Web|fa-globe
 
 El listado de iconos se encuentra en: <a href="http://fortawesome.github.io/Font-Awesome/icons">http://fortawesome.github.io/Font-Awesome/icons</a>Font-Awesome</pre>';
