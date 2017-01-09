@@ -178,15 +178,14 @@ Made with <i class="fa fa-heart" style="color: #ff0000;"></i> in Europe
 
 ## News Ticker
 
-To add news to the ticker you need to create an unordered list using the Atto editor.
+From version 1.3 thr news ticker do not need to create an unordered list. Just add paragraphs using <p> tags
 
-**IMPORTANT!** Verify you only enter the ```<li>``` tags. For example:
 ```html
-<li>Configure all the theme colours</li>
-<li>Use any Google Font for the content, headings and site title</li>
-<li>Display a logo or a configurable title site</li>
-<li>Configurable Slideshow</li>
-<li>Display up to 12 marketing blocks in the front page</li>
+<p>Configure all the theme colours</p>
+<p>Use any Google Font for the content, headings and site title</p>
+<p>Display a logo or a configurable title site</p>
+<p>Configurable Slideshow</p>
+<p>Display up to 12 marketing blocks in the front page</p>
 ```
 
 ## Versioning

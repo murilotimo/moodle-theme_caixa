@@ -1,3 +1,18 @@
+Changes in version 1.3.1 (2017010900)
+---------------------------------------
+- #596: Section name do not apply the colour in topics format 
+- #595: Buttons do not apply default text colour 
+- #592: In a forum the participant image is streched 
+- #591: Button message text color the same as button color 
+- #587: Infobox 2 is not applying HTML format 
+- #580: Remove duplicated font block header setting 
+- #579: Social icons size is not set changing the setting 
+- #578: buttontextcolor hard coded in button.css 
+- #575: Force headertextcolor2 in socialbox 
+- #574: Sitetitle overflow not allow displaying the title 
+- #573: Login button flickering
+
+
 Changes in version 1.3 (2016121300)
 ---------------------------------------
 New features:
