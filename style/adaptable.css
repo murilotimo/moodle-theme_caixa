@@ -2045,6 +2045,12 @@ div.questionbankwindow.block {
     background-color: #999;
 }
 
+/* Fix user image in quiz report */
+#page-mod-quiz-report table#attempts td,
+#page-mod-quiz-report table.quizresponseanalysis td {
+    max-width: 100%;
+    min-width: 30px;
+}
 
 /* Fix glossary print option */
 #page-mod-glossary-view .glossarycontrol {
