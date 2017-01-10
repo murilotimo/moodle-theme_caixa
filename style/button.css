@@ -109,8 +109,8 @@ a.submit:hover,
 .btn:active {
     background-position: 0 -100%;
     text-decoration: none !important;
-/*    color: [[setting:buttontextcolor]] !important;*/
-/*    background-color: [[setting:buttonhovercolor]];*/
+    color: [[setting:buttontextcolor]] !important;
+    background-color: [[setting:buttonhovercolor]];
     background-image: none;
 }
 
