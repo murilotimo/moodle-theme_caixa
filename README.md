@@ -16,7 +16,7 @@ Adaptable is a highly customisable responsive two column moodle theme based on t
 * Mobile settings (customise how theme looks on mobile devices)
 * Dismissible bootstrap alerts (can be made persistent by specifying a “key” which is stored in user preferences)
 * Option to add login form in header on front page
-* Favicon uploader
+* Logo and Favicon uploader
 
 In addition many fields (menus, news items, alerts and help links) can be targeted using custom profile fields,
 thus it is possible to present different users with different nagivation items and notices.
@@ -35,7 +35,6 @@ This theme has been developed by:
 
 
 ## HTML/CSS sample code for block areas
-
 Here you will find some code samples to help you to customize the Info Box and the Marketing Blocks.
 
 You can insert any HTML tag to customize the frontpage blocks. Use a ```<div>``` as a main container and add the height to keep the same value in all the blocks.
@@ -47,7 +46,7 @@ You can insert any of them following the examples http://fortawesome.github.io/F
 
 
 ## Front Page Slider Styles
-
+Add images with at least 1900x400px. If you want to reduce or increase the height, Adaptable will resize the image automatically.
 There are two possible slider styles each with different markup required:
 
 ### Original BCU Slider Markup:
@@ -60,7 +59,7 @@ There are two possible slider styles each with different markup required:
   </div>
 
   <div class="span3">
-  <a href="#" class="submit">2013/14 Courses <i class="fa-chevron-right fa"></i></a>
+  <a href="#" class="submit">2016/17 Courses <i class="fa-chevron-right fa"></i></a>
 </div>
 ```
 
@@ -81,12 +80,11 @@ There are two possible slider styles each with different markup required:
 
 
 ## Front page Info Box and Marketing Blocks
-
 There are two Info blocks in the frontpage located above and below the Marketing Blocks. These are just for compatibility with the old BCU.
 
 It is recommended to use the new marketing blocks builder that allows you to create your own layout and add much more blocks.
 
-There are 8 rows where you can add up to 4 blocks in each. See pix/layout.png for more information.
+There are 8 rows where you can add up to 4 blocks in each with a total of 32 block of different size. See pix/layout.png for more information.
 
 You can enter any HTML code to the block, include FA icons, images, videos and apply inline styles.
 
@@ -95,7 +93,7 @@ Some samples:
 
 #### Block with solid background, FA icon and some text:
 ```html
-<div style="text-align:center; background: #e6e6e6; height: 240px; padding: 7px;">
+<div style="text-align:center; background: #e6e6e6; height: 350px; padding: 7px;">
     <i class="fa fa-paint-brush fa-5x" style="color: #009688;"></i>
     <h3>Title </h3>
     <div style="text-align:center;">Add your text here.</div>
@@ -104,7 +102,7 @@ Some samples:
 
 #### Block with border and transparent background:
 ```html
-<div style="text-align:center; height: 240px; padding: 7px; border: 1px solid #009688;">
+<div style="text-align:center; height: 350px; padding: 7px; border: 1px solid #009688;">
     <i class="fa fa-list fa-5x" style="color: #009688;"></i>
     <h3>Heading</h3>
     <div style="text-align:center; padding: 5px; color: #009688;">Add your text here.</div>
@@ -119,10 +117,9 @@ Some samples:
 </div>
 ```
 
-
 #### Block with a video:
 ```html
-<div style="background: #606060; height: 315px">
+<div style="background: #606060; height: 350px">
     <center>
     <iframe src="https://www.youtube.com/embed/wop3FMhoLGs" allowfullscreen="" frameborder="0" height="315" width="560"></iframe>
     </center>
@@ -137,13 +134,10 @@ Some samples:
       <span class="multilang" lang="es">texto en español</span>
       <span class="multilang" lang="fr">texte en français</span>
       <span class="multilang" lang="ca">text en català</span>
-</h1>
 </div>
 ```
 
-
 ## Footer Blocks
-
 You can apply the same HTML/CSS in the footer blocks.
 
 Some samples:
@@ -170,15 +164,13 @@ Some samples:
 
 
 ## Copyright text
-
 A sample of copyright text using FA icon
 ```html
 Made with <i class="fa fa-heart" style="color: #ff0000;"></i> in Europe
 ```
 
 ## News Ticker
-
-From version 1.3 thr news ticker do not need to create an unordered list. Just add paragraphs using <p> tags
+From version 1.3 the news ticker do not need to create an unordered list. Just add paragraphs using <p> tags
 
 ```html
 <p>Configure all the theme colours</p>
@@ -189,7 +181,6 @@ From version 1.3 thr news ticker do not need to create an unordered list. Just a
 ```
 
 ## Versioning
-
 Adaptable is maintained under the Semantic Versioning guidelines as much as possible.
 Releases will be numbered with the following format:
 
@@ -204,7 +195,6 @@ For more information on SemVer, please visit http://semver.org.
 
 
 ## Acknowledgments
-
 Big thanks to all the volunteers that are collaborating and testing Adaptable continously.
 We really appreciate your help and support to develope the most adaptable theme for moodle.
 
@@ -221,7 +211,6 @@ We really appreciate your help and support to develope the most adaptable theme 
 
 
 ## Licenses
-
 Adaptable is licensed under the GPL v3 (GNU General Public License)
 * http://www.gnu.org/licenses
 
@@ -230,7 +219,7 @@ Google Fonts released under:
 * Apache 2 license - https://www.apache.org/licenses/LICENSE-2.0
 * The Ubuntu fonts use the Ubuntu Font License v1.0  - http://font.ubuntu.com/ufl/ubuntu-font-licence-1.0.txt
 
-The Font Awesome font (by Dave Gandy
+The Font Awesome font (by Dave Gandy)
 * http://fontawesome.io) is licensed under the SIL OFL 1.1 - http://scripts.sil.org/OFL
 
 Font Awesome CSS, LESS, and SASS files are licensed under the MIT License
@@ -241,7 +230,6 @@ Emojione (http://emojione.com) released under Creative Commons Attribution 4.0 I
 
 
 ## Follow Us
-
 Twitter: https://twitter.com/adaptable_theme
 Facebook: https://www.facebook.com/adaptable.theme
 
