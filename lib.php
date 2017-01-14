@@ -319,18 +319,6 @@ function theme_adaptable_get_alertkey($alertindex) {
 }
 
 /**
- * Get user preference for side block
- * Note: does not seem to be called / used within theme, may need to be removed
- */
-function theme_adaptable_get_block_side() {
-    static $theme;
-    if (empty($theme)) {
-        $theme = theme_config::load('adaptable');
-    }
-    return get_user_preferences('theme_adaptable_block_side', $theme->settings->blockside);
-}
-
-/**
  * Get HTML for settings
  * @param renderer_base $output
  * @param moodle_page $page

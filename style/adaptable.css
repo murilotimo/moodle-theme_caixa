@@ -17,11 +17,9 @@
 *
 * Adaptable Main Style sheet
 *
-* Version details
-*
 * @package    theme_adaptable
-* @copyright  2015 Jeremy Hopkins (Coventry University)
-* @copyright  2015 Fernando Acedo (3-bits.com)
+* @copyright  2015-2016 Jeremy Hopkins (Coventry University)
+* @copyright  2015-2017 Fernando Acedo (3-bits.com)
 * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 *
 */
@@ -959,7 +957,6 @@ input[type="radio"], input[type="checkbox"] {
 #region-main {
     margin-top: 0px;
     background: [[setting:regionmaincolor]];
-    margin-left: 38px;
 }
 
 #region-main #coursesearch .btn {

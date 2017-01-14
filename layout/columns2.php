@@ -25,7 +25,7 @@
  */
 
 require_once(dirname(__FILE__) . '/includes/header.php');
-$left = theme_adaptable_get_block_side();
+$left = $PAGE->theme->settings->blockside;
 ?>
 
 <div class="container outercont">
