@@ -19,14 +19,16 @@
  *
  * @package    theme_adaptable
  * @copyright  2015-2016 Jeremy Hopkins (Coventry University)
- * @copyright  2015-2016 Fernando Acedo (3-bits.com)
+ * @copyright  2015-2017 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
 
 require_once(dirname(__FILE__) . '/includes/header.php');
 
-$left = theme_adaptable_get_block_side();
+// Set layout.
+$left = $PAGE->theme->settings->blockside;
+
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 
 if (!empty($PAGE->theme->settings->sliderenabled)) {
