@@ -2059,3 +2059,12 @@ div.questionbankwindow.block {
 .path-backup .mform .grouped_settings.section_level {
     padding: 10px 0 0 10px;
 }
+
+/* Fix Video Player icons */
+.vjs-icon-play::before,
+.video-js .vjs-big-play-button::before,
+.video-js .vjs-play-control::before,
+.vjs-icon-fullscreen-enter::before,
+.video-js .vjs-fullscreen-control::before {
+    font-family: videojs;
+}
