@@ -550,8 +550,8 @@ $string['marketblockbordercolordesc'] = 'Establece el color del borde de los blo
 $string['marketblocksbackgroundcolor'] = 'Color de fondo de la región de los bloques promocionales.';
 $string['marketblocksbackgroundcolordesc'] = 'Establece el color de fondo de la región de los bloques promocionales.';
 
-$string['sectionheadingcolor'] = 'Color de fondo de la cabecera de sección';
-$string['sectionheadingcolordesc'] = 'Establece el color de fondo de la cabecera del tema actual.';
+$string['sectionheadingcolor'] = 'Color del texto de la cabecera de sección';
+$string['sectionheadingcolordesc'] = 'Establece el color del texto de la cabecera del tema actual.';
 
 $string['homebk'] = 'Imagen de fondo';
 $string['homebkdesc'] = 'Carga la imagen de fondo para la plantilla.';
