@@ -1,6 +1,7 @@
-Changes in version 1.3.1 (2017010900)
+Changes in version 1.3.1 (2017011600)
 ---------------------------------------
 Fixed issues:
+- #600: Fix course settings translation in Spanish
 - #599: Images not showing in teachers listing students qualifications
 - #598: Video player button not displayed in moodle 3.2
 - #596: Section name do not apply the colour in topics format 
