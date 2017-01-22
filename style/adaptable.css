@@ -961,6 +961,7 @@ input[type="radio"], input[type="checkbox"] {
 
 #region-main #coursesearch .btn {
     margin-top: 10px;
+    margin-left: 38px;
 }
 
 @media (max-width: 990px) {
