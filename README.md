@@ -1,4 +1,5 @@
 # Adaptable - the most adaptable moodle theme
+#### Version 1.3.1.1 (2017012300)
 
 Adaptable is a highly customisable responsive two column moodle theme based on the popular BCU theme adding:
 
@@ -195,8 +196,8 @@ For more information on SemVer, please visit http://semver.org.
 
 
 ## Acknowledgments
-Big thanks to all the volunteers that are collaborating and testing Adaptable continously.
-We really appreciate your help and support to develope the most adaptable theme for moodle.
+Big thanks to all the volunteers that are collaborating and testing Adaptable continuously.
+We really appreciate your help and support to develop the most adaptable theme for moodle.
 
 
 #### Development:

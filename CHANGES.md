@@ -1,3 +1,9 @@
+Changes in version 1.3.1.1 (2017012300)
+---------------------------------------
+Fixed issues:
+- #603: Hide blocks move the blocks instead hide
+
+
 Changes in version 1.3.1 (2017011600)
 ---------------------------------------
 Fixed issues:
