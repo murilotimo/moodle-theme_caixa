@@ -756,9 +756,7 @@ EOT;
                     }
                 }
 
-                error_log("ticker field $textfield");
                 if ($access) {
-                    error_log("adding field $textfield");
                     $msg .= $PAGE->theme->settings->$textfield;
                 }
                 
