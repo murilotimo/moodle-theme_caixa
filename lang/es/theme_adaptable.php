@@ -42,7 +42,7 @@ $string['choosereadme'] = '
 Jeremy Hopkins (Coventry University)<br>
 Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <br>
-<p>y otros desarrolladores, probadores, traductores y voluntarios (Ver <a href="adaptable/README.txt" target="_blank">README.txt</a>)</p>
+<p>y otros desarrolladores, probadores, traductores y voluntarios (Ver <a href="adaptable/README.md" target="_blank">README.md</a>)</p>
 <br>
 <h3>Informar de errores</h3>
 <p>Puedes informar de errores encontrados en este tema (y por favor, sólo errores) a través de nuestro <a href="https://bitbucket.org/covuni/moodle-theme_adaptable/issues" target="_blank">repositorio en Bitbucket</a></p>
@@ -159,10 +159,10 @@ $string['enabletickerc'] = 'Activar los anuncios en las páginas internas';
 $string['enabletickercdesc'] = 'Marcar para activar los anuncios en las páginas internas.';
 
 $string['tickertext1'] = 'Texto Anuncios 1';
-$string['tickertext1desc'] = 'Añadir los anuncios en formato de lista HTML. Ver <a href="adaptable/README.txt">README.txt</a> para más información.';
+$string['tickertext1desc'] = 'Añadir los anuncios en formato de lista HTML. Ver <a href="adaptable/README.md">README.md</a> para más información.';
 
 $string['tickertext2'] = 'Texto Anuncios 2';
-$string['tickertext2desc'] = 'Añadir los anuncios en formato de lista HTML para un segundo tipo de usuario. Ver <a href="adaptable/README.txt">README.txt</a> para más información.';
+$string['tickertext2desc'] = 'Añadir los anuncios en formato de lista HTML para un segundo tipo de usuario. Ver <a href="adaptable/README.md">README.md</a> para más información.';
 
 $string['tickertextprofilefield'] = 'Nombre del campo personalizado del perfíl Field Name=Value (opcional)';
 $string['tickertextprofilefielddesc'] = 'Añade una regla de acceso usando un campo de perfil personalizado. Ejemplo: usertype=alumno';
@@ -276,7 +276,7 @@ $string['layoutcount2'] = ' regiones para bloques. Ahora estás usando: ';
 $string['marketingsettings'] = 'Bloques promocionales';
 $string['marketingsettingsheading'] = 'Personaliza los bloques promocionales que aparecen en la página de inicio. Ver la distribución <a href="./../theme/adaptable/pix/layout.png" target="_blank">aqui</a>';
 $string['marketingdesc'] = 'Dispones de dos cuadros informativos a los que puedes aplicar diferentes estilos. Además puedes activar el creador de regiones
-para bloques y decidir cuantos bloques quieres mostrar y su distribución en la página de inicio. Puedes ver la distribución de las diferentes regiones en el archivo  <a href="/adaptable/README.txt" target="_blank">README.txt</a>';
+para bloques y decidir cuantos bloques quieres mostrar y su distribución en la página de inicio. Puedes ver la distribución de las diferentes regiones en el archivo  <a href="/adaptable/README.md" target="_blank">README.md</a>';
 
 $string['marketingbuilderheading'] = 'Creador de regiones para bloques promocionales';
 $string['marketingbuilderdesc'] = 'Utiliza esta opción para ver la distribución creada y comprobar el número de bloques promocionales que has utilizado.';
@@ -285,7 +285,7 @@ $string['marketlayoutrow'] = 'Filas de regiones para bloques promocionales';
 $string['marketlayoutrowdesc'] = 'Añade / establece la distribución de filas de las regiones para bloques promocionales de la página principal.';
 
 $string['market'] = 'Bloque promocional ';
-$string['marketdesc'] = 'Añade el código HTML del bloque promocional (ver el archivo <a href="./../theme/adaptable/README.txt" target="_blank">README</a> para más ejemplos).';
+$string['marketdesc'] = 'Añade el código HTML del bloque promocional (ver el archivo <a href="./../theme/adaptable/README.md" target="_blank">README</a> para más ejemplos).';
 
 $string['layoutaddcontent'] = 'Añade contenido a los bloques promocionales:';
 $string['layoutaddcontentdesc1'] = 'Has configurado ';
@@ -293,13 +293,13 @@ $string['layoutaddcontentdesc2'] = ' bloques promocionales. Si estás conforme c
 Si no estás conforme, usa el creador de regiones para bloques promocionales para realizar cambios<br />';
 
 $string['infobox'] = 'Cuadro informativo 1';
-$string['infoboxdesc'] = 'Añade el código HTML del cuadro informativo 1 (ver el archivo <a href="./../theme/adaptable/README.txt" target="_blank">README</a> para más ejemplos)';
+$string['infoboxdesc'] = 'Añade el código HTML del cuadro informativo 1 (ver el archivo <a href="./../theme/adaptable/README.md" target="_blank">README</a> para más ejemplos)';
 
 $string['infoboxfullscreen'] = 'Cuadros informativos a ancho completo';
 $string['infoboxfullscreendesc'] = 'Marca está opción para mostrar los cuadros informativos a ancho completo de pantalla.';
 
 $string['infobox2'] = 'Cuadro informativo 2';
-$string['infobox2desc'] = 'Añade el código HTML del cuadro informativo 2 (ver el archivo <a href="./../theme/adaptable/README.txt" target="_blank">README</a> para más ejemplos)';
+$string['infobox2desc'] = 'Añade el código HTML del cuadro informativo 2 (ver el archivo <a href="./../theme/adaptable/README.md" target="_blank">README</a> para más ejemplos)';
 
 $string['frontpagemarketenabled'] = 'Activar los bloques promocionales';
 $string['frontpagemarketenableddesc'] = 'Activar los bloques promocionales en la pagina de inicio.';
@@ -332,13 +332,13 @@ $string['footerlayoutrow'] = 'Creador de regiones para los bloques del pie de p�
 $string['footerlayoutrowdesc'] = 'Utiliza esta opción para ver la distribución creada y comprobar el número de bloques del pie de página que has utilizado.';
 
 $string['footnote'] = 'Texto del bloque del pie de página ';
-$string['footnotedesc'] = 'Añade el código HTML del bloque de pie de página (ver el archivo <a href="./../theme/adaptable/README.txt" target="_blank">README</a> para más ejemplos)';
+$string['footnotedesc'] = 'Añade el código HTML del bloque de pie de página (ver el archivo <a href="./../theme/adaptable/README.md" target="_blank">README</a> para más ejemplos)';
 
 $string['footerheader'] = 'Titulo del bloque del pie de página ';
 $string['footerdesc'] = 'Añade el titulo del bloque del pie de página ';
 
 $string['footercontent'] = 'Contenido del bloque del pie de página ';
-$string['footercontentdesc'] = 'Añade el código HTML del bloque del pie de página (ver el archivo <a href="./../theme/adaptable/README.txt" target="_blank">README</a> para más ejemplos)';
+$string['footercontentdesc'] = 'Añade el código HTML del bloque del pie de página (ver el archivo <a href="./../theme/adaptable/README.md" target="_blank">README</a> para más ejemplos)';
 
 
 // Moodle Docs link.
@@ -1152,7 +1152,7 @@ $string['newstickercount'] = 'Número de barras de anuncios';
 $string['newstickercountdesc'] = 'Define barras de anuncios con diferentes reglas de acceso para mostrarlas a diferentes tipos de usuarios.';
 
 $string['tickertext'] = 'Texto de la barra de anuncios';
-$string['tickertextdesc'] = 'Añade el texto a mostrar en la barra de anuncios en formato de lista. Ver el archivo <a href="adaptable/README.txt">README.txt</a> para más información.';
+$string['tickertextdesc'] = 'Añade el texto a mostrar en la barra de anuncios en formato de lista. Ver el archivo <a href="adaptable/README.md">README.md</a> para más información.';
 
 $string['newmenu1trigger'] = 'Palabra clave para el Menú desplegable superior';
 $string['newmenu1triggerdesc'] = 'Establece una palabra clave para el Menú desplegable superior. Puedes utilizar los iconos de Font Awesome.';

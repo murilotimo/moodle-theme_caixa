@@ -42,7 +42,7 @@ $string['choosereadme'] = '
 Jeremy Hopkins (Coventry University)<br>
 Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <br>
-<p>and many other developers, testers, translators and volunteers (See <a href="adaptable/README.txt" target="_blank">README.txt</a>)</p>
+<p>and many other developers, testers, translators and volunteers (See <a href="adaptable/README.md" target="_blank">README.md</a>)</p>
 <br>
 <h3>Bugs Report</h3>
 <p>You can report bugs (and please, <b>ONLY</b> bugs) in our <a href="https://bitbucket.org/covuni/moodle-theme_adaptable/issues" target="_blank">Bitbucket repository</a></p>
@@ -275,7 +275,7 @@ $string['layoutcount2'] = ' block regions. You are currently using: ';
 $string['marketingsettings'] = 'Marketing Blocks';
 $string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['marketingdesc'] = 'There are two full width info boxes with differing styles you can use.
-In addition to this there is a layout builder allowing you to decide how many blocks you need and define your own layout, please see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file that comes with this theme.';
+In addition to this there is a layout builder allowing you to decide how many blocks you need and define your own layout, please see the <a href="./../theme/adaptable/README.md" target="_blank">README</a> file that comes with this theme.';
 
 $string['marketingbuilderheading'] = 'Marketing Block Layout Builder';
 $string['marketingbuilderdesc'] = 'Use the tool below to setup your marketing blocks. Once defined the block settings will appear further down the page.';
@@ -284,7 +284,7 @@ $string['marketlayoutrow'] = 'Marketing Block Row';
 $string['marketlayoutrowdesc'] = 'Add / set layout for marketing block row on front page';
 
 $string['market'] = 'Marketing Block ';
-$string['marketdesc'] = 'Add html for marketing block (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
+$string['marketdesc'] = 'Add html for marketing block (see the <a href="./../theme/adaptable/README.md" target="_blank">README</a> file for additional info and hints).';
 
 $string['layoutaddcontent'] = 'Happy With Your Layout? Now Add Content to Your Blocks:';
 $string['layoutaddcontentdesc1'] = 'You have configured ';
@@ -292,13 +292,13 @@ $string['layoutaddcontentdesc2'] = ' marketing blocks. If you are happy with thi
 If you are not happy use the layout builder above to make changes<br />';
 
 $string['infobox'] = 'Frontpage Info Box';
-$string['infoboxdesc'] = 'Frontpage info block HTML (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
+$string['infoboxdesc'] = 'Frontpage info block HTML (see the <a href="./../theme/adaptable/README.md" target="_blank">README</a> file for additional info and hints).';
 
 $string['infoboxfullscreen'] = 'Make infobox full screen';
 $string['infoboxfullscreendesc'] = 'Turning this option on will make the infobox full screen.';
 
 $string['infobox2'] = 'Frontpage Secondary Info Box';
-$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
+$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the <a href="./../theme/adaptable/README.md" target="_blank">README</a> file for additional info and hints).';
 
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
 $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
