@@ -1507,8 +1507,8 @@ EOT;
                         if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
                             $menu = ($PAGE->theme->settings->$newmenu);
                             $title = ($PAGE->theme->settings->$newmenutitle);
-                            $custommenuitems = $this->parse_custom_menu($menu, $title);
-                            $custommenu = new custom_menu($custommenuitems);
+                            $custommenuitems = $this->parse_custom_menu($menu, format_string($title));
+                            $custommenu = new custom_menu($custommenuitems, current_language());
                             $retval .= $this->render_custom_menu($custommenu, $pre, $post);
                         }
                     }
