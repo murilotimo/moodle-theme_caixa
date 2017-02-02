@@ -615,6 +615,12 @@ span.fa-chevron-right.fa {
     margin: 5px 0;
 }
 
+.headermenu input[name=username],
+.headermenu input[name=password] {
+    height: 12px;
+    padding-bottom: 4px;
+}
+
 #page-footer .logininfo {
     margin: 0px auto 0px;
     font-size: 90%;

@@ -191,9 +191,9 @@ if (!isloggedin() || isguestuser()) {
         // Login button.
 ?>
         <form action="<?php p($wwwroot) ?>/login/index.php" method="post">
-            <input style="height: 12px; padding-bottom: 4px;" type="text" name="username" 
+            <input type="text" name="username" 
                     placeholder="<?php echo get_string('loginplaceholder', 'theme_adaptable'); ?>" size="10">
-            <input style="height: 12px; padding-bottom: 4px;" type="password" name="password" 
+            <input type="password" name="password" 
                     placeholder="<?php echo get_string('passwordplaceholder', 'theme_adaptable'); ?>"  size="10">
             <button class="btn-login" type="submit"><?php echo get_string('logintextbutton', 'theme_adaptable'); ?></button>
         </form>
