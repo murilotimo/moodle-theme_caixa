@@ -732,16 +732,10 @@ EOT;
         $PAGE->theme->settings->enableticker &&
         $PAGE->bodyid == "page-site-index") ||
         ($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
+            $msg = '';
             $tickercount = $PAGE->theme->settings->newstickercount;
 
-            $retval .= '<div id="ticker-wrap" class="clearfix container">';
-            $retval .= '<div class="pull-left" id="ticker-announce">';
-            $retval .= get_string('ticker', 'theme_adaptable');
-            $retval .= '</div>';
-            $retval .= '<ul id="ticker">';
-
             for ($i = 1; $i <= $tickercount; $i++) {
-                $msg = '';
                 $textfield = 'tickertext' . $i;
                 $profilefield = 'tickertext' . $i . 'profilefield';
 
@@ -762,11 +756,18 @@ EOT;
 
                 $msg = preg_replace('#\<[\/]{0,1}(p|ul|div|pre|blockquote)\>#', '', $msg);
                 if ($msg == '') {
-                    $msg = get_string('tickerdefault', 'theme_adaptable');
+                    $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
                 }
-            
-                $retval .= '<li>' . format_text($msg, FORMAT_HTML, array('trusted' => true)) . '</li>';
+
+                $retval .= '<div id="ticker-wrap" class="clearfix container">';
+                $retval .= '<div class="pull-left" id="ticker-announce">';
+                $retval .= get_string('ticker', 'theme_adaptable');
+                $retval .= '</div>';
+                $retval .= '<ul id="ticker">';
+                $retval .= format_text($PAGE->theme->settings->$textfield, FORMAT_HTML, array('trusted' => true));
             }
+
+            $retval .= $OUTPUT->get_setting($msg, 'format_html');
             $retval .= '</ul>';
             $retval .= '</div>';
         }
