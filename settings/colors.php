@@ -30,7 +30,6 @@
     $temp->add(new admin_setting_heading('theme_adaptable_color', get_string('colorsettingsheading', 'theme_adaptable'),
                    format_text(get_string('colordesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-
     // Main colors heading.
     $name = 'theme_adaptable/settingsmaincolors';
     $heading = get_string('settingsmaincolors', 'theme_adaptable');
