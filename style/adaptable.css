@@ -300,7 +300,7 @@ div.signuppanel h2 {
 
 #sitetitle {
     padding-left: [[setting:sitetitlepaddingleft]];
-    margin-top: [[setting:sitetitlepaddingtop]];
+    top: [[setting:sitetitlepaddingtop]];
     max-width: [[setting:sitetitlemaxwidth]];
 
     display: inline;
