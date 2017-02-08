@@ -2066,3 +2066,8 @@ div.questionbankwindow.block {
 .video-js .vjs-fullscreen-control::before {
     font-family: videojs;
 }
+
+/* Fix activity restriction dialog (and others?) */
+.moodle-dialogue-content[role="dialog"] .row {
+    margin-left: inherit;
+}
