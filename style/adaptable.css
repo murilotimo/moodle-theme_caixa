@@ -2071,3 +2071,8 @@ div.questionbankwindow.block {
 .moodle-dialogue-content[role="dialog"] .row {
     margin-left: inherit;
 }
+
+/* Edit hover background */
+.moodle-actionmenu.show[data-enhanced] .menu a:hover {
+    background-color: #c0c0c0;
+}
