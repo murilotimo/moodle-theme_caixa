@@ -1999,7 +1999,7 @@ div.questionbankwindow.block {
 }
 
 .path-mod-quiz #mod_quiz_navblock .qnbutton.flagged .thispageholder {
-    background: transparent url([[pix:theme|flag-on]]) 20px 0px no-repeat;
+    background: url([[pix:theme|mod/quiz/flag-on]]) 20px 0px no-repeat;
 }
 
 .path-mod-quiz #mod_quiz_navblock .qnbutton .trafficlight {
