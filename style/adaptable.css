@@ -25,7 +25,8 @@
 */
 
 /* Main colours */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     background: [[setting:backcolor]];
@@ -38,15 +39,23 @@ html, body {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
-    margin: 0px 0px 10px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 10px;
     font-family: [[setting:fontheadername]], sans-serif !important;
     font-weight: [[setting:fontheaderweight]] !important;
     color: [[setting:fontheadercolor]];
 }
 
 /* Other text tags */
-input, button, select, textarea {
+input,
+button,
+select,
+textarea {
     font-size: [[setting:fontsize]];
     color: [[setting:fontcolor]];
     font-family: [[setting:fontname]], sans-serif !important;
@@ -84,8 +93,8 @@ img {
     max-width: 100%;
 }
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
 .dropdown-submenu:hover>a,
 .dropdown-submenu:focus>a {
     background-color: #ffffff;
@@ -123,7 +132,7 @@ fieldset {
 
 @-moz-document url-prefix() {
     textarea {
-        box-sizing: border-box
+        box-sizing: border-box;
     }
 
     textarea[cols] {
@@ -158,8 +167,7 @@ select {
     font-weight: [[setting:fontheaderweight]] !important;
     color: [[setting:fontheadercolor]];
     font-size: 24px;
-    border-bottom: 0px solid #eee;
-    font-weight: bold;
+    border-bottom: 0 solid #eee;
     margin-bottom: 20px;
 }
 
@@ -210,7 +218,7 @@ div.signuppanel h2 {
     height: 25px;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     background: [[setting:headerbkcolor]];
 }
 
@@ -220,8 +228,7 @@ div.signuppanel h2 {
 
 
 #above-header .headermenu,
-#above-header .headermenu a
- {
+#above-header .headermenu a {
     color: [[setting:headertextcolor]] !important;
     font-size: [[setting:topmenufontsize]];
     text-decoration: none;
@@ -241,7 +248,7 @@ div.signuppanel h2 {
 }
 
 #above-header .headermenu .dropdown-menu a {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 #above-header .langdesc {
@@ -254,11 +261,11 @@ div.signuppanel h2 {
 }
 
 #page-header {
-    border-bottom: 0px solid [[setting:maincolor]];
+    border-bottom: none solid [[setting:maincolor]];
     clear: both;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     background: transparent;
-    padding-top: 0px;
+    padding-top: 0;
     min-height: 125px;
     color: [[setting:headertextcolor2]];
 }
@@ -270,8 +277,8 @@ div.signuppanel h2 {
 
 #logo {
     margin-bottom: 2px;
-    margin-left: 0px;
-    margin-top: 0px;
+    margin-left: 0;
+    margin-top: 0;
     max-width: 250px;
 }
 
@@ -279,7 +286,7 @@ div.signuppanel h2 {
     float: left;
     height: 110px;
     width: 250px;
-    margin: 5px 15px 5px 0 ;
+    margin: 5px 15px 5px 0;
 }
 
 #titlecontainer,
@@ -291,7 +298,6 @@ div.signuppanel h2 {
     font-family: [[setting:fonttitlename]], sans-serif !important;
     color: [[setting:fonttitlecolor]] !important;
     font-weight: [[setting:fonttitleweight]] !important;
-
     white-space: nowrap;
     overflow: visible;
     text-overflow: ellipsis;
@@ -302,11 +308,8 @@ div.signuppanel h2 {
     padding-left: [[setting:sitetitlepaddingleft]];
     top: [[setting:sitetitlepaddingtop]];
     max-width: [[setting:sitetitlemaxwidth]];
-
     display: inline;
     height: 110px;
-    left: 200px;
-    min-width: 50%;
     position: relative;
     width: auto;
     left: 20px;
@@ -320,7 +323,7 @@ div.signuppanel h2 {
 #logomoodle {
     display: block;
     margin-bottom: 6px;
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 #coursesearchbox2 {
@@ -333,7 +336,7 @@ div.signuppanel h2 {
 }
 
 #coursesearch2 {
-  padding-top: 23px;
+    padding-top: 23px;
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
@@ -367,15 +370,15 @@ div.signuppanel h2 {
     #logocontainer {
         float: left;
         height: 110px;
-        margin: 5px 15px 5px 0 ;
+        margin: 5px 15px 5px 0;
         clear: both;
     }
 }
 
 .headermenu {
     float: right;
-    padding-top: 0px;
-    padding-right: 0px;
+    padding-top: 0;
+    padding-right: 0;
     font-size: 12px;
     color: #ccc;
     text-align: right;
@@ -393,11 +396,11 @@ div.signuppanel h2 {
 }
 
 .headermenu .usermendrop a:hover {
-text-decoration: none !important;
+    text-decoration: none !important;
 }
 
 .usermendrop span {
-  font-size: [[setting:topmenufontsize]];
+    font-size: [[setting:topmenufontsize]];
     padding-right: 5px;
     height: 30px;
 }
@@ -410,7 +413,7 @@ text-decoration: none !important;
 }
 
 .usermenu2.nav {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     color: [[setting:headertextcolor]];
     font-size: [[setting:topmenufontsize]];
     padding-left: 10px;
@@ -456,13 +459,13 @@ text-decoration: none !important;
     padding: 10px 15px 30px;
     text-align: center;
     border: 1px solid [[setting:marketblockbordercolor]];
-    border-top: 0px;
+    border-top: 0;
 }
 
 .marketimage {
     display: block;
     width: 100%;
-    border: 0px;
+    border: 0;
 }
 
 #marketblocks h3 {
@@ -516,10 +519,10 @@ span.fa-chevron-right.fa {
 #page-footer,
 #page-footer p {
     background: [[setting:footerbkcolor]];
-    margin: 10px 0px 0;
+    margin: 10px 0 0;
     text-align: left;
     color: [[setting:footertextcolor]] !important;
-    border-top: 0px;
+    border-top: 0;
     font-size: 110%;
     word-wrap: break-word;
 }
@@ -597,7 +600,7 @@ span.fa-chevron-right.fa {
 
 .breadcrumb {
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 0;
   padding: 5px;
 }
 
@@ -617,7 +620,7 @@ span.fa-chevron-right.fa {
 }
 
 #page-footer .logininfo {
-    margin: 0px auto 0px;
+    margin: 0 auto 0;
     font-size: 90%;
     width: auto;
 }
@@ -672,12 +675,12 @@ span.fa-chevron-right.fa {
 }
 
 #page-navbar {
-  background: [[setting:activebreadcrumb]];
-  margin: 10px 0px;
+    background: [[setting:activebreadcrumb]];
+    margin: 10px 0;
 }
 
 #page-my-index #page-navbar{
-  display: inline;
+    display: inline;
 }
 
 .navbar .nav-collapse.in {
@@ -688,7 +691,7 @@ span.fa-chevron-right.fa {
     display: block;
     float: left;
     left: 0;
-    margin: 0 0px 0 4px;
+    margin: 0 0 0 4px;
     position: relative;
 }
 
@@ -748,8 +751,9 @@ langmenu a:hover {
 }
 
 .breadcrumb li span.divider {
-  display: none !important;
-}    border-bottom: 0px solid [[setting:maincolor]];
+    display: none !important;
+    border-bottom: 0 solid [[setting:maincolor]];
+}
 
 .breadcrumb-button {
     margin-top: 4px;
@@ -802,7 +806,7 @@ langmenu a:hover {
 }
 
 .pagelayout-redirect #content {
-    width:60%;
+    width: 60%;
     background: #fff;
     margin: 20px auto;
     padding: 1em;
@@ -814,7 +818,7 @@ langmenu a:hover {
 div.redirectmessage {
     width: 60%;
     margin: 10px auto 0 auto;
-    border: 0px solid transparent;
+    border: none solid transparent;
     font-size: 13px;
     background: #fff url([[pix:theme|ajax-loader]]) no-repeat 50% 95%;
     padding: 20px 20px 40px;
@@ -881,7 +885,7 @@ div.redirectmessage {
 }
 
 span2.mceEditor iframe, table.mceLayout2 iframe {
-    max-width:500px !important;
+    max-width: 500px !important;
 }
 
 .editor_atto_menu .open ul.dropdown-menu {
@@ -911,7 +915,7 @@ span2.mceEditor iframe, table.mceLayout2 iframe {
     width: 25px !important;
     height: 25px !important;
     display: inline;
-    margin: 0px 4px 0 0;
+    margin: 0 4px 0 0;
     background-color: #ffffff;
     border-radius: 50%;
 }
@@ -958,7 +962,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 #region-main {
-    margin-top: 0px;
+    margin-top: 0;
     background: [[setting:regionmaincolor]];
 }
 
@@ -976,14 +980,14 @@ input[type="radio"], input[type="checkbox"] {
     }
 
     .navbar .nav > li > a {
-        margin: 0 10px 0 0px !important;
+        margin: 0 10px 0 0 !important;
     }
 
     .flex-direction-nav .flex-next {
-            right: 0px !important;
+            right: 0 !important;
     }
     .flex-direction-nav .flex-prev {
-            left: 0px !important;
+            left: 0 !important;
     }
     .coursebox .panel-body p {
         font-size: 90%;
@@ -1001,7 +1005,7 @@ input[type="radio"], input[type="checkbox"] {
 
 @media (max-width: 768px) {
     #region-main {
-        padding: 0px;
+        padding: 0;
     }
 
     #page-header {
@@ -1015,8 +1019,8 @@ input[type="radio"], input[type="checkbox"] {
     .socialbox{
         display: block;
         clear: both;
-        padding-top:[[setting:socialboxpaddingtopmobile]];
-        padding-top:[[setting:socialboxpaddingbottommobile]];
+        padding-top: [[setting:socialboxpaddingtopmobile]];
+        padding-bottom: [[setting:socialboxpaddingbottommobile]];
     }
 
     #logo {
@@ -1033,25 +1037,28 @@ input[type="radio"], input[type="checkbox"] {
 
     .headermenu2 {
         float: none;
-        padding: 10px 0px 0px;
+        padding: 10px 0 0;
         text-align: center;
         clear: both;
     }
+
     .flex-caption {
         width: 100% !important;
-        padding: 5px 0px !important;
+        padding: 5px 0 !important;
         font-size: 90% !important;
     }
+
     .flex-caption p {
         font-size: 90% !important;
-        margin: 0px 5px !important;
+        margin: 0 5px !important;
         margin-bottom: 5px !important;
         line-height: 1.4em;
     }
+
     .flex-caption h3 {
         font-size: 1.1em !important;
         line-height: 2em;
-        margin: 0px 5px !important;
+        margin: 0 5px !important;
     }
 
     a.submit {
@@ -1062,11 +1069,11 @@ input[type="radio"], input[type="checkbox"] {
     }
 
     .block .header {
-        margin: 0px !important;
+        margin: 0 !important;
     }
 
     #page-footer {
-        margin: 50px 0px 0px;
+        margin: 50px 0 0;
     }
 
     #edittingbutton a,
@@ -1075,13 +1082,13 @@ input[type="radio"], input[type="checkbox"] {
     }
 
     .navbar .nav > li > a {
-    margin: 0 10px 0 4px !important;
+        margin: 0 10px 0 4px !important;
     }
 
     .nav .dropdown-menu li a:hover,
     .navbar .nav > li > a:hover {
-        background: rgba(255,255,255,.1);
-        color: [[setting:fontcolor]]; !important;
+        background: rgba(255, 255, 255, .1);
+        color: [[setting:fontcolor]] !important;
     }
 
     div.navbar {
@@ -1104,6 +1111,7 @@ input[type="radio"], input[type="checkbox"] {
         float: none;
         width: auto;
     }
+
     .message .messagearea {
         border-left: 0 none;
         float: none;
@@ -1111,19 +1119,18 @@ input[type="radio"], input[type="checkbox"] {
         padding-left: 1%;
         width: auto;
     }
+
     .navbar .nav-collapse.in > .nav > li > a {
         border-radius: 0;
-        padding-left: 0px !important;
+        padding-left: 0 !important;
     }
-
-
 
     #page-navbar.span12 {
         background: transparent;
     }
 
     a.dropdown-toggle {
-        height: 40px; !important
+        height: 38px !important! 
     }
 
     .userhead{
@@ -1131,19 +1138,17 @@ input[type="radio"], input[type="checkbox"] {
     }
 }
 
-}
-
 @media (max-width: 520px) {
     .flex-caption {
         width: auto !important;
-        padding: 5px 0px !important;
+        padding: 5px 0 !important;
         position: relative !important;
         margin-top: -1px !important;
         background: #000 !important;
     }
 
     #page-content {
-        padding: 0 0px;
+        padding: 0;
         width: auto;
     }
 
@@ -1206,7 +1211,7 @@ a.carousel-control {
 }
 
 .alert .close {
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .customalert {
@@ -1244,7 +1249,6 @@ a.carousel-control {
 /* admin errors */
 .adminerror {
     margin-top: 50px;
-
     background-color: #f2dede;
     border-color: #ebcccc;
     color: #a94442;
@@ -1285,7 +1289,7 @@ a.carousel-control {
 
 .navbar .forumsearch input[type=text] {
     height: 16px !important;
-    margin-bottom:4px !important;
+    margin-bottom: 4px !important;
 }
 
 #edittingbutton .helptooltip a {
@@ -1346,7 +1350,7 @@ a.carousel-control {
 }
 
 .modal-backdrop.fade {
-    opacity: 0
+    opacity: 0;
 }
 
 .modal-backdrop,
@@ -1364,7 +1368,6 @@ a.carousel-control {
     margin-left: -280px;
     background-color: #fff;
     border: 1px solid #999;
-    border: 1px solid rgba(0, 0, 0, .3);
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
@@ -1469,7 +1472,7 @@ a.carousel-control {
 }
 
 #gridshadebox_content ul.gtopics {
-  margin: 12px 1px 0px 1px;
+  margin: 12px 1px 0 1px;
 }
 
 .user-enroller-panel {
@@ -1483,14 +1486,13 @@ a.carousel-control {
 #gridshadebox_content {
   background-color: #fff;
   border: 1px solid #999;
-  border: 1px solid rgba(0,0,0,0.3);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
   outline: 0;
-  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-  box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box;
@@ -1504,7 +1506,7 @@ a.carousel-control {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
@@ -1734,8 +1736,8 @@ div.questionbankwindow.block {
   text-align: center;
   color: [[setting:rendereroverlayfontcolor]] !important;
   padding: 15px;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   display: none;
 }
 
@@ -1785,9 +1787,9 @@ div.questionbankwindow.block {
   float: none;
   display: block;
   width: 90%;
-  margin: 0px auto 15px;
-  padding-left: 0px;
-  padding-right: 0px;
+  margin: 0 auto 15px;
+  padding-left: 0;
+  padding-right: 0;
   border: 1px solid #eee !important;
   box-shadow: none;
   font-weight: 300;
@@ -1837,34 +1839,30 @@ div.questionbankwindow.block {
 .gradingform_guide.editor .addcriterion input,
 .gradingform_guide.editor .addcomment input {
     background: #00aeef;
-    display:block;
-    font-weight:bold;
-    text-decoration:none;
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .gradingform_guide.editor .criterion .controls .delete input {
-    width:20px;
-    height:16px;
+    width: 20px;
+    height: 16px;
     background: transparent url([[pix:t/delete]]) no-repeat center top;
-    margin-top:4px;
+    margin-top: 4px;
 }
 
 .gradingform_guide.editor .moveup input {
-    width:20px;
-    height:15px;
+    width: 20px;
+    height: 15px;
     background: transparent url([[pix:t/up]]) no-repeat center top;
-    margin-top:4px;
+    margin-top: 4px;
 }
 
 .gradingform_guide.editor .movedown input {
-    width:20px;
-    height:15px;
+    width: 20px;
+    height: 15px;
     background: transparent url([[pix:t/down]]) no-repeat center top;
-    margin-top:4px;
-}
-
-.gradingform_guide.editor .moveup input:hover {
-    background: #00aeef url([[pix:t/up]]) no-repeat center top;
+    margin-top: 4px;
 }
 
 .gradingform_guide.editor .movedown input:hover {
@@ -1925,7 +1923,6 @@ div.questionbankwindow.block {
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
-
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -1952,7 +1949,7 @@ div.questionbankwindow.block {
 }
 
 .hidden-blocks {
-  background: rgba(255, 154, 154,0.2);
+  background: rgba(255, 154, 154, 0.2);
   padding: 7px 7px;
 }
 
@@ -1965,7 +1962,7 @@ div.questionbankwindow.block {
 }
 
 .hidden-blocks .block-region .block .header {
-  border-top: 0px;
+  border-top: 0;
 }
 
 /* Quiz navigation. */
@@ -2005,7 +2002,7 @@ div.questionbankwindow.block {
 }
 
 .path-mod-quiz #mod_quiz_navblock .qnbutton.flagged .thispageholder {
-    background: url([[pix:theme|mod/quiz/flag-on]]) 20px 0px no-repeat;
+    background: url([[pix:theme|mod/quiz/flag-on]]) 20px 0 no-repeat;
 }
 
 .path-mod-quiz #mod_quiz_navblock .qnbutton .trafficlight {
