@@ -1,6 +1,9 @@
 Changes in version 1.3.1.2
 ---------------------------------------
 Fixed issues:
+- #629: Remove Legacy BCU Colors
+- #628: Site Title DIsplay Rules Incorrect
+- #622: class dimmed to invisible courses
 - #620: Add Catalan language pack in Adaptable by default
 - #618: Flagging questions in quiz does not work - "flag-on" image missing
 - #615: Tile settings not respected
