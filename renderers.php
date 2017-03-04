@@ -1401,7 +1401,6 @@ EOT;
     public function get_logo_title() {
         global $PAGE, $COURSE, $CFG, $SITE, $OUTPUT;
         $retval = '';
-        $display = $PAGE->theme->settings->sitetitle;
 
         $div = '<div id="titlecontainer" class="pull-left">';
         $retval .= $div;
@@ -1416,11 +1415,9 @@ EOT;
             $retval .= '<div style="height: 20px"></div>';
         }
 
-        if ($display == 'default') {
-            // Default moodle title.
-            if ($COURSE->id > 1) {
-                // Course Title.
-                switch ($PAGE->theme->settings->enableheading) {
+        // if course id is greater than one we display course title
+        if ($COURSE->id > 1) {
+            switch ($PAGE->theme->settings->enableheading) {
                     case 'fullname':
                         // Full Course Name.
                         $retval .= '<div id="sitetitle">' . format_string($COURSE->fullname) . '</div>';
@@ -1435,26 +1432,35 @@ EOT;
                         // None.
                         $retval .= '<div id="sitetitle"></div>';
                         break;
-                }
-            } else {
-                // Site Title.
-                $retval .= '<div id="sitetitle">' . $SITE->shortname . '</div>';
-            }
-        } else {
-            if ($display == 'custom') {
-                // Custom title using html output to allow multi-lang.
-                if (!empty($PAGE->theme->settings->sitetitletext)) {
-                    $header = theme_adaptable_remove_site_fullname($PAGE->theme->settings->sitetitletext);
-                    $sitetitlehtml = $PAGE->theme->settings->sitetitletext;
-                    $PAGE->set_heading($header);
-
-                    $retval .= '<div id="sitetitle">' . format_text($sitetitlehtml, FORMAT_HTML) . '</div>';
-                }
             }
         }
 
-        $retval .= '</div>';
+        // if course id is one we display the site title
+        if ($COURSE->id == 1) {
+            switch ($PAGE->theme->settings->sitetitle) {
+                    case 'default':
+                        // Default site title.
+                        $retval .= '<div id="sitetitle">' . format_string($SITE->shortname) . '</div>';
+                        break;
 
+                    case 'custom':
+                        // Custom site title.
+                        if (!empty($PAGE->theme->settings->sitetitletext)) {
+                            $header = theme_adaptable_remove_site_fullname($PAGE->theme->settings->sitetitletext);
+                            $sitetitlehtml = $PAGE->theme->settings->sitetitletext;
+                            $header = format_string($header);
+                            $PAGE->set_heading($header);
+
+                            $retval .= '<div id="sitetitle">' . format_text($sitetitlehtml, FORMAT_HTML) . '</div>';
+                        }
+
+                    default:
+                        // None.
+                        $retval .= '<div id="sitetitle"></div>';
+                        break;
+            }
+        }
+        $retval .= '</div>';
         return $retval;
     }
 
