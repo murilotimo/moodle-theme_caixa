@@ -42,7 +42,7 @@
     $title = get_string('sectionheadingcolor', 'theme_adaptable');
     $description = get_string('sectionheadingcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#5f588a', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
@@ -51,7 +51,7 @@
     $title = get_string('currentcolor', 'theme_adaptable');
     $description = get_string('currentcolordesc', 'theme_adaptable');
     $previewconfig = null;
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#d9edf7', $previewconfig);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#d2f2ef', $previewconfig);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
