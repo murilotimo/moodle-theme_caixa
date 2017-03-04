@@ -1,3 +1,19 @@
+Changes in version 1.3.1.2
+---------------------------------------
+Fixed issues:
+- #620: Add Catalan language pack in Adaptable by default
+- #618: Flagging questions in quiz does not work - "flag-on" image missing
+- #615: Tile settings not respected
+- #613: Edit dropdown background color
+- #612: Update layout.png
+- #611: Fix cross-browser issue in file Picker
+- #610: Replace README.txt by README.md
+- #609: Add multilang support for custom header menu
+- #603: Hide blocks move the blocks instead hide
+- #602: Update pace.min.js
+- #597: Fix Bug rendering divs in news ticker when multiple tickers in use
+
+
 Changes in version 1.3.1.1 (2017012300)
 ---------------------------------------
 Fixed issues:
@@ -10,16 +26,16 @@ Fixed issues:
 - #600: Fix course settings translation in Spanish
 - #599: Images not showing in teachers listing students qualifications
 - #598: Video player button not displayed in moodle 3.2
-- #596: Section name do not apply the colour in topics format 
-- #595: Buttons do not apply default text colour 
-- #592: In a forum the participant image is streched 
-- #591: Button message text color the same as button color 
-- #587: Infobox 2 is not applying HTML format 
-- #580: Remove duplicated font block header setting 
-- #579: Social icons size is not set changing the setting 
-- #578: buttontextcolor hard coded in button.css 
-- #575: Force headertextcolor2 in socialbox 
-- #574: Sitetitle overflow not allow displaying the title 
+- #596: Section name do not apply the colour in topics format
+- #595: Buttons do not apply default text colour
+- #592: In a forum the participant image is streched
+- #591: Button message text color the same as button color
+- #587: Infobox 2 is not applying HTML format
+- #580: Remove duplicated font block header setting
+- #579: Social icons size is not set changing the setting
+- #578: buttontextcolor hard coded in button.css
+- #575: Force headertextcolor2 in socialbox
+- #574: Sitetitle overflow not allow displaying the title
 - #573: Login button flickering
 
 
@@ -28,10 +44,10 @@ Changes in version 1.3 (2016121300)
 New features:
 - Avatar beside user name in the navbar
 - Settings to modify the messages pop-up (version 3.1 or lower)
-- Settings for moodle block header 
+- Settings for moodle block header
 - Spanish translation will be included in the theme from now
-- Add new Quiz style 
-- Improve error message output 
+- Add new Quiz style
+- Improve error message output
 - Top message for Adaptable non-stable versions or outdated moodle versions (2.9 or older)
 
 
@@ -39,18 +55,18 @@ Fixed issues:
 - #572: Fix navbar tabs color and background-color
 - #567: Fix line-height in block header
 - #562: Unread messages are not displayed in front page and the messages page is empty
-- #561: Text alignment restoring course 
-- #560: Left padding in backup / restore course page 
-- #559: Remove empty h3 tags in footer blocks 
-- #558: Breadcrumb syntax error 
-- #557: Remove title attribute from footer h3 headings 
-- #555: Fix disabled button text colour 
-- #552: Lang menu hide dropdown when hover the cursor 
-- #450: Layout with left-positioned blocks is not aligned 
-- #422: Infoblock and ticker are hid behind the header 
-- #356: blockheaderbackgroundcolor and blockheadercolor wrong spanish translation 
-- #289: Marketing Block layout tool preview not working 
-- #35: Smoother show / hide blocks with left align blocks 
+- #561: Text alignment restoring course
+- #560: Left padding in backup / restore course page
+- #559: Remove empty h3 tags in footer blocks
+- #558: Breadcrumb syntax error
+- #557: Remove title attribute from footer h3 headings
+- #555: Fix disabled button text colour
+- #552: Lang menu hide dropdown when hover the cursor
+- #450: Layout with left-positioned blocks is not aligned
+- #422: Infoblock and ticker are hid behind the header
+- #356: blockheaderbackgroundcolor and blockheadercolor wrong spanish translation
+- #289: Marketing Block layout tool preview not working
+- #35: Smoother show / hide blocks with left align blocks
 
 
 Changes in version 1.2.4.2 (2016102300)
@@ -58,12 +74,12 @@ Changes in version 1.2.4.2 (2016102300)
 Warning: This is the last minor release compatible with moodle 2.9
 
 Fixed issues:
-- #527: Reset course and login blocks width 
-- #526: Left padding in main-region 
-- #521: Breadcrumbs do not display last item 
+- #527: Reset course and login blocks width
+- #526: Left padding in main-region
+- #521: Breadcrumbs do not display last item
 - #517: Student pictures narrowed in some listings
-- #516: Notice: Undefined property: stdClass: 
-- #515: Slider type 1 display caption background when empty 
+- #516: Notice: Undefined property: stdClass:
+- #515: Slider type 1 display caption background when empty
 
 Also includes some improvements in the mobile header but still working to fix some issues
 
@@ -85,39 +101,39 @@ Warning: This is the last minor release compatible with moodle 2.9
 New features:
 - Updated Google Fonts list
 - Setting: Text selection colours
-- Setting: Emoticons size 
+- Setting: Emoticons size
 - Setting: Piwik Analytics - Thanks to COMETE (Paris Ouest University)
 - Setting: Navbar Menu hover colour
 
 Fixed issues:
-- #508: Integrate Analytics in one page 
-- #507: Emoticon size 
-- #504: Remove hardcoded strings in settings 
-- #501: Fail to embed a video into marketing blocks 
-- #500: Cannot get beyond New settings - Header on fresh install of moodle 3.1 with Adaptable in the theme directory 
-- #499: User menu error in user ID in "My Blog" item 
-- #497: Categories list on Front Page 
-- #494: Definition of from35to100percent broken 
-- #493: Inheriting from Adaptable: Hardcoded settings 
-- #492: Textbox for email digest type in forums is too narrow 
-- #491: Extraneous </div> in frontpage 
-- #490: Heading / logo alignment 
-- #489: Default titling does nothing without image 
-- #487: Full login field label doesn't fit into its box and is cut from the end 
-- #486: Logo is not responsive 
-- #485: Option to have Search bar and Social Icons? 
-- #484: Username placeholder uses not localized string for hint 
-- #482: Untidy layout of the login screen 
-- #481: Editor can't upload images in some settings sections 
-- #480: Disable login button 
-- #479: Mess with the front page layout when blocks are on the LEFT side 
-- #478: Distorted front page layout before login 
-- #476: Block region builder settings doesn't appear 
-- #475: Navbar disappears when moving away from first page after login 
-- #474: Convert 'course' string to theme string 
-- #473: Add logo to default site title 
-- #472: Site Title Maximum Width values up to 100% 
-- #471: Docking blocks with transparent background 
+- #508: Integrate Analytics in one page
+- #507: Emoticon size
+- #504: Remove hardcoded strings in settings
+- #501: Fail to embed a video into marketing blocks
+- #500: Cannot get beyond New settings - Header on fresh install of moodle 3.1 with Adaptable in the theme directory
+- #499: User menu error in user ID in "My Blog" item
+- #497: Categories list on Front Page
+- #494: Definition of from35to100percent broken
+- #493: Inheriting from Adaptable: Hardcoded settings
+- #492: Textbox for email digest type in forums is too narrow
+- #491: Extraneous </div> in frontpage
+- #490: Heading / logo alignment
+- #489: Default titling does nothing without image
+- #487: Full login field label doesn't fit into its box and is cut from the end
+- #486: Logo is not responsive
+- #485: Option to have Search bar and Social Icons?
+- #484: Username placeholder uses not localized string for hint
+- #482: Untidy layout of the login screen
+- #481: Editor can't upload images in some settings sections
+- #480: Disable login button
+- #479: Mess with the front page layout when blocks are on the LEFT side
+- #478: Distorted front page layout before login
+- #476: Block region builder settings doesn't appear
+- #475: Navbar disappears when moving away from first page after login
+- #474: Convert 'course' string to theme string
+- #473: Add logo to default site title
+- #472: Site Title Maximum Width values up to 100%
+- #471: Docking blocks with transparent background
 - #419: Navbar caching "this course" list at site level
 
 
@@ -131,13 +147,13 @@ Changes in version 1.2.3 (2016052900)
 
 Changes in version 1.2.2 (2016050900)
 -------------------------------------
-- #449: 'People' item in 'This course' menu is not displayed in local language 
-- #446: Failed to control 'Course Full Name' / 'Course Short Name' setting for the breadcrumb 
-- #445: Header height has a 'hidden' limit 
-- #444: Neither site title nor course title in the header 
-- #441: Multi-lang content not displayed in the marketing blocks 
-- #440: Preferences menu item enable by default 
-- #429: Teacher Style front Page Tiles 
+- #449: 'People' item in 'This course' menu is not displayed in local language
+- #446: Failed to control 'Course Full Name' / 'Course Short Name' setting for the breadcrumb
+- #445: Header height has a 'hidden' limit
+- #444: Neither site title nor course title in the header
+- #441: Multi-lang content not displayed in the marketing blocks
+- #440: Preferences menu item enable by default
+- #429: Teacher Style front Page Tiles
 
 
 Changes in version 1.2.1 (2016031800)
