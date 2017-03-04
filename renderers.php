@@ -751,23 +751,21 @@ EOT;
                 }
 
                 if ($access) {
-                    $msg .= $PAGE->theme->settings->$textfield;
+                    $msg .= format_text($PAGE->theme->settings->$textfield, FORMAT_HTML, array('trusted' => true));
                 }
-
-                $msg = preg_replace('#\<[\/]{0,1}(p|ul|div|pre|blockquote)\>#', '', $msg);
-                if ($msg == '') {
-                    $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
-                }
-
-                $retval .= '<div id="ticker-wrap" class="clearfix container">';
-                $retval .= '<div class="pull-left" id="ticker-announce">';
-                $retval .= get_string('ticker', 'theme_adaptable');
-                $retval .= '</div>';
-                $retval .= '<ul id="ticker">';
-                $retval .= format_text($PAGE->theme->settings->$textfield, FORMAT_HTML, array('trusted' => true));
             }
 
-            $retval .= $OUTPUT->get_setting($msg, 'format_html');
+            $msg = preg_replace('#\<[\/]{0,1}(l|ul|div|pre|blockquote)\>#', '', $msg);
+            if ($msg == '') {
+                $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
+            }
+
+            $retval .= '<div id="ticker-wrap" class="clearfix container">';
+            $retval .= '<div class="pull-left" id="ticker-announce">';
+            $retval .= get_string('ticker', 'theme_adaptable');
+            $retval .= '</div>';
+            $retval .= '<ul id="ticker">';
+            $retval .= $msg;
             $retval .= '</ul>';
             $retval .= '</div>';
         }
