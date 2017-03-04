@@ -690,17 +690,8 @@ $string['fonttitleweightdesc'] = 'Establece el grueso de la fuente del título d
 $string['fonttitlesize'] = 'Tamaño de la fuente del título del sitio';
 $string['fonttitlesizedesc'] = 'Tamaño de la fuente del título del sitio situado en la cabecera. Introducir un valor decimal, por ejemplo: 24px';
 
-$string['fonttitlenamecourse'] = 'Fuente del título del curso';
-$string['fonttitlenamecoursedesc'] = 'Selecciona la fuente de <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> para el título del curso.';
-
 $string['fonttitlecolorcourse'] = 'Color de la fuente del título del curso';
 $string['fonttitlecolorcoursedesc'] = 'Establece el color de la fuente usada en el título del curso.';
-
-$string['fonttitleweightcourse'] = 'Grueso de la fuente del título del curso';
-$string['fonttitleweightcoursedesc'] = 'Establece el grueso de la fuente usada en el título del curso. Introducir un valor entre 100 y 900 dependiendo de la fuente utilizada.';
-
-$string['fonttitlesizecourse'] = 'Tamaño de la fuente del título del curso';
-$string['fonttitlesizecoursedesc'] = 'Establece el tamaño de la fuente del título del curso. Introducir un valor decimal, por ejemplo: 24px';
 
 $string['fontsubset'] = 'Juego de caracteres de Google Fonts';
 $string['fontsubsetdesc'] = 'Seleccionar el juego de caracteres de Google Fonts a usar además del latín ya incluido por defecto. Se aplicará a toda las fuentes seleccionadas.';
