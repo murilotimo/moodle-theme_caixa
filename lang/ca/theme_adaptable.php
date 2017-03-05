@@ -922,6 +922,13 @@ $string['course'] = 'Curs';
 
 
 // Alerts **********************************************************.
+// Alert Hiden Course
+$string['alerthiddencourse'] = 'advertència suposat ocult';
+$string['alerthiddencoursedesc'] = 'alerta en pantalla pàgina del curs si s\'oculta';
+
+$string['alerthiddencoursetext-1'] = 'Aquest curs està oculta i no es pot accedir pels estudiants. ';
+$string['alerthiddencoursetext-2'] = 'Feu clic aquí per actualitzar la configuració de';
+
 // Alert Box Enable.
 $string['enablealert'] = 'Activar Alerta {$a}';
 $string['enablealertdesc'] = 'Activar l´alerta {$a}.';
@@ -945,6 +952,8 @@ $string['enablealertstriptagsdesc'] = 'Si s´activa, s´eliminaran les etiquetes
 $string['alertkeivalue'] = 'Clau d´identificació de l´Alerta';
 $string['alertkeivalue_details'] = 'Aquesta clau identifica l´alerta i permet el control de l´eliminació de l´alerta a la pantalla per part de l´usuari. Si es canvia la clau, els usuaris tornaran a veure l´alerta de nou.';
 
+$string['alertsettingscourse'] = 'Configuració d\'alertes de golf';
+
 $string['alertsettingsgeneral'] = 'Configuració Alertes';
 $string['alertsettings'] = 'Alerta {$a}';
 
@@ -955,6 +964,9 @@ $string['alertsettingsheading'] = 'Personalitzar les Alertes';
 $string['alertdesc'] = 'Introdueix i personalitza el text de les Alertes mostrades a la part superior de la pantalla. És possible crear més d´una per mostrar-se a diferents tipus d´usuaris. També existeix l´opció de mostrar les alertes a la pàgina inicial i a les pàgines dels cursos.';
 
 // Alerts Tipes.
+$string['alertdisabled'] = 'discapacitat';
+$string['alertdisabledesc'] = 'Desactivar aquesta alerta';
+
 $string['alertinfo'] = 'Info';
 $string['alertinfodesc'] = 'Mostra un missatge d´informació.';
 

@@ -920,6 +920,13 @@ $string['course'] = 'Course';
 
 
 // Alerts **********************************************************.
+// Alert Hiden Course
+$string['alerthiddencourse'] = 'Hidden course warning';
+$string['alerthiddencoursedesc'] = 'Display alert in course page if it is hidden';
+
+$string['alerthiddencoursetext-1'] = 'This course is hidden and cannot be accessed by students. ';
+$string['alerthiddencoursetext-2'] = 'Click here to update settings';
+
 // Alert Box Enable.
 $string['enablealert'] = 'Enable Alert Box {$a}';
 $string['enablealertdesc'] = 'Enable Alert Box {$a}';
@@ -943,6 +950,8 @@ $string['enablealertstriptagsdesc'] = 'Enable will clean up alert messages autom
 $string['alertkeyvalue'] = 'Alert Key';
 $string['alertkeyvalue_details'] = 'The key that identifies this alert, from previous alerts. If you change this, all users who have dismissed the alert previously will see it again. If you change the alert, you will likely want to change this to ensure all users see it.';
 
+$string['alertsettingscourse'] = 'Course Alert Settings';
+
 $string['alertsettingsgeneral'] = 'General Alert Settings';
 $string['alertsettings'] = 'Alert Box {$a}';
 
@@ -950,9 +959,12 @@ $string['alertcount'] = 'Alert count';
 $string['alertcountdesc'] = 'The number of alerts to show in the edit area below.';
 
 $string['alertsettingsheading'] = 'Customize top Alert Box. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
-$string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only.';
+$string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only. <br /><br /><strong>Note:</strong> it is now also possible to display alerts within course pages to warn teachers that courses are hidden.';
 
 // Alerts Types.
+$string['alertdisabled'] = 'disabled';
+$string['alertdisabledesc'] = 'Disable this alert';
+
 $string['alertinfo'] = 'Info';
 $string['alertinfodesc'] = 'Display information in the Alert Box';
 
