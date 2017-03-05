@@ -755,7 +755,7 @@ EOT;
                 }
             }
 
-            $msg = preg_replace('#\<[\/]{0,1}(l|ul|div|pre|blockquote)\>#', '', $msg);
+            $msg = preg_replace('#\<[\/]{0,1}(li|ul|div|pre|blockquote)\>#', '', $msg);
             if ($msg == '') {
                 $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
             }
