@@ -757,7 +757,7 @@ EOT;
 
             $msg = preg_replace('#\<[\/]{0,1}(li|ul|div|pre|blockquote)\>#', '', $msg);
             if ($msg == '') {
-                $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
+                $msg = '<p>' . get_string('tickerdefault', 'theme_adaptable') . '</p>';
             }
 
             $retval .= '<div id="ticker-wrap" class="clearfix container">';
