@@ -926,6 +926,9 @@ $string['course'] = 'Course';
 $string['alerthiddencourse'] = 'Advertencia del curso oculto';
 $string['alerthiddencoursedesc'] = 'Mostrar alerta en la página del curso si está oculta';
 
+$string['alerthiddencoursetext-1'] = 'Este curso está oculto y no puede ser accedido por los estudiantes. ';
+$string['alerthiddencoursetext-2'] = 'Haga clic aquí para actualizar la configuración';
+
 // Alert Box Enable.
 $string['enablealert'] = 'Activar Alerta {$a}';
 $string['enablealertdesc'] = 'Activar la alerta {$a}.';
