@@ -3,6 +3,7 @@ Changes in version 1.3.1.2
 Fixed issues:
 - #629: Remove Legacy BCU Colors
 - #628: Site Title DIsplay Rules Incorrect
+- #626: Quiz navigation block do not display question number
 - #622: class dimmed to invisible courses
 - #620: Add Catalan language pack in Adaptable by default
 - #618: Flagging questions in quiz does not work - "flag-on" image missing
@@ -15,6 +16,7 @@ Fixed issues:
 - #603: Hide blocks move the blocks instead hide
 - #602: Update pace.min.js
 - #597: Fix Bug rendering divs in news ticker when multiple tickers in use
+- #597: Add alerts for hidden courses
 
 
 Changes in version 1.3.1.1 (2017012300)
