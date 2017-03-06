@@ -2076,7 +2076,7 @@ div.questionbankwindow.block {
     margin-left: inherit;
 }
 
-/* Edit dropdown hover background */
+/* Edit hover dropdown background */
 .moodle-actionmenu.show[data-enhanced] .menu a:hover {
     background-color: #c0c0c0;
 }
