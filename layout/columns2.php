@@ -46,6 +46,7 @@ if ($PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
         echo '<section id="region-main" class="span9" style="margin: 0;">';
     }
 }
+            echo $OUTPUT->get_course_alerts();
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();

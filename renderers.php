@@ -205,6 +205,34 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 
     /**
+     * Displays notices to alert teachers of problems with course such as being hidden
+     */
+    public function get_course_alerts() {
+        global $PAGE, $CFG, $COURSE;
+        $retval = '';
+        $warninghidden = $PAGE->theme->settings->alerthiddencourse;
+
+        if ($warninghidden != 'disabled'){
+            if ($this->page->course->visible == 0) {
+                $alerttext = get_string('alerthiddencoursetext-1', 'theme_adaptable')
+                    . '<a href="' . $CFG->wwwroot . '/course/edit.php?id=' . $COURSE->id . '">'
+                    . get_string('alerthiddencoursetext-2', 'theme_adaptable') . '</a>';
+
+                $alerttype = $warninghidden;
+                $alertindex = 'hiddencoursealert-' . $COURSE->id;
+                $alertkey = $alertindex; // these keys are never reset so can use fixed value
+
+                $retval = $this->get_alert_message($alerttext, $alerttype, $alertindex, $alertkey);
+            }
+        }
+
+        // ToDo - add capability check for editors and add checks for missing summary and course image
+        // if (empty($COURSE->summary)) { echo "course summary empty"; }
+
+        return $retval;
+    }
+
+    /**
      * Checks the users access to alerts
      * @param string $access the kind of access rule applied
      * @param string $profilefield the custom profile filed to check

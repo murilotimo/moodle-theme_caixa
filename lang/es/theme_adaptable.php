@@ -922,6 +922,13 @@ $string['course'] = 'Course';
 
 
 // Alerts **********************************************************.
+// Alert Hiden Course
+$string['alerthiddencourse'] = 'Advertencia del curso oculto';
+$string['alerthiddencoursedesc'] = 'Mostrar alerta en la página del curso si está oculta';
+
+$string['alerthiddencoursetext-1'] = 'Este curso está oculto y no puede ser accedido por los estudiantes. ';
+$string['alerthiddencoursetext-2'] = 'Haga clic aquí para actualizar la configuración';
+
 // Alert Box Enable.
 $string['enablealert'] = 'Activar Alerta {$a}';
 $string['enablealertdesc'] = 'Activar la alerta {$a}.';
@@ -945,6 +952,8 @@ $string['enablealertstriptagsdesc'] = 'Si se activa, se eliminarán las etiqueta
 $string['alertkeyvalue'] = 'Clave de identificación de la Alerta';
 $string['alertkeyvalue_details'] = 'Esta clave identifica la alerta y permite el control de la eliminación de la alerta en la pantalla por parte del usuario. Si se cambia la clave, los usuarios volverán a ver la alerta de nuevo.';
 
+$string['alertsettingscourse'] = 'Configuración de la alerta de curso';
+
 $string['alertsettingsgeneral'] = 'Configuración Alertas';
 $string['alertsettings'] = 'Alerta {$a}';
 
@@ -955,6 +964,9 @@ $string['alertsettingsheading'] = 'Personalizar las Alertas';
 $string['alertdesc'] = 'Introduce y personaliza el texto de las Alertas mostradas en la parte superior de la pantalla. Es posible crear más de una para mostrarse a diferentes tipos de usuarios. También existe la opción de mostrar las alertas en la página inicial y en las páginas de los cursos.';
 
 // Alerts Types.
+$string['alertdisabled'] = 'discapacitado';
+$string['alertdisabledesc'] = 'Desactivar esta alerta';
+
 $string['alertinfo'] = 'Info';
 $string['alertinfodesc'] = 'Muestra un mensaje de información.';
 
