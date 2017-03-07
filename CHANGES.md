@@ -1,6 +1,7 @@
 Changes in version 1.3.1.2
 ---------------------------------------
 Fixed issues:
+- #636: Add settings page to style alerts - contributed by COMETE (Paris Nanterre University)
 - #635: Improve User Menu
 - #631: Issue in CA Language Pack
 - #629: Remove Legacy BCU Colors

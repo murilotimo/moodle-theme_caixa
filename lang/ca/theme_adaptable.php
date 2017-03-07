@@ -119,6 +119,7 @@ $string['analyticssettings'] = 'Analítica Web';
 // Admin Menu Strings.
 $string['blocksettings'] = 'Blocs';
 $string['frontpagealertsettings'] = 'Alertes';
+$string['frontpagealertboxssettings'] = 'Configuració del quadre d'alerta';
 $string['frontpageblockregionsettings'] = 'Creador de regions per a blocs';
 $string['frontpageblocksettings'] = 'Blocs promocionals';
 $string['frontpagetickersettings'] = 'Anuncis';
@@ -1007,10 +1008,41 @@ $string['alertaccessdesc'] = 'Estableix la visibilitat de l'Alerta segons el seu
 $string['beta'] = 'VERSIÓ EN DESENVOLUPAMEN. NO UTILITZAR EN LLOCS EN PRODUCCIÓ';
 $string['deprecated'] = 'VERSIÓ DE MOODLE OBSOLETA. NO UTILITZAR ADAPTABLE EN AQUEST LLOC';
 
+// Alerts Colors****************************************************.
+$string['alertcolorsheading'] = 'Personalitzar top Caixes d'alerta';
+$string['alertcolorsheadingdesc'] = 'establir colors i la icona.';
+
+$string['alertcolorinfo'] = 'informació de color';
+$string['alertcolorinfodesc'] = 'El color de la icona de les caixes d'alerta Tipus d'Informació';
+$string['alertbackgroundcolorinfo'] = 'Informació de color de fons';
+$string['alertbackgroundcolorinfodesc'] = 'color de fons de les caixes d'alerta Tipus d'Informació';
+$string['alertbordercolorinfo'] = 'Informació Color de la vora';
+$string['alertbordercolorinfodesc'] = 'Color de la vora de les caixes d'alerta Tipus d'Informació';
+$string['alerticoninfo'] = 'informació d'icones';
+$string['alerticoninfodesc'] = 'Ajusteu el<a href="http://fortawesome.github.io/Font-Awesome/icons/"> Font Awesome icona</a> per a ser utilitzats en esdeveniments en caixes d'alerta de tipus Info. Introduïu el nom de la icona sense el fa- prefix.';
+
+$string['alertcolorwarning'] = 'Notes de color';
+$string['alertcolorwarningdesc'] = 'El color de la icona de les caixes d'alerta tipus d'advertència';
+$string['alertbackgroundcolorwarning'] = 'Color de fons d'advertència';
+$string['alertbackgroundcolorwarningdesc'] = 'color de fons de les caixes d'alerta tipus d'advertència';
+$string['alertbordercolorwarning'] = 'Notes Color de la vora';
+$string['alertbordercolorwarningdesc'] = 'Color de la vora de les caixes d'alerta tipus d'advertència';
+$string['alerticonwarning'] = 'Icona d'alerta';
+$string['alerticonwarningdesc'] = 'Ajusteu el<a href="http://fortawesome.github.io/Font-Awesome/icons/"> Font Awesome icona</a> per a ser utilitzats en esdeveniments en caixes d'alerta tipus d'advertiment. Introduïu el nom de la icona sense el fa- prefix.';
+
+$string['alertcolorsuccess'] = 'Anunci de color';
+$string['alertcolorsuccessdesc'] = 'El color de la icona de les caixes d'alerta tipus d'anunci';
+$string['alertbackgroundcolorsuccess'] = 'Anunci de color de fons';
+$string['alertbackgroundcolorsuccessdesc'] = 'color de fons de les caixes d'alerta tipus d'anunci';
+$string['alertbordercolorsuccess'] = 'Anunci Color de la vora';
+$string['alertbordercolorsuccessdesc'] = 'Color de la vora de les caixes d'alerta tipus d'anunci';
+$string['alerticonsuccess'] = 'Icona de l'avís';
+$string['alerticonsuccessdesc'] = 'Ajusteu el<a href="http://fortawesome.github.io/Font-Awesome/icons/">Fonts impressionant icona </a> que es usedin en caixes d'alerta tipus d'anunci. Introduïu el nom de la icona sense el fa- prefix.';
+
 // Social Wall Settings ********************************************.
 $string['socialwall'] = 'Format Social Wall';
 $string['socialwallheading'] = 'Format Social Wall';
-$string['socialwalldesc'] = 'Personalitza l'estil del <a href="https://moodle.org/plugins/format_socialwall">Format de curs SocialWall</a> (si s'utilitza al lloc)';
+$string['socialwalldesc'] = 'Personalitza l'estil del <a href="https://moodle.org/plugins/format_socialwall"> Format de curs SocialWall</a> (si s'utilitza al lloc)';
 
 $string['socialwallbackgroundcolor'] = 'Color de fons';
 $string['socialwallbackgroundcolordesc'] = 'Estableix el color de fons.';

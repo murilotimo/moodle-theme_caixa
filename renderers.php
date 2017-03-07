@@ -295,7 +295,7 @@ class theme_adaptable_core_renderer extends core_renderer {
 
         global $PAGE;
 
-        $retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
+        $retval = '<div class="customalert alert adaptable-alert-' . $type . ' fade in" role="alert">';
         $retval .= '<a href="#" class="close" data-dismiss="alert" data-alertkey="' . $alertkey .
         '" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
         $retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp;';
@@ -372,15 +372,16 @@ class theme_adaptable_core_renderer extends core_renderer {
      * @return string
      */
     public function alert_icon($alertclassglobal) {
+        global $PAGE;
         switch ($alertclassglobal) {
             case "success":
-                $alerticonglobal = "bullhorn";
+                $alerticonglobal = $PAGE->theme->settings->alerticonsuccess;
                 break;
             case "info":
-                $alerticonglobal = "info-circle";
+                $alerticonglobal = $PAGE->theme->settings->alerticoninfo;
                 break;
             case "warning":
-                $alerticonglobal = "exclamation-triangle";
+                $alerticonglobal = $PAGE->theme->settings->alerticonwarning;
                 break;
         }
         return $alerticonglobal;
