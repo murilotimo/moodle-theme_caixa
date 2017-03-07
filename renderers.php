@@ -123,14 +123,16 @@ class theme_adaptable_core_renderer extends core_renderer {
             array('enablefeed',false,$CFG->wwwroot.'/report/myfeedback/index.php',get_string('enablefeed', 'theme_adaptable'),'fa-bullhorn'),
             array('enablecalendar',false,$CFG->wwwroot.'/calendar/view.php',get_string('pluginname', 'block_calendar_month'),'fa-calendar'));
 
+            $returnurl = $this->get_current_page_url(true);
             $context = context_course::instance($COURSE->id);
             if (($CFG->version > 2016120500) && (!is_role_switched($COURSE->id)) && (has_capability('moodle/role:switchroles', $context))) {
-                $url = $CFG->wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&switchrole=-1&returnurl=/course/view.php?id='.$COURSE->id;
+                //$returnurl = str_replace()
+                $url = $CFG->wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&switchrole=-1&returnurl='.$returnurl;
                 $user_menu_items[] = array(false,false,$url,get_string('switchroleto'),'fa-user-o');
             }
 
             if (($CFG->version > 2016120500) && (is_role_switched($COURSE->id))){
-                $url = $CFG->wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&sesskey='.sesskey().'&switchrole=0&returnurl=/course/view.php?id='.$COURSE->id;
+                $url = $CFG->wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&sesskey='.sesskey().'&switchrole=0&returnurl='.$returnurl;
                 $user_menu_items[] = array(false,false,$url,get_string('switchrolereturn'),'fa-user-o');
             }
 
@@ -154,9 +156,34 @@ class theme_adaptable_core_renderer extends core_renderer {
                     $retval .= '<i class="fa ' . $user_menu_items[$i][4] . '"></i>' . $user_menu_items[$i][3] . '</a></li>';
                 }
             }
-
             return $retval;
      }
+
+    /**
+     * Returns current url minus the value of $CFG->wwwroot
+     * Should be replaced with inbuilt Moodle function if one can be found
+     */
+    function get_current_page_url($stripwwwroot = false) {
+        global $CFG;
+        $page_url = 'http';
+
+        if ( isset( $_SERVER["HTTPS"] ) && strtolower( $_SERVER["HTTPS"] ) == "on" ) {
+            $page_url .= "s";
+        }
+
+        $page_url .= "://";
+
+        if ($_SERVER["SERVER_PORT"] != "80") {
+            $page_url .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+        } else {
+            $page_url .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+        }
+
+        if ($stripwwwroot) {
+            $page_url = str_replace($CFG->wwwroot,'',$page_url);
+        }
+        return $page_url;
+    }
 
     /**
      * Returns the user menu
