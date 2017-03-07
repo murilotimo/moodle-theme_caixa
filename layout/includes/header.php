@@ -371,7 +371,8 @@ if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
 }
 ?>
 <?php
-if (($CFG->version > 2016120500) && (!is_role_switched($COURSE->id))){ ?>
+$context = context_course::instance($COURSE->id);
+if (($CFG->version > 2016120500) && (!is_role_switched($COURSE->id)) && (has_capability('moodle/role:switchroles', $context))) { ?>
                 <li>
         <a href="<?php echo $wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&switchrole=-1&returnurl=/course/view.php?id='.$COURSE->id; ?>"
             title="<?php echo get_string('switchroleto') ?>">
