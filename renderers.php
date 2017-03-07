@@ -98,6 +98,67 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 
     /**
+     * Returns user profile menu
+     */
+     public function user_profile_menu() {
+         global $CFG, $COURSE, $PAGE;
+         $retval = '';
+
+         // false or theme setting name to first array param (not all links have settings)
+         // false or Moodle version number to second param (only some links check version)
+         // url for link in third param
+         // link text in fourth parameter
+         // fa icon in fifth param
+         $user_menu_items = array(
+            array('enablemy',false,$CFG->wwwroot.'/my',get_string('myhome'),'fa-dashboard'),
+            array('enableprofile',false,$CFG->wwwroot.'/user/profile.php',get_string('viewprofile'),'fa-user'),
+            array('enableeditprofile',false,$CFG->wwwroot.'/user/edit.php',get_string('editmyprofile'),'fa-cog'),
+            array('enableprivatefiles',false,$CFG->wwwroot.'/user/files.php',get_string('privatefiles', 'block_private_files'),'fa-file'),
+            array('enablegrades',false,$CFG->wwwroot.'/grade/report/overview/index.php',get_string('grades'),'fa-list-alt'),
+            array('enablebadges',false,$CFG->wwwroot.'/badges/mybadges.php',get_string('badges'),'fa-certificate'),
+            array('enablepref','2015051100',$CFG->wwwroot.'/user/preferences.php',get_string('preferences'),'fa-cog'),
+            array('enablenote',false,$CFG->wwwroot.'/message/edit.php',get_string('notifications'),'fa-paper-plane'),
+            array('enableblog',false,$CFG->wwwroot.'/blog/index.php',get_string('enableblog', 'theme_adaptable'),'fa-rss'),
+            array('enableposts',false,$CFG->wwwroot.'/mod/forum/user.php',get_string('enableposts', 'theme_adaptable'),'fa-commenting'),
+            array('enablefeed',false,$CFG->wwwroot.'/report/myfeedback/index.php',get_string('enablefeed', 'theme_adaptable'),'fa-bullhorn'),
+            array('enablecalendar',false,$CFG->wwwroot.'/calendar/view.php',get_string('pluginname', 'block_calendar_month'),'fa-calendar'));
+
+            $context = context_course::instance($COURSE->id);
+            if (($CFG->version > 2016120500) && (!is_role_switched($COURSE->id)) && (has_capability('moodle/role:switchroles', $context))) {
+                $url = $CFG->wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&switchrole=-1&returnurl=/course/view.php?id='.$COURSE->id;
+                $user_menu_items[] = array(false,false,$url,get_string('switchroleto'),'fa-user-o');
+            }
+
+            if (($CFG->version > 2016120500) && (is_role_switched($COURSE->id))){
+                $url = $CFG->wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&sesskey='.sesskey().'&switchrole=0&returnurl=/course/view.php?id='.$COURSE->id;
+                $user_menu_items[] = array(false,false,$url,get_string('switchrolereturn'),'fa-user-o');
+            }
+
+            $user_menu_items[] = array(false,false,$CFG->wwwroot.'/login/logout.php?sesskey='.sesskey(),get_string('logout'),'fa-sign-out');
+
+            for ($i = 0; $i < sizeof($user_menu_items); $i++) {
+                $additem = true;
+
+                // if theme setting is specified in array but not enabled in theme settings do not add to menu
+                if (empty($PAGE->theme->settings->$user_menu_items[$i][0]) && $user_menu_items[$i][0]){
+                    $additem = false;
+                }
+
+                // if item requires version number and moodle is below that version to not add to menu
+                if ($user_menu_items[$i][1] && $CFG->version < $user_menu_items[$i][1]) {
+                    $additem = false;
+                }
+
+                if ($additem) {
+                    $retval .= '<li><a href="' . $user_menu_items[$i][2] . '" title="' . $user_menu_items[$i][3] . '">';
+                    $retval .= '<i class="fa ' . $user_menu_items[$i][4] . '"></i>' . $user_menu_items[$i][3] . '</a></li>';
+                }
+            }
+
+            return $retval;
+     }
+
+    /**
      * Returns the user menu
      *
      * @param string $user = null
