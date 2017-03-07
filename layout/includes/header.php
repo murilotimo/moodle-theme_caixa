@@ -371,7 +371,7 @@ if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
 }
 ?>
 <?php
-if (($CFG->version > 2015051100) && (!is_role_switched($COURSE->id))){ ?>
+if (($CFG->version > 2016120500) && (!is_role_switched($COURSE->id))){ ?>
                 <li>
         <a href="<?php echo $wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&switchrole=-1&returnurl=/course/view.php?id='.$COURSE->id; ?>"
             title="<?php echo get_string('switchroleto') ?>">
@@ -383,7 +383,7 @@ if (($CFG->version > 2015051100) && (!is_role_switched($COURSE->id))){ ?>
 }
 ?>
 <?php
-if (($CFG->version > 2015051100) && (is_role_switched($COURSE->id))){ ?>
+if (($CFG->version > 2016120500) && (is_role_switched($COURSE->id))){ ?>
                 <li>
         <a href="<?php echo $wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&sesskey='.sesskey().'&switchrole=0&returnurl=/course/view.php?id='.$COURSE->id; ?>"
             title="<?php echo get_string('switchrolereturn') ?>">
