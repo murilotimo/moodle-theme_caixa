@@ -920,6 +920,9 @@ $string['course'] = 'Course';
 
 
 // Alerts **********************************************************.
+// Alert message if acting as other role
+$string['actingasrole'] = 'You are are currently acting as a different role';
+
 // Alert Hiden Course
 $string['alerthiddencourse'] = 'Hidden course warning';
 $string['alerthiddencoursedesc'] = 'Display alert in course page if it is hidden';
