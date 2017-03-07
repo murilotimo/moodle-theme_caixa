@@ -191,9 +191,9 @@ if (!isloggedin() || isguestuser()) {
         // Login button.
 ?>
         <form action="<?php p($wwwroot) ?>/login/index.php" method="post">
-            <input type="text" name="username" 
+            <input type="text" name="username"
                     placeholder="<?php echo get_string('loginplaceholder', 'theme_adaptable'); ?>" size="10">
-            <input type="password" name="password" 
+            <input type="password" name="password"
                     placeholder="<?php echo get_string('passwordplaceholder', 'theme_adaptable'); ?>"  size="10">
             <button class="btn-login" type="submit"><?php echo get_string('logintextbutton', 'theme_adaptable'); ?></button>
         </form>
@@ -365,6 +365,30 @@ if (!empty($PAGE->theme->settings->enablecalendar)) { ?>
             title="<?php echo get_string('pluginname', 'block_calendar_month') ?>">
                 <i class="fa fa-calendar"></i>
                 <?php echo get_string('pluginname', 'block_calendar_month') ?>
+        </a>
+        </li>
+<?php
+}
+?>
+<?php
+if (($CFG->version > 2015051100) && (!is_role_switched($COURSE->id))){ ?>
+                <li>
+        <a href="<?php echo $wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&switchrole=-1&returnurl=/course/view.php?id='.$COURSE->id; ?>"
+            title="<?php echo get_string('switchroleto') ?>">
+                <i class="fa fa-user-o"></i>
+                <?php echo get_string('switchroleto') ?>
+        </a>
+        </li>
+<?php
+}
+?>
+<?php
+if (($CFG->version > 2015051100) && (is_role_switched($COURSE->id))){ ?>
+                <li>
+        <a href="<?php echo $wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&sesskey='.sesskey().'&switchrole=0&returnurl=/course/view.php?id='.$COURSE->id; ?>"
+            title="<?php echo get_string('switchrolereturn') ?>">
+                <i class="fa fa-user-o"></i>
+                <?php echo get_string('switchrolereturn') ?>
         </a>
         </li>
 <?php
