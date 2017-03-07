@@ -1,6 +1,8 @@
 Changes in version 1.3.1.2
 ---------------------------------------
 Fixed issues:
+- #635: Improve User Menu
+- #631: Issue in CA Language Pack
 - #629: Remove Legacy BCU Colors
 - #628: Site Title DIsplay Rules Incorrect
 - #626: Quiz navigation block do not display question number
@@ -16,7 +18,8 @@ Fixed issues:
 - #603: Hide blocks move the blocks instead hide
 - #602: Update pace.min.js
 - #597: Fix Bug rendering divs in news ticker when multiple tickers in use
-- #597: Add alerts for hidden courses
+- #597: Add alerts for hidden courses#
+- #586: Add switch role to user menu
 
 
 Changes in version 1.3.1.1 (2017012300)
