@@ -2080,3 +2080,9 @@ div.questionbankwindow.block {
 .moodle-actionmenu.show[data-enhanced] .menu a:hover {
     background-color: #c0c0c0;
 }
+
+/* img assignment */
+.path-mod-assign [data-region="user-info"] .img-rounded {
+    height: 60px;
+}
+
