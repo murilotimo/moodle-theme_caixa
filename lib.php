@@ -208,6 +208,15 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:fontblockheaderweight]]' => '400',
         '[[setting:fontblockheadersize]]' => '28px',
         '[[setting:fontblockheadercolor]]' => '#009688',
+        '[[setting:alertcolorinfo]]' => '#3a87ad',
+        '[[setting:alertbackgroundcolorinfo]]' => '#d9edf7',
+        '[[setting:alertbordercolorinfo]]' => '#bce8f1',
+        '[[setting:alertcolorsuccess]]' => '#468847',
+        '[[setting:alertbackgroundcolorsuccess]]' => '#dff0d8',
+        '[[setting:alertbordercolorsuccess]]' => '#d6e9c6',
+        '[[setting:alertcolorwarning]]' => '#8a6d3b',
+        '[[setting:alertbackgroundcolorwarning]]' => '#fcf8e3',
+        '[[setting:alertbordercolorwarning]]' => '#fbeed5',
     );
 
     // Get all the defined settings for the theme and replace defaults.

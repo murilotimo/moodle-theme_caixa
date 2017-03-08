@@ -98,6 +98,94 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 
     /**
+     * Returns user profile menu
+     */
+     public function user_profile_menu() {
+         global $CFG, $COURSE, $PAGE;
+         $retval = '';
+
+         // false or theme setting name to first array param (not all links have settings)
+         // false or Moodle version number to second param (only some links check version)
+         // url for link in third param
+         // link text in fourth parameter
+         // fa icon in fifth param
+         $user_menu_items = array(
+            array('enablemy',false,$CFG->wwwroot.'/my',get_string('myhome'),'fa-dashboard'),
+            array('enableprofile',false,$CFG->wwwroot.'/user/profile.php',get_string('viewprofile'),'fa-user'),
+            array('enableeditprofile',false,$CFG->wwwroot.'/user/edit.php',get_string('editmyprofile'),'fa-cog'),
+            array('enableprivatefiles',false,$CFG->wwwroot.'/user/files.php',get_string('privatefiles', 'block_private_files'),'fa-file'),
+            array('enablegrades',false,$CFG->wwwroot.'/grade/report/overview/index.php',get_string('grades'),'fa-list-alt'),
+            array('enablebadges',false,$CFG->wwwroot.'/badges/mybadges.php',get_string('badges'),'fa-certificate'),
+            array('enablepref','2015051100',$CFG->wwwroot.'/user/preferences.php',get_string('preferences'),'fa-cog'),
+            array('enablenote',false,$CFG->wwwroot.'/message/edit.php',get_string('notifications'),'fa-paper-plane'),
+            array('enableblog',false,$CFG->wwwroot.'/blog/index.php',get_string('enableblog', 'theme_adaptable'),'fa-rss'),
+            array('enableposts',false,$CFG->wwwroot.'/mod/forum/user.php',get_string('enableposts', 'theme_adaptable'),'fa-commenting'),
+            array('enablefeed',false,$CFG->wwwroot.'/report/myfeedback/index.php',get_string('enablefeed', 'theme_adaptable'),'fa-bullhorn'),
+            array('enablecalendar',false,$CFG->wwwroot.'/calendar/view.php',get_string('pluginname', 'block_calendar_month'),'fa-calendar'));
+
+            $returnurl = $this->get_current_page_url(true);
+            $context = context_course::instance($COURSE->id);
+            if (($CFG->version > 2016120500) && (!is_role_switched($COURSE->id)) && (has_capability('moodle/role:switchroles', $context))) {
+                //$returnurl = str_replace()
+                $url = $CFG->wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&switchrole=-1&returnurl='.$returnurl;
+                $user_menu_items[] = array(false,false,$url,get_string('switchroleto'),'fa-user-o');
+            }
+
+            if (($CFG->version > 2016120500) && (is_role_switched($COURSE->id))){
+                $url = $CFG->wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&sesskey='.sesskey().'&switchrole=0&returnurl='.$returnurl;
+                $user_menu_items[] = array(false,false,$url,get_string('switchrolereturn'),'fa-user-o');
+            }
+
+            $user_menu_items[] = array(false,false,$CFG->wwwroot.'/login/logout.php?sesskey='.sesskey(),get_string('logout'),'fa-sign-out');
+
+            for ($i = 0; $i < sizeof($user_menu_items); $i++) {
+                $additem = true;
+
+                // if theme setting is specified in array but not enabled in theme settings do not add to menu
+                if (empty($PAGE->theme->settings->$user_menu_items[$i][0]) && $user_menu_items[$i][0]){
+                    $additem = false;
+                }
+
+                // if item requires version number and moodle is below that version to not add to menu
+                if ($user_menu_items[$i][1] && $CFG->version < $user_menu_items[$i][1]) {
+                    $additem = false;
+                }
+
+                if ($additem) {
+                    $retval .= '<li><a href="' . $user_menu_items[$i][2] . '" title="' . $user_menu_items[$i][3] . '">';
+                    $retval .= '<i class="fa ' . $user_menu_items[$i][4] . '"></i>' . $user_menu_items[$i][3] . '</a></li>';
+                }
+            }
+            return $retval;
+     }
+
+    /**
+     * Returns current url minus the value of $CFG->wwwroot
+     * Should be replaced with inbuilt Moodle function if one can be found
+     */
+    function get_current_page_url($stripwwwroot = false) {
+        global $CFG;
+        $page_url = 'http';
+
+        if ( isset( $_SERVER["HTTPS"] ) && strtolower( $_SERVER["HTTPS"] ) == "on" ) {
+            $page_url .= "s";
+        }
+
+        $page_url .= "://";
+
+        if ($_SERVER["SERVER_PORT"] != "80") {
+            $page_url .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+        } else {
+            $page_url .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+        }
+
+        if ($stripwwwroot) {
+            $page_url = str_replace($CFG->wwwroot,'',$page_url);
+        }
+        return $page_url;
+    }
+
+    /**
      * Returns the user menu
      *
      * @param string $user = null
@@ -116,7 +204,7 @@ class theme_adaptable_core_renderer extends core_renderer {
      * @return string
      */
     public function get_alert_messages() {
-        global $PAGE;
+        global $PAGE, $CFG, $COURSE;
         $alerts = '';
 
         $alertcount = $PAGE->theme->settings->alertcount;
@@ -177,6 +265,18 @@ class theme_adaptable_core_renderer extends core_renderer {
             $alerts = $this->get_alert_message($logininfo, 'warning', $alertindex, 'logedinas') . $alerts;
         }
 
+        if (($CFG->version > 2016120500) && (is_role_switched($COURSE->id))){
+            $alertindex = $alertcount + 1;
+            $alertkey = "undismissable";
+
+            $returnurl = $this->get_current_page_url(true);
+            $url = $CFG->wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&sesskey='.sesskey().'&switchrole=0&returnurl='.$returnurl;
+
+            $message = get_string('actingasrole', 'theme_adaptable') . '. ';
+            $message .= '<a href="' . $url . '">' . get_string('switchrolereturn') . '</a>';
+            $alerts = $this->get_alert_message($message, 'warning', $alertindex, 'logedinas') . $alerts;
+        }
+
         return $alerts;
     }
 
@@ -195,7 +295,7 @@ class theme_adaptable_core_renderer extends core_renderer {
 
         global $PAGE;
 
-        $retval = '<div class="customalert alert alert-' . $type . ' fade in" role="alert">';
+        $retval = '<div class="customalert alert adaptable-alert-' . $type . ' fade in" role="alert">';
         $retval .= '<a href="#" class="close" data-dismiss="alert" data-alertkey="' . $alertkey .
         '" data-alertindex="' . $alertindex . '" aria-label="close">&times;</a>';
         $retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp;';
@@ -272,15 +372,16 @@ class theme_adaptable_core_renderer extends core_renderer {
      * @return string
      */
     public function alert_icon($alertclassglobal) {
+        global $PAGE;
         switch ($alertclassglobal) {
             case "success":
-                $alerticonglobal = "bullhorn";
+                $alerticonglobal = $PAGE->theme->settings->alerticonsuccess;
                 break;
             case "info":
-                $alerticonglobal = "info-circle";
+                $alerticonglobal = $PAGE->theme->settings->alerticoninfo;
                 break;
             case "warning":
-                $alerticonglobal = "exclamation-triangle";
+                $alerticonglobal = $PAGE->theme->settings->alerticonwarning;
                 break;
         }
         return $alerticonglobal;

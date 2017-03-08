@@ -119,6 +119,7 @@ $string['analyticssettings'] = 'Analítica Web';
 // Admin Menu Strings.
 $string['blocksettings'] = 'Bloques';
 $string['frontpagealertsettings'] = 'Alertas';
+$string['frontpagealertboxssettings'] = 'Configuración de la caja de alerta';
 $string['frontpageblockregionsettings'] = 'Creador de regiones para bloques';
 $string['frontpageblocksettings'] = 'Bloques promocionales';
 $string['frontpagetickersettings'] = 'Anuncios';
@@ -922,6 +923,9 @@ $string['course'] = 'Course';
 
 
 // Alerts **********************************************************.
+// Alert message if acting as other role
+$string['actingasrole'] = 'Usted está actuando actualmente como un papel diferente';
+
 // Alert Hiden Course
 $string['alerthiddencourse'] = 'Advertencia del curso oculto';
 $string['alerthiddencoursedesc'] = 'Mostrar alerta en la página del curso si está oculta';
@@ -991,6 +995,37 @@ $string['alertaccessdesc'] = 'Establece la visibilidad de la Alerta según su ti
 // Moodle/Adaptable version alert messages.
 $string['beta'] = 'VERSION EN DESARROLLO. NO USAR EN SITIOS EN PRODUCCIÓN';
 $string['deprecated'] = 'VERSIÓN DE MOODLE OBSOLETA. NO USAR ADAPTABLE EN ESTE SITIO';
+
+// Alerts Colors****************************************************.
+$string['alertcolorsheading'] = 'Personalizar las cajas de alerta superiores';
+$string['alertcolorsheadingdesc'] = 'Establecer colores e icono.';
+
+$string['alertcolorinfo'] = 'Color de la información';
+$string['alertcolorinfodesc'] = 'Color del icono de los cuadros de alerta Tipo de información';
+$string['alertbackgroundcolorinfo'] = 'Información Color de fondo';
+$string['alertbackgroundcolorinfodesc'] = 'Color de fondo de los cuadros de alerta Tipo de información';
+$string['alertbordercolorinfo'] = 'Info Color del borde';
+$string['alertbordercolorinfodesc'] = 'Color del borde de los cuadros de alerta Tipo de información';
+$string['alerticoninfo'] = 'Icono de Información';
+$string['alerticoninfodesc'] = 'Selecciona el <a href="http://fortawesome.github.io/Font-Awesome/icons/"> Font Awesome Icono</a>Para usarse en los cuadros de alerta tipo Info. Introduzca el nombre del icono sin fa- prefijo.';
+
+$string['alertcolorwarning'] = 'Color de advertencia';
+$string['alertcolorwarningdesc'] = 'Color del icono de los cuadros de alerta Tipo de advertencia';
+$string['alertbackgroundcolorwarning'] = 'Color de fondo de advertencia';
+$string['alertbackgroundcolorwarningdesc'] = 'Color de fondo de los cuadros de advertencia Tipo de advertencia';
+$string['alertbordercolorwarning'] = 'Color del borde de advertencia';
+$string['alertbordercolorwarningdesc'] = 'Color del borde de los cuadros de alerta Tipo de advertencia';
+$string['alerticonwarning'] = 'Icono de advertencia';
+$string['alerticonwarningdesc'] = 'Selecciona el <a href="http://fortawesome.github.io/Font-Awesome/icons/"> Font Awesome Icono</a>Para ser utilizados en las cajas de alerta Tipo de advertencia. Introduzca el nombre del icono sin fa- prefijo.';
+
+$string['alertcolorsuccess'] = 'Color del anuncio';
+$string['alertcolorsuccessdesc'] = 'Color del icono de los cuadros de alerta Tipo de anuncio';
+$string['alertbackgroundcolorsuccess'] = 'Color del fondo del aviso';
+$string['alertbackgroundcolorsuccessdesc'] = 'Color de fondo de los cuadros de alerta Tipo de anuncio';
+$string['alertbordercolorsuccess'] = 'Color del borde del aviso';
+$string['alertbordercolorsuccessdesc'] = 'Color del borde de los cuadros de alerta Tipo de anuncio';
+$string['alerticonsuccess'] = 'Icono del anuncio';
+$string['alerticonsuccessdesc'] = 'Selecciona el <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icono</a> Que se utilizarán en los cuadros de alerta Tipo de anuncio. Introduzca el nombre del icono sin fa- prefijo.';
 
 // Social Wall Settings ********************************************.
 $string['socialwall'] = 'Formato Social Wall';

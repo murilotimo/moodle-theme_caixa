@@ -118,6 +118,7 @@ $string['settingsanalytics'] = 'Analytics';
 // Admin Menu Strings.
 $string['blocksettings'] = 'Block Settings';
 $string['frontpagealertsettings'] = 'Alert Box';
+$string['frontpagealertboxssettings'] = 'Alert Box Settings';
 $string['frontpageblockregionsettings'] = 'Block Region Builder';
 $string['frontpageblocksettings'] = 'Marketing Blocks';
 $string['frontpagetickersettings'] = 'Frontpage Ticker';
@@ -920,6 +921,9 @@ $string['course'] = 'Course';
 
 
 // Alerts **********************************************************.
+// Alert message if acting as other role
+$string['actingasrole'] = 'You are are currently acting as a different role';
+
 // Alert Hiden Course
 $string['alerthiddencourse'] = 'Hidden course warning';
 $string['alerthiddencoursedesc'] = 'Display alert in course page if it is hidden';
@@ -989,6 +993,37 @@ $string['alertaccessdesc'] = 'Set access restriction type for alert box visibili
 // Moodle/Adaptable version alert messages.
 $string['beta'] = 'DEVELOPMENT VERSION. DO NOT USE IN PRODUCTION SITES';
 $string['deprecated'] = 'MOODLE DEPRECATED VERSION. DO NOT USE ADAPTABLE IN THIS SITE';
+
+// Alerts Colors****************************************************.
+$string['alertcolorsheading'] = 'Customize top Alert Boxes';
+$string['alertcolorsheadingdesc'] = 'Set colors and icon.';
+
+$string['alertcolorinfo'] = 'Info Color';
+$string['alertcolorinfodesc'] = 'Icon color of the Info type alert boxes';
+$string['alertbackgroundcolorinfo'] = 'Info Background Color';
+$string['alertbackgroundcolorinfodesc'] = 'Background color of the Info type alert boxes';
+$string['alertbordercolorinfo'] = 'Info Border Color';
+$string['alertbordercolorinfodesc'] = 'Border color of the Info type alert boxes';
+$string['alerticoninfo'] = 'Info Icon';
+$string['alerticoninfodesc'] = 'Set the <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icon</a> to be usedin in Info type alert boxes. Enter the icon name without the fa- prefix.';
+
+$string['alertcolorwarning'] = 'Warning Color';
+$string['alertcolorwarningdesc'] = 'Icon color of the Warning type alert boxes';
+$string['alertbackgroundcolorwarning'] = 'Warning Background Color';
+$string['alertbackgroundcolorwarningdesc'] = 'Background color of the Warning type alert boxes';
+$string['alertbordercolorwarning'] = 'Warning Border Color';
+$string['alertbordercolorwarningdesc'] = 'Border color of the Warning type alert boxes';
+$string['alerticonwarning'] = 'Warning Icon';
+$string['alerticonwarningdesc'] = 'Set the <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icon</a> to be usedin in Warning type alert boxes. Enter the icon name without the fa- prefix.';
+
+$string['alertcolorsuccess'] = 'Announcement Color';
+$string['alertcolorsuccessdesc'] = 'Icon color of the Announcement type alert boxes';
+$string['alertbackgroundcolorsuccess'] = 'Announcement Background Color';
+$string['alertbackgroundcolorsuccessdesc'] = 'Background color of the Announcement type alert boxes';
+$string['alertbordercolorsuccess'] = 'Announcement Border Color';
+$string['alertbordercolorsuccessdesc'] = 'Border color of the Announcement type alert boxes';
+$string['alerticonsuccess'] = 'Announcement Icon';
+$string['alerticonsuccessdesc'] = 'Set the <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icon</a> to be usedin in Announcement type alert boxes. Enter the icon name without the fa- prefix.';
 
 // Social Wall Settings ********************************************.
 $string['socialwall'] = 'Social Wall';
