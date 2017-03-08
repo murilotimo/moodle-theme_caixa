@@ -40,6 +40,9 @@ input.form-submit,
 input#id_submitbutton,
 input#id_submitbutton2,
 .path-admin .buttons input[type="submit"],
+
+btn a,
+
 td.submit input {
     font-family: [[setting:fontname]], sans-serif !important;
     background: none;
@@ -68,12 +71,12 @@ td.submit input {
     margin-bottom: 0;
     font-size: 14px;
     line-height: 20px;
-/*    color: [[setting:buttontextcolor]] !important;*/
+    color: [[setting:buttontextcolor]] !important;
     text-align: center;
     text-shadow: none;
     vertical-align: middle;
     cursor: pointer;
-/*    background-color: [[setting:buttoncolor]];*/
+    background-color: [[setting:buttoncolor]];
     background-image: none;
     border: 1px solid #ccc;
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
@@ -89,6 +92,7 @@ td.submit input {
 }
 
 .btn:first-child {
+    background-color: [[setting:buttoncolor]];
     color: [[setting:buttontextcolor]] !important;
 }
 
