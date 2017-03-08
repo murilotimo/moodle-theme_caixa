@@ -40,9 +40,6 @@ input.form-submit,
 input#id_submitbutton,
 input#id_submitbutton2,
 .path-admin .buttons input[type="submit"],
-
-btn a,
-
 td.submit input {
     font-family: [[setting:fontname]], sans-serif !important;
     background: none;
@@ -145,7 +142,6 @@ button.close {
 
 .btn-link:hover,
 .btn-default:hover,
-
 input.form-submit:hover,
 input#id_submitbutton:hover,
 input#id_submitbutton2:hover,
@@ -211,6 +207,7 @@ td.submit input[disabled] {
 [data-role="end"],
 [data-role="cancel"],
 .cancel a,
+#id_cancel,
 .purgecaches a {
     font-family: [[setting:fontname]], sans-serif !important;
     font-size: 14px;
@@ -238,7 +235,8 @@ td.submit input[disabled] {
 
 .cancel a:hover,
 [data-role="end"]:hover,
-[data-role="cancel"]:hover {
+[data-role="cancel"]:hover,
+#id_cancel:hover {
     background-image: none;
     background-color: [[setting:editonbk]];
     color: [[setting:editfont]] !important;
