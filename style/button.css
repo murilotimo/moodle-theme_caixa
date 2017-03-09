@@ -39,6 +39,7 @@ a.submit,
 input.form-submit,
 input#id_submitbutton,
 input#id_submitbutton2,
+.submitbutton,
 .path-admin .buttons input[type="submit"],
 td.submit input {
     font-family: [[setting:fontname]], sans-serif !important;
@@ -106,6 +107,7 @@ a.submit:hover,
 #notice .singlebutton + .singlebutton input:hover,
 .submit.buttons input[name="cancel"]:hover,
 #page-login-index2 .forgetpass a:hover,
+.submitbutton:hover,
 .btn:hover,
 .btn:active {
     background-position: 0 -100%;
@@ -208,6 +210,7 @@ td.submit input[disabled] {
 [data-role="cancel"],
 .cancel a,
 #id_cancel,
+.addcancel,
 .purgecaches a {
     font-family: [[setting:fontname]], sans-serif !important;
     font-size: 14px;
@@ -215,7 +218,7 @@ td.submit input[disabled] {
     height: 36px;
     cursor: pointer;
     background: none;
-    background-color: [[setting:editoffbk]];
+    background-color: [[setting:editoffbk]] !important;
     text-shadow: none;
     box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
     border: 0px;
