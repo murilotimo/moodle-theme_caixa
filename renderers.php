@@ -142,7 +142,8 @@ class theme_adaptable_core_renderer extends core_renderer {
                 $additem = true;
 
                 // if theme setting is specified in array but not enabled in theme settings do not add to menu
-                if (empty($PAGE->theme->settings->$user_menu_items[$i][0]) && $user_menu_items[$i][0]){
+                $usermenuitem = $user_menu_items[$i][0];
+                if (empty($PAGE->theme->settings->$usermenuitem) && $user_menu_items[$i][0]){
                     $additem = false;
                 }
 
@@ -463,7 +464,7 @@ EOT;
     /**
      * Returns Piwik code if enabled
      *
-     * @copyright  2016 COMETE-UPO (UniversitÃ© Paris Ouest)
+     * @copyright  2016 COMETE-UPO (Université Paris Ouest)
      *
      * @return string
      */
