@@ -223,7 +223,7 @@ if (!isloggedin() || isguestuser()) {
                 <span class="fa fa-angle-down"></span>
             </a>
 
-    <ul class="dropdown-menu usermen" role="menu" aria-labelledby="dLabel">
+    <ul class="dropdown-menu usermen" role="menu">
 
 <?php echo $OUTPUT->user_profile_menu() ?>
 
