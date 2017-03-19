@@ -187,6 +187,8 @@ if ($fixedheader) {
 <?php
 if (!isloggedin() || isguestuser()) {
     echo $OUTPUT->page_heading_menu();
+
+
     if ($PAGE->theme->settings->displaylogin == 'box') {
         // Login button.
 ?>
@@ -243,7 +245,13 @@ if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu'
 </div>
 
 <?php
+// Add top menus.
 echo $OUTPUT->get_top_menus();
+
+// Add messages/notifications (moodle 3.2 or higher)
+if ($CFG->version > 2016120400) {
+    echo $OUTPUT->navbar_plugin_output();
+}
 ?>
     </div>
 </div>

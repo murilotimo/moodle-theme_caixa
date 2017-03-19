@@ -32,6 +32,7 @@ require_once($CFG->libdir.'/coursecatlib.php');
 require_once($CFG->dirroot.'/message/lib.php');
 
 
+
 /******************************************************************************************
  * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
@@ -584,7 +585,7 @@ EOT;
      * @return string
      */
     protected function render_user_menu(custom_menu $menu) {
-        global $PAGE, $CFG, $USER, $DB, $OUTPUT;
+        global $CFG, $DB, $PAGE, $OUTPUT;
 
         $addlangmenu = true;
         $addmessagemenu = true;
@@ -611,24 +612,19 @@ EOT;
             if ($CFG->version < 2016120500) {
                 $messages = $this->get_user_messages();
                 $messagecount = count($messages);
-            } else {
-                // Moodle 3.2 (New messenger view).
-                $messagecount = message_count_unread_messages();
-            }
 
-            // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
-            if ($messagecount > 0) {
-                // If got some message then we add the badge with the pending messages number and no link to the messages page.
-                $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message') .' '.
-                '<span class="badge">' . $messagecount . '</span>', new moodle_url('/message/index.php'), get_string('messages', 'message'), 9999);
-            } else {
-                // If no pending messages we add only a link to the messages page in the menu.
-                $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message'),
-                                            new moodle_url('/message/index.php'), get_string('messages', 'message'), 9999);
-            }
+                // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
+                if ($messagecount > 0) {
+                    // If got some message then we add the badge with the pending messages number and no link to the messages page.
+                    $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message') .' '.
+                    '<span class="badge">' . $messagecount . '</span>', new moodle_url('/message/index.php'), get_string('messages', 'message'), 9999);
+                } else {
+                    // If no pending messages we add only a link to the messages page in the menu.
+                    $messagemenu = $menu->add('<i class="fa fa-envelope"> </i>' . get_string('messages', 'message'),
+                                              new moodle_url('/message/index.php'), get_string('messages', 'message'), 9999);
+                }
 
-            if ($CFG->version < 2016120500) {
-                // In Moodle 3.1 we display the messages in a pop-up (Not yet in 3.2).
+                // In Moodle 3.1 we display the messages in a pop-up.
                 foreach ($messages as $message) {
                     if (!isset($message->from) || !isset($message->from->id) || !isset($message->from->firstname)) {
                         continue;
@@ -728,13 +724,6 @@ EOT;
             }
 
             return $messagelist;
-        } else {
-            // Moodle 3.2 or newer.
-            $newmessages = $DB->count_records_select('message',
-                                                     'useridto = [$USER->id] AND timeusertodeleted = 0 AND notification = 0',
-                                                     [$USER->id],
-                                                     "COUNT(DISTINCT(useridfrom))");
-            return $newmessages;
         }
     }
 

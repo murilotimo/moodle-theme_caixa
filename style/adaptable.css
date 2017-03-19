@@ -1129,12 +1129,12 @@ input[type="radio"], input[type="checkbox"] {
         background: transparent;
     }
 
-    a.dropdown-toggle {
-        height: 38px !important! 
+    .dropdown-toggle a {
+        height: 38px !important;
     }
 
-    .userhead{
-        height:20px;
+    .userhead {
+        height: 20px;
     }
 }
 
@@ -2084,5 +2084,11 @@ div.questionbankwindow.block {
 /* img assignment */
 .path-mod-assign [data-region="user-info"] .img-rounded {
     height: 60px;
+}
+
+/* messages icons */
+#nav-notification-popover-container,
+#nav-message-popover-container {
+    margin-left: 8px;
 }
 
