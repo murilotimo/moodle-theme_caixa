@@ -2124,6 +2124,7 @@ div.questionbankwindow.block {
     visibility: visible;
     width: 380px;
     z-index: 1;
+    box-shadow: 5px 5px 15px 1px #000000;
 }
 
 .count-container {
