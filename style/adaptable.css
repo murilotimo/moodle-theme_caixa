@@ -2125,3 +2125,7 @@ div.questionbankwindow.block {
     width: 380px;
     z-index: 1;
 }
+
+.count-container {
+    right: -5px;
+}
