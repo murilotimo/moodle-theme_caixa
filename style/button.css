@@ -133,7 +133,8 @@ a.submit:focus, #notice .singlebutton + .singlebutton input:focus,
 button.close {
     background: transparent !important;
     text-shadow: none !important;
-    color: [[setting:buttontextcolor]] !important;
+/*    color: [[setting:buttontextcolor]] !important;*/
+color: #cc0000;
     opacity: 1 !important;
     box-shadow: none !important;
 }
@@ -176,6 +177,7 @@ td.submit input[disabled] {
     background-color: [[setting:buttonhovercolor]];
     color: [[setting:buttontextcolor]] !important;
     background-image: none;
+                box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
 }
 
 #edittingbutton .btn,
