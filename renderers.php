@@ -298,7 +298,8 @@ class theme_adaptable_core_renderer extends core_renderer {
         global $PAGE;
 
         $retval = '<div class="customalert alert alert-dismissable adaptable-alert-' . $type . ' fade in">';
-        $retval .= '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+        $retval .= '<button type="button" class="close" data-dismiss="alert" aria-label="Close" data-alertkey="' . $alertkey.'" data-alertindex="' . $alertindex . '">
+                    <span aria-hidden="true">&times;</span></button>';
         $retval .= '<i class="fa fa-' . $this->alert_icon($type) . ' fa-lg"></i>&nbsp;';
         $retval .= $text;
         $retval .= '</div>';
