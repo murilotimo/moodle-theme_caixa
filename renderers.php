@@ -608,10 +608,10 @@ EOT;
         }
 
         if ($addmessagemenu) {
-            // Moodle 3.1 or older.
+            // In Moodle 3.1 or older we display a menu with a count badge.
             if ($CFG->version < 2016120500) {
-                $messages = $this->get_user_messages();
-                $messagecount = count($messages);
+                // First, go to count the number of unread messages.
+                $messagecount = message_count_unread_messages();
 
                 // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
                 if ($messagecount > 0) {
@@ -657,7 +657,7 @@ EOT;
                     $messagemenu->add($messagecontent, new moodle_url('/message/index.php', array('user1' => $USER->id,
                         'user2' => $message->from->id)));
                 }
-            }
+//            }
         }
 
         // Let's go to create the lang menu if available.
