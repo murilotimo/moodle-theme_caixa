@@ -657,7 +657,7 @@ EOT;
                     $messagemenu->add($messagecontent, new moodle_url('/message/index.php', array('user1' => $USER->id,
                         'user2' => $message->from->id)));
                 }
-//            }
+            }
         }
 
         // Let's go to create the lang menu if available.
