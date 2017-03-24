@@ -24,10 +24,12 @@
  *
  */
 
-$settings = null;
+defined('MOODLE_INTERNAL') || die;
+
 require_once(__DIR__.'/libs/admin_confightmleditor.php');
 require_once(__DIR__.'/lib.php');
-defined('MOODLE_INTERNAL') || die;
+
+$settings = null;
 
 if (is_siteadmin()) {
     // Adaptable theme settings page.

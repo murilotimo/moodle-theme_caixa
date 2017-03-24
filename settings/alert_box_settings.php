@@ -25,6 +25,8 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 // Alert Section.
 $temp = new admin_settingpage('theme_adaptable_frontpage_alert_box_settings', get_string('frontpagealertboxssettings', 'theme_adaptable'));
 $temp->add(new admin_setting_heading('theme_adaptable_alert_box_settings', get_string('alertcolorsheading', 'theme_adaptable'),

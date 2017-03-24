@@ -24,6 +24,8 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 // Custom CSS and JS section.
 $temp = new admin_settingpage('theme_adaptable_socialwall', get_string('socialwall', 'theme_adaptable'));
 $temp->add(new admin_setting_heading('theme_adaptable_socialwall', get_string('socialwallheading', 'theme_adaptable'),

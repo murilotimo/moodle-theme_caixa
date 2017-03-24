@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
     // Custom CSS and JS section.
     $temp = new admin_settingpage('theme_adaptable_generic', get_string('customcssjssettings', 'theme_adaptable'));

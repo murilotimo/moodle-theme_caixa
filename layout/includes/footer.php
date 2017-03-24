@@ -24,6 +24,8 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 ?>
 <footer id="page-footer">
 <?php

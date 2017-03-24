@@ -24,6 +24,9 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
+// Include header.
 require_once(dirname(__FILE__) . '/includes/header.php');
 
 ?>
@@ -40,5 +43,7 @@ require_once(dirname(__FILE__) . '/includes/header.php');
         </section>
     </div>
 </div>
+
 <?php
+// Include footer.
 require_once(dirname(__FILE__) . '/includes/footer.php');

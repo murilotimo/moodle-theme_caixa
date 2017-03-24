@@ -24,6 +24,8 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die();
+
 theme_adaptable_initialise_zoom($PAGE);
 $setzoom = theme_adaptable_get_zoom();
 
@@ -248,7 +250,7 @@ if (empty($PAGE->layout_options['langmenu']) || $PAGE->layout_options['langmenu'
 // Add top menus.
 echo $OUTPUT->get_top_menus();
 
-// Add messages/notifications (moodle 3.2 or higher)
+// Add messages / notifications (moodle 3.2 or higher).
 if ($CFG->version > 2016120400) {
     echo $OUTPUT->navbar_plugin_output();
 }

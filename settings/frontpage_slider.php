@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
 // Frontpage Slider.
 $temp = new admin_settingpage('theme_adaptable_frontpage_slider', get_string('frontpageslidersettings', 'theme_adaptable'));

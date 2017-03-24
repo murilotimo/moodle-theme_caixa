@@ -80,8 +80,8 @@
     display: none;
 }
 
-.dropdown-toggle{
-    height: 30px;
+.dropdown-toggle a {
+    height: 38px !important;
 }
 
 .dropdown-menu {

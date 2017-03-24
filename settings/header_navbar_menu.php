@@ -24,8 +24,9 @@
  *
  */
 
-// Settings for tools menus.
+defined('MOODLE_INTERNAL') || die;
 
+// Settings for tools menus.
 $temp = new admin_settingpage('theme_adaptable_header_navbar_menu', get_string('navbarmenusettings', 'theme_adaptable'));
 
 $temp->add(new admin_setting_heading('theme_adaptable_toolsmenu', get_string('toolsmenu', 'theme_adaptable'),

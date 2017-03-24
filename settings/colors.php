@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
     // Colors section.
     $temp = new admin_settingpage('theme_adaptable_color', get_string('colorsettings', 'theme_adaptable'));

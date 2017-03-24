@@ -24,6 +24,8 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 global $PAGE;
 
 $temp = new admin_settingpage('theme_adaptable_menus', get_string('menusettings', 'theme_adaptable'));

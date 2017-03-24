@@ -24,6 +24,8 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die();
+
 $definitions = array(
     'userdata' => array(
         'mode' => cache_store::MODE_SESSION

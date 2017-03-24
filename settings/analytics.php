@@ -27,6 +27,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
 // Analytics section.
 $temp = new admin_settingpage('theme_adaptable_analytics', get_string('analyticssettings', 'theme_adaptable'));

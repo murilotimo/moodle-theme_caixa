@@ -24,7 +24,11 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
+// Include header.
 require_once(dirname(__FILE__) . '/includes/header.php');
+
 $left = $PAGE->theme->settings->blockside;
 ?>
 
@@ -63,5 +67,6 @@ if (($left == 0) && $PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
     </div>
     </div>
 
-    <?php
-    require_once(dirname(__FILE__) . '/includes/footer.php');
+<?php
+// Include footer.
+require_once(dirname(__FILE__) . '/includes/footer.php');

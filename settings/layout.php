@@ -24,6 +24,8 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
     $temp = new admin_settingpage('theme_adaptable_layout', get_string('layoutsettings', 'theme_adaptable'));
     $temp->add(new admin_setting_heading('theme_adaptable_layout', get_string('layoutsettingsheading', 'theme_adaptable'),
         format_text(get_string('layoutdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));

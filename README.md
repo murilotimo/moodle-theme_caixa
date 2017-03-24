@@ -181,6 +181,14 @@ From version 1.3 the news ticker do not need to create an unordered list. Just a
 <p>Display up to 12 marketing blocks in the front page</p>
 ```
 
+## Messages / Notifications icons
+
+From version 3.2, moodle will includes a new mesages and notifications system. We included this feature in Adptable but we found some problems
+depending the background colour used. 
+
+To avoid view problems, we include a set of two files for each icon. One black (default) and other white that can be renamed. Message icon is located in theme/adaptable/pix_core/t/message.png and the notifications icon is located in theme/adaptable/pix_core/i/notifications.png
+
+
 ## Versioning
 Adaptable is maintained under the Semantic Versioning guidelines as much as possible.
 Releases will be numbered with the following format:
@@ -209,6 +217,9 @@ We really appreciate your help and support to develop the most adaptable theme f
 * Andrew Walding
 * Alexander Goryntsev
 
+#### Translation:
+* Germán Valero (Español - México)
+* Jordi Rodilla (Català - Andorra)
 
 
 ## Licenses

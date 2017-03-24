@@ -24,6 +24,8 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
     $temp = new admin_settingpage('theme_adaptable_course', get_string('coursesettings', 'theme_adaptable'));
     $temp->add(new admin_setting_heading('theme_adaptable_course', get_string('coursesettingsheading', 'theme_adaptable'),
         format_text(get_string('coursedesc', 'theme_adaptable'), FORMAT_MARKDOWN)));

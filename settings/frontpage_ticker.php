@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
 // Frontpage Ticker heading.
 $temp = new admin_settingpage('theme_adaptable_frontpage_ticker', get_string('frontpagetickersettings', 'theme_adaptable'));

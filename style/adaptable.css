@@ -93,6 +93,10 @@ img {
     max-width: 100%;
 }
 
+li {
+    line-height: 28px;
+}
+
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus,
 .dropdown-submenu:hover>a,
@@ -503,11 +507,12 @@ span.fa-chevron-right.fa {
     font-size: 10px;
 }
 
-#theinfo-internal {
-  padding: 15px 25px;
+#theinfo .span3 {
+    text-align: right;
+    padding-top: 35px;
 }
 
-#theinfo .span3 {
+#theinfo2 .span3 {
     text-align: right;
     padding-top: 35px;
 }

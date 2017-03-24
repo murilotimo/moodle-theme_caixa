@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
 // Header Navbar.
 $temp = new admin_settingpage('theme_adaptable_navbar', get_string('navbarsettings', 'theme_adaptable'));
@@ -33,22 +34,22 @@ format_text(get_string('navbardesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
 // Sticky Navbar at the top. See issue #278.
 
-/*******************
- * $name = 'theme_adaptable/stickynavbar';
- * $title = get_string('stickynavbar', 'theme_adaptable');
- * $description = get_string('stickynavbardesc', 'theme_adaptable');
- * $default = false;
- * $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
- * $setting->set_updatedcallback('theme_reset_all_caches');
- * $temp->add($setting);
- *
- * $name = 'theme_adaptable/navbarcachetime';
- * $title = get_string('navbarcachetime', 'theme_adaptable');
- * $description = get_string('navbarcachetimedesc', 'theme_adaptable');
- * $setting = new admin_setting_configselect($name, $title, $description, '0', $from0to60inc5);
- * $setting->set_updatedcallback('theme_reset_all_caches');
- * $temp->add($setting);
- */
+//
+// $name = 'theme_adaptable/stickynavbar';
+// $title = get_string('stickynavbar', 'theme_adaptable');
+// $description = get_string('stickynavbardesc', 'theme_adaptable');
+// $default = false;
+// $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+// $setting->set_updatedcallback('theme_reset_all_caches');
+// $temp->add($setting);
+//
+// $name = 'theme_adaptable/navbarcachetime';
+// $title = get_string('navbarcachetime', 'theme_adaptable');
+// $description = get_string('navbarcachetimedesc', 'theme_adaptable');
+// $setting = new admin_setting_configselect($name, $title, $description, '0', $from0to60inc5);
+// $setting->set_updatedcallback('theme_reset_all_caches');
+// $temp->add($setting);
+
 
 $name = 'theme_adaptable/enablehome';
 $title = get_string('home');

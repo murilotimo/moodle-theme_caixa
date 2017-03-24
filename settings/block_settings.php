@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
     $temp = new admin_settingpage('theme_adaptable_blocks', get_string('blocksettings', 'theme_adaptable'));
 

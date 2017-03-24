@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
     // Header heading.
     $temp = new admin_settingpage('theme_adaptable_header', get_string('headersettings', 'theme_adaptable'));
@@ -62,7 +63,7 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Filter admin messages
+    // Filter admin messages.
     $name = 'theme_adaptable/filteradminmessages';
     $title = get_string('filteradminmessages', 'theme_adaptable');
     $description = get_string('filteradminmessagesdesc', 'theme_adaptable');

@@ -24,6 +24,8 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 // Google Fonts.
 $fontlist = array(
  'default' => 'default',

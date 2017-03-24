@@ -24,6 +24,8 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 // Alert Section.
 $temp = new admin_settingpage('theme_adaptable_frontpage_alert', get_string('frontpagealertsettings', 'theme_adaptable'));
 $temp->add(new admin_setting_heading('theme_adaptable_alert', get_string('alertsettingsheading', 'theme_adaptable'),
@@ -35,7 +37,7 @@ $heading = get_string('alertsettingscourse', 'theme_adaptable');
 $setting = new admin_setting_heading($name, $heading, '');
 $temp->add($setting);
 
-// Alert hidden course
+// Alert hidden course.
 $name = 'theme_adaptable/alerthiddencourse';
 $title = get_string('alerthiddencourse', 'theme_adaptable');
 $description = get_string('alerthiddencoursedesc', 'theme_adaptable');

@@ -24,6 +24,9 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
+// Include header.
 require_once(dirname(__FILE__) . '/includes/header.php');
 
 // Set layout.
@@ -69,9 +72,9 @@ if (!empty($PAGE->theme->settings->frontpageblocksenabled)) { ?>
 // Infobox 2.
 if (!empty($PAGE->theme->settings->infobox2)) {
     if (!empty($PAGE->theme->settings->infoboxfullscreen)) {
-        echo '<div id="theinfo">';
+        echo '<div id="theinfo2">';
     } else {
-        echo '<div id="theinfo" class="container">';
+        echo '<div id="theinfo2" class="container">';
     }
 ?>
         <div class="row-fluid">
@@ -143,4 +146,5 @@ if (is_siteadmin()) {
 </div>
 
 <?php
+// Include footer.
 require_once(dirname(__FILE__) . '/includes/footer.php');

@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
     // Social links.
     $temp = new admin_settingpage('theme_adaptable_social', get_string('socialsettings', 'theme_adaptable'));

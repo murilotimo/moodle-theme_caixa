@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
     // Buttons Section.
     $temp = new admin_settingpage('theme_adaptable_buttons', get_string('buttonsettings', 'theme_adaptable'));

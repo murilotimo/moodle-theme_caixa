@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
     // Fonts Section.
     $temp = new admin_settingpage('theme_adaptable_font', get_string('fontsettings', 'theme_adaptable'));

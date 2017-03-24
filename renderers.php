@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
 // Load libraries.
 require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
@@ -1573,7 +1574,7 @@ EOT;
 
                 default:
                     // None.
-//                    $retval .= '<div id="sitetitle"></div>';
+                    // $retval .= '<div id="sitetitle"></div>';.
                     break;
             }
         }

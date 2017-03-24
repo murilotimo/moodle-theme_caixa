@@ -24,6 +24,9 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
+// Include header.
 require_once(dirname(__FILE__) . '/includes/header.php');
 ?>
 <div id="page" class="container-fluid">

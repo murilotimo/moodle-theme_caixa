@@ -24,6 +24,8 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 // Frontpage Block Regions Section.
 $temp = new admin_settingpage('theme_adaptable_frontpage_block_regions',
     get_string('frontpageblockregionsettings', 'theme_adaptable'));

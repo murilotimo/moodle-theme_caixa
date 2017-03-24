@@ -24,6 +24,7 @@
  *
  */
 
+defined('MOODLE_INTERNAL') || die;
 
     // Frontpage courses section.
     $temp = new admin_settingpage('theme_adaptable_frontpage_courses', get_string('frontpagecoursesettings', 'theme_adaptable'));
