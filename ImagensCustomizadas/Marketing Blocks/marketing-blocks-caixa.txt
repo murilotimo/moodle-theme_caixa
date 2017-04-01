@@ -1,0 +1,79 @@
+Marketing Blocks
+
+
+// Frontpage Secondary Info Box
+<div class="course_categories"><strong>Escolha a categoria do seu curso</strong></div>
+
+
+
+// Bloco 1
+<div class="box-img">
+	<img src="http://moodlehmp.universidade.caixa:82/draftfile.php/5/user/draft/176265399/box1.png" alt="" width="280" height="254" role="presentation" class="img-responsive atto_image_button_text-bottom">
+</div>
+<div class="box-text">
+	<h2>Agenda de Eventos</h2>
+	<p>Adquira conhecimento e invista na sua capacitação com nossos seminários, cursos e oficinas.</p>
+	<a href="http://universidade.caixa.gov.br/poderpublico/calendar/view.php">Clique aqui para saber mais &gt;</a>
+</div>
+
+
+
+
+// Bloco 2
+<div class="box-img">
+	<img src="http://moodlehmp.universidade.caixa:82/draftfile.php/5/user/draft/486296264/box2.png" alt="Espaço do GCM" class="img-responsive atto_image_button_text-bottom">
+</div>
+<div class="box-text">
+	<h2>Espaço do GCM</h2>
+	<p>Os Gestores Municipais de Convênios e Contratos têm acesso às informações importantes para gerenciar contratos e financiamentos da Prefeitura.</p>
+	<a href="http://universidade.caixa.gov.br/poderpublico/mod/page/view.php?id=35">Clique aqui para saber mais &gt;</a>
+</div>
+
+
+
+
+// Bloco 3
+<div class="box-img">
+	<img src="http://localhost/unicaixa/moodle/pluginfile.php/1/theme_adaptable/adaptablemarketingimages/0/box3.png" alt="Espaço do GCM" width="280" height="254" role="presentation" class="img-responsive atto_image_button_text-bottom"></div>
+<div class="box-text">
+	<h2>Rede de Atendimento</h2>
+	<p>Acesso o mapa interativo e a rede de atendimento sempre que precisar. Aqui, você encontra os telefones das SRs, DIGOVs, GIFABs, GIHABs.</p>
+	<a href="http://universidade.caixa.gov.br/poderpublico/mod/page/view.php?id=38">Clique aqui para saber mais &gt;</a>
+</div>
+
+
+
+// Bloco 4
+<div class="box-img">
+	<img src="http://localhost/unicaixa/moodle/pluginfile.php/1/theme_adaptable/adaptablemarketingimages/0/box4.png" alt="Espaço do GCM" width="280" height="254" role="presentation" class="img-responsive atto_image_button_text-bottom"></div>
+<div class="box-text">
+	<h2>Programa Caixa Melhores Práticas</h2>
+	<p>Conheça o programa que valoriza idéias e projetos para melhorar a qualidade de vida das pessoas.</p>
+	<a href="http://universidade.caixa.gov.br/poderpublico/mod/page/view.php?id=39">Clique aqui para saber mais &gt;</a>
+</div>
+
+
+
+// Bloco 5
+<div class="box-img">
+	<img src="http://localhost/unicaixa/moodle/pluginfile.php/1/theme_adaptable/adaptablemarketingimages/0/box5.png" alt="Espaço do GCM" width="280" height="254" role="presentation" class="img-responsive atto_image_button_text-bottom"></div>
+<div class="box-text">
+	<h2>Parceiros</h2>
+	<p>Saiba quem faz parte desta corrente de conhecimento. Conheça mais sobre os nossos parceiros, seus sites e cursos.</p>
+	<a href="http://universidade.caixa.gov.br/poderpublico/mod/page/view.php?id=41">Clique aqui para saber mais &gt;</a>
+</div>
+
+
+
+// Bloco 6
+<div class="box-img">
+	<img src="http://localhost/unicaixa/moodle/pluginfile.php/1/theme_adaptable/adaptablemarketingimages/0/box6.png" alt="Espaço do GCM" width="280" height="254" class="img-responsive atto_image_button_text-bottom"></div>
+<div class="box-text">
+	<h2>Crie sua Conta</h2>
+	<p>Faça seu cadastramento agora, gerencie sua conta com praticidade e fique por dentro de tudo.</p>
+	<a href="http://universidade.caixa.gov.br/poderpublico/login/signup.php?">Clique aqui para saber mais &gt;</a>
+</div>
+
+
+
+
