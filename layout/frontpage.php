@@ -31,6 +31,8 @@ require_once(dirname(__FILE__) . '/includes/header.php');
 
 // Set layout.
 $left = $PAGE->theme->settings->blockside;
+$hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
+$regions = theme_adaptable_grid($left, $hassidepost);
 
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 
@@ -94,39 +96,16 @@ if (!empty($PAGE->theme->settings->infobox2)) {
             <?php echo $OUTPUT->navbar(); ?>
 
     </div>
-
-<?php
-
-// Left Sidebar.
-if (($left == 1) && $PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
-    echo $OUTPUT->blocks('side-post', 'span3 desktop-first-column');
-}
-
-
-// Main Region.
-if ($PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
-    if ($left == 1) {
-        echo '<section id="region-main" class="span9">';
-    } else {
-        echo '<section id="region-main" class="span9" style="margin: 0;">';
-    }
-}
-
-echo $OUTPUT->course_content_header();
-echo $OUTPUT->main_content();
-echo $OUTPUT->course_content_footer();
-?>
-
-</section>
-
-<?php
-
-// Right Sidebar.
-if (($left == 0) && $PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
-    echo $OUTPUT->blocks('side-post', 'span3');
-}
-?>
-
+    <section id="region-main" class="<?php echo $regions['content'];?>">
+        <?php
+        echo $OUTPUT->course_content_header();
+        echo $OUTPUT->main_content();
+        echo $OUTPUT->course_content_footer();
+        ?>
+    </section>
+    <?php
+        echo $OUTPUT->blocks('side-post', $regions['blocks']);
+    ?>
 </div>
 
 <?php
