@@ -36,16 +36,32 @@ require_once($CFG->dirroot.'/course/format/weeks/renderer.php');
 
 trait single_section_page {
     /**
-     * Output the html for a single section page .
+     * Output the html for a single section page.
      *
-     * @param stdClass $course The course entry from DB
-     * @param array $sections (argument not used)
-     * @param array $mods (argument not used)
-     * @param array $modnames (argument not used)
-     * @param array $modnamesused (argument not used)
-     * @param int $displaysection The section number in the course which is being displayed
+     * @param stdClass $course The course entry from DB.
+     * @param array $sections (argument not used).
+     * @param array $mods (argument not used).
+     * @param array $modnames (argument not used).
+     * @param array $modnamesused (argument not used).
+     * @param int $displaysection The section number in the course which is being displayed.
      */
     public function print_single_section_page($course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
+        $this->print_single_section_page_content($course, $sections, $mods, $modnames, $modnamesused, $displaysection);
+    }
+
+    /**
+     * Output the html for a single section page.
+     *
+     * @param stdClass $course The course entry from DB.
+     * @param array $sections (argument not used).
+     * @param array $mods (argument not used).
+     * @param array $modnames (argument not used).
+     * @param array $modnamesused (argument not used).
+     * @param boolean $showsectionzero states if section zero is to be shown at the top of the section.
+     * @param int $displaysection The section number in the course which is being displayed.
+     */
+    protected function print_single_section_page_content($course, $sections, $mods, $modnames, $modnamesused, $displaysection,
+        $showsectionzero = 1) {
         global $PAGE;
 
         $modinfo = get_fast_modinfo($course);
@@ -70,14 +86,16 @@ trait single_section_page {
 
         // Copy activity clipboard..
         echo $this->course_activity_clipboard($course, $displaysection);
-        $thissection = $modinfo->get_section_info(0);
-        if ($thissection->summary or !empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
-            echo $this->start_section_list();
-            echo $this->section_header($thissection, $course, true, $displaysection);
-            echo $this->courserenderer->course_section_cm_list($course, $thissection, $displaysection);
-            echo $this->courserenderer->course_section_add_cm_control($course, 0, $displaysection);
-            echo $this->section_footer();
-            echo $this->end_section_list();
+        if ($showsectionzero) {
+            $thissection = $modinfo->get_section_info(0);
+            if ($thissection->summary or !empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
+                echo $this->start_section_list();
+                echo $this->section_header($thissection, $course, true, $displaysection);
+                echo $this->courserenderer->course_section_cm_list($course, $thissection, $displaysection);
+                echo $this->courserenderer->course_section_add_cm_control($course, 0, $displaysection);
+                echo $this->section_footer();
+                echo $this->end_section_list();
+            }
         }
 
         // Start single-section div
@@ -138,12 +156,25 @@ trait single_section_page {
      * @return string HTML to output.
      */
     protected function section_nav_selection($course, $sections, $displaysection) {
+        return $this->section_nav_selection_content($course, $sections, $displaysection);
+    }
+
+    /**
+     * Generate the html for the 'Jump to' menu on a single section page.
+     *
+     * @param stdClass $course The course entry from DB
+     * @param array $sections The course_sections entries from the DB
+     * @param $displaysection the current displayed section number.
+     * @param int $section Section number to start on.
+     *
+     * @return string HTML to output.
+     */
+    protected function section_nav_selection_content($course, $sections, $displaysection, $section = 1) {
         global $CFG;
         $o = '';
         $sectionmenu = array();
         $sectionmenu[course_get_url($course)->out(false)] = get_string('maincoursepage');
         $modinfo = get_fast_modinfo($course);
-        $section = 1;
         while ($section <= $course->numsections) {
             $thissection = $modinfo->get_section_info($section);
             $showsection = $thissection->uservisible or !$course->hiddensections;
@@ -165,8 +196,8 @@ trait single_section_page {
         $maxlen = 50;
         $string = strip_tags($string);
         $boundary = $maxlen - strlen($ellipsis);
-        if ((strlen($string) > $maxlen)) {
-            $shortstring = substr($string, 0, $boundary) . $ellipsis;
+        if ((core_text::strlen($string) > $maxlen)) {
+            $shortstring = core_text::substr($string, 0, $boundary) . $ellipsis;
         } else {
             $shortstring = $string;
         }
@@ -174,14 +205,27 @@ trait single_section_page {
     }
 
     /**
-     * Generate next/previous section links for naviation
+     * Generate next/previous section links for naviation.
      *
-     * @param stdClass $course The course entry from DB
-     * @param array $sections The course_sections entries from the DB
-     * @param int $sectionno The section number in the coruse which is being dsiplayed
-     * @return array associative array with previous and next section link
+     * @param stdClass $course The course entry from DB.
+     * @param array $sections The course_sections entries from the DB.
+     * @param int $sectionno The section number in the coruse which is being displayed.
+     * @return array associative array with previous and next section link.
      */
     protected function get_nav_links($course, $sections, $sectionno) {
+        return $this->get_nav_links_content($course, $sections, $sectionno);
+    }
+
+    /**
+     * Generate next/previous section links for naviation.
+     *
+     * @param stdClass $course The course entry from DB.
+     * @param array $sections The course_sections entries from the DB.
+     * @param int $sectionno The section number in the coruse which is being displayed.
+     * @param int $buffer Control the navigation items for when section 0 is in the grid in the Grid format.
+     * @return array associative array with previous and next section link.
+     */
+    protected function get_nav_links_content($course, $sections, $sectionno, $buffer = 0) {
         // FIXME: This is really evil and should by using the navigation API.
         $course = course_get_format($course)->get_course();
         $canviewhidden = has_capability('moodle/course:viewhiddensections', context_course::instance($course->id))
@@ -192,7 +236,7 @@ trait single_section_page {
         $back = $sectionno - 1;
 
         $hasprev = $hasnext = false;
-        while ($back > 0 && !$hasprev) {
+        while ($back > $buffer && !$hasprev) {
             if ($canviewhidden || $sections[$back]->uservisible) {
                 $params = array();
                 $params['class'] = 'previous_section prevnext';
@@ -217,7 +261,7 @@ trait single_section_page {
                 if (!$sections[$forward]->visible) {
                     $params['class'] = 'next_section prevnext dimmed_text';
                 }
-                
+
                 $sectionname = html_writer::tag('span', get_string('nextsection', 'theme_adaptable'), array('class' => 'nav_guide')) . '<br>';
                 $sectionname .= get_section_name($course, $sections[$forward]);
                 $nextlink = html_writer::tag('span', $sectionname, array('class' => 'text'));
@@ -236,8 +280,73 @@ class theme_adaptable_format_topics_renderer extends format_topics_renderer {
     use single_section_page;
 }
 
-class theme_adaptable_format_weeks_renderer extends format_topics_renderer {
+class theme_adaptable_format_weeks_renderer extends format_weeks_renderer {
     use single_section_page;
+}
+
+/******************************************************************************************
+ * @copyright 2017 Gareth J Barnard
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
+ *
+ * Grid format renderer for the Adaptable theme.
+ */
+// Check if GRID is installed before trying to override it.
+if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) {
+    include_once($CFG->dirroot."/course/format/grid/renderer.php");
+
+    class theme_adaptable_format_grid_renderer extends format_grid_renderer {
+        use single_section_page;
+
+        /**
+         * Generate the html for the 'Jump to' menu on a single section page.
+         *
+         * @param stdClass $course The course entry from DB.
+         * @param array $sections The course_sections entries from the DB.
+         * @param $displaysection the current displayed section number.
+         *
+         * @return string HTML to output.
+         */
+        protected function section_nav_selection($course, $sections, $displaysection) {
+            if (!$this->topic0attop) {
+                $section = 0;
+            } else {
+                $section = 1;
+            }
+            return $this->section_nav_selection_content($course, $sections, $displaysection, $section);
+        }
+
+        /**
+         * Generate next/previous section links for naviation.
+         *
+         * @param stdClass $course The course entry from DB.
+         * @param array $sections The course_sections entries from the DB.
+         * @param int $sectionno The section number in the coruse which is being displayed.
+         * @return array associative array with previous and next section link.
+         */
+        public function get_nav_links($course, $sections, $sectionno) {
+            if (!$this->topic0attop) {
+                $buffer = -1;
+            } else {
+                $buffer = 0;
+            }
+            return $this->get_nav_links_content($course, $sections, $sectionno, $buffer);
+        }
+
+        /**
+         * Output the html for a single section page.
+         *
+         * @param stdClass $course The course entry from DB.
+         * @param array $sections (argument not used).
+         * @param array $mods (argument not used).
+         * @param array $modnames (argument not used).
+         * @param array $modnamesused (argument not used).
+         * @param int $displaysection The section number in the course which is being displayed.
+         */
+        public function print_single_section_page($course, $sections, $mods, $modnames, $modnamesused, $displaysection) {
+            $this->print_single_section_page_content($course, $sections, $mods, $modnames, $modnamesused, $displaysection,
+                $this->topic0attop);
+        }
+    }
 }
 
 /******************************************************************************************
@@ -2729,5 +2838,3 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
 
     // End.
 }
-
-
