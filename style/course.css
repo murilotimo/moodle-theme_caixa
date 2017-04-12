@@ -1,4 +1,32 @@
-/* Topics / Weekly format *************************/
+/*
+* This file is part of Moodle - http://moodle.org/
+*
+* Moodle is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* Moodle is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+*
+*
+* Adaptable Style sheet for courses format
+*
+* @package    theme_adaptable
+* @copyright  2015-2016 Jeremy Hopkins (Coventry University)
+* @copyright  2015-2017 Fernando Acedo (3-bits.com)
+* @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*
+*/
+
+/* ************************ */
+/* Topics / Weekly format   */
+/* ************************ */
 
 .course-content ul.topics li.section {
     padding-bottom: 0;
@@ -20,7 +48,7 @@
 }
 
 #searchforums {
-  margin: 5px 0px 5px 5px;
+    margin: 5px 0 5px 5px;
 }
 
 .course-content .current {
@@ -31,7 +59,7 @@
 }
 
 .panel-body {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .panel-body .courseimage img {
@@ -42,16 +70,16 @@
 }
 
 .course-content ul li.section .side {
-  display: none;
+    display: none;
 }
 
 .editing .course-content ul li.section .side {
-  display: inherit;
+    display: inherit;
 }
 
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
-  margin: 0 0;
+    margin: 0;
 }
 
 .editing .course-content ul.topics li.section .content,
@@ -82,12 +110,6 @@ h3.sectionname {
     margin-bottom: 20px;
     padding: 3px 10px;
     border-bottom: [[setting:coursesectionheaderborderstyle]] [[setting:coursesectionheaderbordercolor]] [[setting:coursesectionheaderborderwidth]];
-    -webkit-border-radius: [[setting:coursesectionheaderborderradiustop]];
-    -webkit-border-bottom-right-radius: [[setting:coursesectionheaderborderradiusbottom]];
-    -webkit-border-bottom-left-radius: [[setting:coursesectionheaderborderradiusbottom]];
-    -moz-border-radius: [[setting:coursesectionheaderborderradiustop]];
-    -moz-border-radius-bottomright: [[setting:coursesectionheaderborderradiusbottom]];
-    -moz-border-radius-bottomleft: [[setting:coursesectionheaderborderradiusbottom]];
     border-radius: [[setting:coursesectionheaderborderradiustop]];
     border-bottom-right-radius: [[setting:coursesectionheaderborderradiusbottom]];
     border-bottom-left-radius: [[setting:coursesectionheaderborderradiusbottom]];
@@ -99,7 +121,7 @@ h3.sectionname {
 
 /* Alter nav on single-section for better onetopic course format support */
 .single-section .nav {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .single-section .nav-tabs {
@@ -114,7 +136,7 @@ h3.sectionname {
 }
 
 .path-course-view .section .summary {
-    padding: 10px 0px 0px 20px;
+    padding: 10px 0 0 20px;
 }
 
 #gridshadebox_content .content .summary,
@@ -131,10 +153,7 @@ h3.sectionname {
     margin-right: 40px;
 }
 
-
-
 /* Course Tiles */
-
 .courses .coursebox.even,
 .courses .coursebox {
   background-color: #fafafa !important;
@@ -162,14 +181,14 @@ h3.sectionname {
 }
 
 .coursebox {
-  padding: 0 0;
-  border: 0px;
-  border-radius: 0px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
 }
 
 #page .covtiles.panel {
   background: transparent !important;
-  border: 0px;
+  border: 0;
   position: relative;
 }
 
@@ -193,43 +212,43 @@ h3.sectionname {
 }
 
 #page .covtiles.panel:hover .panel-body {
-  background: transparent !important;
+  background-color: transparent !important;
 }
 
 #marketblocks.covtiles .internalmarket {
-  background: transparent;
-  border: 0px;
-   padding: 10px 5px;
+    background-color: transparent;
+    border: 0;
+    padding: 10px 5px;
     text-align: left;
     position: relative;
 }
 
 #marketblocks.covtiles h3 {
-  margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 #marketblocks.covtiles a.submit {
-  margin-top: 10px;
-  display: inline-block;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 #page .covtiles.panel .cimbox {
-   background-position: 50% 0 !important;
+    background-position: 50% 0 !important;
     background-size: cover !important;
     height: 200px;
     overflow: hidden;
 }
 
 #page .covtiles.panel .cimbox, #page .covtiles.panel:hover .cimbox, #page .covtiles.panel:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .covtiles.coursebox.panel.hover .panel-body .coursebox-content h3, #marketblocks.covtiles h4 {
-  background: [[setting:covbkcolor]];
+    background: [[setting:covbkcolor]];
     border: 5px solid #fff;
-    border-left: 0px;
-    border-right: 0px;
-    border-bottom: 0px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
     color: [[setting:covfontcolor]] !important;
     font-size: 18px;
     font-weight: 800;
@@ -241,52 +260,47 @@ h3.sectionname {
     max-width: 100%;
 }
 
-.covtiles.coursebox.panel.hover .panel-body .coursebox-content h3 a, #marketblocks.covtiles h4 a, .covtiles.coursebox.panel.hover .panel-body .coursebox-content h3 a:hover, #marketblocks.covtiles h4 a:hover {
-  color: [[setting:covfontcolor]] !important;
-}
-
-.covtiles.coursebox.panel.hover .panel-body .coursebox-content h3 a {
-  color: [[setting:covfontcolor]] !important;
+.covtiles.coursebox.panel.hover .panel-body .coursebox-content h3 a,
+#marketblocks.covtiles h4 a,
+.covtiles.coursebox.panel.hover .panel-body .coursebox-content h3 a:hover,
+#marketblocks.covtiles h4 a:hover {
+    color: [[setting:covfontcolor]] !important;
 }
 
 .covtiles .coursebox-content {
-  position: relative;
-  padding: 0 0;
+    position: relative;
+    padding: 0 0;
 }
 
 .coursebox.hover.covtiles2 .summary {
-  display: block !important;
-  background: [[setting:covbkcolor]];
-  bottom: 0;
+    display: block !important;
+    background: [[setting:covbkcolor]];
+    bottom: 0;
     left: 0;
-    padding: 0 0;
+    padding: 0;
     right: 0;
     top: inherit;
     width: 98%;
-    height: 0px;
-    min-height: 0px;
-    max-height: 0px;
+    height: 0;
+    min-height: 0;
+    max-height: 0;
     overflow: hidden;
     opacity: 1;
-    -webkit-transition: max-height 1.0s !important;
-  -moz-transition: max-height 1.0s !important;
-  transition: max-height 1.0s !important;
+    transition: max-height 1.0s !important;
 }
 
 .coursebox.hover.covtiles2:hover .summary {
-  height: auto;
-  min-height: 30px;
-  padding: 10px 1%;
-  max-height: 1000px;
-  opacity: 1;
-  -webkit-transition: max-height 1.0s !important;
-  -moz-transition: max-height 1.0s !important;
-  transition: max-height 1.0s !important;
+    height: auto;
+    min-height: 30px;
+    padding: 10px 1%;
+    max-height: 1000px;
+    opacity: 1;
+    transition: max-height 1.0s !important;
 }
 
 .covtiles.panel.hover .coursebtn.submit.btn {
-  display: block;
-  margin-top: 10px;
+    display: block;
+    margin-top: 10px;
 }
 
 .coursebox.hover.covtiles .summary {
@@ -299,7 +313,7 @@ h3.sectionname {
 }
 
 #page .covtiles.panel .panel-body {
-  padding-bottom: 38px;
+    padding-bottom: 38px;
 }
 
 .covtiles .coursebox-content {
@@ -309,21 +323,235 @@ h3.sectionname {
     height: 38px;
     position: absolute;
     width: auto;
-    -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-  overflow: hidden;
-  background: [[setting:covbkcolor]];
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+    background-color: [[setting:covbkcolor]];
 }
 
 .covtiles .coursebox-content:hover {
     height: 80%;
     position: absolute;
     width: auto;
-    background: [[setting:covbkcolor]];
-    -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+    background-color: [[setting:covbkcolor]];
+    transition: all .5s ease-in-out;
+}
+
+/* ************* */
+/* Social Wall   */
+/* ************* */
+
+/* All sections--------------------------------------------------------------------------- */
+/* Add padding, background, and word-wrap on all sections*/
+.format-socialwall .topics {
+    padding: 2em;
+    border-radius: [[setting:socialwallsectionradius]];
+    background-color: [[setting:socialwallbackgroundcolor]];
+    word-wrap: break-word;
+    font-family: [[setting:fontname]], sans-serif;
+}
+
+/*A dd padding, background, and border to all sections */
+.format-socialwall .section.main.clearfix#section-0,
+.format-socialwall .section.main.clearfix#section-2,
+.format-socialwall .topics > form,
+.format-socialwall #counttotalpost,
+.format-socialwall .topics .tl-post,
+.format-socialwall .tl-post .tl-post-actionarea {
+    padding: 1em;
+    background: #fff;
+    border: [[setting:socialwallborderwidth]] [[setting:socialwallbordertopstyle]] [[setting:socialwallbordercolor]];
+    border-radius: [[setting:socialwallsectionradius]];
+}
+
+/* Section 0 ------------------------------------------------------------------------------- */
+/* Combine section 0, section 2, search form, and post count */
+.format-socialwall .section.main.clearfix#section-0 {
+    border-bottom: 0;
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.format-socialwall .section.main.clearfix#section-2 {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom: 0;
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.format-socialwall .topics > form {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.format-socialwall #counttotalpost {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* Make title background white */
+.format-socialwall .section.main.clearfix#section-0 h3.sectionname {
+    background: #fff;
+}
+
+/* Section 2------------------------------------------------------------------------------- */
+/* Make activity/resource link inactive */
+.format-socialwall #postform input#sw-addactivitylink {
+    pointer-events: none;
+}
+
+/* Text area resizing--------------------------------------------------------------------- */
+/* Allow the comment starting text area to expand to the width of the parent element */
+.format-socialwall div.felement.ftextarea {
+    max-width: 100%;
+}
+/* Set the starting text areas of post and comment to the maximum width, and stop them from expanding futher than their parent element */
+.format-socialwall .sw-texarea, .format-socialwall .tl-commentform .tl-commenttext {
+    box-sizing: border-box;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+/* Post----------------------------------------------------------------------------------- */
+/* Add space between post text and author, and post text and attached files */
+.format-socialwall .tl-posttext .text_to_html {
+    padding: 2em 0 1.5em;
+}
+
+/* Remove border between post author picture and post */
+.format-socialwall .tl-text {
+    border-left: 0;
+}
+
+/* Resize, re-align, and recolour post time edited ago */
+.format-socialwall .tl-edited-wrapper {
+    font-size: 0.8em;
+    text-align: right;
+    color: [[setting:fontcolor]];
+    background: #fff;
+}
+
+/* Comment--------------------------------------------------------------------------------- */
+/* Add space at the bottom of each comment */
+.format-socialwall .tl-comment {
+    padding-bottom: 1em;
+}
+
+/* Add space between comment author name and comment text */
+.format-socialwall .tl-text .tl-authorname {
+    padding-bottom: 1.5em;
+}
+
+/* Add space between comment text and time ago */
+.format-socialwall .tl-comment .tl-text div:nth-child(2) {
+    padding-bottom: 1.5em;
+}
+
+/* Remove space at the bottom of replywrapper */
+.format-socialwall .tl-comment-replywrapper {
+    padding-bottom: 0;
+}
+
+/* Moves the required text to the right */
+div.fdescription.required {
+    float: right;
+}
+
+/* Post attachment------------------------------------------------------------------------- */
+/* Add space between attached files and post text or post author, and space between attached files and post action area */
+.format-socialwall ul.section.tl-postattachment {
+    padding: 2em 0 2.5em;
+    margin: 0;
+}
+
+/* Present attached files horizontally */
+.format-socialwall ul.section.tl-postattachment div {
+    float: left;
+}
+
+/* Post action area------------------------------------------------------------------------ */
+/* Add space around post counts and timeago */
+.format-socialwall .tl-counts, .format-socialwall .tl-timeago {
+    font-size: 0.8em;
+    color: [[setting:fontcolor]];
+    padding: 1em 0 1.5em;
+}
+
+/* Add space after each count (likes and comments) */
+.format-socialwall .tl-counts span {
+    padding-right: 1.5em;
+}
+
+/* Add space at the end of action area and remove right, bottom, left border */
+.format-socialwall .tl-post .tl-post-actionarea {
+    padding: 0 0 1em;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* Post action links---------------------------------------------------------------------- */
+/* Make the color of action link grey */
+.format-socialwall .tl-actionlink a {
+    color: [[setting:socialwallactionlinkcolor]];
+}
+
+/* Add space after like */
+.format-socialwall .tl-actionlink a.like {
+    padding-right: 3em;
+}
+
+/* Add space after likenomore and change color to light blue */
+.format-socialwall .tl-actionlink a.likenomore {
+    padding-right: 3em;
+    font-weight: bold;
+}
+
+/* Change color on hover over to all action link from grey to light blue */
+.format-socialwall .tl-actionlink a:hover {
+    font-weight: bold;
+    color: [[setting:socialwallactionlinkhovercolor]];
+    text-decoration: none;
+}
+
+/* Before the like action link----------------------------------------------------- */
+/* Add a hollow thumbs up icon before like */
+.format-socialwall .like:before {
+    font-family: FontAwesome;
+    content: "\f087";
+    position: relative;
+    padding-right: .15em;
+}
+
+/* Add a full thumbs up icon before like */
+.format-socialwall .likenomore:before {
+    font-family: FontAwesome;
+    content: "\f164";
+    position: relative;
+    padding-right: .15em;
+}
+
+/* Add a hollow comment icon before like */
+.format-socialwall .tl-actionlink a:nth-child(3):before {
+    font-family: FontAwesome;
+    content: "\f0e5";
+    position: relative;
+    padding-right: .15em;
+}
+
+/* Profile picture------------------------------------------------------------------ */
+/* Make the profile picture circular */
+.format-socialwall img.userpicture {
+    border: 0.25em solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0.05em 0.05em rgba(0,0,0,0.05);
 }
