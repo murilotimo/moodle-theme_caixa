@@ -312,12 +312,6 @@ div.signuppanel h2 {
     padding-top: 23px;
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
-    #coursesearchbox2 {
-        min-width: 140px;
-        margin-top: 5px;
-    }
-}
 
 .socialbox {
     padding-top: [[setting:socialpaddingtop]];
@@ -330,22 +324,6 @@ div.signuppanel h2 {
 .socialbox a {
     color: [[setting:headertextcolor2]] !important;
     padding-left: 10px;
-}
-
-@media (max-width: 980px) {
-    .socialbox {
-        padding-bottom: 10px;
-        padding-top: 20px;
-        text-align: center;
-        display: block;
-    }
-
-    #logocontainer {
-        float: left;
-        height: 110px;
-        margin: 5px 15px 5px 0;
-        clear: both;
-    }
 }
 
 .headermenu {
@@ -920,196 +898,6 @@ input[type="radio"], input[type="checkbox"] {
     margin-left: 38px;
 }
 
-@media (max-width: 990px) {
-    .navbar {
-        float: none !important;
-    }
-    .navbar .pull-right {
-        float: none;
-    }
-
-    .navbar .nav > li > a {
-        margin: 0 10px 0 0 !important;
-    }
-
-    .flex-direction-nav .flex-next {
-        right: 0 !important;
-    }
-    .flex-direction-nav .flex-prev {
-        left: 0 !important;
-    }
-    .coursebox .panel-body p {
-        font-size: 90%;
-        line-height: 130%;
-    }
-    .enrolmenticons {
-        display: none;
-    }
-
-    #edittingbutton a,
-    #edittingbutton .btn {
-        margin-left: 10px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    #region-main {
-        padding: 0;
-    }
-
-    #page-header {
-        min-height: 125px;
-    }
-
-    .row-fluid .span3 {
-        width: 100%;
-    }
-
-    .socialbox {
-        display: block;
-        clear: both;
-        padding-top: [[setting:socialboxpaddingtopmobile]];
-        padding-bottom: [[setting:socialboxpaddingbottommobile]];
-    }
-
-    #logo {
-        margin-bottom: 10px;
-    }
-
-    #sitetitle {
-        font-size: 24px;
-        left: 10px;
-        margin-top: 0;
-        max-width: 100%;
-        width: auto;
-    }
-
-    .headermenu2 {
-        float: none;
-        padding: 10px 0 0;
-        text-align: center;
-        clear: both;
-    }
-
-    .flex-caption {
-        width: 100% !important;
-        padding: 5px 0 !important;
-        font-size: 90% !important;
-    }
-
-    .flex-caption p {
-        font-size: 90% !important;
-        margin: 0 5px !important;
-        margin-bottom: 5px !important;
-        line-height: 1.4em;
-    }
-
-    .flex-caption h3 {
-        font-size: 1.1em !important;
-        line-height: 2em;
-        margin: 0 5px !important;
-    }
-
-    a.submit {
-        width: 80%;
-        display: block;
-        margin: 5px auto;
-        text-align: center;
-    }
-
-    .block .header {
-        margin: 0 !important;
-    }
-
-    #page-footer {
-        margin: 50px 0 0;
-    }
-
-    #edittingbutton a,
-    #edittingbutton .btn {
-        margin-left: -10px !important;
-    }
-
-    .navbar .nav > li > a {
-        margin: 0 10px 0 4px !important;
-    }
-
-    .nav .dropdown-menu li a:hover,
-    .navbar .nav > li > a:hover {
-        background-color: rgba(255, 255, 255, .1);
-        color: [[setting:fontcolor]] !important;
-    }
-
-    div.navbar {
-        margin-left: auto;
-    }
-
-    #social-connect, div.left-col.size2of16.span2 {
-        clear: both;
-        float: none;
-        width: auto;
-    }
-
-    .socialbox a {
-        color: [[setting:headertextcolor2]];
-        font-size: [[setting:socialsizemobile]];
-        padding-left: 10px;
-    }
-
-    .message .contactselector {
-        float: none;
-        width: auto;
-    }
-
-    .message .messagearea {
-        border-left: 0 none;
-        float: none;
-        min-height: 200px;
-        padding-left: 1%;
-        width: auto;
-    }
-
-    .navbar .nav-collapse.in > .nav > li > a {
-        border-radius: 0;
-        padding-left: 0 !important;
-    }
-
-    #page-navbar.span12 {
-        background: transparent;
-    }
-
-    .dropdown-toggle a {
-        height: 38px !important;
-    }
-
-    .userhead {
-        height: 20px;
-    }
-}
-
-@media (max-width: 520px) {
-    .flex-caption {
-        width: auto !important;
-        padding: 5px 0 !important;
-        position: relative !important;
-        margin-top: -1px !important;
-        background-color: #000 !important;
-    }
-
-    #page-content {
-        padding: 0;
-        width: auto;
-    }
-
-    #page-header .userimg {
-        display: none;
-    }
-
-    #coursesearchbox2 {
-        display: none;
-    }
-}
-
 #id_message_tbl {
     width: 98%;
 }
@@ -1140,7 +928,6 @@ a.carousel-control {
     color: #fff;
     line-height: 38px;
 }
-
 
 /* lang menu */
 .langmenu a {
@@ -1557,41 +1344,6 @@ div.no-overflow, .yui3-datatable {
 
 .icon-search {
     font-size: 1.4em;
-}
-
-@media (max-width: 979px) {
-    .searchbox {
-            padding-bottom: 5px;
-    }
-    .search-box, .searchbox {
-        margin-top: 40px;
-        width: 100%;
-    }
-    #search-1 {
-        width: calc(100% - 39px);
-    }
-}
-
-@media (min-width: 767px) {
-    .userprofile dl.list dt {
-        width: 110px !important;
-    }
-
-    .userprofile dl.list dd {
-        margin-left: 120px !important;
-    }
-}
-
-@media (max-width: 1345px) {
-    .zoomdesc {
-            display: none;
-    }
-}
-
-@media (max-width: 979px) {
-    .langdesc {
-        display: inline;
-    }
 }
 
 #navwrap {

@@ -121,7 +121,7 @@
     display: none;
     float: right;
     list-style: outside none none;
-    margin: 2px 0 0;
+    margin: 2px 0;
     padding: 5px 0;
     position: absolute;
     right: 0;
@@ -162,36 +162,6 @@
     border-radius: 6px !important;
 }
 
-@media only screen and (min-width: 1068px) {
-    /*on hover only for large screens adjusted to exclude ipad portrait*/
-    .dropdown-menu .sub-menu {
-        left: 100%;
-        position: absolute;
-        top: -10px;
-        visibility: hidden;
-        margin-top: -1px;
-    }
-
-    .newmenus .dropdown-menu {
-        left: 0;
-        position: absolute;
-        visibility: hidden;
-        margin-top: 0;
-    }
-
-    .dropdown-submenu>.dropdown-menu {
-        display: none;
-    }
-
-    .dropdown-menu li:hover .sub-menu, .newmenus:hover .dropdown-menu {
-        visibility: visible;
-    }
-
-    .dropdown:hover>.dropdown-menu {
-        display: block;
-    }
-    /*end on hover hack */
-}
 
 .nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
     margin-top: 0;
@@ -209,7 +179,7 @@
     margin-top: 3px;
 }
 
-/* new menus */
+/* New menus */
 .newmenus {
     position: relative;
     margin-left: 20px;
@@ -253,49 +223,6 @@
     color: transparent;
 }
 
-@media (max-width: 979px) {
-  .hbl, .sbl, .hbll, .sbll {
-            display: none !important;
-  }
-
-  .navbar .dropdown-toggle{
-    height: 38px;
-  }
-
-  .nav-collapse .nav {
-    width: 100%;
-    margin-left: 0 !important;
-  }
-
-  #navwrap {
-            border-bottom: 0;
-  }
-
-  #page-header a img {
-            margin: 0 auto;
-            float: none;
-            display: block;
-  }
-  .nav .dropdown-menu li a {
-    color: [[setting:menufontcolor]];
-  }
-
-  .nav-collapse.active{
-    background: [[setting:mobilemenubkcolor]];
-    height: auto;
-    top: 6px;
-    padding-bottom: 4px;
-  }
-
-  .nav-collapse.active > .nav > li > a, .nav-collapse.active > .nav .dropdown-menu li > a {
-    color:[[setting:mobilemenufontcolor]] !important;
-  }
-
-  #edittingbutton {
-    margin-left: 10px;
-  }
-}
-
 .container-fluid {
     max-width: 100%;
     padding-right: 0;
@@ -304,31 +231,4 @@
 
 .menutitle {
     height: 100%;
-}
-
-@media (max-width: 990px) {
-    .menutitle {
-        float: none;
-    }
-}
-
-@media (max-width: 768px) {
-.newmenu1,
-.newmenu2,
-.newmenu3,
-.newmenu4,
-.newmenu5,
-.newmenu6,
-.newmenu7,
-.newmenu8,
-.newmenu9,
-.newmenu10,
-.newmenu11,
-.newmenu12,
-.newmenu13,
-.newmenu14,
-.newmenu15,
-.newmenu16[[setting:hidepagefootermobile]][[setting:hidebreadcrumbmobile]][[setting:hidealertsmobile]][[setting:hidesocialmobile]][[setting:hideheadermobile]][[setting:hidecoursetitlemobile]] {
-    display: none;
-}
 }
