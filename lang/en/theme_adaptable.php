@@ -1379,3 +1379,7 @@ $string['jssectiondesc'] = 'Add javascript code to the site.';
 
 // Cache definitions.
 $string['cachedef_userdata'] = 'A session cache used to store user specific data.';
+
+// Section navigation ********************************.
+$string['nextsection'] = 'Next Section';
+$string['previoussection'] = 'Previous section';

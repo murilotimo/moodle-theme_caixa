@@ -511,3 +511,35 @@ function theme_adaptable_remove_site_fullname($heading) {
 
     return $header;
 }
+
+/**
+ * Generate theme grid.
+ * @param int $left
+ * @param bool $hassitepost
+ */
+function theme_adaptable_grid($left, $hassitepost) {
+    if ($hassitepost) {
+        if ($left) {
+            $regions = array('content' => 'span9 pull-right');
+            $regions['blocks'] = 'span3 desktop-first-column';
+        } else  {
+            $regions = array('content' => 'span9 desktop-first-column');
+            $regions['blocks'] = 'span3';
+        }
+    } else {
+        $regions = array('content' => 'span12');
+        $regions['blocks'] = 'empty';
+        return $regions;
+    }
+    
+    if ('rtl' === get_string('thisdirection', 'langconfig')) {
+        if ($left) {
+            $regions = array('content' => 'span9 desktop-first-column');
+            $regions['blocks'] = 'span3';
+        } else {
+            $regions = array('content' => 'span9 pull-right');
+            $regions['blocks'] = 'span3 desktop-first-column';
+        }
+    }
+    return $regions;
+}
