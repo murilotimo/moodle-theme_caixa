@@ -1,3 +1,29 @@
+/*
+* This file is part of Moodle - http://moodle.org/
+*
+* Moodle is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* Moodle is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+*
+*
+* Adaptable Menu Style sheet
+*
+* @package    theme_adaptable
+* @copyright  2015-2016 Jeremy Hopkins (Coventry University)
+* @copyright  2015-2017 Fernando Acedo (3-bits.com)
+* @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*
+*/
+
 #navwrap {
     clear: both;
     border-bottom: 3px solid [[setting:menubordercolor]];
@@ -8,7 +34,7 @@
     float: none;
     margin-bottom: 0;
     min-width: 40%;
-    margin-top: 0px;
+    margin-top: 0;
     margin-left: -20px;
 }
 
@@ -16,15 +42,15 @@
     background-color: transparent;
     background-image: none;
     background-repeat: repeat-x;
-    border: 0px solid #D4D4D4;
-    border-radius: 0px 0px 0px 0px;
+    border: 0;
+    border-radius: 0;
     box-shadow: none;
     min-height: 40px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 0;
+    padding-right: 0;
     filter: none;
-    border-top: 0px solid #9E1B12;
-    border-bottom: 0px solid #9E1B12;
+    border-top: 0;
+    border-bottom: 0;
     box-shadow: none;
 }
 
@@ -32,14 +58,14 @@
     color: [[setting:menufontcolor]] !important;
     line-height: 40px;
     float: none;
-    padding: 0px [[setting:menufontpadding]] 0px [[setting:menufontpadding]];
+    padding: 0 [[setting:menufontpadding]] 0 [[setting:menufontpadding]];
     text-decoration: none;
     text-shadow: none;
     font-weight: 400;
     font-size: [[setting:menufontsize]];
     text-transform: none;
-    border-right: 0px solid rgba(0,0,0, .2);
-    background: transparent !important;
+    border-right: 0;
+    background-color: transparent !important;
 }
 
 .navbar .nav > li > a:hover {
@@ -73,7 +99,7 @@
 
 .navbar .pull-right a {
     padding: 4px 15px;
-    border-left: 0px solid rgba(255,255,255, .2);
+    border-left: 0;
 }
 
 .navbar .nav > li > .dropdown-menu:before, .navbar .nav > li > .dropdown-menu:after {
@@ -87,11 +113,11 @@
 .dropdown-menu {
     border: 1px solid #c0c0c0;
     border-radius: 0;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    box-shadow: 0 6px 12px #000;
     font-size: [[setting:menufontsize]];
     top: 40px;
     background-clip: padding-box;
-    background-color: #ffffff;
+    background-color: #fff;
     display: none;
     float: right;
     list-style: outside none none;
@@ -111,22 +137,21 @@
 }
 
 .nav .dropdown-menu li a {
-    border-bottom: none;
     color: [[setting:linkcolor]] !important;
     font-size: 13px;
     font-weight: 400;
     padding: 6px 10px;
-    border-bottom-width: 1px !important;
+    border-bottom: 1px !important;
 }
 
 .nav .dropdown-menu li a:hover,
 .navbar .nav > li > a:hover {
-    background: rgba(255,255,255,.1);
-    color: #333333;
+    background-color: #fff;
+    color: #333;
 }
 
 .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
-    background: rgba(255,255,255,.1);
+    background-color: #fff;
 }
 
 .dropdown-submenu>.dropdown-menu {
@@ -134,10 +159,10 @@
     left: 100%;
     margin-top: -6px;
     margin-left: -1px;
-    border-radius: 6px; !important
+    border-radius: 6px !important;
 }
 
-@media only screen and (min-width : 1068px) {
+@media only screen and (min-width: 1068px) {
     /*on hover only for large screens adjusted to exclude ipad portrait*/
     .dropdown-menu .sub-menu {
         left: 100%;
@@ -148,10 +173,10 @@
     }
 
     .newmenus .dropdown-menu {
-        left: 0%;
+        left: 0;
         position: absolute;
         visibility: hidden;
-        margin-top: 0px;
+        margin-top: 0;
     }
 
     .dropdown-submenu>.dropdown-menu {
@@ -173,23 +198,23 @@
 }
 
 .navbar .nav > li:last-child > a {
-  border-right: 0px !important;
+    border-right: 0 !important;
 }
 
 .dropdown .fa.fa-briefcase {
-  padding-right: 4px;
+    padding-right: 4px;
 }
 
 .navbar .btn, .navbar .btn-group {
-  margin-top: 3px;
+    margin-top: 3px;
 }
 
 /* new menus */
 .newmenus {
-  position: relative;
-  margin-left: 20px;
-  font-size: [[setting:topmenufontsize]];
-  height:26px;
+    position: relative;
+    margin-left: 20px;
+    font-size: [[setting:topmenufontsize]];
+    height: 26px;
 }
 
 .newmenus .dropdown-menu .dropdown-menu {
@@ -197,8 +222,8 @@
 }
 
 .newmenus .dropdown-toggle {
-  color: [[setting:headertextcolor]] !important;
-  background: transparent !important;
+    color: [[setting:headertextcolor]] !important;
+    background-color: transparent !important;
 }
 
 .newmenus .dropdown-menu li a {
@@ -209,23 +234,23 @@
 }
 
 .newmenus .dropdown-menu li:hover a {
-  background: #eee;
+    background-color: #eee;
 }
 
 .newmenus .dropdown-toggle:hover, .newmenus .dropdown-toggle:active, .pull-left .usermenu2.nav a:hover {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 .newmenus .dropdown-toggle::after {
-  font-family:FontAwesome;
-margin-left:5px;
-content:"\f107";
-font-weight: normal;
-color: [[setting:headertextcolor]];
+    font-family:FontAwesome;
+    margin-left:5px;
+    content:"\f107";
+    font-weight: normal;
+    color: [[setting:headertextcolor]];
 }
 
 .newmenus .dropdown-menu .dropdown-toggle::after {
-  color: transparent;
+    color: transparent;
 }
 
 @media (max-width: 979px) {
@@ -238,8 +263,8 @@ color: [[setting:headertextcolor]];
   }
 
   .nav-collapse .nav {
-    width:100%;
-    margin-left: 0px !important;
+    width: 100%;
+    margin-left: 0 !important;
   }
 
   #navwrap {
@@ -259,7 +284,7 @@ color: [[setting:headertextcolor]];
     background: [[setting:mobilemenubkcolor]];
     height: auto;
     top: 6px;
-    padding-bottom:4px;
+    padding-bottom: 4px;
   }
 
   .nav-collapse.active > .nav > li > a, .nav-collapse.active > .nav .dropdown-menu li > a {
@@ -267,7 +292,7 @@ color: [[setting:headertextcolor]];
   }
 
   #edittingbutton {
-    margin-left:10px;
+    margin-left: 10px;
   }
 }
 
@@ -288,5 +313,22 @@ color: [[setting:headertextcolor]];
 }
 
 @media (max-width: 768px) {
-.newmenu1, .newmenu2, .newmenu3, .newmenu4, .newmenu5, .newmenu6, .newmenu7, .newmenu8, .newmenu9, .newmenu10, .newmenu11, .newmenu12, .newmenu13, .newmenu14, .newmenu15, .newmenu16[[setting:hidepagefootermobile]][[setting:hidebreadcrumbmobile]][[setting:hidealertsmobile]][[setting:hidesocialmobile]][[setting:hideheadermobile]][[setting:hidecoursetitlemobile]] {display: none;}
+.newmenu1,
+.newmenu2,
+.newmenu3,
+.newmenu4,
+.newmenu5,
+.newmenu6,
+.newmenu7,
+.newmenu8,
+.newmenu9,
+.newmenu10,
+.newmenu11,
+.newmenu12,
+.newmenu13,
+.newmenu14,
+.newmenu15,
+.newmenu16[[setting:hidepagefootermobile]][[setting:hidebreadcrumbmobile]][[setting:hidealertsmobile]][[setting:hidesocialmobile]][[setting:hideheadermobile]][[setting:hidecoursetitlemobile]] {
+    display: none;
+}
 }
