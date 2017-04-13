@@ -1381,3 +1381,8 @@ $string['jssectiondesc'] = 'Introduce el código Javascript personalizado.';
 
 // Cache definitions.
 $string['cachedef_userdata'] = 'El tiempo para guardar una sesión de un usuario específico.';
+
+// General ******************************************.
+$string['hide'] = 'Ocultar';
+$string['show'] = 'Mostrar';
+

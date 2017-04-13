@@ -1393,3 +1393,8 @@ $string['jssectiondesc'] = 'Introdueix el codi Javascript personalitzat.';
 
 // Cache definitions.
 $string['cachedef_userdata'] = 'El temps per desar una sessió d'un usuari específic.';
+
+// General ******************************************.
+$string['hide'] = 'Ocultar';
+$string['show'] = 'Mostrar';
+
