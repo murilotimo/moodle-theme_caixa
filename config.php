@@ -69,6 +69,7 @@ $THEME->sheets = array( 'adaptable',
                         'button',
                         'socialwall',
                         'alertcolors',
+                        'responsive',
                         'custom');
 
 $THEME->supportscssoptimisation = false;
