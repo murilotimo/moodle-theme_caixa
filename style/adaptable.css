@@ -770,7 +770,7 @@ div.redirectmessage {
 }
 
 .path-grade-report-grader .gradeparent {
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .gradingform_guide .criterion .description {
