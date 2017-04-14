@@ -37,7 +37,7 @@ Only screen and (max-width : 480px)
 
 @media only screen and (max-width: 1200px) {
     .zoomdesc {
-            display: none;
+        display: none;
     }
 }
 
@@ -460,7 +460,7 @@ Only screen and (max-width : 480px)
 
 
 /*=====================================================
-Other
+Other.
 ======================================================= */
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
     #coursesearchbox2 {
@@ -470,8 +470,8 @@ Other
 }
 
 /* Menu dropdown at 1068 */
-@media only screen and (min-width: 1068px) {
-    /*on hover only for large screens adjusted to exclude ipad portrait*/
+@media only screen and (min-width: 767px) {
+    /* On hover only for large screens adjusted to exclude ipad portrait. */
     .dropdown-menu .sub-menu {
         left: 100%;
         position: absolute;
