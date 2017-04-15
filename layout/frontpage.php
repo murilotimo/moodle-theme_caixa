@@ -35,9 +35,13 @@ $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 $regions = theme_adaptable_grid($left, $hassidepost);
 
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
+$hideslidermobile = $PAGE->theme->settings->hideslidermobile;
 
+// Include slider.
 if (!empty($PAGE->theme->settings->sliderenabled)) {
-    echo $OUTPUT->get_frontpage_slider();
+    if (((is_mobile()) && $hideslidermobile = 0) || is_desktop()) {
+        echo $OUTPUT->get_frontpage_slider();
+    }
 }
 
 // Infobox 1.
