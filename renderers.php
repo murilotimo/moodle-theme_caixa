@@ -1442,20 +1442,23 @@ EOT;
         global $PAGE;
         $retval = '';
 
-        if (!isset($PAGE->theme->settings->enabletickermy)) {
-            $PAGE->theme->settings->enabletickermy = 0;
-        }
-
-        // Do not show navbar on dashboard / my home if news ticker is rendering.
-        if (!($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
-            $retval = '<div id="page-navbar" class="span12">';
-            if ($addbutton) {
-                $retval .= '<nav class="breadcrumb-button">' . $this->page_heading_button() . '</nav>';
+        if (((is_mobile()) && $hideslidermobile = 0) || is_desktop()) {
+            if (!isset($PAGE->theme->settings->enabletickermy)) {
+                $PAGE->theme->settings->enabletickermy = 0;
             }
 
-            $retval .= $this->navbar();
-            $retval .= '</div>';
+            // Do not show navbar on dashboard / my home if news ticker is rendering.
+            if (!($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
+                $retval = '<div id="page-navbar" class="span12">';
+                if ($addbutton) {
+                    $retval .= '<nav class="breadcrumb-button">' . $this->page_heading_button() . '</nav>';
+                }
+    
+                $retval .= $this->navbar();
+                $retval .= '</div>';
+            }
         }
+
         return $retval;
     }
 
