@@ -90,8 +90,12 @@ defined('MOODLE_INTERNAL') || die;
     $title = get_string('hidecoursetitlemobile', 'theme_adaptable');
     $description = get_string('hidecoursetitlemobiledesc', 'theme_adaptable');
     $radchoices = array(
-        ', #coursetitle, #titlecontainer' => get_string('hide', 'theme_adaptable'),
-        '' => get_string('show', 'theme_adaptable'),
+//        ', #coursetitle, #titlecontainer' => get_string('hide', 'theme_adaptable'),
+//        '' => get_string('show', 'theme_adaptable'),
+        0 => get_string('hide', 'theme_adaptable'),
+        1 => get_string('show', 'theme_adaptable'),
+
+
     );
     $setting = new admin_setting_configselect($name, $title, $description, ', #coursetitle, #titlecontainer', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -102,8 +106,11 @@ defined('MOODLE_INTERNAL') || die;
     $title = get_string('hidelogomobile', 'theme_adaptable');
     $description = get_string('hidelogomobiledesc', 'theme_adaptable');
     $radchoices = array(
-        ', #logocontainer' => get_string('hide', 'theme_adaptable'),
-        '' => get_string('show', 'theme_adaptable'),
+//        ', #logocontainer' => get_string('hide', 'theme_adaptable'),
+//        '' => get_string('show', 'theme_adaptable'),
+        0 => get_string('hide', 'theme_adaptable'),
+        1 => get_string('show', 'theme_adaptable'),
+
     );
     $setting = new admin_setting_configselect($name, $title, $description, ', #logocontainer', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');

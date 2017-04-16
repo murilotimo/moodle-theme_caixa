@@ -523,7 +523,7 @@ function theme_adaptable_grid($left, $hassitepost) {
         if ($left) {
             $regions = array('content' => 'span9 pull-right');
             $regions['blocks'] = 'span3 desktop-first-column';
-        } else  {
+        } else {
             $regions = array('content' => 'span9 desktop-first-column');
             $regions['blocks'] = 'span3';
         }
@@ -532,7 +532,7 @@ function theme_adaptable_grid($left, $hassitepost) {
         $regions['blocks'] = 'empty';
         return $regions;
     }
-    
+
     if ('rtl' === get_string('thisdirection', 'langconfig')) {
         if ($left) {
             $regions = array('content' => 'span9 desktop-first-column');
@@ -548,22 +548,22 @@ function theme_adaptable_grid($left, $hassitepost) {
 /**
  * Detect device.
  */
-function is_desktop(){
-  $useragent = $_SERVER['HTTP_USER_AGENT'];
-  return stripos($useragent,'mobile')===false && stripos($useragent,'tablet')===false && stripos($useragent,'ipad')===false ;
-}
- 
-function is_tablet(){
-  $useragent = $_SERVER['HTTP_USER_AGENT'];
-  return stripos($useragent,'tablet')!==false || stripos($useragent,'tab')!==false;
+function is_desktop() {
+    $useragent = $_SERVER['HTTP_USER_AGENT'];
+    return stripos($useragent, 'mobile') === false && stripos($useragent, 'tablet') === false && stripos($useragent, 'ipad') === false;
 }
 
-function is_ipad(){
-  $useragent = $_SERVER['HTTP_USER_AGENT'];
-  return stripos($useragent,'ipad')!==false;
+function is_tablet() {
+    $useragent = $_SERVER['HTTP_USER_AGENT'];
+    return stripos($useragent, 'tablet') !== false || stripos($useragent, 'tab') !== false;
 }
 
-function is_mobile(){
-  $useragent = $_SERVER['HTTP_USER_AGENT'];
-  return stripos($useragent,'mobile')!==false || stripos($useragent,'nokia')!==false || stripos($useragent,'phone')!==false;
+function is_ipad() {
+    $useragent = $_SERVER['HTTP_USER_AGENT'];
+    return stripos($useragent, 'ipad') !== false;
+}
+
+function is_mobile() {
+    $useragent = $_SERVER['HTTP_USER_AGENT'];
+    return stripos($useragent, 'mobile') !== false || stripos($useragent, 'nokia') !== false || stripos($useragent, 'phone') !== false;
 }

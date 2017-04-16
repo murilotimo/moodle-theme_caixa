@@ -1801,11 +1801,11 @@ div.questionbankwindow.block {
     height: 500px;
     opacity: 1;
     position: absolute;
-    right: 0;
-    top: 20px;
+    right: -250px;
+    top: 30px;
     transition: height 0.25s ease 0s;
     visibility: visible;
-    width: 380px;
+    width: 300px;
     z-index: 100;
     box-shadow: 5px 5px 15px 1px #000;
 }
