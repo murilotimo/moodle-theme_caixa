@@ -694,20 +694,11 @@ $string['fonttitleweightdesc'] = 'Estableix el Gruix de la font del títol del l
 $string['fonttitlesize'] = 'Mida de la font del títol del lloc';
 $string['fonttitlesizedesc'] = 'Mida de la font del títol del lloc situat a la capçalera. Introduir un valor decimal, per exemple: 24px';
 
-$string['fonttitlenamecourse'] = 'Font del títol del curs';
-$string['fonttitlenamecoursedesc'] = 'Selecciona la font de <a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> per al títol del curs.';
-
 $string['fonttitlecolorcourse'] = 'Color de la font del títol del curs';
 $string['fonttitlecolorcoursedesc'] = 'Estableix el color de la font utilitzada al títol del curs.';
 
-$string['fonttitleweightcourse'] = 'Gruix de la font del títol del curs';
-$string['fonttitleweightcoursedesc'] = 'Estableix el gruix de la font utilitzada al títol del curs. Introduir un valor entre 100 i 900 depenent de la font utilitzada.';
-
-$string['fonttitlesizecourse'] = 'Mida de la font del títol del curs';
-$string['fonttitlesizecoursedesc'] = 'Estableix la mida de la font del títol del curs. Introduir un valor decimal, per ecemple: 24px';
-
 $string['fontsubset'] = 'Joc de caracters de Google Fonts';
-$string['fontsubsetdesc'] = 'Seleccionar el joc de caracters de Google Fonts a utilitzat a més a més del llatí ja inclòs per defecte. S'aplicarà a totes les fonts seleccionades.';
+$string['fontsubsetdesc'] = 'Seleccionar el joc de caracters de Google Fonts a utilitzat a més a més del llatí ja inclòs per defecte. S''aplicarà a totes les fonts seleccionades.';
 
 $string['menufontsize'] = 'Mida de la font de la barra de navegació';
 $string['menufontsizedesc'] = 'Estableix la mida de la font utilitzada a la barra de navegació.';
