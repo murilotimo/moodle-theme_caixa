@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
    $('.close').click(function(){
       var alertindex = $(this).data('alertindex');
       var alertkey = $(this).data('alertkey');
-      if(alertkey!='undismissable' && alertkey != 'undefined' && alertkey){
+      if(alertkey!='undismissable'){
          M.util.set_user_preference('theme_adaptable_alertkey' + alertindex, alertkey);
       }
     });
@@ -119,25 +119,6 @@ $(".container.slidewrap").on('transitionend', function() {
     })
 });
 
-// Zoom ************************************************
-var onZoom = function() {
-  var zoomin = Y.one('body').hasClass('zoomin');
-  if (zoomin) {
-    Y.one('body').removeClass('zoomin');
-    M.util.set_user_preference('theme_adaptable_zoom', 'nozoom');
-  } else {
-    Y.one('body').addClass('zoomin');
-    M.util.set_user_preference('theme_adaptable_zoom', 'zoomin');
-  }
-};
-
-//When the button with class .moodlezoom is clicked fire the onZoom function
-M.theme_adaptable = M.theme_adaptable || {};
-M.theme_adaptable.zoom =  {
-  init: function() {
-    Y.one('body').delegate('click', onZoom, '.moodlezoom');
-  }
-};
 
 
 var onFull = function() {
