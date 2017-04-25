@@ -1083,6 +1083,9 @@ $string['hidebreadcrumbmobiledesc'] = 'Checking this option will remove the brea
 $string['hidepagefootermobile'] = 'Hide footer on mobile';
 $string['hidepagefootermobiledesc'] = 'Checking this option will remove the footer on mobile devices';
 
+$string['hideslidermobile'] = 'Hide slider on mobile';
+$string['hideslidermobiledesc'] = 'Hide will remove the front page slider on mobile devices';
+
 
 // Layout **********************************************************.
 $string['layoutsettings'] = 'Layout';
@@ -1383,3 +1386,9 @@ $string['cachedef_userdata'] = 'A session cache used to store user specific data
 // Section navigation ********************************.
 $string['nextsection'] = 'Next Section';
 $string['previoussection'] = 'Previous section';
+
+// General ******************************************.
+$string['hide'] = 'Hide';
+$string['show'] = 'Show';
+
+

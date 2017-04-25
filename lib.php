@@ -161,6 +161,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:socialsize]]' => '32px',
         '[[setting:socialsizemobile]]' => '22px',
         '[[setting:mobile]]' => '22',
+        '[[setting:hideslidermobile]]' => '1',
         '[[setting:socialpaddingtop]]' => '1.8%',
         '[[setting:fontname]]' => 'Open Sans',
         '[[setting:fontsize]]' => '95%',
@@ -522,7 +523,7 @@ function theme_adaptable_grid($left, $hassitepost) {
         if ($left) {
             $regions = array('content' => 'span9 pull-right');
             $regions['blocks'] = 'span3 desktop-first-column';
-        } else  {
+        } else {
             $regions = array('content' => 'span9 desktop-first-column');
             $regions['blocks'] = 'span3';
         }
@@ -531,7 +532,7 @@ function theme_adaptable_grid($left, $hassitepost) {
         $regions['blocks'] = 'empty';
         return $regions;
     }
-    
+
     if ('rtl' === get_string('thisdirection', 'langconfig')) {
         if ($left) {
             $regions = array('content' => 'span9 desktop-first-column');
@@ -542,4 +543,27 @@ function theme_adaptable_grid($left, $hassitepost) {
         }
     }
     return $regions;
+}
+
+/**
+ * Detect device.
+ */
+function is_desktop() {
+    $useragent = $_SERVER['HTTP_USER_AGENT'];
+    return stripos($useragent, 'mobile') === false && stripos($useragent, 'tablet') === false && stripos($useragent, 'ipad') === false;
+}
+
+function is_tablet() {
+    $useragent = $_SERVER['HTTP_USER_AGENT'];
+    return stripos($useragent, 'tablet') !== false || stripos($useragent, 'tab') !== false;
+}
+
+function is_ipad() {
+    $useragent = $_SERVER['HTTP_USER_AGENT'];
+    return stripos($useragent, 'ipad') !== false;
+}
+
+function is_mobile() {
+    $useragent = $_SERVER['HTTP_USER_AGENT'];
+    return stripos($useragent, 'mobile') !== false || stripos($useragent, 'nokia') !== false || stripos($useragent, 'phone') !== false;
 }

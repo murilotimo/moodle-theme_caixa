@@ -217,8 +217,6 @@ if (!isloggedin() || isguestuser()) {
         <div class="dropdown secondone">
             <a class="dropdown-toggle usermendrop" data-toggle="dropdown" data-target="#">
 
-
-
 <?php
     // Show user avatar.
     $userpic = $OUTPUT->user_picture($USER, array('link' => false, 'size' => 80, 'class' => 'userpicture'));
@@ -308,7 +306,6 @@ if ($PAGE->theme->settings->socialorsearch == 'search') { ?>
 <?php
 
 // Navbar Menu.
-
 if (isloggedin() && !isguestuser()) {
 ?>
     <div id="navwrap">

@@ -1442,23 +1442,25 @@ EOT;
         global $PAGE;
         $retval = '';
 
-        if (!isset($PAGE->theme->settings->enabletickermy)) {
-            $PAGE->theme->settings->enabletickermy = 0;
-        }
-
-        // Do not show navbar on dashboard / my home if news ticker is rendering.
-        if (!($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
-            $retval = '<div id="page-navbar" class="span12">';
-            if ($addbutton) {
-                $retval .= '<nav class="breadcrumb-button">' . $this->page_heading_button() . '</nav>';
+        if (((is_mobile()) && $hideslidermobile = 0) || is_desktop()) {
+            if (!isset($PAGE->theme->settings->enabletickermy)) {
+                $PAGE->theme->settings->enabletickermy = 0;
             }
 
-            $retval .= $this->navbar();
-            $retval .= '</div>';
+            // Do not show navbar on dashboard / my home if news ticker is rendering.
+            if (!($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
+                $retval = '<div id="page-navbar" class="span12">';
+                if ($addbutton) {
+                    $retval .= '<nav class="breadcrumb-button">' . $this->page_heading_button() . '</nav>';
+                }
+
+                $retval .= $this->navbar();
+                $retval .= '</div>';
+            }
         }
+
         return $retval;
     }
-
 
     /*
      * Render the breadcrumb
@@ -1832,22 +1834,27 @@ EOT;
      * @return string
      */
     public function get_logo_title() {
-        global $PAGE, $COURSE, $CFG, $SITE, $OUTPUT;
+        global $PAGE, $COURSE, $CFG, $SITE;
         $retval = '';
 
         $div = '<div id="titlecontainer" class="pull-left">';
         $retval .= $div;
 
-        if (!empty($PAGE->theme->settings->logo)) {
-            // Logo.
-            $retval .= '<div id="logocontainer">';
-            $retval .= "<a href='$CFG->wwwroot'>";
-            $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
-            $retval .= '</a></div>';
-        } else {
-            $retval .= '<div style="height: 20px"></div>';
+        $hidelogomobile = $PAGE->theme->settings->hidelogomobile;
+
+        if (((is_mobile()) && ($hidelogomobile == 1)) || (is_desktop())) {
+                if (!empty($PAGE->theme->settings->logo)) {
+                    // Logo.
+                    $retval .= '<div id="logocontainer">';
+                    $retval .= "<a href='$CFG->wwwroot'>";
+                    $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
+                    $retval .= '</a></div>';
+                } else {
+                    $retval .= '<div style="height: 20px"></div>';
+                }
         }
 
+if (((is_mobile()) && $PAGE->theme->settings->hidecoursetitlemobile == 1) || is_desktop()) {
         // If course id is greater than one we display course title.
         if ($COURSE->id > 1) {
             switch ($PAGE->theme->settings->enableheading) {
@@ -1867,7 +1874,7 @@ EOT;
                     break;
             }
         }
-
+}
         // If course id is one we display the site title.
         if ($COURSE->id == 1) {
             switch ($PAGE->theme->settings->sitetitle) {
@@ -1893,6 +1900,8 @@ EOT;
                     break;
             }
         }
+
+        
         $retval .= '</div>';
         return $retval;
     }
