@@ -32,8 +32,8 @@ require_once(dirname(__FILE__) . '/includes/header.php');
 $left = $PAGE->theme->settings->blockside;
 
 // If page is Grader report, override blockside setting to align left.
-if ( ($PAGE->pagetype == "grade-report-grader-index") ||
-     ($PAGE->bodyid == "page-grade-report-grader-index") ) {
+if (($PAGE->pagetype == "grade-report-grader-index") ||
+    ($PAGE->bodyid == "page-grade-report-grader-index")) {
     $left = true;
 }
 
@@ -44,6 +44,7 @@ $regions = theme_adaptable_grid($left, $hassidepost);
 <div class="container outercont">
     <div id="page-content" class="row-fluid">
         <?php echo $OUTPUT->page_navbar(false); ?>
+
         <section id="region-main" class="<?php echo $regions['content'];?>">
             <?php
             echo $OUTPUT->get_course_alerts();

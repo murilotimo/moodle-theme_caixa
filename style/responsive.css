@@ -77,19 +77,6 @@ Only screen and (max-width : 480px)
         white-space: normal;
         width: auto;
     }
-    .socialbox {
-        padding-bottom: 10px;
-        padding-top: 20px;
-        text-align: center;
-        display: block;
-    }
-
-    #logocontainer {
-        float: left;
-        height: 110px;
-        margin: 5px 15px 5px 0;
-        clear: both;
-    }
 
     .navbar {
         float: none !important;
@@ -109,6 +96,44 @@ Only screen and (max-width : 480px)
 
     .flex-direction-nav .flex-prev {
         left: 0 !important;
+    }
+
+/* Header */
+    /* Logo */
+    #logocontainer {
+        display: block !important;
+        margin: 5px 0;
+        padding: 0;
+        clear:both;
+        width: 100%;
+        height: auto;
+    }
+
+    #logo img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Site title */
+    #sitetitle {
+        clear: both;
+        display: block;
+        margin: 5px 0;
+        max-width: 100%;
+        text-align: center;
+        padding: 0;
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+
+    /* Social Icons */
+    .socialbox {
+        display: table;
+        padding: 5px;
+        float: none;
+        clear: both;
+        margin: 0 auto;
     }
 
     .coursebox .panel-body p {
@@ -184,6 +209,21 @@ Only screen and (max-width : 480px)
     .menutitle {
         float: none;
     }
+
+    /* Messages / Notifications dropdown */
+    .popover-region-container {
+        height: 600px;
+        float: left;
+        left: -90px;
+        top: 30px;
+        width: 300px;
+    }
+
+.icon {
+    height: 48px;
+    width:  48px;
+}
+
 }
 
 /*=====================================================
@@ -276,25 +316,39 @@ Only screen and (max-width : 480px)
         width: 100%;
     }
 
-    .socialbox {
-        display: block;
-        clear: both;
-        padding-top: [[setting:socialboxpaddingtopmobile]];
-        padding-bottom: [[setting:socialboxpaddingbottommobile]];
+/* Logo 
+    #logocontainer {
+    display: block !important;
+margin: 0 auto;
+padding: 0;
+clear:both;
     }
 
-    #logo {
-        margin-bottom: 10px;
+    #logo img {
+display: block;
+margin: 0 auto;
     }
 
     #sitetitle {
-        font-size: 24px;
-        left: 10px;
-        margin-top: 0;
+clear:both;
+        font-size: 100%;
         max-width: 100%;
+left: 0;
+padding: 0;
+height: auto;
         width: auto;
+        display: block;
+        margin: 0 auto;
     }
 
+    .socialbox {
+        display: inline-block;
+        padding: 0;
+margin: 0 auto;
+float: none;
+clear: both;
+    }
+*/
     .headermenu2 {
         float: none;
         padding: 10px 0;
@@ -469,8 +523,8 @@ Other.
     }
 }
 
-/* Menu dropdown at 1068 */
-@media only screen and (min-width: 767px) {
+/* Dropdown */
+@media only screen and (min-width: 481px) {
     /* On hover only for large screens adjusted to exclude ipad portrait. */
     .dropdown-menu .sub-menu {
         left: 100%;
