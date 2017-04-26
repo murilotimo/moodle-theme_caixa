@@ -167,13 +167,11 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 <div id="page" class="container-fluid <?php echo "$setfull $showiconsclass"; ?>">
 
 <?php
-    // If the device is a mobile and the alerts are not hidden or it is a desktop then load and show the alerts.
-    if (((is_mobile()) && ($hidealertsmobile == 1)) || (is_desktop())) {
-    
+// If the device is a mobile and the alerts are not hidden or it is a desktop then load and show the alerts.
+if (((is_mobile()) && ($hidealertsmobile == 1)) || (is_desktop())) {
     // Display alerts.
-        echo $OUTPUT->get_alert_messages();
-}
-?>
+    echo $OUTPUT->get_alert_messages();
+} ?>
 
 <?php
 // Fixed header.
@@ -240,9 +238,7 @@ if (!isloggedin() || isguestuser()) {
 
     </ul>
 </div>
-<?php
-}
-?>
+<?php } ?>
 </div>
 
 <div style="float: right; position: relative; display: inline; margin-left: 15px; height:20px;">
@@ -269,7 +265,7 @@ if ($CFG->version > 2016120400) {
 <?php
 
 // If it is a mobile and the header is not hidden or it is a desktop then load and show the header.
-    if (((is_mobile()) && ($hideheadermobile == 1)) || (is_desktop())) {
+if (((is_mobile()) && ($hideheadermobile == 1)) || (is_desktop())) {
 ?>
 
 <div id="page-header" class="clearfix container">

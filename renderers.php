@@ -1843,15 +1843,15 @@ EOT;
         $hidelogomobile = $PAGE->theme->settings->hidelogomobile;
 
         if (((is_mobile()) && ($hidelogomobile == 1)) || (is_desktop())) {
-                if (!empty($PAGE->theme->settings->logo)) {
-                    // Logo.
-                    $retval .= '<div id="logocontainer">';
-                    $retval .= "<a href='$CFG->wwwroot'>";
-                    $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
-                    $retval .= '</a></div>';
-                } else {
-                    $retval .= '<div style="height: 20px"></div>';
-                }
+            if (!empty($PAGE->theme->settings->logo)) {
+                // Logo.
+                $retval .= '<div id="logocontainer">';
+                $retval .= "<a href='$CFG->wwwroot'>";
+                $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
+                $retval .= '</a></div>';
+            } else {
+                $retval .= '<div style="height: 20px"></div>';
+            }
         }
 
         $hidecoursetitlemobile = $PAGE->theme->settings->hidecoursetitlemobile;
@@ -1865,12 +1865,12 @@ EOT;
                         // Full Course Name.
                         $retval .= '<div id="sitetitle">' . format_string($COURSE->fullname) . '</div>';
                         break;
-    
+
                     case 'shortname':
                         // Short Course Name.
                         $retval .= '<div id="sitetitle">' . format_string($COURSE->shortname) . '</div>';
                         break;
-    
+
                     default:
                         // None.
                         $retval .= '<div id="sitetitle"></div>';
@@ -1893,7 +1893,7 @@ EOT;
                             $sitetitlehtml = $PAGE->theme->settings->sitetitletext;
                             $header = format_string($header);
                             $PAGE->set_heading($header);
-    
+
                             $retval .= '<div id="sitetitle">' . format_text($sitetitlehtml, FORMAT_HTML) . '</div>';
                         }
 
@@ -1903,7 +1903,7 @@ EOT;
                 }
             }
         }
-        
+
         return $retval;
     }
 
