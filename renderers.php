@@ -1450,8 +1450,6 @@ EOT;
                 $PAGE->theme->settings->enabletickermy = 0;
             }
 
-echo $hidebreadcrumbmobile." <-";
-
             // Do not show navbar on dashboard / my home if news ticker is rendering.
             if (!($PAGE->theme->settings->enabletickermy && $PAGE->bodyid == "page-my-index")) {
                 $retval = '<div id="page-navbar" class="span12">';
