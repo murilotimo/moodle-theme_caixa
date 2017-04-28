@@ -1295,21 +1295,21 @@ $string['toolsmenufielddesc'] = 'Add access rule using for custom profile field 
 // Social settings *************************************************.
 $string['socialsettings'] = 'Header Social';
 $string['socialheading'] = 'Social Icon Settings';
-$string['socialtitledesc'] = '<pre>You can disable the sitewide search box and enable social icons / links in its place.
+$string['socialtitledesc'] = 'You can disable the sitewide search box and enable social icons / links in its place.
 To setup icons enter a de-limited list into the "Social Icon List" field below.
 This should be in the format:
 
 url|title|icon
 
 For example:
-
-http://localhost/moodle/course/search.php|Search Moodle|fa-search
+<pre>
+https://example.com/course/search.php|Search Moodle|fa-search
 https://facebook.com/|Facebook|fa-facebook-square
 https://twitter.com/|Twitter|fa-twitter-square
 https://instagram.com|Instagram|fa-instagram
-http://example.com|Mi Web|fa-globe
-
-For reference you can find the full list of <a href="https://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icons Here</a></pre>';
+https://example.com|My Web|fa-globe
+</pre>
+For reference you can find the full list of <a href="https://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icons Here</a>';
 
 $string['socialsize'] = 'Set the font size of the social icons';
 $string['socialsizemobile'] = 'Set the font size of the social icons on Mobile';
