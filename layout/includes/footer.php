@@ -19,17 +19,21 @@
  *
  * @package    theme_adaptable
  * @copyright 2015 Jeremy Hopkins (Coventry University)
- * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @copyright 2015-2017 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
 
 defined('MOODLE_INTERNAL') || die;
+$hidepagefootermobile = $PAGE->theme->settings->hidepagefootermobile;
 
+// If the device is a mobile and the footer is not hidden or it is a desktop then load and show the footer.
+if (((is_mobile()) && ($hidepagefootermobile == 1)) || (is_desktop())) {
 ?>
-<footer id="page-footer">
-<?php
 
+<footer id="page-footer">
+
+<?php
 echo $OUTPUT->get_footer_blocks();
 
 if ($PAGE->theme->settings->moodledocs) {
@@ -37,7 +41,6 @@ if ($PAGE->theme->settings->moodledocs) {
 } else {
     $footnoteclass = 'span8';
 }
-
 
 if ($PAGE->theme->settings->showfooterblocks) {
 ?>
@@ -65,10 +68,15 @@ if ($PAGE->theme->settings->moodledocs) {
             </div>
         </div>
     </div>
-    <?php
+<?php
 }
 ?>
 </footer>
+
+<?php
+}
+?>
+
 <a class="back-to-top" href="#top" ><i class="fa fa-angle-up "></i></a>
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 

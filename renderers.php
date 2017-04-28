@@ -19,7 +19,7 @@
  *
  * @package    theme_adaptable
  * @copyright  2015 Jeremy Hopkins (Coventry University)
- * @copyright  2015 Fernando Acedo (3-bits.com)
+ * @copyright  2015-2017 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -119,7 +119,7 @@ trait single_section_page {
         $sectiontitle .= html_writer::end_tag('div');
         echo $sectiontitle;
 
-        // Now the list of sections..
+        // Now the list of sections.
         echo $this->start_section_list();
 
         echo $this->section_header($thissection, $course, true, $displaysection);
@@ -442,6 +442,7 @@ class theme_adaptable_core_renderer extends core_renderer {
 
             $returnurl = $this->get_current_page_url(true);
             $context = context_course::instance($COURSE->id);
+
         if (($CFG->version > 2016120500) && (!is_role_switched($COURSE->id)) && (has_capability('moodle/role:switchroles', $context))) {
                 // TBR $returnurl = str_replace().
             $url = $CFG->wwwroot.'/course/switchrole.php?id='.$COURSE->id.'&switchrole=-1&returnurl='.$returnurl;
@@ -1441,8 +1442,10 @@ EOT;
     public function page_navbar($addbutton = false) {
         global $PAGE;
         $retval = '';
+        $hidebreadcrumbmobile = $PAGE->theme->settings->hidebreadcrumbmobile;
 
-        if (((is_mobile()) && $hideslidermobile = 0) || is_desktop()) {
+        // If the device is a mobile and the breadcrumb is not hidden or it is a desktop then load and show the breadcrumb.
+        if (((is_mobile()) && $hidebreadcrumbmobile = 1) || is_desktop()) {
             if (!isset($PAGE->theme->settings->enabletickermy)) {
                 $PAGE->theme->settings->enabletickermy = 0;
             }
@@ -1837,72 +1840,70 @@ EOT;
         global $PAGE, $COURSE, $CFG, $SITE;
         $retval = '';
 
-        $div = '<div id="titlecontainer" class="pull-left">';
-        $retval .= $div;
-
         $hidelogomobile = $PAGE->theme->settings->hidelogomobile;
 
         if (((is_mobile()) && ($hidelogomobile == 1)) || (is_desktop())) {
-                if (!empty($PAGE->theme->settings->logo)) {
-                    // Logo.
-                    $retval .= '<div id="logocontainer">';
-                    $retval .= "<a href='$CFG->wwwroot'>";
-                    $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
-                    $retval .= '</a></div>';
-                } else {
-                    $retval .= '<div style="height: 20px"></div>';
+            if (!empty($PAGE->theme->settings->logo)) {
+                // Logo.
+                $retval .= '<div id="logocontainer">';
+                $retval .= "<a href='$CFG->wwwroot'>";
+                $retval .= '<img src=' . $PAGE->theme->setting_file_url('logo', 'logo') . ' alt="logo" id="logo" />';
+                $retval .= '</a></div>';
+            } else {
+                $retval .= '<div style="height: 20px"></div>';
+            }
+        }
+
+        $hidecoursetitlemobile = $PAGE->theme->settings->hidecoursetitlemobile;
+
+        // If it is a mobile and the site title/course is not hidden or it is a desktop hen we display the site title / course.
+        if (((is_mobile()) && ($hidecoursetitlemobile == 1)) || (is_desktop())) {
+            // If course id is greater than 1 we display course title.
+            if ($COURSE->id > 1) {
+                switch ($PAGE->theme->settings->enableheading) {
+                    case 'fullname':
+                        // Full Course Name.
+                        $retval .= '<div id="sitetitle">' . format_string($COURSE->fullname) . '</div>';
+                        break;
+
+                    case 'shortname':
+                        // Short Course Name.
+                        $retval .= '<div id="sitetitle">' . format_string($COURSE->shortname) . '</div>';
+                        break;
+
+                    default:
+                        // None.
+                        $retval .= '<div id="sitetitle"></div>';
+                        break;
                 }
-        }
-
-if (((is_mobile()) && $PAGE->theme->settings->hidecoursetitlemobile == 1) || is_desktop()) {
-        // If course id is greater than one we display course title.
-        if ($COURSE->id > 1) {
-            switch ($PAGE->theme->settings->enableheading) {
-                case 'fullname':
-                    // Full Course Name.
-                    $retval .= '<div id="sitetitle">' . format_string($COURSE->fullname) . '</div>';
-                    break;
-
-                case 'shortname':
-                    // Short Course Name.
-                    $retval .= '<div id="sitetitle">' . format_string($COURSE->shortname) . '</div>';
-                    break;
-
-                default:
-                    // None.
-                    $retval .= '<div id="sitetitle"></div>';
-                    break;
             }
-        }
-}
-        // If course id is one we display the site title.
-        if ($COURSE->id == 1) {
-            switch ($PAGE->theme->settings->sitetitle) {
-                case 'default':
-                    // Default site title.
-                    $retval .= '<div id="sitetitle">' . format_string($SITE->shortname) . '</div>';
-                    break;
 
-                case 'custom':
-                    // Custom site title.
-                    if (!empty($PAGE->theme->settings->sitetitletext)) {
-                        $header = theme_adaptable_remove_site_fullname($PAGE->theme->settings->sitetitletext);
-                        $sitetitlehtml = $PAGE->theme->settings->sitetitletext;
-                        $header = format_string($header);
-                        $PAGE->set_heading($header);
+            // If course id is one we display the site title.
+            if ($COURSE->id == 1) {
+                switch ($PAGE->theme->settings->sitetitle) {
+                    case 'default':
+                        // Default site title.
+                        $retval .= '<div id="sitetitle">' . format_string($SITE->shortname) . '</div>';
+                        break;
 
-                        $retval .= '<div id="sitetitle">' . format_text($sitetitlehtml, FORMAT_HTML) . '</div>';
-                    }
+                    case 'custom':
+                        // Custom site title.
+                        if (!empty($PAGE->theme->settings->sitetitletext)) {
+                            $header = theme_adaptable_remove_site_fullname($PAGE->theme->settings->sitetitletext);
+                            $sitetitlehtml = $PAGE->theme->settings->sitetitletext;
+                            $header = format_string($header);
+                            $PAGE->set_heading($header);
 
-                default:
-                    // None.
-                    // $retval .= '<div id="sitetitle"></div>';.
-                    break;
+                            $retval .= '<div id="sitetitle">' . format_text($sitetitlehtml, FORMAT_HTML) . '</div>';
+                        }
+
+                    default:
+                        // None.
+                        break;
+                }
             }
         }
 
-        
-        $retval .= '</div>';
         return $retval;
     }
 
