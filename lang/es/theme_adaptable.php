@@ -256,6 +256,11 @@ $string['blocklayoutbuilderdesc'] = 'A continuación puedes crear tu propia dist
 Para añadir contenido a estas regiones necesitarás <strong>Activar edición en la página principal de Moodle</strong>.
 Entonces podrás arrastras y soltar los bloques en las regiones creadas.';
 
+$string['dash_blocklayoutbuilder'] = 'Creador de regiones Área Personal para bloques';
+$string['dash_blocklayoutbuilderdesc'] = 'A continuación puedes crear tu propia distribución de regiones Área Personal para los bloques de moodle en la página principal.
+Para añadir contenido a estas regiones necesitarás <strong>Activar edición en la página principal de Moodle</strong>.
+Entonces podrás arrastras y soltar los bloques en las regiones creadas.';
+
 $string['blocklayoutlayoutcheck'] = 'Comprueba la distribución';
 $string['blocklayoutlayoutcheckdesc'] = 'Utiliza esta opción para ver la distribución creada y comprobar el número de bloques que has utilizado.';
 $string['blocklayoutlayoutcount1'] = 'Puedes crear un máximo de ';

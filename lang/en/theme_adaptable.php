@@ -254,6 +254,11 @@ $string['blocklayoutbuilderdesc'] = 'Below you can build your own layout for blo
 To add content these regions you will need to <strong> turn editing on on the front page of Moodle</strong>.
 Then you can begin to drag/drop blocks into the regions you create!';
 
+$string['dash_blocklayoutbuilder'] = 'Dashboard Block Regions';
+$string['dash_blocklayoutbuilderdesc'] = 'Below you can build your own layout for block regions on the Dashboard page.
+To add content these regions you will need to <strong> turn editing on, on the dashboard page of Moodle</strong>.
+Then you can begin to drag/drop blocks into the regions you create!';
+
 $string['blocklayoutlayoutcheck'] = 'Check your layout';
 $string['blocklayoutlayoutcheckdesc'] = 'Use the tool below to check the number of blocks you have used and see a representation of your new layout.';
 $string['blocklayoutlayoutcount1'] = 'You can set a maximum of ';

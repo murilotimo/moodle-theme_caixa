@@ -259,6 +259,11 @@ $string['blocklayoutbuilderdesc'] = 'A continuació pots crear la teva pròpia d
 Per afegir contingut a aquestes regions necessitaràs <strong>Activar edició a la pàgina principal de Moodle</strong>.
 Llavors podràs arrossegar i deixar anar els blocs a les regions creades.';
 
+$string['dash_blocklayoutbuilder'] = 'Creador de regions panell de control per a blocs';
+$string['dash_blocklayoutbuilderdesc'] = 'A continuació pots crear la teva pròpia distribució de regions panell de control per als blocs de moodle a la pàgina principal.
+Per afegir contingut a aquestes regions necessitaràs <strong>Activar edició a la pàgina principal de Moodle</strong>.
+Llavors podràs arrossegar i deixar anar els blocs a les regions creades.';
+
 $string['blocklayoutlayoutcheck'] = 'Comprova la distribució';
 $string['blocklayoutlayoutcheckdesc'] = 'Utilitza aquesta opció per veure la distribució creada i comprovar el nombre de blocs que has utilitzat.';
 $string['blocklayoutlayoutcount1'] = 'Pots crear un màxim de ';
