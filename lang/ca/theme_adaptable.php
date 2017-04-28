@@ -121,6 +121,7 @@ $string['blocksettings'] = 'Blocs';
 $string['frontpagealertsettings'] = 'Alertes';
 $string['frontpagealertboxssettings'] = 'Configuració del quadre d&#39;alerta';
 $string['frontpageblockregionsettings'] = 'Creador de regions per a blocs';
+$string['dashboardblockregionsettings'] = 'Creador de regions Panell de control per a blocs';
 $string['frontpageblocksettings'] = 'Blocs promocionals';
 $string['frontpagetickersettings'] = 'Anuncis';
 $string['frontpageslidersettings'] = 'Presentació diapositives';
@@ -266,8 +267,15 @@ $string['blocklayoutlayoutcount2'] = ' regions per a blocs. Ara estàs utilitzan
 $string['blocklayoutlayoutrow'] = 'Files de regions per a blocs';
 $string['blocklayoutlayoutrowdesc'] = 'Afegeix / estableix la distribució de files de les regions per a blocs de la pàgina principal.';
 
+$string['dashblocklayoutlayoutrow'] = 'Files de regions panell de control per a blocs';
+$string['dashblocklayoutlayoutrowdesc'] = 'Afegeix / estableix la distribució de files de les regions panell de control per a blocs de la pàgina principal.';
+
 $string['frontpageblocksenabled'] = 'Activa les regions per a blocs a la pàgina principal';
 $string['frontpageblocksenableddesc'] = 'Activa o desactiva les regions per a blocs de la pàgina principal.
+Pots arrossegar i deixar anar els blocs a les regions creades.';
+
+$string['dashblocksenabled'] = 'Activa les regions panell de control per a blocs a la pàgina principal';
+$string['dashblocksenableddesc'] = 'Activa o desactiva les regions panell de control per a blocs de la pàgina principal.
 Pots arrossegar i deixar anar els blocs a les regions creades.';
 
 $string['layoutcheck'] = 'Comprova la distribució';

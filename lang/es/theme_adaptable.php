@@ -121,6 +121,7 @@ $string['blocksettings'] = 'Bloques';
 $string['frontpagealertsettings'] = 'Alertas';
 $string['frontpagealertboxssettings'] = 'Configuración de la caja de alerta';
 $string['frontpageblockregionsettings'] = 'Creador de regiones para bloques';
+$string['dashboardblockregionsettings'] = 'Creador de regiones para bloques';
 $string['frontpageblocksettings'] = 'Bloques promocionales';
 $string['frontpagetickersettings'] = 'Anuncios';
 $string['frontpageslidersettings'] = 'Presentación diapositivas';
@@ -263,8 +264,15 @@ $string['blocklayoutlayoutcount2'] = ' regiones para bloques. Ahora estás usand
 $string['blocklayoutlayoutrow'] = 'Filas de regiones para bloques';
 $string['blocklayoutlayoutrowdesc'] = 'Añade / establece la distribución de filas de las regiones para bloques de la página principal.';
 
+$string['dashblocklayoutlayoutrow'] = 'Filas de regiones Área Personal para bloques';
+$string['dashblocklayoutlayoutrowdesc'] = 'Añade / establece la distribución de filas de las regiones para bloques de la página principal.';
+
 $string['frontpageblocksenabled'] = 'Activa las regiones para bloques en la página principal';
 $string['frontpageblocksenableddesc'] = 'Activa o desactiva las regiones para bloques de la página principal.
+Puedes arrastrar y soltar los bloques en las regiones creadas.';
+
+$string['dashblocksenabled'] = 'Activa las regiones Área Personal para bloques en la página principal'
+$string['dashblocksenableddesc'] = 'Activa o desactiva las regiones para bloques de la página principal.
 Puedes arrastrar y soltar los bloques en las regiones creadas.';
 
 $string['layoutcheck'] = 'Comprueba la distribución';

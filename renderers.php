@@ -1209,7 +1209,8 @@ EOT;
 
 
     /**
-     * Renders block regions on front page
+     * Renders block regions on front page (or any other page
+     * if specifying a different value for $settingsname)
      *
      * @param string $settingsname
      */

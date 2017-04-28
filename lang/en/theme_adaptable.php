@@ -120,6 +120,7 @@ $string['blocksettings'] = 'Block Settings';
 $string['frontpagealertsettings'] = 'Alert Box';
 $string['frontpagealertboxssettings'] = 'Alert Box Settings';
 $string['frontpageblockregionsettings'] = 'Block Region Builder';
+$string['dashboardblockregionsettings'] = 'Dashboard Block Region Builder';
 $string['frontpageblocksettings'] = 'Marketing Blocks';
 $string['frontpagetickersettings'] = 'Frontpage Ticker';
 $string['frontpageslidersettings'] = 'Frontpage Slider';
@@ -261,8 +262,15 @@ $string['blocklayoutlayoutcount2'] = ' block regions. You are currently using: '
 $string['blocklayoutlayoutrow'] = 'Block Region Row ';
 $string['blocklayoutlayoutrowdesc'] = 'Add / set layout for block region row on front page.';
 
+$string['dashblocklayoutlayoutrow'] = 'Dashboard Block Region Row ';
+$string['dashblocklayoutlayoutrowdesc'] = 'Add / set layout for block region row on Dashboard page.';
+
 $string['frontpageblocksenabled'] = 'Enable custom block region on front page';
 $string['frontpageblocksenableddesc'] = 'You can enable / disable custom block regions on the front page.
+You can then drag and drop blocks into the regions you created';
+
+$string['dashblocksenabled'] = 'Enable custom block region on Dashboard page';
+$string['dashblocksenableddesc'] = 'You can enable / disable custom block regions on the Dashboard page.
 You can then drag and drop blocks into the regions you created';
 
 $string['layoutcheck'] = 'Check your layout';
