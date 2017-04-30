@@ -39,7 +39,9 @@ $hideslidermobile = $PAGE->theme->settings->hideslidermobile;
 
 // Include slider.
 if (!empty($PAGE->theme->settings->sliderenabled)) {
-    if (((is_mobile()) && $hideslidermobile = 0) || is_desktop()) {
+
+    // If it is a mobile and the header is not hidden or it is a desktop then load and show the header.
+    if (((is_mobile()) && ($hideslidermobile == 1)) || (is_desktop())) {
         echo $OUTPUT->get_frontpage_slider();
     }
 }

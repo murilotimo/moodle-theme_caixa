@@ -318,7 +318,12 @@ div.signuppanel h2 {
     padding-bottom: 5px;
     font-size: [[setting:socialsize]];
     display: block;
-    clear: left;
+
+
+    float: right;
+    position: relative;
+
+
 }
 
 .socialbox a {
@@ -1813,6 +1818,12 @@ div.questionbankwindow.block {
 .count-container {
     right: -5px;
 }
+
+.popover-region-toggle::before,
+.popover-region-toggle::after {
+    visibility: hidden;
+}
+
 
 /* Dimmed text (courses or users) */
 .dimmed,

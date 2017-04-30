@@ -19,7 +19,7 @@
  *
  * @package   theme_adaptable
  * @copyright 2015 Jeremy Hopkins (Coventry University)
- * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @copyright 2015-2017 Fernando Acedo (3-bits.com)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -46,6 +46,10 @@ $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-firs
 
 $hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
+
+$hideheadermobile = $PAGE->theme->settings->hideheadermobile;
+$hidealertsmobile = $PAGE->theme->settings->hidealertsmobile;
+$hidesocialmobile = $PAGE->theme->settings->hidesocialmobile;
 
 // Fixed header.
 // $fixedheader = $PAGE->theme->settings->stickynavbar;.
@@ -166,16 +170,18 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <?php
-// Display dev alert.
-echo $OUTPUT->get_dev_alert();
+    // Development or wrong moodle version alert.
+    echo $OUTPUT->get_dev_alert();
 ?>
 
 <div id="page" class="container-fluid <?php echo "$setfull $showiconsclass"; ?>">
 
 <?php
-// Display alerts.
-echo $OUTPUT->get_alert_messages();
-?>
+// If the device is a mobile and the alerts are not hidden or it is a desktop then load and show the alerts.
+if (((is_mobile()) && ($hidealertsmobile == 1)) || (is_desktop())) {
+    // Display alerts.
+    echo $OUTPUT->get_alert_messages();
+} ?>
 
 <?php
 // Fixed header.
@@ -200,7 +206,6 @@ if ($fixedheader) {
 if (!isloggedin() || isguestuser()) {
     echo $OUTPUT->page_heading_menu();
 
-
     if ($PAGE->theme->settings->displaylogin == 'box') {
         // Login button.
 ?>
@@ -213,7 +218,6 @@ if (!isloggedin() || isguestuser()) {
         </form>
 <?php
     } else if ($PAGE->theme->settings->displaylogin == 'button') {
-
 ?>
         <form action="<?php p($wwwroot) ?>/login/index.php" method="post">
             <button class="btn-login" type="submit">
@@ -244,9 +248,7 @@ if (!isloggedin() || isguestuser()) {
 
     </ul>
 </div>
-<?php
-}
-?>
+<?php } ?>
 </div>
 
 <div style="float: right; position: relative; display: inline; margin-left: 15px; height:20px;">
@@ -268,19 +270,29 @@ if ($CFG->version > 2016120400) {
 ?>
     </div>
 </div>
-<div id="page-header" class="clearfix container">
 
 
 <?php
-// Site title or logo.
-echo $OUTPUT->get_logo_title();
+
+// If it is a mobile and the header is not hidden or it is a desktop then load and show the header.
+if (((is_mobile()) && ($hideheadermobile == 1)) || (is_desktop())) {
+?>
+
+<div id="page-header" class="clearfix container">
+
+<?php
+    // Site title or logo.
+    echo $OUTPUT->get_logo_title();
 ?>
 
 
 <?php
 // Social icons.
 if ($PAGE->theme->settings->socialorsearch == 'social') {
-    echo $OUTPUT->socialicons();
+    // If it is a mobile and the social icons are not hidden or it is a desktop then load and show the social icons.
+    if (((is_mobile()) && ($hidesocialmobile == 1)) || (is_desktop())) {
+        echo $OUTPUT->socialicons();
+    }
 }
 ?>
 
@@ -388,6 +400,7 @@ if (isloggedin()) {
         </div>
     </div>
 <?php
+}
 }
 ?>
 </header>

@@ -77,19 +77,6 @@ Only screen and (max-width : 480px)
         white-space: normal;
         width: auto;
     }
-    .socialbox {
-        padding-bottom: 10px;
-        padding-top: 20px;
-        text-align: center;
-        display: block;
-    }
-
-    #logocontainer {
-        float: left;
-        height: 110px;
-        margin: 5px 15px 5px 0;
-        clear: both;
-    }
 
     .navbar {
         float: none !important;
@@ -109,6 +96,44 @@ Only screen and (max-width : 480px)
 
     .flex-direction-nav .flex-prev {
         left: 0 !important;
+    }
+
+/* Header */
+    /* Logo */
+    #logocontainer {
+        display: block !important;
+        margin: 5px 0;
+        padding: 0;
+        clear:both;
+        width: 100%;
+        height: auto;
+    }
+
+    #logo img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Site title */
+    #sitetitle {
+        clear: both;
+        display: block;
+        margin: 5px 0;
+        max-width: 100%;
+        text-align: center;
+        padding: 0;
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+
+    /* Social Icons */
+    .socialbox {
+        display: table;
+        padding: 5px;
+        float: none;
+        clear: both;
+        margin: 0 auto;
     }
 
     .coursebox .panel-body p {
@@ -184,6 +209,21 @@ Only screen and (max-width : 480px)
     .menutitle {
         float: none;
     }
+
+    /* Messages / Notifications dropdown */
+    .popover-region-container {
+        height: 600px;
+        float: left;
+        left: -90px;
+        top: 30px;
+        width: 300px;
+    }
+
+.icon {
+    height: 48px;
+    width:  48px;
+}
+
 }
 
 /*=====================================================
@@ -274,25 +314,6 @@ Only screen and (max-width : 480px)
 
     .row-fluid .span3 {
         width: 100%;
-    }
-
-    .socialbox {
-        display: block;
-        clear: both;
-        padding-top: [[setting:socialboxpaddingtopmobile]];
-        padding-bottom: [[setting:socialboxpaddingbottommobile]];
-    }
-
-    #logo {
-        margin-bottom: 10px;
-    }
-
-    #sitetitle {
-        font-size: 24px;
-        left: 10px;
-        margin-top: 0;
-        max-width: 100%;
-        width: auto;
     }
 
     .headermenu2 {
@@ -469,9 +490,12 @@ Other.
     }
 }
 
-/* Menu dropdown at 1068 */
-@media only screen and (min-width: 767px) {
-    /* On hover only for large screens adjusted to exclude ipad portrait. */
+/* Dropdown */
+@media only screen and (min-width: 481px) {
+    /* On hover only for large screens adjusted to exclude ipad portrait.
+       min-width changed to 481 to avoid problems with dropdown menus in tablets and some mobiles (resolutions under 1024px)
+       probably the best option is remove min-width after testing in several screen resolutions.
+    */
     .dropdown-menu .sub-menu {
         left: 100%;
         position: absolute;
