@@ -1883,7 +1883,7 @@ EOT;
                 switch ($PAGE->theme->settings->sitetitle) {
                     case 'default':
                         // Default site title.
-                        $retval .= '<div id="sitetitle">' . format_string($SITE->shortname) . '</div>';
+                        $retval .= '<div id="sitetitle">' . format_string($SITE->fulltname) . '</div>';
                         break;
 
                     case 'custom':
