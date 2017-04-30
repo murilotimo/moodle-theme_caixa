@@ -492,7 +492,10 @@ Other.
 
 /* Dropdown */
 @media only screen and (min-width: 481px) {
-    /* On hover only for large screens adjusted to exclude ipad portrait. */
+    /* On hover only for large screens adjusted to exclude ipad portrait.
+       min-width changed to 481 to avoid problems with dropdown menus in tablets and some mobiles (resolutions under 1024px)
+       probably the best option is remove min-width after testing in several screen resolutions.
+    */
     .dropdown-menu .sub-menu {
         left: 100%;
         position: absolute;
