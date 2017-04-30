@@ -284,20 +284,19 @@ function theme_adaptable_set_tilesshowallcontacts($css, $display) {
 }
 
 /**
+ * Get the user preference for the zoom (show / hide block) function.
+ */
+function theme_adaptable_get_zoom() {
+    return get_user_preferences('theme_adaptable_zoom', '');
+}
+
+/**
  * Set user preferences for zoom (show / hide block) function
  * @param moodle_page $page
  * @return void
  */
 function theme_adaptable_initialise_zoom(moodle_page $page) {
     user_preference_allow_ajax_update('theme_adaptable_zoom', PARAM_TEXT);
-    $page->requires->yui_module('moodle-theme_adaptable-zoom', 'M.theme_adaptable.zoom.init', array());
-}
-
-/**
- * Get the user preference for the zoom (show / hide block) function.
- */
-function theme_adaptable_get_zoom() {
-    return get_user_preferences('theme_adaptable_zoom', '');
 }
 
 /**
@@ -307,7 +306,6 @@ function theme_adaptable_get_zoom() {
  */
 function theme_adaptable_initialise_full(moodle_page $page) {
     user_preference_allow_ajax_update('theme_adaptable_full', PARAM_TEXT);
-    $page->requires->yui_module('moodle-theme_adaptable-full', 'M.theme_adaptable.full.init', array());
 }
 
 /**
@@ -496,6 +494,7 @@ function theme_adaptable_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('ticker', 'theme_adaptable');
     $page->requires->jquery_plugin('easing', 'theme_adaptable');
     $page->requires->jquery_plugin('adaptable', 'theme_adaptable');
+
 }
 
 /**
