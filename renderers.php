@@ -1914,9 +1914,10 @@ EOT;
      */
     public function get_top_menus() {
         global $PAGE, $COURSE;
-        $menus = '';
-        $retval = '';
+        $template = new stdClass();
+        $template->menus = array();
         $visibility = true;
+        $nummenus = 0;
 
         if (!empty($PAGE->theme->settings->menuuseroverride)) {
             $visibility = $this->check_menu_user_visibility();
@@ -1938,8 +1939,6 @@ EOT;
                     $logincheck = true;
                     $custommenuitems = '';
                     $access = true;
-                    $pre = '<div class="dropdown pull-right newmenus ' . $class . '">';
-                    $post = '</div>';
 
                     if (empty($PAGE->theme->settings->$requirelogin) || isloggedin()) {
                         if (!empty($PAGE->theme->settings->$fieldsetting)) {
@@ -1952,17 +1951,72 @@ EOT;
                         }
 
                         if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
+                            $nummenus++;
                             $menu = ($PAGE->theme->settings->$newmenu);
                             $title = ($PAGE->theme->settings->$newmenutitle);
                             $custommenuitems = $this->parse_custom_menu($menu, format_string($title));
                             $custommenu = new custom_menu($custommenuitems, current_language());
-                            $retval .= $this->render_custom_menu($custommenu, $pre, $post);
+                            $template->menus[] = $this->render_overlay_menu($custommenu);
                         }
                     }
                 }
             }
         }
-        return $retval;
+        if ($nummenus <= 4) {
+            $template->span = (12 / $nummenus);
+        } else {
+            $template->span = 3;
+        }
+        //echo '<pre>' . print_r($template, true) . '</pre>';
+        return $this->render_from_template('theme_adaptable/overlaymenu', $template);
+    }
+
+        /**
+     * Render the menu items for the overlay menu
+     *
+     * @param custom_menu $menu
+     * @return array of menus
+     */
+    private function render_overlay_menu(custom_menu $menu) {
+        $template = new stdClass();
+        if (!$menu->has_children()) {
+            return '';
+        }
+        $template->menuitems = '';
+        foreach ($menu->get_children() as $item) {
+            $template->menuitems .= $this->render_overlay_menu_item($item, 0);
+        }
+        return $template;
+    }
+
+    /**
+     * Render the overlay menu items.
+     *
+     * @param custom_menu_item $item
+     * @return string html for item
+     */
+    private function render_overlay_menu_item(custom_menu_item $item, $level = 0) {
+        $content = '';
+        if ($item->has_children()) {
+            $node = new stdClass;
+            $node->title = $item->get_title();
+            $node->text = $item->get_text();
+            $node->class = 'margin-left-' . $level;
+            $node->url = $item->get_url();
+            $content .= $this->render_from_template('theme_adaptable/overlaymenuitem', $node);
+            $level++;
+            foreach ($item->get_children() as $subitem) {
+                $content .= $this->render_overlay_menu_item($subitem, $level);
+            }
+        } else {
+            $node = new stdClass;
+            $node->title = $item->get_title();
+            $node->text = $item->get_text();
+            $node->class = 'margin-left-' . $level;
+            $node->url = $item->get_url();
+            $content .= $this->render_from_template('theme_adaptable/overlaymenuitem', $node);
+        }
+        return $content;
     }
 
     /**

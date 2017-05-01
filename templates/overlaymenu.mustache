@@ -1,0 +1,21 @@
+<ul class="nav navbar-nav">
+    <li>
+        <a href="javascript:void(0)" id="openoverlaymenu">
+            Open Overlay
+        </a>
+    </li>
+</ul>
+<div id="conditionalmenu" class="overlaymenu">
+    <a id="overlaymenuclose" href="javascript:void(0)" class="btn btn-default">
+        <i class="fa fa-close"></i>
+    </a>
+    <div class="overlay-content">
+        <div class="row">
+            {{#menus}}
+                <div class="span{{span}}">
+                {{{menuitems}}}
+                </div>
+            {{/menus}}
+        </div>
+    </div>
+</div>
