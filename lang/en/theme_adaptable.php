@@ -1391,4 +1391,7 @@ $string['previoussection'] = 'Previous section';
 $string['hide'] = 'Hide';
 $string['show'] = 'Show';
 
+// Navbar Links menu ********************************.
+$string['linksmenu'] = 'Links Menu';
+
 

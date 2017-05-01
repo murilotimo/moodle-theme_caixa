@@ -2001,7 +2001,7 @@ EOT;
             $node = new stdClass;
             $node->title = $item->get_title();
             $node->text = $item->get_text();
-            $node->class = 'margin-left-' . $level;
+            $node->class = 'level-' . $level;
             $node->url = $item->get_url();
             $content .= $this->render_from_template('theme_adaptable/overlaymenuitem', $node);
             $level++;
@@ -2012,7 +2012,7 @@ EOT;
             $node = new stdClass;
             $node->title = $item->get_title();
             $node->text = $item->get_text();
-            $node->class = 'margin-left-' . $level;
+            $node->class = 'level-' . $level;
             $node->url = $item->get_url();
             $content .= $this->render_from_template('theme_adaptable/overlaymenuitem', $node);
         }

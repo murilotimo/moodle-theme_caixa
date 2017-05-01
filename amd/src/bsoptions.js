@@ -13,6 +13,12 @@ define(['jquery', 'theme_bootstrapbase/bootstrap', 'core/log'], function($, boot
                         'offset': { top: $('#navwrap').offset().top}
                     });
                 }
+                $('#openoverlaymenu').click(function() {
+                    $('#conditionalmenu').toggleClass('open');
+                });
+                $('#overlaymenuclose').click(function() {
+                    $('#conditionalmenu').toggleClass('open');
+                });
             });
         }
     };
