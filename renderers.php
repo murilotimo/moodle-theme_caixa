@@ -1962,12 +1962,14 @@ EOT;
                 }
             }
         }
+        if ($nummenus == 0) {
+            return '';
+        }
         if ($nummenus <= 4) {
             $template->span = (12 / $nummenus);
         } else {
             $template->span = 3;
         }
-        //echo '<pre>' . print_r($template, true) . '</pre>';
         return $this->render_from_template('theme_adaptable/overlaymenu', $template);
     }
 
