@@ -233,12 +233,14 @@ Development:
 - Björn Bettzüche 
 - Michael Milette
 - Bas Brands
+- Manoj Solanki
 
 Testing:
 - Andrew Walding
 - Alexander Goryntsev
 
 Translation:
+- Fernando Acedo (Español - España)
 - Germán Valero (Español - México)
 - Jordi Rodilla (Català  - Andorra)
 
@@ -259,7 +261,7 @@ SIL Open Font License v1.1 - http://scripts.sil.org/OFL
 Font Awesome CSS, LESS, and SASS files are licensed under:
 MIT License - https://opensource.org/licenses/mit-license.html
 
-Emojione (http://emojione.com) released under:
+EmojiOne (http://emojione.com) released under:
 Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 
 
