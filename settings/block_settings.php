@@ -28,6 +28,7 @@ defined('MOODLE_INTERNAL') || die;
 
     $temp = new admin_settingpage('theme_adaptable_blocks', get_string('blocksettings', 'theme_adaptable'));
 
+    // Add icon to the title.
     $name = 'theme_adaptable/blockicons';
     $title = get_string('blockicons', 'theme_adaptable');
     $description = get_string('blockiconsdesc', 'theme_adaptable');
@@ -36,6 +37,7 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Colours.
     $name = 'theme_adaptable/blockbackgroundcolor';
     $title = get_string('blockbackgroundcolor', 'theme_adaptable');
     $description = get_string('blockbackgroundcolordesc', 'theme_adaptable');
@@ -84,6 +86,7 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Borders.
     $name = 'theme_adaptable/blockheaderbordertopstyle';
     $title = get_string('blockheaderbordertopstyle', 'theme_adaptable');
     $description = get_string('blockheaderbordertopstyledesc', 'theme_adaptable');

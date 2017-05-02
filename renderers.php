@@ -69,7 +69,7 @@ trait single_section_page {
 
         // Can we view the section in question?
         if (!($sectioninfo = $modinfo->get_section_info($displaysection))) {
-            // This section doesn't exist
+            // This section doesn't exist.
             print_error('unknowncoursesection', 'error', null, $course->fullname);
             return;
         }
@@ -98,7 +98,7 @@ trait single_section_page {
             }
         }
 
-        // Start single-section div
+        // Start single-section div.
         echo html_writer::start_tag('div', array('class' => 'single-section'));
 
         // The requested section page.
@@ -108,7 +108,8 @@ trait single_section_page {
         $sectionnavlinks = $this->get_nav_links($course, $modinfo->get_section_info_all(), $displaysection);
         $sectiontitle = '';
         $sectiontitle .= html_writer::start_tag('div', array('class' => 'section-navigation navigationtitle'));
-        // Title attributes
+
+        // Title attributes.
         $classes = 'sectionname';
         if (!$thissection->visible) {
             $classes .= ' dimmed_text';
@@ -121,8 +122,8 @@ trait single_section_page {
 
         // Now the list of sections.
         echo $this->start_section_list();
-
         echo $this->section_header($thissection, $course, true, $displaysection);
+
         // Show completion help icon.
         $completioninfo = new completion_info($course);
         echo $completioninfo->display_help_icon();
@@ -290,6 +291,7 @@ class theme_adaptable_format_weeks_renderer extends format_weeks_renderer {
  *
  * Grid format renderer for the Adaptable theme.
  */
+
 // Check if GRID is installed before trying to override it.
 if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) {
     include_once($CFG->dirroot."/course/format/grid/renderer.php");
@@ -715,7 +717,7 @@ class theme_adaptable_core_renderer extends core_renderer {
         global $CFG;
         $output = '';
 
-        if (get_config('theme_adaptable', 'version') < '2016121200') {
+        if (get_config('theme_adaptable', 'version') < '2016050100') {
                 $output .= '<div id="beta"><h3>';
                 $output .= get_string('beta', 'theme_adaptable');
                 $output .= '</h3></div>';
@@ -1884,7 +1886,7 @@ EOT;
                 switch ($PAGE->theme->settings->sitetitle) {
                     case 'default':
                         // Default site title.
-                        $retval .= '<div id="sitetitle">' . format_string($SITE->shortname) . '</div>';
+                        $retval .= '<div id="sitetitle">' . format_string($SITE->fullname) . '</div>';
                         break;
 
                     case 'custom':

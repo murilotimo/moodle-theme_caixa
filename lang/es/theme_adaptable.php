@@ -1307,21 +1307,21 @@ $string['toolsmenufielddesc'] = 'Añade una regla de acceso usando un campo de p
 // Social settings *************************************************.
 $string['socialsettings'] = 'Redes sociales';
 $string['socialheading'] = 'Configuración de los iconos de redes sociales';
-$string['socialtitledesc'] = '<pre>Puedes desactivar la búsqueda y activar los iconos de redes sociales en su lugar.
+$string['socialtitledesc'] = 'Puedes desactivar la búsqueda y activar los iconos de redes sociales en su lugar.
 Para configurar los iconos, introduce una lista delimitada en el campo "Lista de iconos sociales".
 El formato debe ser:
 
 url|titulo|icono
 
 Ejemplo:
-
+<pre>
 http://localhost/moodle/course/search.php|Buscar en Moodle|fa-search
 https://facebook.com/|Facebook|fa-facebook-square
 https://twitter.com/|Twitter|fa-twitter-square
 https://instagram.com|Instagram|fa-instagram
 http://example.com|Mi Web|fa-globe
-
-El listado de iconos se encuentra en: <a href="http://fortawesome.github.io/Font-Awesome/icons">http://fortawesome.github.io/Font-Awesome/icons</a>Font-Awesome</pre>';
+</pre>
+El listado de iconos se encuentra en: <a href="http://fortawesome.github.io/Font-Awesome/icons">http://fortawesome.github.io/Font-Awesome/icons</a>Font-Awesome';
 
 $string['socialsize'] = 'Configurar tamaño de los iconos sociales';
 $string['socialsizemobile'] = 'Configurar tamaño de los iconos sociales en móviles';
