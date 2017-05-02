@@ -1,7 +1,7 @@
 Adaptable - the most adaptable moodle theme
 ===========================================
 
-Version 1.3.2 (2017050100)
+Version 1.3.2 (2017050200)
 
 Adaptable is a highly customisable responsive two column moodle theme
 based on the popular BCU theme adding:
@@ -22,6 +22,7 @@ based on the popular BCU theme adding:
 -Dismissible bootstrap alerts
 -Option to add login form in header on front page
 -Logo and Favicon uploader
+-Modern emojis (thanks to EmojiOne) 
 
 In addition many fields (menus, news items, alerts and help links) can
 be targeted using custom profile fields, thus it is possible to present
@@ -60,8 +61,8 @@ http://fortawesome.github.io/Font-Awesome/examples/
 
 Front Page Slider Styles
 ------------------------
-Add images with at least 1900x400px. If you want to reduce or increase
-the height, Adaptable will resize the image automatically. There are two
+Add images with at least 1900x400px. If you want to reduce or increase 
+the height, Adaptable will resize the image automatically. There are two 
 possible slider styles each with different markup required:
 
 
@@ -201,6 +202,21 @@ list. Just add paragraphs using <p> tags
 <p>Display a logo or a configurable title site</p>
 <p>Configurable Slideshow</p>
 <p>Display up to 12 marketing blocks in the front page</p>
+
+Messages / Notifications
+------------------------
+From version 3.2 moodle includes a new system to display messages and 
+notifications in the screen. 
+
+The new system displays a hardcoded black icons that are difficult 
+to see when using dark background colour in the top header. In that case, 
+you can use an alternate icons pack using white colour.
+
+Login the server by FTP or SFTP and open /theme/adaptable/pix_core/i and 
+delete notifications.png and rename notifications-white.png to notifications.png
+
+Then open /theme/adaptable/pix_core/t and delete message.png and 
+rename message-white.png to message.png
 
 
 Versioning
