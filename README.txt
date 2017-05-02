@@ -1,7 +1,7 @@
 Adaptable - the most adaptable moodle theme
 ===========================================
 
-Version 1.4 (2017050100)
+Version 1.3.2 (2017050100)
 
 Adaptable is a highly customisable responsive two column moodle theme
 based on the popular BCU theme adding:
@@ -261,7 +261,7 @@ SIL Open Font License v1.1 - http://scripts.sil.org/OFL
 Font Awesome CSS, LESS, and SASS files are licensed under:
 MIT License - https://opensource.org/licenses/mit-license.html
 
-EmojiOne (http://emojione.com) released under:
+Emoji icons provided free by EmojiOne (http://emojione.com) released under:
 Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 
 
