@@ -27,7 +27,6 @@
 defined('MOODLE_INTERNAL') || die;
 
 // Load libraries.
-require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot.'/course/renderer.php');
 require_once($CFG->libdir.'/coursecatlib.php');
 require_once($CFG->dirroot.'/message/lib.php');
