@@ -439,6 +439,9 @@ $string['mysitessortoverrideprofilefieldscohort'] = 'Display courses found in pr
 $string['mysitesmaxlength'] = 'My Courses Max Length';
 $string['mysitesmaxlengthdesc'] = 'Adjust the max length of coursenames in the My Courses dropdown to optimise for your font.';
 
+$string['mycoursesmenulimit'] = 'My Courses Menu Limit';
+$string['mycoursesmenulimitdesc'] = 'Adjust the max number of courses that appear in the My Courses dropdown. 0 will show all courses.';
+
 $string['usernavheading'] = 'Customize the user navigation dropdown';
 $string['usernavdesc'] = 'Allows you to control all of the elements that appear in the user navigation dropdown.';
 $string['enablehomedesc'] = 'Display a link to the frontpage.';

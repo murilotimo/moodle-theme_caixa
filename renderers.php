@@ -379,6 +379,42 @@ class theme_adaptable_core_renderer extends core_renderer {
     }
 
     /**
+     * Return list of the user's courses
+     *
+     * @return array list of courses
+     */
+    public function render_mycourses() {
+        global $USER;
+        
+        // Set limit of courses to show in dropdown from setting
+        $coursedisplaylimit = '20';
+        if (!empty($this->page->theme->settings->mycoursesmenulimit)) {
+            $coursedisplaylimit = $this->page->theme->settings->mycoursesmenulimit;
+        }
+        
+        $courses = enrol_get_my_courses();               
+                
+        $sortedcourses = array();
+        $counter = 0;
+      
+        // Get courses in sort order into list.
+        foreach ($courses as $course) {
+
+            if (($counter >= $coursedisplaylimit) && ($coursedisplaylimit != 0)) {
+                break;
+            }
+            
+            $sortedcourses[] = $course;
+            $counter++;
+
+        }
+        
+        return array($sortedcourses);
+    }
+    
+    
+    
+    /**
      * Returns the URL for the favicon.
      *
      * @return string The favicon URL
@@ -1635,7 +1671,10 @@ EOT;
                 $branchsort  = 10001;
 
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
-                list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
+
+                // Calls a local method (render_mycourses) to get list of
+                // a user's current courses that they are enrolled on
+                list($sortedcourses) = $this->render_mycourses();
 
                 $icon = '';
 
@@ -2721,9 +2760,12 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         if (!isloggedin() or isguestuser()) {
             return '';
         }
-
-        $courses = block_course_overview_get_sorted_courses();
-        list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
+      
+        // Calls a local method (render_mycourses) to get list of 
+        // a user's current courses that they are enrolled on
+        $courses = render_mycourses();
+        list($sortedcourses) = render_mycourses();
+        
         if (!empty($sortedcourses) || !empty($rcourses) || !empty($rhosts)) {
 
             $chelper = new coursecat_helper();
@@ -2849,5 +2891,10 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
+    
+
+    
+    
+    
     // End.
 }
