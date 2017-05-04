@@ -1259,7 +1259,7 @@ EOT;
         $style = '';
         $adminediting = false;
 
-        if (is_siteadmin() && isset($USER->editing) && $USER->editing == 1) {
+        if (isset($USER->editing) && $USER->editing == 1) {
             $style = '" style="display: block; background: #EEEEEE; min-height: 50px; border: 2px dashed #BFBDBD; margin-top: 5px';
             $adminediting = true;
         }
