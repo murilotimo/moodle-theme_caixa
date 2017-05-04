@@ -1840,3 +1840,16 @@ a.dimmed_text:visited,
 .dimmed_category a {
     color: #999999 !important;
 }
+
+.activity img.iconlarge {
+    height: 36px;
+    width: 36px;
+    vertical-align: middle;
+}
+
+.section li.activity {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    clear: both;
+}
+
