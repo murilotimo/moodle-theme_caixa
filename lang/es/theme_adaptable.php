@@ -42,13 +42,15 @@ $string['choosereadme'] = '
 Jeremy Hopkins (Coventry University)<br>
 Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <br>
-<p>y otros desarrolladores, probadores, traductores y voluntarios (Ver <a href="adaptable/README.md" target="_blank">README.md</a>)</p>
+<p>y otros desarrolladores, probadores, traductores y voluntarios (Ver <a href="adaptable/README.txt" target="_blank">README.txt</a>)</p>
 <br>
 <h3>Informar de errores</h3>
 <p>Puedes informar de errores encontrados en este tema (y por favor, sólo errores) a través de nuestro <a href="https://bitbucket.org/covuni/moodle-theme_adaptable/issues" target="_blank">repositorio en Bitbucket</a></p>
 <br>
 <h3>Soporte Técnico</h3>
-<p>Puedes preguntar tus dudas y cuestiones a través de los foros oficiales en moodle.org:</p>
+<p>Puedes solicitar soporte técnico desde el sitio web de Adaptable (solo en inglés) <a href="https://adaptable.ws/support/support-tickets" target="_blank">Get Technical Support</a></p>
+<br>
+<p>o puedes preguntar tus dudas y cuestiones a través de los foros oficiales en moodle.org:</p>
 <ul>
 <li>Inglés: <a href="https://moodle.org/mod/forum/discuss.php?d=340404" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340404</a>
 <li>Español: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
@@ -59,13 +61,15 @@ Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <p>Próximamente</p>
 <br>
 <h3>Demo</h3>
-<p>Puedes ver una demostración del sitio y descargar un archivo de instalación en <a href="https://3-bits.com/demo/adaptable">https://3-bits.com/demo/adaptable</a></p>
+<p>Puedes ver una demostración del tema <a href="https://adaptable.ws/demo">AQUÍ</a></p>
 <br>
 <p>Traducción es-ES: Fernando Acedo (3-bits.com)</p>
 <p>Traducción es-MX: Germán Valero (UNAM)</p>
-<p>Traducció ca-ES: Fernando Acedo (3-bits.com)</p>
 </div>
+
 </div>';
+
+$string['info'] = 'Adaptable version: '.$CFG->version > 2015051100;
 
 $string['pluginname'] = 'Adaptable';
 $string['configtitle'] = 'Adaptable';
@@ -981,7 +985,7 @@ $string['alertsettingsheading'] = 'Personalizar las Alertas';
 $string['alertdesc'] = 'Introduce y personaliza el texto de las Alertas mostradas en la parte superior de la pantalla. Es posible crear más de una para mostrarse a diferentes tipos de usuarios. También existe la opción de mostrar las alertas en la página inicial y en las páginas de los cursos.';
 
 // Alerts Types.
-$string['alertdisabled'] = 'discapacitado';
+$string['alertdisabled'] = 'Desactivado';
 $string['alertdisabledesc'] = 'Desactivar esta alerta';
 
 $string['alertinfo'] = 'Info';
@@ -1098,6 +1102,8 @@ $string['hidebreadcrumbmobiledesc'] = 'Oculta la ruta de navegación.';
 $string['hidepagefootermobile'] = 'Ocultar pie de página';
 $string['hidepagefootermobiledesc'] = 'Oculta el pie de página.';
 
+$string['hideslidermobile'] = 'Ocultar el pase de diapositivas';
+$string['hideslidermobiledesc'] = 'Oculta el pase de diapositivas de la portada.';
 
 // Layout **********************************************************.
 $string['layoutsettings'] = 'Disposición';
@@ -1398,4 +1404,3 @@ $string['cachedef_userdata'] = 'El tiempo para guardar una sesión de un usuario
 // General ******************************************.
 $string['hide'] = 'Ocultar';
 $string['show'] = 'Mostrar';
-
