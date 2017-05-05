@@ -125,6 +125,7 @@ $string['blocksettings'] = 'Blocs';
 $string['frontpagealertsettings'] = 'Alertes';
 $string['frontpagealertboxssettings'] = 'Configuració del quadre d&#39;alerta';
 $string['frontpageblockregionsettings'] = 'Creador de regions per a blocs';
+$string['dashboardblockregionsettings'] = 'Creador de regions Panell de control per a blocs';
 $string['frontpageblocksettings'] = 'Blocs promocionals';
 $string['frontpagetickersettings'] = 'Anuncis';
 $string['frontpageslidersettings'] = 'Presentació diapositives';
@@ -259,6 +260,11 @@ $string['blocklayoutbuilderdesc'] = 'A continuació pots crear la teva pròpia d
 Per afegir contingut a aquestes regions necessitaràs <strong>Activar edició a la pàgina principal de Moodle</strong>.
 Llavors podràs arrossegar i deixar anar els blocs a les regions creades.';
 
+$string['dash_blocklayoutbuilder'] = 'Creador de regions panell de control per a blocs';
+$string['dash_blocklayoutbuilderdesc'] = 'A continuació pots crear la teva pròpia distribució de regions panell de control per als blocs de moodle a la pàgina principal.
+Per afegir contingut a aquestes regions necessitaràs <strong>Activar edició a la pàgina principal de Moodle</strong>.
+Llavors podràs arrossegar i deixar anar els blocs a les regions creades.';
+
 $string['blocklayoutlayoutcheck'] = 'Comprova la distribució';
 $string['blocklayoutlayoutcheckdesc'] = 'Utilitza aquesta opció per veure la distribució creada i comprovar el nombre de blocs que has utilitzat.';
 $string['blocklayoutlayoutcount1'] = 'Pots crear un màxim de ';
@@ -267,8 +273,15 @@ $string['blocklayoutlayoutcount2'] = ' regions per a blocs. Ara estàs utilitzan
 $string['blocklayoutlayoutrow'] = 'Files de regions per a blocs';
 $string['blocklayoutlayoutrowdesc'] = 'Afegeix / estableix la distribució de files de les regions per a blocs de la pàgina principal.';
 
+$string['dashblocklayoutlayoutrow'] = 'Files de regions panell de control per a blocs';
+$string['dashblocklayoutlayoutrowdesc'] = 'Afegeix / estableix la distribució de files de les regions panell de control per a blocs de la pàgina principal.';
+
 $string['frontpageblocksenabled'] = 'Activa les regions per a blocs a la pàgina principal';
 $string['frontpageblocksenableddesc'] = 'Activa o desactiva les regions per a blocs de la pàgina principal.
+Pots arrossegar i deixar anar els blocs a les regions creades.';
+
+$string['dashblocksenabled'] = 'Activa les regions panell de control per a blocs a la pàgina principal';
+$string['dashblocksenableddesc'] = 'Activa o desactiva les regions panell de control per a blocs de la pàgina principal.
 Pots arrossegar i deixar anar els blocs a les regions creades.';
 
 $string['layoutcheck'] = 'Comprova la distribució';
@@ -588,7 +601,7 @@ $string['breadcrumbtextcolordesc'] = 'Estableix el color de text de la guia d&#3
 $string['activebreadcrumb'] = 'Color de fons de la guia d&#39;exploració activa';
 $string['activebreadcrumbdesc'] = 'Estableix el color de fons de la guia d&#39;exploració activa.';
 
-$string['messagepopupbackground'] = 'Color de fons dels missatges emergents';
+$string['messagepopupbackground';] = 'Color de fons dels missatges emergents';
 $string['messagepopupbackgrounddesc'] = 'Estableix el color de fons de la capçalera dels missatges emergents.';
 
 $string['messagepopupcolor'] = 'Color de text dels missatges emergents';
@@ -926,11 +939,11 @@ $string['tilesshowallcontactsdesc'] = 'Mostra tots els contactes del curs o nom�
 $string['course'] = 'Curs';
 
 
-// Alerts **********************************************************
-// Alert message if acting as other role.
-$string['actingasrole'] = 'Estàs actuant actualment com un paper diferent';
+// Alerts **********************************************************.
+// Alert message if acting as other role
+$string['actingasrole'] = 'Ets està actuant actualment com un paper diferent';
 
-// Alert Hiden Course.
+// Alert Hiden Course
 $string['alerthiddencourse'] = 'advertència suposat ocult';
 $string['alerthiddencoursedesc'] = 'alerta en pantalla pàgina del curs si s\'oculta';
 
