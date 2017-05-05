@@ -1411,3 +1411,6 @@ $string['previoussection'] = 'Previous section';
 // General ******************************************.
 $string['hide'] = 'Hide';
 $string['show'] = 'Show';
+
+// Navbar Links menu ********************************.
+$string['linksmenu'] = 'Links Menu';
