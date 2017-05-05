@@ -32,6 +32,16 @@ $setzoom = theme_adaptable_get_zoom();
 theme_adaptable_initialise_full($PAGE);
 $setfull = theme_adaptable_get_full();
 
+if (isset($PAGE->theme->settings->stickynavbar) && $PAGE->theme->settings->stickynavbar == 1) {
+    $fixedheader = true;
+} else {
+    $fixedheader = false;
+}
+
+$PAGE->requires->js_call_amd('theme_adaptable/bsoptions', 'init', array($fixedheader));
+
+
+
 $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
 
 $hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);

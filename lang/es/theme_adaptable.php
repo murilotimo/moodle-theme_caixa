@@ -125,6 +125,7 @@ $string['blocksettings'] = 'Bloques';
 $string['frontpagealertsettings'] = 'Alertas';
 $string['frontpagealertboxssettings'] = 'Configuración de la caja de alerta';
 $string['frontpageblockregionsettings'] = 'Creador de regiones para bloques';
+$string['dashboardblockregionsettings'] = 'Creador de regiones para bloques';
 $string['frontpageblocksettings'] = 'Bloques promocionales';
 $string['frontpagetickersettings'] = 'Anuncios';
 $string['frontpageslidersettings'] = 'Presentación diapositivas';
@@ -259,6 +260,11 @@ $string['blocklayoutbuilderdesc'] = 'A continuación puedes crear tu propia dist
 Para añadir contenido a estas regiones necesitarás <strong>Activar edición en la página principal de Moodle</strong>.
 Entonces podrás arrastras y soltar los bloques en las regiones creadas.';
 
+$string['dash_blocklayoutbuilder'] = 'Creador de regiones Área Personal para bloques';
+$string['dash_blocklayoutbuilderdesc'] = 'A continuación puedes crear tu propia distribución de regiones Área Personal para los bloques de moodle en la página principal.
+Para añadir contenido a estas regiones necesitarás <strong>Activar edición en la página principal de Moodle</strong>.
+Entonces podrás arrastras y soltar los bloques en las regiones creadas.';
+
 $string['blocklayoutlayoutcheck'] = 'Comprueba la distribución';
 $string['blocklayoutlayoutcheckdesc'] = 'Utiliza esta opción para ver la distribución creada y comprobar el número de bloques que has utilizado.';
 $string['blocklayoutlayoutcount1'] = 'Puedes crear un máximo de ';
@@ -267,8 +273,15 @@ $string['blocklayoutlayoutcount2'] = ' regiones para bloques. Ahora estás usand
 $string['blocklayoutlayoutrow'] = 'Filas de regiones para bloques';
 $string['blocklayoutlayoutrowdesc'] = 'Añade / establece la distribución de filas de las regiones para bloques de la página principal.';
 
+$string['dashblocklayoutlayoutrow'] = 'Filas de regiones Área Personal para bloques';
+$string['dashblocklayoutlayoutrowdesc'] = 'Añade / establece la distribución de filas de las regiones para bloques de la página principal.';
+
 $string['frontpageblocksenabled'] = 'Activa las regiones para bloques en la página principal';
 $string['frontpageblocksenableddesc'] = 'Activa o desactiva las regiones para bloques de la página principal.
+Puedes arrastrar y soltar los bloques en las regiones creadas.';
+
+$string['dashblocksenabled'] = 'Activa las regiones Área Personal para bloques en la página principal'
+$string['dashblocksenableddesc'] = 'Activa o desactiva las regiones para bloques de la página principal.
 Puedes arrastrar y soltar los bloques en las regiones creadas.';
 
 $string['layoutcheck'] = 'Comprueba la distribución';
