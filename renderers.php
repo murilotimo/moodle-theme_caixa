@@ -27,7 +27,6 @@
 defined('MOODLE_INTERNAL') || die;
 
 // Load libraries.
-require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot.'/course/renderer.php');
 require_once($CFG->libdir.'/coursecatlib.php');
 require_once($CFG->dirroot.'/message/lib.php');
@@ -378,6 +377,42 @@ class theme_adaptable_core_renderer extends core_renderer {
         return parent::render_user_picture($userpicture);
     }
 
+    /**
+     * Return list of the user's courses
+     *
+     * @return array list of courses
+     */
+    public function render_mycourses() {
+        global $USER;
+        
+        // Set limit of courses to show in dropdown from setting
+        $coursedisplaylimit = '20';
+        if (!empty($this->page->theme->settings->mycoursesmenulimit)) {
+            $coursedisplaylimit = $this->page->theme->settings->mycoursesmenulimit;
+        }
+        
+        $courses = enrol_get_my_courses();               
+                
+        $sortedcourses = array();
+        $counter = 0;
+      
+        // Get courses in sort order into list.
+        foreach ($courses as $course) {
+
+            if (($counter >= $coursedisplaylimit) && ($coursedisplaylimit != 0)) {
+                break;
+            }
+            
+            $sortedcourses[] = $course;
+            $counter++;
+
+        }
+        
+        return array($sortedcourses);
+    }
+    
+    
+    
     /**
      * Returns the URL for the favicon.
      *
@@ -1211,7 +1246,8 @@ EOT;
 
 
     /**
-     * Renders block regions on front page
+     * Renders block regions on front page (or any other page
+     * if specifying a different value for $settingsname)
      *
      * @param string $settingsname
      */
@@ -1223,7 +1259,7 @@ EOT;
         $style = '';
         $adminediting = false;
 
-        if (is_siteadmin() && isset($USER->editing) && $USER->editing == 1) {
+        if (isset($USER->editing) && $USER->editing == 1) {
             $style = '" style="display: block; background: #EEEEEE; min-height: 50px; border: 2px dashed #BFBDBD; margin-top: 5px';
             $adminediting = true;
         }
@@ -1634,7 +1670,10 @@ EOT;
                 $branchsort  = 10001;
 
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
-                list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
+
+                // Calls a local method (render_mycourses) to get list of
+                // a user's current courses that they are enrolled on
+                list($sortedcourses) = $this->render_mycourses();
 
                 $icon = '';
 
@@ -1916,9 +1955,10 @@ EOT;
      */
     public function get_top_menus() {
         global $PAGE, $COURSE;
-        $menus = '';
-        $retval = '';
+        $template = new stdClass();
+        $template->menus = array();
         $visibility = true;
+        $nummenus = 0;
 
         if (!empty($PAGE->theme->settings->menuuseroverride)) {
             $visibility = $this->check_menu_user_visibility();
@@ -1940,8 +1980,6 @@ EOT;
                     $logincheck = true;
                     $custommenuitems = '';
                     $access = true;
-                    $pre = '<div class="dropdown pull-right newmenus ' . $class . '">';
-                    $post = '</div>';
 
                     if (empty($PAGE->theme->settings->$requirelogin) || isloggedin()) {
                         if (!empty($PAGE->theme->settings->$fieldsetting)) {
@@ -1954,17 +1992,74 @@ EOT;
                         }
 
                         if (!empty($PAGE->theme->settings->$newmenu) && $access == true) {
+                            $nummenus++;
                             $menu = ($PAGE->theme->settings->$newmenu);
                             $title = ($PAGE->theme->settings->$newmenutitle);
                             $custommenuitems = $this->parse_custom_menu($menu, format_string($title));
                             $custommenu = new custom_menu($custommenuitems, current_language());
-                            $retval .= $this->render_custom_menu($custommenu, $pre, $post);
+                            $template->menus[] = $this->render_overlay_menu($custommenu);
                         }
                     }
                 }
             }
         }
-        return $retval;
+        if ($nummenus == 0) {
+            return '';
+        }
+        if ($nummenus <= 4) {
+            $template->span = (12 / $nummenus);
+        } else {
+            $template->span = 3;
+        }
+        return $this->render_from_template('theme_adaptable/overlaymenu', $template);
+    }
+
+        /**
+     * Render the menu items for the overlay menu
+     *
+     * @param custom_menu $menu
+     * @return array of menus
+     */
+    private function render_overlay_menu(custom_menu $menu) {
+        $template = new stdClass();
+        if (!$menu->has_children()) {
+            return '';
+        }
+        $template->menuitems = '';
+        foreach ($menu->get_children() as $item) {
+            $template->menuitems .= $this->render_overlay_menu_item($item, 0);
+        }
+        return $template;
+    }
+
+    /**
+     * Render the overlay menu items.
+     *
+     * @param custom_menu_item $item
+     * @return string html for item
+     */
+    private function render_overlay_menu_item(custom_menu_item $item, $level = 0) {
+        $content = '';
+        if ($item->has_children()) {
+            $node = new stdClass;
+            $node->title = $item->get_title();
+            $node->text = $item->get_text();
+            $node->class = 'level-' . $level;
+            $node->url = $item->get_url();
+            $content .= $this->render_from_template('theme_adaptable/overlaymenuitem', $node);
+            $level++;
+            foreach ($item->get_children() as $subitem) {
+                $content .= $this->render_overlay_menu_item($subitem, $level);
+            }
+        } else {
+            $node = new stdClass;
+            $node->title = $item->get_title();
+            $node->text = $item->get_text();
+            $node->class = 'level-' . $level;
+            $node->url = $item->get_url();
+            $content .= $this->render_from_template('theme_adaptable/overlaymenuitem', $node);
+        }
+        return $content;
     }
 
     /**
@@ -2720,9 +2815,12 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         if (!isloggedin() or isguestuser()) {
             return '';
         }
-
-        $courses = block_course_overview_get_sorted_courses();
-        list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
+      
+        // Calls a local method (render_mycourses) to get list of 
+        // a user's current courses that they are enrolled on
+        $courses = render_mycourses();
+        list($sortedcourses) = render_mycourses();
+        
         if (!empty($sortedcourses) || !empty($rcourses) || !empty($rhosts)) {
 
             $chelper = new coursecat_helper();
@@ -2848,5 +2946,10 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
+    
+
+    
+    
+    
     // End.
 }
