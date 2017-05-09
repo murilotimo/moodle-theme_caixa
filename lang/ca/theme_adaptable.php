@@ -601,7 +601,7 @@ $string['breadcrumbtextcolordesc'] = 'Estableix el color de text de la guia d&#3
 $string['activebreadcrumb'] = 'Color de fons de la guia d&#39;exploració activa';
 $string['activebreadcrumbdesc'] = 'Estableix el color de fons de la guia d&#39;exploració activa.';
 
-$string['messagepopupbackground'] = 'Color de fons dels missatges emergents';
+$string['messagepopupbackground';] = 'Color de fons dels missatges emergents';
 $string['messagepopupbackgrounddesc'] = 'Estableix el color de fons de la capçalera dels missatges emergents.';
 
 $string['messagepopupcolor'] = 'Color de text dels missatges emergents';
@@ -940,10 +940,10 @@ $string['course'] = 'Curs';
 
 
 // Alerts **********************************************************.
-// Alert message if acting as other role.
-$string['actingasrole'] = 'Estàs actuant actualment com un paper diferent';
+// Alert message if acting as other role
+$string['actingasrole'] = 'Ets està actuant actualment com un paper diferent';
 
-// Alert Hiden Course.
+// Alert Hiden Course
 $string['alerthiddencourse'] = 'advertència suposat ocult';
 $string['alerthiddencoursedesc'] = 'alerta en pantalla pàgina del curs si s\'oculta';
 
