@@ -931,6 +931,19 @@ $string['course'] = 'Course';
 
 
 // Alerts **********************************************************.
+<<<<<<< HEAD
+=======
+// Alert message if acting as other role
+$string['actingasrole'] = 'Usted está actuando actualmente como un papel diferente';
+
+// Alert Hiden Course
+$string['alerthiddencourse'] = 'Advertencia del curso oculto';
+$string['alerthiddencoursedesc'] = 'Mostrar alerta en la página del curso si está oculta';
+
+$string['alerthiddencoursetext-1'] = 'Este curso está oculto y no puede ser accedido por los estudiantes. ';
+$string['alerthiddencoursetext-2'] = 'Haga clic aquí para actualizar la configuración';
+
+>>>>>>> ec99e67c8de01ae9ff90f3945e0d38f1c7b13ba8
 // Alert Box Enable.
 $string['enablealert'] = 'Activar Alerta {$a}';
 $string['enablealertdesc'] = 'Activar la alerta {$a}.';
