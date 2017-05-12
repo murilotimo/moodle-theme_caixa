@@ -56,8 +56,8 @@ Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <p>or your can ask your questions in the moodle forum:</p>
 <ul>
 <li>English: <a href="https://moodle.org/mod/forum/discuss.php?d=340404" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340404</a>
-<li>Espa√±ol: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
-<li>Catal√†: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
+<li>EspaÒol: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
+<li>Catal‡: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
 </ul>
 <br>
 <h3>Documentation</h3>
@@ -943,10 +943,10 @@ $string['course'] = 'Course';
 
 
 // Alerts **********************************************************.
-// Alert message if acting as other role.
+// Alert message if acting as other role
 $string['actingasrole'] = 'You are are currently acting as a different role';
 
-// Alert Hiden Course.
+// Alert Hiden Course
 $string['alerthiddencourse'] = 'Hidden course warning';
 $string['alerthiddencoursedesc'] = 'Display alert in course page if it is hidden';
 
@@ -1412,5 +1412,5 @@ $string['previoussection'] = 'Previous section';
 $string['hide'] = 'Hide';
 $string['show'] = 'Show';
 
-// Navbar Links menu ********************************.
+// Navbar Links menu *********************************.
 $string['linksmenu'] = 'Links Menu';

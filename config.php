@@ -58,14 +58,10 @@ $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
 $THEME->sheets = array( 'adaptable',
                         'blocks',
-                        'menu',
-                        'course',
-                        'slider',
-                        'extras',
-                        'zoom',
                         'button',
-                        'socialwall',
-                        'alertcolors',
+                        'course',
+                        'extras',
+                        'menu',
                         'responsive',
                         'custom');
 
