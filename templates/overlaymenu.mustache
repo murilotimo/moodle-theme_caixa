@@ -10,7 +10,8 @@
         <i class="fa fa-close"></i>
     </a>
     <div class="overlay-content">
-        <div class="row">
+        {{#rows}}
+        <div class="row-fluid">
             {{#menus}}
                 <div class="span{{span}}">
                     <ul class="overlaylist">
@@ -19,5 +20,6 @@
                 </div>
             {{/menus}}
         </div>
+        {{/rows}}
     </div>
 </div>

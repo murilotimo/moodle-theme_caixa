@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
    $('.close').click(function(){
       var alertindex = $(this).data('alertindex');
       var alertkey = $(this).data('alertkey');
-      if(alertkey!='undismissable'){
+      if(alertkey!='undismissable' && alertkey != 'undefined' && alertkey){
          M.util.set_user_preference('theme_adaptable_alertkey' + alertindex, alertkey);
       }
     });

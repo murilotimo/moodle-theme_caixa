@@ -56,8 +56,8 @@ Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <p>or your can ask your questions in the moodle forum:</p>
 <ul>
 <li>English: <a href="https://moodle.org/mod/forum/discuss.php?d=340404" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340404</a>
-<li>Espa√±ol: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
-<li>Catal√†: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
+<li>EspaÒol: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
+<li>Catal‡: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
 </ul>
 <br>
 <h3>Documentation</h3>
@@ -125,6 +125,7 @@ $string['blocksettings'] = 'Block Settings';
 $string['frontpagealertsettings'] = 'Alert Box';
 $string['frontpagealertboxssettings'] = 'Alert Box Settings';
 $string['frontpageblockregionsettings'] = 'Block Region Builder';
+$string['dashboardblockregionsettings'] = 'Dashboard Block Region Builder';
 $string['frontpageblocksettings'] = 'Marketing Blocks';
 $string['frontpagetickersettings'] = 'Frontpage Ticker';
 $string['frontpageslidersettings'] = 'Frontpage Slider';
@@ -259,6 +260,11 @@ $string['blocklayoutbuilderdesc'] = 'Below you can build your own layout for blo
 To add content these regions you will need to <strong> turn editing on on the front page of Moodle</strong>.
 Then you can begin to drag/drop blocks into the regions you create!';
 
+$string['dash_blocklayoutbuilder'] = 'Dashboard Block Regions';
+$string['dash_blocklayoutbuilderdesc'] = 'Below you can build your own layout for block regions on the Dashboard page.
+To add content these regions you will need to <strong> turn editing on, on the dashboard page of Moodle</strong>.
+Then you can begin to drag/drop blocks into the regions you create!';
+
 $string['blocklayoutlayoutcheck'] = 'Check your layout';
 $string['blocklayoutlayoutcheckdesc'] = 'Use the tool below to check the number of blocks you have used and see a representation of your new layout.';
 $string['blocklayoutlayoutcount1'] = 'You can set a maximum of ';
@@ -267,8 +273,15 @@ $string['blocklayoutlayoutcount2'] = ' block regions. You are currently using: '
 $string['blocklayoutlayoutrow'] = 'Block Region Row ';
 $string['blocklayoutlayoutrowdesc'] = 'Add / set layout for block region row on front page.';
 
+$string['dashblocklayoutlayoutrow'] = 'Dashboard Block Region Row ';
+$string['dashblocklayoutlayoutrowdesc'] = 'Add / set layout for block region row on Dashboard page.';
+
 $string['frontpageblocksenabled'] = 'Enable custom block region on front page';
 $string['frontpageblocksenableddesc'] = 'You can enable / disable custom block regions on the front page.
+You can then drag and drop blocks into the regions you created';
+
+$string['dashblocksenabled'] = 'Enable custom block region on Dashboard page';
+$string['dashblocksenableddesc'] = 'You can enable / disable custom block regions on the Dashboard page.
 You can then drag and drop blocks into the regions you created';
 
 $string['layoutcheck'] = 'Check your layout';
@@ -434,6 +447,9 @@ $string['mysitessortoverrideprofilefieldscohort'] = 'Display courses found in pr
 
 $string['mysitesmaxlength'] = 'My Courses Max Length';
 $string['mysitesmaxlengthdesc'] = 'Adjust the max length of coursenames in the My Courses dropdown to optimise for your font.';
+
+$string['mycoursesmenulimit'] = 'My Courses Menu Limit';
+$string['mycoursesmenulimitdesc'] = 'Adjust the max number of courses that appear in the My Courses dropdown. 0 will show all courses.';
 
 $string['usernavheading'] = 'Customize the user navigation dropdown';
 $string['usernavdesc'] = 'Allows you to control all of the elements that appear in the user navigation dropdown.';
@@ -1398,3 +1414,6 @@ $string['previoussection'] = 'Previous section';
 // General ******************************************.
 $string['hide'] = 'Hide';
 $string['show'] = 'Show';
+
+// Navbar Links menu *********************************.
+$string['linksmenu'] = 'Links Menu';
