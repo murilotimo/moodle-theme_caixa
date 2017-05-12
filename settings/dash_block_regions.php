@@ -31,8 +31,8 @@ defined('MOODLE_INTERNAL') || die;
 $temp = new admin_settingpage('theme_adaptable_dash_block_regions',
     get_string('dashboardblockregionsettings', 'theme_adaptable'));
 
-$temp->add(new admin_setting_heading('theme_adaptable_heading', get_string('dash_blocklayoutbuilder', 'theme_adaptable'),
-    format_text(get_string('dash_blocklayoutbuilderdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+$temp->add(new admin_setting_heading('theme_adaptable_heading', get_string('dashblocklayoutbuilder', 'theme_adaptable'),
+    format_text(get_string('dashblocklayoutbuilderdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
 $name = 'theme_adaptable/dashblocksenabled';
 $title = get_string('dashblocksenabled', 'theme_adaptable');
