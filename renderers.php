@@ -1164,7 +1164,8 @@ EOT;
             $target = $PAGE->theme->settings->socialtarget;
         }
 
-        $retval = '<div class="socialbox pull-right">';
+        $retval = '<div class="socialbox">';
+
         $socialiconlist = $PAGE->theme->settings->socialiconlist;
         $lines = explode("\n", $socialiconlist);
 

@@ -311,18 +311,12 @@ div.signuppanel h2 {
     padding-top: 23px;
 }
 
-
 .socialbox {
     padding-top: [[setting:socialpaddingtop]];
     padding-bottom: 5px;
     font-size: [[setting:socialsize]];
     display: block;
-
-
-    float: right;
     position: relative;
-
-
 }
 
 .socialbox a {

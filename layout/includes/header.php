@@ -291,7 +291,13 @@ if (((is_mobile()) && ($hideheadermobile == 1)) || (is_desktop())) {
 if ($PAGE->theme->settings->socialorsearch == 'social') {
     // If it is a mobile and the social icons are not hidden or it is a desktop then load and show the social icons.
     if (((is_mobile()) && ($hidesocialmobile == 1)) || (is_desktop())) {
+?>
+    <div class="socialbox pull-right">
+<?php
         echo $OUTPUT->socialicons();
+?>
+    </div>
+<?php
     }
 }
 ?>
