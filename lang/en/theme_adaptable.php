@@ -345,6 +345,9 @@ $string['footerdesc'] = 'Add a title for footer section ';
 $string['footercontent'] = 'Footer Content Section ';
 $string['footercontentdesc'] = 'Add content to footer section ';
 
+$string['hidefootersocial'] = 'Show social icons';
+$string['hidefootersocialdesc'] = 'Show social icons in the footer below the blocks';
+
 
 // Moodle Docs link.
 $string['moodledocs'] = 'Moodle Docs link';
