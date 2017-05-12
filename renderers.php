@@ -1915,7 +1915,7 @@ EOT;
     public function get_top_menus() {
         global $PAGE, $COURSE;
         $template = new stdClass();
-        $template->menus = array();
+        $menus = array();
         $visibility = true;
         $nummenus = 0;
 
@@ -1956,7 +1956,7 @@ EOT;
                             $title = ($PAGE->theme->settings->$newmenutitle);
                             $custommenuitems = $this->parse_custom_menu($menu, format_string($title));
                             $custommenu = new custom_menu($custommenuitems, current_language());
-                            $template->menus[] = $this->render_overlay_menu($custommenu);
+                            $menus[] = $this->render_overlay_menu($custommenu);
                         }
                     }
                 }
@@ -1965,10 +1965,35 @@ EOT;
         if ($nummenus == 0) {
             return '';
         }
+        $template->rows = array();
+
+        $grid = array(
+            '5' => '3',
+            '6' => '3',
+            '7' => '4',
+            '8' => '4',
+            '9' => '3',
+            '10' => '4',
+            '11' => '4',
+            '12' => '4'
+        );
         if ($nummenus <= 4) {
-            $template->span = (12 / $nummenus);
+            $row = new stdClass();
+            $row->span = (12 / $nummenus);
+            $row->menus = $menus;
+            $template->rows[] = $row;
         } else {
-            $template->span = 3;
+            $numperrow = $grid[$nummenus];
+            $chunks = array_chunk($menus, $numperrow);
+            $menucount = 0;
+            for ($i = 0; $i < $nummenus; $i++) {
+                if ($i % $numperrow == 0) {
+                    $row = new stdClass();
+                    $row->span = (12 / $numperrow);
+                    $row->menus = $chunks[$menucount++];
+                    $template->rows[] = $row;
+                }
+            }
         }
         return $this->render_from_template('theme_adaptable/overlaymenu', $template);
     }
