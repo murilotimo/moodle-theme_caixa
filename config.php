@@ -28,8 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 
 global $PAGE;
 
-if ($PAGE->pagetype == 'site-index') {
-    $regions = array(   'side-post',
+$layout_regions = array('side-post',
                         'middle',
                         'frnt-footer',
                         'frnt-market-a',
@@ -52,23 +51,17 @@ if ($PAGE->pagetype == 'site-index') {
                         'frnt-market-r',
                         'frnt-market-s',
                         'frnt-market-t');
-} else {
-    $regions = array('side-post');
-}
+
 
 $THEME->name = 'adaptable';
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
 $THEME->sheets = array( 'adaptable',
                         'blocks',
-                        'menu',
-                        'course',
-                        'slider',
-                        'extras',
-                        'zoom',
                         'button',
-                        'socialwall',
-                        'alertcolors',
+                        'course',
+                        'extras',
+                        'menu',
                         'responsive',
                         'custom');
 
@@ -121,7 +114,7 @@ $THEME->layouts = array(
     // The site home page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => $regions,
+        'regions' => $layout_regions,
         'defaultregion' => 'side-post',
         'options' => array('nonavbar' => true),
     ),
@@ -133,8 +126,8 @@ $THEME->layouts = array(
     ),
     // My dashboard page.
     'mydashboard' => array(
-        'file' => 'columns2.php',
-        'regions' => array('side-post'),
+        'file' => 'dashboard.php',
+        'regions' => $layout_regions,
         'defaultregion' => 'side-post',
         'options' => array('langmenu' => true),
     ),

@@ -18,8 +18,8 @@
  * Version details
  *
  * @package    theme_adaptable
- * @copyright  2015-2016 Jeremy Hopkins (Coventry University)
- * @copyright  2015-2016 Fernando Acedo (3-bits.com)
+ * @copyright  2015-2017 Jeremy Hopkins (Coventry University)
+ * @copyright  2015-2017 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -36,30 +36,35 @@ $string['choosereadme'] = '
 <h3>About</h3>
 <p>Adaptable is a Moodle 2-columns responsive theme highly customizable and based in the popular BCU theme.</p>
 <p>The theme is licensed under the GPL (GNU General Public License). You can find a complete licence copy <a href="http://www.gnu.org/licenses/" target="_HERE">blank</a></p>
+<br>
 <h4>Modify it! - Improve it! - Share it!</h4>
 <br>
 <p>This theme has been developed by:<br>
 Jeremy Hopkins (Coventry University)<br>
 Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <br>
-<p>and many other developers, testers, translators and volunteers (See <a href="adaptable/README.md" target="_blank">README.md</a>)</p>
+<p>and many other developers, testers, translators and volunteers (See <a href="adaptable/README.txt" target="_blank">README.txt</a>)</p>
+<br>
+<p>Visit the adaptable website for more information, tips & tricks and technical support: <a href="https://adaptable.ws" target="_blank">adaptable.ws</a></p>
 <br>
 <h3>Bugs Report</h3>
 <p>You can report bugs (and please, <b>ONLY</b> bugs) in our <a href="https://bitbucket.org/covuni/moodle-theme_adaptable/issues" target="_blank">Bitbucket repository</a></p>
 <br>
 <h3>Technical Support</h3>
-<p>You can ask your questions, doubts and share your tips in the moodle forum:</p>
+<p>You can request technical support in the Adaptable website (only English) <a href="https://adaptable.ws/support/support-tickets" target="_blank">Get Technical Support</a></p>
+<br>
+<p>or your can ask your questions in the moodle forum:</p>
 <ul>
 <li>English: <a href="https://moodle.org/mod/forum/discuss.php?d=340404" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340404</a>
-<li>Espa√±ol: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
-<li>Catal√†: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
+<li>EspaÒol: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
+<li>Catal‡: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
 </ul>
 <br>
 <h3>Documentation</h3>
 <p>Coming soon</p>
 <br>
 <h3>Demo</h3>
-<p>You can see a demo version <a href="https://3-bits.com/demo/adaptable" target="_blank">HERE</a></p>
+<p>You can see a demo version <a href="https://adaptable.ws/demo" target="_blank">HERE</a></p>
 <br>
 </div>
 </div>';
@@ -120,6 +125,7 @@ $string['blocksettings'] = 'Block Settings';
 $string['frontpagealertsettings'] = 'Alert Box';
 $string['frontpagealertboxssettings'] = 'Alert Box Settings';
 $string['frontpageblockregionsettings'] = 'Block Region Builder';
+$string['dashboardblockregionsettings'] = 'Dashboard Block Region Builder';
 $string['frontpageblocksettings'] = 'Marketing Blocks';
 $string['frontpagetickersettings'] = 'Frontpage Ticker';
 $string['frontpageslidersettings'] = 'Frontpage Slider';
@@ -145,6 +151,7 @@ $string['tickerdesc'] = 'Here you can set a news ticker to run across the front 
   &lt;p&gt;News item one.....&lt;/p&gt;
   &lt;p&gt;News item two.....&lt;/p&gt;
   </pre>';
+
 
 $string['tickerdefault'] = 'No news items to display';
 
@@ -253,6 +260,11 @@ $string['blocklayoutbuilderdesc'] = 'Below you can build your own layout for blo
 To add content these regions you will need to <strong> turn editing on on the front page of Moodle</strong>.
 Then you can begin to drag/drop blocks into the regions you create!';
 
+$string['dash_blocklayoutbuilder'] = 'Dashboard Block Regions';
+$string['dash_blocklayoutbuilderdesc'] = 'Below you can build your own layout for block regions on the Dashboard page.
+To add content these regions you will need to <strong> turn editing on, on the dashboard page of Moodle</strong>.
+Then you can begin to drag/drop blocks into the regions you create!';
+
 $string['blocklayoutlayoutcheck'] = 'Check your layout';
 $string['blocklayoutlayoutcheckdesc'] = 'Use the tool below to check the number of blocks you have used and see a representation of your new layout.';
 $string['blocklayoutlayoutcount1'] = 'You can set a maximum of ';
@@ -261,8 +273,15 @@ $string['blocklayoutlayoutcount2'] = ' block regions. You are currently using: '
 $string['blocklayoutlayoutrow'] = 'Block Region Row ';
 $string['blocklayoutlayoutrowdesc'] = 'Add / set layout for block region row on front page.';
 
+$string['dashblocklayoutlayoutrow'] = 'Dashboard Block Region Row ';
+$string['dashblocklayoutlayoutrowdesc'] = 'Add / set layout for block region row on Dashboard page.';
+
 $string['frontpageblocksenabled'] = 'Enable custom block region on front page';
 $string['frontpageblocksenableddesc'] = 'You can enable / disable custom block regions on the front page.
+You can then drag and drop blocks into the regions you created';
+
+$string['dashblocksenabled'] = 'Enable custom block region on Dashboard page';
+$string['dashblocksenableddesc'] = 'You can enable / disable custom block regions on the Dashboard page.
 You can then drag and drop blocks into the regions you created';
 
 $string['layoutcheck'] = 'Check your layout';
@@ -275,7 +294,7 @@ $string['layoutcount2'] = ' block regions. You are currently using: ';
 $string['marketingsettings'] = 'Marketing Blocks';
 $string['marketingsettingsheading'] = 'Customize the marketing blocks that appear on the front page. See the layout <a href="./../theme/adaptable/pix/layout.png" target="_blank"> here</a>';
 $string['marketingdesc'] = 'There are two full width info boxes with differing styles you can use.
-In addition to this there is a layout builder allowing you to decide how many blocks you need and define your own layout, please see the <a href="./../theme/adaptable/README.md" target="_blank">README</a> file that comes with this theme.';
+In addition to this there is a layout builder allowing you to decide how many blocks you need and define your own layout, please see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file that comes with this theme.';
 
 $string['marketingbuilderheading'] = 'Marketing Block Layout Builder';
 $string['marketingbuilderdesc'] = 'Use the tool below to setup your marketing blocks. Once defined the block settings will appear further down the page.';
@@ -284,7 +303,7 @@ $string['marketlayoutrow'] = 'Marketing Block Row';
 $string['marketlayoutrowdesc'] = 'Add / set layout for marketing block row on front page';
 
 $string['market'] = 'Marketing Block ';
-$string['marketdesc'] = 'Add html for marketing block (see the <a href="./../theme/adaptable/README.md" target="_blank">README</a> file for additional info and hints).';
+$string['marketdesc'] = 'Add html for marketing block (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
 
 $string['layoutaddcontent'] = 'Happy With Your Layout? Now Add Content to Your Blocks:';
 $string['layoutaddcontentdesc1'] = 'You have configured ';
@@ -292,13 +311,13 @@ $string['layoutaddcontentdesc2'] = ' marketing blocks. If you are happy with thi
 If you are not happy use the layout builder above to make changes<br />';
 
 $string['infobox'] = 'Frontpage Info Box';
-$string['infoboxdesc'] = 'Frontpage info block HTML (see the <a href="./../theme/adaptable/README.md" target="_blank">README</a> file for additional info and hints).';
+$string['infoboxdesc'] = 'Frontpage info block HTML (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
 
 $string['infoboxfullscreen'] = 'Make infobox full screen';
 $string['infoboxfullscreendesc'] = 'Turning this option on will make the infobox full screen.';
 
 $string['infobox2'] = 'Frontpage Secondary Info Box';
-$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the <a href="./../theme/adaptable/README.md" target="_blank">README</a> file for additional info and hints).';
+$string['infobox2desc'] = 'Frontpage Secondary Info Box (see the <a href="./../theme/adaptable/README.txt" target="_blank">README</a> file for additional info and hints).';
 
 $string['frontpagemarketenabled'] = 'Enable Marketing Blocks';
 $string['frontpagemarketenableddesc'] = 'Set the marketing blocks in the frontpage.';
@@ -425,6 +444,9 @@ $string['mysitessortoverrideprofilefieldscohort'] = 'Display courses found in pr
 
 $string['mysitesmaxlength'] = 'My Courses Max Length';
 $string['mysitesmaxlengthdesc'] = 'Adjust the max length of coursenames in the My Courses dropdown to optimise for your font.';
+
+$string['mycoursesmenulimit'] = 'My Courses Menu Limit';
+$string['mycoursesmenulimitdesc'] = 'Adjust the max number of courses that appear in the My Courses dropdown. 0 will show all courses.';
 
 $string['usernavheading'] = 'Customize the user navigation dropdown';
 $string['usernavdesc'] = 'Allows you to control all of the elements that appear in the user navigation dropdown.';
@@ -966,7 +988,7 @@ $string['alertsettingsheading'] = 'Customize top Alert Box. See the layout <a hr
 $string['alertdesc'] = 'Enter and customize a text to be displayed in the top of the site as an alert. It is possible to set more than one alert to target different user types. You also have the option of showing alerts sitewide or on homepages only. <br /><br /><strong>Note:</strong> it is now also possible to display alerts within course pages to warn teachers that courses are hidden.';
 
 // Alerts Types.
-$string['alertdisabled'] = 'disabled';
+$string['alertdisabled'] = 'Disabled';
 $string['alertdisabledesc'] = 'Disable this alert';
 
 $string['alertinfo'] = 'Info';
@@ -1085,7 +1107,6 @@ $string['hidepagefootermobiledesc'] = 'Checking this option will remove the foot
 
 $string['hideslidermobile'] = 'Hide slider on mobile';
 $string['hideslidermobiledesc'] = 'Hide will remove the front page slider on mobile devices';
-
 
 // Layout **********************************************************.
 $string['layoutsettings'] = 'Layout';
@@ -1391,7 +1412,5 @@ $string['previoussection'] = 'Previous section';
 $string['hide'] = 'Hide';
 $string['show'] = 'Show';
 
-// Navbar Links menu ********************************.
+// Navbar Links menu *********************************.
 $string['linksmenu'] = 'Links Menu';
-
-

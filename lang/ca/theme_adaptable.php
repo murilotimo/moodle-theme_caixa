@@ -42,13 +42,15 @@ $string['choosereadme'] = '
 Jeremy Hopkins (Coventry University)<br>
 Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <br>
-<p>i d&#39;altres desenvolupadors, provadors, traductors i voluntaris (Veure <a href="adaptable/README.txt" target="_blank">README.md</a>)</p>
+<p>i d&#39;altres desenvolupadors, provadors, traductors i voluntaris (Veure <a href="adaptable/README.txt" target="_blank">README.txt</a>)</p>
 <br>
 <h3>Informar de les errades</h3>
 <p>Pots informar de les errades trobades en aquest tema (i, si us plau, només de les errades) mitjançant el nostre <a href="https://bitbucket.org/covuni/moodle-theme_adaptable/issues" target="_blank">repositori a Bitbucket</a></p>
 <br>
 <h3>Suport Tècnic</h3>
-<p>Pots preguntar els teus dubtes i qüestions mitjançant els fòrums oficials a moodle.org:</p>
+<p>Pots sol·licitar suport mitjançant la web de Adaptable (només en anglès) <a href="https://adaptable.ws/support/support-tickets" target="_blank">Get Technical Support</a></p>
+<br>
+<p>o pots preguntar en el forum de moodle:</p>
 <ul>
 <li>Anglès: <a href="https://moodle.org/mod/forum/discuss.php?d=340404" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340404</a>
 <li>Espanyol: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
@@ -62,10 +64,12 @@ Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <p>Pots veure una demostració del lloc i descarregar l&#39;arxiu d&#39;instal·lació a <a href="https://adaptable.ws/demo">https://adaptable.ws/demo</a></p>
 <br>
 <p>Traducció Català (ca-ES): Jordi Rodilla</p>
-<p>Traducció Espanyol (es-ES): Fernando Acedo (3-bits.com)</p>
-<p>Traducció Espanyol (es-MX): Germán Valero (UNAM)</p>
+
+
 </div>
 </div>';
+
+$string['info'] = 'Adaptable versió: '.$CFG->version > 2015051100;
 
 $string['pluginname'] = 'Adaptable';
 $string['configtitle'] = 'Adaptable';
@@ -170,9 +174,6 @@ $string['tickertext2desc'] = 'Afegir els anuncis en format de llista HTML per a 
 
 $string['tickertextprofilefield'] = 'Nom del camp personalitzat del perfil Field Name=Value (opcional)';
 $string['tickertextprofilefielddesc'] = 'Afegeix una regla d&#39;accés utilitzant un camp de perfil personalitzat. Exemple: usertype=alumne';
-
-$string['newstickercount'] = 'Nombre de seccions al tauler d&#39;anuncis';
-$string['newstickercountdesc'] = 'Defineix el nombre de múltiples seccions d&#39;anuncis basades en camps de perfil d&#39;usuari personalitzat.';
 
 $string['ticker'] = 'Anuncis';
 
@@ -891,7 +892,7 @@ $string['helpprofilefield'] = 'Camp personalitzat per a l&#39;ajuda (opcional)';
 $string['helpprofilefielddesc'] = 'Afegeix una regla d&#39;accés utilitzant un camp de perfil personalitzat. Exemple: usertipe=alumne';
 
 
-// Courses Overlai *************************************************.
+// Courses Overlay *************************************************.
 $string['rendereroverlaycolor'] = 'Color superposat';
 $string['rendereroverlaycolordesc'] = 'El color superposat sobre el bloc de curs quan "blocs Superposats" està seleccionat.';
 
@@ -925,9 +926,15 @@ $string['tilesshowallcontactsdesc'] = 'Mostra tots els contactes del curs o nom�
 $string['course'] = 'Curs';
 
 
+<<<<<<< HEAD
+// Alerts **********************************************************
+// Alert message if acting as other role.
+$string['actingasrole'] = 'Estàs actuant actualment com un paper diferent';
+=======
 // Alerts **********************************************************.
 // Alert message if acting as other role
 $string['actingasrole'] = 'Ets està actuant actualment com un paper diferent';
+>>>>>>> ec99e67c8de01ae9ff90f3945e0d38f1c7b13ba8
 
 // Alert Hiden Course
 $string['alerthiddencourse'] = 'advertència suposat ocult';
@@ -1088,6 +1095,8 @@ $string['hidebreadcrumbmobiledesc'] = 'Oculta la ruta de navegació.';
 $string['hidepagefootermobile'] = 'Ocultar peu de pàgina';
 $string['hidepagefootermobiledesc'] = 'Oculta el peu de pàgina.';
 
+$string['hideslidermobile'] = 'Ocultar la presentació de diapositives';
+$string['hideslidermobiledesc'] = 'Oculta la presentació de diapostives en la portada.';
 
 // Layout **********************************************************.
 $string['layoutsettings'] = 'Disposició';

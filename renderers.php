@@ -27,7 +27,6 @@
 defined('MOODLE_INTERNAL') || die;
 
 // Load libraries.
-require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot.'/course/renderer.php');
 require_once($CFG->libdir.'/coursecatlib.php');
 require_once($CFG->dirroot.'/message/lib.php');
@@ -69,7 +68,7 @@ trait single_section_page {
 
         // Can we view the section in question?
         if (!($sectioninfo = $modinfo->get_section_info($displaysection))) {
-            // This section doesn't exist
+            // This section doesn't exist.
             print_error('unknowncoursesection', 'error', null, $course->fullname);
             return;
         }
@@ -98,7 +97,7 @@ trait single_section_page {
             }
         }
 
-        // Start single-section div
+        // Start single-section div.
         echo html_writer::start_tag('div', array('class' => 'single-section'));
 
         // The requested section page.
@@ -108,7 +107,8 @@ trait single_section_page {
         $sectionnavlinks = $this->get_nav_links($course, $modinfo->get_section_info_all(), $displaysection);
         $sectiontitle = '';
         $sectiontitle .= html_writer::start_tag('div', array('class' => 'section-navigation navigationtitle'));
-        // Title attributes
+
+        // Title attributes.
         $classes = 'sectionname';
         if (!$thissection->visible) {
             $classes .= ' dimmed_text';
@@ -121,8 +121,8 @@ trait single_section_page {
 
         // Now the list of sections.
         echo $this->start_section_list();
-
         echo $this->section_header($thissection, $course, true, $displaysection);
+
         // Show completion help icon.
         $completioninfo = new completion_info($course);
         echo $completioninfo->display_help_icon();
@@ -290,6 +290,7 @@ class theme_adaptable_format_weeks_renderer extends format_weeks_renderer {
  *
  * Grid format renderer for the Adaptable theme.
  */
+
 // Check if GRID is installed before trying to override it.
 if (file_exists("$CFG->dirroot/course/format/grid/renderer.php")) {
     include_once($CFG->dirroot."/course/format/grid/renderer.php");
@@ -376,6 +377,42 @@ class theme_adaptable_core_renderer extends core_renderer {
         return parent::render_user_picture($userpicture);
     }
 
+    /**
+     * Return list of the user's courses
+     *
+     * @return array list of courses
+     */
+    public function render_mycourses() {
+        global $USER;
+        
+        // Set limit of courses to show in dropdown from setting
+        $coursedisplaylimit = '20';
+        if (!empty($this->page->theme->settings->mycoursesmenulimit)) {
+            $coursedisplaylimit = $this->page->theme->settings->mycoursesmenulimit;
+        }
+        
+        $courses = enrol_get_my_courses();               
+                
+        $sortedcourses = array();
+        $counter = 0;
+      
+        // Get courses in sort order into list.
+        foreach ($courses as $course) {
+
+            if (($counter >= $coursedisplaylimit) && ($coursedisplaylimit != 0)) {
+                break;
+            }
+            
+            $sortedcourses[] = $course;
+            $counter++;
+
+        }
+        
+        return array($sortedcourses);
+    }
+    
+    
+    
     /**
      * Returns the URL for the favicon.
      *
@@ -715,7 +752,7 @@ class theme_adaptable_core_renderer extends core_renderer {
         global $CFG;
         $output = '';
 
-        if (get_config('theme_adaptable', 'version') < '2016121200') {
+        if (get_config('theme_adaptable', 'version') < '2016050100') {
                 $output .= '<div id="beta"><h3>';
                 $output .= get_string('beta', 'theme_adaptable');
                 $output .= '</h3></div>';
@@ -1209,7 +1246,8 @@ EOT;
 
 
     /**
-     * Renders block regions on front page
+     * Renders block regions on front page (or any other page
+     * if specifying a different value for $settingsname)
      *
      * @param string $settingsname
      */
@@ -1221,7 +1259,7 @@ EOT;
         $style = '';
         $adminediting = false;
 
-        if (is_siteadmin() && isset($USER->editing) && $USER->editing == 1) {
+        if (isset($USER->editing) && $USER->editing == 1) {
             $style = '" style="display: block; background: #EEEEEE; min-height: 50px; border: 2px dashed #BFBDBD; margin-top: 5px';
             $adminediting = true;
         }
@@ -1632,7 +1670,10 @@ EOT;
                 $branchsort  = 10001;
 
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
-                list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
+
+                // Calls a local method (render_mycourses) to get list of
+                // a user's current courses that they are enrolled on
+                list($sortedcourses) = $this->render_mycourses();
 
                 $icon = '';
 
@@ -2799,9 +2840,12 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         if (!isloggedin() or isguestuser()) {
             return '';
         }
-
-        $courses = block_course_overview_get_sorted_courses();
-        list($sortedcourses, $sitecourses, $totalcourses) = block_course_overview_get_sorted_courses();
+      
+        // Calls a local method (render_mycourses) to get list of 
+        // a user's current courses that they are enrolled on
+        $courses = render_mycourses();
+        list($sortedcourses) = render_mycourses();
+        
         if (!empty($sortedcourses) || !empty($rcourses) || !empty($rhosts)) {
 
             $chelper = new coursecat_helper();
@@ -2927,5 +2971,10 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         return $content;
     }
 
+    
+
+    
+    
+    
     // End.
 }

@@ -276,31 +276,26 @@ div.signuppanel h2 {
     margin: 5px 15px 5px 0;
 }
 
-#titlecontainer,
-#titlecontainer a,
-#titlecontainer p {
+#sitetitle,
+#sitetitle a,
+#sitetitle p {
+    color: [[setting:fonttitlecolor]] !important;
     display: inline;
-    position: absolute;
     font-size: [[setting:fonttitlesize]];
     font-family: [[setting:fonttitlename]], sans-serif !important;
-    color: [[setting:fonttitlecolor]] !important;
     font-weight: [[setting:fonttitleweight]] !important;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: ellipsis;
-    line-height: 120%;
-}
-
-#sitetitle {
-    padding-left: [[setting:sitetitlepaddingleft]];
-    top: [[setting:sitetitlepaddingtop]];
-    max-width: [[setting:sitetitlemaxwidth]];
-    display: inline;
     height: 110px;
-    position: relative;
-    width: auto;
     left: 20px;
+    line-height: 120%;
+    max-width: [[setting:sitetitlemaxwidth]];
     min-width: 50%;
+    overflow: visible;
+    padding-left: [[setting:sitetitlepaddingleft]];
+    position: relative;
+    text-overflow: ellipsis;
+    top: [[setting:sitetitlepaddingtop]];
+    width: auto;
+    white-space: nowrap;
 }
 
 #coursesearchbox2 {
