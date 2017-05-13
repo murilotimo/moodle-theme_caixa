@@ -965,7 +965,8 @@ EOT;
             // In Moodle 3.1 or older we display a menu with a count badge.
             if ($CFG->version < 2016120500) {
                 // First, go to count the number of unread messages.
-                $messagecount = message_count_unread_messages();
+                 $messages = $this->get_user_messages();
+                 $messagecount = count($messages);
 
                 // Edit by Matthew Anguige, only display unread popover when unread messages are waiting.
                 if ($messagecount > 0) {
@@ -978,7 +979,7 @@ EOT;
                                               new moodle_url('/message/index.php'), get_string('messages', 'message'), 9999);
                 }
 
-                // In Moodle 3.1 we display the messages in a pop-up.
+                // We display the messages in a pop-up.
                 foreach ($messages as $message) {
                     if (!isset($message->from) || !isset($message->from->id) || !isset($message->from->firstname)) {
                         continue;
