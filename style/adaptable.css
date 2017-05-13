@@ -396,7 +396,7 @@ div.signuppanel h2 {
 
 #marketblocks {
     overflow: hidden;
-    padding: 0 10px 10px 0;
+    padding: 0 0 10px 0;
     background-color: [[setting:marketblocksbackgroundcolor]];
 }
 
