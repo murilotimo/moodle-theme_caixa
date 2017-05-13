@@ -56,8 +56,8 @@ Fernando Acedo (<a href="https://3-bits.com" target="_blank">3-bits.com</a>)</p>
 <p>or your can ask your questions in the moodle forum:</p>
 <ul>
 <li>English: <a href="https://moodle.org/mod/forum/discuss.php?d=340404" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340404</a>
-<li>EspaÒol: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
-<li>Catal‡: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
+<li>Espa√±ol: <a href="https://moodle.org/mod/forum/discuss.php?d=326804" target="_blank">https://moodle.org/mod/forum/discuss.php?d=326804</a>
+<li>Catal√†: <a href="https://moodle.org/mod/forum/discuss.php?d=340406" target="_blank">https://moodle.org/mod/forum/discuss.php?d=340406</a>
 </ul>
 <br>
 <h3>Documentation</h3>
