@@ -51,6 +51,7 @@ $setting = new admin_setting_configselect($name, $title, $description, 1, $choic
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
+// Show Footer blocks.
 $name = 'theme_adaptable/showfooterblocks';
 $title = get_string('showfooterblocks', 'theme_adaptable');
 $description = get_string('showfooterblocksdesc', 'theme_adaptable');
@@ -116,6 +117,19 @@ for ($i = 1; $i <= $totalblocks; $i++) {
     $temp->add($setting);
 }
 
+// Social icons.
+$name = 'theme_adaptable/hidefootersocial';
+$title = get_string('hidefootersocial', 'theme_adaptable');
+$description = get_string('hidefootersocialdesc', 'theme_adaptable');
+$radchoices = array(
+    0 => get_string('hide', 'theme_adaptable'),
+    1 => get_string('show', 'theme_adaptable'),
+);
+$setting = new admin_setting_configselect($name, $title, $description, 1, $radchoices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+// Footnote.
 $name = 'theme_adaptable/footnote';
 $title = get_string('footnote', 'theme_adaptable');
 $description = get_string('footnotedesc', 'theme_adaptable');
