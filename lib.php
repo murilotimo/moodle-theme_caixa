@@ -192,6 +192,7 @@ function theme_adaptable_process_css($css, $theme) {
         '[[setting:hidesocialmobile]]' => 0,
         '[[setting:socialboxpaddingtopmobile]]' => '',
         '[[setting:socialboxpaddingbottommobile]]' => '',
+        '[[setting:hidefootersocial]]' => 1,
         '[[setting:hidecoursetitlemobile]]' => 0,
         '[[setting:hidelogomobile]]' => 0,
         '[[setting:hideheadermobile]]' => 0,
