@@ -36,6 +36,19 @@ if (((is_mobile()) && ($hidepagefootermobile == 1)) || (is_desktop())) {
 <?php
 echo $OUTPUT->get_footer_blocks();
 
+if ($PAGE->theme->settings->hidefootersocial == 1) { ?>
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span12 pagination-centered">
+<?php
+    echo $OUTPUT->socialicons();
+?>
+                </div>
+            </div>
+        </div>
+
+<?php } 
+
 if ($PAGE->theme->settings->moodledocs) {
     $footnoteclass = 'span4';
 } else {
