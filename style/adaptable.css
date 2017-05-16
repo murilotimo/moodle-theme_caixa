@@ -1787,15 +1787,6 @@ div.questionbankwindow.block {
     margin-left: 8px;
 }
 
-.icon {
-    box-sizing: content-box;
-    height: 16px;
-    margin: 0 0.5rem 0 0;
-    padding: 0;
-    vertical-align: middle;
-    width: 16px;
-}
-
 /* Messages / Notifications dropdown */
 .popover-region-container {
     background-color: #fff;
@@ -1814,6 +1805,7 @@ div.questionbankwindow.block {
 
 .count-container {
     right: -5px;
+
 }
 
 .popover-region-toggle::before,
