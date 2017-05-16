@@ -125,7 +125,7 @@ $string['blocksettings'] = 'Bloques';
 $string['frontpagealertsettings'] = 'Alertas';
 $string['frontpageblockregionsettings'] = 'Creador de regiones para bloques';
 $string['frontpagealertboxssettings'] = 'Configuración de alertas';
-$string['dashboardblockregionsettings'] = 'Constructor de regiones del Panel de Control';
+$string['dashboardblockregionsettings'] = 'Constructor de regiones del Área Personal';
 $string['frontpageblocksettings'] = 'Bloques promocionales';
 $string['frontpagetickersettings'] = 'Anuncios';
 $string['frontpageslidersettings'] = 'Presentación diapositivas';
@@ -260,9 +260,9 @@ $string['blocklayoutbuilderdesc'] = 'A continuación puedes crear tu propia dist
 Para añadir contenido a estas regiones necesitarás <strong>Activar edición en la página principal de Moodle</strong>.
 Entonces podrás arrastras y soltar los bloques en las regiones creadas.';
 
-$string['dash_blocklayoutbuilder'] = 'Regiones del Panel de Control';
-$string['dash_blocklayoutbuilderdesc'] = 'A continuación puedes crear tu propia estructura de regiones para bloques en el Panel de Control.
-Para añadir dichas regiones necesitarás <strong>Activar Edición en la página del Panel de Control</strong>.<br>
+$string['dash_blocklayoutbuilder'] = 'Regiones del Área Personal';
+$string['dash_blocklayoutbuilderdesc'] = 'A continuación puedes crear tu propia estructura de regiones para bloques en el Área Personal.
+Para añadir dichas regiones necesitarás <strong>Activar Edición en la página del Área Personal</strong>.<br>
 Entonces podrás arrastrar y soltar bloques en las regiones que has creado';
 
 $string['blocklayoutlayoutcheck'] = 'Comprueba la distribución';
@@ -274,14 +274,14 @@ $string['blocklayoutlayoutrow'] = 'Filas de regiones para bloques';
 $string['blocklayoutlayoutrowdesc'] = 'Añade / establece la distribución de filas de las regiones para bloques de la página principal.';
 
 $string['dashblocklayoutlayoutrow'] = 'Fila de regiones del anel de Control ';
-$string['dashblocklayoutlayoutrowdesc'] = 'Añade / establece la estructura de las regiones para bloques en la página del Panel de Control.';
+$string['dashblocklayoutlayoutrowdesc'] = 'Añade / establece la estructura de las regiones para bloques en la página del Área Personal.';
 
 $string['frontpageblocksenabled'] = 'Activa las regiones para bloques en la página principal';
 $string['frontpageblocksenableddesc'] = 'Activa o desactiva las regiones para bloques de la página principal.
 Puedes arrastrar y soltar los bloques en las regiones creadas.';
 
-$string['dashblocksenabled'] = 'Activar las regiones personalizadas en la página del Panel de Control';
-$string['dashblocksenableddesc'] = 'Puedes activar / desactivar las regiones personalizadas de la página del Panel de Control.
+$string['dashblocksenabled'] = 'Activar las regiones personalizadas en la página del Área Personal';
+$string['dashblocksenableddesc'] = 'Puedes activar / desactivar las regiones personalizadas de la página del Área Personal.
 Puedes arrastrar y soltar los bloques en las regiones que has creado';
 
 $string['layoutcheck'] = 'Comprueba la distribución';
@@ -1205,8 +1205,8 @@ $string['frnt-footer'] = 'Los bloques de este área solo serán visibles para lo
 $string['enableticker'] = 'Mostrar los anuncios en la página principal';
 $string['enabletickerdesc'] = 'Muestra la barra de anuncios en la página principal.';
 
-$string['enabletickermy'] = 'Mostrar la barra de anuncios en Mi Área personal / Panel de control';
-$string['enabletickermydesc'] = 'Muestra la barra de anuncios en Mi Área personal / Panel de control.';
+$string['enabletickermy'] = 'Mostrar la barra de anuncios en Mi Área personal / Área Personal';
+$string['enabletickermydesc'] = 'Muestra la barra de anuncios en Mi Área personal / Área Personal.';
 
 $string['enabletickerc'] = 'Mostrar la barra de anuncios en las páginas internas';
 $string['enabletickercdesc'] = 'Muestra la barra de anuncios en las páginas internas de moodle.';
