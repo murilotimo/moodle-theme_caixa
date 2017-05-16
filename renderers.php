@@ -121,7 +121,6 @@ trait single_section_page {
 
         // Now the list of sections.
         echo $this->start_section_list();
-        echo $this->section_header($thissection, $course, true, $displaysection);
 
         if (!$showsectionzero) {
             echo $this->section_header_onsectionpage_topic0notattop($thissection, $course);
