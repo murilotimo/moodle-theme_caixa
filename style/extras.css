@@ -108,14 +108,6 @@ ul.teachers {
     width: 30%;
 }
 
-
-/* Lesson */
-.path-mod-lesson .answeroption .fcheckbox label,
-.path-mod-lesson .answeroption .fradio label {
-    float: left;
-    padding-left: 35px;
-}
-
 /* Messages */
 .messaging-area-container .messaging-area .contacts-area .contacts .contact.selected {
     background-color: #e9ebeb;
