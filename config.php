@@ -71,7 +71,7 @@ $THEME->yuicssmodules = array();
 $THEME->editor_sheets = array();
 
 $usedashboard = false;
-if ($CFG->version >= 2015111600) {
+if ($CFG->version >= 2016052300) {
     $usedashboard = true;
 }
 

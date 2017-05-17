@@ -28,7 +28,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 $usedashboard = false;
-if ($CFG->version >= 2015111600) {
+if ($CFG->version >= 2016052300) {
     $usedashboard = true;
 }
 
