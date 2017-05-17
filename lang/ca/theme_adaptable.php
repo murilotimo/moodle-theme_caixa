@@ -926,15 +926,9 @@ $string['tilesshowallcontactsdesc'] = 'Mostra tots els contactes del curs o nom�
 $string['course'] = 'Curs';
 
 
-<<<<<<< HEAD
 // Alerts **********************************************************
 // Alert message if acting as other role.
-$string['actingasrole'] = 'Estàs actuant actualment com un paper diferent';
-=======
-// Alerts **********************************************************.
-// Alert message if acting as other role
-$string['actingasrole'] = 'Ets està actuant actualment com un paper diferent';
->>>>>>> ec99e67c8de01ae9ff90f3945e0d38f1c7b13ba8
+$string['actingasrole'] = 'Estàs actuant actualment amb un paper diferent';
 
 // Alert Hiden Course
 $string['alerthiddencourse'] = 'advertència suposat ocult';

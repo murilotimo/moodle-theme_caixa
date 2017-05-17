@@ -38,7 +38,7 @@ $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 
 ?>
 
-<?php 
+<?php
 
 if (!empty($PAGE->theme->settings->dashblocksenabled)) { ?>
     <div id="frontblockregion" class="container">

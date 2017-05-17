@@ -359,7 +359,7 @@ $string['footercontent'] = 'Footer Content Section ';
 $string['footercontentdesc'] = 'Add content to footer section ';
 
 $string['hidefootersocial'] = 'Show social icons';
-$string['hidefootersocialdesc'] = 'Show social icons in the footer below the blocks';
+$string['hidefootersocialdesc'] = 'Show social icons in the footer below the blocks.';
 
 
 // Moodle Docs link.
@@ -992,16 +992,16 @@ $string['alertdesc'] = 'Enter and customize a text to be displayed in the top of
 
 // Alerts Types.
 $string['alertdisabled'] = 'Disabled';
-$string['alertdisabledesc'] = 'Disable this alert';
+$string['alertdisabledesc'] = 'Disable this alert.';
 
 $string['alertinfo'] = 'Info';
-$string['alertinfodesc'] = 'Display information in the Alert Box';
+$string['alertinfodesc'] = 'Display information in the Alert Box.';
 
 $string['alertwarning'] = 'Warning';
-$string['alertwarningdesc'] = 'Display a warning in the Alert Box';
+$string['alertwarningdesc'] = 'Display a warning in the Alert Box.';
 
 $string['alertannounce'] = 'Announcement';
-$string['alertannouncedesc'] = 'Display an announcement in the Alert Box';
+$string['alertannouncedesc'] = 'Display an announcement in the Alert Box.';
 
 $string['alertprofilefield'] = 'Custom Profile Field Name=Value (optional)';
 $string['alertprofilefielddesc'] = 'Add access rule using for custom profile field eg: usertype=student';
@@ -1030,7 +1030,7 @@ $string['alertbackgroundcolorinfodesc'] = 'Background color of the Info type ale
 $string['alertbordercolorinfo'] = 'Info Border Color';
 $string['alertbordercolorinfodesc'] = 'Border color of the Info type alert boxes';
 $string['alerticoninfo'] = 'Info Icon';
-$string['alerticoninfodesc'] = 'Set the <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icon</a> to be usedin in Info type alert boxes. Enter the icon name without the fa- prefix.';
+$string['alerticoninfodesc'] = 'Set the <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icon</a> to be used in Info type alert boxes. Enter the icon name without the fa- prefix.';
 
 $string['alertcolorwarning'] = 'Warning Color';
 $string['alertcolorwarningdesc'] = 'Icon color of the Warning type alert boxes';
