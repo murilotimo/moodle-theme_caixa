@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 
 global $PAGE;
 
-$layout_regions = array('side-post',
+$layoutregions = array('side-post',
                         'middle',
                         'frnt-footer',
                         'frnt-market-a',
@@ -119,7 +119,7 @@ $THEME->layouts = array(
     // The site home page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => $layout_regions,
+        'regions' => $layoutregions,
         'defaultregion' => 'side-post',
         'options' => array('nonavbar' => true),
     ),
@@ -132,7 +132,7 @@ $THEME->layouts = array(
     // My dashboard page.
     'mydashboard' => array(
         'file' => ( ($usedashboard == true) ? 'dashboard.php' : 'columns2.php'),
-        'regions' => ( ($usedashboard == true) ? $layout_regions : array('side-post')),
+        'regions' => ( ($usedashboard == true) ? $layoutregions : array('side-post')),
         'defaultregion' => 'side-post',
         'options' => array('langmenu' => true),
     ),
