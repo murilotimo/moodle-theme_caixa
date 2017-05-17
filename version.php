@@ -18,18 +18,18 @@
  * Version details
  *
  * @package   theme_adaptable
- * @copyright 2015-2016 Jeremy Hopkins (Coventry University)
- * @copyright 2015-2016 Fernando Acedo (3-bits.com)
+ * @copyright 2015-2017 Jeremy Hopkins (Coventry University)
+ * @copyright 2015-2017 Fernando Acedo (3-bits.com)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2017050201;
+$plugin->version   = 2017051700;
 $plugin->requires  = 2015111600;
 $plugin->component = 'theme_adaptable';
-$plugin->release = '1.3.2';
+$plugin->release = '1.3.3';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = array(
     'theme_bootstrapbase'  => 2014111000,
