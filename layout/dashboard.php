@@ -55,7 +55,7 @@ if (!empty($PAGE->theme->settings->infobox)) {
 }
 ?>
 
-<?php 
+<?php
 
 if (!empty($PAGE->theme->settings->dashblocksenabled)) { ?>
     <div id="frontblockregion" class="container">

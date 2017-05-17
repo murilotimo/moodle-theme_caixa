@@ -384,35 +384,35 @@ class theme_adaptable_core_renderer extends core_renderer {
      */
     public function render_mycourses() {
         global $USER;
-        
+
         // Set limit of courses to show in dropdown from setting
         $coursedisplaylimit = '20';
         if (!empty($this->page->theme->settings->mycoursesmenulimit)) {
             $coursedisplaylimit = $this->page->theme->settings->mycoursesmenulimit;
         }
-        
-        $courses = enrol_get_my_courses();               
-                
+
+        $courses = enrol_get_my_courses();
+
         $sortedcourses = array();
         $counter = 0;
-      
+
         // Get courses in sort order into list.
         foreach ($courses as $course) {
 
             if (($counter >= $coursedisplaylimit) && ($coursedisplaylimit != 0)) {
                 break;
             }
-            
+
             $sortedcourses[] = $course;
             $counter++;
 
         }
-        
+
         return array($sortedcourses);
     }
-    
-    
-    
+
+
+
     /**
      * Returns the URL for the favicon.
      *
@@ -1756,7 +1756,7 @@ EOT;
                             $branch->add($icon.$modfullname, new moodle_url('/course/resources.php',
                                          array('id' => $PAGE->course->id)));
                         } else {
-                            $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
+                            $icon = $OUTPUT->pix_icon('icon', '', $modname, array('class' => 'icon'));
                             $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
                                          array('id' => $PAGE->course->id)));
                         }
@@ -2041,12 +2041,12 @@ EOT;
         return $this->render_from_template('theme_adaptable/overlaymenu', $template);
     }
 
-        /**
-     * Render the menu items for the overlay menu
-     *
-     * @param custom_menu $menu
-     * @return array of menus
-     */
+     /**
+      * Render the menu items for the overlay menu
+      *
+      * @param custom_menu $menu
+      * @return array of menus
+      */
     private function render_overlay_menu(custom_menu $menu) {
         $template = new stdClass();
         if (!$menu->has_children()) {
@@ -2842,14 +2842,12 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         if (!isloggedin() or isguestuser()) {
             return '';
         }
-      
-        // Calls a local method (render_mycourses) to get list of 
-        // a user's current courses that they are enrolled on
+
+        // Calls a local method (render_mycourses) to get list of a user's current courses that they are enrolled on.
         $courses = render_mycourses();
         list($sortedcourses) = render_mycourses();
-        
-        if (!empty($sortedcourses) || !empty($rcourses) || !empty($rhosts)) {
 
+        if (!empty($sortedcourses) || !empty($rcourses) || !empty($rhosts)) {
             $chelper = new coursecat_helper();
             if (count($courses) > $CFG->frontpagecourselimit) {
                 // There are more enrolled courses than we can display, display link to 'My courses'.
@@ -2972,11 +2970,5 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         }
         return $content;
     }
-
-    
-
-    
-    
-    
     // End.
 }

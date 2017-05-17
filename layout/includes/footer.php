@@ -47,7 +47,7 @@ if ($PAGE->theme->settings->hidefootersocial == 1) { ?>
             </div>
         </div>
 
-<?php } 
+<?php }
 
 if ($PAGE->theme->settings->moodledocs) {
     $footnoteclass = 'span4';
