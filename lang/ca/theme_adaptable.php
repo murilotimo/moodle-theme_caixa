@@ -588,7 +588,7 @@ $string['breadcrumbtextcolordesc'] = 'Estableix el color de text de la guia d&#3
 $string['activebreadcrumb'] = 'Color de fons de la guia d&#39;exploració activa';
 $string['activebreadcrumbdesc'] = 'Estableix el color de fons de la guia d&#39;exploració activa.';
 
-$string['messagepopupbackground';] = 'Color de fons dels missatges emergents';
+$string['messagepopupbackground'] = 'Color de fons dels missatges emergents';
 $string['messagepopupbackgrounddesc'] = 'Estableix el color de fons de la capçalera dels missatges emergents.';
 
 $string['messagepopupcolor'] = 'Color de text dels missatges emergents';
@@ -699,7 +699,7 @@ $string['fonttitlecolorcourse'] = 'Color de la font del títol del curs';
 $string['fonttitlecolorcoursedesc'] = 'Estableix el color de la font utilitzada al títol del curs.';
 
 $string['fontsubset'] = 'Joc de caracters de Google Fonts';
-$string['fontsubsetdesc'] = 'Seleccionar el joc de caracters de Google Fonts a utilitzat a més a més del llatí ja inclòs per defecte. S''aplicarà a totes les fonts seleccionades.';
+$string['fontsubsetdesc'] = 'Seleccionar el joc de caracters de Google Fonts a utilitzat a més a més del llatí ja inclòs per defecte. S&#39;aplicarà a totes les fonts seleccionades.';
 
 $string['menufontsize'] = 'Mida de la font de la barra de navegació';
 $string['menufontsizedesc'] = 'Estableix la mida de la font utilitzada a la barra de navegació.';
