@@ -767,10 +767,6 @@ div.redirectmessage {
     width: 100%;
 }
 
-.path-grade-report-grader .gradeparent {
-    /* overflow: auto; */
-}
-
 .gradingform_guide .criterion .description {
     width: 100%;
     padding: 10px 5px 10px 5px;
@@ -888,6 +884,7 @@ input[type="radio"], input[type="checkbox"] {
 
 #region-main {
     margin-top: 0;
+    margin-left: 0;
     background-color: [[setting:regionmaincolor]];
 }
 
@@ -1781,10 +1778,16 @@ div.questionbankwindow.block {
 
 /* New Messages / Notifications topbar */
 
-/* messages icons */
+/* messages icons margin */
 #nav-notification-popover-container,
 #nav-message-popover-container {
     margin-left: 8px;
+}
+
+/* messages icons size */
+.popover-region-toggle .icon img{
+    width: 24px;
+    height: 24px;
 }
 
 /* Messages / Notifications dropdown */
