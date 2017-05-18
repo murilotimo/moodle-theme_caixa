@@ -26,7 +26,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2017051700;
+$plugin->version   = 2017051701;
 $plugin->requires  = 2015111600;
 $plugin->component = 'theme_adaptable';
 $plugin->release = '1.3.3';

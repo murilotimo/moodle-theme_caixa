@@ -767,10 +767,6 @@ div.redirectmessage {
     width: 100%;
 }
 
-.path-grade-report-grader .gradeparent {
-    /* overflow: auto; */
-}
-
 .gradingform_guide .criterion .description {
     width: 100%;
     padding: 10px 5px 10px 5px;
@@ -1782,12 +1778,13 @@ div.questionbankwindow.block {
 
 /* New Messages / Notifications topbar */
 
-/* messages icons */
-    #nav-notification-popover-container,
-    #nav-message-popover-container {
+/* messages icons margin */
+#nav-notification-popover-container,
+#nav-message-popover-container {
     margin-left: 8px;
 }
 
+/* messages icons size */
 .popover-region-toggle .icon img{
     width: 24px;
     height: 24px;
