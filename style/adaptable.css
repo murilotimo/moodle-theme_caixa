@@ -1783,9 +1783,14 @@ div.questionbankwindow.block {
 /* New Messages / Notifications topbar */
 
 /* messages icons */
-#nav-notification-popover-container,
-#nav-message-popover-container {
+    #nav-notification-popover-container,
+    #nav-message-popover-container {
     margin-left: 8px;
+}
+
+.popover-region-toggle .icon img{
+    width: 24px;
+    height: 24px;
 }
 
 /* Messages / Notifications dropdown */
