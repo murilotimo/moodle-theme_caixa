@@ -211,7 +211,6 @@ div.signuppanel h2 {
     position: relative;
 }
 
-
 #above-header .headermenu,
 #above-header .headermenu a {
     color: [[setting:headertextcolor]] !important;
@@ -234,9 +233,11 @@ div.signuppanel h2 {
 #above-header .headermenu .dropdown-menu a {
     margin-top: 0;
 }
+
 #above-header .linksmenu {
     margin-left: 15px;
 }
+
 #above-header .langdesc,
 #above-header .linksdesc {
     color: [[setting:headertextcolor]];
@@ -247,6 +248,14 @@ div.signuppanel h2 {
 #above-header .linksmenu a i {
     color: [[setting:headertextcolor]];
 }
+
+#page-header-wrapper {
+    background-image: url([[pix:theme|headerbgimage]]);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 #page-header {
     border-bottom: none solid [[setting:maincolor]];
@@ -1647,6 +1656,12 @@ div.questionbankwindow.block {
 .hidden-blocks .block-region .block .header {
   border-top: 0;
 }
+
+/* Lesson Activity */
+
+
+
+
 
 /* Quiz navigation. */
 /* Published by Tim Hunt in the moodle forum */
