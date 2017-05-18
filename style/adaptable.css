@@ -888,6 +888,7 @@ input[type="radio"], input[type="checkbox"] {
 
 #region-main {
     margin-top: 0;
+    margin-left: 0;
     background-color: [[setting:regionmaincolor]];
 }
 
