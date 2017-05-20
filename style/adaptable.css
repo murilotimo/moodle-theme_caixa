@@ -249,14 +249,6 @@ div.signuppanel h2 {
     color: [[setting:headertextcolor]];
 }
 
-#page-header-wrapper {
-    background-image: url([[pix:theme|headerbgimage]]);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
 #page-header {
     border-bottom: none solid [[setting:maincolor]];
     clear: both;
