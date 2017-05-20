@@ -123,8 +123,9 @@ $string['analyticssettings'] = 'Analítica Web';
 // Admin Menu Strings.
 $string['blocksettings'] = 'Blocs';
 $string['frontpagealertsettings'] = 'Alertes';
-$string['frontpagealertboxssettings'] = 'Configuració del quadre d&#39;alerta';
 $string['frontpageblockregionsettings'] = 'Creador de regions per a blocs';
+$string['frontpagealertboxssettings'] = 'Configuració d&#39;alertes';
+$string['dashboardblockregionsettings'] = 'Constructor de regions de l&#39;Área Personal';
 $string['frontpageblocksettings'] = 'Blocs promocionals';
 $string['frontpagetickersettings'] = 'Anuncis';
 $string['frontpageslidersettings'] = 'Presentació diapositives';
@@ -259,6 +260,11 @@ $string['blocklayoutbuilderdesc'] = 'A continuació pots crear la teva pròpia d
 Per afegir contingut a aquestes regions necessitaràs <strong>Activar edició a la pàgina principal de Moodle</strong>.
 Llavors podràs arrossegar i deixar anar els blocs a les regions creades.';
 
+$string['dash_blocklayoutbuilder'] = 'Regions de l&#39;Àrea Personal';
+$string['dash_blocklayoutbuilderdesc'] = 'A continuació pots crear la teva pròpia estructura de regions per a blocs a l&#39;Àrea Personal.
+Per a afegir aquestes regions necessitaràs <strong>Activar Edició a la pàgina de l&#39;Àrea Personal</strong>.<br>
+Llavors podràs arrossegar i deixar anar blocs a les regions que has creat.';
+
 $string['blocklayoutlayoutcheck'] = 'Comprova la distribució';
 $string['blocklayoutlayoutcheckdesc'] = 'Utilitza aquesta opció per veure la distribució creada i comprovar el nombre de blocs que has utilitzat.';
 $string['blocklayoutlayoutcount1'] = 'Pots crear un màxim de ';
@@ -267,9 +273,16 @@ $string['blocklayoutlayoutcount2'] = ' regions per a blocs. Ara estàs utilitzan
 $string['blocklayoutlayoutrow'] = 'Files de regions per a blocs';
 $string['blocklayoutlayoutrowdesc'] = 'Afegeix / estableix la distribució de files de les regions per a blocs de la pàgina principal.';
 
+$string['dashblocklayoutlayoutrow'] = 'Fila de regions del Panell de Control ';
+$string['dashblocklayoutlayoutrowdesc'] = 'Afegeix / estableix l&#39;estructura de les regions per a blocs a la pàgina de l&#39;Àrea Personal.';
+
 $string['frontpageblocksenabled'] = 'Activa les regions per a blocs a la pàgina principal';
 $string['frontpageblocksenableddesc'] = 'Activa o desactiva les regions per a blocs de la pàgina principal.
-Pots arrossegar i deixar anar els blocs a les regions creades.';
+Pots arrossegar i deixar anar els blocs a les regions creades';
+
+$string['dashblocksenabled'] = 'Activar les regions personalitzades a la pàgina de l&#39;Àrea Personal';
+$string['dashblocksenableddesc'] = 'Pots activar / desactivar les regions personalitzades de la pàgina de l&#39;Àrea Personal.
+Pots arrossegar i deixar anar els blocs a les regions que has creat';
 
 $string['layoutcheck'] = 'Comprova la distribució';
 $string['layoutcheckdesc'] = 'Utilitza aquesta opció per a veure la distribució creada i comprovar el nombre de blocs que has utilitzat.';
@@ -344,6 +357,9 @@ $string['footerdesc'] = 'Afegeix el títol del bloc del peu de pàgina';
 
 $string['footercontent'] = 'Contingut del bloc del peu de pàgina';
 $string['footercontentdesc'] = 'Afegeix el codi HTML del bloc de peu de pàgina (veure l&#39;arxiu <a href="./../theme/adaptable/README.md" target="_blank">README</a> per a més exemples)';
+
+$string['hidefootersocial'] = 'Mostrar icones socials';
+$string['hidefootersocialdesc'] = 'Mostra les icones socials al peu de pàgina sota els blocs.';
 
 
 // Moodle Docs link.
@@ -431,6 +447,9 @@ $string['mysitessortoverrideprofilefieldscohort'] = 'Mostra els cursos coinciden
 
 $string['mysitesmaxlength'] = 'Longitud màxima del títol del curs a "Els Meus Cursos"';
 $string['mysitesmaxlengthdesc'] = 'Ajusta la longitud màxima del títol del curs a mostrar a "Els Meus Cursos". La longitud dependrà de la mida i de la font utilitzada.';
+
+$string['mycoursesmenulimit'] = 'Límit menú Els meus Cursos';
+$string['mycoursesmenulimitdesc'] = 'Estableix el nombre màxim de cursos que apareixen al menú Els Meus Cursos. 0 mostrarà tots els cursos.';
 
 $string['usernavheading'] = 'Personalitzar el menú d&#39;usuari';
 $string['usernavdesc'] = 'Permet personalitzar els elements que apareixen al menú d&#39;usuari.';
@@ -960,7 +979,7 @@ $string['enablealertstriptagsdesc'] = 'Si s&#39;activa, s&#39;eliminaran les eti
 $string['alertkeyvalue'] = 'Clau d&#39;identificació de l&#39;Alerta';
 $string['alertkeyvalue_details'] = 'Aquesta clau identifica l&#39;alerta i permet el control de l&#39;eliminació de l&#39;alerta a la pantalla per part de l&#39;usuari. Si es canvia la clau, els usuaris tornaran a veure l&#39;alerta de nou.';
 
-$string['alertsettingscourse'] = 'Configuració d\'alertes de golf';
+$string['alertsettingscourse'] = 'Configuració d\'alertes de cursos';
 
 $string['alertsettingsgeneral'] = 'Configuració Alertes';
 $string['alertsettings'] = 'Alerta {$a}';
@@ -1388,6 +1407,13 @@ $string['jssectiondesc'] = 'Introdueix el codi Javascript personalitzat.';
 // Cache definitions.
 $string['cachedef_userdata'] = 'El temps per desar una sessió d&#39;un usuari específic.';
 
+// Section navigation ********************************.
+$string['nextsection'] = 'Sigüent';
+$string['previoussection'] = 'Anterior';
+
 // General ******************************************.
 $string['hide'] = 'Ocultar';
 $string['show'] = 'Mostrar';
+
+// Navbar Links menu *********************************.
+$string['linksmenu'] = 'Menú enllaços';
