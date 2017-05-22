@@ -756,13 +756,15 @@ class theme_adaptable_core_renderer extends core_renderer {
         global $CFG;
         $output = '';
 
-        if (get_config('theme_adaptable', 'version') < '2016050100') {
+        // Development version. 
+        if (get_config('theme_adaptable', 'version') < '2017052300') {
                 $output .= '<div id="beta"><h3>';
                 $output .= get_string('beta', 'theme_adaptable');
                 $output .= '</h3></div>';
         }
 
-        if ($CFG->version < 2015111600) {
+        // Deprecated moodle version (3.1 and lower).
+        if ($CFG->version < 2016052300) {
                 $output .= '<div id="beta"><center><h3>';
                 $output .= get_string('deprecated', 'theme_adaptable');
                 $output .= '</h3></center></div>';
