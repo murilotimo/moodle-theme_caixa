@@ -26,6 +26,13 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+// Set HTTPS if needed.
+if (empty($CFG->loginhttps)) {
+    $wwwroot = $CFG->wwwroot;
+} else {
+    $wwwroot = str_replace("http://", "https://", $CFG->wwwroot);
+}
+
 theme_adaptable_initialise_zoom($PAGE);
 $setzoom = theme_adaptable_get_zoom();
 
@@ -40,8 +47,6 @@ if (isset($PAGE->theme->settings->stickynavbar) && $PAGE->theme->settings->stick
 
 $PAGE->requires->js_call_amd('theme_adaptable/bsoptions', 'init', array($fixedheader));
 
-
-
 $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
 
 $hasmiddle = $PAGE->blocks->region_has_content('middle', $OUTPUT);
@@ -51,10 +56,13 @@ $hideheadermobile = $PAGE->theme->settings->hideheadermobile;
 $hidealertsmobile = $PAGE->theme->settings->hidealertsmobile;
 $hidesocialmobile = $PAGE->theme->settings->hidesocialmobile;
 
-// Fixed header.
-// $fixedheader = $PAGE->theme->settings->stickynavbar;.
+// Load header background image if exists.
+$headerbg = '';
 
-$fixedheader = false;
+if (!empty($PAGE->theme->settings->headerbgimage)) {
+    $headerbg = ' style="background-image: url('.$PAGE->theme->setting_file_url('headerbgimage', 'headerbgimage').');
+                         background-position: 0 0; background-repeat: no-repeat; background-size: cover;"';
+}
 
 // Get the fonts name.
 $fontname = str_replace(" ", "+", $PAGE->theme->settings->fontname);
@@ -112,12 +120,6 @@ if ($defaultview == 1 && $setfull == "") {
     $setfull = "fullin";
 }
 
-// Set HTTPS if needed.
-if (empty($CFG->loginhttps)) {
-    $wwwroot = $CFG->wwwroot;
-} else {
-    $wwwroot = str_replace("http://", "https://", $CFG->wwwroot);
-}
 
 // HTML header.
 echo $OUTPUT->doctype();
@@ -181,20 +183,11 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 if (((is_mobile()) && ($hidealertsmobile == 1)) || (is_desktop())) {
     // Display alerts.
     echo $OUTPUT->get_alert_messages();
-} ?>
+} 
 
-<?php
-// Fixed header.
-if ($fixedheader) {
+// Background image in Header.
 ?>
-    <header id="page-header-wrapper" style="position: fixed;">
-<?php
-} else {
-?>
-    <header id="page-header-wrapper">
-<?php
-}
-?>
+    <header id="page-header-wrapper" <?php echo $headerbg; ?> >
     <div id="above-header">
         <div class="clearfix container userhead">
             <div class="pull-left">
