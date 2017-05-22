@@ -199,4 +199,31 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+    // Block Header Font size.
+    $name = 'theme_adaptable/fontblockheadersize';
+    $title = get_string('fontblockheadersize', 'theme_adaptable');
+    $description = get_string('fontblockheadersizedesc', 'theme_adaptable');
+    $default = '28px';
+    $choices = $standardfontsize;
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Block Header Font weight.
+    $name = 'theme_adaptable/fontblockheaderweight';
+    $title = get_string('fontblockheaderweight', 'theme_adaptable');
+    $description = get_string('fontblockheaderweightdesc', 'theme_adaptable');
+    $setting = new admin_setting_configselect($name, $title, $description, 400, $from100to900);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Block Header Font color.
+    $name = 'theme_adaptable/fontblockheadercolor';
+    $title = get_string('fontblockheadercolor', 'theme_adaptable');
+    $description = get_string('fontblockheadercolordesc', 'theme_adaptable');
+    $previewconfig = null;
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     $ADMIN->add('theme_adaptable', $temp);
