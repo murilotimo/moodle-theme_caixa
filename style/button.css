@@ -74,7 +74,6 @@ td.submit input {
     vertical-align: middle;
     cursor: pointer;
     background-image: none;
-    background-color: [[setting:buttoncolor]];
     border: 1px solid #ccc;
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
     border-bottom-color: #b3b3b3;

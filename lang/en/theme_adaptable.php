@@ -791,6 +791,9 @@ $string['headersettingsheading'] = 'Customize the header of this theme. See the 
 $string['headerdesc'] = 'Upload your favicon, logo, set login form in header, adjust titles in header.<br />
 You can set font size and styles for titles in the <a href="./../admin/settings.php?section=theme_adaptable_font">fonts</a> settings page.';
 
+$string['headerbgimage'] = 'Background image';
+$string['headerbgimagedesc'] = 'Set a background image in the header. Minimum size is 1600x180px (1900x180px recommended). The image cover the full header. You can add a colour in &#39;Top header background colour&#39; or use <i>transparent</i> to show the background image. In that case, modify the text colour to get displayed correctly over the image.';
+
 $string['enableheading'] = 'Header course title';
 $string['enableheadingdesc'] = 'Set the mode to display the course title in the header when the default Moodle site title is enabled.';
 

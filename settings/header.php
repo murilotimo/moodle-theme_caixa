@@ -31,6 +31,14 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add(new admin_setting_heading('theme_adaptable_header', get_string('headersettingsheading', 'theme_adaptable'),
     format_text(get_string('headerdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
+    // Header image.
+    $name = 'theme_adaptable/headerbgimage';
+    $title = get_string('headerbgimage', 'theme_adaptable');
+    $description = get_string('headerbgimagedesc', 'theme_adaptable');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'headerbgimage');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Enable front page login form in header.
     $name = 'theme_adaptable/frontpagelogin';
     $title = get_string('frontpagelogin', 'theme_adaptable');
