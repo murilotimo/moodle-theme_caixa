@@ -36,23 +36,6 @@ $regions = theme_adaptable_grid($left, $hassidepost);
 
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 
-
-// Infobox 1.
-if (!empty($PAGE->theme->settings->infobox)) {
-    if (!empty($PAGE->theme->settings->infoboxfullscreen)) {
-        echo '<div id="theinfo">';
-    } else {
-        echo '<div id="theinfo" class="container">';
-    }
-?>
-            <div class="row-fluid">
-<?php
-    echo $OUTPUT->get_setting('infobox', 'format_html');
-?>
-            </div>
-        </div>
-<?php
-}
 ?>
 
 <?php

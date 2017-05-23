@@ -2848,10 +2848,9 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
         if (!isloggedin() or isguestuser()) {
             return '';
         }
-
         // Calls a local method (render_mycourses) to get list of a user's current courses that they are enrolled on.
-        $courses = render_mycourses();
-        list($sortedcourses) = render_mycourses();
+        $courses = $this->render_mycourses();
+        list($sortedcourses) = $this->render_mycourses();
 
         if (!empty($sortedcourses) || !empty($rcourses) || !empty($rhosts)) {
             $chelper = new coursecat_helper();
