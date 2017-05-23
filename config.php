@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 
 global $PAGE;
 
-$layout_regions = array('side-post',
+$layoutregions = array('side-post',
                         'middle',
                         'frnt-footer',
                         'frnt-market-a',
@@ -70,9 +70,14 @@ $THEME->yuicssmodules = array();
 
 $THEME->editor_sheets = array();
 
+$usedashboard = false;
+if ($CFG->version >= 2016052300) {
+    $usedashboard = true;
+}
+
 if (floatval($CFG->version) >= 2013111803.02) {
     $THEME->enable_dock = true;
-}
+    }
 
 $THEME->plugins_exclude_sheets = array(
     'block' => array(
@@ -114,7 +119,7 @@ $THEME->layouts = array(
     // The site home page.
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => $layout_regions,
+        'regions' => $layoutregions,
         'defaultregion' => 'side-post',
         'options' => array('nonavbar' => true),
     ),
@@ -126,8 +131,8 @@ $THEME->layouts = array(
     ),
     // My dashboard page.
     'mydashboard' => array(
-        'file' => 'dashboard.php',
-        'regions' => $layout_regions,
+        'file' => ( ($usedashboard == true) ? 'dashboard.php' : 'columns2.php'),
+        'regions' => ( ($usedashboard == true) ? $layoutregions : array('side-post')),
         'defaultregion' => 'side-post',
         'options' => array('langmenu' => true),
     ),
