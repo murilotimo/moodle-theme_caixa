@@ -84,14 +84,14 @@ if (!empty($PAGE->theme->settings->dashblocksenabled)) { ?>
 <?php
 if (is_siteadmin()) {
 ?>
-      <div class="hidden-blocks">
+    <div class="hidden-blocks">
         <div class="row-fluid">
-          <h4><?php echo get_string('frnt-footer', 'theme_adaptable') ?></h4>
+            <h4><?php echo get_string('frnt-footer', 'theme_adaptable') ?></h4>
             <?php
             echo $OUTPUT->blocks('frnt-footer', 'span10');
             ?>
         </div>
-      </div>
+    </div>
     <?php
 }
 ?>

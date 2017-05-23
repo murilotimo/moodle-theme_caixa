@@ -38,6 +38,11 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
 
     // Colours.
+    $name = 'theme_adaptable/settingscolors';
+    $heading = get_string('settingscolors', 'theme_adaptable');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
+
     $name = 'theme_adaptable/blockbackgroundcolor';
     $title = get_string('blockbackgroundcolor', 'theme_adaptable');
     $description = get_string('blockbackgroundcolordesc', 'theme_adaptable');
@@ -87,6 +92,11 @@ defined('MOODLE_INTERNAL') || die;
     $temp->add($setting);
 
     // Borders.
+    $name = 'theme_adaptable/settingsborders';
+    $heading = get_string('settingsborders', 'theme_adaptable');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
+
     $name = 'theme_adaptable/blockheaderbordertopstyle';
     $title = get_string('blockheaderbordertopstyle', 'theme_adaptable');
     $description = get_string('blockheaderbordertopstyledesc', 'theme_adaptable');
@@ -197,6 +207,12 @@ defined('MOODLE_INTERNAL') || die;
     $radchoices = $from0to6px;
     $setting = new admin_setting_configselect($name, $title, $description, '0px', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Fonts heading.
+    $name = 'theme_adaptable/settingsfonts';
+    $heading = get_string('settingsfonts', 'theme_adaptable');
+    $setting = new admin_setting_heading($name, $heading, '');
     $temp->add($setting);
 
     // Block Header Font size.
