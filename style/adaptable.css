@@ -1209,6 +1209,26 @@ a.carousel-control {
     line-height: 0;
 }
 
+/* Modal file Picker */
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd {
+    background:none;
+    background-color: [[setting:maincolor]];
+    border-bottom: 1px solid #bbbbbb;
+    border-radius: 10px 10px 0 0;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+}
+
+.moodle-dialogue h3 {
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #666666;
+}
+
 #page-navbar .breadcrumb-button {
     display: inline;
 }
