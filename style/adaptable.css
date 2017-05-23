@@ -1216,17 +1216,21 @@ a.carousel-control {
     background-color: [[setting:maincolor]];
     border-bottom: 1px solid #bbbbbb;
     border-radius: 10px 10px 0 0;
+    color: #ffffff !important;
+    font-family: [[setting:fontheadername]], sans-serif !important;
     font-size: 15px;
     font-weight: normal;
     letter-spacing: 1px;
     margin: 0;
     padding: 5px;
     text-align: center;
+    text-shadow: 1px 1px 1px #666666 !important;
 }
 
 .moodle-dialogue h3 {
-    color: #ffffff;
-    text-shadow: 1px 1px 1px #666666;
+    font-family: [[setting:fontheadername]], sans-serif !important;
+    color: #ffffff !important;
+    text-shadow: 1px 1px 1px #666666 !important;
 }
 
 #page-navbar .breadcrumb-button {
