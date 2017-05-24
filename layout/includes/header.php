@@ -39,7 +39,8 @@ $setzoom = theme_adaptable_get_zoom();
 theme_adaptable_initialise_full($PAGE);
 $setfull = theme_adaptable_get_full();
 
-if (isset($PAGE->theme->settings->stickynavbar) && $PAGE->theme->settings->stickynavbar == 1) {
+if (isset($PAGE->theme->settings->stickynavbar) && $PAGE->theme->settings->stickynavbar == 1
+    && $PAGE->pagetype != "grade-report-grader-index" && $PAGE->bodyid != "page-grade-report-grader-index") {
     $fixedheader = true;
 } else {
     $fixedheader = false;
@@ -183,7 +184,7 @@ if (!empty($fonttitlename)  && $fonttitlename != 'default') {
 if (((is_mobile()) && ($hidealertsmobile == 1)) || (is_desktop())) {
     // Display alerts.
     echo $OUTPUT->get_alert_messages();
-} 
+}
 
 // Background image in Header.
 ?>
