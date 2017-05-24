@@ -472,10 +472,43 @@ ul.teachers {
     margin-bottom: 0 !important;
 }
 
+/* Lesson Activity */
 #page-mod-lesson-edit .singleselect {
     width: auto;
 }
 
+.path-mod-lesson .answeroption .fcheckbox label,
+.path-mod-lesson .mform .fitem.answeroptiongroup fieldset.fgroup label {
+    float: left;
+    padding-left: 40px;
+}
+
+.lessonbutton a {
+    background-color: [[setting:buttoncolor]];
+    color: [[setting:buttontextcolor]] !important;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
+    border: 0;
+    border-radius: [[setting:buttonradius]];
+    cursor: pointer;
+    padding: 8px 15px 8px;
+    transition: background .2s ease-out;
+}
+
+.lessonbutton a:hover {
+    background-image: none;
+    background-color: [[setting:buttonhovercolor]];
+    color: [[setting:buttontextcolor]] !important;
+    box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.5) inset;
+}
+
+.box {
+    margin-top: 15px;
+}
+
+
+/* Forum Activity */
 #page-mod-forum-discuss .discussioncontrol.displaymode {
     text-align: left;
 }
