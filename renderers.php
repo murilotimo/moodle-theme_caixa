@@ -1972,6 +1972,11 @@ EOT;
             $visibility = $this->check_menu_user_visibility();
         }
 
+        $template->showright = false;
+        if (!empty($PAGE->theme->settings->menuslinkright)) {
+            $template->showright = true;
+        }
+
         if ($visibility) {
             if (!empty($PAGE->theme->settings->topmenuscount) && !empty($PAGE->theme->settings->enablemenus)
                 && (!$PAGE->theme->settings->disablemenuscoursepages || $COURSE->id == 1)) {
