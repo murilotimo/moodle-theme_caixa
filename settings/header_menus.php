@@ -45,6 +45,13 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
+$name = 'theme_adaptable/menuslinkright';
+$title = get_string('menuslinkright', 'theme_adaptable');
+$description = get_string('menuslinkrightdesc', 'theme_adaptable');
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
 $name = 'theme_adaptable/disablemenuscoursepages';
 $title = get_string('disablemenuscoursepages', 'theme_adaptable');
 $description = get_string('disablemenuscoursepagesdesc', 'theme_adaptable');
