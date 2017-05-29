@@ -19,18 +19,24 @@
  *
  * @package    theme_adaptable
  * @copyright 2015 Jeremy Hopkins (Coventry University)
- * @copyright 2015 Fernando Acedo (3-bits.com)
+ * @copyright 2015-2017 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
 
 defined('MOODLE_INTERNAL') || die;
-
+    // Course Formats.
     $temp = new admin_settingpage('theme_adaptable_course', get_string('coursesettings', 'theme_adaptable'));
     $temp->add(new admin_setting_heading('theme_adaptable_course', get_string('coursesettingsheading', 'theme_adaptable'),
-        format_text(get_string('coursedesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+        format_text(get_string('coursesettingsdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-    // Course section header background color.
+    // Topics / Weeks course format heading.
+    $name = 'theme_adaptable/settingstopicsweeks';
+    $heading = get_string('settingstopicsweeks', 'theme_adaptable');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
+
+    // Course section heading background color.
     $name = 'theme_adaptable/coursesectionheaderbg';
     $title = get_string('coursesectionheaderbg', 'theme_adaptable');
     $description = get_string('coursesectionheaderbgdesc', 'theme_adaptable');
@@ -138,4 +144,76 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_adaptable', $temp);
+    // SocialWall course format heading.
+    $name = 'theme_adaptable/socialwall';
+    $heading = get_string('socialwall', 'theme_adaptable');
+    $setting = new admin_setting_heading($name, $heading, '');
+    $temp->add($setting);
+
+
+
+
+// Socialwall background color.
+$name = 'theme_adaptable/socialwallbackgroundcolor';
+$title = get_string('socialwallbackgroundcolor', 'theme_adaptable');
+$description = get_string('socialwallbackgroundcolordesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#ffffff', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+// Social Wall section border color.
+$name = 'theme_adaptable/socialwallbordercolor';
+$title = get_string('socialwallbordercolor', 'theme_adaptable');
+$description = get_string('socialwallbordercolordesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#B9B9B9', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+// Social Wall section border style.
+$name = 'theme_adaptable/socialwallbordertopstyle';
+$title = get_string('socialwallbordertopstyle', 'theme_adaptable');
+$description = get_string('socialwallbordertopstyledesc', 'theme_adaptable');
+$radchoices = $borderstyles;
+$setting = new admin_setting_configselect($name, $title, $description, 'solid', $radchoices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+// Social Wall section border width.
+$name = 'theme_adaptable/socialwallborderwidth';
+$title = get_string('socialwallborderwidth', 'theme_adaptable');
+$description = get_string('socialwallborderwidthdesc', 'theme_adaptable');
+$radchoices = $from0to12px;
+$setting = new admin_setting_configselect($name, $title, $description, '2px', $radchoices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+// Social Wall section border radius.
+$name = 'theme_adaptable/socialwallsectionradius';
+$title = get_string('socialwallsectionradius', 'theme_adaptable');
+$description = get_string('socialwallsectionradiusdesc', 'theme_adaptable');
+$radchoices = $from0to12px;
+$setting = new admin_setting_configselect($name, $title, $description, '6px', $radchoices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+// Social Wall action link color.
+$name = 'theme_adaptable/socialwallactionlinkcolor';
+$title = get_string('socialwallactionlinkcolor', 'theme_adaptable');
+$description = get_string('socialwallactionlinkcolordesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+// Social Wall hover link color.
+$name = 'theme_adaptable/socialwallactionlinkhovercolor';
+$title = get_string('socialwallactionlinkhovercolor', 'theme_adaptable');
+$description = get_string('socialwallactionlinkhovercolordesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$ADMIN->add('theme_adaptable', $temp);
