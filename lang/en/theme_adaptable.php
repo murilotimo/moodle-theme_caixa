@@ -1265,6 +1265,9 @@ $string['newmenu2triggerdesc'] = 'Set a Top Menu Dropdown 2 trigger word. Font a
 $string['enablemenus'] = 'Enable Menus';
 $string['enablemenusdesc'] = 'It is recommended you leave this off if menus are not in use for preformance reasons';
 
+$string['menuslinkright'] = 'Show menus link in topright';
+$string['menuslinkrightdesc'] = 'If checked, show the link to the menus on the top right next to the messages menu';
+
 $string['disablemenuscoursepages'] = 'Disable Menus on Course Pages';
 $string['disablemenuscoursepagesdesc'] = 'Turning this option on will limit the display of top menus to site pages, the homepage, and dashboard (My Home) etc. and will not show in any course pages';
 
