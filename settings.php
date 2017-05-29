@@ -18,8 +18,8 @@
  * Version details
  *
  * @package    theme_adaptable
- * @copyright  2015-2016 Jeremy Hopkins (Coventry University)
- * @copyright  2015-2016 Fernando Acedo (3-bits.com)
+ * @copyright  2015-2017 Jeremy Hopkins (Coventry University)
+ * @copyright  2015-2017 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -54,9 +54,9 @@ if (is_siteadmin()) {
     include(dirname(__FILE__) . '/settings/frontpage_ticker.php');
     include(dirname(__FILE__) . '/settings/frontpage_slider.php');
     include(dirname(__FILE__) . '/settings/frontpage_courses.php');
-    include(dirname(__FILE__) . '/settings/dash_block_regions.php');
     include(dirname(__FILE__) . '/settings/footer.php');
     include(dirname(__FILE__) . '/settings/layout.php');
+    include(dirname(__FILE__) . '/settings/dash_block_regions.php');
     include(dirname(__FILE__) . '/settings/course_formats.php');
     include(dirname(__FILE__) . '/settings/mobile_settings.php');
     include(dirname(__FILE__) . '/settings/analytics.php');
