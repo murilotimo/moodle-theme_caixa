@@ -272,9 +272,13 @@
     padding: 8px;
     text-decoration: none;
     font-size: 1.5em;
-    color: [[setting:headertextcolor]] !important;
+    color: #ffffff !important;
     display: block;
     transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+.overlay-content li > a:hover {
+    color: [[setting:linkhover]] !important;
 }
 
 .overlay-content ul.overlaylist {
@@ -283,6 +287,7 @@
     max-width: 90%;
     margin: 0 auto 30px;
 }
+
 .overlay-content ul.overlaylist .level-0 a {
     font-size: 2em;
     margin-bottom: 1em;
