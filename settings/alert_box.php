@@ -31,26 +31,6 @@ $temp = new admin_settingpage('theme_adaptable_frontpage_alert', get_string('fro
 $temp->add(new admin_setting_heading('theme_adaptable_alert', get_string('alertsettingsheading', 'theme_adaptable'),
 format_text(get_string('alertdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
 
-// Alert Course Settings Heading.
-$name = 'theme_adaptable/settingsalertcourse';
-$heading = get_string('alertsettingscourse', 'theme_adaptable');
-$setting = new admin_setting_heading($name, $heading, '');
-$temp->add($setting);
-
-// Alert hidden course.
-$name = 'theme_adaptable/alerthiddencourse';
-$title = get_string('alerthiddencourse', 'theme_adaptable');
-$description = get_string('alerthiddencoursedesc', 'theme_adaptable');
-$default = 'warning';
-$choices = array(
-'disabled' => get_string('alertdisabled', 'theme_adaptable'),
-'info' => get_string('alertinfo', 'theme_adaptable'),
-'warning' => get_string('alertwarning', 'theme_adaptable'),
-'success' => get_string('alertannounce', 'theme_adaptable'));
-$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$temp->add($setting);
-
 // Alert General Settings Heading.
 $name = 'theme_adaptable/settingsalertgeneral';
 $heading = get_string('alertsettingsgeneral', 'theme_adaptable');
@@ -75,12 +55,129 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
+// Alert hidden course.
+$name = 'theme_adaptable/alerthiddencourse';
+$title = get_string('alerthiddencourse', 'theme_adaptable');
+$description = get_string('alerthiddencoursedesc', 'theme_adaptable');
+$default = 'warning';
+$choices = array(
+'disabled' => get_string('alertdisabled', 'theme_adaptable'),
+'info' => get_string('alertinfo', 'theme_adaptable'),
+'warning' => get_string('alertwarning', 'theme_adaptable'),
+'success' => get_string('alertannounce', 'theme_adaptable'));
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
 // Strip Tags.
 $name = 'theme_adaptable/enablealertstriptags';
 $title = get_string('enablealertstriptags', 'theme_adaptable');
 $description = get_string('enablealertstriptagsdesc', 'theme_adaptable');
 $default = true;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+// Colours.
+// Alert Course Settings Heading.
+$name = 'theme_adaptable/settingsalertcolors';
+$heading = get_string('settingscolors', 'theme_adaptable');
+$setting = new admin_setting_heading($name, $heading, '');
+$temp->add($setting);
+
+// Alert info colours.
+$name = 'theme_adaptable/alertcolorinfo';
+$title = get_string('alertcolorinfo', 'theme_adaptable');
+$description = get_string('alertcolorinfodesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#3a87ad', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/alertbackgroundcolorinfo';
+$title = get_string('alertbackgroundcolorinfo', 'theme_adaptable');
+$description = get_string('alertbackgroundcolorinfodesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#d9edf7', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/alertbordercolorinfo';
+$title = get_string('alertbordercolorinfo', 'theme_adaptable');
+$description = get_string('alertbordercolorinfodesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#bce8f1', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/alerticoninfo';
+$title = get_string('alerticoninfo', 'theme_adaptable');
+$description = get_string('alerticoninfodesc', 'theme_adaptable');
+$setting = new admin_setting_configtext($name, $title, $description, 'info-circle');
+$temp->add($setting);
+
+
+// Alert success colours.
+$name = 'theme_adaptable/alertcolorsuccess';
+$title = get_string('alertcolorsuccess', 'theme_adaptable');
+$description = get_string('alertcolorsuccessdesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#468847', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/alertbackgroundcolorsuccess';
+$title = get_string('alertbackgroundcolorsuccess', 'theme_adaptable');
+$description = get_string('alertbackgroundcolorsuccessdesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#dff0d8', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/alertbordercolorsuccess';
+$title = get_string('alertbordercolorsuccess', 'theme_adaptable');
+$description = get_string('alertbordercolorsuccessdesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#d6e9c6', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/alerticonsuccess';
+$title = get_string('alerticonsuccess', 'theme_adaptable');
+$description = get_string('alerticonsuccessdesc', 'theme_adaptable');
+$setting = new admin_setting_configtext($name, $title, $description, 'bullhorn');
+$temp->add($setting);
+
+
+// Alert warning colours.
+$name = 'theme_adaptable/alertcolorwarning';
+$title = get_string('alertcolorwarning', 'theme_adaptable');
+$description = get_string('alertcolorwarningdesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#8a6d3b', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/alertbackgroundcolorwarning';
+$title = get_string('alertbackgroundcolorwarning', 'theme_adaptable');
+$description = get_string('alertbackgroundcolorwarningdesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#fcf8e3', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/alertbordercolorwarning';
+$title = get_string('alertbordercolorwarning', 'theme_adaptable');
+$description = get_string('alertbordercolorwarningdesc', 'theme_adaptable');
+$previewconfig = null;
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '#fbeed5', $previewconfig);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$temp->add($setting);
+
+$name = 'theme_adaptable/alerticonwarning';
+$title = get_string('alerticonwarning', 'theme_adaptable');
+$description = get_string('alerticonwarningdesc', 'theme_adaptable');
+$setting = new admin_setting_configtext($name, $title, $description, 'exclamation-triangle');
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
