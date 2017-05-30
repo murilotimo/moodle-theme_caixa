@@ -18,7 +18,7 @@
  * Version details
  *
  * @package    theme adaptable
- * @copyright  2015-2016 Fernando Acedo (3-bits.com)
+ * @copyright  2015-2017 Fernando Acedo (3-bits.com)
  *
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -116,13 +116,14 @@ $string['settingsmessagescolors'] = 'Colores de los mensajes emergentes';
 $string['settingsfootercolors'] = 'Colores del pie de página';
 $string['settingsfonts'] = 'Fuentes';
 $string['analyticssettings'] = 'Analítica Web';
-
+$string['settingscolors'] = 'Colores';
+$string['settingsborders'] = 'Bordes';
+$string['settingstopicsweeks'] = 'Temas / Semanas';
 
 // Admin Menu Strings.
 $string['blocksettings'] = 'Bloques';
 $string['frontpagealertsettings'] = 'Alertas';
 $string['frontpageblockregionsettings'] = 'Creador de regiones para bloques';
-$string['frontpagealertboxssettings'] = 'Configuración de alertas';
 $string['dashboardblockregionsettings'] = 'Constructor de regiones del Área Personal';
 $string['frontpageblocksettings'] = 'Bloques promocionales';
 $string['frontpagetickersettings'] = 'Anuncios';
@@ -256,7 +257,7 @@ $string['sliderstyle2'] = 'Diapositivas estilo 2';
 $string['blocklayoutbuilder'] = 'Creador de regiones para bloques';
 $string['blocklayoutbuilderdesc'] = 'A continuación puedes crear tu propia distribución de regiones para los bloques de moodle en la página principal.
 Para añadir contenido a estas regiones necesitarás <strong>Activar edición en la página principal de Moodle</strong>.
-Entonces podrás arrastras y soltar los bloques en las regiones creadas.';
+Entonces podrás arrastrar y soltar los bloques en las regiones creadas.';
 
 $string['dash_blocklayoutbuilder'] = 'Regiones del Área Personal';
 $string['dash_blocklayoutbuilderdesc'] = 'A continuación puedes crear tu propia estructura de regiones para bloques en el Área Personal.
@@ -641,6 +642,10 @@ $string['coursesettings'] = 'Secciones del curso';
 $string['coursesettingsheading'] = 'Configuración de las secciones del curso.';
 $string['coursedesc'] = 'Configura las opciones de las secciones de los cursos como el título, color de fondo y bordes.';
 
+// Topics / Weeks Settings.
+$string['topicsweeks'] = 'Formato de curso Temas/Semanas';
+$string['topicsweeksdesc'] = 'Establece estilos para el formato de curso Temas/semanas.';
+
 $string['coursesectionheaderbg'] = 'Color de fondo de la cabecera';
 $string['coursesectionheaderbgdesc'] = 'Establece el color de fondo de la cabecera de la sección del curso.';
 
@@ -673,6 +678,33 @@ $string['coursesectionbordercolordesc'] = 'Establece el color del borde de la se
 
 $string['coursesectionborderradius'] = 'Radio del borde de la sección';
 $string['coursesectionborderradiusdesc'] = 'Establece el radio del borde de las esquinas de la sección del curso.';
+
+// Social Wall Settings.
+$string['socialwall'] = 'Social Wall';
+$string['socialwallheading'] = 'Social Wall Settings';
+$string['socialwalldesc'] = 'Customise the appearance of the <a href="https://moodle.org/plugins/format_socialwall">Social Wall Course Format</a> (if in use on your site)';
+
+$string['socialwallbackgroundcolor'] = 'Background color';
+$string['socialwallbackgroundcolordesc'] = 'The background color of a Social Wall course.';
+
+$string['socialwallsectionradius'] = 'Border radius';
+$string['socialwallsectionradiusdesc'] = 'The border radius of Social Wall sections.';
+
+$string['socialwallbordertopstyle'] = 'Border style';
+$string['socialwallbordertopstyledesc'] = 'The border style of Social Wall sections.';
+
+$string['socialwallborderwidth'] = 'Border width';
+$string['socialwallborderwidthdesc'] = 'The border width of Social Wall sections.';
+
+$string['socialwallbordercolor'] = 'Border color';
+$string['socialwallbordercolordesc'] = 'The border color of Social Wall sections.';
+
+$string['socialwallactionlinkcolor'] = 'Action link color';
+$string['socialwallactionlinkcolordesc'] = 'The color of action links in Social Wall.';
+
+$string['socialwallactionlinkhovercolor'] = 'Action link hover color';
+$string['socialwallactionlinkhovercolordesc'] = 'The color of action links when hovered in Social Wall.';
+
 
 // Fonts ***********************************************************.
 $string['fontsettings'] = 'Fuentes';
@@ -788,6 +820,9 @@ $string['headersettings'] = 'Cabecera';
 $string['headersettingsheading'] = 'Personalización de la cabecera.';
 $string['headerdesc'] = 'Mostrar Alertas para avisar a los usuarios, controlar la barra de navegación, mostrar el título del sitio o el logo son algunas de las opciones de la cabecera.';
 
+
+$string['headerbgimage'] = 'Imagen de fondo';
+$string['headerbgimagedesc'] = 'Establece una imagen de fondo para la cabecera. El tamaño mínimo es 1600x180px (1900x180px recomendado). La imagen ocupará toda la cabecera. Puedes añadir un color &#39;Color de fondo de la cabecera superior&#39; o usar <i>transparent</i> para mostrar la imagen. En ese caso, modificar el color del texto  para mostrarlo correctamente sobre la imagen.';
 
 $string['enableheading'] = 'Mostrar nombre del curso';
 $string['enableheadingdesc'] = 'Establece el modo de visualización del título del curso en la cabecera.';
@@ -1048,33 +1083,6 @@ $string['alertbordercolorsuccessdesc'] = 'Color del borde de la alerta tipo Anun
 $string['alerticonsuccess'] = 'Icono Anuncio';
 $string['alerticonsuccessdesc'] = 'Establece el icono de <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icon</a> a usar en las alertas tipo Anuncio. Introducir el nombre sin el prefijo fa-';
 
-// Social Wall Settings ********************************************.
-$string['socialwall'] = 'Formato Social Wall';
-$string['socialwallheading'] = 'Formato Social Wall';
-$string['socialwalldesc'] = 'Personaliza el estilo del <a href="https://moodle.org/plugins/format_socialwall">Formato de curso SocialWall</a> (si se utiliza en el sitio)';
-
-$string['socialwallbackgroundcolor'] = 'Color de fondo';
-$string['socialwallbackgroundcolordesc'] = 'Establece el color de fondo.';
-
-$string['socialwallsectionradius'] = 'Radio del borde';
-$string['socialwallsectionradiusdesc'] = 'Establece el borde del radio de las secciones.';
-
-$string['socialwallbordertopstyle'] = 'Estilo del borde';
-$string['socialwallbordertopstyledesc'] = 'Establece el estilo del borde de las secciones.';
-
-$string['socialwallborderwidth'] = 'Grueso del borde';
-$string['socialwallborderwidthdesc'] = 'Establece el grueso del borde de las secciones.';
-
-$string['socialwallbordercolor'] = 'Color del borde';
-$string['socialwallbordercolordesc'] = 'Establece el color del borde de las secciones.';
-
-$string['socialwallactionlinkcolor'] = 'Color de los enlaces de acción';
-$string['socialwallactionlinkcolordesc'] = 'Establece el color de los enlaces de acción.';
-
-$string['socialwallactionlinkhovercolor'] = 'Color hover de los enlaces de acción';
-$string['socialwallactionlinkhovercolordesc'] = 'Establece el color hover de los enlaces de acción.';
-
-
 // Mobile **********************************************************.
 $string['mobilesettings'] = 'Configuración para dispositivos móviles';
 $string['mobilesettingsheading'] = 'Configura la plantilla para ser visualizada en dispositivos móviles.';
@@ -1254,6 +1262,9 @@ $string['newmenu2triggerdesc'] = 'Establece la palabra clave para el Menú despl
 
 $string['enablemenus'] = 'Activar Menús';
 $string['enablemenusdesc'] = 'Por motivos de rendimiento, se recomienda no activarlo si no se utilizan los menús.';
+
+$string['menuslinkright'] = 'Show menus link in topright';
+$string['menuslinkrightdesc'] = 'If checked, show the link to the menus on the top right next to the messages menu';
 
 $string['disablemenuscoursepages'] = 'Desactivar menús en las páginas de los cursos';
 $string['disablemenuscoursepagesdesc'] = 'Activando esta opción los menús solo se mostrarán en las páginas del sitio, la página inicial, el Área Personal, etc. y no se mostrará en las páginas de los cursos.';

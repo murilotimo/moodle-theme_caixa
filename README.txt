@@ -1,7 +1,7 @@
 Adaptable - the most adaptable moodle theme
 ===========================================
 
-Version 1.3.3 (2017051700)
+Version 1.4 (2017053000)
 
 Adaptable is a highly customisable responsive two column moodle theme
 based on the popular BCU theme adding:
@@ -14,7 +14,7 @@ based on the popular BCU theme adding:
 -News Ticker
 -Alternative jQuery slider
 -Alternative front page course styles
--Additional marketing blocks
+-Additional customizable marketing blocks
 -Additional layout settings for width, slider width, padding of
  various elements
 -Social icons
@@ -23,6 +23,8 @@ based on the popular BCU theme adding:
 -Option to add login form in header on front page
 -Logo and Favicon uploader
 -Modern emojis (thanks to EmojiOne) 
+-Front Page layout builder
+-Dashboard layout builder
 
 In addition many fields (menus, news items, alerts and help links) can
 be targeted using custom profile fields, thus it is possible to present
@@ -41,6 +43,9 @@ with a high degree of individuality without without knowing any CSS.
 This theme has been developed by: 
 Jeremy Hopkins (Coventry University)
 Fernando Acedo (3-bits.com)
+
+
+NOTE: This Adaptable version is compatible with moodle 3.3 and higher only
 
 
 HTML/CSS sample code for block areas

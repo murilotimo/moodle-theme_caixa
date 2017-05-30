@@ -123,7 +123,6 @@ $string['settingstopicsweeks'] = 'Topics / Weeks';
 // Admin Menu Strings.
 $string['blocksettings'] = 'Block Settings';
 $string['frontpagealertsettings'] = 'Alert Box';
-$string['frontpagealertboxssettings'] = 'Alert Box Settings';
 $string['frontpageblockregionsettings'] = 'Block Region Builder';
 $string['dashboardblockregionsettings'] = 'Dashboard Block Region Builder';
 $string['frontpageblocksettings'] = 'Marketing Blocks';
@@ -642,7 +641,6 @@ $string['selectionbackgrounddesc'] = 'Set the background colour when a text in t
 $string['coursesettings'] = 'Course Formats';
 $string['coursesettingsheading'] = 'Course Formats Settings';
 $string['coursesettingsdesc'] = 'Customize some of the most used Moodle course formats to fit the main design.';
-
 
 // Topics / Weeks Settings.
 $string['topicsweeks'] = 'Topics/Weeks course format';
