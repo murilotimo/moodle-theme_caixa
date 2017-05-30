@@ -45,7 +45,7 @@ Jeremy Hopkins (Coventry University)
 Fernando Acedo (3-bits.com)
 
 
-NOTE: This Adaptable version is compatible with moodle 3.3 and higher only
+NOTE: This Adaptable version is compatible with moodle 3.2 and higher only
 
 
 HTML/CSS sample code for block areas
