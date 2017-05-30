@@ -389,7 +389,7 @@ class theme_adaptable_core_renderer extends core_renderer {
     public function render_mycourses() {
         global $USER;
 
-        // Set limit of courses to show in dropdown from setting
+        // Set limit of courses to show in dropdown from setting.
         $coursedisplaylimit = '20';
         if (!empty($this->page->theme->settings->mycoursesmenulimit)) {
             $coursedisplaylimit = $this->page->theme->settings->mycoursesmenulimit;
@@ -1679,8 +1679,7 @@ EOT;
 
                 $branch = $menu->add($branchlabel, $branchurl, '', $branchsort);
 
-                // Calls a local method (render_mycourses) to get list of
-                // a user's current courses that they are enrolled on
+                // Calls a local method (render_mycourses) to get list of a user's current courses that they are enrolled on.
                 list($sortedcourses) = $this->render_mycourses();
 
                 $icon = '';

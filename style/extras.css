@@ -247,7 +247,7 @@ ul.teachers {
     text-decoration: none;
 }
 
-/* Messages Pop-Up (3.2+) */
+/* Messages Pop-Up (moodle 3.2+) */
 #newmessageoverlay {
     width: 276px;
     position: absolute;

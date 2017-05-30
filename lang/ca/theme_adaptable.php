@@ -947,7 +947,7 @@ $string['course'] = 'Curs';
 // Alert message if acting as other role.
 $string['actingasrole'] = 'Estàs actuant actualment amb un paper diferent';
 
-// Alert Hiden Course
+// Alert Hidden Course.
 $string['alerthiddencourse'] = 'advertència suposat ocult';
 $string['alerthiddencoursedesc'] = 'alerta en pantalla pàgina del curs si s\'oculta';
 
