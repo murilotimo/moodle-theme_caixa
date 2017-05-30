@@ -77,7 +77,7 @@ if ($CFG->version >= 2016052300) {
 
 if (floatval($CFG->version) >= 2013111803.02) {
     $THEME->enable_dock = true;
-    }
+}
 
 $THEME->plugins_exclude_sheets = array(
     'block' => array(
