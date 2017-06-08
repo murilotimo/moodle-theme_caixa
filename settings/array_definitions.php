@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package   theme_adaptable
+ * @package   theme_caixa
  * @copyright 2015-2016 Jeremy Hopkins (Coventry University)
  * @copyright 2015-2016 Fernando Acedo (3-bits.com)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -964,19 +964,19 @@ $borderstyles = array(
 );
 
 $htmltarget = array(
-  '_blank' => get_string('targetnewwindow', 'theme_adaptable'),
-  '_self' => get_string('targetsamewindow', 'theme_adaptable')
+  '_blank' => get_string('targetnewwindow', 'theme_caixa'),
+  '_self' => get_string('targetsamewindow', 'theme_caixa')
 );
 
 $marketblockstyles = array(
-    '' => get_string('nostyle', 'theme_adaptable'),
-    'internalmarket' => get_string('bcustyle', 'theme_adaptable'),
-    'covtiles' => get_string('coventrystyle', 'theme_adaptable')
+    '' => get_string('nostyle', 'theme_caixa'),
+    'internalmarket' => get_string('bcustyle', 'theme_caixa'),
+    'covtiles' => get_string('coventrystyle', 'theme_caixa')
 );
 
 $sliderstyles = array(
-    'slider1' => get_string('sliderstyle1', 'theme_adaptable'),
-    'slider2' => get_string('sliderstyle2', 'theme_adaptable')
+    'slider1' => get_string('sliderstyle1', 'theme_caixa'),
+    'slider2' => get_string('sliderstyle2', 'theme_caixa')
 );
 
 $bootstrap12 = array(

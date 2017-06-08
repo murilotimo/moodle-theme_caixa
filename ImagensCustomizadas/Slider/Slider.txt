@@ -1,0 +1,4 @@
+<h2><strong>Escola de<br>Capacitação</strong></h2>
+<br>
+<p>Conhecimento e informação para clientes do Governo.</p><br>
+<a href="#" class="btn-slider">Conheça nossos cursos</a>

@@ -15,14 +15,16 @@
   display: none;
 }
 
-.zoomin #block-region-side-post {
+.zoomin #block-region-side-post,
+ {
     width: 0 !important;
     height: 0 !important;
     overflow: hidden;
     margin-left: 0;
     display: none;
 }
-.zoomin #region-main, .zoomin #region-bs-main-and-pre {
+.zoomin #region-main,
+.zoomin #region-bs-main-and-pre {
     width: 100% !important;
     margin-left: 0px;
 }

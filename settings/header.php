@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright  2015 Jeremy Hopkins (Coventry University)
  * @copyright  2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -26,27 +26,27 @@
 
 
     // Header heading.
-    $temp = new admin_settingpage('theme_adaptable_header', get_string('headersettings', 'theme_adaptable'));
-    $temp->add(new admin_setting_heading('theme_adaptable_header', get_string('headersettingsheading', 'theme_adaptable'),
-    format_text(get_string('headerdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_caixa_header', get_string('headersettings', 'theme_caixa'));
+    $temp->add(new admin_setting_heading('theme_caixa_header', get_string('headersettingsheading', 'theme_caixa'),
+    format_text(get_string('headerdesc', 'theme_caixa'), FORMAT_MARKDOWN)));
 
     // Enable front page login form in header.
-    $name = 'theme_adaptable/frontpagelogin';
-    $title = get_string('frontpagelogin', 'theme_adaptable');
-    $description = get_string('frontpagelogindesc', 'theme_adaptable');
+    $name = 'theme_caixa/frontpagelogin';
+    $title = get_string('frontpagelogin', 'theme_caixa');
+    $description = get_string('frontpagelogindesc', 'theme_caixa');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Select type of login.
-    $name = 'theme_adaptable/displaylogin';
-    $title = get_string('displaylogin', 'theme_adaptable');
-    $description = get_string('displaylogindesc', 'theme_adaptable');
+    $name = 'theme_caixa/displaylogin';
+    $title = get_string('displaylogin', 'theme_caixa');
+    $description = get_string('displaylogindesc', 'theme_caixa');
     $choices = array(
-        'button' => get_string('displayloginbutton', 'theme_adaptable'),
-        'box' => get_string('displayloginbox', 'theme_adaptable'),
-        'no' => get_string('displayloginno', 'theme_adaptable')
+        'button' => get_string('displayloginbutton', 'theme_caixa'),
+        'box' => get_string('displayloginbox', 'theme_caixa'),
+        'no' => get_string('displayloginno', 'theme_caixa')
     );
     $setting = new admin_setting_configselect($name, $title, $description, 'button', $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -54,70 +54,78 @@
 
 
     // Enable messaging menu in header.
-    $name = 'theme_adaptable/enablemessagemenu';
-    $title = get_string('enablemessagemenu', 'theme_adaptable');
-    $description = get_string('enablemessagemenudesc', 'theme_adaptable');
+    $name = 'theme_caixa/enablemessagemenu';
+    $title = get_string('enablemessagemenu', 'theme_caixa');
+    $description = get_string('enablemessagemenudesc', 'theme_caixa');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Filter admin messages
-    $name = 'theme_adaptable/filteradminmessages';
-    $title = get_string('filteradminmessages', 'theme_adaptable');
-    $description = get_string('filteradminmessagesdesc', 'theme_adaptable');
+    $name = 'theme_caixa/filteradminmessages';
+    $title = get_string('filteradminmessages', 'theme_caixa');
+    $description = get_string('filteradminmessagesdesc', 'theme_caixa');
     $default = false;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Logo.
-    $name = 'theme_adaptable/logo';
-    $title = get_string('logo', 'theme_adaptable');
-    $description = get_string('logodesc', 'theme_adaptable');
+    $name = 'theme_caixa/logo';
+    $title = get_string('logo', 'theme_caixa');
+    $description = get_string('logodesc', 'theme_caixa');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
+       // Logo no centro.
+    $name = 'theme_caixa/logocenter';
+    $title = get_string('logocenter', 'theme_caixa');
+    $description = get_string('logocenterdesc', 'theme_caixa');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'logocenter');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
     // Favicon file setting.
-    $name = 'theme_adaptable/favicon';
-    $title = get_string('favicon', 'theme_adaptable');
-    $description = get_string('favicondesc', 'theme_adaptable');
+    $name = 'theme_caixa/favicon';
+    $title = get_string('favicon', 'theme_caixa');
+    $description = get_string('favicondesc', 'theme_caixa');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Display Course title in the header.
-    $name = 'theme_adaptable/sitetitle';
-    $title = get_string('sitetitle', 'theme_adaptable');
-    $description = get_string('sitetitledesc', 'theme_adaptable');
+    $name = 'theme_caixa/sitetitle';
+    $title = get_string('sitetitle', 'theme_caixa');
+    $description = get_string('sitetitledesc', 'theme_caixa');
     $radchoices = array(
-        'disabled' => get_string('sitetitleoff', 'theme_adaptable'),
-        'default' => get_string('sitetitledefault', 'theme_adaptable'),
-        'custom' => get_string('sitetitlecustom', 'theme_adaptable')
+        'disabled' => get_string('sitetitleoff', 'theme_caixa'),
+        'default' => get_string('sitetitledefault', 'theme_caixa'),
+        'custom' => get_string('sitetitlecustom', 'theme_caixa')
     );
     $setting = new admin_setting_configselect($name, $title, $description, 'default', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Site title.
-    $name = 'theme_adaptable/sitetitletext';
-    $title = get_string('sitetitletext', 'theme_adaptable');
-    $description = get_string('sitetitletextdesc', 'theme_adaptable');
+    $name = 'theme_caixa/sitetitletext';
+    $title = get_string('sitetitletext', 'theme_caixa');
+    $description = get_string('sitetitletextdesc', 'theme_caixa');
     $default = '';
-    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new caixa_setting_confightmleditor($name, $title, $description, $default);
 
 
     $temp->add($setting);
 
 
     // Display Course title in the header.
-    $name = 'theme_adaptable/enableheading';
-    $title = get_string('enableheading', 'theme_adaptable');
-    $description = get_string('enableheadingdesc', 'theme_adaptable');
+    $name = 'theme_caixa/enableheading';
+    $title = get_string('enableheading', 'theme_caixa');
+    $description = get_string('enableheadingdesc', 'theme_caixa');
     $radchoices = array(
-        'fullname' => get_string('breadcrumbtitlefullname', 'theme_adaptable'),
-        'shortname' => get_string('breadcrumbtitleshortname', 'theme_adaptable'),
+        'fullname' => get_string('breadcrumbtitlefullname', 'theme_caixa'),
+        'shortname' => get_string('breadcrumbtitleshortname', 'theme_caixa'),
         'off' => get_string('hide'),
     );
     $setting = new admin_setting_configselect($name, $title, $description, 'fullname', $radchoices);
@@ -126,67 +134,67 @@
 
 
     // Site Title Padding Top.
-    $name = 'theme_adaptable/sitetitlepaddingtop';
-    $title = get_string('sitetitlepaddingtop', 'theme_adaptable');
-    $description = get_string('sitetitlepaddingtopdesc', 'theme_adaptable');
+    $name = 'theme_caixa/sitetitlepaddingtop';
+    $title = get_string('sitetitlepaddingtop', 'theme_caixa');
+    $description = get_string('sitetitlepaddingtopdesc', 'theme_caixa');
     $setting = new admin_setting_configtext($name, $title, $description, '0px');
     $setting = new admin_setting_configselect($name, $title, $description, '0px', $from0to20px);
     $temp->add($setting);
 
     // Site Title Padding Left.
-    $name = 'theme_adaptable/sitetitlepaddingleft';
-    $title = get_string('sitetitlepaddingleft', 'theme_adaptable');
-    $description = get_string('sitetitlepaddingleftdesc', 'theme_adaptable');
+    $name = 'theme_caixa/sitetitlepaddingleft';
+    $title = get_string('sitetitlepaddingleft', 'theme_caixa');
+    $description = get_string('sitetitlepaddingleftdesc', 'theme_caixa');
     $setting = new admin_setting_configselect($name, $title, $description, '0px', $from0to20px);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Site Title Maximum Width.
-    $name = 'theme_adaptable/sitetitlemaxwidth';
-    $title = get_string('sitetitlemaxwidth', 'theme_adaptable');
-    $description = get_string('sitetitlemaxwidthdesc', 'theme_adaptable');
+    $name = 'theme_caixa/sitetitlemaxwidth';
+    $title = get_string('sitetitlemaxwidth', 'theme_caixa');
+    $description = get_string('sitetitlemaxwidthdesc', 'theme_caixa');
     $setting = new admin_setting_configselect($name, $title, $description, '50%', $from35to80percent);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Breadcrumb home.
-    $name = 'theme_adaptable/breadcrumbhome';
-    $title = get_string('breadcrumbhome', 'theme_adaptable');
-    $description = get_string('breadcrumbhomedesc', 'theme_adaptable');
+    $name = 'theme_caixa/breadcrumbhome';
+    $title = get_string('breadcrumbhome', 'theme_caixa');
+    $description = get_string('breadcrumbhomedesc', 'theme_caixa');
     $radchoices = array(
-        'text' => get_string('breadcrumbhometext', 'theme_adaptable'),
-        'icon' => get_string('breadcrumbhomeicon', 'theme_adaptable')
+        'text' => get_string('breadcrumbhometext', 'theme_caixa'),
+        'icon' => get_string('breadcrumbhomeicon', 'theme_caixa')
     );
     $setting = new admin_setting_configselect($name, $title, $description, 'icon', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Breadcrumb separator.
-    $name = 'theme_adaptable/breadcrumbseparator';
-    $title = get_string('breadcrumbseparator', 'theme_adaptable');
-    $description = get_string('breadcrumbseparatordesc', 'theme_adaptable');
+    $name = 'theme_caixa/breadcrumbseparator';
+    $title = get_string('breadcrumbseparator', 'theme_caixa');
+    $description = get_string('breadcrumbseparatordesc', 'theme_caixa');
     $setting = new admin_setting_configtext($name, $title, $description, 'angle-right');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Choose to display search box or social icons.
-    $name = 'theme_adaptable/socialorsearch';
-    $title = get_string('socialorsearch', 'theme_adaptable');
-    $description = get_string('socialorsearchdesc', 'theme_adaptable');
+    $name = 'theme_caixa/socialorsearch';
+    $title = get_string('socialorsearch', 'theme_caixa');
+    $description = get_string('socialorsearchdesc', 'theme_caixa');
     $radchoices = array(
-        'social' => get_string('socialorsearchsocial', 'theme_adaptable'),
-        'search' => get_string('socialorsearchsearch', 'theme_adaptable')
+        'social' => get_string('socialorsearchsocial', 'theme_caixa'),
+        'search' => get_string('socialorsearchsearch', 'theme_caixa')
     );
     $setting = new admin_setting_configselect($name, $title, $description, 'social', $radchoices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Search box padding top.
-    $name = 'theme_adaptable/searchboxpaddingtop';
-    $title = get_string('searchboxpaddingtop', 'theme_adaptable');
-    $description = get_string('searchboxpaddingtopdesc', 'theme_adaptable');
+    $name = 'theme_caixa/searchboxpaddingtop';
+    $title = get_string('searchboxpaddingtop', 'theme_caixa');
+    $description = get_string('searchboxpaddingtopdesc', 'theme_caixa');
     $setting = new admin_setting_configselect($name, $title, $description, '16px', $from0to30px);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_adaptable', $temp);
+    $ADMIN->add('theme_caixa', $temp);

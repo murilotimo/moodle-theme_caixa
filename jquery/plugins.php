@@ -17,7 +17,7 @@
 /**
  * This is built using the bootstrapbase template to allow for new theme's using Moodle's new Bootstrap theme engine
  *
- * @package     theme_adaptable
+ * @package     theme_caixa
  * @copyright   2013 Julian Ridden
  * @copyright   2014 Gareth J Barnard, David Bezemer
  * @copyright   2015 Jeremy Hopkins (Coventry University)
@@ -49,6 +49,6 @@ $plugins = array(
     'easing' => array('files' => array('jquery-easing-min.js')),
     'ticker' => array('files' => array('tickerme.js')),
     'dropdown' => array('files' => array('dropdown.js')),
-    'adaptable' => array('files' => array('adaptable.js')),
+    'caixa' => array('files' => array('caixa.js')),
     'pace' => array('files' => array('pace-min.js'))
 );

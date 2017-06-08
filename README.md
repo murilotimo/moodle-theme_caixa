@@ -1,6 +1,6 @@
-# Adaptable - the most adaptable moodle theme
+# caixa - the most caixa moodle theme
 
-Adaptable is a highly customisable responsive two column moodle theme based on the popular BCU theme adding:
+caixa is a highly customisable responsive two column moodle theme based on the popular BCU theme adding:
 
 * Customisable fonts (Google Fonts)
 * Fully customisable colors
@@ -23,7 +23,7 @@ thus it is possible to present different users with different nagivation items a
 It is also possible for individual users to customise where they want top menu navigation to appear
 (disable, home pages only, sitewide) using custom profile fields.
 
-Adaptable has a lot of settings and may seem daunting at first, our advice is to simply install with the default
+caixa has a lot of settings and may seem daunting at first, our advice is to simply install with the default
 settings and play with it afterwards.
 
 With a little time you should be able to setup an attractive Moodle site with a high degree of
@@ -46,7 +46,7 @@ You can insert any of them following the examples http://fortawesome.github.io/F
 
 
 ## Front Page Slider Styles
-Add images with at least 1900x400px. If you want to reduce or increase the height, Adaptable will resize the image automatically.
+Add images with at least 1900x400px. If you want to reduce or increase the height, caixa will resize the image automatically.
 There are two possible slider styles each with different markup required:
 
 ### Original BCU Slider Markup:
@@ -181,7 +181,7 @@ From version 1.3 the news ticker do not need to create an unordered list. Just a
 ```
 
 ## Versioning
-Adaptable is maintained under the Semantic Versioning guidelines as much as possible.
+caixa is maintained under the Semantic Versioning guidelines as much as possible.
 Releases will be numbered with the following format:
 
 **major**.minor.*patch*
@@ -195,8 +195,8 @@ For more information on SemVer, please visit http://semver.org.
 
 
 ## Acknowledgments
-Big thanks to all the volunteers that are collaborating and testing Adaptable continously.
-We really appreciate your help and support to develope the most adaptable theme for moodle.
+Big thanks to all the volunteers that are collaborating and testing caixa continuously.
+We really appreciate your help and support to develop the most caixa theme for moodle.
 
 
 #### Development:
@@ -211,7 +211,7 @@ We really appreciate your help and support to develope the most adaptable theme 
 
 
 ## Licenses
-Adaptable is licensed under the GPL v3 (GNU General Public License)
+caixa is licensed under the GPL v3 (GNU General Public License)
 * http://www.gnu.org/licenses
 
 Google Fonts released under:
@@ -230,8 +230,8 @@ Emojione (http://emojione.com) released under Creative Commons Attribution 4.0 I
 
 
 ## Follow Us
-Twitter: https://twitter.com/adaptable_theme
-Facebook: https://www.facebook.com/adaptable.theme
+Twitter: https://twitter.com/caixa_theme
+Facebook: https://www.facebook.com/caixa.theme
 
 
 ### Modify it! - Improve it! - Share it!

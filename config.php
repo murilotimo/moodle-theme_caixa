@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright  2015-2016 Jeremy Hopkins (Coventry University)
  * @copyright  2015-2016 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -35,10 +35,10 @@ if ($PAGE->pagetype == 'site-index') {
     $regions = array('side-post');
 }
 
-$THEME->name = 'adaptable';
+$THEME->name = 'caixa';
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('adaptable', 'blocks', 'menu', 'course', 'slider', 'extras', 'zoom', 'button', 'socialwall',  'custom');
+$THEME->sheets = array('base', 'blocks', 'menu', 'course', 'slider', 'extras', 'zoom', 'button', 'socialwall', 'videojs', 'custom','caixa');
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
 
@@ -90,7 +90,7 @@ $THEME->layouts = array(
         'file' => 'frontpage.php',
         'regions' => $regions,
         'defaultregion' => 'side-post',
-        'options' => array('nonavbar' => true),
+        'options' => array('noblocks' => true,'nonavbar' => true),
     ),
     // Server administration scripts.
     'admin' => array(
@@ -168,7 +168,7 @@ $THEME->layouts = array(
     ),
 );
 
-$THEME->csspostprocess = 'theme_adaptable_process_css';
+$THEME->csspostprocess = 'theme_caixa_process_css';
 $THEME->blockrtlmanipulations = array(
     'side-pre' => 'side-post',
     'side-post' => 'side-pre'

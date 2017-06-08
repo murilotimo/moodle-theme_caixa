@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright  2015-2016 Jeremy Hopkins (Coventry University)
  * @copyright  2015-2017 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -28,8 +28,8 @@ require_once(dirname(__FILE__) . '/includes/header.php');
 
 // Set layout.
 $left = $PAGE->theme->settings->blockside;
-
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
+$infobox2 = $PAGE->theme->settings->infobox2;
 
 if (!empty($PAGE->theme->settings->sliderenabled)) {
     echo $OUTPUT->get_frontpage_slider();
@@ -76,7 +76,7 @@ if (!empty($PAGE->theme->settings->infobox2)) {
 ?>
         <div class="row-fluid">
 <?php
-            echo $OUTPUT->get_setting('infobox2', 'format_html');
+    echo $OUTPUT->get_setting('infobox2', 'format_html');
 ?>
         </div>
 </div>
@@ -110,8 +110,13 @@ if ($PAGE->blocks->region_has_content('side-post', $OUTPUT)) {
 }
 
 echo $OUTPUT->course_content_header();
+
+//DESENVOLVIMENTO DIGITAL GROUP
+echo $OUTPUT->bloco_categorias();
+
 echo $OUTPUT->main_content();
 echo $OUTPUT->course_content_footer();
+
 ?>
 
 </section>
@@ -131,7 +136,7 @@ if (is_siteadmin()) {
 ?>
       <div class="hidden-blocks">
         <div class="row-fluid">
-          <h4><?php echo get_string('frnt-footer', 'theme_adaptable') ?></h4>
+          <h4><?php echo get_string('frnt-footer', 'theme_caixa') ?></h4>
             <?php
             echo $OUTPUT->blocks('frnt-footer', 'span10');
             ?>

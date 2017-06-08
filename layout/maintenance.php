@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright  2015-2016 Jeremy Hopkins (Coventry University)
  * @copyright  2015-2016 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,7 +25,7 @@
  */
 
 // Get the HTML for the settings bits.
-$html = theme_adaptable_get_html_for_settings($OUTPUT, $PAGE);
+$html = theme_caixa_get_html_for_settings($OUTPUT, $PAGE);
 
 echo $OUTPUT->doctype();
 ?>

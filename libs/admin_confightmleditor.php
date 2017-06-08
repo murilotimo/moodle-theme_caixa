@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -35,7 +35,7 @@
  * This post laid the ground work for most of the code featured in this file.
  *
  */
-class adaptable_setting_confightmleditor extends admin_setting_configtext {
+class caixa_setting_confightmleditor extends admin_setting_configtext {
 
     /** @var int number of rows */
     private $rows;
@@ -63,7 +63,7 @@ class adaptable_setting_confightmleditor extends admin_setting_configtext {
      */
     public function __construct($name, $visiblename, $description, $defaultsetting,
                                 $paramtype=PARAM_RAW, $cols='60', $rows='8',
-                                $filearea = 'adaptablemarketingimages') {
+                                $filearea = 'caixamarketingimages') {
         $this->rows = $rows;
         $this->cols = $cols;
         $this->filearea = $filearea;

@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,13 +25,13 @@
  */
 
 
-    $temp = new admin_settingpage('theme_adaptable_mobile', get_string('mobilesettings', 'theme_adaptable'));
-    $temp->add(new admin_setting_heading('theme_adaptable_mobile', get_string('mobilesettingsheading', 'theme_adaptable'),
+    $temp = new admin_settingpage('theme_caixa_mobile', get_string('mobilesettings', 'theme_caixa'));
+    $temp->add(new admin_setting_heading('theme_caixa_mobile', get_string('mobilesettingsheading', 'theme_caixa'),
         '', FORMAT_MARKDOWN));
 
-    $name = 'theme_adaptable/hidealertsmobile';
-    $title = get_string('hidealertsmobile', 'theme_adaptable');
-    $description = get_string('hidealertsmobiledesc', 'theme_adaptable');
+    $name = 'theme_caixa/hidealertsmobile';
+    $title = get_string('hidealertsmobile', 'theme_caixa');
+    $description = get_string('hidealertsmobiledesc', 'theme_caixa');
     $radchoices = array(
         ', .customalert' => get_string('hide'),
         '' => get_string('show'),
@@ -40,9 +40,9 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/hidesocialmobile';
-    $title = get_string('hidesocialmobile', 'theme_adaptable');
-    $description = get_string('hidesocialmobiledesc', 'theme_adaptable');
+    $name = 'theme_caixa/hidesocialmobile';
+    $title = get_string('hidesocialmobile', 'theme_caixa');
+    $description = get_string('hidesocialmobiledesc', 'theme_caixa');
     $radchoices = array(
         ', .socialbox' => get_string('hide'),
         '' => get_string('show'),
@@ -51,9 +51,9 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/socialboxpaddingtopmobile';
-    $title = get_string('socialboxpaddingtopmobile', 'theme_adaptable');
-    $description = get_string('socialboxpaddingtopmobile', 'theme_adaptable');
+    $name = 'theme_caixa/socialboxpaddingtopmobile';
+    $title = get_string('socialboxpaddingtopmobile', 'theme_caixa');
+    $description = get_string('socialboxpaddingtopmobile', 'theme_caixa');
     $choices = array(
         '5px' => "5px",
         '6px' => "6px",
@@ -72,17 +72,17 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/socialboxpaddingbottommobile';
-    $title = get_string('socialboxpaddingbottommobile', 'theme_adaptable');
-    $description = get_string('socialboxpaddingbottommobile', 'theme_adaptable');
+    $name = 'theme_caixa/socialboxpaddingbottommobile';
+    $title = get_string('socialboxpaddingbottommobile', 'theme_caixa');
+    $description = get_string('socialboxpaddingbottommobile', 'theme_caixa');
     $choices = $from0to12px;
     $setting = new admin_setting_configselect($name, $title, $description, '10px', $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/hidecoursetitlemobile';
-    $title = get_string('hidecoursetitlemobile', 'theme_adaptable');
-    $description = get_string('hidecoursetitlemobiledesc', 'theme_adaptable');
+    $name = 'theme_caixa/hidecoursetitlemobile';
+    $title = get_string('hidecoursetitlemobile', 'theme_caixa');
+    $description = get_string('hidecoursetitlemobiledesc', 'theme_caixa');
     $radchoices = array(
         ', #coursetitle, #titlecontainer' => get_string('hide'),
         '' => get_string('show'),
@@ -91,9 +91,9 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/hidelogomobile';
-    $title = get_string('hidelogomobile', 'theme_adaptable');
-    $description = get_string('hidelogomobiledesc', 'theme_adaptable');
+    $name = 'theme_caixa/hidelogomobile';
+    $title = get_string('hidelogomobile', 'theme_caixa');
+    $description = get_string('hidelogomobiledesc', 'theme_caixa');
     $radchoices = array(
         ', #logocontainer' => get_string('hide'),
         '' => get_string('show'),
@@ -102,9 +102,9 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/hideheadermobile';
-    $title = get_string('hideheadermobile', 'theme_adaptable');
-    $description = get_string('hideheadermobiledesc', 'theme_adaptable');
+    $name = 'theme_caixa/hideheadermobile';
+    $title = get_string('hideheadermobile', 'theme_caixa');
+    $description = get_string('hideheadermobiledesc', 'theme_caixa');
     $radchoices = array(
         ', #page-header' => get_string('hide'),
         '' => get_string('show'),
@@ -113,9 +113,9 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/hidebreadcrumbmobile';
-    $title = get_string('hidebreadcrumbmobile', 'theme_adaptable');
-    $description = get_string('hidebreadcrumbmobiledesc', 'theme_adaptable');
+    $name = 'theme_caixa/hidebreadcrumbmobile';
+    $title = get_string('hidebreadcrumbmobile', 'theme_caixa');
+    $description = get_string('hidebreadcrumbmobiledesc', 'theme_caixa');
     $radchoices = array(
         ', .breadcrumb' => get_string('hide'),
         '' => get_string('show'),
@@ -124,9 +124,9 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $name = 'theme_adaptable/hidepagefootermobile';
-    $title = get_string('hidepagefootermobile', 'theme_adaptable');
-    $description = get_string('hidepagefootermobiledesc', 'theme_adaptable');
+    $name = 'theme_caixa/hidepagefootermobile';
+    $title = get_string('hidepagefootermobile', 'theme_caixa');
+    $description = get_string('hidepagefootermobiledesc', 'theme_caixa');
     $radchoices = array(
         ', #page-footer' => get_string('hide'),
         '' => get_string('show'),
@@ -135,4 +135,4 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    $ADMIN->add('theme_adaptable', $temp);
+    $ADMIN->add('theme_caixa', $temp);
