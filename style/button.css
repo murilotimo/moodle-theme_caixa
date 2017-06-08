@@ -15,11 +15,11 @@
 * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 *
 *
-* Adaptable Buttons Style sheet
+* caixa Buttons Style sheet
 *
 * Version details
 *
-* @package    theme_adaptable
+* @package    theme_caixa
 * @copyright  2015 Jeremy Hopkins (Coventry University)
 * @copyright  2015 Fernando Acedo (3-bits.com)
 * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -28,6 +28,7 @@
 
 .btn-link,
 .btn-default,
+.btn-primary,
 [data-role="next"],
 [data-role="previous"],
 input[type="submit"],
@@ -63,18 +64,18 @@ td.submit input {
 
 .btn,
 .btn a {
+    background-color: [[setting:buttoncolor]];
+    background-image: none;
+    color: [[setting:buttontextcolor]] !important;
     display: inline-block;
     padding: 4px 12px;
     margin-bottom: 0;
     font-size: 14px;
     line-height: 20px;
-/*    color: [[setting:buttontextcolor]] !important;*/
     text-align: center;
     text-shadow: none;
     vertical-align: middle;
     cursor: pointer;
-/*    background-color: [[setting:buttoncolor]];*/
-    background-image: none;
     border: 1px solid #ccc;
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
     border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);

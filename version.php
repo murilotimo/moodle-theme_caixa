@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package   theme_adaptable
+ * @package   theme_caixa
  * @copyright 2015-2016 Jeremy Hopkins (Coventry University)
  * @copyright 2015-2016 Fernando Acedo (3-bits.com)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die;
 
 $plugin->version   = 2017011600;
 $plugin->requires  = 2015111600;
-$plugin->component = 'theme_adaptable';
+$plugin->component = 'theme_caixa';
 $plugin->release = '1.3.1';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = array(

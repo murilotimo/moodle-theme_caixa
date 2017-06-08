@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -26,30 +26,30 @@
 
 
 // Frontpage Ticker heading.
-$temp = new admin_settingpage('theme_adaptable_frontpage_ticker', get_string('frontpagetickersettings', 'theme_adaptable'));
-$temp->add(new admin_setting_heading('theme_adaptable_ticker', get_string('tickersettingsheading', 'theme_adaptable'),
-    format_text(get_string('tickerdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+$temp = new admin_settingpage('theme_caixa_frontpage_ticker', get_string('frontpagetickersettings', 'theme_caixa'));
+$temp->add(new admin_setting_heading('theme_caixa_ticker', get_string('tickersettingsheading', 'theme_caixa'),
+    format_text(get_string('tickerdesc', 'theme_caixa'), FORMAT_MARKDOWN)));
 
-$name = 'theme_adaptable/enableticker';
-$title = get_string('enableticker', 'theme_adaptable');
-$description = get_string('enabletickerdesc', 'theme_adaptable');
+$name = 'theme_caixa/enableticker';
+$title = get_string('enableticker', 'theme_caixa');
+$description = get_string('enabletickerdesc', 'theme_caixa');
 $default = true;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-$name = 'theme_adaptable/enabletickermy';
-$title = get_string('enabletickermy', 'theme_adaptable');
-$description = get_string('enabletickermydesc', 'theme_adaptable');
+$name = 'theme_caixa/enabletickermy';
+$title = get_string('enabletickermy', 'theme_caixa');
+$description = get_string('enabletickermydesc', 'theme_caixa');
 $default = true;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
 // Ticker Width (fullscreen / fixed width).
-$name = 'theme_adaptable/tickerwidth';
-$title = get_string('tickerwidth', 'theme_adaptable');
-$description = get_string('tickerwidthdesc', 'theme_adaptable');
+$name = 'theme_caixa/tickerwidth';
+$title = get_string('tickerwidth', 'theme_caixa');
+$description = get_string('tickerwidthdesc', 'theme_caixa');
 $options = array(
   '' => 'Fixed Width',
   'width: 100%;' => 'Full Screen'
@@ -59,34 +59,34 @@ $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
   // Number of news ticker sectons.
-$name = 'theme_adaptable/newstickercount';
-$title = get_string('newstickercount', 'theme_adaptable');
-$description = get_string('newstickercountdesc', 'theme_adaptable');
-$default = THEME_ADAPTABLE_DEFAULT_TOOLSMENUSCOUNT;
+$name = 'theme_caixa/newstickercount';
+$title = get_string('newstickercount', 'theme_caixa');
+$description = get_string('newstickercountdesc', 'theme_caixa');
+$default = THEME_caixa_DEFAULT_TOOLSMENUSCOUNT;
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices1to12);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
 // If we don't have a menuscount yet, default to the preset.
-$newstickercount = get_config('theme_adaptable', 'newstickercount');
+$newstickercount = get_config('theme_caixa', 'newstickercount');
 
 if (!$newstickercount) {
-    $newstickercount = THEME_ADAPTABLE_DEFAULT_NEWSTICKERCOUNT;
+    $newstickercount = THEME_caixa_DEFAULT_NEWSTICKERCOUNT;
 }
 
 for ($newstickerindex = 1; $newstickerindex <= $newstickercount; $newstickerindex ++) {
-    $name = 'theme_adaptable/tickertext' . $newstickerindex;
-    $title = get_string('tickertext', 'theme_adaptable') . ' ' . $newstickerindex;
-    $description = get_string('tickertextdesc', 'theme_adaptable');
+    $name = 'theme_caixa/tickertext' . $newstickerindex;
+    $title = get_string('tickertext', 'theme_caixa') . ' ' . $newstickerindex;
+    $description = get_string('tickertextdesc', 'theme_caixa');
     $default = '';
-    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new caixa_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_adaptable/tickertext' . $newstickerindex . 'profilefield';
-    $title = get_string('tickertextprofilefield', 'theme_adaptable');
-    $description = get_string('tickertextprofilefielddesc', 'theme_adaptable');
+    $name = 'theme_caixa/tickertext' . $newstickerindex . 'profilefield';
+    $title = get_string('tickertextprofilefield', 'theme_caixa');
+    $description = get_string('tickertextprofilefielddesc', 'theme_caixa');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 }
 
-$ADMIN->add('theme_adaptable', $temp);
+$ADMIN->add('theme_caixa', $temp);

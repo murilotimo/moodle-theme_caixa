@@ -17,9 +17,10 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
- * @copyright  2015 Jeremy Hopkins (Coventry University)
- * @copyright  2015 Fernando Acedo (3-bits.com)
+ * @package    theme_caixa
+ * @copyright  2015-2017 Jeremy Hopkins (Coventry University)
+ * @copyright  2015-2017 Fernando Acedo (3-bits.com)
+ * @copyright  2015-2016 Others
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
@@ -33,14 +34,10 @@ require_once($CFG->dirroot.'/message/lib.php');
 
 
 /******************************************************************************************
- * @copyright 2015 Jeremy Hopkins (Coventry University)
- * @copyright 2015 Fernando Acedo (3-bits.com)
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *
- * Core renderers for Adaptable theme
+ * Core renderers for caixa theme
  */
 
-class theme_adaptable_core_renderer extends core_renderer {
+class theme_caixa_core_renderer extends core_renderer {
     /** @var custom_menu_item language The language menu if created */
     protected $language = null;
 
@@ -81,7 +78,7 @@ class theme_adaptable_core_renderer extends core_renderer {
      */
     public function get_setting($setting, $format = false, $theme = null) {
         if (empty($theme)) {
-            $theme = theme_config::load('adaptable');
+            $theme = theme_config::load('caixa');
         }
 
         if (empty($theme->settings->$setting)) {
@@ -189,7 +186,7 @@ class theme_adaptable_core_renderer extends core_renderer {
      * @param int $alertkey
      */
     public function get_alert_message($text, $type, $alertindex, $alertkey) {
-        if ($alertkey == '' || theme_adaptable_get_alertkey($alertindex) == $alertkey) {
+        if ($alertkey == '' || theme_caixa_get_alertkey($alertindex) == $alertkey) {
             return '';
         }
 
@@ -267,17 +264,17 @@ class theme_adaptable_core_renderer extends core_renderer {
         global $CFG;
         $output = '';
 
-        if (get_config('theme_adaptable', 'version') < '2016121200') {
-                $output .= '<div id="beta"><h3>';
-                $output .= get_string('beta', 'theme_adaptable');
-                $output .= '</h3></div>';
-        }
+        // if (get_config('theme_caixa', 'version') < '1') {
+        //         $output .= '<div id="beta"><h3>';
+        //         $output .= get_string('beta', 'theme_caixa');
+        //         $output .= '</h3></div>';
+        // }
 
-        if ($CFG->version < 2015111600) {
-                $output .= '<div id="beta"><center><h3>';
-                $output .= get_string('deprecated', 'theme_adaptable');
-                $output .= '</h3></center></div>';
-        }
+        // if ($CFG->version < 2015111600) {
+        //         $output .= '<div id="beta"><center><h3>';
+        //         $output .= get_string('deprecated', 'theme_caixa');
+        //         $output .= '</h3></center></div>';
+        // }
 
         return $output;
     }
@@ -756,12 +753,12 @@ EOT;
 
                 $msg = preg_replace('#\<[\/]{0,1}(p|ul|div|pre|blockquote)\>#', '', $msg);
                 if ($msg == '') {
-                    $msg = '<li>' . get_string('tickerdefault', 'theme_adaptable') . '</li>';
+                    $msg = '<li>' . get_string('tickerdefault', 'theme_caixa') . '</li>';
                 }
 
                 $retval .= '<div id="ticker-wrap" class="clearfix container">';
                 $retval .= '<div class="pull-left" id="ticker-announce">';
-                $retval .= get_string('ticker', 'theme_adaptable');
+                $retval .= get_string('ticker', 'theme_caixa');
                 $retval .= '</div>';
                 $retval .= '<ul id="ticker">';
                 $retval .= format_text($PAGE->theme->settings->$textfield, FORMAT_HTML, array('trusted' => true));
@@ -1057,9 +1054,9 @@ EOT;
             if ($i++ == 0) {
                 $breadcrumbs .= '<li>';
 
-                if (get_config('theme_adaptable', 'enablehome') && get_config('theme_adaptable', 'enablemyhome')) {
+                if (get_config('theme_caixa', 'enablehome') && get_config('theme_caixa', 'enablemyhome')) {
                     $breadcrumbs = html_writer::tag('i', '', array('class' => 'fa fa-folder-open-o fa-lg'));
-                } else if (get_config('theme_adaptable', 'breadcrumbhome') == 'icon') {
+                } else if (get_config('theme_caixa', 'breadcrumbhome') == 'icon') {
                     $breadcrumbs .= html_writer::link(new moodle_url('/'),
                                    html_writer::tag('i', '', array('class' => 'fa fa-home fa-lg')));
                     $breadcrumbs .= '</li>';
@@ -1097,7 +1094,7 @@ EOT;
             $perf = get_performance_info();
 
             if (defined('MDL_PERFTOFOOT') || debugging() || $CFG->perfdebug > 7) {
-                $performanceinfo = theme_adaptable_performance_output($perf);
+                $performanceinfo = theme_caixa_performance_output($perf);
             }
         }
 
@@ -1123,7 +1120,7 @@ EOT;
         $overridestrings = false;
         $overridetype = 'off';
         $sessttl = 0;
-        $cache = cache::make('theme_adaptable', 'userdata');
+        $cache = cache::make('theme_caixa', 'userdata');
 
         if ($sessttl > 0 && time() <= $cache->get('usernavbarttl')) {
             return $cache->get('mysitesvisibility');
@@ -1163,7 +1160,7 @@ EOT;
             }
 
             if (!empty($PAGE->theme->settings->enableevents)) {
-                $branchtitle = get_string('events', 'theme_adaptable');
+                $branchtitle = get_string('events', 'theme_caixa');
                 $branchlabel = '<i class="fa fa-calendar"></i> '.$branchtitle;
                 $branchurl   = new moodle_url('/calendar/view.php');
                 $branchsort  = 10000;
@@ -1190,7 +1187,7 @@ EOT;
             }
 
             if ($mysitesvisibility != 'disabled') {
-                $branchtitle = get_string('mysites', 'theme_adaptable');
+                $branchtitle = get_string('mysites', 'theme_caixa');
                 $branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
                 $branchurl   = new moodle_url('/my/index.php');
                 $branchsort  = 10001;
@@ -1220,7 +1217,7 @@ EOT;
                                     if (!isset($parent)) {
                                         $icon = '<i class="fa fa-history"></i> ';
                                         $parent = $branch->add($icon . $trunc = rtrim(
-                                                    mb_strimwidth(format_string(get_string('pastcourses', 'theme_adaptable')),
+                                                    mb_strimwidth(format_string(get_string('pastcourses', 'theme_caixa')),
                                                     0, $mysitesmaxlengthhidden)) . '...', new moodle_url('#'), '', 1000);
                                     }
                                     $parent->add($trunc = rtrim(mb_strimwidth(format_string($course->fullname),
@@ -1237,7 +1234,7 @@ EOT;
                     foreach ($sortedcourses as $course) {
                         if (!$course->visible && $mysitesvisibility == 'includehidden') {
                             if (empty($parent)) {
-                                $parent = $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_adaptable')),
+                                $parent = $branch->add($icon . $trunc = rtrim(mb_strimwidth(format_string(get_string('hiddencourses', 'theme_caixa')),
                                         0, $mysitesmaxlengthhidden)) . '...',
                                         new moodle_url('#'), '', 2000);
                             }
@@ -1247,19 +1244,19 @@ EOT;
                         }
                     }
                 } else {
-                    $noenrolments = get_string('noenrolments', 'theme_adaptable');
+                    $noenrolments = get_string('noenrolments', 'theme_caixa');
                     $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
                 }
             }
 
             if (!empty($PAGE->theme->settings->enablethiscourse)) {
                 if (ISSET($COURSE->id) && $COURSE->id > 1) {
-                    $branchtitle = get_string('thiscourse', 'theme_adaptable');
+                    $branchtitle = get_string('thiscourse', 'theme_caixa');
                     $branchlabel = '<i class="fa fa-sitemap"></i><span class="menutitle">'.$branchtitle.'</span>';
                     $branchurl = new moodle_url('#');
                     $branch = $menu->add($branchlabel, $branchurl, '', 10002);
 
-                    $branchtitle = get_string('people', 'theme_adaptable');
+                    $branchtitle = get_string('people', 'theme_caixa');
                     $branchlabel = '<i class="fa fa-users"></i>'.$branchtitle;
                     $branchurl = new moodle_url('/user/index.php', array('id' => $PAGE->course->id));
                     $branch->add($branchlabel, $branchurl, '', 100003);
@@ -1269,7 +1266,7 @@ EOT;
                     $branchurl = new moodle_url('/grade/report/index.php', array('id' => $PAGE->course->id));
                     $branch->add($branchlabel, $branchurl, '', 100004);
 
-                    $data = theme_adaptable_get_course_activities();
+                    $data = theme_caixa_get_course_activities();
 
                     foreach ($data as $modname => $modfullname) {
                         if ($modname === 'resources') {
@@ -1299,7 +1296,7 @@ EOT;
             }
 
             if ($access && !$this->hideinforum()) {
-                $branchtitle = get_string('helptitle', 'theme_adaptable');
+                $branchtitle = get_string('helptitle', 'theme_caixa');
                 $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
                 $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp.'" target="'.$PAGE->theme->settings->helptarget);
                 $branchsort  = 10003;
@@ -1319,7 +1316,7 @@ EOT;
             }
 
             if ($access && !$this->hideinforum()) {
-                $branchtitle = get_string('helptitle2', 'theme_adaptable');
+                $branchtitle = get_string('helptitle2', 'theme_caixa');
                 $branchlabel = '<i class="fa fa-life-ring"></i>'.$branchtitle;
                 $branchurl   = new moodle_url($PAGE->theme->settings->enablehelp2.'" target="'.$PAGE->theme->settings->helptarget);
                 $branchsort  = 10003;
@@ -1446,7 +1443,7 @@ EOT;
             if ($display == 'custom') {
                 // Custom title using html output to allow multi-lang.
                 if (!empty($PAGE->theme->settings->sitetitletext)) {
-                    $header = theme_adaptable_remove_site_fullname($PAGE->theme->settings->sitetitletext);
+                    $header = theme_caixa_remove_site_fullname($PAGE->theme->settings->sitetitletext);
                     $sitetitlehtml = $PAGE->theme->settings->sitetitletext;
                     $PAGE->set_heading($header);
 
@@ -1459,6 +1456,97 @@ EOT;
 
         return $retval;
     }
+
+
+    
+    /**
+     * Retorna a logo central - DESENVOLVIMENTO DIGITAL GROUP
+     *
+     * @return string
+     */
+    public function get_logo_center()
+    {
+         global $PAGE;
+
+         if($PAGE->theme->setting_file_url('logocenter', 'logocenter')) {
+        $retval = '<img src=' . $PAGE->theme->setting_file_url('logocenter', 'logocenter') . ' alt="logo" id="logo" />';
+    } else {
+        $retval = '';
+    }
+
+        return $retval;
+    }
+
+    /**
+     * Retorna o bloco de categorias - DESENVOLVIMENTO DIGITAL GROUP
+     *  
+     * @return string
+     */
+    public function bloco_categorias() {
+        global $PAGE, $DB, $CFG;
+
+        $categorias = $DB->get_records('course_categories', array('visible'=>'1'));
+        $retorno = "";
+
+        if($categorias){
+            $retorno .="<div class='category-block'>";
+            foreach ($categorias as $categoria) {
+
+                $check = $PAGE->theme->settings->{'checkcat_'.$categoria->id};
+                
+                if($check){
+
+                    $titulo = $PAGE->theme->settings->{'titlecat_'.$categoria->id};
+                    if(!$titulo){
+                        $titulo = $categoria->name;
+                    }
+                    $icone = $PAGE->theme->setting_file_url("iconecat_".$categoria->id,"iconecat_".$categoria->id);
+                    $url = $CFG->wwwroot.'/course/index.php?categoryid='.$categoria->id;
+                    
+                    $retorno .= '<a href="'.$url.'">';
+                    $retorno .= '<div class="category-item">';
+                    $retorno .= '<div class="category-image">';
+                    $retorno .= '<img src="'.$icone.'">';
+                    $retorno .= '</div>';
+                    $retorno .= '<div class="category-title">';
+                    $retorno .= '<strong>'.$titulo.'</strong>';
+                    $retorno .= '</div>';
+                    $retorno .= '</div>';
+                    $retorno .= '</a>';
+                }
+                
+            }
+            $retorno .="</div>";
+        }
+        
+        return $retorno;
+    } 
+
+
+    /**
+     * Retorna a imagem de capa nas páginas de categorias e categoria - DESENVOLVIMENTO DIGITAL GROUP
+     *  
+     * @return string
+     */
+    public function imagem_de_capa() {
+        global $PAGE, $CFG;
+
+        $img_capa = $PAGE->theme->setting_file_url("imgcapacategoria","imgcapacategoria");
+
+        $action = $CFG->wwwroot.'/course/search.php';
+        $retorno = "";
+
+        if($img_capa){
+            $retorno .= '<div class="categories-banner" style="background-image: url('.$img_capa.');">';
+            $retorno .=  '<div class="container-search">';
+             $retorno .= '<form id="searchcategorias" action="'.$action.'" method="get" class="form-inline" role="form"><input type="text" id="coursesearchbox" size="30" name="search" class="form-control" value="" placeholder="Buscar cursos"><button type="submit" class="btn btn-default">Vai</button></form>';
+
+            $retorno .= '</div></div>';
+        }
+    
+        return $retorno;
+    }
+
 
     /**
      * Returns html to render top menu items
@@ -1531,8 +1619,8 @@ EOT;
             return true;
         }
 
-        if (isset($USER->theme_adaptable_menus['menuvisibility'])) {
-            $uservalue = $USER->theme_adaptable_menus['menuvisibility'];
+        if (isset($USER->theme_caixa_menus['menuvisibility'])) {
+            $uservalue = $USER->theme_caixa_menus['menuvisibility'];
         } else {
             $profilefield = $PAGE->theme->settings->menuoverrideprofilefield;
             $profilefield = 'profile_field_' . $profilefield;
@@ -1569,7 +1657,7 @@ EOT;
         profile_load_data($USER);
 
         $uservisibility = $USER->$profilefield;
-        $USER->theme_adaptable_menus['menuvisibility'] = $uservisibility;
+        $USER->theme_caixa_menus['menuvisibility'] = $uservisibility;
         return $uservisibility;
     }
 
@@ -1588,12 +1676,12 @@ EOT;
         $menuttl = $menu . 'ttl';
 
         if ($PAGE->theme->settings->menusession) {
-            if (isset($USER->theme_adaptable_menus[$menu])) {
+            if (isset($USER->theme_caixa_menus[$menu])) {
 
-                if ($USER->theme_adaptable_menus[$menuttl] >= time()) {
-                    if ($USER->theme_adaptable_menus[$menu] == true) {
+                if ($USER->theme_caixa_menus[$menuttl] >= time()) {
+                    if ($USER->theme_caixa_menus[$menu] == true) {
                         return true;
-                    } else if ($USER->theme_adaptable_menus[$menu] == false) {
+                    } else if ($USER->theme_caixa_menus[$menu] == false) {
                         return false;
                     }
                 }
@@ -1609,13 +1697,13 @@ EOT;
         }
 
         if ($usersvalue == $setvalue) {
-            $USER->theme_adaptable_menus[$menu] = true;
-            $USER->theme_adaptable_menus[$menuttl] = $sessttl;
+            $USER->theme_caixa_menus[$menu] = true;
+            $USER->theme_caixa_menus[$menuttl] = $sessttl;
             return true;
         }
 
-        $USER->theme_adaptable_menus[$menu] = false;
-        $USER->theme_adaptable_menus[$menuttl] = $sessttl;
+        $USER->theme_caixa_menus[$menu] = false;
+        $USER->theme_caixa_menus[$menuttl] = $sessttl;
         return false;
     }
 
@@ -1653,10 +1741,10 @@ EOT;
         $timestamp = 'currentcoursestime';
         $list = 'currentcourseslist';
 
-        if (isset($USER->theme_adaptable_menus[$timestamp])) {
-            if ($USER->theme_adaptable_menus[$timestamp] >= time()) {
-                if (isset($USER->theme_adaptable_menus[$list])) {
-                    return $USER->theme_adaptable_menus[$list];
+        if (isset($USER->theme_caixa_menus[$timestamp])) {
+            if ($USER->theme_caixa_menus[$timestamp] >= time()) {
+                if (isset($USER->theme_caixa_menus[$list])) {
+                    return $USER->theme_caixa_menus[$list];
                 }
             }
         }
@@ -1683,8 +1771,8 @@ EOT;
             }
         }
 
-        $USER->theme_adaptable_menus[$list] = $retval;
-        $USER->theme_adaptable_menus[$timestamp] = $sessttl;
+        $USER->theme_caixa_menus[$list] = $retval;
+        $USER->theme_caixa_menus[$timestamp] = $sessttl;
         return $retval;
     }
 
@@ -1945,7 +2033,7 @@ EOT;
      * @param string $tag
      * @return string
      */
-    public function adaptableblocks($region, $classes = array(), $tag = 'aside') {
+    public function caixablocks($region, $classes = array(), $tag = 'aside') {
         $classes = (array)$classes;
         $classes[] = 'block-region';
         $attributes = array(
@@ -1963,9 +2051,9 @@ EOT;
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * Core Course Renderers for Adaptable theme
+ * Core Course Renderers for caixa theme
  */
-class theme_adaptable_core_course_renderer extends core_course_renderer {
+class theme_caixa_core_course_renderer extends core_course_renderer {
     /**
      * REnder course category box
      *
@@ -1976,7 +2064,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
      */
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG, $OUTPUT, $PAGE;
-        $type = theme_adaptable_get_setting('frontpagerenderer');
+        $type = theme_caixa_get_setting('frontpagerenderer');
         if ($type == 3 || $OUTPUT->body_id() != 'page-site-index') {
             return parent::coursecat_coursebox($chelper, $course, $additionalclasses = '');
         }
@@ -2062,7 +2150,7 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
                 $icondirection = 'right';
             }
             $arrow = html_writer::tag('span', '', array('class' => 'fa fa-chevron-'.$icondirection));
-            $btn = html_writer::tag('span', get_string('course', 'theme_adaptable') . ' ' . $arrow, array('class' => 'get_stringlink'));
+            $btn = html_writer::tag('span', get_string('course', 'theme_caixa') . ' ' . $arrow, array('class' => 'get_stringlink'));
 
             if (empty($PAGE->theme->settings->covhidebutton)) {
                 $content .= html_writer::link(new moodle_url('/course/view.php',
@@ -2182,9 +2270,9 @@ class theme_adaptable_core_course_renderer extends core_course_renderer {
             $truncsum = mb_strimwidth($summs, 0, 70, "...", 'utf-8');
             $content .= html_writer::tag('span', $truncsum, array('title' => $summs));
         }
-        $coursecontacts = theme_adaptable_get_setting('tilesshowcontacts');
+        $coursecontacts = theme_caixa_get_setting('tilesshowcontacts');
         if ($coursecontacts) {
-            $coursecontacttitle = theme_adaptable_get_setting('tilescontactstitle');
+            $coursecontacttitle = theme_caixa_get_setting('tilescontactstitle');
             // Display course contacts. See course_in_list::get_course_contacts().
             if ($course->has_course_contacts()) {
                 $content .= html_writer::start_tag('ul', array('class' => 'teachers'));

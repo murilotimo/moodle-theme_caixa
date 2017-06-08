@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright 2015 Jeremy Hopkins (Coventry University)
  * @copyright 2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,44 +25,44 @@
  */
 
 
-$temp = new admin_settingpage('theme_adaptable_footer', get_string('footersettings', 'theme_adaptable'));
-$temp->add(new admin_setting_heading('theme_adaptable_footer', get_string('footersettingsheading', 'theme_adaptable'),
-    format_text(get_string('footerdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+$temp = new admin_settingpage('theme_caixa_footer', get_string('footersettings', 'theme_caixa'));
+$temp->add(new admin_setting_heading('theme_caixa_footer', get_string('footersettingsheading', 'theme_caixa'),
+    format_text(get_string('footerdesc', 'theme_caixa'), FORMAT_MARKDOWN)));
 
 // Show moodle docs link.
-$name = 'theme_adaptable/moodledocs';
-$title = get_string('moodledocs', 'theme_adaptable');
-$description = get_string('moodledocsdesc', 'theme_adaptable');
+$name = 'theme_caixa/moodledocs';
+$title = get_string('moodledocs', 'theme_caixa');
+$description = get_string('moodledocsdesc', 'theme_caixa');
 $default = true;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-$name = 'theme_adaptable/footerblocksplacement';
-$title = get_string('footerblocksplacement', 'theme_adaptable');
-$description = get_string('footerblocksplacementdesc', 'theme_adaptable');
+$name = 'theme_caixa/footerblocksplacement';
+$title = get_string('footerblocksplacement', 'theme_caixa');
+$description = get_string('footerblocksplacementdesc', 'theme_caixa');
 $choices = array(
-    1 => get_string('footerblocksplacement1', 'theme_adaptable'),
-    2 => get_string('footerblocksplacement2', 'theme_adaptable'),
-    3 => get_string('footerblocksplacement3', 'theme_adaptable'),
+    1 => get_string('footerblocksplacement1', 'theme_caixa'),
+    2 => get_string('footerblocksplacement2', 'theme_caixa'),
+    3 => get_string('footerblocksplacement3', 'theme_caixa'),
 );
 $setting = new admin_setting_configselect($name, $title, $description, 1, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
-$name = 'theme_adaptable/showfooterblocks';
-$title = get_string('showfooterblocks', 'theme_adaptable');
-$description = get_string('showfooterblocksdesc', 'theme_adaptable');
+$name = 'theme_caixa/showfooterblocks';
+$title = get_string('showfooterblocks', 'theme_caixa');
+$description = get_string('showfooterblocksdesc', 'theme_caixa');
 $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
 $temp->add($setting);
 
 $totalblocks = 0;
-$imgpath = $CFG->wwwroot.'/theme/adaptable/pix/layout-builder/';
+$imgpath = $CFG->wwwroot.'/theme/caixa/pix/layout-builder/';
 $imgblder = '';
 for ($i = 1; $i <= 3; $i++) {
-    $name = 'theme_adaptable/footerlayoutrow' . $i;
-    $title = get_string('footerlayoutrow', 'theme_adaptable');
-    $description = get_string('footerlayoutrowdesc', 'theme_adaptable');
+    $name = 'theme_caixa/footerlayoutrow' . $i;
+    $title = get_string('footerlayoutrow', 'theme_caixa');
+    $description = get_string('footerlayoutrowdesc', 'theme_caixa');
     $default = $marketingfooterbuilderdefaults[$i - 1];
     $choices = $bootstrap12;
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
@@ -87,40 +87,40 @@ for ($i = 1; $i <= 3; $i++) {
     }
 }
 
-$temp->add(new admin_setting_heading('theme_adaptable_footerlayoutcheck', get_string('layoutcheck', 'theme_adaptable'),
-    format_text(get_string('layoutcheckdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+$temp->add(new admin_setting_heading('theme_caixa_footerlayoutcheck', get_string('layoutcheck', 'theme_caixa'),
+    format_text(get_string('layoutcheckdesc', 'theme_caixa'), FORMAT_MARKDOWN)));
 
-$temp->add(new admin_setting_heading('theme_adaptable_footerlayoutbuilder', '', $imgblder));
+$temp->add(new admin_setting_heading('theme_caixa_footerlayoutbuilder', '', $imgblder));
 
-$blkcontmsg = get_string('layoutaddcontentdesc1', 'theme_adaptable');
+$blkcontmsg = get_string('layoutaddcontentdesc1', 'theme_caixa');
 $blkcontmsg .= $totalblocks;
-$blkcontmsg .= get_string('layoutaddcontentdesc2', 'theme_adaptable');
+$blkcontmsg .= get_string('layoutaddcontentdesc2', 'theme_caixa');
 
-$temp->add(new admin_setting_heading('theme_adaptable_footerlayoutaddcontent', get_string('layoutaddcontent', 'theme_adaptable'),
+$temp->add(new admin_setting_heading('theme_caixa_footerlayoutaddcontent', get_string('layoutaddcontent', 'theme_caixa'),
     format_text($blkcontmsg, FORMAT_MARKDOWN)));
 
 for ($i = 1; $i <= $totalblocks; $i++) {
-    $name = 'theme_adaptable/footer' . $i . 'header';
-    $title = get_string('footerheader', 'theme_adaptable') . $i;
-    $description = get_string('footerdesc', 'theme_adaptable') . $i;
+    $name = 'theme_caixa/footer' . $i . 'header';
+    $title = get_string('footerheader', 'theme_caixa') . $i;
+    $description = get_string('footerdesc', 'theme_caixa') . $i;
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $temp->add($setting);
 
-    $name = 'theme_adaptable/footer' . $i . 'content';
-    $title = get_string('footercontent', 'theme_adaptable') . $i;
-    $description = get_string('footercontentdesc', 'theme_adaptable') . $i;
+    $name = 'theme_caixa/footer' . $i . 'content';
+    $title = get_string('footercontent', 'theme_caixa') . $i;
+    $description = get_string('footercontentdesc', 'theme_caixa') . $i;
     $default = '';
-    $setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
+    $setting = new caixa_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
 }
 
-$name = 'theme_adaptable/footnote';
-$title = get_string('footnote', 'theme_adaptable');
-$description = get_string('footnotedesc', 'theme_adaptable');
+$name = 'theme_caixa/footnote';
+$title = get_string('footnote', 'theme_caixa');
+$description = get_string('footnotedesc', 'theme_caixa');
 $default = '';
-$setting = new adaptable_setting_confightmleditor($name, $title, $description, $default);
+$setting = new caixa_setting_confightmleditor($name, $title, $description, $default);
 $temp->add($setting);
 
 
-$ADMIN->add('theme_adaptable', $temp);
+$ADMIN->add('theme_caixa', $temp);

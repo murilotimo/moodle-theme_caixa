@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright  2015-2016 Jeremy Hopkins (Coventry University)
  * @copyright  2015-2016 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -34,6 +34,11 @@ require_once(dirname(__FILE__) . '/includes/header.php');
         <section id="region-main" class="span12">
             <?php
             echo $OUTPUT->course_content_header();
+
+            if ($PAGE->bodyid == 'page-course-index' || $PAGE->bodyid == 'page-course-index-category') {
+                echo $OUTPUT->imagem_de_capa();
+            }
+            
             echo $OUTPUT->main_content();
             echo $OUTPUT->course_content_footer();
             ?>

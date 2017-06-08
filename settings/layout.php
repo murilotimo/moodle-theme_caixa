@@ -17,57 +17,57 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright  2015 Jeremy Hopkins (Coventry University)
  * @copyright  2015 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  */
 
-    $temp = new admin_settingpage('theme_adaptable_layout', get_string('layoutsettings', 'theme_adaptable'));
-    $temp->add(new admin_setting_heading('theme_adaptable_layout', get_string('layoutsettingsheading', 'theme_adaptable'),
-        format_text(get_string('layoutdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+    $temp = new admin_settingpage('theme_caixa_layout', get_string('layoutsettings', 'theme_caixa'));
+    $temp->add(new admin_setting_heading('theme_caixa_layout', get_string('layoutsettingsheading', 'theme_caixa'),
+        format_text(get_string('layoutdesc', 'theme_caixa'), FORMAT_MARKDOWN)));
 
     // Background Image.
-    $name = 'theme_adaptable/homebk';
-    $title = get_string('homebk', 'theme_adaptable');
-    $description = get_string('homebkdesc', 'theme_adaptable');
+    $name = 'theme_caixa/homebk';
+    $title = get_string('homebk', 'theme_caixa');
+    $description = get_string('homebkdesc', 'theme_caixa');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'homebk');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Display block in the Left/Right side.
-    $name = 'theme_adaptable/blockside';
-    $title = get_string('blockside', 'theme_adaptable');
-    $description = get_string('blocksidedesc', 'theme_adaptable');
+    $name = 'theme_caixa/blockside';
+    $title = get_string('blockside', 'theme_caixa');
+    $description = get_string('blocksidedesc', 'theme_caixa');
     $setting = new admin_setting_configselect($name, $title, $description, 0,
     array(
-            0 => get_string('rightblocks', 'theme_adaptable'),
-            1 => get_string('leftblocks', 'theme_adaptable'),
+            0 => get_string('rightblocks', 'theme_caixa'),
+            1 => get_string('leftblocks', 'theme_caixa'),
         ));
     $temp->add($setting);
 
     // View default.
-    $name = 'theme_adaptable/viewselect';
-    $title = get_string('viewselect', 'theme_adaptable');
-    $description = get_string('viewselectdesc', 'theme_adaptable');
+    $name = 'theme_caixa/viewselect';
+    $title = get_string('viewselect', 'theme_caixa');
+    $description = get_string('viewselectdesc', 'theme_caixa');
     $default = true;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Fullscreen width.
-    $name = 'theme_adaptable/fullscreenwidth';
-    $title = get_string('fullscreenwidth', 'theme_adaptable');
-    $description = get_string('fullscreenwidthdesc', 'theme_adaptable');
+    $name = 'theme_caixa/fullscreenwidth';
+    $title = get_string('fullscreenwidth', 'theme_caixa');
+    $description = get_string('fullscreenwidthdesc', 'theme_caixa');
     $setting = new admin_setting_configselect($name, $title, $description, '98%', $from95to100percent);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
     // Emoticons size.
-    $name = 'theme_adaptable/emoticonsize';
-    $title = get_string('emoticonsize', 'theme_adaptable');
-    $description = get_string('emoticonsizedesc', 'theme_adaptable');
+    $name = 'theme_caixa/emoticonsize';
+    $title = get_string('emoticonsize', 'theme_caixa');
+    $description = get_string('emoticonsizedesc', 'theme_caixa');
     $default = '16px';
     $choices = $standardfontsize;
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
@@ -75,4 +75,4 @@
     $temp->add($setting);
 
 
-    $ADMIN->add('theme_adaptable', $temp);
+    $ADMIN->add('theme_caixa', $temp);

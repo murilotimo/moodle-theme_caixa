@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright  2015-2016 Jeremy Hopkins (Coventry University)
  * @copyright  2015-2016 Fernando Acedo (3-bits.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -30,9 +30,9 @@ require_once(__DIR__.'/lib.php');
 defined('MOODLE_INTERNAL') || die;
 
 if (is_siteadmin()) {
-    // Adaptable theme settings page.
+    // caixa theme settings page.
     global $PAGE;
-    $ADMIN->add('themes', new admin_category('theme_adaptable', 'Adaptable'));
+    $ADMIN->add('themes', new admin_category('theme_caixa', 'Caixa'));
 
     include(dirname(__FILE__) . '/settings/array_definitions.php');
     include(dirname(__FILE__) . '/settings/colors.php');
@@ -47,6 +47,7 @@ if (is_siteadmin()) {
     include(dirname(__FILE__) . '/settings/block_settings.php');
     include(dirname(__FILE__) . '/settings/block_regions.php');
     include(dirname(__FILE__) . '/settings/course.php');
+    include(dirname(__FILE__) . '/settings/categories.php');
     include(dirname(__FILE__) . '/settings/marketing_blocks.php');
     include(dirname(__FILE__) . '/settings/frontpage_courses.php');
     include(dirname(__FILE__) . '/settings/frontpage_ticker.php');

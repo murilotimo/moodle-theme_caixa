@@ -1,0 +1,612 @@
+/*      
+
+	Arquivo de estilo
+	Tema: Caixa;
+	Autor: Thiago Rezende
+	email: thiago.ro.costa@outlook.com
+
+	*/
+
+
+	#ticker-wrap {
+		position: relative;
+		margin-bottom: 15px;
+		margin-top: 15px;
+		background: #2a6fa8;
+		line-height: 40px;
+		margin: 0;
+		width: 100%;
+		color: #eee;
+	}
+
+	#navwrap {
+		border-bottom: 1px solid #ccc;
+	}
+
+	.flex-caption {
+		/*display: none;*/
+	}
+
+	.slidestyle2 .flex-direction-nav .flex-next {
+		background: transparent url("/moodle/theme/image.php?theme=caixa&component=theme&image=next") no-repeat scroll 50% 50% / auto 24px;
+	}
+
+	.slidestyle2 .flex-direction-nav .flex-prev {
+		background: transparent url("/moodle/theme/image.php?theme=caixa&component=theme&image=previous") no-repeat scroll 50% 50% / auto 24px;
+	}
+
+	#above-header, #page-header-wrapper, #ticker-wrap, footer {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0066b3+0,54bbab+50,54bbab+50,a6ce39+100 */
+		background: #0066b3; /* Old browsers */
+		background: -moz-linear-gradient(left,  #0066b3 0%, #54bbab 50%, #54bbab 50%, #a6ce39 100%) !important; /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  #0066b3 0%,#54bbab 50%,#54bbab 50%,#a6ce39 100%) !important; /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  #0066b3 0%,#54bbab 50%,#54bbab 50%,#a6ce39 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0066b3', endColorstr='#a6ce39',GradientType=1 ); /* IE6-9 */
+	}
+
+	#page-header {
+		min-height: 90px;
+	}
+
+	#logocontainer {
+		margin: 9px 15px 5px 10px;
+	}
+
+	#marketblocks {
+		background-color: #fff !important;
+	}
+
+	#marketblocks .covtiles {
+		border-radius: 0;
+		box-shadow: none;
+		background-color: #f3f5fa;
+		padding-top: 15px;
+	}
+
+	.poder-publico {
+		width: 311px;
+		height: 58px;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+
+	.searchbox {
+		padding-top: 0px;
+		margin-top: -57px;
+	}
+
+	.searchbox .bg-white {
+		background: transparent;
+	}
+
+	#search-1, #search-1:focus {
+		padding: 5px 20px !important;
+		margin: 0 !important;
+		font-size: 14px;
+		color: #444;
+		border: 1px solid #48622b !important;
+		background-color: rgba(0,0,0,0.2);
+		-moz-box-shadow:    inset 0 0 20px rgba(0,0,0,0.2);;
+		-webkit-box-shadow: inset 0 0 20px rgba(0,0,0,0.2);;
+		box-shadow:         inset 0 0 20px rgba(0,0,0,0.2);;
+		width: 170px;
+		height: 45px;
+		padding-left: 10px;
+	}
+
+	#search-1::-webkit-input-placeholder {
+		color: #b5e1ff;
+	}
+
+	#search-1:-moz-placeholder { /* Firefox 18- */
+		color: #b5e1ff;  
+	}
+
+	#search-1::-moz-placeholder {  /* Firefox 19+ */
+		color: #b5e1ff;  
+	}
+
+	#search-1:-ms-input-placeholder {  
+		color: #b5e1ff;  
+	}
+
+	#ticker-announce {
+		background: transparent;
+	}
+
+	#theinfo {
+		text-align: center;
+		color: #296fa7;
+		font-size: 17pt;
+	}
+
+	#above-header .headermenu .dropdown-menu a, #above-header .headermenu .dropdown-toggle a {
+		font-family: Open Sans, sans-serif !important;
+		font-size: 14px;
+		color: #656c81 !important;
+	}
+
+	.navbar .nav > li > a {
+		color: #a5aab5 !important;
+	}
+
+	.search-box__button {
+		box-shadow: none;
+		-webkit-box-shadow: none;
+		margin-left: -42px !important;
+		margin-top: -4px !important;
+		font-size: 140%;
+		color: #fff;
+	}
+
+	@media (max-width: 767px) {
+		[class*="span"], .uneditable-input[class*="span"], .row-fluid [class*="span"] {
+			float: left;
+		}
+		.box-img {
+			display: none;
+		}
+		.box-text {
+			padding: 5px;
+			width: 90% !important;
+		}
+		.box-text h2 {
+			/*font-family: "Arial Black" !important;*/
+			color: #0480ce;
+			font-size: 1.4em;
+			text-align: center;
+		}
+	}
+	.box-img {
+		float: left;
+		width: 40%
+	}
+
+	.box-text {
+		float: left;
+		width: 60%;
+	}
+
+	.box-text h2 {
+		font-family: "Arial Black" !important;
+		color: #0480ce;
+	}
+
+	.course_categories {
+		background-color: #296fa7;
+		padding: 20px;
+		color: #fff;
+	/*margin-left: -13px;
+	margin-right: -13px;*/
+	font-weight: bold;
+	font-size: 28pt;
+}
+
+.flex-caption {
+	top: 20px;
+	left: 20px;
+	background-color: transparent;
+	color: #fff;
+	margin: 0;
+	padding: 25px 25px 25px 30px;
+	position: absolute;
+	right: initial;
+	width: 100%;
+}
+
+.flex-caption h2 {
+	color: #0062ae;
+	font-size: 45pt;
+	line-height: 45pt;
+	font-weight: bold;
+}
+
+.flex-caption .btn-slider {
+	line-height: 2.8rem;
+	cursor: pointer;
+	border: 1px solid #bd8925 !important;
+	color: #fff;
+	background: rgb(253,169,23);
+	background: -moz-linear-gradient(top, rgba(253,169,23,1) 0%, rgba(252,143,1,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,169,23,1)), color-stop(100%,rgba(252,143,1,1)));
+	background: -webkit-linear-gradient(top, rgba(253,169,23,1) 0%,rgba(252,143,1,1) 100%);
+	background: -o-linear-gradient(top, rgba(253,169,23,1) 0%,rgba(252,143,1,1) 100%);
+	background: -ms-linear-gradient(top, rgba(253,169,23,1) 0%,rgba(252,143,1,1) 100%);
+	background: linear-gradient(to bottom, rgba(253,169,23,1) 0%,rgba(252,143,1,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fda917', endColorstr='#fc8f01',GradientType=0 );
+	padding: 12px 20px 12px 20px;
+	color: #fff !important;
+}
+
+.flex-caption .btn-slider:hover {
+	border: 1px solid #bd8925 !important;
+	color: #fff;
+	background: rgb(255,179,45);
+	background: -moz-linear-gradient(top, rgba(255,179,45,1) 0%, rgba(255,154,0,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,179,45,1)), color-stop(100%,rgba(255,154,0,1)));
+	background: -webkit-linear-gradient(top, rgba(255,179,45,1) 0%,rgba(255,154,0,1) 100%);
+	background: -o-linear-gradient(top, rgba(255,179,45,1) 0%,rgba(255,154,0,1) 100%);
+	background: -ms-linear-gradient(top, rgba(255,179,45,1) 0%,rgba(255,154,0,1) 100%);
+	background: linear-gradient(to bottom, rgba(255,179,45,1) 0%,rgba(255,154,0,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb32d', endColorstr='#ff9a00',GradientType=0 );
+}
+
+/* Categorias frontpage */
+.frontpage-category-names {
+	background-color: #f3f5fa;
+}
+
+.frontpage-category-names h2 {
+	display: none;
+}
+
+.frontpage-category-names  h3 {
+	font-size: 10pt;
+}
+
+.frontpage-category-names .course_category_tree .category > .info > .categoryname, .frontpage-category-names .course_category_tree .category.with_children.collapsed > .info > .categoryname {
+	background-image: none !important;
+	padding: 2px 0 !important;
+}
+
+
+.frontpage-category-names .collapsible-actions {
+	display: none;
+}
+
+
+.frontpage-category-names .course_category_tree .category {
+	width: 350px;
+	float: left;
+}
+
+.frontpage-category-names .course_category_tree .category > .info {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+
+
+/* FIM Categorias frontpage */
+
+.content-only #region-main {
+	width: 94%;
+}
+
+.btn, .btn a, input[type="submit"] {
+	line-height: 2.8rem;
+	cursor: pointer;
+	border: 1px solid #bd8925 !important;
+	color: #fff;
+	background: rgb(253,169,23);
+	background: -moz-linear-gradient(top, rgba(253,169,23,1) 0%, rgba(252,143,1,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,169,23,1)), color-stop(100%,rgba(252,143,1,1)));
+	background: -webkit-linear-gradient(top, rgba(253,169,23,1) 0%,rgba(252,143,1,1) 100%);
+	background: -o-linear-gradient(top, rgba(253,169,23,1) 0%,rgba(252,143,1,1) 100%);
+	background: -ms-linear-gradient(top, rgba(253,169,23,1) 0%,rgba(252,143,1,1) 100%);
+	background: linear-gradient(to bottom, rgba(253,169,23,1) 0%,rgba(252,143,1,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fda917', endColorstr='#fc8f01',GradientType=0 );
+	padding: 0px 20px 0px 20px;
+	color: #fff !important;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.btn:hover, .btn a:hover, input[type="submit"]:hover, input.form-submit:focus, input.form-submit:active, input[type="submit"]:focus, input[type="submit"]:active {
+	border: 1px solid #bd8925 !important;
+	color: #fff;
+	background: rgb(255,179,45);
+	background: -moz-linear-gradient(top, rgba(255,179,45,1) 0%, rgba(255,154,0,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,179,45,1)), color-stop(100%,rgba(255,154,0,1)));
+	background: -webkit-linear-gradient(top, rgba(255,179,45,1) 0%,rgba(255,154,0,1) 100%);
+	background: -o-linear-gradient(top, rgba(255,179,45,1) 0%,rgba(255,154,0,1) 100%);
+	background: -ms-linear-gradient(top, rgba(255,179,45,1) 0%,rgba(255,154,0,1) 100%);
+	background: linear-gradient(to bottom, rgba(255,179,45,1) 0%,rgba(255,154,0,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb32d', endColorstr='#ff9a00',GradientType=0 );
+}
+
+#edittingbutton input[type="submit"] {
+	border: none !important;
+	padding: 4px 6px !important;
+	line-height: 22px;
+}
+
+.course_category_tree .category > .info {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#058ce1+0,047ecb+100 */
+	background: #058ce1; /* Old browsers */
+	background: -moz-linear-gradient(top,  #058ce1 0%, #047ecb 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #058ce1 0%,#047ecb 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #058ce1 0%,#047ecb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#058ce1', endColorstr='#047ecb',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	border-color: #004162;
+}
+
+.category-browse .info a {
+	color: #fff !important;
+}
+.coursebox > .info > .coursename a {
+	color: #5b5b5f !important;
+}
+
+.courses .coursebox.collapsed {
+	border: none;
+	border-radius: inherit;
+	background-color: #f5f5f5 !important;border: none;
+	border-radius: none;
+}
+
+.courses .coursebox.even, .courses .coursebox {
+	background-color: #fafafa !important;
+	border-radius: 0;
+	margin-bottom: 0;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+form#coursesearch {
+	margin-bottom: 15px;
+}
+
+.course_category_tree .category > .content {
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.category-browse {
+	margin-bottom: 20px;
+}
+
+.category-browse .courses {
+	margin: -3px 0 -3px 0px;
+}
+
+.coursebox .info {
+	margin: 15px 15px 50px 15px;
+}
+
+.course_category_tree .category > .info > .categoryname {
+	margin: 9px;
+}
+
+.navbar .nav > li > a:hover {
+	color: #444444 !important;
+	background-color: transparent !important;
+	text-decoration: none;
+}
+
+@media (max-width: 767px) {
+	.flex-caption h2 {
+		color: #0062ae;
+		font-size: 15pt;
+		line-height: 15pt;
+		font-weight: bold;
+		margin-bottom: -10px;
+	}
+
+	#navwrap {
+		background: transparent;
+	}
+
+	.navbar .nav > li > a {
+		color: #fff !important;
+	}
+
+
+	li.dropdown.langmenu {
+		display: none;
+	}
+
+	.flex-caption {
+		top: 10px;
+		left: 20px;
+	}
+
+	.flex-caption .btn-slider {
+		line-height: 0;
+		padding: 6px 12px 6px 12px;
+	}
+
+	.flex-caption p {
+		margin: 3px 0px !important;
+		margin-bottom: 0px !important;
+		line-height: 0;
+	}
+}
+
+.showblockicons .header .title h2:before {
+	display: none;
+}
+
+a, a:visited, .tabtree .tabrow0 li a, .dropdown-menu.usermen > li > a, .jsenabled .block_settings .block_tree .tree_item.branch, .block_navigation .block_tree .tree_item.branch {
+	color: #717171 !important;
+}
+
+.block_tree .tree_item.branch {
+	color: #717171 !important;
+}
+
+.block .header, #dockeditempanel .dockeditempanel_hd {
+	border: none;
+}
+
+#page-footer, #page-footer p {
+	background: transparent;
+	text-align: center;
+}
+
+.block .header .title h2 {
+	font-size: 13pt;
+	color: #0482d2;
+}
+
+.block .header, .block > .content {
+	background-color: transparent !important;
+}
+
+.block {
+	border: 1px solid #e9e9e9 !important;
+	-webkit-border-radius: 5px !important;
+	-moz-border-radius: 5px !important;
+	border-radius: 5px !important;
+}
+
+.navbar-nav i {
+	display: none;
+}
+
+#search-1, #search-1:focus {
+	color: #fff;
+}
+
+.dropdown-menu {
+	min-width: 215px;
+}
+
+.nav .dropdown-menu li a {
+	color: #717171 !important;
+}
+
+.box-text a {
+	color: #ff560d !important;
+	font-weight: bold !important;
+}
+
+.navbar .btn-navbar, .navbar .btn-navbar:hover, .navbar .btn-navbar:active {
+	background-color: #046ab3;
+	background: #046ab3 !important;
+	border: none !important;
+}
+
+
+.category-block {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #f3f5fa;
+	overflow: auto;
+	text-align: center;
+	font-size: 10pt;
+}
+
+.category-block a {
+	color: #296fa7 !important;
+	text-decoration: none !important;
+}
+
+.category-block a:hover {
+	color: #0d4d80 !important;
+}
+
+.category-item {
+	display: inline-table;
+	width: 229px;
+	text-align: center;
+	margin: 10px;
+}
+
+.categories-banner {
+	width: 100%;
+	height: 580px;
+	background-size: cover;
+	background-position: center;
+}
+
+form#searchcategorias {
+}
+
+form#coursesearch {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.container-search {
+	width: 90% !important;
+    margin: 0 auto;
+	padding-top: 40px;
+}
+
+	#region-main #searchcategorias .btn {
+		width: 23% !important;
+	}
+
+	form#searchcategorias #coursesearchbox {
+		width: 66% !important;
+	}
+}
+
+#searchcategorias {
+	text-align: left;
+}
+
+#region-main #searchcategorias .btn {
+	margin-top: 0;
+	width: 20%;
+	float: left;
+}
+
+#searchcategorias .form-group {
+	float: left;
+	width: 75%;
+	text-align: right;
+	position: relative;
+}
+
+.container-search {
+	width: 50%;
+    margin: 0 auto;
+	padding-top: 40px;
+}
+
+form#searchcategorias #coursesearchbox {
+	padding: 0px 10px !important;
+	margin: 0 !important;
+	font-size: 14px;
+	color: #fff;
+	border: 2px solid #969a9b !important;
+	background-color: rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+	box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+	width: 67%;
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 31px !important;
+	background-image: url('caixa/pix/search.png');
+	background-repeat: no-repeat;
+	background-position: center right;
+	float: left;
+}
+
+#coursesearchbox::-webkit-input-placeholder {
+	color: #fff;
+	text-align: right;
+	padding-right: 25px;
+}
+
+#coursesearchbox:-moz-placeholder { /* Firefox 18- */
+	color: #fff;  
+	text-align: right;
+	padding-right: 25px;
+}
+
+#coursesearchbox::-moz-placeholder {  /* Firefox 19+ */
+	color: #fff;  
+	text-align: right;
+	padding-right: 25px;
+}
+
+#coursesearchbox:-ms-input-placeholder {  
+	color: #fff;  
+	text-align: right;
+	padding-right: 25px;
+}
+
+
+
+
+
+
+

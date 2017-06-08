@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    theme_adaptable
+ * @package    theme_caixa
  * @copyright  2015-2016 Jeremy Hopkins (Coventry University)
  * @copyright  2015-2016 Fernando Acedo (3-bits.com)
  * @copyright  2015 David Bezemer <info@davidbezemer.nl>, www.davidbezemer.nl
@@ -29,99 +29,99 @@
 
 
 // Analytics section.
-$temp = new admin_settingpage('theme_adaptable_analytics', get_string('analyticssettings', 'theme_adaptable'));
-$temp->add(new admin_setting_heading('theme_adaptable_analytics', get_string('analyticssettingsheading', 'theme_adaptable'),
-           format_text(get_string('analyticssettingsdesc', 'theme_adaptable'), FORMAT_MARKDOWN)));
+$temp = new admin_settingpage('theme_caixa_analytics', get_string('analyticssettings', 'theme_caixa'));
+$temp->add(new admin_setting_heading('theme_caixa_analytics', get_string('analyticssettingsheading', 'theme_caixa'),
+           format_text(get_string('analyticssettingsdesc', 'theme_caixa'), FORMAT_MARKDOWN)));
 
 
 // Google Analytics Section.
-$name = 'theme_adaptable/googleanalyticssettings';
-$heading = get_string('googleanalyticssettings', 'theme_adaptable');
+$name = 'theme_caixa/googleanalyticssettings';
+$heading = get_string('googleanalyticssettings', 'theme_caixa');
 $setting = new admin_setting_heading($name, $heading, '');
 $temp->add($setting);
 
 // Enable Google analytics.
-$name = 'theme_adaptable/enableanalytics';
-$title = get_string('enableanalytics', 'theme_adaptable');
-$description = get_string('enableanalyticsdesc', 'theme_adaptable');
+$name = 'theme_caixa/enableanalytics';
+$title = get_string('enableanalytics', 'theme_caixa');
+$description = get_string('enableanalyticsdesc', 'theme_caixa');
 $default = false;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
 // Number of Analytics entries.
-$name = 'theme_adaptable/analyticscount';
-$title = get_string('analyticscount', 'theme_adaptable');
-$description = get_string('analyticscountdesc', 'theme_adaptable');
-$default = THEME_ADAPTABLE_DEFAULT_ANALYTICSCOUNT;
+$name = 'theme_caixa/analyticscount';
+$title = get_string('analyticscount', 'theme_caixa');
+$description = get_string('analyticscountdesc', 'theme_caixa');
+$default = THEME_caixa_DEFAULT_ANALYTICSCOUNT;
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices1to12);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $temp->add($setting);
 
 // If we don't have an analyticscount yet, default to the preset.
-$analyticscount = get_config('theme_adaptable', 'analyticscount');
+$analyticscount = get_config('theme_caixa', 'analyticscount');
 if (!$analyticscount) {
-    $alertcount = THEME_ADAPTABLE_DEFAULT_ANALYTICSCOUNT;
+    $alertcount = THEME_caixa_DEFAULT_ANALYTICSCOUNT;
 }
 
 for ($analyticsindex = 1; $analyticsindex <= $analyticscount; $analyticsindex ++) {
     // Alert Text 1.
-    $name = 'theme_adaptable/analyticstext' . $analyticsindex;
-    $title = get_string('analyticstext', 'theme_adaptable');
-    $description = get_string('analyticstextdesc', 'theme_adaptable');
+    $name = 'theme_caixa/analyticstext' . $analyticsindex;
+    $title = get_string('analyticstext', 'theme_caixa');
+    $description = get_string('analyticstextdesc', 'theme_caixa');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_RAW);
     $temp->add($setting);
 
-    $name = 'theme_adaptable/analyticsprofilefield' . $analyticsindex;
-    $title = get_string('analyticsprofilefield', 'theme_adaptable');
-    $description = get_string('analyticsprofilefielddesc', 'theme_adaptable');
+    $name = 'theme_caixa/analyticsprofilefield' . $analyticsindex;
+    $title = get_string('analyticsprofilefield', 'theme_caixa');
+    $description = get_string('analyticsprofilefielddesc', 'theme_caixa');
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_RAW);
     $temp->add($setting);
 }
 
 
 // Piwik Analytics Section.
-$name = 'theme_adaptable/piwiksettings';
-$heading = get_string('piwiksettings', 'theme_adaptable');
+$name = 'theme_caixa/piwiksettings';
+$heading = get_string('piwiksettings', 'theme_caixa');
 $setting = new admin_setting_heading($name, $heading, '');
 $temp->add($setting);
 
 
 // Enable Piwik analytics.
-$name = 'theme_adaptable/piwikenabled';
-$title = get_string('piwikenabled', 'theme_adaptable');
-$description = get_string('piwikenableddesc', 'theme_adaptable');
+$name = 'theme_caixa/piwikenabled';
+$title = get_string('piwikenabled', 'theme_caixa');
+$description = get_string('piwikenableddesc', 'theme_caixa');
 $default = false;
 $temp->add(new admin_setting_configcheckbox($name, $title, $description, $default, true, false));
 
 // Piwik site ID.
-$name = 'theme_adaptable/piwiksiteid';
-$title = get_string('piwiksiteid', 'theme_adaptable');
-$description = get_string('piwiksiteiddesc', 'theme_adaptable');
+$name = 'theme_caixa/piwiksiteid';
+$title = get_string('piwiksiteid', 'theme_caixa');
+$description = get_string('piwiksiteiddesc', 'theme_caixa');
 $default = '1';
 $temp->add(new admin_setting_configtext($name, $title, $description, $default));
 
 // Piwik image track.
-$name = 'theme_adaptable/piwikimagetrack';
-$title = get_string('piwikimagetrack', 'theme_adaptable');
-$description = get_string('piwikimagetrackdesc', 'theme_adaptable');
+$name = 'theme_caixa/piwikimagetrack';
+$title = get_string('piwikimagetrack', 'theme_caixa');
+$description = get_string('piwikimagetrackdesc', 'theme_caixa');
 $default = true;
 $temp->add(new admin_setting_configcheckbox($name, $title, $description, $default, true, false));
 
 // Piwik site URL.
-$name = 'theme_adaptable/piwiksiteurl';
-$title = get_string('piwiksiteurl', 'theme_adaptable');
-$description = get_string('piwiksiteurldesc', 'theme_adaptable');
+$name = 'theme_caixa/piwiksiteurl';
+$title = get_string('piwiksiteurl', 'theme_caixa');
+$description = get_string('piwiksiteurldesc', 'theme_caixa');
 $default = '';
 $temp->add(new admin_setting_configtext($name, $title, $description, $default));
 
 // Enable Piwik admins tracking.
-$name = 'theme_adaptable/piwiktrackadmin';
-$title = get_string('piwiktrackadmin', 'theme_adaptable');
-$description = get_string('piwiktrackadmindesc', 'theme_adaptable');
+$name = 'theme_caixa/piwiktrackadmin';
+$title = get_string('piwiktrackadmin', 'theme_caixa');
+$description = get_string('piwiktrackadmindesc', 'theme_caixa');
 $default = false;
 $temp->add(new admin_setting_configcheckbox($name, $title, $description, $default, true, false));
 
 
-$ADMIN->add('theme_adaptable', $temp);
+$ADMIN->add('theme_caixa', $temp);

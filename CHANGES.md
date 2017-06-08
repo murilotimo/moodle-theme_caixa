@@ -1,7 +1,6 @@
-Changes in version 1.3.1 (2017011600)
+Changes in version 1.3.1 (2017010900)
 ---------------------------------------
 Fixed issues:
-- #600: Fix course settings translation in Spanish
 - #599: Images not showing in teachers listing students qualifications
 - #598: Video player button not displayed in moodle 3.2
 - #596: Section name do not apply the colour in topics format 
@@ -26,7 +25,7 @@ New features:
 - Spanish translation will be included in the theme from now
 - Add new Quiz style 
 - Improve error message output 
-- Top message for Adaptable non-stable versions or outdated moodle versions (2.9 or older)
+- Top message for caixa non-stable versions or outdated moodle versions (2.9 or older)
 
 
 Fixed issues:
@@ -88,11 +87,11 @@ Fixed issues:
 - #507: Emoticon size 
 - #504: Remove hardcoded strings in settings 
 - #501: Fail to embed a video into marketing blocks 
-- #500: Cannot get beyond New settings - Header on fresh install of moodle 3.1 with Adaptable in the theme directory 
+- #500: Cannot get beyond New settings - Header on fresh install of moodle 3.1 with caixa in the theme directory 
 - #499: User menu error in user ID in "My Blog" item 
 - #497: Categories list on Front Page 
 - #494: Definition of from35to100percent broken 
-- #493: Inheriting from Adaptable: Hardcoded settings 
+- #493: Inheriting from caixa: Hardcoded settings 
 - #492: Textbox for email digest type in forums is too narrow 
 - #491: Extraneous </div> in frontpage 
 - #490: Heading / logo alignment 
@@ -226,7 +225,7 @@ NOTE: After upgrading go to the "Header Navbar" settings and save to update the 
 - #316 Increase font size range for Top Menu & Navigation bar
 - #184 Topic title header width changes when editing On
 - #285 Slideshow is not working in RTL sites
-- #311 Undefined variable: /theme/adaptable/renderers.php on line 747
+- #311 Undefined variable: /theme/caixa/renderers.php on line 747
 - #277 There are 2 marketing blocks settings separated from the sub-section
 - #304 Reduce length of course titles in my course dropdown list to avoid spill
 - #309 Add option to show hidden courses with icons in my course dropdown list
